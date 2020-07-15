@@ -29,7 +29,6 @@ struct ContentView: View {
                 }
                 .tag(0)
             CollectionsView()
-                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "doc.plaintext")
@@ -38,7 +37,6 @@ struct ContentView: View {
                 }
                 .tag(1)
             SupportView()
-                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "hand.raised")
@@ -47,7 +45,6 @@ struct ContentView: View {
                 }
                 .tag(2)
             InfoView()
-                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "info.circle")
