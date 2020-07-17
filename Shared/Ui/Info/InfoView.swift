@@ -51,23 +51,14 @@ struct AppInfoView: View {
                 .frame(width: 32)
                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             
-            VStack {
-                HStack {
-                    Text("Christ In Song App")
-                        .font(.title3)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    Spacer()
-                }
-                HStack {
-                    Text("v\(appVersion as? String ?? "1.0.0")")
-                        .font(.caption2)
-                    Spacer()
-                }
-                HStack {
-                    Text("By Tinashe Mzondiwa")
-                        .font(.body)
-                    Spacer()
-                }
+            VStack(alignment: .leading) {
+                Text("Christ In Song App")
+                    .font(.title3)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text("v\(appVersion as? String ?? "1.0.0")")
+                    .font(.caption2)
+                Text("By Tinashe Mzondiwa")
+                    .font(.caption)
             }
         }.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 8)
     }
