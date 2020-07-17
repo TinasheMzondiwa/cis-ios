@@ -22,34 +22,22 @@ struct ContentView: View {
         TabView(selection: $selection) {
             HymnsView()
                 .tabItem {
-                    VStack {
-                        Image(systemName: "music.note.list")
-                        Text("Hymns")
-                    }
+                    TabContentView(icon: "music.note.list", title: "Hymns")
                 }
                 .tag(0)
             CollectionsView()
                 .tabItem {
-                    VStack {
-                        Image(systemName: "doc.plaintext")
-                        Text("Collections")
-                    }
+                    TabContentView(icon: "doc.plaintext", title: "Collections")
                 }
                 .tag(1)
             SupportView()
                 .tabItem {
-                    VStack {
-                        Image(systemName: "hand.raised")
-                        Text("Support")
-                    }
+                    TabContentView(icon: "hand.raised", title: "Support")
                 }
                 .tag(2)
             InfoView()
                 .tabItem {
-                    VStack {
-                        Image(systemName: "info.circle")
-                        Text("Info")
-                    }
+                    TabContentView(icon: "info.circle", title: "Info")
                 }
                 .tag(3)
         }
@@ -59,5 +47,17 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct TabContentView: View {
+    var icon: String
+    var title: String
+    
+    var body: some View {
+        VStack {
+            Image(systemName: icon)
+            Text(title)
+        }
     }
 }
