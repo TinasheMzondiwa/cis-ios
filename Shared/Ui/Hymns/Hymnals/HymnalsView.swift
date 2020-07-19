@@ -8,23 +8,38 @@
 import SwiftUI
 
 struct HymnalsView: View {
+    
+    @EnvironmentObject var selectedData: HymnalAppData
+    
+    let data = hymnalsData
+    
     var body: some View {
-        List(hymnalsData, id: \.key) { hymnal in
+        List(data, id: \.key) { hymnal in
+            
             Button(action: {
+                DispatchQueue.global(qos: .background).async {
+                    let resources = loadHymns(key: hymnal.key)
+
+                    DispatchQueue.main.async {
+                        selectedData.hymnal = hymnal
+                        selectedData.hymns = resources
+                        selectedData.isShowingHymnals.toggle()
+                    }
+                }
                 
             }, label: {
-                HymnalView(hymnal: hymnal)
+                HymnalView(hymnal: hymnal, index: data.firstIndex(of: hymnal) ?? 0 )
             })
             
         }
-        .padding(.top, 16)
-        .navigationBarTitle(Text("Hymnals"), displayMode: .inline)
+        .padding()
     }
 }
 
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
         HymnalsView()
+            .environmentObject(HymnalAppData())
             .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }

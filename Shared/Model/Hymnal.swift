@@ -12,5 +12,4 @@ struct Hymnal: Hashable, Codable {
     var key: String
     var title: String = ""
     var language: String = ""
-    var hymns: [Hymn] = []
 }

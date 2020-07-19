@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ChristInSongApp: App {
+    var data = HymnalAppData()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(data)
         }
     }
 }

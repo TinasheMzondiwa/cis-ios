@@ -12,13 +12,13 @@ struct HymnalView: View {
     private let COLORS: [String] = ["#4b207f", "#5e3929", "#7f264a", "#2f557f", "#e36520", "#448d21", "#3e8391"]
     
     var hymnal: Hymnal
+    var index: Int
     
     var body: some View {
         HStack {
             RoundedRectangle(cornerRadius: 12)
                 .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(getColor())
-                .padding(.leading, 16)
+                .foregroundColor(Color.init(hex: COLORS[index % COLORS.count]))
             
             VStack(alignment: .leading) {
                 Text(hymnal.title)
@@ -46,7 +46,7 @@ struct HymnalView_Previews: PreviewProvider {
             key: "",
             title: "Christ In Song",
             language: "English"
-        ))
+        ), index: 1)
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }

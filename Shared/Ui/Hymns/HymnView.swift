@@ -9,6 +9,9 @@ import SwiftUI
 import WebKit
 
 struct HymnView: View {
+    
+    @EnvironmentObject var selectedData: HymnalAppData
+    
     var hymn: Hymn
     var body: some View {
         ScrollView {
@@ -16,7 +19,7 @@ struct HymnView: View {
             HTMLText(html: hymn.content)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             
-        }.navigationBarTitle(Text("Christ In Song"), displayMode: .inline)
+        }.navigationBarTitle(Text(selectedData.hymnal.title), displayMode: .inline)
     }
 }
 
@@ -25,6 +28,7 @@ struct HymnView_Previews: PreviewProvider {
         HymnView(hymn: Hymn(
                     content: "<h1><b>1 Watchman Blow The Gospel Trumpet.</b></h1>\n        <p>\nWatchman, blow the gospel trumpet,<br/>\n         Evry  soul a warning give;<br/>\n        Whosoever hears the message <br/>\n        May repent, and turn, and live."
         ))
+        .environmentObject(HymnalAppData())
         .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }
