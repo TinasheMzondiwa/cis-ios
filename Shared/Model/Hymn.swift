@@ -8,8 +8,7 @@
 import Foundation
 import CoreData
 
-struct Hymn: Identifiable {
-    var id = UUID()
+struct Hymn: Hashable, Codable {
     var title: String = ""
     var number: Int = 0
     var content: String = ""

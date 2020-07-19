@@ -25,12 +25,68 @@
 		08927DA024BEAB1F0035972C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9E24BEAB1F0035972C /* InfoView.swift */; };
 		08927DA324BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
 		08927DA424BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
-		08927DA724BEB9540035972C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBar.swift */; };
-		08927DA824BEB9540035972C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBar.swift */; };
+		08927DA724BEB9540035972C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBarView.swift */; };
+		08927DA824BEB9540035972C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBarView.swift */; };
 		08927DAB24BEBB560035972C /* Hymnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAA24BEBB560035972C /* Hymnal.swift */; };
 		08927DAC24BEBB560035972C /* Hymnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAA24BEBB560035972C /* Hymnal.swift */; };
 		08927DAE24BEBBBB0035972C /* Hymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* Hymn.swift */; };
 		08927DAF24BEBBBB0035972C /* Hymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* Hymn.swift */; };
+		08927E3624C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3724C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3824C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3924C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3B24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E3C24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E3D24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E3E24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E4024C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
+		08927E4124C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
+		08927E4224C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
+		08927E4324C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
+		08927E4524C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
+		08927E4624C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
+		08927E4724C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
+		08927E4824C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
+		08927E7F24C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
+		08927E8024C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
+		08927E8124C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
+		08927E8224C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
+		08927E8324C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
+		08927E8424C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
+		08927E8524C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
+		08927E8624C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
+		08927E8724C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
+		08927E8824C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
+		08927E8924C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
+		08927E8A24C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
+		08927E8B24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
+		08927E8C24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
+		08927E8D24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
+		08927E8E24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
+		08927E8F24C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
+		08927E9024C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
+		08927E9124C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
+		08927E9224C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
+		08927E9324C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
+		08927E9424C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
+		08927E9524C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
+		08927E9624C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
+		08927E9724C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
+		08927E9824C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
+		08927E9924C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
+		08927E9A24C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
+		08927E9B24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
+		08927E9C24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
+		08927E9D24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
+		08927E9E24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
+		08927E9F24C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
+		08927EA024C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
+		08927EA124C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
+		08927EA224C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
+		08927EA424C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
+		08927EA524C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
+		08927EA624C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
+		08927EA724C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +126,23 @@
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		08927D9E24BEAB1F0035972C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		08927DA224BEAC240035972C /* HymnalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsView.swift; sourceTree = "<group>"; };
-		08927DA624BEB9540035972C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		08927DA624BEB9540035972C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		08927DAA24BEBB560035972C /* Hymnal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hymnal.swift; sourceTree = "<group>"; };
 		08927DAD24BEBBBB0035972C /* Hymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hymn.swift; sourceTree = "<group>"; };
+		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		08927E3A24C3E7F90035972C /* english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
+		08927E3F24C3F8230035972C /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
+		08927E4424C402BF0035972C /* HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalView.swift; sourceTree = "<group>"; };
+		08927E7624C411160035972C /* swahili.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swahili.json; sourceTree = "<group>"; };
+		08927E7724C411160035972C /* chichewa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chichewa.json; sourceTree = "<group>"; };
+		08927E7824C411160035972C /* tswana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tswana.json; sourceTree = "<group>"; };
+		08927E7924C411160035972C /* venda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = venda.json; sourceTree = "<group>"; };
+		08927E7A24C411170035972C /* shona.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shona.json; sourceTree = "<group>"; };
+		08927E7B24C411170035972C /* sotho.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sotho.json; sourceTree = "<group>"; };
+		08927E7C24C411170035972C /* tonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tonga.json; sourceTree = "<group>"; };
+		08927E7D24C411170035972C /* xhosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xhosa.json; sourceTree = "<group>"; };
+		08927E7E24C411170035972C /* ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ndebele.json; sourceTree = "<group>"; };
+		08927EA324C412D80035972C /* HymnalAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalAppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +192,7 @@
 		086C93FA24BE93BC008AFBE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				08927E3424C3E69F0035972C /* Resources */,
 				08927DB024BEC0160035972C /* Ui */,
 				08927DA924BEBB3B0035972C /* Model */,
 				086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */,
@@ -182,6 +253,7 @@
 			children = (
 				08927DA124BEAC110035972C /* Hymnals */,
 				08927D9224BEA5B60035972C /* HymnsView.swift */,
+				08927E3F24C3F8230035972C /* HymnView.swift */,
 			);
 			path = Hymns;
 			sourceTree = "<group>";
@@ -214,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				08927DA224BEAC240035972C /* HymnalsView.swift */,
+				08927E4424C402BF0035972C /* HymnalView.swift */,
 			);
 			path = Hymnals;
 			sourceTree = "<group>";
@@ -221,7 +294,7 @@
 		08927DA524BEB9360035972C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				08927DA624BEB9540035972C /* SearchBar.swift */,
+				08927DA624BEB9540035972C /* SearchBarView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -231,6 +304,8 @@
 			children = (
 				08927DAA24BEBB560035972C /* Hymnal.swift */,
 				08927DAD24BEBBBB0035972C /* Hymn.swift */,
+				08927E3524C3E7BE0035972C /* Data.swift */,
+				08927EA324C412D80035972C /* HymnalAppData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +320,23 @@
 				08927D9D24BEAB0C0035972C /* Info */,
 			);
 			path = Ui;
+			sourceTree = "<group>";
+		};
+		08927E3424C3E69F0035972C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				08927E7724C411160035972C /* chichewa.json */,
+				08927E7E24C411170035972C /* ndebele.json */,
+				08927E7A24C411170035972C /* shona.json */,
+				08927E7B24C411170035972C /* sotho.json */,
+				08927E7624C411160035972C /* swahili.json */,
+				08927E7C24C411170035972C /* tonga.json */,
+				08927E7824C411160035972C /* tswana.json */,
+				08927E7924C411160035972C /* venda.json */,
+				08927E7D24C411170035972C /* xhosa.json */,
+				08927E3A24C3E7F90035972C /* english.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +463,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E8F24C411170035972C /* shona.json in Resources */,
+				08927E3B24C3E7F90035972C /* english.json in Resources */,
+				08927E8724C411170035972C /* tswana.json in Resources */,
+				08927E9B24C411170035972C /* xhosa.json in Resources */,
+				08927E8324C411170035972C /* chichewa.json in Resources */,
+				08927E9724C411170035972C /* tonga.json in Resources */,
 				086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */,
+				08927E8B24C411170035972C /* venda.json in Resources */,
+				08927E7F24C411170035972C /* swahili.json in Resources */,
+				08927E9324C411170035972C /* sotho.json in Resources */,
+				08927E9F24C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +481,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E9024C411170035972C /* shona.json in Resources */,
+				08927E3C24C3E7F90035972C /* english.json in Resources */,
+				08927E8824C411170035972C /* tswana.json in Resources */,
+				08927E9C24C411170035972C /* xhosa.json in Resources */,
+				08927E8424C411170035972C /* chichewa.json in Resources */,
+				08927E9824C411170035972C /* tonga.json in Resources */,
 				086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */,
+				08927E8C24C411170035972C /* venda.json in Resources */,
+				08927E8024C411170035972C /* swahili.json in Resources */,
+				08927E9424C411170035972C /* sotho.json in Resources */,
+				08927EA024C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +499,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E9524C411170035972C /* sotho.json in Resources */,
+				08927E9D24C411170035972C /* xhosa.json in Resources */,
+				08927E8524C411170035972C /* chichewa.json in Resources */,
+				08927E9124C411170035972C /* shona.json in Resources */,
+				08927E9924C411170035972C /* tonga.json in Resources */,
+				08927E8924C411170035972C /* tswana.json in Resources */,
+				08927E3D24C3E7F90035972C /* english.json in Resources */,
+				08927E8D24C411170035972C /* venda.json in Resources */,
+				08927E8124C411170035972C /* swahili.json in Resources */,
+				08927EA124C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +516,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E9624C411170035972C /* sotho.json in Resources */,
+				08927E9E24C411170035972C /* xhosa.json in Resources */,
+				08927E8624C411170035972C /* chichewa.json in Resources */,
+				08927E9224C411170035972C /* shona.json in Resources */,
+				08927E9A24C411170035972C /* tonga.json in Resources */,
+				08927E8A24C411170035972C /* tswana.json in Resources */,
+				08927E3E24C3E7F90035972C /* english.json in Resources */,
+				08927E8E24C411170035972C /* venda.json in Resources */,
+				08927E8224C411170035972C /* swahili.json in Resources */,
+				08927EA224C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,14 +536,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927EA424C412D80035972C /* HymnalAppData.swift in Sources */,
 				08927D9B24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
+				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* Hymn.swift in Sources */,
+				08927E4024C3F8230035972C /* HymnView.swift in Sources */,
+				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAB24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
-				08927DA724BEB9540035972C /* SearchBar.swift in Sources */,
+				08927DA724BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
@@ -421,14 +557,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927EA524C412D80035972C /* HymnalAppData.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
+				08927E4624C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAF24BEBBBB0035972C /* Hymn.swift in Sources */,
+				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
+				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAC24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
-				08927DA824BEB9540035972C /* SearchBar.swift in Sources */,
+				08927DA824BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
@@ -439,6 +579,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C941724BE93BD008AFBE5 /* Tests_iOS.swift in Sources */,
+				08927E4224C3F8230035972C /* HymnView.swift in Sources */,
+				08927E3824C3E7BE0035972C /* Data.swift in Sources */,
+				08927E4724C402BF0035972C /* HymnalView.swift in Sources */,
+				08927EA624C412D80035972C /* HymnalAppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +591,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C942224BE93BD008AFBE5 /* Tests_macOS.swift in Sources */,
+				08927E4324C3F8230035972C /* HymnView.swift in Sources */,
+				08927E3924C3E7BE0035972C /* Data.swift in Sources */,
+				08927E4824C402BF0035972C /* HymnalView.swift in Sources */,
+				08927EA724C412D80035972C /* HymnalAppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

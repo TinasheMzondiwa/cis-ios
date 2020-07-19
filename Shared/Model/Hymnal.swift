@@ -8,8 +8,8 @@
 import Foundation
 import CoreData
 
-struct Hymnal: Identifiable {
-    var id = UUID()
+struct Hymnal: Hashable, Codable {
+    var key: String
     var title: String = ""
     var language: String = ""
 }

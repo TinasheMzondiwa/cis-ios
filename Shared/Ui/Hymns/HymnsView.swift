@@ -9,45 +9,43 @@ import SwiftUI
 
 struct HymnsView: View {
     
-    @State private var isShowingHymnals = false
     @State private var searchText = ""
+
+    @EnvironmentObject var selectedData: HymnalAppData
     
-    private var hymns = [
-        Hymn(title: "1 Watchman Blow The Gospel Trumpet."),
-        Hymn(title: "2 The Coming King"),
-        Hymn(title: "3 Face To Face"),
-        Hymn(title: "4 He Is Coming"),
-        Hymn(title: "5 How Far From Home")
-    ]
+    var hymnalsButton: some View {
+        Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
+            Image(systemName: "book")
+                .imageScale(.large)
+                .accessibility(label: Text("Hymnals"))
+                .padding()
+        }
+    }
     
     var body: some View {
         NavigationView {
-            GeometryReader { g in
-                ScrollView {
-                    VStack {
+            VStack {
+                
+                SearchBarView(searchText: $searchText)
+                
+                List {
+                    
+                    ForEach(selectedData.hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
+                        
                         NavigationLink(
-                            destination: HymnalsView(),
-                            isActive: $isShowingHymnals,
-                            label: { EmptyView() })
-                        
-                        SearchBar(text: $searchText)
-                            .padding(.top, 10)
-                        
-                        List(hymns.filter({ searchText.isEmpty ? true : $0.title.contains(searchText) })) {
-                            item in Text(item.title)
-                        }.frame(width: g.size.width - 5, height: g.size.height - 50, alignment: .center)
+                            destination: HymnView(hymn: item),
+                            label: {
+                                Text(item.title)
+                            })
                     }
                 }
             }
-            .navigationBarTitle("Hymns")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        isShowingHymnals = true
-                    }, label: {
-                        Image(systemName: "book")
-                    })
-                }
+            .navigationBarTitle(selectedData.hymnal.title)
+            .resignKeyboardOnDragGesture()
+            .navigationBarItems(trailing: hymnalsButton)
+            .sheet(isPresented: $selectedData.isShowingHymnals) {
+                HymnalsView()
+                    .environmentObject(self.selectedData)
             }
         }
     }
@@ -56,5 +54,7 @@ struct HymnsView: View {
 struct HymnsView_Previews: PreviewProvider {
     static var previews: some View {
         HymnsView()
+            .environmentObject(HymnalAppData())
+            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }
