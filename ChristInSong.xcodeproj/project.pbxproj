@@ -31,6 +31,14 @@
 		08927DAC24BEBB560035972C /* Hymnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAA24BEBB560035972C /* Hymnal.swift */; };
 		08927DAE24BEBBBB0035972C /* Hymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* Hymn.swift */; };
 		08927DAF24BEBBBB0035972C /* Hymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* Hymn.swift */; };
+		08927E3624C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3724C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3824C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3924C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
+		08927E3B24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E3C24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E3D24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E3E24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +81,8 @@
 		08927DA624BEB9540035972C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		08927DAA24BEBB560035972C /* Hymnal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hymnal.swift; sourceTree = "<group>"; };
 		08927DAD24BEBBBB0035972C /* Hymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hymn.swift; sourceTree = "<group>"; };
+		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		08927E3A24C3E7F90035972C /* english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 		086C93FA24BE93BC008AFBE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				08927E3424C3E69F0035972C /* Resources */,
 				08927DB024BEC0160035972C /* Ui */,
 				08927DA924BEBB3B0035972C /* Model */,
 				086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */,
@@ -231,6 +242,7 @@
 			children = (
 				08927DAA24BEBB560035972C /* Hymnal.swift */,
 				08927DAD24BEBBBB0035972C /* Hymn.swift */,
+				08927E3524C3E7BE0035972C /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +257,14 @@
 				08927D9D24BEAB0C0035972C /* Info */,
 			);
 			path = Ui;
+			sourceTree = "<group>";
+		};
+		08927E3424C3E69F0035972C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				08927E3A24C3E7F90035972C /* english.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E3B24C3E7F90035972C /* english.json in Resources */,
 				086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E3C24C3E7F90035972C /* english.json in Resources */,
 				086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E3D24C3E7F90035972C /* english.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08927E3E24C3E7F90035972C /* english.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +432,7 @@
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* Hymn.swift in Sources */,
+				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAB24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
@@ -425,6 +450,7 @@
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAF24BEBBBB0035972C /* Hymn.swift in Sources */,
+				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAC24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
@@ -439,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C941724BE93BD008AFBE5 /* Tests_iOS.swift in Sources */,
+				08927E3824C3E7BE0035972C /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C942224BE93BD008AFBE5 /* Tests_macOS.swift in Sources */,
+				08927E3924C3E7BE0035972C /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

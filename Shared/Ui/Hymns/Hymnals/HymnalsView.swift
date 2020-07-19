@@ -11,7 +11,7 @@ struct HymnalsView: View {
     var body: some View {
         VStack {
             Text("Some text")
-        }
+        }.navigationBarTitle(Text("Hymnals"), displayMode: .inline)
     }
 }
 
