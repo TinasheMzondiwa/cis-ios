@@ -9,14 +9,22 @@ import SwiftUI
 
 struct HymnalsView: View {
     var body: some View {
-        VStack {
-            Text("Some text")
-        }.navigationBarTitle(Text("Hymnals"), displayMode: .inline)
+        List(hymnalsData, id: \.key) { hymnal in
+            Button(action: {
+                
+            }, label: {
+                HymnalView(hymnal: hymnal)
+            })
+            
+        }
+        .padding(.top, 16)
+        .navigationBarTitle(Text("Hymnals"), displayMode: .inline)
     }
 }
 
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
         HymnalsView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }

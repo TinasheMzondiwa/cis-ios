@@ -55,5 +55,6 @@ struct HymnsView: View {
 struct HymnsView_Previews: PreviewProvider {
     static var previews: some View {
         HymnsView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }
