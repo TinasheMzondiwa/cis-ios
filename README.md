@@ -1,7 +1,7 @@
 # Christ In Song iOS App  
 
-🚧 Work In Progress  🚧  
-Re-write of the existing [Christ In Song App](https://apps.apple.com/za/app/christ-in-song-multi-language/id1067718185) I wrote back in 2015.
+🚧 **Work In Progress**  🚧  
+Re-write of the existing [Christ In Song App](https://apps.apple.com/za/app/christ-in-song-multi-language/id1067718185) I wrote back in 2015.  
 **Disclaimer:** I am using this code-base to learn SwiftUI so the code is not perfect   
 
 ## Screenshots
