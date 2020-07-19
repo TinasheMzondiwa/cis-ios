@@ -28,14 +28,15 @@ struct HymnView_Previews: PreviewProvider {
 struct HTMLText: UIViewRepresentable {
 
     let html: String
+    private let contentDeviceResizeSetting = "<HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"></HEAD>"
         
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
-        webView.loadHTMLString(html, baseURL: nil)
+        webView.loadHTMLString(contentDeviceResizeSetting + html, baseURL: nil)
         return webView
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.loadHTMLString(html, baseURL: nil)
+        uiView.loadHTMLString(contentDeviceResizeSetting + html, baseURL: nil)
     }
 }
