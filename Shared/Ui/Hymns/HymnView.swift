@@ -14,7 +14,7 @@ struct HymnView: View {
     
     var hymn: Hymn
     var body: some View {
-        HTMLText(html: "<span style=\"font-size:16\">" + hymn.content + "</span>")
+        HTMLText(html: hymn.content)
             .navigationBarTitle(Text(selectedData.hymnal.title), displayMode: .inline)
     }
 }
@@ -28,15 +28,15 @@ struct HymnView_Previews: PreviewProvider {
 struct HTMLText: UIViewRepresentable {
 
     let html: String
-    private let contentDeviceResizeSetting = "<HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"></HEAD>"
+    private let contentScalingSetting = "<HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"></HEAD>"
         
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
-        webView.loadHTMLString(contentDeviceResizeSetting + html, baseURL: nil)
+        webView.loadHTMLString(contentScalingSetting + html, baseURL: nil)
         return webView
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.loadHTMLString(contentDeviceResizeSetting + html, baseURL: nil)
+        uiView.loadHTMLString(contentScalingSetting + html, baseURL: nil)
     }
 }
