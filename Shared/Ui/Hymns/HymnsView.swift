@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HymnsView: View {
     
-   // @State private var isShowingHymnals = false
     @State private var searchText = ""
 
     @EnvironmentObject var selectedData: HymnalAppData
@@ -26,10 +25,6 @@ struct HymnsView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                NavigationLink(
-//                    destination: HymnalsView(),
-//                    isActive: $selectedData.isShowingHymnals,
-//                    label: { EmptyView() })
                 
                 SearchBarView(searchText: $searchText)
                 
@@ -42,7 +37,6 @@ struct HymnsView: View {
                             label: {
                                 Text(item.title)
                             })
-                        
                     }
                 }
             }
