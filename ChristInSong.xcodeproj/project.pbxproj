@@ -25,8 +25,8 @@
 		08927DA024BEAB1F0035972C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9E24BEAB1F0035972C /* InfoView.swift */; };
 		08927DA324BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
 		08927DA424BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
-		08927DA724BEB9540035972C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBar.swift */; };
-		08927DA824BEB9540035972C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBar.swift */; };
+		08927DA724BEB9540035972C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBarView.swift */; };
+		08927DA824BEB9540035972C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBarView.swift */; };
 		08927DAB24BEBB560035972C /* Hymnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAA24BEBB560035972C /* Hymnal.swift */; };
 		08927DAC24BEBB560035972C /* Hymnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAA24BEBB560035972C /* Hymnal.swift */; };
 		08927DAE24BEBBBB0035972C /* Hymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* Hymn.swift */; };
@@ -78,7 +78,7 @@
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		08927D9E24BEAB1F0035972C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		08927DA224BEAC240035972C /* HymnalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsView.swift; sourceTree = "<group>"; };
-		08927DA624BEB9540035972C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		08927DA624BEB9540035972C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		08927DAA24BEBB560035972C /* Hymnal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hymnal.swift; sourceTree = "<group>"; };
 		08927DAD24BEBBBB0035972C /* Hymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hymn.swift; sourceTree = "<group>"; };
 		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		08927DA524BEB9360035972C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				08927DA624BEB9540035972C /* SearchBar.swift */,
+				08927DA624BEB9540035972C /* SearchBarView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 				08927DAB24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
-				08927DA724BEB9540035972C /* SearchBar.swift in Sources */,
+				08927DA724BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
@@ -454,7 +454,7 @@
 				08927DAC24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
-				08927DA824BEB9540035972C /* SearchBar.swift in Sources */,
+				08927DA824BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);

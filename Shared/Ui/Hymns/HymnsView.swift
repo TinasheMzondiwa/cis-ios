@@ -11,29 +11,34 @@ struct HymnsView: View {
     
     @State private var isShowingHymnals = false
     @State private var searchText = ""
-    
+
     private var hymns = hymnalData.hymns
     
     var body: some View {
         NavigationView {
-            GeometryReader { g in
-                ScrollView {
-                    VStack {
+            VStack {
+                NavigationLink(
+                    destination: HymnalsView(),
+                    isActive: $isShowingHymnals,
+                    label: { EmptyView() })
+                
+                SearchBarView(searchText: $searchText)
+                
+                List {
+                    
+                    ForEach(hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
+                        
                         NavigationLink(
-                            destination: HymnalsView(),
-                            isActive: $isShowingHymnals,
-                            label: { EmptyView() })
+                            destination: EmptyView(),
+                            label: {
+                                Text(item.title)
+                            })
                         
-                        SearchBar(text: $searchText)
-                            .padding(.top, 10)
-                        
-                        List(hymns.filter({ searchText.isEmpty ? true : $0.title.contains(searchText) }), id: \.number) {
-                            item in Text(item.title)
-                        }.frame(width: g.size.width - 5, height: g.size.height - 50, alignment: .center)
                     }
                 }
             }
             .navigationBarTitle("Hymns")
+            .resignKeyboardOnDragGesture()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
