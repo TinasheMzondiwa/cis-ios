@@ -1,5 +1,5 @@
 //
-//  SelectedData.swift
+//  HymnalAppData.swift
 //  ChristInSong
 //
 //  Created by Tinashe  on 2020/07/19.

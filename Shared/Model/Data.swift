@@ -20,13 +20,11 @@ let hymnalsData: [Hymnal] = [
     Hymnal(key: "xhosa", title: "UKristu Engomeni", language: "IsiXhosa")
 ]
 
-let hymnsData: [Hymn] = load("english.json")
-
 func loadHymns(key: String) -> [Hymn] {
     return load(key + ".json")
 }
 
-func load<T: Decodable>(_ filename: String) -> T {
+private func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
