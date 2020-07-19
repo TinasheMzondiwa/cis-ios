@@ -39,6 +39,10 @@
 		08927E3C24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
 		08927E3D24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
 		08927E3E24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
+		08927E4024C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
+		08927E4124C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
+		08927E4224C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
+		08927E4324C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,7 @@
 		08927DAD24BEBBBB0035972C /* Hymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hymn.swift; sourceTree = "<group>"; };
 		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		08927E3A24C3E7F90035972C /* english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
+		08927E3F24C3F8230035972C /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +198,7 @@
 			children = (
 				08927DA124BEAC110035972C /* Hymnals */,
 				08927D9224BEA5B60035972C /* HymnsView.swift */,
+				08927E3F24C3F8230035972C /* HymnView.swift */,
 			);
 			path = Hymns;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* Hymn.swift in Sources */,
+				08927E4024C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAB24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
@@ -450,6 +457,7 @@
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAF24BEBBBB0035972C /* Hymn.swift in Sources */,
+				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAC24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
@@ -465,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C941724BE93BD008AFBE5 /* Tests_iOS.swift in Sources */,
+				08927E4224C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3824C3E7BE0035972C /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C942224BE93BD008AFBE5 /* Tests_macOS.swift in Sources */,
+				08927E4324C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3924C3E7BE0035972C /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

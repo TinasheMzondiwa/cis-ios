@@ -29,7 +29,7 @@ struct HymnsView: View {
                     ForEach(hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
                         
                         NavigationLink(
-                            destination: EmptyView(),
+                            destination: HymnView(hymn: item),
                             label: {
                                 Text(item.title)
                             })
