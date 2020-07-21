@@ -87,6 +87,14 @@
 		08927EA524C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
 		08927EA624C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
 		08927EA724C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
+		08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
+		08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
+		08927EB024C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
+		08927EB124C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
+		08927EB324C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
+		08927EB424C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
+		08927EB524C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
+		08927EB624C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +151,8 @@
 		08927E7D24C411170035972C /* xhosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xhosa.json; sourceTree = "<group>"; };
 		08927E7E24C411170035972C /* ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ndebele.json; sourceTree = "<group>"; };
 		08927EA324C412D80035972C /* HymnalAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalAppData.swift; sourceTree = "<group>"; };
+		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		08927EB224C6A98C0035972C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				08927DA624BEB9540035972C /* SearchBarView.swift */,
+				08927EAD24C6A43E0035972C /* ActivityViewController.swift */,
+				08927EB224C6A98C0035972C /* MailView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -543,12 +555,14 @@
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* Hymn.swift in Sources */,
 				08927E4024C3F8230035972C /* HymnView.swift in Sources */,
+				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAB24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
 				08927DA724BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
+				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,12 +578,14 @@
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAF24BEBBBB0035972C /* Hymn.swift in Sources */,
 				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
+				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
 				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927DAC24BEBB560035972C /* Hymnal.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
 				08927DA824BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
+				08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,9 +595,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C941724BE93BD008AFBE5 /* Tests_iOS.swift in Sources */,
+				08927EB024C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				08927E4224C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3824C3E7BE0035972C /* Data.swift in Sources */,
 				08927E4724C402BF0035972C /* HymnalView.swift in Sources */,
+				08927EB524C6A98C0035972C /* MailView.swift in Sources */,
 				08927EA624C412D80035972C /* HymnalAppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,9 +609,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C942224BE93BD008AFBE5 /* Tests_macOS.swift in Sources */,
+				08927EB124C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				08927E4324C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3924C3E7BE0035972C /* Data.swift in Sources */,
 				08927E4824C402BF0035972C /* HymnalView.swift in Sources */,
+				08927EB624C6A98C0035972C /* MailView.swift in Sources */,
 				08927EA724C412D80035972C /* HymnalAppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
