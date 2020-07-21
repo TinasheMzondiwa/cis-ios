@@ -39,6 +39,8 @@ struct HymnsView: View {
                             })
                     }
                 }
+                .listStyle(SidebarListStyle())
+                
             }
             .navigationBarTitle(selectedData.hymnal.title)
             .resignKeyboardOnDragGesture()
@@ -47,14 +49,20 @@ struct HymnsView: View {
                 HymnalsView()
                     .environmentObject(self.selectedData)
             }
+            
+            Text("No hymn selected")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
 
 struct HymnsView_Previews: PreviewProvider {
     static var previews: some View {
-        HymnsView()
-            .environmentObject(HymnalAppData())
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        ForEach(["iPhone SE", "iPhone XS Max", "iPad Pro (11-inch) (2nd generation)"], id: \.self) { deviceName in
+            HymnsView()
+                .environmentObject(HymnalAppData())
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+        }
+        
     }
 }
