@@ -6,8 +6,14 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct InfoView: View {
+    
+    @State private var showingShareSheet = false
+    @State private var showingEmailSheet = false
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    
     var body: some View {
         NavigationView {
                 VStack {
@@ -15,17 +21,41 @@ struct InfoView: View {
                     List {
                         AppInfoView()
                         
-                        DefaultLineItem(icon: "square.and.arrow.up",
-                                        title: "Share this app...")
+                        Button(action: {
+                            showingShareSheet.toggle()
+                        }, label: {
+                            DefaultLineItem(icon: "square.and.arrow.up",
+                                            title: "Share this app...")
+                        })
+                        .sheet(isPresented: $showingShareSheet) {
+                            let shareData: [Any] = ["Install the Christ In Song App", URL(string: "https://goo.gl/72bu2H")!]
+                            ActivityViewController(items: shareData)
+                        }
                         
-                        DefaultLineItem(icon: "questionmark.circle",
-                                        title: "Help or Feedback")
+                        Button(action: {
+                            showingEmailSheet.toggle()
+                        }, label: {
+                            DefaultLineItem(icon: "questionmark.circle",
+                                            title: "Help or Feedback?")
+                        })
+                        .disabled(!MFMailComposeViewController.canSendMail())
+                        .sheet(isPresented: $showingEmailSheet) {
+                            MailView(result: self.$result)
+                        }
                         
-                        CustomLineItem(icon: "github",
-                                       title: "View source code")
+                        Button(action: {
+                            UIApplication.shared.open(URL(string: "https://github.com/TinasheMzondiwa/cis-ios")!)
+                        }, label: {
+                            CustomLineItem(icon: "github",
+                                           title: "View source code")
+                        })
                         
-                        CustomLineItem(icon: "twitter",
-                                       title: "Twitter")
+                        Button(action: {
+                            UIApplication.shared.open(URL(string: "https://twitter.com/christinsongapp")!)
+                        }, label: {
+                            CustomLineItem(icon: "twitter",
+                                           title: "Twitter")
+                        })
                     }
                    
                 }
@@ -37,6 +67,7 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }
 
@@ -65,8 +96,8 @@ struct AppInfoView: View {
 }
 
 struct DefaultLineItem: View {
-    var icon: String
-    var title: String
+    let icon: String
+    let title: String
     
     var body: some View {
         HStack {
@@ -78,8 +109,8 @@ struct DefaultLineItem: View {
 }
 
 struct CustomLineItem: View {
-    var icon: String
-    var title: String
+    let icon: String
+    let title: String
     
     var body: some View {
         HStack {
