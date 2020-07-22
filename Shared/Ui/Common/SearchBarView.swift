@@ -1,5 +1,5 @@
 //
-//  SearchBar.swift
+//  SearchBarView.swift
 //  ChristInSong
 //
 //  Created by Tinashe  on 2020/07/15.
