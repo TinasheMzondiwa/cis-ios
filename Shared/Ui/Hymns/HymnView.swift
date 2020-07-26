@@ -32,7 +32,22 @@ struct HymnView_Previews: PreviewProvider {
 struct HTMLText: UIViewRepresentable {
 
     let html: String
-    private let contentScalingSetting = "<HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"> <style> :root { color-scheme: light dark; }   body { font: -apple-system-body; color: var(--title-color); padding: 1rem; font-size: 1.3rem; }</style> </HEAD>"
+    private let contentScalingSetting = """
+    <HEAD>
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\">
+        <style>
+            :root {
+                color-scheme: light dark;
+            }
+            body {
+                font: -apple-system-body;
+                color: var(--title-color);
+                padding: 1rem;
+                font-size: 1.2rem;
+            }
+        </style>
+    </HEAD>
+    """
         
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()

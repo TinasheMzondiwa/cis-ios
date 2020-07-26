@@ -7,17 +7,17 @@
 
 import Foundation
 
-let hymnalsData: [Hymnal] = [
-    Hymnal(key: "english", title: "Christ In Song", language: "English"),
-    Hymnal(key: "tswana", title: "Keresete Mo Kopelong", language: "Tswana"),
-    Hymnal(key: "sotho", title: "Keresete Pineng", language: "Sotho"),
-    Hymnal(key: "chichewa", title: "Khristu Mu Nyimbo", language: "Chichewa"),
-    Hymnal(key: "tonga", title: "Kristu Mu Nyimbo", language: "Tonga"),
-    Hymnal(key: "shona", title: "Kristu MuNzwiyo", language: "Shona"),
-    Hymnal(key: "venda", title: "Ngosha YaDzingosha", language: "Venda"),
-    Hymnal(key: "swahili", title: "Nyimbo Za Kristo", language: "Swahili"),
-    Hymnal(key: "ndebele", title: "UKrestu Esihlabelelweni", language: "Ndebele/IsiZulu"),
-    Hymnal(key: "xhosa", title: "UKristu Engomeni", language: "IsiXhosa")
+let hymnalsData: [RemoteHymnal] = [
+    RemoteHymnal(key: "english", title: "Christ In Song", language: "English"),
+    RemoteHymnal(key: "tswana", title: "Keresete Mo Kopelong", language: "Tswana"),
+    RemoteHymnal(key: "sotho", title: "Keresete Pineng", language: "Sotho"),
+    RemoteHymnal(key: "chichewa", title: "Khristu Mu Nyimbo", language: "Chichewa"),
+    RemoteHymnal(key: "tonga", title: "Kristu Mu Nyimbo", language: "Tonga"),
+    RemoteHymnal(key: "shona", title: "Kristu MuNzwiyo", language: "Shona"),
+    RemoteHymnal(key: "venda", title: "Ngosha YaDzingosha", language: "Venda"),
+    RemoteHymnal(key: "swahili", title: "Nyimbo Za Kristo", language: "Swahili"),
+    RemoteHymnal(key: "ndebele", title: "UKrestu Esihlabelelweni", language: "Ndebele/IsiZulu"),
+    RemoteHymnal(key: "xhosa", title: "UKristu Engomeni", language: "IsiXhosa")
 ]
 
 func loadHymns(key: String) -> [Hymn] {
