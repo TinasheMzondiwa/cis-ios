@@ -42,7 +42,8 @@ struct HTMLText: UIViewRepresentable {
             body {
                 font: -apple-system-body;
                 color: var(--title-color);
-                padding: 1rem; font-size: 1.3rem;
+                padding: 1rem;
+                font-size: 1.2rem;
             }
         </style>
     </HEAD>

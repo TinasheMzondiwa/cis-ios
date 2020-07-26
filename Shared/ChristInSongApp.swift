@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct ChristInSongApp: App {
+
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var data = HymnalAppData()
     
     var body: some Scene {
