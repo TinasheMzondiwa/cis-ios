@@ -22,36 +22,49 @@ struct HymnsView: View {
         }
     }
     
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
+    @ViewBuilder
     var body: some View {
-        NavigationView {
-            VStack {
-                
-                SearchBarView(searchText: $searchText)
-                
-                List {
-                    
-                    ForEach(selectedData.hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
-                        
-                        NavigationLink(
-                            destination: HymnView(hymn: item),
-                            label: {
-                                Text(item.title)
-                            })
-                    }
-                }
-                .listStyle(SidebarListStyle())
-                
+        if (idiom == .phone) {
+            NavigationView {
+                content
             }
-            .navigationBarTitle(selectedData.hymnal.title)
-            .resignKeyboardOnDragGesture()
-            .navigationBarItems(trailing: hymnalsButton)
-            .sheet(isPresented: $selectedData.isShowingHymnals) {
-                HymnalsView()
-                    .environmentObject(self.selectedData)
-            }
+        } else {
+            #if os(iOS)
+                content
+            #else
+                content
+                    .frame(minWidth: 300, idealWidth: 500)
+            #endif
+        }
+    }
+    
+    var content: some View {
+        VStack {
             
-            Text("No hymn selected")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            SearchBarView(searchText: $searchText)
+            
+            List {
+                
+                ForEach(selectedData.hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
+                    
+                    NavigationLink(
+                        destination: HymnView(hymn: item),
+                        label: {
+                            Text(item.title)
+                        })
+                }
+            }
+            .listStyle(InsetGroupedListStyle())
+            
+        }
+        .navigationBarTitle(selectedData.hymnal.title)
+        .resignKeyboardOnDragGesture()
+        .navigationBarItems(trailing: hymnalsButton)
+        .sheet(isPresented: $selectedData.isShowingHymnals) {
+            HymnalsView()
+                .environmentObject(self.selectedData)
         }
     }
 }
