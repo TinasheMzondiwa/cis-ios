@@ -9,33 +9,37 @@ import SwiftUI
 
 struct HymnsView: View {
     
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
     @State private var searchText = ""
 
     @EnvironmentObject var selectedData: HymnalAppData
     
-    var hymnalsButton: some View {
+    private var hymnalsButton: some View {
         Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
-            Image(systemName: "book")
+            Image(systemName: "book.circle")
                 .imageScale(.large)
                 .accessibility(label: Text("Hymnals"))
                 .padding()
         }
     }
     
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-    
-    @ViewBuilder
     var body: some View {
         if (idiom == .phone) {
             NavigationView {
-                content
+                iOSContent
             }
         } else {
             #if os(iOS)
-                content
+                iOSContent
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)
+                    .toolbar(items: {
+                        ToolbarItem {
+                            hymnalsButton
+                        }
+                    })
             #endif
         }
     }
@@ -61,11 +65,19 @@ struct HymnsView: View {
         }
         .navigationBarTitle(selectedData.hymnal.title)
         .resignKeyboardOnDragGesture()
-        .navigationBarItems(trailing: hymnalsButton)
         .sheet(isPresented: $selectedData.isShowingHymnals) {
             HymnalsView()
                 .environmentObject(self.selectedData)
         }
+    }
+    
+    var iOSContent: some View {
+        content
+            .toolbar(items: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    hymnalsButton
+                }
+            })
     }
 }
 
