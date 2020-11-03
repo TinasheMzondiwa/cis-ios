@@ -73,11 +73,7 @@ struct HymnsView: View {
     
     var iOSContent: some View {
         content
-            .toolbar(items: {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    hymnalsButton
-                }
-            })
+            .navigationBarItems(trailing: hymnalsButton)
     }
 }
 
