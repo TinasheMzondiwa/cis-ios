@@ -9,13 +9,15 @@ import SwiftUI
 
 struct HymnsView: View {
     
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
     @State private var searchText = ""
 
     @EnvironmentObject var selectedData: HymnalAppData
     
-    var hymnalsButton: some View {
+    private var hymnalsButton: some View {
         Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
-            Image(systemName: "book")
+            Image(systemName: "book.circle")
                 .imageScale(.large)
                 .accessibility(label: Text("Hymnals"))
                 .padding()
@@ -23,36 +25,55 @@ struct HymnsView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                
-                SearchBarView(searchText: $searchText)
-                
-                List {
-                    
-                    ForEach(selectedData.hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
-                        
-                        NavigationLink(
-                            destination: HymnView(hymn: item),
-                            label: {
-                                Text(item.title)
-                            })
-                    }
-                }
-                .listStyle(SidebarListStyle())
-                
+        if (idiom == .phone) {
+            NavigationView {
+                iOSContent
             }
-            .navigationBarTitle(selectedData.hymnal.title)
-            .resignKeyboardOnDragGesture()
-            .navigationBarItems(trailing: hymnalsButton)
-            .sheet(isPresented: $selectedData.isShowingHymnals) {
-                HymnalsView()
-                    .environmentObject(self.selectedData)
-            }
-            
-            Text("No hymn selected")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } else {
+            #if os(iOS)
+                iOSContent
+            #else
+                content
+                    .frame(minWidth: 300, idealWidth: 500)
+                    .toolbar(items: {
+                        ToolbarItem {
+                            hymnalsButton
+                        }
+                    })
+            #endif
         }
+    }
+    
+    var content: some View {
+        VStack {
+            
+            SearchBarView(searchText: $searchText)
+            
+            List {
+                
+                ForEach(selectedData.hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
+                    
+                    NavigationLink(
+                        destination: HymnView(hymn: item),
+                        label: {
+                            Text(item.title)
+                        })
+                }
+            }
+            .listStyle(InsetGroupedListStyle())
+            
+        }
+        .navigationBarTitle(selectedData.hymnal.title)
+        .resignKeyboardOnDragGesture()
+        .sheet(isPresented: $selectedData.isShowingHymnals) {
+            HymnalsView()
+                .environmentObject(self.selectedData)
+        }
+    }
+    
+    var iOSContent: some View {
+        content
+            .navigationBarItems(trailing: hymnalsButton)
     }
 }
 

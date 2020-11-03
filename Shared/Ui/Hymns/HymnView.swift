@@ -24,7 +24,7 @@ struct HymnView: View {
 
 struct HymnView_Previews: PreviewProvider {
     static var previews: some View {
-        HTMLText(html: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvry  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.")
+        HymnView(hymn: Hymn(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvry  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))
             .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }

@@ -8,12 +8,30 @@
 import SwiftUI
 
 struct SupportView: View {
+    
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                
+        if (idiom == .phone) {
+            NavigationView {
+                content
+                    .navigationTitle("Support")
             }
-            .navigationBarTitle("Support")
+        } else {
+            #if os(iOS)
+                content
+                    .navigationTitle("Support")
+            #else
+                content
+                    .frame(minWidth: 300, idealWidth: 500)
+            #endif
+            
+        }
+    }
+    
+    var content: some View {
+        VStack {
+            
         }
     }
 }
