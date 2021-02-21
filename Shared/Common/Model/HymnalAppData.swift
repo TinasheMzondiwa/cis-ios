@@ -8,7 +8,6 @@
 import Foundation
 
 class HymnalAppData: ObservableObject {
-    @Published var hymnal: HymnalModel = HymnalModel(id: "english", title: "Christ In Song", language: "English", selected: true)
-    @Published var hymns: [Hymn] = loadHymns(key: "english")
+    @Published var hymnal: HymnalModel = HymnalModel(id: "english", title: "Christ In Song", language: "English")
     @Published var isShowingHymnals = false
 }

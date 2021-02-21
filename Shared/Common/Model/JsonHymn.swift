@@ -1,14 +1,13 @@
 //
-//  Hymn.swift
-//  ChristInSong
+//  JsonHymn.swift
+//  iOS
 //
-//  Created by Tinashe  on 2020/07/15.
+//  Created by Tinashe  on 2021/02/21.
 //
 
 import Foundation
-import CoreData
 
-struct Hymn: Hashable, Codable {
+struct JsonHymn: Hashable, Codable {
     var title: String = ""
     var number: Int = 0
     var content: String = ""

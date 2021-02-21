@@ -11,12 +11,20 @@ import SwiftUI
 struct ChristInSongApp: App {
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @Environment(\.scenePhase) var scenePhase
 
     var data = HymnalAppData()
     
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(data)
+            ContentView()
+                .environmentObject(data)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }.onChange(of: scenePhase) { _ in
+            persistenceController.save()
         }
     }
 }

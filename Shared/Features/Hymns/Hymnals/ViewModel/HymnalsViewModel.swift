@@ -18,6 +18,11 @@ class HymnalsViewModel: ObservableObject {
     
     func hymnalSelected(id: String) {
         hymnals = hymnals.map { HymnalModel(model: $0, selected: $0.id == id)}
+        let count = PersistenceController.shared.query(book: id)
+        if count < 1 {
+            let hymns = loadHymns(key: id)
+            PersistenceController.shared.saveHymns(book: id, models: hymns)
+        }
     }
     
     private func getData(id: String) -> [HymnalModel] {

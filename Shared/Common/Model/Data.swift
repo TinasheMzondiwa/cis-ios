@@ -7,7 +7,7 @@
 
 import Foundation
 
-func loadHymns(key: String) -> [Hymn] {
+func loadHymns(key: String) -> [JsonHymn] {
     return load(key + ".json")
 }
 

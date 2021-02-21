@@ -6,14 +6,25 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HymnsView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     @State private var searchText = ""
+    @State private var book = "english"
 
     @EnvironmentObject var selectedData: HymnalAppData
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(
+        entity: Hymn.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(key: "number", ascending: true)
+        ],
+        predicate: NSPredicate(format: "book == %@", "english") //TODO: Use selected book
+    ) var selectedHymns: FetchedResults<Hymn>
     
     private var hymnalsButton: some View {
         Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
@@ -44,19 +55,19 @@ struct HymnsView: View {
         }
     }
     
-    var content: some View {
+    private var content: some View {
         VStack {
             
             SearchBarView(searchText: $searchText)
             
             List {
                 
-                ForEach(selectedData.hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
-                    
+                ForEach(selectedHymns.filter({ searchText.isEmpty ? true : $0.content?.localizedCaseInsensitiveContains(searchText) ?? false }), id: \.self) { item in
+
                     NavigationLink(
-                        destination: HymnView(hymn: item),
+                        destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: selectedData.hymnal.title)),
                         label: {
-                            Text(item.title)
+                            Text(item.title ?? "")
                         })
                 }
             }
@@ -71,7 +82,7 @@ struct HymnsView: View {
         }
     }
     
-    var iOSContent: some View {
+    private var iOSContent: some View {
         content
             .navigationBarItems(trailing: hymnalsButton)
     }
