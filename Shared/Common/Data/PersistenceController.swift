@@ -8,7 +8,13 @@
 import Foundation
 import CoreData
 
-struct PersistenceController {
+protocol PersistenceControllerProtocol {
+    func save()
+    func query(book: String) -> Int
+    func saveHymns(book: String, models: [JsonHymn])
+}
+
+struct PersistenceController : PersistenceControllerProtocol {
     // A singleton for our entire app to use
     static let shared = PersistenceController()
     
@@ -43,6 +49,18 @@ struct PersistenceController {
             if let error = error {
                 fatalError("Error: \(error.localizedDescription)")
             }
+        }
+        
+        initData()
+    }
+    
+    // Load initial hymns
+    private func initData() {
+        let defBook = "english"
+        let count = query(book: defBook)
+        if count == 0 {
+            let hymns = loadHymns(key: defBook)
+            saveHymns(book: defBook, models: hymns)
         }
     }
     

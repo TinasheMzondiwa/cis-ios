@@ -10,6 +10,10 @@ import Combine
 
 class HymnalsViewModel: ObservableObject {
     
+    private(set) lazy var persistance: PersistenceControllerProtocol = {
+        PersistenceController.shared
+    }()
+    
     @Published var hymnals = [HymnalModel]()
     
     func onAppear(selectedId: String) {
@@ -18,10 +22,10 @@ class HymnalsViewModel: ObservableObject {
     
     func hymnalSelected(id: String) {
         hymnals = hymnals.map { HymnalModel(model: $0, selected: $0.id == id)}
-        let count = PersistenceController.shared.query(book: id)
-        if count < 1 {
+        let count = persistance.query(book: id)
+        if count == 0 {
             let hymns = loadHymns(key: id)
-            PersistenceController.shared.saveHymns(book: id, models: hymns)
+            persistance.saveHymns(book: id, models: hymns)
         }
     }
     

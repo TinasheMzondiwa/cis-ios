@@ -13,18 +13,8 @@ struct HymnsView: View {
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     @State private var searchText = ""
-    @State private var book = "english"
 
     @EnvironmentObject var selectedData: HymnalAppData
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
-    @FetchRequest(
-        entity: Hymn.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(key: "number", ascending: true)
-        ],
-        predicate: NSPredicate(format: "book == %@", "english") //TODO: Use selected book
-    ) var selectedHymns: FetchedResults<Hymn>
     
     private var hymnalsButton: some View {
         Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
@@ -59,17 +49,15 @@ struct HymnsView: View {
         VStack {
             
             SearchBarView(searchText: $searchText)
-            
-            List {
-                
-                ForEach(selectedHymns.filter({ searchText.isEmpty ? true : $0.content?.localizedCaseInsensitiveContains(searchText) ?? false }), id: \.self) { item in
 
-                    NavigationLink(
-                        destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: selectedData.hymnal.title)),
-                        label: {
-                            Text(item.title ?? "")
-                        })
-                }
+            FilteredList(sortKey: "number",
+                         filterKey: "book", filterValue: selectedData.hymnal.id,
+                         queryKey: "content", query: searchText) { (item: Hymn) in
+                NavigationLink(
+                    destination:  HymnView(hymn: HymnModel(hymn: item, bookTitle: selectedData.hymnal.title)),
+                    label: {
+                        Text(item.wrappedTitle)
+                    })
             }
             .listStyle(InsetGroupedListStyle())
             
