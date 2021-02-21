@@ -7,9 +7,6 @@ target 'iOS' do
 
   # Pods for iOS
   pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
 
 end
 
@@ -19,8 +16,5 @@ target 'macOS' do
 
   # Pods for macOS
   pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
 
 end
