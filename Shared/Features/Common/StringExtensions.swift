@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-extension String{
+extension String {
     
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return nil }

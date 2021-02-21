@@ -17,7 +17,7 @@ struct HymnsView: View {
     
     private var hymnalsButton: some View {
         Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
-            Image(systemName: "book.circle")
+            SFSymbol.bookCircle
                 .imageScale(.large)
                 .accessibility(label: Text("Hymnals"))
                 .padding()
@@ -44,21 +44,19 @@ struct HymnsView: View {
         }
     }
     
-    var content: some View {
+    private var content: some View {
         VStack {
             
             SearchBarView(searchText: $searchText)
-            
-            List {
-                
-                ForEach(selectedData.hymns.filter({ searchText.isEmpty ? true : $0.content.localizedCaseInsensitiveContains(searchText) }), id: \.self) { item in
-                    
-                    NavigationLink(
-                        destination: HymnView(hymn: item),
-                        label: {
-                            Text(item.title)
-                        })
-                }
+
+            FilteredList(sortKey: "number",
+                         filterKey: "book", filterValue: selectedData.hymnal.id,
+                         queryKey: "content", query: searchText) { (item: Hymn) in
+                NavigationLink(
+                    destination:  HymnView(hymn: HymnModel(hymn: item, bookTitle: selectedData.hymnal.title)),
+                    label: {
+                        Text(item.wrappedTitle)
+                    })
             }
             .listStyle(InsetGroupedListStyle())
             
@@ -71,7 +69,7 @@ struct HymnsView: View {
         }
     }
     
-    var iOSContent: some View {
+    private var iOSContent: some View {
         content
             .navigationBarItems(trailing: hymnalsButton)
     }

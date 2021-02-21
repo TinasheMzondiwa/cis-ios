@@ -11,26 +11,29 @@ struct HymnalView: View {
     
     private let COLORS: [String] = ["#4b207f", "#5e3929", "#7f264a", "#2f557f", "#e36520", "#448d21", "#3e8391"]
     
-    var hymnal: RemoteHymnal
+    var hymnal: HymnalModel
     var index: Int
-    var loading: Bool = true
     
     var body: some View {
-        PendingView(isRedacted: loading) {
-            HStack {
+        HStack {
+            ZStack {
                 RoundedRectangle(cornerRadius: 12)
                     .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(loading ? Color("loading") : Color.init(hex: COLORS[index % COLORS.count]))
+                    .foregroundColor(Color.init(hex: COLORS[index % COLORS.count]))
                 
-                VStack(alignment: .leading) {
-                    Text(hymnal.title ?? "")
-                        .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
-                    Text(hymnal.language ?? "")
-                        .font(.subheadline)
-                }.padding(.leading, 16)
-                
-                Spacer()
+                SFSymbol.checkmark
+                    .foregroundColor(.white)
+                    .opacity(hymnal.selected ? 1 : 0)
             }
+            
+            VStack(alignment: .leading) {
+                Text(hymnal.title)
+                    .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
+                Text(hymnal.language)
+                    .font(.subheadline)
+            }.padding(.leading, 16)
+            
+            Spacer()
         }
     }
     
@@ -45,10 +48,11 @@ struct HymnalView: View {
 
 struct HymnalView_Previews: PreviewProvider {
     static var previews: some View {
-        HymnalView(hymnal: RemoteHymnal(
-            key: "",
+        HymnalView(hymnal: HymnalModel(
+            id: "",
             title: "Christ In Song",
-            language: "English"
+            language: "English",
+            selected: true
         ), index: 1)
         .previewLayout(.fixed(width: 300, height: 70))
     }
