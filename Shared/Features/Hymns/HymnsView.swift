@@ -17,7 +17,7 @@ struct HymnsView: View {
     
     private var hymnalsButton: some View {
         Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
-            Image(systemName: "book.circle")
+            SFSymbol.bookCircle
                 .imageScale(.large)
                 .accessibility(label: Text("Hymnals"))
                 .padding()

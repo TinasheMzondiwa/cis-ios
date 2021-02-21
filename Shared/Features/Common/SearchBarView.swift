@@ -41,7 +41,7 @@ struct SearchBarView: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: "magnifyingglass")
+                SFSymbol.search
                 
                 // Search text field
                 ZStack (alignment: .leading) {
@@ -56,7 +56,7 @@ struct SearchBarView: View {
                 Button(action: {
                     self.searchText = ""
                 }) {
-                    Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
+                    SFSymbol.xmark.opacity(searchText == "" ? 0 : 1)
                 }
             }
             .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
