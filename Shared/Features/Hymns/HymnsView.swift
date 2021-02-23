@@ -10,13 +10,16 @@ import SwiftUI
 struct HymnsView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
+    @AppStorage(Contants.hymnalKey) var hymnal: String = Contants.defHymnal
+    @AppStorage(Contants.hymnalTitleKey) var hymnalTitle: String = Contants.defHymnalTitle
 
-    @ObservedObject var searchBar: SearchBar = SearchBar()
-
-    @EnvironmentObject var selectedData: HymnalAppData
+    @ObservedObject private var searchBar: SearchBar = SearchBar()
+    
+    @State private var showModal = false
     
     private var hymnalsButton: some View {
-        Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
+        Button(action: { self.showModal.toggle() }) {
             SFSymbol.bookCircle
                 .imageScale(.large)
                 .accessibility(label: Text("Switch Hymnals"))
@@ -47,10 +50,10 @@ struct HymnsView: View {
     
     private var content: some View {
         FilteredList(sortKey: "number",
-                     filterKey: "book", filterValue: selectedData.hymnal.id,
+                     filterKey: "book", filterValue: hymnal,
                      queryKey: "content", query: searchBar.text) { (item: Hymn) in
             NavigationLink(
-                destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: selectedData.hymnal.title)),
+                destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
                 label: {
                     Text(item.wrappedTitle)
                         .fontWeight(.medium)
@@ -58,12 +61,11 @@ struct HymnsView: View {
                 })
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationBarTitle(selectedData.hymnal.title)
+        .navigationBarTitle(hymnalTitle)
         .add(self.searchBar)
         .resignKeyboardOnDragGesture()
-        .sheet(isPresented: $selectedData.isShowingHymnals) {
-            HymnalsView()
-                .environmentObject(self.selectedData)
+        .sheet(isPresented: $showModal) {
+            HymnalsView { showModal.toggle() }
         }
     }
     
@@ -77,7 +79,6 @@ struct HymnsView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone SE", "iPhone XS Max", "iPad Pro (11-inch) (2nd generation)"], id: \.self) { deviceName in
             HymnsView()
-                .environmentObject(HymnalAppData())
                 .previewDevice(PreviewDevice(rawValue: deviceName))
         }
         

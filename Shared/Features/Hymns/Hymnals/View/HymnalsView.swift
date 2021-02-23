@@ -9,26 +9,31 @@ import SwiftUI
 
 struct HymnalsView: View {
     
-    @EnvironmentObject var selectedData: HymnalAppData
+    @AppStorage(Contants.hymnalKey) var hymnal: String = Contants.defHymnal
+    @AppStorage(Contants.hymnalTitleKey) var hymnalTitle: String = Contants.defHymnalTitle
     
     @ObservedObject var viewModel = HymnalsViewModel()
     
+    var onDismiss: () -> Void = {}
+    
     var body: some View {
         
-        List(self.viewModel.hymnals, id: \.id) {  hymnal in
+        List(self.viewModel.hymnals, id: \.id) {  item in
             Button(action: {
-                viewModel.hymnalSelected(id: hymnal.id)
+                viewModel.hymnalSelected(id: item.id)
                 
-                selectedData.hymnal = hymnal
-                selectedData.isShowingHymnals.toggle()
+                hymnal = item.id
+                hymnalTitle = item.title
+                
+                onDismiss()
             }, label: {
-                HymnalView(hymnal: hymnal,
-                           index: viewModel.hymnals.firstIndex(of: hymnal) ?? 0)
+                HymnalView(hymnal: item,
+                           index: viewModel.hymnals.firstIndex(of: item) ?? 0)
             })
         }
         .padding()
         .onAppear(perform: {
-            viewModel.onAppear(selectedId: selectedData.hymnal.id)
+            viewModel.onAppear(selectedId: hymnal)
         })
         
     }
@@ -37,7 +42,6 @@ struct HymnalsView: View {
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
         HymnalsView()
-            .environmentObject(HymnalAppData())
             .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
 }
