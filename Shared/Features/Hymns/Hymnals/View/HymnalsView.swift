@@ -18,20 +18,23 @@ struct HymnalsView: View {
     
     var body: some View {
         
-        List(self.viewModel.hymnals, id: \.id) {  item in
-            Button(action: {
-                viewModel.hymnalSelected(id: item.id)
-                
-                hymnal = item.id
-                hymnalTitle = item.title
-                
-                onDismiss()
-            }, label: {
-                HymnalView(hymnal: item,
-                           index: viewModel.hymnals.firstIndex(of: item) ?? 0)
-            })
+        NavigationView {
+            List(self.viewModel.hymnals, id: \.id) {  item in
+                Button(action: {
+                    viewModel.hymnalSelected(id: item.id)
+                    
+                    hymnal = item.id
+                    hymnalTitle = item.title
+                    
+                    onDismiss()
+                }, label: {
+                    HymnalView(hymnal: item,
+                               index: viewModel.hymnals.firstIndex(of: item) ?? 0)
+                })
+            }
+            .padding()
+            .navigationBarTitle(Text("Hymnals"))
         }
-        .padding()
         .onAppear(perform: {
             viewModel.onAppear(selectedId: hymnal)
         })

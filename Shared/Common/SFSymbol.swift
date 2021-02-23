@@ -13,6 +13,7 @@ enum SFSymbol: String, View {
     case close = "xmark"
     case checkmark = "checkmark"
     case search = "magnifyingglass"
+    case textPlus = "text.badge.plus"
     case xmark = "xmark.circle.fill"
     
     var body: Image {

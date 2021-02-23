@@ -60,7 +60,7 @@ struct HymnsView: View {
                         .lineLimit(1)
                 })
         }
-        .listStyle(InsetGroupedListStyle())
+       // .listStyle(InsetGroupedListStyle()) ?
         .navigationBarTitle(hymnalTitle)
         .add(self.searchBar)
         .resignKeyboardOnDragGesture()

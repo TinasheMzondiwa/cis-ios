@@ -16,7 +16,16 @@ struct HymnView: View {
     var body: some View {
         HTMLText(html: hymn.content)
             .navigationBarTitle(Text(idiom == .phone ? hymn.bookTitle : "" ), displayMode: .inline)
-        
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {  }) {
+                        SFSymbol.textPlus
+                            .imageScale(.large)
+                            .accessibility(label: Text("Add to Collection"))
+                            .padding()
+                    }
+                }
+            }
     }
 }
 
