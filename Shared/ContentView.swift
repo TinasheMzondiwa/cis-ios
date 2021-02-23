@@ -21,21 +21,25 @@ struct ContentView: View {
                 HymnsView()
                     .tabItem {
                         Label("Hymns", systemImage: "music.note.list")
+                            .accessibility(label: Text("Hymns"))
                     }
                     .tag(0)
                 CollectionsView()
                     .tabItem {
                         Label("Collections", systemImage: "doc.plaintext")
+                            .accessibility(label: Text("Collections"))
                     }
                     .tag(1)
                 SupportView()
                     .tabItem {
                         Label("Support", systemImage: "hand.raised")
+                            .accessibility(label: Text("Support"))
                     }
                     .tag(2)
                 InfoView()
                     .tabItem {
                         Label("Info", systemImage: "info.circle")
+                            .accessibility(label: Text("Info"))
                     }
                     .tag(3)
             }
@@ -43,7 +47,7 @@ struct ContentView: View {
             NavigationView {
                 #if os(iOS)
                     sidebarContent
-                        .navigationTitle("CIS")
+                        .navigationTitle("")
                 #else
                     sidebarContent
                         .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
@@ -81,5 +85,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(HymnalAppData())
     }
 }

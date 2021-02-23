@@ -110,6 +110,8 @@
 		08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */; };
 		08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */; };
 		08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB341525E2FE2500609D65 /* FilteredList.swift */; };
+		08CB343025E49CC100609D65 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB342F25E49CC100609D65 /* SearchBar.swift */; };
+		08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB343525E49CE700609D65 /* ViewControllerResolver.swift */; };
 		08F3E5B524CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B724CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
@@ -186,6 +188,8 @@
 		08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		08CB341525E2FE2500609D65 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
+		08CB342F25E49CC100609D65 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		08CB343525E49CE700609D65 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
 		08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		08F3E5B924CD636C00800D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,6 +355,7 @@
 		08927DA524BEB9360035972C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				08CB342E25E49CA200609D65 /* SearchBar */,
 				08927DA624BEB9540035972C /* SearchBarView.swift */,
 				08927EAD24C6A43E0035972C /* ActivityViewController.swift */,
 				08927EB224C6A98C0035972C /* MailView.swift */,
@@ -438,6 +443,15 @@
 				08CB33F225E2B7BE00609D65 /* PersistenceController.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		08CB342E25E49CA200609D65 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				08CB342F25E49CC100609D65 /* SearchBar.swift */,
+				08CB343525E49CE700609D65 /* ViewControllerResolver.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		1BDE369C9E3073CFD7BC1332 /* Frameworks */ = {
@@ -762,8 +776,10 @@
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
+				08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
+				08CB343025E49CC100609D65 /* SearchBar.swift in Sources */,
 				08927DA724BEB9540035972C /* SearchBarView.swift in Sources */,
 				08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,

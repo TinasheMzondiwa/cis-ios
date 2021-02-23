@@ -10,8 +10,8 @@ import SwiftUI
 struct HymnsView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-    
-    @State private var searchText = ""
+
+    @ObservedObject var searchBar: SearchBar = SearchBar()
 
     @EnvironmentObject var selectedData: HymnalAppData
     
@@ -19,7 +19,7 @@ struct HymnsView: View {
         Button(action: { self.selectedData.isShowingHymnals.toggle() }) {
             SFSymbol.bookCircle
                 .imageScale(.large)
-                .accessibility(label: Text("Hymnals"))
+                .accessibility(label: Text("Switch Hymnals"))
                 .padding()
         }
     }
@@ -29,6 +29,7 @@ struct HymnsView: View {
             NavigationView {
                 iOSContent
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         } else {
             #if os(iOS)
                 iOSContent
@@ -45,23 +46,20 @@ struct HymnsView: View {
     }
     
     private var content: some View {
-        VStack {
-            
-            SearchBarView(searchText: $searchText)
-
-            FilteredList(sortKey: "number",
-                         filterKey: "book", filterValue: selectedData.hymnal.id,
-                         queryKey: "content", query: searchText) { (item: Hymn) in
-                NavigationLink(
-                    destination:  HymnView(hymn: HymnModel(hymn: item, bookTitle: selectedData.hymnal.title)),
-                    label: {
-                        Text(item.wrappedTitle)
-                    })
-            }
-            .listStyle(InsetGroupedListStyle())
-            
+        FilteredList(sortKey: "number",
+                     filterKey: "book", filterValue: selectedData.hymnal.id,
+                     queryKey: "content", query: searchBar.text) { (item: Hymn) in
+            NavigationLink(
+                destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: selectedData.hymnal.title)),
+                label: {
+                    Text(item.wrappedTitle)
+                        .fontWeight(.medium)
+                        .lineLimit(1)
+                })
         }
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(selectedData.hymnal.title)
+        .add(self.searchBar)
         .resignKeyboardOnDragGesture()
         .sheet(isPresented: $selectedData.isShowingHymnals) {
             HymnalsView()
