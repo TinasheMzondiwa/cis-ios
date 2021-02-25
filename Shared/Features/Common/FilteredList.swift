@@ -22,11 +22,14 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
     }
     
     init(sortKey: String,
-         filterKey: String, filterValue: String,
+         filterKey: String? = nil, filterValue: String? = nil,
          queryKey: String? = nil, query: String? = nil,
          @ViewBuilder content: @escaping (T) -> Content) {
         
-        var predicateArr: [NSPredicate] = [NSPredicate(format: "\(filterKey) == %@", filterValue)]
+        var predicateArr: [NSPredicate] = []
+        if let key = filterKey, let value = filterValue {
+            predicateArr.append(NSPredicate(format: "\(key) == %@", value))
+        }
         if let query = query, !query.isEmpty, let key = queryKey {
             predicateArr.append( NSPredicate(format: "\(key) contains[c] %@", query))
         }

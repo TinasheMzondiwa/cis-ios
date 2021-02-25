@@ -11,14 +11,19 @@ struct AddToCollectionView: View {
     
     @State private var state: ViewState = .add
     
+    @State private var collectionTitle: String = ""
+    @State private var collectionAbout: String = ""
+    
+    private let viewModel = CollectionsViewModel()
+    
     var onDismiss: () -> Void = {}
     
     var body: some View {
         NavigationView {
             ZStack {
                 switch state {
-                case .add: Text("Show List")
-                case .create: Text("Show Two Input fields")
+                case .add: addContent
+                case .create: createContent
                 }
             }
             .navigationBarTitle(Text(state.title))
@@ -37,8 +42,10 @@ struct AddToCollectionView: View {
                         switch state {
                         case .add: state = .create
                         case .create:
-                            // save new collection
+                            viewModel.saveCollection(title: collectionTitle, about: collectionAbout)
                             state = .add
+                            collectionTitle = ""
+                            collectionAbout = ""
                         }
                     }, label: {
                         Label(
@@ -48,6 +55,26 @@ struct AddToCollectionView: View {
                     })
             )
         }
+    }
+    
+    private var addContent: some View {
+        FilteredList(sortKey: "created") { (item: Collection) in
+            Text(item.wrappedTitle)
+                .lineLimit(1)
+        }
+    }
+    
+    private var createContent: some View {
+        VStack {
+            VStack(alignment: .leading, spacing: 15) {
+                FocusTextField(text: $collectionTitle, hint: "Title")
+                FocusTextField(text: $collectionAbout, hint: "Description (Optional)")
+            }
+            .padding()
+            
+            Spacer()
+        }
+        .resignKeyboardOnDragGesture()
     }
 }
 

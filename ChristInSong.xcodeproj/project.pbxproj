@@ -13,6 +13,11 @@
 		0844564124CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
 		0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453025E77B41003AE75A /* AddToCollectionView.swift */; };
 		0846453725E77E18003AE75A /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453625E77E18003AE75A /* ViewState.swift */; };
+		0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */; };
+		0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */; };
+		0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454425E7913A003AE75A /* RoundedCorner.swift */; };
+		0846454F25E79490003AE75A /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454E25E79490003AE75A /* FocusTextField.swift */; };
+		0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846455525E798A7003AE75A /* CollectionsViewModel.swift */; };
 		08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA324DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
@@ -144,6 +149,11 @@
 		0846450025E773F7003AE75A /* ChristInSong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChristInSong.entitlements; sourceTree = "<group>"; };
 		0846453025E77B41003AE75A /* AddToCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCollectionView.swift; sourceTree = "<group>"; };
 		0846453625E77E18003AE75A /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0846454425E7913A003AE75A /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		0846454E25E79490003AE75A /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
+		0846455525E798A7003AE75A /* CollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewModel.swift; sourceTree = "<group>"; };
 		08624FA024DBA67E00AF2904 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -246,6 +256,14 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
+		0846455425E79881003AE75A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0846455525E798A7003AE75A /* CollectionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		086C93F524BE93BC008AFBE5 = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +353,7 @@
 		08927D9524BEAAA60035972C /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				0846455425E79881003AE75A /* ViewModel */,
 				0846452F25E77B16003AE75A /* Add */,
 				08927D9624BEAAD00035972C /* CollectionsView.swift */,
 			);
@@ -376,6 +395,8 @@
 				0844563D24CD793D00AE352F /* PendingView.swift */,
 				08624FA024DBA67E00AF2904 /* StringExtensions.swift */,
 				08CB341525E2FE2500609D65 /* FilteredList.swift */,
+				0846454425E7913A003AE75A /* RoundedCorner.swift */,
+				0846454E25E79490003AE75A /* FocusTextField.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -451,6 +472,8 @@
 		08CB33EA25E22D9E00609D65 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */,
+				0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */,
 				08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */,
 				08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */,
 				08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */,
@@ -759,13 +782,16 @@
 				08CB33F325E2B7BE00609D65 /* PersistenceController.swift in Sources */,
 				08927D9B24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08CB340425E2D1C400609D65 /* JsonHymn.swift in Sources */,
+				0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */,
 				08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08CB346625E4C5DE00609D65 /* Constants.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
 				08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */,
 				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
+				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */,
+				0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
 				08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */,
 				08927E4024C3F8230035972C /* HymnView.swift in Sources */,
@@ -780,7 +806,9 @@
 				08CB343025E49CC100609D65 /* SearchBar.swift in Sources */,
 				08927DA724BEB9540035972C /* SearchBarView.swift in Sources */,
 				08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */,
+				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
+				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
 				08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				08F3E5BA24CD636C00800D3B /* AppDelegate.swift in Sources */,

@@ -12,9 +12,11 @@ protocol PersistenceControllerProtocol {
     func save()
     func query(book: String) -> Int
     func saveHymns(book: String, models: [JsonHymn])
+    func saveCollection(title: String, about: String)
 }
 
 struct PersistenceController : PersistenceControllerProtocol {
+    
     // A singleton for our entire app to use
     static let shared = PersistenceController()
     
@@ -104,6 +106,18 @@ struct PersistenceController : PersistenceControllerProtocol {
             hymn.number = Int16(model.number)
             hymn.content = model.content
         }
+        
+        save()
+    }
+    
+    func saveCollection(title: String, about: String) {
+        let context = container.viewContext
+        
+        let collection = Collection(context: context)
+        collection.id = UUID()
+        collection.title = title
+        collection.about = about
+        collection.created = Date()
         
         save()
     }
