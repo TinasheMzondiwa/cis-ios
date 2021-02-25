@@ -11,6 +11,8 @@
 		0844563F24CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
 		0844564024CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
 		0844564124CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
+		0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453025E77B41003AE75A /* AddToCollectionView.swift */; };
+		0846453725E77E18003AE75A /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453625E77E18003AE75A /* ViewState.swift */; };
 		08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA324DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
@@ -139,6 +141,9 @@
 
 /* Begin PBXFileReference section */
 		0844563D24CD793D00AE352F /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
+		0846450025E773F7003AE75A /* ChristInSong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChristInSong.entitlements; sourceTree = "<group>"; };
+		0846453025E77B41003AE75A /* AddToCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCollectionView.swift; sourceTree = "<group>"; };
+		0846453625E77E18003AE75A /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		08624FA024DBA67E00AF2904 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -232,6 +237,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0846452F25E77B16003AE75A /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				0846453025E77B41003AE75A /* AddToCollectionView.swift */,
+				0846453625E77E18003AE75A /* ViewState.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 		086C93F524BE93BC008AFBE5 = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +288,7 @@
 		086C940424BE93BD008AFBE5 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0846450025E773F7003AE75A /* ChristInSong.entitlements */,
 				08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */,
 				086C940524BE93BD008AFBE5 /* Info.plist */,
 			);
@@ -320,6 +335,7 @@
 		08927D9524BEAAA60035972C /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				0846452F25E77B16003AE75A /* Add */,
 				08927D9624BEAAD00035972C /* CollectionsView.swift */,
 			);
 			path = Collections;
@@ -483,7 +499,7 @@
 				086C93FE24BE93BD008AFBE5 /* Sources */,
 				086C93FF24BE93BD008AFBE5 /* Frameworks */,
 				086C940024BE93BD008AFBE5 /* Resources */,
-				FBF54D19F68BCE36EAE06F81 /* [CP] Embed Pods Frameworks */,
+				70677C2F2A025D270EA4DEF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -502,7 +518,6 @@
 				086C940624BE93BD008AFBE5 /* Sources */,
 				086C940724BE93BD008AFBE5 /* Frameworks */,
 				086C940824BE93BD008AFBE5 /* Resources */,
-				282C1F3AF0C569707D578445 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -673,23 +688,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		282C1F3AF0C569707D578445 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-macOS/Pods-macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-macOS/Pods-macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-macOS/Pods-macOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		409968AA691E3940D402E3BC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,6 +708,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70677C2F2A025D270EA4DEF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE5EAAFB3E17280B4D3E3A22 /* [CP] Check Pods Manifest.lock */ = {
@@ -734,23 +749,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FBF54D19F68BCE36EAE06F81 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -771,10 +769,12 @@
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
 				08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */,
 				08927E4024C3F8230035972C /* HymnView.swift in Sources */,
+				0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */,
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */,
+				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
 				08CB343025E49CC100609D65 /* SearchBar.swift in Sources */,
@@ -978,6 +978,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
@@ -992,6 +993,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1003,6 +1005,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
@@ -1017,6 +1020,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

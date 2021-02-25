@@ -58,7 +58,7 @@ struct SearchBarView: View {
                         self.searchText = ""
                     }
                 }) {
-                    SFSymbol.xmark.opacity(searchText == "" ? 0 : 1)
+                    SFSymbol.xmarkFill.opacity(searchText == "" ? 0 : 1)
                 }
             }
             .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))

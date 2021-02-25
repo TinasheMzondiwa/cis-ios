@@ -15,6 +15,6 @@ target 'macOS' do
   use_frameworks!
 
   # Pods for macOS
-  pod 'Firebase/Analytics'
+  # pod 'Firebase/Analytics'
 
 end

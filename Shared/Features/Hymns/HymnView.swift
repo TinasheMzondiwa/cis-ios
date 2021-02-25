@@ -12,19 +12,24 @@ struct HymnView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
+    @State private var showCollectionModal = false
+    
     var hymn: HymnModel
     var body: some View {
         HTMLText(html: hymn.content)
             .navigationBarTitle(Text(idiom == .phone ? hymn.bookTitle : "" ), displayMode: .inline)
             .toolbar {
                 ToolbarItem {
-                    Button(action: {  }) {
+                    Button(action: { showCollectionModal.toggle() }) {
                         SFSymbol.textPlus
                             .imageScale(.large)
                             .accessibility(label: Text("Add to Collection"))
                             .padding()
                     }
                 }
+            }
+            .sheet(isPresented: $showCollectionModal) {
+                AddToCollectionView { showCollectionModal.toggle() }
             }
     }
 }

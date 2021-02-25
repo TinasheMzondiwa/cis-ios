@@ -9,12 +9,15 @@ import Foundation
 import SwiftUI
 
 enum SFSymbol: String, View {
+    case arrowBackward = "arrow.backward"
     case bookCircle = "book.circle"
+    case chevronDown = "chevron.down"
     case close = "xmark"
     case checkmark = "checkmark"
+    case plus = "plus"
     case search = "magnifyingglass"
     case textPlus = "text.badge.plus"
-    case xmark = "xmark.circle.fill"
+    case xmarkFill = "xmark.circle.fill"
     
     var body: Image {
         Image(systemName: rawValue)
