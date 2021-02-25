@@ -29,7 +29,9 @@ struct HymnView: View {
                 }
             }
             .sheet(isPresented: $showCollectionModal) {
-                AddToCollectionView { showCollectionModal.toggle() }
+                AddToCollectionView(hymnId: hymn.id, onDismiss: {
+                    showCollectionModal.toggle()
+                })
             }
     }
 }

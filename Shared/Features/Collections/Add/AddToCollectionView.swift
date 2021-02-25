@@ -16,7 +16,8 @@ struct AddToCollectionView: View {
     
     private let viewModel = CollectionsViewModel()
     
-    var onDismiss: () -> Void = {}
+    let hymnId: UUID
+    let onDismiss: () -> Void
     
     var body: some View {
         NavigationView {
@@ -54,13 +55,28 @@ struct AddToCollectionView: View {
                         )
                     })
             )
+            .onAppear {
+                viewModel.onAppear(hymnId: hymnId)
+            }
         }
     }
     
     private var addContent: some View {
         FilteredList(sortKey: "created") { (item: Collection) in
-            Text(item.wrappedTitle)
-                .lineLimit(1)
+            Button(action: {
+                viewModel.toggleCollection(collection: item)
+            }, label: {
+                HStack {
+                    Text(item.wrappedTitle)
+                        .lineLimit(1)
+                    Spacer()
+                    
+                    if item.containsHymn(id: hymnId) {
+                        SFSymbol.checkmark
+                            .foregroundColor(Color.accentColor)
+                    }
+                }
+            })
         }
     }
     
@@ -80,6 +96,6 @@ struct AddToCollectionView: View {
 
 struct AddToCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddToCollectionView()
+        AddToCollectionView(hymnId: UUID(), onDismiss: {})
     }
 }
