@@ -15,6 +15,7 @@ protocol PersistenceControllerProtocol {
     func saveHymns(book: String, models: [JsonHymn])
     func saveCollection(title: String, about: String)
     func queryCollection(id: UUID) -> Collection?
+    func queryCollections() -> Int
 }
 
 struct PersistenceController : PersistenceControllerProtocol {
@@ -157,6 +158,21 @@ struct PersistenceController : PersistenceControllerProtocol {
             return nil
         } catch {
             return nil
+        }
+    }
+    
+    func queryCollections() -> Int {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Collection")
+        request.fetchLimit = 1
+        request.returnsObjectsAsFaults = false
+        request.fetchBatchSize = 1
+        
+        do {
+            let count = try context.count(for: request)
+            return count
+        } catch {
+            return 0
         }
     }
 }

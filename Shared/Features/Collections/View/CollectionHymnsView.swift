@@ -14,19 +14,29 @@ struct CollectionHymnsView: View {
     let collectionId: UUID
     
     var body: some View {
-        List(viewModel.collectionHymns, id: \.self) { item in
-            NavigationLink(
-                destination: HymnView(hymn: item),
-                label: {
-                    Text(item.title)
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.primary)
-                        .lineLimit(1)
-                })
-        }
+        listContent
         .navigationTitle(viewModel.collectionTitle)
         .onAppear {
             viewModel.loadCollectionHymns(collectionId: collectionId)
+        }
+    }
+    
+    private var listContent: some View {
+        VStack {
+            if viewModel.collectionHymns.isEmpty {
+                EmptyCollectionsView(caption: "Add hymns to your collection")
+            } else {
+                List(viewModel.collectionHymns, id: \.self) { item in
+                    NavigationLink(
+                        destination: HymnView(hymn: item),
+                        label: {
+                            Text(item.title)
+                                .font(.system(.headline, design: .rounded))
+                                .foregroundColor(.primary)
+                                .lineLimit(1)
+                        })
+                }
+            }
         }
     }
 }

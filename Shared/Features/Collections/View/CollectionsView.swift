@@ -10,16 +10,21 @@ import SwiftUI
 struct CollectionsView: View {
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
+    @ObservedObject private var viewModel = CollectionsViewModel()
+    
+    @State private var navTitle: String = "Collections"
+    
     var body: some View {
         if (idiom == .phone) {
             NavigationView {
                 content
-                    .navigationTitle("Collections")
+                    .navigationTitle(navTitle)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         } else {
             #if os(iOS)
                 content
-                    .navigationTitle("Collections")
+                    .navigationTitle(navTitle)
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)
@@ -29,13 +34,21 @@ struct CollectionsView: View {
     }
     
     var content: some View {
-        FilteredList(sortKey: "title") { (item: Collection) in
-           // let added = item.containsHymn(id: hymnId)
-            NavigationLink(
-                destination: CollectionHymnsView(collectionId: item.id!),
-                label: {
-                    CollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
-                })
+        ZStack {
+            if viewModel.emptyCollections {
+                EmptyCollectionsView(caption: "Organise your Collection of Hymns here")
+            } else {
+                FilteredList(sortKey: "title") { (item: Collection) in
+                    NavigationLink(
+                        destination: CollectionHymnsView(collectionId: item.id!),
+                        label: {
+                            CollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
+                        })
+                }
+            }
+        }
+        .onAppear {
+            viewModel.subscribeToCollections()
         }
     }
 }

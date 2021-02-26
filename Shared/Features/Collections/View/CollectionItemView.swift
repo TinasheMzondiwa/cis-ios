@@ -49,12 +49,9 @@ struct CollectionItemView: View {
             
             Spacer()
             
-            if hymns > 0 {
-                Label(String(hymns), systemImage: "music.note")
-                    .labelStyle(CenteredLabelStyle())
-                    .foregroundColor(Color.accentColor)
-                    .font(.system(.subheadline, design: .rounded))
-            }
+            Text(String(hymns))
+                .foregroundColor(.secondary)
+                .font(.system(.subheadline, design: .rounded))
         }
     }
 }

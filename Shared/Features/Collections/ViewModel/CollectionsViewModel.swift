@@ -16,6 +16,7 @@ class CollectionsViewModel: ObservableObject {
     
     @Published var collectionHymns = [HymnModel]()
     @Published var collectionTitle: String = ""
+    @Published var emptyCollections: Bool = false
     
     func loadCollectionHymns(collectionId: UUID) {
         if let collection = persistance.queryCollection(id: collectionId) {
@@ -32,6 +33,7 @@ class CollectionsViewModel: ObservableObject {
         }
         
         persistance.saveCollection(title: title, about: about)
+        emptyCollections = persistance.queryCollections() == 0
     }
     
     func toggleCollection(hymnId: UUID, collection: Collection) {
@@ -46,5 +48,9 @@ class CollectionsViewModel: ObservableObject {
         }
         
         persistance.save()
+    }
+    
+    func subscribeToCollections() {
+        emptyCollections = persistance.queryCollections() == 0
     }
 }

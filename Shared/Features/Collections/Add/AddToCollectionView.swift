@@ -14,7 +14,7 @@ struct AddToCollectionView: View {
     @State private var collectionTitle: String = ""
     @State private var collectionAbout: String = ""
     
-    private let viewModel = CollectionsViewModel()
+    @ObservedObject private var viewModel = CollectionsViewModel()
     
     let hymnId: UUID
     let onDismiss: () -> Void
@@ -60,20 +60,29 @@ struct AddToCollectionView: View {
                     })
             )
         }
+        .onAppear {
+            viewModel.subscribeToCollections()
+        }
     }
     
     private var addContent: some View {
-        FilteredList(sortKey: "title") { (item: Collection) in
-            let added = item.containsHymn(id: hymnId)
-            Button(action: {
-                withAnimation {
-                    viewModel.toggleCollection(hymnId: hymnId, collection: item)
+        VStack {
+            if viewModel.emptyCollections {
+                EmptyCollectionsView(caption: "Create your first Hymn collection")
+            } else {
+                FilteredList(sortKey: "title") { (item: Collection) in
+                    let added = item.containsHymn(id: hymnId)
+                    Button(action: {
+                        withAnimation {
+                            viewModel.toggleCollection(hymnId: hymnId, collection: item)
+                        }
+                    }, label: {
+                        CollectionRowView(title: item.wrappedTitle, description: item.wrappedDescription, selected: added)
+                    })
                 }
-            }, label: {
-                CollectionRowView(title: item.wrappedTitle, description: item.wrappedDescription, selected: added)
-            })
+                .transition(.moveAndFade)
+            }
         }
-        .transition(.moveAndFade)
     }
     
     private var createContent: some View {
