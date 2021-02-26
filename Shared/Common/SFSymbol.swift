@@ -14,6 +14,7 @@ enum SFSymbol: String, View {
     case chevronDown = "chevron.down"
     case close = "xmark"
     case checkmark = "checkmark"
+    case musicNote = "music.note"
     case plus = "plus"
     case search = "magnifyingglass"
     case textPlus = "text.badge.plus"

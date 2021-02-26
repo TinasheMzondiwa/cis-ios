@@ -27,23 +27,22 @@ struct CollectionRowView: View {
             }
             VStack(alignment: .leading) {
                 Text(title)
-                    .font(selected ? .headline : .body)
+                    .font(.system(selected ? .headline : .body, design: .rounded))
+                    .foregroundColor(.primary)
                     .lineSpacing(4)
                     .animation(.none)
                 if !description.isEmpty {
                     Text(description)
-                        .font(.footnote)
+                        .font(.system(.footnote, design: .rounded))
+                        .foregroundColor(.secondary)
                         .lineSpacing(4)
                         .lineLimit(1)
-                        //.padding([.top, .bottom])
                 }
             }
             
             Spacer()
         }
         .padding([.top, .bottom], 8)
-       // .border(selected ? Color.primary : Color.secondary, width: 2)
-       // .cornerRadius(12)
         .animation(.easeIn)
     }
 }

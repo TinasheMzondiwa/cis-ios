@@ -14,6 +14,18 @@ class CollectionsViewModel: ObservableObject {
         PersistenceController.shared
     }()
     
+    @Published var collectionHymns = [HymnModel]()
+    @Published var collectionTitle: String = ""
+    
+    func loadCollectionHymns(collectionId: UUID) {
+        if let collection = persistance.queryCollection(id: collectionId) {
+            collectionHymns = collection.allHymns.map {
+                HymnModel(hymn: $0, bookTitle: collection.wrappedTitle)
+            }
+            collectionTitle = collection.wrappedTitle
+        }
+    }
+    
     func saveCollection(title: String, about: String) {
         if title.isEmpty {
             return

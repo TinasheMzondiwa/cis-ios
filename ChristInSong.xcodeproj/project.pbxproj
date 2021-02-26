@@ -105,6 +105,8 @@
 		08927EB524C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
 		08927EB624C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
 		08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */; };
+		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
+		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
 		08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */; };
 		08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33AE25E2122500609D65 /* HymnalModel.swift */; };
 		08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33B925E21AB600609D65 /* SFSymbol.swift */; };
@@ -193,6 +195,8 @@
 		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		08927EB224C6A98C0035972C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowView.swift; sourceTree = "<group>"; };
+		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
+		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsViewModel.swift; sourceTree = "<group>"; };
 		08CB33AE25E2122500609D65 /* HymnalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalModel.swift; sourceTree = "<group>"; };
 		08CB33B925E21AB600609D65 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
@@ -356,9 +360,9 @@
 		08927D9524BEAAA60035972C /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				08AB2E5225E8A50C0086DA32 /* View */,
 				0846455425E79881003AE75A /* ViewModel */,
 				0846452F25E77B16003AE75A /* Add */,
-				08927D9624BEAAD00035972C /* CollectionsView.swift */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -391,12 +395,12 @@
 		08927DA524BEB9360035972C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				08AB2E5D25E8AE620086DA32 /* Extensions */,
 				08CB342E25E49CA200609D65 /* SearchBar */,
 				08927DA624BEB9540035972C /* SearchBarView.swift */,
 				08927EAD24C6A43E0035972C /* ActivityViewController.swift */,
 				08927EB224C6A98C0035972C /* MailView.swift */,
 				0844563D24CD793D00AE352F /* PendingView.swift */,
-				08624FA024DBA67E00AF2904 /* StringExtensions.swift */,
 				08CB341525E2FE2500609D65 /* FilteredList.swift */,
 				0846454425E7913A003AE75A /* RoundedCorner.swift */,
 				0846454E25E79490003AE75A /* FocusTextField.swift */,
@@ -442,6 +446,24 @@
 				08927E3A24C3E7F90035972C /* english.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		08AB2E5225E8A50C0086DA32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08927D9624BEAAD00035972C /* CollectionsView.swift */,
+				08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */,
+				08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08AB2E5D25E8AE620086DA32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				08624FA024DBA67E00AF2904 /* StringExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		08CB33A125E2112200609D65 /* ViewModel */ = {
@@ -793,6 +815,7 @@
 				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
+				08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */,
 				0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
@@ -801,6 +824,7 @@
 				0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */,
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
+				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */,
 				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
@@ -1012,7 +1036,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1039,7 +1063,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

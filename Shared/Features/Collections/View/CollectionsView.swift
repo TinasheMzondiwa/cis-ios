@@ -29,8 +29,13 @@ struct CollectionsView: View {
     }
     
     var content: some View {
-        VStack {
-            
+        FilteredList(sortKey: "title") { (item: Collection) in
+           // let added = item.containsHymn(id: hymnId)
+            NavigationLink(
+                destination: CollectionHymnsView(collectionId: item.id!),
+                label: {
+                    CollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
+                })
         }
     }
 }

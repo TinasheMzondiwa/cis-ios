@@ -56,11 +56,11 @@ struct HymnsView: View {
                 destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
                 label: {
                     Text(item.wrappedTitle)
-                        .fontWeight(.medium)
+                        .font(.system(.headline, design: .rounded))
+                        .foregroundColor(.primary)
                         .lineLimit(1)
                 })
         }
-       // .listStyle(InsetGroupedListStyle()) ?
         .navigationBarTitle(hymnalTitle)
         .add(self.searchBar)
         .resignKeyboardOnDragGesture()

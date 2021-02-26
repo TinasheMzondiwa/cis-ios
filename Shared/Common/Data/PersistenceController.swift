@@ -14,6 +14,7 @@ protocol PersistenceControllerProtocol {
     func queryHymn(id: UUID) -> Hymn?
     func saveHymns(book: String, models: [JsonHymn])
     func saveCollection(title: String, about: String)
+    func queryCollection(id: UUID) -> Collection?
 }
 
 struct PersistenceController : PersistenceControllerProtocol {
@@ -139,5 +140,23 @@ struct PersistenceController : PersistenceControllerProtocol {
         collection.created = Date()
         
         save()
+    }
+    
+    func queryCollection(id: UUID) -> Collection? {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Collection")
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        do {
+            let results =  try context.fetch(request)
+            if !results.isEmpty, let collection = results.first as? Collection {
+                return collection
+            }
+            return nil
+        } catch {
+            return nil
+        }
     }
 }
