@@ -31,22 +31,26 @@ struct AddToCollectionView: View {
             .navigationBarItems(
                 leading:
                     Button(action: {
-                        switch state {
-                        case .add: onDismiss()
-                        case .create: state = .add
+                        withAnimation {
+                            switch state {
+                            case .add: onDismiss()
+                            case .create: state = .add
+                            }
                         }
                     }, label: {
                         state.navigation
                     }),
                 trailing:
                     Button(action: {
-                        switch state {
-                        case .add: state = .create
-                        case .create:
-                            viewModel.saveCollection(title: collectionTitle, about: collectionAbout)
-                            state = .add
-                            collectionTitle = ""
-                            collectionAbout = ""
+                        withAnimation {
+                            switch state {
+                            case .add: state = .create
+                            case .create:
+                                viewModel.saveCollection(title: collectionTitle, about: collectionAbout)
+                                state = .add
+                                collectionTitle = ""
+                                collectionAbout = ""
+                            }
                         }
                     }, label: {
                         Label(
@@ -55,29 +59,21 @@ struct AddToCollectionView: View {
                         )
                     })
             )
-            .onAppear {
-                viewModel.onAppear(hymnId: hymnId)
-            }
         }
     }
     
     private var addContent: some View {
-        FilteredList(sortKey: "created") { (item: Collection) in
+        FilteredList(sortKey: "title") { (item: Collection) in
+            let added = item.containsHymn(id: hymnId)
             Button(action: {
-                viewModel.toggleCollection(collection: item)
-            }, label: {
-                HStack {
-                    Text(item.wrappedTitle)
-                        .lineLimit(1)
-                    Spacer()
-                    
-                    if item.containsHymn(id: hymnId) {
-                        SFSymbol.checkmark
-                            .foregroundColor(Color.accentColor)
-                    }
+                withAnimation {
+                    viewModel.toggleCollection(hymnId: hymnId, collection: item)
                 }
+            }, label: {
+                CollectionRowView(title: item.wrappedTitle, description: item.wrappedDescription, selected: added)
             })
         }
+        .transition(.moveAndFade)
     }
     
     private var createContent: some View {
@@ -91,6 +87,17 @@ struct AddToCollectionView: View {
             Spacer()
         }
         .resignKeyboardOnDragGesture()
+        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+    }
+}
+
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        let insertion = AnyTransition.move(edge: .leading)
+            .combined(with: .opacity)
+        let removal = AnyTransition.move(edge: .leading)
+            .combined(with: .opacity)
+        return .asymmetric(insertion: insertion, removal: removal)
     }
 }
 

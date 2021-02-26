@@ -32,6 +32,7 @@ struct HymnView: View {
                 AddToCollectionView(hymnId: hymn.id, onDismiss: {
                     showCollectionModal.toggle()
                 })
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             }
     }
 }

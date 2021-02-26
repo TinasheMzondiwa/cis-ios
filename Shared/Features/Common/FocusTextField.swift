@@ -16,10 +16,12 @@ struct FocusTextField: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TextField(hint, text: $text, onEditingChanged: { (editingChanged) in
-                if editingChanged {
-                    enabled = true
-                } else {
-                    enabled = false
+                withAnimation {
+                    if editingChanged {
+                        enabled = true
+                    } else {
+                        enabled = false
+                    }
                 }
             })
             .lineLimit(1)
@@ -33,6 +35,7 @@ struct FocusTextField: View {
                 .cornerRadius(0)
                 .opacity(enabled ? 1 : 0)
         }
+        .shadow(radius: enabled ? 4 : 0)
     }
 }
 
