@@ -15,20 +15,12 @@ struct CollectionRowView: View {
     
     var body: some View {
         HStack {
-            ZStack {
-                Circle()
-                    .fill(selected ? Color.accentColor : Color(.secondarySystemBackground))
-                    .frame(width: 30, height: 30)
-                
-                if selected {
-                    SFSymbol.checkmark
-                        .foregroundColor(.white)
-                }
-            }
+            CheckBoxView(checked: .constant(selected))
+            
             VStack(alignment: .leading) {
                 Text(title)
-                    .font(.system(selected ? .headline : .body, design: .rounded))
-                    .foregroundColor(.primary)
+                    .font(.system(.headline, design: .rounded))
+                    .foregroundColor(selected ? .primary : Color.primary.opacity(0.7))
                     .lineSpacing(4)
                     .animation(.none)
                 if !description.isEmpty {
@@ -39,6 +31,7 @@ struct CollectionRowView: View {
                         .lineLimit(1)
                 }
             }
+            .padding([.leading], 8)
             
             Spacer()
         }

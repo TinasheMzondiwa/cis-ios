@@ -19,21 +19,26 @@ struct HymnalsView: View {
     var body: some View {
         
         NavigationView {
-            List(self.viewModel.hymnals, id: \.id) {  item in
-                Button(action: {
-                    viewModel.hymnalSelected(id: item.id)
+            ScrollView {
+                ForEach(self.viewModel.hymnals, id: \.id) {  item in
                     
-                    hymnal = item.id
-                    hymnalTitle = item.title
-                    
-                    onDismiss()
-                }, label: {
                     HymnalView(hymnal: item,
                                index: viewModel.hymnals.firstIndex(of: item) ?? 0)
-                })
+                        .onTapGesture {
+                            viewModel.hymnalSelected(id: item.id)
+                            
+                            hymnal = item.id
+                            hymnalTitle = item.title
+                            
+                            onDismiss()
+                        }
+                    
+                    Divider()
+                        .padding([.leading], 70)
+                }
             }
             .padding()
-            .navigationBarTitle(Text("Hymnals"))
+            .navigationBarTitle("Hymnals")
         }
         .onAppear(perform: {
             viewModel.onAppear(selectedId: hymnal)

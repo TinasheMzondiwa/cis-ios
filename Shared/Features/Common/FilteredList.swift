@@ -16,8 +16,8 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
     let content: (T) -> Content
     
     var body: some View {
-        List(fetchRequest.wrappedValue, id: \.self) { singer in
-            self.content(singer)
+        List(fetchRequest.wrappedValue, id: \.self) { item in
+            self.content(item)
         }
     }
     

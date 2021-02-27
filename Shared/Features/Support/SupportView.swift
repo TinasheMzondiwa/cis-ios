@@ -11,16 +11,18 @@ struct SupportView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
+    private var navTitle = "Support"
+    
     var body: some View {
         if (idiom == .phone) {
             NavigationView {
                 content
-                    .navigationTitle("Support")
+                    .navigationTitle(navTitle)
             }
         } else {
             #if os(iOS)
                 content
-                    .navigationTitle("Support")
+                    .navigationTitle(navTitle)
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)
@@ -31,7 +33,10 @@ struct SupportView: View {
     
     var content: some View {
         VStack {
-            
+            Image("SupportImg")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
         }
     }
 }

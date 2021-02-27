@@ -16,17 +16,19 @@ struct InfoView: View {
     @State private var showingEmailSheet = false
     @State var result: Result<MFMailComposeResult, Error>? = nil
     
+    private var navTitle = "Info"
+    
     @ViewBuilder
     var body: some View {
         if (idiom == .phone) {
             NavigationView {
                 content
-                    .navigationTitle("Info")
+                    .navigationTitle(navTitle)
             }
         } else {
             #if os(iOS)
                 content
-                    .navigationTitle("Info")
+                    .navigationTitle(navTitle)
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)
@@ -36,11 +38,11 @@ struct InfoView: View {
     }
     
     var content: some View {
-        VStack {
+        List {
+           // Section(header:  AppInfoView()) {
             
-            List {
-                AppInfoView()
-                
+            AppInfoView()
+               
                 Button(action: {
                     showingShareSheet.toggle()
                 }, label: {
@@ -78,10 +80,10 @@ struct InfoView: View {
                     CustomLineItem(icon: "twitter",
                                    title: "Twitter")
                 })
-            }
-            .listStyle(InsetGroupedListStyle())
-               
+        //    }
+        
         }
+        .listStyle(InsetGroupedListStyle())
     }
 }
 
@@ -93,7 +95,7 @@ struct InfoView_Previews: PreviewProvider {
 }
 
 struct AppInfoView: View {
-    let appVersion: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
+    private let appVersion: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
     
     var body: some View {
         HStack {

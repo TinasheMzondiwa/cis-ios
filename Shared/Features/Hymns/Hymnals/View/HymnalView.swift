@@ -17,9 +17,9 @@ struct HymnalView: View {
     var body: some View {
         HStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .fill(Color.init(hex: COLORS[index % COLORS.count]))
                     .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(Color.init(hex: COLORS[index % COLORS.count]))
                 
                 SFSymbol.checkmark
                     .foregroundColor(.white)
@@ -28,9 +28,11 @@ struct HymnalView: View {
             
             VStack(alignment: .leading) {
                 Text(hymnal.title)
-                    .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
+                    .font(.system(.headline, design: .rounded))
+                    .foregroundColor(Color.primary.opacity(hymnal.selected ? 1 : 0.7))
                 Text(hymnal.language)
-                    .font(.subheadline)
+                    .font(.system(.subheadline, design: .rounded))
+                    .foregroundColor(.secondary)
             }.padding(.leading, 16)
             
             Spacer()
@@ -48,13 +50,42 @@ struct HymnalView: View {
 
 struct HymnalView_Previews: PreviewProvider {
     static var previews: some View {
-        HymnalView(hymnal: HymnalModel(
-            id: "",
-            title: "Christ In Song",
-            language: "English",
-            selected: true
-        ), index: 1)
-        .previewLayout(.fixed(width: 300, height: 70))
+        Group {
+            HymnalView(hymnal: HymnalModel(
+                id: "",
+                title: "Christ In Song",
+                language: "English",
+                selected: true
+            ), index: 1)
+            .previewLayout(.sizeThatFits)
+            
+            HymnalView(hymnal: HymnalModel(
+                id: "",
+                title: "Cristu Munzwiyo",
+                language: "Shona",
+                selected: false
+            ), index: 4)
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            
+            HymnalView(hymnal: HymnalModel(
+                id: "",
+                title: "Christ In Song",
+                language: "English",
+                selected: false
+            ), index: 1)
+            .previewLayout(.sizeThatFits)
+            
+            HymnalView(hymnal: HymnalModel(
+                id: "",
+                title: "Cristu Munzwiyo",
+                language: "Shona",
+                selected: true
+            ), index: 4)
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            
+        }
     }
 }
 
