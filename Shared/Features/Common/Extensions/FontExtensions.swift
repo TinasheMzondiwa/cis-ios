@@ -23,6 +23,11 @@ extension View {
         return self.modifier(FontModifier(style: .footnote))
             .foregroundColor(.secondary)
     }
+    
+    func bodyStyle() -> some View {
+        return self.modifier(FontModifier(style: .body))
+            .foregroundColor(.primary)
+    }
 }
 
 struct FontModifier: ViewModifier {

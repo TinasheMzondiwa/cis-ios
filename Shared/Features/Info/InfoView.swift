@@ -38,52 +38,60 @@ struct InfoView: View {
     }
     
     var content: some View {
-        List {
-           // Section(header:  AppInfoView()) {
-            
-            AppInfoView()
-               
-                Button(action: {
-                    showingShareSheet.toggle()
-                }, label: {
-                    Label("Share this app...", systemImage: "square.and.arrow.up")
-                        .foregroundColor(Color.primary)
-                        .padding(.leading, 12)
-                })
-                .sheet(isPresented: $showingShareSheet) {
-                    let shareData: [Any] = ["Install the Christ In Song App", URL(string: "https://goo.gl/72bu2H")!]
-                    ActivityViewController(items: shareData)
+        GeometryReader { g in
+            ScrollView {
+                VStack(spacing: 0) {
+                    AppInfoView()
+                    
+                    List {
+                        Section(header: Text("About")) {
+                            Button(action: {
+                                UIApplication.shared.open(URL(string: "https://github.com/TinasheMzondiwa/cis-ios")!)
+                                
+                                
+                            }, label: {
+                                CustomLineItem(title: "Github")
+                            })
+                            
+                            Button(action: {
+                                UIApplication.shared.open(URL(string: "https://twitter.com/christinsongapp")!)
+                            }, label: {
+                                CustomLineItem(title: "Twitter", title2: "@christinsongapp")
+                            })
+                        }
+                        Section(header: Text("More")) {
+                            if MFMailComposeViewController.canSendMail() {
+                                Button(action: {
+                                    showingEmailSheet.toggle()
+                                }, label: {
+                                    CustomLineItem(title: "Help or Feedback?")
+                                })
+                                .sheet(isPresented: $showingEmailSheet) {
+                                    MailView(result: self.$result)
+                                }
+                            }
+                            
+                            Button(action: {
+                                UIApplication.shared.open(URL(string: "https://apps.apple.com/za/app/christ-in-song-multi-language/id1067718185")!)
+                            }, label: {
+                                CustomLineItem(title: "Write Review")
+                            })
+                            Button(action: {
+                                showingShareSheet.toggle()
+                            }, label: {
+                                CustomLineItem(title: "Share this app...")
+                            })
+                            .sheet(isPresented: $showingShareSheet) {
+                                let shareData: [Any] = ["Install the Christ In Song App", URL(string: "https://goo.gl/72bu2H")!]
+                                ActivityViewController(items: shareData)
+                            }
+                        }
+                    }
+                    .listStyle(InsetGroupedListStyle())
+                    .frame(width: g.size.width - 5, height: g.size.height - 50, alignment: .center)
                 }
-                
-                Button(action: {
-                    showingEmailSheet.toggle()
-                }, label: {
-                    Label("Help or Feedback?", systemImage: "questionmark.circle")
-                        .foregroundColor(Color.primary)
-                        .padding(.leading, 12)
-                })
-                .disabled(!MFMailComposeViewController.canSendMail())
-                .sheet(isPresented: $showingEmailSheet) {
-                    MailView(result: self.$result)
-                }
-                
-                Button(action: {
-                    UIApplication.shared.open(URL(string: "https://github.com/TinasheMzondiwa/cis-ios")!)
-                }, label: {
-                    CustomLineItem(icon: "github",
-                                   title: "View source code")
-                })
-                
-                Button(action: {
-                    UIApplication.shared.open(URL(string: "https://twitter.com/christinsongapp")!)
-                }, label: {
-                    CustomLineItem(icon: "twitter",
-                                   title: "Twitter")
-                })
-        //    }
-        
+            }
         }
-        .listStyle(InsetGroupedListStyle())
     }
 }
 
@@ -95,44 +103,53 @@ struct InfoView_Previews: PreviewProvider {
 }
 
 struct AppInfoView: View {
-    private let appVersion: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
-    
     var body: some View {
-        HStack {
+        VStack {
             Image("logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 32)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                .frame(width: 64)
+                .cornerRadius(12)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Text("Christ In Song App")
-                    .font(.title3)
+                    .font(.system(.title3, design: .rounded))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Text("v\(appVersion as? String ?? "1.0.0")")
-                    .font(.caption2)
-                Text("By Tinashe Mzondiwa")
-                    .font(.caption)
+                Text(getAppVersion())
+                    .font(.system(.caption2, design: .rounded))
             }
-        }.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 8)
+        }.padding(8)
+    }
+    
+    private func getAppVersion() -> String {
+        let versionShort: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
+        let versionCode: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
+        
+        if let short = versionShort as? String, let code = versionCode as? String {
+            return "v\(short) (\(code))"
+        } else {
+            return ""
+        }
     }
 }
 
 struct CustomLineItem: View {
-    let icon: String
     let title: String
+    var title2: String? = nil
     
     var body: some View {
         HStack {
-            Image(icon)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 18)
-            
             Text(title)
-                .padding(.leading, 10)
+                .bodyStyle()
+            Spacer()
             
-        }.padding(.leading, 16)
-        .foregroundColor(Color.primary)
+            if let title2 = title2 {
+                Text(title2)
+                    .subHeadLineStyle()
+            }
+            
+            SFSymbol.chevronRight
+                .subHeadLineStyle()
+        }
     }
 }
