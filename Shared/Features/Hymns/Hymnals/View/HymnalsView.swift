@@ -20,24 +20,30 @@ struct HymnalsView: View {
         
         NavigationView {
             ScrollView {
-                ForEach(self.viewModel.hymnals, id: \.id) {  item in
-                    
-                    HymnalView(hymnal: item,
-                               index: viewModel.hymnals.firstIndex(of: item) ?? 0)
-                        .onTapGesture {
+                VStack(spacing: 0) {
+                    Spacer()
+                    ForEach(self.viewModel.hymnals, id: \.id) {  item in
+                        
+                        Button(action: {
                             viewModel.hymnalSelected(id: item.id)
                             
                             hymnal = item.id
                             hymnalTitle = item.title
                             
                             onDismiss()
-                        }
-                    
-                    Divider()
-                        .padding([.leading], 70)
+                        }, label: {
+                            VStack {
+                                HymnalView(hymnal: item,
+                                           index: viewModel.hymnals.firstIndex(of: item) ?? 0)
+                                
+                                Divider()
+                                    .padding(.leading, 70)
+                            }
+                        })
+                    }
                 }
             }
-            .padding()
+            .padding([.leading, .trailing])
             .navigationBarTitle("Hymnals")
         }
         .onAppear(perform: {

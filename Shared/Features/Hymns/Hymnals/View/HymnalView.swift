@@ -28,11 +28,10 @@ struct HymnalView: View {
             
             VStack(alignment: .leading) {
                 Text(hymnal.title)
-                    .font(.system(.headline, design: .rounded))
-                    .foregroundColor(Color.primary.opacity(hymnal.selected ? 1 : 0.7))
+                    .headLineStyle(selected: hymnal.selected)
+                    
                 Text(hymnal.language)
-                    .font(.system(.subheadline, design: .rounded))
-                    .foregroundColor(.secondary)
+                    .subHeadLineStyle()
             }.padding(.leading, 16)
             
             Spacer()

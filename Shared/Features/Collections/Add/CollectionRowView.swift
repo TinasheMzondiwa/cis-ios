@@ -19,14 +19,12 @@ struct CollectionRowView: View {
             
             VStack(alignment: .leading) {
                 Text(title)
-                    .font(.system(.headline, design: .rounded))
-                    .foregroundColor(selected ? .primary : Color.primary.opacity(0.7))
+                    .headLineStyle(selected: selected)
                     .lineSpacing(4)
                     .animation(.none)
                 if !description.isEmpty {
                     Text(description)
-                        .font(.system(.footnote, design: .rounded))
-                        .foregroundColor(.secondary)
+                        .footNoteStyle()
                         .lineSpacing(4)
                         .lineLimit(1)
                 }

@@ -31,8 +31,7 @@ struct CollectionHymnsView: View {
                         destination: HymnView(hymn: item),
                         label: {
                             Text(item.title)
-                                .font(.system(.headline, design: .rounded))
-                                .foregroundColor(.primary)
+                                .headLineStyle()
                                 .lineLimit(1)
                         })
                 }

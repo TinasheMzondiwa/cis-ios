@@ -56,8 +56,7 @@ struct HymnsView: View {
                 destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
                 label: {
                     Text(item.wrappedTitle)
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.primary)
+                        .headLineStyle()
                         .lineLimit(1)
                 })
         }

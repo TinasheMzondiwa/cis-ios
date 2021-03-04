@@ -14,14 +14,6 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
-struct CenteredLabelStyle: LabelStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        HStack {
-            configuration.icon
-            configuration.title
-        }
-    }
-}
 
 struct CollectionItemView: View {
     let title: String
@@ -34,15 +26,13 @@ struct CollectionItemView: View {
             VStack (alignment: .leading) {
                 HStack {
                     Text(title)
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.primary)
+                        .headLineStyle()
                         .lineLimit(1)
                     
                 }
                 if !description.isEmpty {
                     Text(description)
-                        .font(.system(.subheadline, design: .rounded))
-                        .foregroundColor(.secondary)
+                        .subHeadLineStyle()
                 }
             }
             .padding([.top, .bottom], 8)
@@ -50,8 +40,7 @@ struct CollectionItemView: View {
             Spacer()
             
             Text(String(hymns))
-                .foregroundColor(.secondary)
-                .font(.system(.subheadline, design: .rounded))
+                .subHeadLineStyle()
         }
     }
 }

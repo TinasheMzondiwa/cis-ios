@@ -112,6 +112,8 @@
 		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
 		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
 		08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */; };
+		08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
+		08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */; };
 		08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33AE25E2122500609D65 /* HymnalModel.swift */; };
 		08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33B925E21AB600609D65 /* SFSymbol.swift */; };
@@ -204,6 +206,7 @@
 		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
 		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionsView.swift; sourceTree = "<group>"; };
+		08C3C0A125F08E81004194B2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsViewModel.swift; sourceTree = "<group>"; };
 		08CB33AE25E2122500609D65 /* HymnalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalModel.swift; sourceTree = "<group>"; };
 		08CB33B925E21AB600609D65 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
@@ -471,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				08624FA024DBA67E00AF2904 /* StringExtensions.swift */,
+				08C3C0A125F08E81004194B2 /* FontExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -821,6 +825,7 @@
 				08CB346625E4C5DE00609D65 /* Constants.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
+				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
 				08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */,
 				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
@@ -863,6 +868,7 @@
 			files = (
 				08CB346725E4C5DE00609D65 /* Constants.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
+				08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
 				08927E4624C402BF0035972C /* HymnalView.swift in Sources */,
