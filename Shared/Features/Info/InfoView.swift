@@ -88,7 +88,7 @@ struct InfoView: View {
                         }
                     }
                     .listStyle(InsetGroupedListStyle())
-                    .frame(width: g.size.width - 5, height: g.size.height - 50, alignment: .center)
+                    .frame(width: g.size.width, height: g.size.height, alignment: .center)
                 }
             }
         }
