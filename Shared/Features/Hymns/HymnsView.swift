@@ -60,7 +60,7 @@ struct HymnsView: View {
                         .lineLimit(1)
                 })
         }
-        .navigationBarTitle(hymnalTitle)
+        .navigationTitle(hymnalTitle)
         .add(self.searchBar)
         .resignKeyboardOnDragGesture()
         .sheet(isPresented: $showModal) {

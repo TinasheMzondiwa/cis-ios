@@ -11,6 +11,7 @@ struct CollectionsView: View {
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     @ObservedObject private var viewModel = CollectionsViewModel()
+    @ObservedObject private var searchBar: SearchBar = SearchBar()
     
     @State private var navTitle: String = "Collections"
     
@@ -19,6 +20,11 @@ struct CollectionsView: View {
             NavigationView {
                 content
                     .navigationTitle(navTitle)
+                    .toolbar {
+                        if !viewModel.emptyCollections {
+                            EditButton()
+                        }
+                    }
             }
             .navigationViewStyle(StackNavigationViewStyle())
         } else {
@@ -38,13 +44,20 @@ struct CollectionsView: View {
             if viewModel.emptyCollections {
                 EmptyCollectionsView(caption: "Organise your Collection of Hymns here")
             } else {
-                FilteredList(sortKey: "title") { (item: Collection) in
+                
+                let onDelete: () -> Void = {
+                    viewModel.subscribeToCollections()
+                }
+                
+                FilteredList(sortKey: "title", queryKey: "title", query: searchBar.text, onDelete: onDelete) { (item: Collection) in
                     NavigationLink(
                         destination: CollectionHymnsView(collectionId: item.id!),
                         label: {
                             CollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
                         })
                 }
+                .add(self.searchBar)
+                .resignKeyboardOnDragGesture()
             }
         }
         .onAppear {

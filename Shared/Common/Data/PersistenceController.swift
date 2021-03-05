@@ -16,6 +16,7 @@ protocol PersistenceControllerProtocol {
     func saveCollection(title: String, about: String)
     func queryCollection(id: UUID) -> Collection?
     func queryCollections() -> Int
+    func delete(item: NSManagedObject)
 }
 
 struct PersistenceController : PersistenceControllerProtocol {
@@ -174,5 +175,11 @@ struct PersistenceController : PersistenceControllerProtocol {
         } catch {
             return 0
         }
+    }
+    
+    func delete(item: NSManagedObject) {
+        let context = container.viewContext
+        context.delete(item)
+        save()
     }
 }

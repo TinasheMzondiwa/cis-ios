@@ -10,20 +10,16 @@ import CoreData
 import SwiftUI
 
 struct FilteredList<T: NSManagedObject, Content: View>: View {
-    var fetchRequest: FetchRequest<T>
-    var results: FetchedResults<T> { fetchRequest.wrappedValue }
+    private var fetchRequest: FetchRequest<T>
+    private var results: FetchedResults<T> { fetchRequest.wrappedValue }
     
-    let content: (T) -> Content
+    private let content: (T) -> Content
     
-    var body: some View {
-        List(fetchRequest.wrappedValue, id: \.self) { item in
-            self.content(item)
-        }
-    }
+    private let onDelete: (() -> Void)?
     
     init(sortKey: String,
          filterKey: String? = nil, filterValue: String? = nil,
-         queryKey: String? = nil, query: String? = nil,
+         queryKey: String? = nil, query: String? = nil, onDelete: (() -> Void)? = nil,
          @ViewBuilder content: @escaping (T) -> Content) {
         
         var predicateArr: [NSPredicate] = []
@@ -36,6 +32,31 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
         fetchRequest = FetchRequest<T>(entity: T.entity(),
                                        sortDescriptors: [NSSortDescriptor(key: sortKey, ascending: true)],
                                        predicate: NSCompoundPredicate(andPredicateWithSubpredicates: predicateArr))
+        self.onDelete = onDelete
         self.content = content
+    }
+    
+    var body: some View {
+        if onDelete != nil {
+            List {
+                ForEach(results, id: \.self) { item in
+                    self.content(item)
+                }
+                .onDelete(perform: removeContent)
+            }
+        } else {
+            List(results, id: \.self) { item in
+                self.content(item)
+            }
+        }
+    }
+    
+    private func removeContent(at offsets: IndexSet) {
+        for index in offsets {
+            let result = results[index]
+            PersistenceController.shared.delete(item: result)
+        }
+        
+        onDelete?()
     }
 }
