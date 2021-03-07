@@ -27,7 +27,7 @@ struct AddToCollectionView: View {
                 case .create: createContent
                 }
             }
-            .navigationBarTitle(Text(state.title))
+            .navigationBarTitle(Text(state.title), displayMode: .inline)
             .navigationBarItems(
                 leading:
                     Button(action: {
@@ -39,6 +39,7 @@ struct AddToCollectionView: View {
                         }
                     }, label: {
                         state.navigation
+                            .navButtonStyle()
                     }),
                 trailing:
                     Button(action: {

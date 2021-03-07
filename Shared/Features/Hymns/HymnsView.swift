@@ -7,12 +7,18 @@
 
 import SwiftUI
 
+private enum Sort: String {
+    case number = "number"
+    case title = "title"
+}
+
 struct HymnsView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
     @AppStorage(Constants.hymnalTitleKey) var hymnalTitle: String = Constants.defHymnalTitle
+    @AppStorage("sort") var sortOption: String = Sort.number.rawValue
 
     @ObservedObject private var searchBar: SearchBar = SearchBar()
     
@@ -25,6 +31,16 @@ struct HymnsView: View {
                 .accessibility(label: Text("Switch Hymnals"))
                 .padding()
         }
+    }
+    
+    private var sortButton: some View {
+        Button(action: {
+            withAnimation {
+                sortOption = sortOption == Sort.title.rawValue ? Sort.number.rawValue : Sort.title.rawValue
+            }
+        }, label: {
+            Text(sortOption == Sort.title.rawValue ? "123" : "ABC")
+        })
     }
     
     var body: some View {
@@ -70,7 +86,7 @@ struct HymnsView: View {
     
     private var iOSContent: some View {
         content
-            .navigationBarItems(trailing: hymnalsButton)
+            .navigationBarItems(leading: sortButton, trailing: hymnalsButton)
     }
 }
 

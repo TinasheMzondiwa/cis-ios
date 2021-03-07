@@ -37,4 +37,9 @@ extension String {
     func isDigits() -> Bool {
         return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self))
     }
+    
+    var titleStr: String {
+        return self.replacingOccurrences( of:"[0-9]", with: "", options: .regularExpression)
+            .replacingOccurrences(of: ". ", with: "")
+    }
 }

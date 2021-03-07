@@ -46,6 +46,7 @@ struct HymnalsView: View {
                         onDismiss()
                     }, label: {
                         SFSymbol.chevronDown
+                            .navButtonStyle()
                     }))
         }
         .onAppear(perform: {
@@ -57,7 +58,15 @@ struct HymnalsView: View {
 
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
-        HymnalsView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        Group {
+            HymnalsView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+                .previewLayout(.sizeThatFits)
+            
+            HymnalsView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+                .previewLayout(.sizeThatFits)
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        }
     }
 }
