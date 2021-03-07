@@ -6,7 +6,6 @@ target 'iOS' do
   use_frameworks!
 
   # Pods for iOS
-  pod 'Firebase/Analytics'
 
 end
 

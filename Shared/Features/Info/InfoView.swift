@@ -86,6 +86,11 @@ struct InfoView: View {
                                 ActivityViewController(items: shareData)
                             }
                         }
+                        
+                        Text("Christ In Song App was made with ❤️ by Tinashe Mzondiwa, a solo mobile app developer.\nIf you enjoy using this app please consider leaving a review. It helps more than you can imagine.")
+                            .multilineTextAlignment(.center)
+                            .footNoteStyle()
+                            .listRowBackground(Color(.systemGroupedBackground))
                     }
                     .listStyle(InsetGroupedListStyle())
                     .frame(width: g.size.width, height: g.size.height, alignment: .center)
@@ -97,8 +102,14 @@ struct InfoView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        Group {
+            InfoView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+            
+            InfoView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        }
     }
 }
 
@@ -115,21 +126,10 @@ struct AppInfoView: View {
                 Text("Christ In Song App")
                     .font(.system(.title3, design: .rounded))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Text(getAppVersion())
+                Text(Constants.getAppVersion())
                     .font(.system(.caption2, design: .rounded))
             }
         }.padding(8)
-    }
-    
-    private func getAppVersion() -> String {
-        let versionShort: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
-        let versionCode: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
-        
-        if let short = versionShort as? String, let code = versionCode as? String {
-            return "v\(short) (\(code))"
-        } else {
-            return ""
-        }
     }
 }
 

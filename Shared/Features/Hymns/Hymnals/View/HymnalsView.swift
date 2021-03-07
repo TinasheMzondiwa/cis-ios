@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HymnalsView: View {
     
-    @AppStorage(Contants.hymnalKey) var hymnal: String = Contants.defHymnal
-    @AppStorage(Contants.hymnalTitleKey) var hymnalTitle: String = Contants.defHymnalTitle
+    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
+    @AppStorage(Constants.hymnalTitleKey) var hymnalTitle: String = Constants.defHymnalTitle
     
     @ObservedObject var viewModel = HymnalsViewModel()
     

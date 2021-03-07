@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -133,8 +133,6 @@
 		08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B724CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B824CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
-		08F3E5BA24CD636C00800D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E5B924CD636C00800D3B /* AppDelegate.swift */; };
-		08F3E5BB24CD636C00800D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E5B924CD636C00800D3B /* AppDelegate.swift */; };
 		7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */; };
 		F5947F82F4F1C75BA8501F80 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18412AEF9D7D003FF64B695B /* Pods_macOS.framework */; };
 /* End PBXBuildFile section */
@@ -223,7 +221,6 @@
 		08CB343525E49CE700609D65 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
 		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		08F3E5B924CD636C00800D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E60508D0E3E4FAFF6BD9322 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		69B0579CBBCF659E463C333F /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -307,7 +304,6 @@
 				086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */,
 				086C93FC24BE93BC008AFBE5 /* ContentView.swift */,
 				086C93FD24BE93BD008AFBE5 /* Assets.xcassets */,
-				08F3E5B924CD636C00800D3B /* AppDelegate.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -564,7 +560,6 @@
 				086C93FE24BE93BD008AFBE5 /* Sources */,
 				086C93FF24BE93BD008AFBE5 /* Frameworks */,
 				086C940024BE93BD008AFBE5 /* Resources */,
-				70677C2F2A025D270EA4DEF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -777,23 +772,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70677C2F2A025D270EA4DEF5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DE5EAAFB3E17280B4D3E3A22 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -861,7 +839,6 @@
 				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
 				08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
-				08F3E5BA24CD636C00800D3B /* AppDelegate.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
 				08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
@@ -890,7 +867,6 @@
 				08927DA824BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */,
-				08F3E5BB24CD636C00800D3B /* AppDelegate.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1062,7 +1038,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1089,7 +1065,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

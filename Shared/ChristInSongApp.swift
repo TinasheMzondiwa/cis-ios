@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct ChristInSongApp: App {
-
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @Environment(\.scenePhase) var scenePhase
     

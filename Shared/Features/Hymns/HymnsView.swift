@@ -11,8 +11,8 @@ struct HymnsView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
-    @AppStorage(Contants.hymnalKey) var hymnal: String = Contants.defHymnal
-    @AppStorage(Contants.hymnalTitleKey) var hymnalTitle: String = Contants.defHymnalTitle
+    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
+    @AppStorage(Constants.hymnalTitleKey) var hymnalTitle: String = Constants.defHymnalTitle
 
     @ObservedObject private var searchBar: SearchBar = SearchBar()
     
