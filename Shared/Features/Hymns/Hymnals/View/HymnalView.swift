@@ -15,26 +15,33 @@ struct HymnalView: View {
     var index: Int
     
     var body: some View {
-        HStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .fill(Color.init(hex: COLORS[index % COLORS.count]))
-                    .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
-                SFSymbol.checkmark
-                    .foregroundColor(.white)
-                    .opacity(hymnal.selected ? 1 : 0)
-            }
-            
-            VStack(alignment: .leading) {
-                Text(hymnal.title)
-                    .headLineStyle(selected: hymnal.selected)
+        VStack {
+            HStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(Color.init(hex: COLORS[index % COLORS.count]))
+                        .frame(width: 42, height: 42, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
-                Text(hymnal.language)
-                    .subHeadLineStyle()
-            }.padding(.leading, 16)
+                    SFSymbol.checkmark
+                        .foregroundColor(.white)
+                        .opacity(hymnal.selected ? 1 : 0)
+                }
+                
+                VStack(alignment: .leading) {
+                    Text(hymnal.title)
+                        .headLineStyle(selected: hymnal.selected)
+                        
+                    Text(hymnal.language)
+                        .subHeadLineStyle()
+                }.padding(.leading, 16)
+                
+                Spacer()
+            }
+            .padding([.bottom], 8)
+            .padding([.top], 16)
             
-            Spacer()
+            Divider()
+                .padding(.leading, 70)
         }
     }
     

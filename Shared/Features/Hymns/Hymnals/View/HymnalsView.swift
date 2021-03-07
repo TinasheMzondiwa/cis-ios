@@ -32,19 +32,21 @@ struct HymnalsView: View {
                             
                             onDismiss()
                         }, label: {
-                            VStack {
-                                HymnalView(hymnal: item,
-                                           index: viewModel.hymnals.firstIndex(of: item) ?? 0)
-                                
-                                Divider()
-                                    .padding(.leading, 70)
-                            }
+                            HymnalView(hymnal: item,
+                                       index: viewModel.hymnals.firstIndex(of: item) ?? 0)
                         })
                     }
                 }
             }
             .padding([.leading, .trailing])
-            .navigationBarTitle("Hymnals")
+            .navigationBarTitle("Hymnals", displayMode: .inline)
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        onDismiss()
+                    }, label: {
+                        SFSymbol.chevronDown
+                    }))
         }
         .onAppear(perform: {
             viewModel.onAppear(selectedId: hymnal)

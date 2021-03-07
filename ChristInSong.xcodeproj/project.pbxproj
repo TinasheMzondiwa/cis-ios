@@ -112,6 +112,8 @@
 		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
 		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
 		08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */; };
+		08ACE10125F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
+		08ACE10225F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
 		08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */; };
@@ -206,6 +208,7 @@
 		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
 		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionsView.swift; sourceTree = "<group>"; };
+		08ACE10025F4A9FD00E876C2 /* xitsonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xitsonga.json; sourceTree = "<group>"; };
 		08C3C0A125F08E81004194B2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsViewModel.swift; sourceTree = "<group>"; };
 		08CB33AE25E2122500609D65 /* HymnalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalModel.swift; sourceTree = "<group>"; };
@@ -445,6 +448,7 @@
 		08927E3424C3E69F0035972C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				08ACE10025F4A9FD00E876C2 /* xitsonga.json */,
 				08927E7724C411160035972C /* chichewa.json */,
 				08927E7E24C411170035972C /* ndebele.json */,
 				08927E7A24C411170035972C /* shona.json */,
@@ -687,6 +691,7 @@
 				08927E8B24C411170035972C /* venda.json in Resources */,
 				08927E7F24C411170035972C /* swahili.json in Resources */,
 				08927E9324C411170035972C /* sotho.json in Resources */,
+				08ACE10125F4A9FD00E876C2 /* xitsonga.json in Resources */,
 				08927E9F24C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +711,7 @@
 				08927E8C24C411170035972C /* venda.json in Resources */,
 				08927E8024C411170035972C /* swahili.json in Resources */,
 				08927E9424C411170035972C /* sotho.json in Resources */,
+				08ACE10225F4A9FD00E876C2 /* xitsonga.json in Resources */,
 				08927EA024C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1056,7 +1062,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1083,7 +1089,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
