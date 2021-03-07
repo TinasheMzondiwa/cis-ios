@@ -9,7 +9,7 @@ import SwiftUI
 
 private enum Sort: String {
     case number = "number"
-    case title = "title"
+    case title = "titleStr"
 }
 
 struct HymnsView: View {
@@ -65,13 +65,13 @@ struct HymnsView: View {
     }
     
     private var content: some View {
-        FilteredList(sortKey: "number",
+        FilteredList(sortKey: sortOption,
                      filterKey: "book", filterValue: hymnal,
                      queryKey: "content", query: searchBar.text) { (item: Hymn) in
             NavigationLink(
                 destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
                 label: {
-                    Text(item.wrappedTitle)
+                    Text(sortOption == Sort.number.rawValue ? item.wrappedTitle : "\(item.wrappedTitleStr) - \(item.number)")
                         .headLineStyle()
                         .lineLimit(1)
                 })

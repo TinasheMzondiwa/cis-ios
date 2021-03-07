@@ -14,10 +14,11 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="titleStr" optional="YES" attributeType="String"/>
         <relationship name="collection" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Collection" inverseName="hymns" inverseEntity="Collection"/>
     </entity>
     <elements>
         <element name="Collection" positionX="-63" positionY="27" width="128" height="104"/>
-        <element name="Hymn" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Hymn" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

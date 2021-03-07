@@ -67,6 +67,38 @@ struct PersistenceController : PersistenceControllerProtocol {
         if count == 0 {
             let hymns = loadHymns(key: defBook)
             saveHymns(book: defBook, models: hymns)
+        } else {
+            migrateData()
+        }
+    }
+    
+    private func migrateData() {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let predicate = NSPredicate(format: "titleStr == nil")
+        request.predicate = predicate
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(request)
+            guard results.count > 0 else { return }
+            
+            debugPrint("Migrating...")
+            
+            for result in results {
+                guard let hymn = result as? Hymn else {
+                    continue
+                }
+                
+                if hymn.titleStr == nil {
+                    hymn.titleStr = hymn.title?.titleStr
+                }
+            }
+            
+            save()
+            
+        } catch {
+            debugPrint(error)
         }
     }
     
@@ -77,7 +109,7 @@ struct PersistenceController : PersistenceControllerProtocol {
             do {
                 try context.save()
             } catch {
-                // Show some error here
+                debugPrint(error)
             }
         }
     }
@@ -125,6 +157,7 @@ struct PersistenceController : PersistenceControllerProtocol {
             hymn.id = UUID()
             hymn.book = book
             hymn.title = model.title
+            hymn.titleStr = model.title.titleStr
             hymn.number = Int16(model.number)
             hymn.content = model.content
         }

@@ -41,5 +41,8 @@ extension String {
     var titleStr: String {
         return self.replacingOccurrences( of:"[0-9]", with: "", options: .regularExpression)
             .replacingOccurrences(of: ". ", with: "")
+            .replacingOccurrences(of: "- ", with: "")
+            .replacingOccurrences(of: ": ", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

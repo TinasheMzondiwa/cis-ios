@@ -2,7 +2,7 @@
 //  Hymn+CoreDataProperties.swift
 //  iOS
 //
-//  Created by Tinashe  on 2021/02/25.
+//  Created by Tinashe  on 2021/03/07.
 //
 //
 
@@ -22,6 +22,7 @@ extension Hymn {
     @NSManaged public var id: UUID?
     @NSManaged public var number: Int16
     @NSManaged public var title: String?
+    @NSManaged public var titleStr: String?
     @NSManaged public var collection: NSSet?
 
 }
@@ -47,12 +48,14 @@ extension Hymn : Identifiable {
     var wrappedTitle: String {
         title ?? ""
     }
+    var wrappedTitleStr: String {
+        titleStr ?? wrappedTitle.titleStr
+    }
     var wrappedContent: String {
         content ?? ""
     }
     var collections: [Collection] {
         let set = collection as? Set<Collection> ?? []
-        
         return set.sorted {
             $0.wrappedTitle < $1.wrappedTitle
         }
