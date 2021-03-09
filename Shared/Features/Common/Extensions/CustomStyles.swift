@@ -17,8 +17,10 @@ extension View {
 struct SfSymbolModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .padding(.all, 12)
-            .background(Color.white.opacity(0.1))
+            .imageScale(.small)
+            .foregroundColor(.primary)
+            .padding(.all, 10)
+            .background(Color.gray.opacity(0.1))
             .clipShape(Circle())
     }
 }

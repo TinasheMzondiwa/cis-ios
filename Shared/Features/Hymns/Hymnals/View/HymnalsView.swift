@@ -45,7 +45,7 @@ struct HymnalsView: View {
                     Button(action: {
                         onDismiss()
                     }, label: {
-                        SFSymbol.chevronDown
+                        SFSymbol.close
                             .navButtonStyle()
                     }))
         }

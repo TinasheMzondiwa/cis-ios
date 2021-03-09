@@ -26,7 +26,7 @@ extension ViewState {
     var navigation: SFSymbol {
         switch self {
         case .add:
-            return SFSymbol.chevronDown
+            return SFSymbol.close
         case .create:
             return SFSymbol.arrowBackward
         }
