@@ -160,7 +160,11 @@ struct PersistenceController : PersistenceControllerProtocol {
             hymn.title = model.title
             hymn.titleStr = model.title.titleStr
             hymn.number = Int16(model.number)
-            hymn.content = model.content
+            if model.content.contains(model.title) {
+                hymn.content = model.content
+            } else {
+                hymn.content = "<h3>\(model.title)</h3>\(model.content)"
+            }
         }
         
         save()
