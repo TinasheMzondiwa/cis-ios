@@ -87,7 +87,7 @@ struct InfoView: View {
                             }
                         }
                         
-                        Text("Christ In Song App was made with ❤️ by Tinashe Mzondiwa, a solo mobile app developer.\nIf you enjoy using this app please consider leaving a review. It helps more than you can imagine.")
+                        Text("Christ In Song App was made with ❤️ by Tinashe Mzondiwa, a solo mobile app developer.\nIf you enjoy using this app please consider leaving a review. It helps more than you can imagine.\n\nSpecial thanks to all the wonderful saints who sent me hymnals to include in this app.")
                             .multilineTextAlignment(.center)
                             .footNoteStyle()
                             .listRowBackground(Color(.systemGroupedBackground))
