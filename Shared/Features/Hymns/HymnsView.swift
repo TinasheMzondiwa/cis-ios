@@ -28,7 +28,7 @@ struct HymnsView: View {
         Button(action: { self.showModal.toggle() }) {
             SFSymbol.bookCircle
                 .imageScale(.large)
-                .accessibility(label: Text("Switch Hymnals"))
+                .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
                 .padding()
         }
     }
@@ -39,7 +39,7 @@ struct HymnsView: View {
                 sortOption = sortOption == Sort.title.rawValue ? Sort.number.rawValue : Sort.title.rawValue
             }
         }, label: {
-            Text(sortOption == Sort.title.rawValue ? "123" : "ABC")
+            Text(LocalizedStringKey(sortOption == Sort.title.rawValue ? "Sort.Number" : "Sort.Title"))
         })
     }
     

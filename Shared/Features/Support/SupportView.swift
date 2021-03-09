@@ -11,7 +11,7 @@ struct SupportView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
-    private var navTitle = "Support"
+    private var navTitle: String = NSLocalizedString("Support", comment: "Title")
     
     var body: some View {
         if (idiom == .phone) {

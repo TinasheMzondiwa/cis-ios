@@ -115,6 +115,14 @@
 		08ACE10125F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
 		08ACE10225F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
 		08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */; };
+		08C0927625F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
+		08C0927725F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
+		08C0927F25F7479000845BA1 /* WebLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0927E25F7479000845BA1 /* WebLink.swift */; };
+		08C0928025F7479000845BA1 /* WebLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0927E25F7479000845BA1 /* WebLink.swift */; };
+		08C0929625F74FC500845BA1 /* NavLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929525F74FC500845BA1 /* NavLabel.swift */; };
+		08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929525F74FC500845BA1 /* NavLabel.swift */; };
+		08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929C25F74FE500845BA1 /* NavItem.swift */; };
+		08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929C25F74FE500845BA1 /* NavItem.swift */; };
 		08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */; };
@@ -209,6 +217,10 @@
 		08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionsView.swift; sourceTree = "<group>"; };
 		08ACE10025F4A9FD00E876C2 /* xitsonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xitsonga.json; sourceTree = "<group>"; };
 		08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyles.swift; sourceTree = "<group>"; };
+		08C0927825F7440A00845BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		08C0927E25F7479000845BA1 /* WebLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLink.swift; sourceTree = "<group>"; };
+		08C0929525F74FC500845BA1 /* NavLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLabel.swift; sourceTree = "<group>"; };
+		08C0929C25F74FE500845BA1 /* NavItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavItem.swift; sourceTree = "<group>"; };
 		08C3C0A125F08E81004194B2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsViewModel.swift; sourceTree = "<group>"; };
 		08CB33AE25E2122500609D65 /* HymnalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalModel.swift; sourceTree = "<group>"; };
@@ -306,6 +318,7 @@
 				086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */,
 				086C93FC24BE93BC008AFBE5 /* ContentView.swift */,
 				086C93FD24BE93BD008AFBE5 /* Assets.xcassets */,
+				08C0927925F7440A00845BA1 /* Localizable.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -434,6 +447,7 @@
 		08927DB024BEC0160035972C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				08C0928525F74E7600845BA1 /* Navigation */,
 				08927D9924BEAAE80035972C /* Support */,
 				08927D9124BEA58A0035972C /* Hymns */,
 				08927D9524BEAAA60035972C /* Collections */,
@@ -482,6 +496,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		08C0928525F74E7600845BA1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				08C0929525F74FC500845BA1 /* NavLabel.swift */,
+				08C0929C25F74FE500845BA1 /* NavItem.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		08CB33A125E2112200609D65 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +529,7 @@
 				08927DA924BEBB3B0035972C /* Model */,
 				08CB33B925E21AB600609D65 /* SFSymbol.swift */,
 				08CB346525E4C5DE00609D65 /* Constants.swift */,
+				08C0927E25F7479000845BA1 /* WebLink.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -681,6 +705,7 @@
 				08927E8F24C411170035972C /* shona.json in Resources */,
 				08927E3B24C3E7F90035972C /* english.json in Resources */,
 				08927E8724C411170035972C /* tswana.json in Resources */,
+				08C0927625F7440A00845BA1 /* Localizable.strings in Resources */,
 				08927E9B24C411170035972C /* xhosa.json in Resources */,
 				08927E8324C411170035972C /* chichewa.json in Resources */,
 				08F3E5B524CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
@@ -701,6 +726,7 @@
 				08927E9024C411170035972C /* shona.json in Resources */,
 				08927E3C24C3E7F90035972C /* english.json in Resources */,
 				08927E8824C411170035972C /* tswana.json in Resources */,
+				08C0927725F7440A00845BA1 /* Localizable.strings in Resources */,
 				08927E9C24C411170035972C /* xhosa.json in Resources */,
 				08927E8424C411170035972C /* chichewa.json in Resources */,
 				08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
@@ -818,7 +844,9 @@
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
 				08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */,
+				08C0929625F74FC500845BA1 /* NavLabel.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */,
+				08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */,
 				0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
 				08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */,
@@ -841,6 +869,7 @@
 				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
 				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
+				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,
 				08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
@@ -854,10 +883,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				08CB346725E4C5DE00609D65 /* Constants.swift in Sources */,
+				08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
+				08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */,
 				08927E4624C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAF24BEBBBB0035972C /* HymnModel.swift in Sources */,
@@ -865,6 +896,7 @@
 				0844563F24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
 				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,
+				08C0928025F7479000845BA1 /* WebLink.swift in Sources */,
 				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
@@ -921,6 +953,17 @@
 			targetProxy = 086C941E24BE93BD008AFBE5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		08C0927925F7440A00845BA1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08C0927825F7440A00845BA1 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		086C942A24BE93BD008AFBE5 /* Debug */ = {

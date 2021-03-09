@@ -39,7 +39,7 @@ struct HymnalsView: View {
                 }
             }
             .padding([.leading, .trailing])
-            .navigationBarTitle("Hymnals", displayMode: .inline)
+            .navigationBarTitle(LocalizedStringKey("Hymnals"), displayMode: .inline)
             .navigationBarItems(
                 leading:
                     Button(action: {

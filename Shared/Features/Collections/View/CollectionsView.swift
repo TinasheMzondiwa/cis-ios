@@ -20,7 +20,7 @@ struct CollectionsView: View {
         ]
     ) var collections: FetchedResults<Collection>
     
-    @State private var navTitle: String = "Collections"
+    @State private var navTitle: String = NSLocalizedString("Collections", comment: "Title")
     
     var body: some View {
         if (idiom == .phone) {
@@ -54,7 +54,7 @@ struct CollectionsView: View {
     var content: some View {
         ZStack {
             if collections.isEmpty {
-                EmptyCollectionsView(caption: "Organise your Collection of Hymns here")
+                EmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
             } else {
                 
                 FilteredList(sortKey: "title", queryKey: "title", query: searchBar.text, canDelete: true) { (item: Collection) in

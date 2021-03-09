@@ -44,27 +44,27 @@ struct InfoView: View {
                     AppInfoView()
                     
                     List {
-                        Section(header: Text("About")) {
+                        Section(header: Text(LocalizedStringKey("Info.About"))) {
                             Button(action: {
-                                UIApplication.shared.open(URL(string: "https://github.com/TinasheMzondiwa/cis-ios")!)
+                                UIApplication.shared.open(URL(string: WebLink.github.rawValue)!)
                                 
                                 
                             }, label: {
-                                CustomLineItem(title: "Github")
+                                CustomLineItem(title: "Info.Github")
                             })
                             
                             Button(action: {
-                                UIApplication.shared.open(URL(string: "https://twitter.com/christinsongapp")!)
+                                UIApplication.shared.open(URL(string: WebLink.twitter.rawValue)!)
                             }, label: {
-                                CustomLineItem(title: "Twitter", title2: "@christinsongapp")
+                                CustomLineItem(title: "Info.Twitter", title2: WebLink.twitterUsername.rawValue)
                             })
                         }
-                        Section(header: Text("More")) {
+                        Section(header: Text(LocalizedStringKey("Info.More"))) {
                             if MFMailComposeViewController.canSendMail() {
                                 Button(action: {
                                     showingEmailSheet.toggle()
                                 }, label: {
-                                    CustomLineItem(title: "Help or Feedback?")
+                                    CustomLineItem(title: "Info.Help")
                                 })
                                 .sheet(isPresented: $showingEmailSheet) {
                                     MailView(result: self.$result)
@@ -72,22 +72,22 @@ struct InfoView: View {
                             }
                             
                             Button(action: {
-                                UIApplication.shared.open(URL(string: "https://apps.apple.com/za/app/christ-in-song-multi-language/id1067718185")!)
+                                UIApplication.shared.open(URL(string: WebLink.appStore.rawValue)!)
                             }, label: {
-                                CustomLineItem(title: "Write Review")
+                                CustomLineItem(title: "Info.Review")
                             })
                             Button(action: {
                                 showingShareSheet.toggle()
                             }, label: {
-                                CustomLineItem(title: "Share this app...")
+                                CustomLineItem(title: "Info.Share")
                             })
                             .sheet(isPresented: $showingShareSheet) {
-                                let shareData: [Any] = ["Install the Christ In Song App", URL(string: "https://goo.gl/72bu2H")!]
+                                let shareData: [Any] = [NSLocalizedString("Info.Share.Prompt", comment: "Share Prompt"), URL(string: WebLink.appStoreShort.rawValue)!]
                                 ActivityViewController(items: shareData)
                             }
                         }
                         
-                        Text("Christ In Song App was made with ❤️ by Tinashe Mzondiwa, a solo mobile app developer.\nIf you enjoy using this app please consider leaving a review. It helps more than you can imagine.\n\nSpecial thanks to all the wonderful saints who sent me hymnals to include in this app.")
+                        Text(LocalizedStringKey("Info.About.Description"))
                             .multilineTextAlignment(.center)
                             .footNoteStyle()
                             .listRowBackground(Color(.systemGroupedBackground))
@@ -123,7 +123,7 @@ struct AppInfoView: View {
                 .cornerRadius(12)
             
             VStack(alignment: .center) {
-                Text("Christ In Song App")
+                Text(LocalizedStringKey("Common.App.Name"))
                     .font(.system(.title3, design: .rounded))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 Text(Constants.getAppVersion())
@@ -139,7 +139,7 @@ struct CustomLineItem: View {
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .bodyStyle()
             Spacer()
             

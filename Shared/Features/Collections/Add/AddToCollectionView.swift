@@ -73,7 +73,7 @@ struct AddToCollectionView: View {
     private var addContent: some View {
         VStack {
             if collections.isEmpty {
-                EmptyCollectionsView(caption: "Create your first Hymn collection")
+                EmptyCollectionsView(caption: NSLocalizedString("Collections.Empty.Prompt", comment: "Empty state"))
             } else {
                 FilteredList(sortKey: "title") { (item: Collection) in
                     let added = item.containsHymn(id: hymnId)
@@ -93,8 +93,8 @@ struct AddToCollectionView: View {
     private var createContent: some View {
         VStack {
             VStack(alignment: .leading, spacing: 15) {
-                FocusTextField(text: $collectionTitle, hint: "Title")
-                FocusTextField(text: $collectionAbout, hint: "Description (Optional)")
+                FocusTextField(text: $collectionTitle, hint: NSLocalizedString("Common.Title", comment: "hint"))
+                FocusTextField(text: $collectionAbout, hint: NSLocalizedString("Collection.Description", comment: "hint"))
             }
             .padding()
             

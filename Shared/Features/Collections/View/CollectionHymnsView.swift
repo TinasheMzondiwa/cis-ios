@@ -29,7 +29,7 @@ struct CollectionHymnsView: View {
     private var listContent: some View {
         VStack {
             if viewModel.collectionHymns.isEmpty {
-                EmptyCollectionsView(caption: "Add hymns to your collection")
+                EmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
             } else {
                 List {
                     ForEach(viewModel.collectionHymns, id: \.self) { item in

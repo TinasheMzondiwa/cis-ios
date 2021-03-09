@@ -17,9 +17,9 @@ extension ViewState {
     var title: String {
         switch self {
         case .add:
-            return "Add to Collection"
+            return NSLocalizedString("Collections.Add", comment: "Add prompt")
         case .create:
-            return "New Collection"
+            return NSLocalizedString("Collections.New", comment: "New prompt")
         }
     }
     
@@ -35,9 +35,9 @@ extension ViewState {
     var actionTitle: String {
         switch self {
         case .add:
-            return "NEW"
+            return NSLocalizedString("Common.New", comment: "New")
         case .create:
-            return "SAVE"
+            return NSLocalizedString("Common.Save", comment: "Save")
         }
     }
     

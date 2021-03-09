@@ -21,7 +21,7 @@ struct HymnView: View {
                     Button(action: { showCollectionModal.toggle() }) {
                         SFSymbol.textPlus
                             .imageScale(.large)
-                            .accessibility(label: Text("Add to Collection"))
+                            .accessibility(label: Text(LocalizedStringKey("Collections.Add")))
                             .padding()
                     }
                 }
