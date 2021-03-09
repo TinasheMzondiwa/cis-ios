@@ -17,6 +17,7 @@ protocol PersistenceControllerProtocol {
     func queryCollection(id: UUID) -> Collection?
     func queryCollections() -> Int
     func delete(item: NSManagedObject)
+    func remove(from collection: Collection, id: UUID)
 }
 
 struct PersistenceController : PersistenceControllerProtocol {
@@ -213,6 +214,15 @@ struct PersistenceController : PersistenceControllerProtocol {
     func delete(item: NSManagedObject) {
         let context = container.viewContext
         context.delete(item)
+        save()
+    }
+    
+    func remove(from collection: Collection, id: UUID) {
+        guard let hymn = queryHymn(id: id) else {
+            return
+        }
+        
+        collection.removeFromHymns(hymn)
         save()
     }
 }

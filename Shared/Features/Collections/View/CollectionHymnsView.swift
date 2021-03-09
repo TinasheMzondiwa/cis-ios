@@ -15,7 +15,12 @@ struct CollectionHymnsView: View {
     
     var body: some View {
         listContent
-        .navigationTitle(viewModel.collectionTitle)
+            .navigationBarTitle(viewModel.collectionTitle, displayMode: .inline)
+            .toolbar {
+                if !viewModel.collectionHymns.isEmpty {
+                    EditButton()
+                }
+            }
         .onAppear {
             viewModel.loadCollectionHymns(collectionId: collectionId)
         }
@@ -26,14 +31,17 @@ struct CollectionHymnsView: View {
             if viewModel.collectionHymns.isEmpty {
                 EmptyCollectionsView(caption: "Add hymns to your collection")
             } else {
-                List(viewModel.collectionHymns, id: \.self) { item in
-                    NavigationLink(
-                        destination: HymnView(hymn: item),
-                        label: {
-                            Text(item.title)
-                                .headLineStyle()
-                                .lineLimit(1)
-                        })
+                List {
+                    ForEach(viewModel.collectionHymns, id: \.self) { item in
+                        NavigationLink(
+                            destination: HymnView(hymn: item),
+                            label: {
+                                Text(item.title)
+                                    .headLineStyle()
+                                    .lineLimit(1)
+                            })
+                    }
+                    .onDelete(perform: viewModel.removeHymnFromCollection)
                 }
             }
         }

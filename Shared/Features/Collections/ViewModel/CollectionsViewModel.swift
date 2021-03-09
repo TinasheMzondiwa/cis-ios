@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 
 class CollectionsViewModel: ObservableObject {
     
@@ -16,10 +15,13 @@ class CollectionsViewModel: ObservableObject {
     
     @Published var collectionHymns = [HymnModel]()
     @Published var collectionTitle: String = ""
-    @Published var emptyCollections: Bool = false
+    
+    private var hymnsCollection: Collection? = nil
     
     func loadCollectionHymns(collectionId: UUID) {
         if let collection = persistance.queryCollection(id: collectionId) {
+            self.hymnsCollection = collection
+            
             collectionHymns = collection.allHymns.map {
                 HymnModel(hymn: $0, bookTitle: collection.wrappedTitle)
             }
@@ -27,13 +29,29 @@ class CollectionsViewModel: ObservableObject {
         }
     }
     
-    func saveCollection(title: String, about: String) {
-        if title.isEmpty {
+    func removeHymnFromCollection(at offsets: IndexSet) {
+        guard let collection = hymnsCollection else {
             return
         }
         
-        persistance.saveCollection(title: title, about: about)
-        emptyCollections = persistance.queryCollections() == 0
+        for index in offsets {
+            guard collectionHymns.count > index else { return }
+            let model = collectionHymns[index]
+            persistance.remove(from: collection, id: model.id)
+        }
+        
+        guard let collectionId = collection.id else {
+            return
+        }
+        loadCollectionHymns(collectionId: collectionId)
+    }
+    
+    func saveCollection(title: String, about: String) {
+        if title.trimmed.isEmpty {
+            return
+        }
+        
+        persistance.saveCollection(title: title.trimmed, about: about)
     }
     
     func toggleCollection(hymnId: UUID, collection: Collection) {
@@ -48,9 +66,5 @@ class CollectionsViewModel: ObservableObject {
         }
         
         persistance.save()
-    }
-    
-    func subscribeToCollections() {
-        emptyCollections = persistance.queryCollections() == 0
     }
 }

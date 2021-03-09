@@ -43,6 +43,10 @@ extension String {
             .replacingOccurrences(of: ". ", with: "")
             .replacingOccurrences(of: "- ", with: "")
             .replacingOccurrences(of: ": ", with: "")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .trimmed
+    }
+    
+    var trimmed: String {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

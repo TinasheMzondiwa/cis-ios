@@ -13,6 +13,13 @@ struct CollectionsView: View {
     @ObservedObject private var viewModel = CollectionsViewModel()
     @ObservedObject private var searchBar: SearchBar = SearchBar()
     
+    @FetchRequest(
+        entity: Collection.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Collection.title, ascending: true),
+        ]
+    ) var collections: FetchedResults<Collection>
+    
     @State private var navTitle: String = "Collections"
     
     var body: some View {
@@ -21,7 +28,7 @@ struct CollectionsView: View {
                 content
                     .navigationTitle(navTitle)
                     .toolbar {
-                        if !viewModel.emptyCollections {
+                        if !collections.isEmpty {
                             EditButton()
                         }
                     }
@@ -31,6 +38,11 @@ struct CollectionsView: View {
             #if os(iOS)
                 content
                     .navigationTitle(navTitle)
+                    .toolbar {
+                        if !collections.isEmpty {
+                            EditButton()
+                        }
+                    }
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)
@@ -41,15 +53,11 @@ struct CollectionsView: View {
     
     var content: some View {
         ZStack {
-            if viewModel.emptyCollections {
+            if collections.isEmpty {
                 EmptyCollectionsView(caption: "Organise your Collection of Hymns here")
             } else {
                 
-                let onDelete: () -> Void = {
-                    viewModel.subscribeToCollections()
-                }
-                
-                FilteredList(sortKey: "title", queryKey: "title", query: searchBar.text, onDelete: onDelete) { (item: Collection) in
+                FilteredList(sortKey: "title", queryKey: "title", query: searchBar.text, canDelete: true) { (item: Collection) in
                     NavigationLink(
                         destination: CollectionHymnsView(collectionId: item.id!),
                         label: {
@@ -59,9 +67,6 @@ struct CollectionsView: View {
                 .add(self.searchBar)
                 .resignKeyboardOnDragGesture()
             }
-        }
-        .onAppear {
-            viewModel.subscribeToCollections()
         }
     }
 }

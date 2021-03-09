@@ -15,11 +15,11 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
     
     private let content: (T) -> Content
     
-    private let onDelete: (() -> Void)?
+    private let canDelete: Bool
     
     init(sortKey: String,
          filterKey: String? = nil, filterValue: String? = nil,
-         queryKey: String? = nil, query: String? = nil, onDelete: (() -> Void)? = nil,
+         queryKey: String? = nil, query: String? = nil, canDelete: Bool = false,
          @ViewBuilder content: @escaping (T) -> Content) {
         
         var predicateArr: [NSPredicate] = []
@@ -32,12 +32,12 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
         fetchRequest = FetchRequest<T>(entity: T.entity(),
                                        sortDescriptors: [NSSortDescriptor(key: sortKey, ascending: true)],
                                        predicate: NSCompoundPredicate(andPredicateWithSubpredicates: predicateArr))
-        self.onDelete = onDelete
+        self.canDelete = canDelete
         self.content = content
     }
     
     var body: some View {
-        if onDelete != nil {
+        if canDelete {
             List {
                 ForEach(results, id: \.self) { item in
                     self.content(item)
@@ -56,7 +56,5 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
             let result = results[index]
             PersistenceController.shared.delete(item: result)
         }
-        
-        onDelete?()
     }
 }

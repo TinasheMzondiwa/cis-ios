@@ -16,6 +16,13 @@ struct AddToCollectionView: View {
     
     @ObservedObject private var viewModel = CollectionsViewModel()
     
+    @FetchRequest(
+        entity: Collection.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Collection.title, ascending: true),
+        ]
+    ) var collections: FetchedResults<Collection>
+    
     let hymnId: UUID
     let onDismiss: () -> Void
     
@@ -61,14 +68,11 @@ struct AddToCollectionView: View {
                     })
             )
         }
-        .onAppear {
-            viewModel.subscribeToCollections()
-        }
     }
     
     private var addContent: some View {
         VStack {
-            if viewModel.emptyCollections {
+            if collections.isEmpty {
                 EmptyCollectionsView(caption: "Create your first Hymn collection")
             } else {
                 FilteredList(sortKey: "title") { (item: Collection) in

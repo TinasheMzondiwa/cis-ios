@@ -10,14 +10,12 @@ import WebKit
 
 struct HymnView: View {
     
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-    
     @State private var showCollectionModal = false
     
     var hymn: HymnModel
     var body: some View {
         HTMLText(html: hymn.content)
-            .navigationBarTitle(Text(idiom == .phone ? getNavTitle() : "" ), displayMode: .inline)
+            .navigationBarTitle(hymn.title, displayMode: .inline)
             .toolbar {
                 ToolbarItem {
                     Button(action: { showCollectionModal.toggle() }) {
@@ -34,14 +32,6 @@ struct HymnView: View {
                 })
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             }
-    }
-    
-    private func getNavTitle() -> String {
-        if hymn.bookTitle == "Christ In Song" {
-            return "\(hymn.bookTitle) Hymnal"
-        } else {
-            return hymn.bookTitle
-        }
     }
 }
 
