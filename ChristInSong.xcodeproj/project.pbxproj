@@ -22,6 +22,8 @@
 		0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454425E7913A003AE75A /* RoundedCorner.swift */; };
 		0846454F25E79490003AE75A /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454E25E79490003AE75A /* FocusTextField.swift */; };
 		0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846455525E798A7003AE75A /* CollectionsViewModel.swift */; };
+		084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084BDAA625FD9CF8002090CD /* StoreKit.framework */; };
+		084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084BDAA825FD9DAA002090CD /* StoreManager.swift */; };
 		08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA324DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
@@ -174,6 +176,8 @@
 		0846454425E7913A003AE75A /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		0846454E25E79490003AE75A /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
 		0846455525E798A7003AE75A /* CollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewModel.swift; sourceTree = "<group>"; };
+		084BDAA625FD9CF8002090CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		084BDAA825FD9DAA002090CD /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		08624FA024DBA67E00AF2904 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */,
+				084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				08927D9A24BEAAFC0035972C /* SupportView.swift */,
+				084BDAA825FD9DAA002090CD /* StoreManager.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 		1BDE369C9E3073CFD7BC1332 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				084BDAA625FD9CF8002090CD /* StoreKit.framework */,
 				B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */,
 				18412AEF9D7D003FF64B695B /* Pods_macOS.framework */,
 			);
@@ -831,6 +838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08CB33F325E2B7BE00609D65 /* PersistenceController.swift in Sources */,
+				084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */,
 				08927D9B24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08CB340425E2D1C400609D65 /* JsonHymn.swift in Sources */,
 				0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */,

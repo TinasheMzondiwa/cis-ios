@@ -28,6 +28,15 @@ extension View {
         return self.modifier(FontModifier(style: .body))
             .foregroundColor(.primary)
     }
+    
+    func titleStyle() -> some View {
+        return self.modifier(FontModifier(style: .title))
+            .foregroundColor(.primary)
+    }
+    
+    func title2Style() -> some View {
+        return self.modifier(FontModifier(style: .title2))
+    }
 }
 
 struct FontModifier: ViewModifier {

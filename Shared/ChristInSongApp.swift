@@ -22,6 +22,14 @@ struct ChristInSongApp: App {
             persistenceController.save()
         }
     }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        StoreManager.shared.startObserving()
+        return true
+    }
+    func applicationWillTerminate(_ application: UIApplication) {
+        StoreManager.shared.stopObserving()
+    }
 }
 
 
