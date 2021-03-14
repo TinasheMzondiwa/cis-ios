@@ -9,17 +9,17 @@ import Foundation
 import StoreKit
 import Combine
 
-enum PurchaseState {
-    case processing
-    case success
-    case error
+enum PurchaseState: String {
+    case processing = "info.circle"
+    case success = "checkmark.circle"
+    case error = "xmark.octagon.fill"
 }
 
 class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
     
     static let shared = StoreManager()
     
-    let purchasePublisher = PassthroughSubject<(String, PurchaseState), Never>()
+    let purchasePublisher = PassthroughSubject<(message: String, state: PurchaseState), Never>()
     
     @Published var donations = [SKProduct]()
     

@@ -110,6 +110,7 @@
 		08927EB424C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
 		08927EB524C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
 		08927EB624C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
+		08A3366925FDB9A900852566 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3366825FDB9A900852566 /* HUD.swift */; };
 		08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */; };
 		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
 		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
@@ -215,6 +216,7 @@
 		08927E7E24C411170035972C /* ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ndebele.json; sourceTree = "<group>"; };
 		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		08927EB224C6A98C0035972C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		08A3366825FDB9A900852566 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowView.swift; sourceTree = "<group>"; };
 		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
 		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				0846454425E7913A003AE75A /* RoundedCorner.swift */,
 				0846454E25E79490003AE75A /* FocusTextField.swift */,
 				081801D725EA43D10053D295 /* CheckBoxView.swift */,
+				08A3366825FDB9A900852566 /* HUD.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */,
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
+				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
 				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */,
@@ -1093,7 +1097,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1120,7 +1124,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

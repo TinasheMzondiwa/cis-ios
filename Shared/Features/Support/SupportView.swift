@@ -13,6 +13,9 @@ struct SupportView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
+    @State private var showingHUD = false
+    @State private var currState: (message: String, state: PurchaseState)? = nil
+    
     private var navTitle: String = NSLocalizedString("Support", comment: "Title")
     
     var body: some View {
@@ -21,10 +24,22 @@ struct SupportView: View {
                 content
                     .navigationTitle(navTitle)
             }
+            .hud(state: currState?.state, isPresented: $showingHUD) {
+                if let data = currState {
+                    Label(data.message, systemImage: data.state.rawValue)
+                                                .foregroundColor(data.state == .processing ? Color.primary : .white)
+                }
+            }
         } else {
             #if os(iOS)
                 content
                     .navigationTitle(navTitle)
+                    .hud(state: currState?.state, isPresented: $showingHUD) {
+                        if let data = currState {
+                            Label(data.message, systemImage: data.state.rawValue)
+                                                        .foregroundColor(data.state == .processing ? Color.primary : .white)
+                        }
+                    }
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)
@@ -46,9 +61,28 @@ struct SupportView: View {
                     .multilineTextAlignment(.center)
                     .padding()
                 
+                if manager.donations.isEmpty {
+                    Button(action: {
+                        UIApplication.shared.open(URL(string: WebLink.paypal.rawValue)!)
+                    }, label: {
+                        Text("Donate")
+                            .foregroundColor(.accentColor)
+                            .padding([.top, .bottom], 6)
+                            .padding([.trailing, .leading], 12)
+                            .background(
+                                RoundedRectangle(
+                                    cornerRadius: 20,
+                                    style: .continuous
+                                )
+                                .fill(Color(.secondarySystemBackground))
+                            )
+                    })
+                }
+                
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
+                    HStack(alignment: .center, spacing: 20) {
                         Spacer()
+                        
                         ForEach(manager.donations, id: \.self) { product in
                             Button(action: {
                                 let success = manager.donate(for: product)
@@ -84,6 +118,12 @@ struct SupportView: View {
         .onAppear {
             manager.getProducts()
         }
+        .onReceive(manager.purchasePublisher, perform: { data in
+            withAnimation {
+                self.currState = data
+                self.showingHUD.toggle()
+            }
+        })
     }
 }
 
