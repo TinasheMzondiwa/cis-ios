@@ -3,14 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
+		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
+		081801DA25EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
+		081801DB25EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
+		082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
+		082E002625FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
 		0844563E24CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
 		0844563F24CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
 		0844564024CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
 		0844564124CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
+		0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453025E77B41003AE75A /* AddToCollectionView.swift */; };
+		0846453725E77E18003AE75A /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453625E77E18003AE75A /* ViewState.swift */; };
+		0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */; };
+		0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */; };
+		0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454425E7913A003AE75A /* RoundedCorner.swift */; };
+		0846454F25E79490003AE75A /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454E25E79490003AE75A /* FocusTextField.swift */; };
+		0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846455525E798A7003AE75A /* CollectionsViewModel.swift */; };
+		084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084BDAA625FD9CF8002090CD /* StoreKit.framework */; };
+		084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084BDAA825FD9DAA002090CD /* StoreManager.swift */; };
 		08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA324DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
@@ -89,10 +104,6 @@
 		08927EA024C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
 		08927EA124C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
 		08927EA224C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
-		08927EA424C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
-		08927EA524C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
-		08927EA624C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
-		08927EA724C412D80035972C /* HymnalAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EA324C412D80035972C /* HymnalAppData.swift */; };
 		08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
 		08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
 		08927EB024C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
@@ -101,6 +112,24 @@
 		08927EB424C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
 		08927EB524C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
 		08927EB624C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
+		08A3366925FDB9A900852566 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3366825FDB9A900852566 /* HUD.swift */; };
+		08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */; };
+		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
+		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
+		08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */; };
+		08ACE10125F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
+		08ACE10225F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
+		08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */; };
+		08C0927625F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
+		08C0927725F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
+		08C0927F25F7479000845BA1 /* WebLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0927E25F7479000845BA1 /* WebLink.swift */; };
+		08C0928025F7479000845BA1 /* WebLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0927E25F7479000845BA1 /* WebLink.swift */; };
+		08C0929625F74FC500845BA1 /* NavLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929525F74FC500845BA1 /* NavLabel.swift */; };
+		08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929525F74FC500845BA1 /* NavLabel.swift */; };
+		08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929C25F74FE500845BA1 /* NavItem.swift */; };
+		08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929C25F74FE500845BA1 /* NavItem.swift */; };
+		08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
+		08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */; };
 		08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33AE25E2122500609D65 /* HymnalModel.swift */; };
 		08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33B925E21AB600609D65 /* SFSymbol.swift */; };
@@ -110,12 +139,14 @@
 		08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */; };
 		08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */; };
 		08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB341525E2FE2500609D65 /* FilteredList.swift */; };
+		08CB343025E49CC100609D65 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB342F25E49CC100609D65 /* SearchBar.swift */; };
+		08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB343525E49CE700609D65 /* ViewControllerResolver.swift */; };
+		08CB346625E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
+		08CB346725E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		08F3E5B524CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B724CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B824CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
-		08F3E5BA24CD636C00800D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E5B924CD636C00800D3B /* AppDelegate.swift */; };
-		08F3E5BB24CD636C00800D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E5B924CD636C00800D3B /* AppDelegate.swift */; };
 		7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */; };
 		F5947F82F4F1C75BA8501F80 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18412AEF9D7D003FF64B695B /* Pods_macOS.framework */; };
 /* End PBXBuildFile section */
@@ -138,7 +169,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		082E002425FDCFE100E163A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0844563D24CD793D00AE352F /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
+		0846450025E773F7003AE75A /* ChristInSong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChristInSong.entitlements; sourceTree = "<group>"; };
+		0846453025E77B41003AE75A /* AddToCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCollectionView.swift; sourceTree = "<group>"; };
+		0846453625E77E18003AE75A /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0846454425E7913A003AE75A /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		0846454E25E79490003AE75A /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
+		0846455525E798A7003AE75A /* CollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewModel.swift; sourceTree = "<group>"; };
+		084BDAA625FD9CF8002090CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		084BDAA825FD9DAA002090CD /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		08624FA024DBA67E00AF2904 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,9 +217,20 @@
 		08927E7C24C411170035972C /* tonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tonga.json; sourceTree = "<group>"; };
 		08927E7D24C411170035972C /* xhosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xhosa.json; sourceTree = "<group>"; };
 		08927E7E24C411170035972C /* ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ndebele.json; sourceTree = "<group>"; };
-		08927EA324C412D80035972C /* HymnalAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalAppData.swift; sourceTree = "<group>"; };
 		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		08927EB224C6A98C0035972C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		08A3366825FDB9A900852566 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowView.swift; sourceTree = "<group>"; };
+		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
+		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
+		08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionsView.swift; sourceTree = "<group>"; };
+		08ACE10025F4A9FD00E876C2 /* xitsonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xitsonga.json; sourceTree = "<group>"; };
+		08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyles.swift; sourceTree = "<group>"; };
+		08C0927825F7440A00845BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		08C0927E25F7479000845BA1 /* WebLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLink.swift; sourceTree = "<group>"; };
+		08C0929525F74FC500845BA1 /* NavLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLabel.swift; sourceTree = "<group>"; };
+		08C0929C25F74FE500845BA1 /* NavItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavItem.swift; sourceTree = "<group>"; };
+		08C3C0A125F08E81004194B2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		08CB33A425E2115F00609D65 /* HymnalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsViewModel.swift; sourceTree = "<group>"; };
 		08CB33AE25E2122500609D65 /* HymnalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalModel.swift; sourceTree = "<group>"; };
 		08CB33B925E21AB600609D65 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
@@ -186,8 +240,10 @@
 		08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		08CB341525E2FE2500609D65 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
+		08CB342F25E49CC100609D65 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		08CB343525E49CE700609D65 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
+		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		08F3E5B924CD636C00800D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E60508D0E3E4FAFF6BD9322 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		69B0579CBBCF659E463C333F /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */,
+				084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +287,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0846452F25E77B16003AE75A /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				0846453025E77B41003AE75A /* AddToCollectionView.swift */,
+				0846453625E77E18003AE75A /* ViewState.swift */,
+				08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		0846455425E79881003AE75A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0846455525E798A7003AE75A /* CollectionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		086C93F524BE93BC008AFBE5 = {
 			isa = PBXGroup;
 			children = (
@@ -253,7 +328,8 @@
 				086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */,
 				086C93FC24BE93BC008AFBE5 /* ContentView.swift */,
 				086C93FD24BE93BD008AFBE5 /* Assets.xcassets */,
-				08F3E5B924CD636C00800D3B /* AppDelegate.swift */,
+				08C0927925F7440A00845BA1 /* Localizable.strings */,
+				082E002425FDCFE100E163A8 /* AppDelegate.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -272,6 +348,7 @@
 		086C940424BE93BD008AFBE5 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0846450025E773F7003AE75A /* ChristInSong.entitlements */,
 				08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */,
 				086C940524BE93BD008AFBE5 /* Info.plist */,
 			);
@@ -318,7 +395,9 @@
 		08927D9524BEAAA60035972C /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				08927D9624BEAAD00035972C /* CollectionsView.swift */,
+				08AB2E5225E8A50C0086DA32 /* View */,
+				0846455425E79881003AE75A /* ViewModel */,
+				0846452F25E77B16003AE75A /* Add */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -327,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				08927D9A24BEAAFC0035972C /* SupportView.swift */,
+				084BDAA825FD9DAA002090CD /* StoreManager.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -351,12 +431,17 @@
 		08927DA524BEB9360035972C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				08AB2E5D25E8AE620086DA32 /* Extensions */,
+				08CB342E25E49CA200609D65 /* SearchBar */,
 				08927DA624BEB9540035972C /* SearchBarView.swift */,
 				08927EAD24C6A43E0035972C /* ActivityViewController.swift */,
 				08927EB224C6A98C0035972C /* MailView.swift */,
 				0844563D24CD793D00AE352F /* PendingView.swift */,
-				08624FA024DBA67E00AF2904 /* StringExtensions.swift */,
 				08CB341525E2FE2500609D65 /* FilteredList.swift */,
+				0846454425E7913A003AE75A /* RoundedCorner.swift */,
+				0846454E25E79490003AE75A /* FocusTextField.swift */,
+				081801D725EA43D10053D295 /* CheckBoxView.swift */,
+				08A3366825FDB9A900852566 /* HUD.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -367,7 +452,6 @@
 				08CB33AE25E2122500609D65 /* HymnalModel.swift */,
 				08927DAD24BEBBBB0035972C /* HymnModel.swift */,
 				08927E3524C3E7BE0035972C /* Data.swift */,
-				08927EA324C412D80035972C /* HymnalAppData.swift */,
 				08CB340325E2D1C400609D65 /* JsonHymn.swift */,
 			);
 			path = Model;
@@ -376,6 +460,7 @@
 		08927DB024BEC0160035972C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				08C0928525F74E7600845BA1 /* Navigation */,
 				08927D9924BEAAE80035972C /* Support */,
 				08927D9124BEA58A0035972C /* Hymns */,
 				08927D9524BEAAA60035972C /* Collections */,
@@ -388,6 +473,7 @@
 		08927E3424C3E69F0035972C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				08ACE10025F4A9FD00E876C2 /* xitsonga.json */,
 				08927E7724C411160035972C /* chichewa.json */,
 				08927E7E24C411170035972C /* ndebele.json */,
 				08927E7A24C411170035972C /* shona.json */,
@@ -400,6 +486,36 @@
 				08927E3A24C3E7F90035972C /* english.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		08AB2E5225E8A50C0086DA32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08927D9624BEAAD00035972C /* CollectionsView.swift */,
+				08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */,
+				08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */,
+				08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08AB2E5D25E8AE620086DA32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */,
+				08624FA024DBA67E00AF2904 /* StringExtensions.swift */,
+				08C3C0A125F08E81004194B2 /* FontExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		08C0928525F74E7600845BA1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				08C0929525F74FC500845BA1 /* NavLabel.swift */,
+				08C0929C25F74FE500845BA1 /* NavItem.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		08CB33A125E2112200609D65 /* ViewModel */ = {
@@ -425,6 +541,8 @@
 				08CB33EA25E22D9E00609D65 /* Data */,
 				08927DA924BEBB3B0035972C /* Model */,
 				08CB33B925E21AB600609D65 /* SFSymbol.swift */,
+				08CB346525E4C5DE00609D65 /* Constants.swift */,
+				08C0927E25F7479000845BA1 /* WebLink.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -432,6 +550,8 @@
 		08CB33EA25E22D9E00609D65 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */,
+				0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */,
 				08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */,
 				08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */,
 				08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */,
@@ -440,9 +560,19 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		08CB342E25E49CA200609D65 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				08CB342F25E49CC100609D65 /* SearchBar.swift */,
+				08CB343525E49CE700609D65 /* ViewControllerResolver.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		1BDE369C9E3073CFD7BC1332 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				084BDAA625FD9CF8002090CD /* StoreKit.framework */,
 				B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */,
 				18412AEF9D7D003FF64B695B /* Pods_macOS.framework */,
 			);
@@ -471,7 +601,6 @@
 				086C93FE24BE93BD008AFBE5 /* Sources */,
 				086C93FF24BE93BD008AFBE5 /* Frameworks */,
 				086C940024BE93BD008AFBE5 /* Resources */,
-				FBF54D19F68BCE36EAE06F81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -490,7 +619,6 @@
 				086C940624BE93BD008AFBE5 /* Sources */,
 				086C940724BE93BD008AFBE5 /* Frameworks */,
 				086C940824BE93BD008AFBE5 /* Resources */,
-				282C1F3AF0C569707D578445 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -591,6 +719,7 @@
 				08927E8F24C411170035972C /* shona.json in Resources */,
 				08927E3B24C3E7F90035972C /* english.json in Resources */,
 				08927E8724C411170035972C /* tswana.json in Resources */,
+				08C0927625F7440A00845BA1 /* Localizable.strings in Resources */,
 				08927E9B24C411170035972C /* xhosa.json in Resources */,
 				08927E8324C411170035972C /* chichewa.json in Resources */,
 				08F3E5B524CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
@@ -599,6 +728,7 @@
 				08927E8B24C411170035972C /* venda.json in Resources */,
 				08927E7F24C411170035972C /* swahili.json in Resources */,
 				08927E9324C411170035972C /* sotho.json in Resources */,
+				08ACE10125F4A9FD00E876C2 /* xitsonga.json in Resources */,
 				08927E9F24C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +740,7 @@
 				08927E9024C411170035972C /* shona.json in Resources */,
 				08927E3C24C3E7F90035972C /* english.json in Resources */,
 				08927E8824C411170035972C /* tswana.json in Resources */,
+				08C0927725F7440A00845BA1 /* Localizable.strings in Resources */,
 				08927E9C24C411170035972C /* xhosa.json in Resources */,
 				08927E8424C411170035972C /* chichewa.json in Resources */,
 				08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
@@ -618,6 +749,7 @@
 				08927E8C24C411170035972C /* venda.json in Resources */,
 				08927E8024C411170035972C /* swahili.json in Resources */,
 				08927E9424C411170035972C /* sotho.json in Resources */,
+				08ACE10225F4A9FD00E876C2 /* xitsonga.json in Resources */,
 				08927EA024C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,23 +793,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		282C1F3AF0C569707D578445 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-macOS/Pods-macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-macOS/Pods-macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-macOS/Pods-macOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		409968AA691E3940D402E3BC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -722,23 +837,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FBF54D19F68BCE36EAE06F81 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -746,30 +844,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08927EA424C412D80035972C /* HymnalAppData.swift in Sources */,
 				08CB33F325E2B7BE00609D65 /* PersistenceController.swift in Sources */,
+				084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */,
 				08927D9B24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08CB340425E2D1C400609D65 /* JsonHymn.swift in Sources */,
+				0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */,
 				08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */,
+				08CB346625E4C5DE00609D65 /* Constants.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
+				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
+				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
 				08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */,
 				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
+				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
+				08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */,
+				08C0929625F74FC500845BA1 /* NavLabel.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */,
+				08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */,
+				0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
 				08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */,
 				08927E4024C3F8230035972C /* HymnView.swift in Sources */,
+				0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */,
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
+				082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */,
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
+				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
+				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
+				08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */,
+				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
+				08CB343025E49CC100609D65 /* SearchBar.swift in Sources */,
 				08927DA724BEB9540035972C /* SearchBarView.swift in Sources */,
 				08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */,
+				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
+				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
+				08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */,
+				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
+				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
+				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,
 				08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
-				08F3E5BA24CD636C00800D3B /* AppDelegate.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
 				08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
@@ -780,24 +899,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08927EA524C412D80035972C /* HymnalAppData.swift in Sources */,
+				08CB346725E4C5DE00609D65 /* Constants.swift in Sources */,
+				08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
+				08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
+				08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */,
 				08927E4624C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAF24BEBBBB0035972C /* HymnModel.swift in Sources */,
 				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
 				0844563F24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
+				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,
+				08C0928025F7479000845BA1 /* WebLink.swift in Sources */,
 				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
 				08927DA824BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */,
-				08F3E5BB24CD636C00800D3B /* AppDelegate.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
+				082E002625FDCFE100E163A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +930,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C941724BE93BD008AFBE5 /* Tests_iOS.swift in Sources */,
+				081801DA25EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08927EB024C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				08927E4224C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3824C3E7BE0035972C /* Data.swift in Sources */,
@@ -813,7 +938,6 @@
 				08927E4724C402BF0035972C /* HymnalView.swift in Sources */,
 				08927EB524C6A98C0035972C /* MailView.swift in Sources */,
 				0844564024CD793D00AE352F /* PendingView.swift in Sources */,
-				08927EA624C412D80035972C /* HymnalAppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086C942224BE93BD008AFBE5 /* Tests_macOS.swift in Sources */,
+				081801DB25EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08927EB124C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				08927E4324C3F8230035972C /* HymnView.swift in Sources */,
 				08927E3924C3E7BE0035972C /* Data.swift in Sources */,
@@ -829,7 +954,6 @@
 				08927E4824C402BF0035972C /* HymnalView.swift in Sources */,
 				08927EB624C6A98C0035972C /* MailView.swift in Sources */,
 				0844564124CD793D00AE352F /* PendingView.swift in Sources */,
-				08927EA724C412D80035972C /* HymnalAppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +971,17 @@
 			targetProxy = 086C941E24BE93BD008AFBE5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		08C0927925F7440A00845BA1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08C0927825F7440A00845BA1 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		086C942A24BE93BD008AFBE5 /* Debug */ = {
@@ -966,7 +1101,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -979,6 +1116,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -990,7 +1128,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1003,6 +1143,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

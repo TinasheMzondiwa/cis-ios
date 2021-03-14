@@ -10,13 +10,28 @@ import WebKit
 
 struct HymnView: View {
     
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    @State private var showCollectionModal = false
     
     var hymn: HymnModel
     var body: some View {
         HTMLText(html: hymn.content)
-            .navigationBarTitle(Text(idiom == .phone ? hymn.bookTitle : "" ), displayMode: .inline)
-        
+            .navigationBarTitle(hymn.title, displayMode: .inline)
+            .toolbar {
+                ToolbarItem {
+                    Button(action: { showCollectionModal.toggle() }) {
+                        SFSymbol.textPlus
+                            .imageScale(.large)
+                            .accessibility(label: Text(LocalizedStringKey("Collections.Add")))
+                            .padding()
+                    }
+                }
+            }
+            .sheet(isPresented: $showCollectionModal) {
+                AddToCollectionView(hymnId: hymn.id, onDismiss: {
+                    showCollectionModal.toggle()
+                })
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+            }
     }
 }
 

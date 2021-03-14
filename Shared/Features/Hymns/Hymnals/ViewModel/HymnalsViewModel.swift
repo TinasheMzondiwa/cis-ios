@@ -40,7 +40,8 @@ class HymnalsViewModel: ObservableObject {
             HymnalModel(id: "venda", title: "Ngosha YaDzingosha", language: "Venda", selected: id == "venda"),
             HymnalModel(id: "swahili", title: "Nyimbo Za Kristo", language: "Swahili", selected: id == "swahili"),
             HymnalModel(id: "ndebele", title: "UKrestu Esihlabelelweni", language: "Ndebele/IsiZulu", selected: id == "ndebele"),
-            HymnalModel(id: "xhosa", title: "UKristu Engomeni", language: "IsiXhosa", selected: id == "xhosa")
+            HymnalModel(id: "xhosa", title: "UKristu Engomeni", language: "IsiXhosa", selected: id == "xhosa"),
+            HymnalModel(id: "xitsonga", title: "Risima Ra Vuyimbeleri", language: "Xitsonga", selected: id == "xitsonga")
         ]
     }
 }

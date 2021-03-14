@@ -9,26 +9,48 @@ import SwiftUI
 
 struct HymnalsView: View {
     
-    @EnvironmentObject var selectedData: HymnalAppData
+    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
+    @AppStorage(Constants.hymnalTitleKey) var hymnalTitle: String = Constants.defHymnalTitle
     
     @ObservedObject var viewModel = HymnalsViewModel()
     
+    var onDismiss: () -> Void = {}
+    
     var body: some View {
         
-        List(self.viewModel.hymnals, id: \.id) {  hymnal in
-            Button(action: {
-                viewModel.hymnalSelected(id: hymnal.id)
-                
-                selectedData.hymnal = hymnal
-                selectedData.isShowingHymnals.toggle()
-            }, label: {
-                HymnalView(hymnal: hymnal,
-                           index: viewModel.hymnals.firstIndex(of: hymnal) ?? 0)
-            })
+        NavigationView {
+            ScrollView {
+                VStack(spacing: 0) {
+                    Spacer()
+                    ForEach(self.viewModel.hymnals, id: \.id) {  item in
+                        
+                        Button(action: {
+                            viewModel.hymnalSelected(id: item.id)
+                            
+                            hymnal = item.id
+                            hymnalTitle = item.title
+                            
+                            onDismiss()
+                        }, label: {
+                            HymnalView(hymnal: item,
+                                       index: viewModel.hymnals.firstIndex(of: item) ?? 0)
+                        })
+                    }
+                }
+            }
+            .padding([.leading, .trailing])
+            .navigationBarTitle(LocalizedStringKey("Hymnals"), displayMode: .inline)
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        onDismiss()
+                    }, label: {
+                        SFSymbol.close
+                            .navButtonStyle()
+                    }))
         }
-        .padding()
         .onAppear(perform: {
-            viewModel.onAppear(selectedId: selectedData.hymnal.id)
+            viewModel.onAppear(selectedId: hymnal)
         })
         
     }
@@ -36,8 +58,15 @@ struct HymnalsView: View {
 
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
-        HymnalsView()
-            .environmentObject(HymnalAppData())
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        Group {
+            HymnalsView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+                .previewLayout(.sizeThatFits)
+            
+            HymnalsView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+                .previewLayout(.sizeThatFits)
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        }
     }
 }

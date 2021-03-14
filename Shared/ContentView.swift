@@ -20,22 +20,22 @@ struct ContentView: View {
             TabView(selection: $selection) {
                 HymnsView()
                     .tabItem {
-                        Label("Hymns", systemImage: "music.note.list")
+                        NavLabel(item: NavItem.hymns)
                     }
                     .tag(0)
                 CollectionsView()
                     .tabItem {
-                        Label("Collections", systemImage: "doc.plaintext")
+                        NavLabel(item: NavItem.collections)
                     }
                     .tag(1)
                 SupportView()
                     .tabItem {
-                        Label("Support", systemImage: "hand.raised")
+                        NavLabel(item: NavItem.support)
                     }
                     .tag(2)
                 InfoView()
                     .tabItem {
-                        Label("Info", systemImage: "info.circle")
+                        NavLabel(item: NavItem.info)
                     }
                     .tag(3)
             }
@@ -43,7 +43,7 @@ struct ContentView: View {
             NavigationView {
                 #if os(iOS)
                     sidebarContent
-                        .navigationTitle("CIS")
+                        .navigationTitle("")
                 #else
                     sidebarContent
                         .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
@@ -55,24 +55,23 @@ struct ContentView: View {
         
     }
     
-    var sidebarContent: some View {
+    private var sidebarContent: some View {
         List {
             NavigationLink(destination: HymnsView()) {
-                Label("Hymns", systemImage: "music.note.list")
+                NavLabel(item: NavItem.hymns)
             }
             
             NavigationLink(destination: CollectionsView()) {
-                Label("Collections", systemImage: "doc.plaintext")
+                NavLabel(item: NavItem.collections)
             }
            
             NavigationLink(destination: SupportView()) {
-                Label("Support", systemImage: "hand.raised")
+                NavLabel(item: NavItem.support)
             }
             
             NavigationLink(destination: InfoView()) {
-                Label("Info", systemImage: "info.circle")
+                NavLabel(item: NavItem.info)
             }
-            
         }
         .listStyle(SidebarListStyle())
     }

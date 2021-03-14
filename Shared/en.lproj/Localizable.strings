@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  ChristInSong
+
+  Created by Tinashe  on 2021/03/09.
+  
+*/
+
+"Collection.Description" = "Description (Optional)";
+"Collection.Empty.Prompt" = "Add hymns to your collection";
+"Collections" = "Collections";
+"Collections.Add" = "Add to Collection";
+"Collections.Empty.Prompt" = "Create your first Hymn collection";
+"Collections.New" = "New Collection";
+"Collections.Organise.Prompt" = "Organise your Collection of Hymns here";
+
+"Common.App.Name" = "Christ In Song App";
+"Common.New" = "NEW";
+"Common.Save" = "SAVE";
+"Common.Title" = "Title";
+
+"Hymnals" = "Hymnals";
+"Hymnals.Switch" = "Switch Hymnals";
+"Hymns" = "Hymns";
+
+"Info" = "Info";
+"Info.About" = "About";
+"Info.About.Description" = "Christ In Song App was made with ❤️ by Tinashe Mzondiwa, a solo mobile app developer.\nIf you enjoy using this app please consider leaving a review. It helps more than you can imagine.\n\nSpecial thanks to all the wonderful saints who provided hymnals to include in this app.";
+"Info.Help" = "Help or Feedback?";
+"Info.Github" = "Github";
+"Info.More" = "More";
+"Info.Review" = "Write Review";
+"Info.Share" = "Share this app...";
+"Info.Share.Prompt" = "Install the Christ In Song App";
+"Info.Twitter" = "Twitter";
+
+"Sort.Number" = "123";
+"Sort.Title" = "ABC";
+
+"Support" = "Support";
+"Support.Promo.Title" = "Support me with a Donation!";
+"Support.Promo.Desc" = "If you find this app useful please consider supporting with a donation.";
+"Support.Promo.Terms" = "A One-time Donation/Tip (In-App Purchase) is not required to access any feature of this app, All features are available for free and will always be.";

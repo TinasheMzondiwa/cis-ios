@@ -11,10 +11,17 @@ import CoreData
 protocol PersistenceControllerProtocol {
     func save()
     func query(book: String) -> Int
+    func queryHymn(id: UUID) -> Hymn?
     func saveHymns(book: String, models: [JsonHymn])
+    func saveCollection(title: String, about: String)
+    func queryCollection(id: UUID) -> Collection?
+    func queryCollections() -> Int
+    func delete(item: NSManagedObject)
+    func remove(from collection: Collection, id: UUID)
 }
 
 struct PersistenceController : PersistenceControllerProtocol {
+    
     // A singleton for our entire app to use
     static let shared = PersistenceController()
     
@@ -61,6 +68,38 @@ struct PersistenceController : PersistenceControllerProtocol {
         if count == 0 {
             let hymns = loadHymns(key: defBook)
             saveHymns(book: defBook, models: hymns)
+        } else {
+            migrateData()
+        }
+    }
+    
+    private func migrateData() {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let predicate = NSPredicate(format: "titleStr == nil")
+        request.predicate = predicate
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(request)
+            guard results.count > 0 else { return }
+            
+            debugPrint("Migrating...")
+            
+            for result in results {
+                guard let hymn = result as? Hymn else {
+                    continue
+                }
+                
+                if hymn.titleStr == nil {
+                    hymn.titleStr = hymn.title?.titleStr
+                }
+            }
+            
+            save()
+            
+        } catch {
+            debugPrint(error)
         }
     }
     
@@ -71,7 +110,7 @@ struct PersistenceController : PersistenceControllerProtocol {
             do {
                 try context.save()
             } catch {
-                // Show some error here
+                debugPrint(error)
             }
         }
     }
@@ -93,6 +132,24 @@ struct PersistenceController : PersistenceControllerProtocol {
         }
     }
     
+    func queryHymn(id: UUID) -> Hymn? {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        do {
+            let results =  try context.fetch(request)
+            if !results.isEmpty, let hymn = results.first as? Hymn {
+                return hymn
+            }
+            return nil
+        } catch {
+            return nil
+        }
+    }
+    
     func saveHymns(book: String, models: [JsonHymn]) {
         let context = container.viewContext
         
@@ -101,10 +158,75 @@ struct PersistenceController : PersistenceControllerProtocol {
             hymn.id = UUID()
             hymn.book = book
             hymn.title = model.title
+            hymn.titleStr = model.title.titleStr
             hymn.number = Int16(model.number)
-            hymn.content = model.content
+            if model.content.contains(model.title) {
+                hymn.content = model.content
+            } else {
+                hymn.content = "<h3>\(model.title)</h3>\(model.content)"
+            }
         }
         
+        save()
+    }
+    
+    func saveCollection(title: String, about: String) {
+        let context = container.viewContext
+        
+        let collection = Collection(context: context)
+        collection.id = UUID()
+        collection.title = title
+        collection.about = about
+        collection.created = Date()
+        
+        save()
+    }
+    
+    func queryCollection(id: UUID) -> Collection? {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Collection")
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        do {
+            let results =  try context.fetch(request)
+            if !results.isEmpty, let collection = results.first as? Collection {
+                return collection
+            }
+            return nil
+        } catch {
+            return nil
+        }
+    }
+    
+    func queryCollections() -> Int {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Collection")
+        request.fetchLimit = 1
+        request.returnsObjectsAsFaults = false
+        request.fetchBatchSize = 1
+        
+        do {
+            let count = try context.count(for: request)
+            return count
+        } catch {
+            return 0
+        }
+    }
+    
+    func delete(item: NSManagedObject) {
+        let context = container.viewContext
+        context.delete(item)
+        save()
+    }
+    
+    func remove(from collection: Collection, id: UUID) {
+        guard let hymn = queryHymn(id: id) else {
+            return
+        }
+        
+        collection.removeFromHymns(hymn)
         save()
     }
 }

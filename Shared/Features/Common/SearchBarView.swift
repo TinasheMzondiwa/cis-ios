@@ -45,7 +45,7 @@ struct SearchBarView: View {
                 
                 // Search text field
                 ZStack (alignment: .leading) {
-                    if searchText.isEmpty { // Separate text for placeholder to give it the proper color
+                    if searchText.isEmpty {
                         Text("Search")
                     }
                     TextField("", text: $searchText, onEditingChanged: { isEditing in
@@ -54,9 +54,11 @@ struct SearchBarView: View {
                 }
                 // Clear button
                 Button(action: {
-                    self.searchText = ""
+                    withAnimation {
+                        self.searchText = ""
+                    }
                 }) {
-                    SFSymbol.xmark.opacity(searchText == "" ? 0 : 1)
+                    SFSymbol.xmarkFill.opacity(searchText == "" ? 0 : 1)
                 }
             }
             .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))

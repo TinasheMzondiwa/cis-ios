@@ -2,18 +2,20 @@
 //  AppDelegate.swift
 //  ChristInSong
 //
-//  Created by Tinashe  on 2020/07/26.
+//  Created by Tinashe  on 2021/03/14.
 //
 
 import Foundation
-import Firebase
+import UIKit
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  func application(_ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions:
-        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
+class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        StoreManager.shared.startObserving()
+        return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        StoreManager.shared.stopObserving()
+    }
 }
