@@ -24,7 +24,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
     @Published var donations = [SKProduct]()
     
     func getProducts() {
-        let productIDs = ["tip_small", "tip_medium", "tip_large"]
+        let productIDs = ["tip_small", "tip_medium", "tip_large", "tip_xlarge", "tip_huge"]
         
         let request = SKProductsRequest(productIdentifiers: Set(productIDs))
         request.delegate = self
@@ -36,7 +36,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
             
         if !response.products.isEmpty {
             DispatchQueue.main.async {
-                self.donations = response.products.sorted(by: {$0.formattedPrice < $1.formattedPrice})
+                self.donations = response.products.sorted(by: { $0.price.compare($1.price) == .orderedAscending })
             }
         }
     }
@@ -74,7 +74,7 @@ extension StoreManager: SKPaymentTransactionObserver {
                 purchasePublisher.send(("Thank you! ", .success))
             case .failed:
                 if let error = transaction.error as? SKError {
-                    purchasePublisher.send(("Payment Error \(error.code) ", .error))
+                    purchasePublisher.send(("Payment Failed [\(error.errorCode)]", .error))
                     debugPrint("Payment Failed \(error.code)")
                 }
                 SKPaymentQueue.default().finishTransaction(transaction)

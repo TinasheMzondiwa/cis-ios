@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct ChristInSongApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @Environment(\.scenePhase) var scenePhase
     
@@ -21,14 +22,6 @@ struct ChristInSongApp: App {
         }.onChange(of: scenePhase) { _ in
             persistenceController.save()
         }
-    }
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        StoreManager.shared.startObserving()
-        return true
-    }
-    func applicationWillTerminate(_ application: UIApplication) {
-        StoreManager.shared.stopObserving()
     }
 }
 

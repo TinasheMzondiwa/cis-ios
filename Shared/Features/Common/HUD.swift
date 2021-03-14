@@ -4,14 +4,17 @@
 //
 //  Created by Tinashe  on 2021/03/13.
 //
-
-import Foundation
 import SwiftUI
 
 struct HUD<Content: View>: View {
     
-    let state: PurchaseState?
-    @ViewBuilder let content: Content
+   private let state: PurchaseState?
+   private let content: Content
+    
+    init(state: PurchaseState?, content: Content) {
+        self.state = state
+        self.content = content
+    }
     
     var body: some View {
         content
@@ -46,7 +49,7 @@ extension View {
             self
             
             if isPresented.wrappedValue {
-                HUD(state: state, content: content)
+                HUD(state: state, content: content())
                     .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
