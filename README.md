@@ -5,7 +5,7 @@
 Written entirely in SwiftUi (beginner level). 
 
 ## Screenshots
-<img src="art/1.jpeg" width="20%" /><img src="art/2.jpeg" width="20%" /><img src="art/3.jpeg" width="20%" /><img src="art/4.jpeg" width="20%" /><img src="art/5.jpeg" width="20%" />
+<img src="art/1.png" width="20%" /><img src="art/2.png" width="20%" /><img src="art/3.png" width="20%" /><img src="art/4.png" width="20%" /><img src="art/5.png" width="20%" />
 
 ## Hymnals - Language
 
