@@ -75,14 +75,11 @@ extension StoreManager: SKPaymentTransactionObserver {
             case .failed:
                 if let error = transaction.error as? SKError {
                     purchasePublisher.send(("Payment Failed [\(error.errorCode)]", .error))
-                    debugPrint("Payment Failed \(error.code)")
                 }
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .deferred:
-                debugPrint("Ask Mom ...")
                 purchasePublisher.send(("Payment Diferred", .error))
             case .purchasing:
-                debugPrint("working on it...")
                 purchasePublisher.send(("Payment in Process", .processing))
             default:
                 break
