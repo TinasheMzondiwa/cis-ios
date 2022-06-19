@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PendingView<Content: View>: View {
-    var isRedacted = true
+    var isRedacted: Bool
     let content: Content
 
-    init(isRedacted: Bool, @ViewBuilder content: () -> Content) {
+    init(isRedacted: Bool = true, @ViewBuilder content: () -> Content) {
         self.content = content()
         self.isRedacted = isRedacted
     }
