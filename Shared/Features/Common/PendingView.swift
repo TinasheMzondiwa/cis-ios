@@ -28,7 +28,7 @@ struct PendingView<Content: View>: View {
 }
 struct PendingView_Previews: PreviewProvider {
     static var previews: some View {
-        PendingView(isRedacted: true) {
+        PendingView() {
             NavigationView {
                 Form {
                     Text("test")
