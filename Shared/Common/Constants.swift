@@ -16,11 +16,11 @@ struct Constants {
     
     
     static func getAppVersion() -> String {
-        let versionShort: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
-        let versionCode: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
+        let versionString = Bundle.versionString
+        let versionCode = Bundle.versionCode
         
-        if let short = versionShort as? String, let code = versionCode as? String {
-            return "v\(short) (\(code))"
+        if !versionString.isEmpty && !versionCode.isEmpty {
+            return "v\(versionString) (\(versionCode))"
         } else {
             return ""
         }
