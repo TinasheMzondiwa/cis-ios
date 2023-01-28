@@ -147,6 +147,15 @@
 		08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B724CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		08F3E5B824CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
+		67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */; };
+		67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
+		67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
+		67A174BF285F1459006A5BC1 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BE285F1459006A5BC1 /* View+Extensions.swift */; };
+		67A174C0285F1459006A5BC1 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BE285F1459006A5BC1 /* View+Extensions.swift */; };
+		67A174C2285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174C1285F1478006A5BC1 /* ViewModifier+Extensions.swift */; };
+		67A174C3285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174C1285F1478006A5BC1 /* ViewModifier+Extensions.swift */; };
+		67A174C5285F1562006A5BC1 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174C4285F1562006A5BC1 /* Color+Extensions.swift */; };
+		67A174C6285F1562006A5BC1 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174C4285F1562006A5BC1 /* Color+Extensions.swift */; };
 		7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */; };
 		F5947F82F4F1C75BA8501F80 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18412AEF9D7D003FF64B695B /* Pods_macOS.framework */; };
 /* End PBXBuildFile section */
@@ -246,6 +255,11 @@
 		08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E60508D0E3E4FAFF6BD9322 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		67A174BE285F1459006A5BC1 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		67A174C1285F1478006A5BC1 /* ViewModifier+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModifier+Extensions.swift"; sourceTree = "<group>"; };
+		67A174C4285F1562006A5BC1 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		69B0579CBBCF659E463C333F /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		949D2313131E8C41E56BCA10 /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B1F48F3EE68CB913F921E0A8 /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -505,6 +519,10 @@
 				08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */,
 				08624FA024DBA67E00AF2904 /* StringExtensions.swift */,
 				08C3C0A125F08E81004194B2 /* FontExtensions.swift */,
+				67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */,
+				67A174BE285F1459006A5BC1 /* View+Extensions.swift */,
+				67A174C1285F1478006A5BC1 /* ViewModifier+Extensions.swift */,
+				67A174C4285F1562006A5BC1 /* Color+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -538,6 +556,7 @@
 		08CB33B825E21AA300609D65 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				67A174B3285F084D006A5BC1 /* Extensions */,
 				08CB33EA25E22D9E00609D65 /* Data */,
 				08927DA924BEBB3B0035972C /* Model */,
 				08CB33B925E21AB600609D65 /* SFSymbol.swift */,
@@ -577,6 +596,14 @@
 				18412AEF9D7D003FF64B695B /* Pods_macOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67A174B3285F084D006A5BC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		82FF486EAF9A7E141CAB3B35 /* Pods */ = {
@@ -851,17 +878,22 @@
 				0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */,
 				08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08CB346625E4C5DE00609D65 /* Constants.swift in Sources */,
+				67A174BF285F1459006A5BC1 /* View+Extensions.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
+				67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
 				08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */,
+				67A174C2285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
 				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
+				67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */,
 				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
 				08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */,
 				08C0929625F74FC500845BA1 /* NavLabel.swift in Sources */,
 				08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */,
 				08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */,
+				67A174C5285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
 				0846455625E798A7003AE75A /* CollectionsViewModel.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
 				08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */,
@@ -901,6 +933,7 @@
 			files = (
 				08CB346725E4C5DE00609D65 /* Constants.swift in Sources */,
 				08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */,
+				67A174C6285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
@@ -912,7 +945,10 @@
 				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
 				0844563F24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
+				67A174C3285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
+				67A174C0285F1459006A5BC1 /* View+Extensions.swift in Sources */,
 				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,
+				67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
 				08C0928025F7479000845BA1 /* WebLink.swift in Sources */,
 				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
