@@ -1,0 +1,3 @@
+[submodule "Shared/Resources"]
+	path = Shared/Resources
+	url = https://github.com/TinasheMzondiwa/cis-hymnals.git
