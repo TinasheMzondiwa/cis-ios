@@ -9,21 +9,18 @@ Written entirely in SwiftUi (beginner level).
 
 ## Hymnals - Language
 
-1. Christ In Song - English
-2. Keresete Mo Kopelong - Tswana
-3. Keresete Pineng - Sotho
-4. Khristu Mu Nyimbo - Chichewa
-5. Khristu Mu Nyimbo - Tonga
-6. Kristu Munzwiyo - Shona
-7. Ngosha YaDzingosha - Venda
-8. Nyimbo Za Kristo - Swahili
-9. Ukrestu Esihlabelelweni - Ndebele/IsiZulu
-10. UKristu Engomeni - IsiXhosa
-11. Risima Ra Vuyimbeleri - Xitsonga
+See available languages at [cis-hymnals](https://github.com/TinasheMzondiwa/cis-hymnals) with instructions on how to suggest new languages or correct typos.
 
 ## Contributions
 
 Contributions are most welcome in the form of Github issues and pull-requests.
+
+## Building project
+* Clone the repo - `git clone`
+* Get submodules - `git submodule init`
+* Installs pods - `pods - install`
+* Launch `ChristInSong.xcworkspace`
+
 
 ## Links
 <a href='https://apps.apple.com/za/app/christ-in-song-multi-language/id1067718185'><img alt='Download on the App Store' src='https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg' width="200px"/></a>
