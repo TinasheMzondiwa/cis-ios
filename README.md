@@ -25,11 +25,12 @@ Written entirely in SwiftUi (beginner level).
 
 Contributions are most welcome in the form of Github issues and pull-requests.
 
-**[Install On AppStore](https://apps.apple.com/za/app/christ-in-song-multi-language/id1067718185)**
+## Links
+<a href='https://apps.apple.com/za/app/christ-in-song-multi-language/id1067718185'><img alt='Download on the App Store' src='https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg' width="200px"/></a>
 
 ## License
 
-    Copyright 2021 Tinashe Mzondiwa
+    Copyright 2023 Tinashe Mzondiwa
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
