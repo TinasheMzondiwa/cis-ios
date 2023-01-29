@@ -58,3 +58,48 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
         }
     }
 }
+
+
+class FilterVideModel<T: NSManagedObject>: ObservableObject {
+    
+    var fetchRequest: FetchRequest<T>
+    
+    private let sortKey: String
+    private var filterKey: String?
+    private var filterValue: String?
+    private var queryKey: String?
+    let canDelete: Bool
+    
+    init(sortKey: String,
+         filterKey: String?, filterValue: String?,
+         queryKey: String?, canDelete: Bool) {
+        
+        self.queryKey = queryKey
+        self.sortKey = sortKey
+        self.filterKey = filterKey
+        self.filterValue = filterValue
+        self.canDelete = canDelete
+        
+        var predicateArr: [NSPredicate] = []
+        if let key = filterKey, let value = filterValue {
+            predicateArr.append(NSPredicate(format: "\(key) == %@", value))
+        }
+    
+        fetchRequest = FetchRequest<T>(entity: T.entity(),
+                                       sortDescriptors: [NSSortDescriptor(key: sortKey, ascending: true)],
+                                       predicate: NSCompoundPredicate(andPredicateWithSubpredicates: predicateArr))
+    }
+    
+    func performSearch(query: String?) {
+        var predicateArr: [NSPredicate] = []
+        if let key = filterKey, let value = filterValue {
+            predicateArr.append(NSPredicate(format: "\(key) == %@", value))
+        }
+        if let query = query, !query.isEmpty, let key = queryKey {
+            predicateArr.append( NSPredicate(format: "\(key) contains[c] %@", query))
+        }
+        fetchRequest = FetchRequest<T>(entity: T.entity(),
+                                       sortDescriptors: [NSSortDescriptor(key: sortKey, ascending: true)],
+                                       predicate: NSCompoundPredicate(andPredicateWithSubpredicates: predicateArr))
+    }
+}

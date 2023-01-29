@@ -38,6 +38,38 @@
 		086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C93FC24BE93BC008AFBE5 /* ContentView.swift */; };
 		086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086C93FD24BE93BD008AFBE5 /* Assets.xcassets */; };
 		086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086C93FD24BE93BD008AFBE5 /* Assets.xcassets */; };
+		087473512986BC3F00167974 /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473422986BC3E00167974 /* sotho.json */; };
+		087473522986BC3F00167974 /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473422986BC3E00167974 /* sotho.json */; };
+		087473532986BC3F00167974 /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473432986BC3F00167974 /* venda.json */; };
+		087473542986BC3F00167974 /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473432986BC3F00167974 /* venda.json */; };
+		087473552986BC3F00167974 /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473442986BC3F00167974 /* shona.json */; };
+		087473562986BC3F00167974 /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473442986BC3F00167974 /* shona.json */; };
+		087473572986BC3F00167974 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473452986BC3F00167974 /* xitsonga.json */; };
+		087473582986BC3F00167974 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473452986BC3F00167974 /* xitsonga.json */; };
+		087473592986BC3F00167974 /* sdah.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473462986BC3F00167974 /* sdah.json */; };
+		0874735A2986BC3F00167974 /* sdah.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473462986BC3F00167974 /* sdah.json */; };
+		0874735B2986BC3F00167974 /* abagusii.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473472986BC3F00167974 /* abagusii.json */; };
+		0874735C2986BC3F00167974 /* abagusii.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473472986BC3F00167974 /* abagusii.json */; };
+		0874735D2986BC3F00167974 /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473482986BC3F00167974 /* tswana.json */; };
+		0874735E2986BC3F00167974 /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473482986BC3F00167974 /* tswana.json */; };
+		0874735F2986BC3F00167974 /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473492986BC3F00167974 /* swahili.json */; };
+		087473602986BC3F00167974 /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473492986BC3F00167974 /* swahili.json */; };
+		087473612986BC3F00167974 /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734A2986BC3F00167974 /* chichewa.json */; };
+		087473622986BC3F00167974 /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734A2986BC3F00167974 /* chichewa.json */; };
+		087473632986BC3F00167974 /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734B2986BC3F00167974 /* xhosa.json */; };
+		087473642986BC3F00167974 /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734B2986BC3F00167974 /* xhosa.json */; };
+		087473652986BC3F00167974 /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734C2986BC3F00167974 /* ndebele.json */; };
+		087473662986BC3F00167974 /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734C2986BC3F00167974 /* ndebele.json */; };
+		087473672986BC3F00167974 /* gikuyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734D2986BC3F00167974 /* gikuyu.json */; };
+		087473682986BC3F00167974 /* gikuyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734D2986BC3F00167974 /* gikuyu.json */; };
+		087473692986BC3F00167974 /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734E2986BC3F00167974 /* english.json */; };
+		0874736A2986BC3F00167974 /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734E2986BC3F00167974 /* english.json */; };
+		0874736B2986BC3F00167974 /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734F2986BC3F00167974 /* tonga.json */; };
+		0874736C2986BC3F00167974 /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734F2986BC3F00167974 /* tonga.json */; };
+		0874736D2986BC3F00167974 /* dholuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473502986BC3F00167974 /* dholuo.json */; };
+		0874736E2986BC3F00167974 /* dholuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473502986BC3F00167974 /* dholuo.json */; };
+		087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087473752986BD0B00167974 /* GoogleService-Info.plist */; };
+		087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087473752986BD0B00167974 /* GoogleService-Info.plist */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -48,18 +80,12 @@
 		08927DA024BEAB1F0035972C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9E24BEAB1F0035972C /* InfoView.swift */; };
 		08927DA324BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
 		08927DA424BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
-		08927DA724BEB9540035972C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBarView.swift */; };
-		08927DA824BEB9540035972C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA624BEB9540035972C /* SearchBarView.swift */; };
 		08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* HymnModel.swift */; };
 		08927DAF24BEBBBB0035972C /* HymnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* HymnModel.swift */; };
 		08927E3624C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
 		08927E3724C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
 		08927E3824C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
 		08927E3924C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
-		08927E3B24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
-		08927E3C24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
-		08927E3D24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
-		08927E3E24C3E7F90035972C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E3A24C3E7F90035972C /* english.json */; };
 		08927E4024C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
 		08927E4124C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
 		08927E4224C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
@@ -68,42 +94,6 @@
 		08927E4624C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
 		08927E4724C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
 		08927E4824C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
-		08927E7F24C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
-		08927E8024C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
-		08927E8124C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
-		08927E8224C411170035972C /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7624C411160035972C /* swahili.json */; };
-		08927E8324C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
-		08927E8424C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
-		08927E8524C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
-		08927E8624C411170035972C /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7724C411160035972C /* chichewa.json */; };
-		08927E8724C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
-		08927E8824C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
-		08927E8924C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
-		08927E8A24C411170035972C /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7824C411160035972C /* tswana.json */; };
-		08927E8B24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
-		08927E8C24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
-		08927E8D24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
-		08927E8E24C411170035972C /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7924C411160035972C /* venda.json */; };
-		08927E8F24C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
-		08927E9024C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
-		08927E9124C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
-		08927E9224C411170035972C /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7A24C411170035972C /* shona.json */; };
-		08927E9324C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
-		08927E9424C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
-		08927E9524C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
-		08927E9624C411170035972C /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7B24C411170035972C /* sotho.json */; };
-		08927E9724C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
-		08927E9824C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
-		08927E9924C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
-		08927E9A24C411170035972C /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7C24C411170035972C /* tonga.json */; };
-		08927E9B24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
-		08927E9C24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
-		08927E9D24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
-		08927E9E24C411170035972C /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7D24C411170035972C /* xhosa.json */; };
-		08927E9F24C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
-		08927EA024C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
-		08927EA124C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
-		08927EA224C411170035972C /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 08927E7E24C411170035972C /* ndebele.json */; };
 		08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
 		08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
 		08927EB024C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
@@ -117,8 +107,6 @@
 		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
 		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
 		08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */; };
-		08ACE10125F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
-		08ACE10225F4A9FD00E876C2 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE10025F4A9FD00E876C2 /* xitsonga.json */; };
 		08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */; };
 		08C0927625F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
 		08C0927725F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
@@ -139,14 +127,8 @@
 		08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */; };
 		08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */; };
 		08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB341525E2FE2500609D65 /* FilteredList.swift */; };
-		08CB343025E49CC100609D65 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB342F25E49CC100609D65 /* SearchBar.swift */; };
-		08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB343525E49CE700609D65 /* ViewControllerResolver.swift */; };
 		08CB346625E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		08CB346725E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
-		08F3E5B524CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
-		08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
-		08F3E5B724CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
-		08F3E5B824CD5F9B00800D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */; };
 		67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */; };
 		67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
 		67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
@@ -206,26 +188,31 @@
 		086C941D24BE93BD008AFBE5 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		086C942124BE93BD008AFBE5 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		086C942324BE93BD008AFBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		087473422986BC3E00167974 /* sotho.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sotho.json; sourceTree = "<group>"; };
+		087473432986BC3F00167974 /* venda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = venda.json; sourceTree = "<group>"; };
+		087473442986BC3F00167974 /* shona.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shona.json; sourceTree = "<group>"; };
+		087473452986BC3F00167974 /* xitsonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xitsonga.json; sourceTree = "<group>"; };
+		087473462986BC3F00167974 /* sdah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sdah.json; sourceTree = "<group>"; };
+		087473472986BC3F00167974 /* abagusii.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = abagusii.json; sourceTree = "<group>"; };
+		087473482986BC3F00167974 /* tswana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tswana.json; sourceTree = "<group>"; };
+		087473492986BC3F00167974 /* swahili.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swahili.json; sourceTree = "<group>"; };
+		0874734A2986BC3F00167974 /* chichewa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chichewa.json; sourceTree = "<group>"; };
+		0874734B2986BC3F00167974 /* xhosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xhosa.json; sourceTree = "<group>"; };
+		0874734C2986BC3F00167974 /* ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ndebele.json; sourceTree = "<group>"; };
+		0874734D2986BC3F00167974 /* gikuyu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gikuyu.json; sourceTree = "<group>"; };
+		0874734E2986BC3F00167974 /* english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
+		0874734F2986BC3F00167974 /* tonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tonga.json; sourceTree = "<group>"; };
+		087473502986BC3F00167974 /* dholuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dholuo.json; sourceTree = "<group>"; };
+		087473752986BD0B00167974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		08927D9224BEA5B60035972C /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		08927D9624BEAAD00035972C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		08927D9E24BEAB1F0035972C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		08927DA224BEAC240035972C /* HymnalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsView.swift; sourceTree = "<group>"; };
-		08927DA624BEB9540035972C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		08927DAD24BEBBBB0035972C /* HymnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnModel.swift; sourceTree = "<group>"; };
 		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		08927E3A24C3E7F90035972C /* english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
 		08927E3F24C3F8230035972C /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
 		08927E4424C402BF0035972C /* HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalView.swift; sourceTree = "<group>"; };
-		08927E7624C411160035972C /* swahili.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swahili.json; sourceTree = "<group>"; };
-		08927E7724C411160035972C /* chichewa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chichewa.json; sourceTree = "<group>"; };
-		08927E7824C411160035972C /* tswana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tswana.json; sourceTree = "<group>"; };
-		08927E7924C411160035972C /* venda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = venda.json; sourceTree = "<group>"; };
-		08927E7A24C411170035972C /* shona.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shona.json; sourceTree = "<group>"; };
-		08927E7B24C411170035972C /* sotho.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sotho.json; sourceTree = "<group>"; };
-		08927E7C24C411170035972C /* tonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tonga.json; sourceTree = "<group>"; };
-		08927E7D24C411170035972C /* xhosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xhosa.json; sourceTree = "<group>"; };
-		08927E7E24C411170035972C /* ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ndebele.json; sourceTree = "<group>"; };
 		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		08927EB224C6A98C0035972C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		08A3366825FDB9A900852566 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
@@ -233,7 +220,6 @@
 		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
 		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionsView.swift; sourceTree = "<group>"; };
-		08ACE10025F4A9FD00E876C2 /* xitsonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xitsonga.json; sourceTree = "<group>"; };
 		08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyles.swift; sourceTree = "<group>"; };
 		08C0927825F7440A00845BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		08C0927E25F7479000845BA1 /* WebLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLink.swift; sourceTree = "<group>"; };
@@ -249,10 +235,7 @@
 		08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		08CB341525E2FE2500609D65 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
-		08CB342F25E49CC100609D65 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		08CB343525E49CE700609D65 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
 		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E60508D0E3E4FAFF6BD9322 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -336,8 +319,8 @@
 		086C93FA24BE93BC008AFBE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				087473412986BC0100167974 /* Resources */,
 				08CB33B825E21AA300609D65 /* Common */,
-				08927E3424C3E69F0035972C /* Resources */,
 				08927DB024BEC0160035972C /* Features */,
 				086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */,
 				086C93FC24BE93BC008AFBE5 /* ContentView.swift */,
@@ -362,8 +345,8 @@
 		086C940424BE93BD008AFBE5 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				087473752986BD0B00167974 /* GoogleService-Info.plist */,
 				0846450025E773F7003AE75A /* ChristInSong.entitlements */,
-				08F3E5B424CD5F9B00800D3B /* GoogleService-Info.plist */,
 				086C940524BE93BD008AFBE5 /* Info.plist */,
 			);
 			path = iOS;
@@ -394,6 +377,28 @@
 				086C942324BE93BD008AFBE5 /* Info.plist */,
 			);
 			path = Tests_macOS;
+			sourceTree = "<group>";
+		};
+		087473412986BC0100167974 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				087473472986BC3F00167974 /* abagusii.json */,
+				0874734A2986BC3F00167974 /* chichewa.json */,
+				087473502986BC3F00167974 /* dholuo.json */,
+				0874734E2986BC3F00167974 /* english.json */,
+				0874734D2986BC3F00167974 /* gikuyu.json */,
+				0874734C2986BC3F00167974 /* ndebele.json */,
+				087473462986BC3F00167974 /* sdah.json */,
+				087473442986BC3F00167974 /* shona.json */,
+				087473422986BC3E00167974 /* sotho.json */,
+				087473492986BC3F00167974 /* swahili.json */,
+				0874734F2986BC3F00167974 /* tonga.json */,
+				087473482986BC3F00167974 /* tswana.json */,
+				087473432986BC3F00167974 /* venda.json */,
+				0874734B2986BC3F00167974 /* xhosa.json */,
+				087473452986BC3F00167974 /* xitsonga.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		08927D9124BEA58A0035972C /* Hymns */ = {
@@ -446,8 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				08AB2E5D25E8AE620086DA32 /* Extensions */,
-				08CB342E25E49CA200609D65 /* SearchBar */,
-				08927DA624BEB9540035972C /* SearchBarView.swift */,
 				08927EAD24C6A43E0035972C /* ActivityViewController.swift */,
 				08927EB224C6A98C0035972C /* MailView.swift */,
 				0844563D24CD793D00AE352F /* PendingView.swift */,
@@ -482,24 +485,6 @@
 				08927D9D24BEAB0C0035972C /* Info */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		08927E3424C3E69F0035972C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				08ACE10025F4A9FD00E876C2 /* xitsonga.json */,
-				08927E7724C411160035972C /* chichewa.json */,
-				08927E7E24C411170035972C /* ndebele.json */,
-				08927E7A24C411170035972C /* shona.json */,
-				08927E7B24C411170035972C /* sotho.json */,
-				08927E7624C411160035972C /* swahili.json */,
-				08927E7C24C411170035972C /* tonga.json */,
-				08927E7824C411160035972C /* tswana.json */,
-				08927E7924C411160035972C /* venda.json */,
-				08927E7D24C411170035972C /* xhosa.json */,
-				08927E3A24C3E7F90035972C /* english.json */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		08AB2E5225E8A50C0086DA32 /* View */ = {
@@ -577,15 +562,6 @@
 				08CB33F225E2B7BE00609D65 /* PersistenceController.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		08CB342E25E49CA200609D65 /* SearchBar */ = {
-			isa = PBXGroup;
-			children = (
-				08CB342F25E49CC100609D65 /* SearchBar.swift */,
-				08CB343525E49CE700609D65 /* ViewControllerResolver.swift */,
-			);
-			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		1BDE369C9E3073CFD7BC1332 /* Frameworks */ = {
@@ -743,20 +719,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08927E8F24C411170035972C /* shona.json in Resources */,
-				08927E3B24C3E7F90035972C /* english.json in Resources */,
-				08927E8724C411170035972C /* tswana.json in Resources */,
 				08C0927625F7440A00845BA1 /* Localizable.strings in Resources */,
-				08927E9B24C411170035972C /* xhosa.json in Resources */,
-				08927E8324C411170035972C /* chichewa.json in Resources */,
-				08F3E5B524CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
-				08927E9724C411170035972C /* tonga.json in Resources */,
+				0874735D2986BC3F00167974 /* tswana.json in Resources */,
+				0874736D2986BC3F00167974 /* dholuo.json in Resources */,
+				087473592986BC3F00167974 /* sdah.json in Resources */,
+				0874735F2986BC3F00167974 /* swahili.json in Resources */,
+				087473632986BC3F00167974 /* xhosa.json in Resources */,
+				087473552986BC3F00167974 /* shona.json in Resources */,
 				086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */,
-				08927E8B24C411170035972C /* venda.json in Resources */,
-				08927E7F24C411170035972C /* swahili.json in Resources */,
-				08927E9324C411170035972C /* sotho.json in Resources */,
-				08ACE10125F4A9FD00E876C2 /* xitsonga.json in Resources */,
-				08927E9F24C411170035972C /* ndebele.json in Resources */,
+				0874736B2986BC3F00167974 /* tonga.json in Resources */,
+				0874735B2986BC3F00167974 /* abagusii.json in Resources */,
+				087473672986BC3F00167974 /* gikuyu.json in Resources */,
+				087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */,
+				087473572986BC3F00167974 /* xitsonga.json in Resources */,
+				087473612986BC3F00167974 /* chichewa.json in Resources */,
+				087473652986BC3F00167974 /* ndebele.json in Resources */,
+				087473532986BC3F00167974 /* venda.json in Resources */,
+				087473692986BC3F00167974 /* english.json in Resources */,
+				087473512986BC3F00167974 /* sotho.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,20 +744,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08927E9024C411170035972C /* shona.json in Resources */,
-				08927E3C24C3E7F90035972C /* english.json in Resources */,
-				08927E8824C411170035972C /* tswana.json in Resources */,
 				08C0927725F7440A00845BA1 /* Localizable.strings in Resources */,
-				08927E9C24C411170035972C /* xhosa.json in Resources */,
-				08927E8424C411170035972C /* chichewa.json in Resources */,
-				08F3E5B624CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
-				08927E9824C411170035972C /* tonga.json in Resources */,
+				0874735E2986BC3F00167974 /* tswana.json in Resources */,
+				0874736E2986BC3F00167974 /* dholuo.json in Resources */,
+				0874735A2986BC3F00167974 /* sdah.json in Resources */,
+				087473602986BC3F00167974 /* swahili.json in Resources */,
+				087473642986BC3F00167974 /* xhosa.json in Resources */,
+				087473562986BC3F00167974 /* shona.json in Resources */,
 				086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */,
-				08927E8C24C411170035972C /* venda.json in Resources */,
-				08927E8024C411170035972C /* swahili.json in Resources */,
-				08927E9424C411170035972C /* sotho.json in Resources */,
-				08ACE10225F4A9FD00E876C2 /* xitsonga.json in Resources */,
-				08927EA024C411170035972C /* ndebele.json in Resources */,
+				0874736C2986BC3F00167974 /* tonga.json in Resources */,
+				0874735C2986BC3F00167974 /* abagusii.json in Resources */,
+				087473682986BC3F00167974 /* gikuyu.json in Resources */,
+				087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */,
+				087473582986BC3F00167974 /* xitsonga.json in Resources */,
+				087473622986BC3F00167974 /* chichewa.json in Resources */,
+				087473662986BC3F00167974 /* ndebele.json in Resources */,
+				087473542986BC3F00167974 /* venda.json in Resources */,
+				0874736A2986BC3F00167974 /* english.json in Resources */,
+				087473522986BC3F00167974 /* sotho.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,17 +769,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08927E9524C411170035972C /* sotho.json in Resources */,
-				08927E9D24C411170035972C /* xhosa.json in Resources */,
-				08927E8524C411170035972C /* chichewa.json in Resources */,
-				08927E9124C411170035972C /* shona.json in Resources */,
-				08927E9924C411170035972C /* tonga.json in Resources */,
-				08927E8924C411170035972C /* tswana.json in Resources */,
-				08927E3D24C3E7F90035972C /* english.json in Resources */,
-				08927E8D24C411170035972C /* venda.json in Resources */,
-				08F3E5B724CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
-				08927E8124C411170035972C /* swahili.json in Resources */,
-				08927EA124C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,17 +776,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08927E9624C411170035972C /* sotho.json in Resources */,
-				08927E9E24C411170035972C /* xhosa.json in Resources */,
-				08927E8624C411170035972C /* chichewa.json in Resources */,
-				08927E9224C411170035972C /* shona.json in Resources */,
-				08927E9A24C411170035972C /* tonga.json in Resources */,
-				08927E8A24C411170035972C /* tswana.json in Resources */,
-				08927E3E24C3E7F90035972C /* english.json in Resources */,
-				08927E8E24C411170035972C /* venda.json in Resources */,
-				08F3E5B824CD5F9B00800D3B /* GoogleService-Info.plist in Resources */,
-				08927E8224C411170035972C /* swahili.json in Resources */,
-				08927EA224C411170035972C /* ndebele.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,12 +867,9 @@
 				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
 				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
-				08CB343625E49CE700609D65 /* ViewControllerResolver.swift in Sources */,
 				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
-				08CB343025E49CC100609D65 /* SearchBar.swift in Sources */,
-				08927DA724BEB9540035972C /* SearchBarView.swift in Sources */,
 				08CB33A525E2115F00609D65 /* HymnalsViewModel.swift in Sources */,
 				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
 				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
@@ -953,7 +912,6 @@
 				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
-				08927DA824BEB9540035972C /* SearchBarView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
@@ -1143,7 +1101,7 @@
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1170,7 +1128,7 @@
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

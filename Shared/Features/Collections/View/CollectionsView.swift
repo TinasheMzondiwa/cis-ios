@@ -11,7 +11,7 @@ struct CollectionsView: View {
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     @ObservedObject private var viewModel = CollectionsViewModel()
-    @ObservedObject private var searchBar: SearchBar = SearchBar()
+    @State private var searchQuery: String = ""
     
     @FetchRequest(
         entity: Collection.entity(),
@@ -57,14 +57,17 @@ struct CollectionsView: View {
                 EmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
             } else {
                 
-                FilteredList(sortKey: "title", queryKey: "title", query: searchBar.text, canDelete: true) { (item: Collection) in
+                FilteredList(sortKey: "title", queryKey: "title", query: searchQuery, canDelete: true) { (item: Collection) in
                     NavigationLink(
                         destination: CollectionHymnsView(collectionId: item.id!),
                         label: {
                             CollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
                         })
                 }
-                .add(self.searchBar)
+                .searchable(text: $searchQuery)
+                .onChange(of: searchQuery) { query in
+                    searchQuery = query
+                }
                 .resignKeyboardOnDragGesture()
             }
         }
