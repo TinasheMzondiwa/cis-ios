@@ -15,6 +15,19 @@ enum PurchaseState: String {
     case error = "xmark.octagon.fill"
 }
 
+extension PurchaseState {
+    var alert: AlertState {
+        switch self {
+        case .processing:
+            return .info
+        case .success:
+            return .success
+        case .error:
+            return .error
+        }
+    }
+}
+
 class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
     
     static let shared = StoreManager()
@@ -32,8 +45,6 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        print("Did receive response")
-            
         if !response.products.isEmpty {
             DispatchQueue.main.async {
                 self.donations = response.products.sorted(by: { $0.price.compare($1.price) == .orderedAscending })

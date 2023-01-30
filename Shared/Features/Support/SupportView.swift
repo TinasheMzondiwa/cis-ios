@@ -14,7 +14,7 @@ struct SupportView: View {
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     @State private var showingHUD = false
-    @State private var currState: (message: String, state: PurchaseState)? = nil
+    @State private var currState: (message: String, state: AlertState)? = nil
     
     private var navTitle: String = NSLocalizedString("Support", comment: "Title")
     
@@ -27,7 +27,7 @@ struct SupportView: View {
             .hud(state: currState?.state, isPresented: $showingHUD) {
                 if let data = currState {
                     Label(data.message, systemImage: data.state.rawValue)
-                                                .foregroundColor(data.state == .processing ? Color.primary : .white)
+                        .foregroundColor(data.state == .info ? Color.primary : .white)
                 }
             }
         } else {
@@ -37,7 +37,7 @@ struct SupportView: View {
                     .hud(state: currState?.state, isPresented: $showingHUD) {
                         if let data = currState {
                             Label(data.message, systemImage: data.state.rawValue)
-                                                        .foregroundColor(data.state == .processing ? Color.primary : .white)
+                                                        .foregroundColor(data.state == .info ? Color.primary : .white)
                         }
                     }
             #else
@@ -120,7 +120,7 @@ struct SupportView: View {
         }
         .onReceive(manager.purchasePublisher, perform: { data in
             withAnimation {
-                self.currState = data
+                self.currState = (data.message, data.state.alert)
                 self.showingHUD.toggle()
             }
         })
