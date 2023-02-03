@@ -8,10 +8,10 @@ import SwiftUI
 
 struct HUD<Content: View>: View {
     
-   private let state: PurchaseState?
+   private let state: AlertState?
    private let content: Content
     
-    init(state: PurchaseState?, content: Content) {
+    init(state: AlertState?, content: Content) {
         self.state = state
         self.content = content
     }
@@ -33,6 +33,8 @@ struct HUD<Content: View>: View {
             return .green
         case .error:
             return .red
+        case .warning:
+            return .orange
         default:
             return Color(.secondarySystemBackground)
         }
@@ -41,7 +43,7 @@ struct HUD<Content: View>: View {
 
 extension View {
     func hud<Content: View>(
-        state: PurchaseState?,
+        state: AlertState?,
         isPresented: Binding<Bool>,
         @ViewBuilder content: () -> Content
     ) -> some View {

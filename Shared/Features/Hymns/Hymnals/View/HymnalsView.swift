@@ -9,12 +9,10 @@ import SwiftUI
 
 struct HymnalsView: View {
     
-    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
-    @AppStorage(Constants.hymnalTitleKey) var hymnalTitle: String = Constants.defHymnalTitle
-    
     @ObservedObject var viewModel = HymnalsViewModel()
     
-    var onDismiss: () -> Void = {}
+    var hymnal: String
+    var onDismiss: (HymnalModel?) -> Void
     
     var body: some View {
         
@@ -27,23 +25,20 @@ struct HymnalsView: View {
                         Button(action: {
                             viewModel.hymnalSelected(id: item.id)
                             
-                            hymnal = item.id
-                            hymnalTitle = item.title
-                            
-                            onDismiss()
+                            onDismiss(item)
                         }, label: {
                             HymnalView(hymnal: item,
                                        index: viewModel.hymnals.firstIndex(of: item) ?? 0)
                         })
                     }
                 }
+                .padding([.leading, .trailing])
             }
-            .padding([.leading, .trailing])
             .navigationBarTitle(LocalizedStringKey("Hymnals"), displayMode: .inline)
             .navigationBarItems(
                 leading:
                     Button(action: {
-                        onDismiss()
+                        onDismiss(nil)
                     }, label: {
                         SFSymbol.close
                             .navButtonStyle()
@@ -59,11 +54,11 @@ struct HymnalsView: View {
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HymnalsView()
+            HymnalsView(hymnal: "") { item in }
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
                 .previewLayout(.sizeThatFits)
             
-            HymnalsView()
+            HymnalsView(hymnal: "") { item in }
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)

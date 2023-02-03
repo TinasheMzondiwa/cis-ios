@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CheckBoxView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @Binding var checked: Bool
     
     var body: some View {
@@ -21,7 +23,7 @@ struct CheckBoxView: View {
             
             RoundedRectangle(cornerRadius: 10)
                 .trim(from: 0, to: 1)
-                .fill(checked ? Color.accentColor : Color(.secondarySystemBackground))
+                .fill(checked ? Color.accentColor : Color(colorScheme == .dark ? .tertiarySystemBackground : .secondarySystemBackground))
                 .frame(width: 30, height: 30)
             
             if checked {
@@ -29,7 +31,7 @@ struct CheckBoxView: View {
                     .foregroundColor(.white)
             }
         }
-        .animation(checked ? .easeIn(duration: 0.6) : .easeIn)
+        .animation(checked ? .easeIn(duration: 0.6) : .easeIn, value: 1.0)
     }
 }
 

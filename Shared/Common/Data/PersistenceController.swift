@@ -12,6 +12,7 @@ protocol PersistenceControllerProtocol {
     func save()
     func query(book: String) -> Int
     func queryHymn(id: UUID) -> Hymn?
+    func queryHymn(number: Int, book: String) -> Hymn?
     func saveHymns(book: String, models: [JsonHymn])
     func saveCollection(title: String, about: String)
     func queryCollection(id: UUID) -> Collection?
@@ -136,6 +137,25 @@ struct PersistenceController : PersistenceControllerProtocol {
         let context = container.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
         let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        do {
+            let results =  try context.fetch(request)
+            if !results.isEmpty, let hymn = results.first as? Hymn {
+                return hymn
+            }
+            return nil
+        } catch {
+            return nil
+        }
+    }
+    
+    func queryHymn(number: Int, book: String) -> Hymn? {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let predicate = NSPredicate(format: "number == %i AND book == %@", number, book)
+        
         request.predicate = predicate
         request.fetchLimit = 1
         

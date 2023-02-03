@@ -10,35 +10,78 @@ import WebKit
 
 struct HymnView: View {
     
+    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
     @State private var showCollectionModal = false
+    @State private var showHymnalsModal = false
+    
+    @ObservedObject private var viewModel = HymnViewModel()
     
     var hymn: HymnModel
+    
     var body: some View {
-        HTMLText(html: hymn.content)
-            .navigationBarTitle(hymn.title, displayMode: .inline)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: { showCollectionModal.toggle() }) {
-                        SFSymbol.textPlus
-                            .imageScale(.large)
-                            .accessibility(label: Text(LocalizedStringKey("Collections.Add")))
-                            .padding()
-                    }
+        
+        ZStack {
+            if let model = viewModel.model {
+                HTMLText(html: model.content)
+            } else {
+                // TODO: Loading state and re-enter view
+                EmptyView()
+            }
+        }
+        .navigationTitle(viewModel.model?.bookTitle ?? "")
+        .toolbar {
+            ToolbarItemGroup {
+                Button(action: { showCollectionModal.toggle() }) {
+                    SFSymbol.textPlus
+                        .accessibility(label: Text(LocalizedStringKey("Collections.Add")))
+                }
+                
+                Button(action: { showHymnalsModal.toggle() }) {
+                    SFSymbol.bookCircle
+                        .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
                 }
             }
-            .sheet(isPresented: $showCollectionModal) {
-                AddToCollectionView(hymnId: hymn.id, onDismiss: {
+        }
+        .sheet(isPresented: $showCollectionModal) {
+            if let model = viewModel.model {
+                AddToCollectionView(hymnId: model.id, onDismiss: {
                     showCollectionModal.toggle()
                 })
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             }
+        }
+        .sheet(isPresented: $showHymnalsModal) {
+            HymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
+                showHymnalsModal.toggle()
+                
+                if let hymnal: HymnalModel = item {
+                    viewModel.switchHymnal(hymnal: hymnal)
+                }
+            }
+        }
+        .hud(state: viewModel.currState?.state, isPresented: $viewModel.showingHUD) {
+            if let data = viewModel.currState {
+                Label(
+                    data.message,
+                    systemImage: data.state.rawValue
+                )
+                .font(.body.weight(.bold))
+                .foregroundColor(data.state == .info ? Color.primary : .white)
+            }
+        }
+        .onAppear {
+            viewModel.onAppear(hymn: hymn)
+        }
+    
     }
 }
 
 struct HymnView_Previews: PreviewProvider {
     static var previews: some View {
-        HymnView(hymn: HymnModel(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvry  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+        NavigationView {
+            HymnView(hymn: HymnModel(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))
+        }
+        .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }
 }
 
