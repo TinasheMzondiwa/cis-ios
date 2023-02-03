@@ -10,6 +10,7 @@ import WebKit
 
 struct HymnView: View {
     
+    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
     @State private var showCollectionModal = false
     @State private var showHymnalsModal = false
     
@@ -42,14 +43,15 @@ struct HymnView: View {
             }
         }
         .sheet(isPresented: $showCollectionModal) {
-            AddToCollectionView(hymnId: hymn.id, onDismiss: {
-                showCollectionModal.toggle()
-            })
-            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+            if let model = viewModel.model {
+                AddToCollectionView(hymnId: model.id, onDismiss: {
+                    showCollectionModal.toggle()
+                })
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+            }
         }
         .sheet(isPresented: $showHymnalsModal) {
-            // TODO: Pass the previously selected hymnal
-            HymnalsView { item in
+            HymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
                 showHymnalsModal.toggle()
                 
                 if let hymnal: HymnalModel = item {

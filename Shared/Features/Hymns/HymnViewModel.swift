@@ -14,6 +14,7 @@ class HymnViewModel : ObservableObject {
     }()
     
     @Published private(set) var model: HymnModel?
+    @Published private(set) var hymnal: HymnalModel?
     @Published private(set) var currState: (message: String, state: AlertState)?
     @Published var showingHUD = false
     
@@ -25,6 +26,7 @@ class HymnViewModel : ObservableObject {
         if let model = model, let hymn = persistance.queryHymn(number: model.number, book: hymnal.id) {
             currState = nil
             self.model = HymnModel(hymn: hymn, bookTitle: hymnal.title)
+            self.hymnal = hymnal
         } else if let model = model {
             currState = ("Hymn \(model.number) unvailable in \(hymnal.title).", .warning)
             showingHUD = true

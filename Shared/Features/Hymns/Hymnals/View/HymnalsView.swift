@@ -9,10 +9,9 @@ import SwiftUI
 
 struct HymnalsView: View {
     
-    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
-    
     @ObservedObject var viewModel = HymnalsViewModel()
     
+    var hymnal: String
     var onDismiss: (HymnalModel?) -> Void
     
     var body: some View {
@@ -33,8 +32,8 @@ struct HymnalsView: View {
                         })
                     }
                 }
+                .padding([.leading, .trailing])
             }
-            .padding([.leading, .trailing])
             .navigationBarTitle(LocalizedStringKey("Hymnals"), displayMode: .inline)
             .navigationBarItems(
                 leading:
@@ -55,11 +54,11 @@ struct HymnalsView: View {
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HymnalsView { item in }
+            HymnalsView(hymnal: "") { item in }
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
                 .previewLayout(.sizeThatFits)
             
-            HymnalsView { item in }
+            HymnalsView(hymnal: "") { item in }
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)

@@ -83,7 +83,7 @@ struct HymnsView: View {
         }
         .resignKeyboardOnDragGesture()
         .sheet(isPresented: $showModal) {
-            HymnalsView { item in
+            HymnalsView(hymnal: hymnal) { item in
                 showModal.toggle()
                 
                 if let hymnal: HymnalModel = item {
