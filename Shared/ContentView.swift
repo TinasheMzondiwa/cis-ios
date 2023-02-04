@@ -18,7 +18,7 @@ struct ContentView: View {
         
         if (idiom == .phone) {
             TabView(selection: $selection) {
-                HymnsView()
+                HymnsListView()
                     .tabItem {
                         NavLabel(item: NavItem.hymns)
                     }
@@ -49,7 +49,7 @@ struct ContentView: View {
                         .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
                 #endif
                
-                HymnsView()
+                HymnsListView()
             }
         }
         
@@ -57,7 +57,7 @@ struct ContentView: View {
     
     private var sidebarContent: some View {
         List {
-            NavigationLink(destination: HymnsView()) {
+            NavigationLink(destination: HymnsListView()) {
                 NavLabel(item: NavItem.hymns)
             }
             
@@ -77,8 +77,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+

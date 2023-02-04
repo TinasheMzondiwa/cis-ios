@@ -12,7 +12,7 @@ private enum Sort: String {
     case title = "titleStr"
 }
 
-struct HymnsView: View {
+struct HymnsListView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
@@ -103,7 +103,7 @@ struct HymnsView: View {
 struct HymnsView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone SE", "iPhone XS Max", "iPad Pro (11-inch) (2nd generation)"], id: \.self) { deviceName in
-            HymnsView()
+            HymnsListView()
                 .previewDevice(PreviewDevice(rawValue: deviceName))
         }
         
