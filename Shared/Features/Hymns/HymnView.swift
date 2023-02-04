@@ -28,7 +28,7 @@ struct HymnView: View {
                 EmptyView()
             }
         }
-        .navigationTitle(viewModel.model?.bookTitle ?? "")
+        .navigationTitle(hymn.bookTitle)
         .toolbar {
             ToolbarItemGroup {
                 Button(action: { showCollectionModal.toggle() }) {
@@ -43,12 +43,12 @@ struct HymnView: View {
             }
         }
         .sheet(isPresented: $showCollectionModal) {
-            if let model = viewModel.model {
-                AddToCollectionView(hymnId: model.id, onDismiss: {
+                AddToCollectionView(hymnId: hymn.id, onDismiss: {
                     showCollectionModal.toggle()
+                    viewModel.model = hymn
                 })
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-            }
+
         }
         .sheet(isPresented: $showHymnalsModal) {
             HymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in

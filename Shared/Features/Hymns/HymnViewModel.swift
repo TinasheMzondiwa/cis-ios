@@ -13,7 +13,7 @@ class HymnViewModel : ObservableObject {
         PersistenceController.shared
     }()
     
-    @Published private(set) var model: HymnModel?
+    @Published var model: HymnModel?
     @Published private(set) var hymnal: HymnalModel?
     @Published private(set) var currState: (message: String, state: AlertState)?
     @Published var showingHUD = false
