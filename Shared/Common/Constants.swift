@@ -19,10 +19,7 @@ struct Constants {
         let versionString = Bundle.versionString
         let versionCode = Bundle.versionCode
         
-        if !versionString.isEmpty && !versionCode.isEmpty {
-            return "v\(versionString) (\(versionCode))"
-        } else {
-            return ""
-        }
+        return (!versionString.isEmpty && !versionCode.isEmpty) ?
+        "v\(versionString) (\(versionCode))" : ""
     }
 }
