@@ -28,7 +28,7 @@ struct HymnView: View {
                 EmptyView()
             }
         }
-        .navigationTitle(hymn.bookTitle)
+        .navigationTitle(viewModel.model?.bookTitle ?? hymn.bookTitle)
         .toolbar {
             ToolbarItemGroup {
                 Button(action: { showCollectionModal.toggle() }) {
