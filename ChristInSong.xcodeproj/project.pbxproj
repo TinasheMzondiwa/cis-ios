@@ -288,7 +288,6 @@
 		086C93F524BE93BC008AFBE5 = {
 			isa = PBXGroup;
 			children = (
-				1D45302229BB809300C95AC1 /* Sources */,
 				086C93FA24BE93BC008AFBE5 /* Shared */,
 				086C940424BE93BD008AFBE5 /* iOS */,
 				086C940B24BE93BD008AFBE5 /* macOS */,
@@ -302,6 +301,9 @@
 		086C93FA24BE93BC008AFBE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1D45302529BB80CB00C95AC1 /* ViewModel */,
+				1D45302429BB80B600C95AC1 /* CISStore */,
+				1D45302329BB80A300C95AC1 /* Store */,
 				087473412986BC0100167974 /* Resources */,
 				08CB33B825E21AA300609D65 /* Common */,
 				08927DB024BEC0160035972C /* Features */,
@@ -547,16 +549,6 @@
 				1D45303229BB996900C95AC1 /* MockStore.swift */,
 			);
 			path = ChristInSongTests;
-			sourceTree = "<group>";
-		};
-		1D45302229BB809300C95AC1 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				1D45302529BB80CB00C95AC1 /* ViewModel */,
-				1D45302429BB80B600C95AC1 /* CISStore */,
-				1D45302329BB80A300C95AC1 /* Store */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		1D45302329BB80A300C95AC1 /* Store */ = {
