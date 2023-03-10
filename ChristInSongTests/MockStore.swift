@@ -17,13 +17,13 @@ final class MockStore: Store {
 }
 
 extension StoreBook {
-    static func dummyBook(_ number: Int = 1) -> StoreBook {
-        StoreBook(id: UUID(), isSelected: false, key: "dummy", language: "english", title: "\(number) - Dummy Book Title", titleStr: "Dummy Book Title - \(number)", hymns: [.dummyHymn()])
+    static func dummyBook(_ id: UUID = UUID(), _ number: Int = 1) -> StoreBook {
+        StoreBook(id: id, isSelected: false, key: "dummy", language: "english", title: "\(number) - Dummy Book Title", titleStr: "Dummy Book Title - \(number)", hymns: [.dummyHymn()])
     }
 }
 
 extension StoreHymn {
-    static func dummyHymn(_ number: Int = 1) -> StoreHymn {
-        StoreHymn(id: UUID(), title: "Dummy Title", content: "A very long long *hymn*", number: number)
+    static func dummyHymn(_ id: UUID = UUID(), _ number: Int = 1) -> StoreHymn {
+        StoreHymn(id: id, title: "Dummy Title", content: "A very long long *hymn*", number: number)
     }
 }
