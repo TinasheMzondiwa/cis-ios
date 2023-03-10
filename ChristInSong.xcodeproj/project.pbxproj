@@ -114,6 +114,13 @@
 		08CB346625E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		08CB346725E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */; };
+		1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302629BB80F000C95AC1 /* StoreHymn.swift */; };
+		1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302829BB80FD00C95AC1 /* StoreCollection.swift */; };
+		1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302A29BB810D00C95AC1 /* StoreBook.swift */; };
+		1D45302D29BB811D00C95AC1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302C29BB811D00C95AC1 /* Store.swift */; };
+		1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */; };
+		1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */; };
+		1D45303329BB996900C95AC1 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303229BB996900C95AC1 /* MockStore.swift */; };
 		67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */; };
 		67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
 		67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
@@ -213,6 +220,13 @@
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTests.swift; sourceTree = "<group>"; };
+		1D45302629BB80F000C95AC1 /* StoreHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHymn.swift; sourceTree = "<group>"; };
+		1D45302829BB80FD00C95AC1 /* StoreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollection.swift; sourceTree = "<group>"; };
+		1D45302A29BB810D00C95AC1 /* StoreBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBook.swift; sourceTree = "<group>"; };
+		1D45302C29BB811D00C95AC1 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISCoreDataStore.swift; sourceTree = "<group>"; };
+		1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppViewModel.swift; sourceTree = "<group>"; };
+		1D45303229BB996900C95AC1 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
 		3E60508D0E3E4FAFF6BD9322 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -274,6 +288,7 @@
 		086C93F524BE93BC008AFBE5 = {
 			isa = PBXGroup;
 			children = (
+				1D45302229BB809300C95AC1 /* Sources */,
 				086C93FA24BE93BC008AFBE5 /* Shared */,
 				086C940424BE93BD008AFBE5 /* iOS */,
 				086C940B24BE93BD008AFBE5 /* macOS */,
@@ -529,8 +544,46 @@
 			isa = PBXGroup;
 			children = (
 				1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */,
+				1D45303229BB996900C95AC1 /* MockStore.swift */,
 			);
 			path = ChristInSongTests;
+			sourceTree = "<group>";
+		};
+		1D45302229BB809300C95AC1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1D45302529BB80CB00C95AC1 /* ViewModel */,
+				1D45302429BB80B600C95AC1 /* CISStore */,
+				1D45302329BB80A300C95AC1 /* Store */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1D45302329BB80A300C95AC1 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				1D45302629BB80F000C95AC1 /* StoreHymn.swift */,
+				1D45302829BB80FD00C95AC1 /* StoreCollection.swift */,
+				1D45302A29BB810D00C95AC1 /* StoreBook.swift */,
+				1D45302C29BB811D00C95AC1 /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		1D45302429BB80B600C95AC1 /* CISStore */ = {
+			isa = PBXGroup;
+			children = (
+				1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */,
+			);
+			path = CISStore;
+			sourceTree = "<group>";
+		};
+		1D45302529BB80CB00C95AC1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		67A174B3285F084D006A5BC1 /* Extensions */ = {
@@ -771,6 +824,7 @@
 				08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08CB346625E4C5DE00609D65 /* Constants.swift in Sources */,
 				67A174BF285F1459006A5BC1 /* View+Extensions.swift in Sources */,
+				1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
@@ -796,6 +850,7 @@
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
 				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
 				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
+				1D45302D29BB811D00C95AC1 /* Store.swift in Sources */,
 				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
 				0874737B298749D200167974 /* AlertState.swift in Sources */,
@@ -805,12 +860,16 @@
 				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
 				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
 				08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */,
+				1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */,
+				1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */,
 				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
 				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
 				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,
+				1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */,
 				08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
+				1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
 				08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
@@ -855,6 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */,
+				1D45303329BB996900C95AC1 /* MockStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
