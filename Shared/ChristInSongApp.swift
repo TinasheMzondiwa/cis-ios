@@ -23,10 +23,16 @@ struct ChristInSongApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }.onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            TabView {
+                HymnsView()
+                    .tabItem {
+                        NavLabel(item: NavItem.hymns)
+                    }
+                CollectionsView()
+                    .tabItem { NavLabel(item: NavItem.collections)
+                    }
+            }
+            .environmentObject(viewModel)
         }
     }
 }
