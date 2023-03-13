@@ -11,4 +11,6 @@ public protocol Store {
     /// Retrieve all books from the store
     /// - Returns: an array of ``StoreBook``
     func retrieveAllBooks() -> [StoreBook]
+    func retreiveAllCollections() -> [StoreCollection]
+//    func saveCollection()
 }

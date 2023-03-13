@@ -113,6 +113,8 @@
 		08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB341525E2FE2500609D65 /* FilteredList.swift */; };
 		08CB346625E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		08CB346725E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
+		1D1A913F29BFA2C2003C3260 /* CISStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A913D29BFA2C2003C3260 /* CISStore.xcdatamodeld */; };
+		1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914129BFAC7E003C3260 /* FileLoader.swift */; };
 		1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */; };
 		1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302629BB80F000C95AC1 /* StoreHymn.swift */; };
 		1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302829BB80FD00C95AC1 /* StoreCollection.swift */; };
@@ -218,6 +220,8 @@
 		08CB341525E2FE2500609D65 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1A913E29BFA2C2003C3260 /* CISStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CISStore.xcdatamodel; sourceTree = "<group>"; };
+		1D1A914129BFAC7E003C3260 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTests.swift; sourceTree = "<group>"; };
 		1D45302629BB80F000C95AC1 /* StoreHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHymn.swift; sourceTree = "<group>"; };
@@ -542,6 +546,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1D1A914029BFAC70003C3260 /* Migrator */ = {
+			isa = PBXGroup;
+			children = (
+				1D1A914129BFAC7E003C3260 /* FileLoader.swift */,
+			);
+			path = Migrator;
+			sourceTree = "<group>";
+		};
 		1D45301A29BB790B00C95AC1 /* ChristInSongTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,7 +577,9 @@
 		1D45302429BB80B600C95AC1 /* CISStore */ = {
 			isa = PBXGroup;
 			children = (
+				1D1A914029BFAC70003C3260 /* Migrator */,
 				1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */,
+				1D1A913D29BFA2C2003C3260 /* CISStore.xcdatamodeld */,
 			);
 			path = CISStore;
 			sourceTree = "<group>";
@@ -813,6 +827,7 @@
 				08CB340425E2D1C400609D65 /* JsonHymn.swift in Sources */,
 				0874737929872FD600167974 /* HymnViewModel.swift in Sources */,
 				0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */,
+				1D1A913F29BFA2C2003C3260 /* CISStore.xcdatamodeld in Sources */,
 				08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08CB346625E4C5DE00609D65 /* Constants.swift in Sources */,
 				67A174BF285F1459006A5BC1 /* View+Extensions.swift in Sources */,
@@ -860,6 +875,7 @@
 				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,
 				1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */,
 				08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */,
+				1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
@@ -1240,6 +1256,16 @@
 			);
 			currentVersion = 08CB33EC25E22DD200609D65 /* Main.xcdatamodel */;
 			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		1D1A913D29BFA2C2003C3260 /* CISStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1D1A913E29BFA2C2003C3260 /* CISStore.xcdatamodel */,
+			);
+			currentVersion = 1D1A913E29BFA2C2003C3260 /* CISStore.xcdatamodel */;
+			path = CISStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BookEntity" representedClassName="BookEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isSelected" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="key" attributeType="String"/>
+        <attribute name="language" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="titleStr" optional="YES" attributeType="String"/>
+        <relationship name="hymns" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="HymnEntity" inverseName="book" inverseEntity="HymnEntity"/>
+    </entity>
+    <entity name="CollectionEntity" representedClassName="CollectionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="about" optional="YES" attributeType="String"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="hymns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HymnEntity" inverseName="collections" inverseEntity="HymnEntity"/>
+    </entity>
+    <entity name="HymnEntity" representedClassName="HymnEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="content" attributeType="String"/>
+        <attribute name="editedContent" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="number" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="titleStr" attributeType="String"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="BookEntity" inverseName="hymns" inverseEntity="BookEntity"/>
+        <relationship name="collections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectionEntity" inverseName="hymns" inverseEntity="CollectionEntity"/>
+    </entity>
+</model>

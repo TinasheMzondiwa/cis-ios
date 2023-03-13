@@ -9,11 +9,13 @@ import Foundation
 import ChristInSong
 
 final class MockStore: Store {
+    func retreiveAllCollections() -> [ChristInSong.StoreCollection] {
+        return [.dummyCollection()]
+    }
+    
     func retrieveAllBooks() -> [ChristInSong.StoreBook] {
         return [.dummyBook()]
     }
-    
-    
 }
 
 extension StoreBook {
@@ -25,5 +27,11 @@ extension StoreBook {
 extension StoreHymn {
     static func dummyHymn(_ id: UUID = UUID(), _ number: Int = 1) -> StoreHymn {
         StoreHymn(id: id, title: "Dummy Title", content: "A very long long *hymn*", number: number)
+    }
+}
+
+extension StoreCollection {
+    static func dummyCollection(_ id: UUID = UUID()) -> StoreCollection {
+        StoreCollection(id: id, title: "Dummy title", dateCreated: .now)
     }
 }

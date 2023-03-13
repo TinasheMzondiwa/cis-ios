@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct StoreCollection: Identifiable {
+public struct StoreCollection: Identifiable {
     /// Unique identifier of the Collection
-    let id: UUID
+    public let id: UUID
     /// Title of the collection
-    let title: String
+    public let title: String
     /// A short description of the collection
-    let about: String?
+    public let about: String?
     /// Date when the collection when created
-    let dateCreated: Date
+    public let dateCreated: Date
     /// Hymns belonging to the Collection
-    let hymns: [StoreHymn]?
+    public let hymns: [StoreHymn]?
     
-    init(id: UUID, title: String, dateCreated: Date, about: String? = nil, hymns: [StoreHymn]? = nil) {
+    public init(id: UUID, title: String, dateCreated: Date, about: String? = nil, hymns: [StoreHymn]? = nil) {
         self.id = id
         self.title = title
         self.dateCreated = dateCreated
