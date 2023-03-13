@@ -18,19 +18,16 @@ public struct StoreBook: Identifiable {
     public let language: String
     /// Title to the book
     public let title: String
-    /// Title of the book, without the song number
-    public let titleStr: String
     /// Array of the hymns  in this book
     public let hymns: [StoreHymn]
     
     public init(id: UUID, isSelected: Bool, key: String, language: String, title: String,
-         titleStr: String, hymns: [StoreHymn]) {
+         hymns: [StoreHymn]) {
         self.id = id
         self.isSelected = isSelected
         self.key = key
         self.language = language
         self.title = title
-        self.titleStr = titleStr
         self.hymns = hymns
     }
 }

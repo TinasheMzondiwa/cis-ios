@@ -6,7 +6,6 @@
         <attribute name="key" attributeType="String"/>
         <attribute name="language" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
-        <attribute name="titleStr" optional="YES" attributeType="String"/>
         <relationship name="hymns" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="HymnEntity" inverseName="book" inverseEntity="HymnEntity"/>
     </entity>
     <entity name="CollectionEntity" representedClassName="CollectionEntity" syncable="YES" codeGenerationType="class">

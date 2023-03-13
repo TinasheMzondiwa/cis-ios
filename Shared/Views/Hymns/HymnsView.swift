@@ -8,13 +8,91 @@
 import SwiftUI
 
 struct HymnsView: View {
+    
+    @EnvironmentObject var vm: CISAppViewModel
+    @State var filterQuery: String = ""
+    
+    var filteredHymns: [StoreHymn] {
+        if filterQuery.trimmed.isEmpty {
+            return vm.hymnsFromSelectedBook
+        } else {
+            return vm.hymnsFromSelectedBook.filter { $0.title.localizedCaseInsensitiveContains(filterQuery)}
+        }
+    }
+    
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
+    @AppStorage("sort") var sortOption: String = Sort.number.rawValue
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if (idiom == .phone) {
+            iOSContent
+        } else {
+#if os(iOS)
+            iOSContent
+#else
+            content
+                .frame(minWidth: 300, idealWidth: 500)
+                .toolbar(items: {
+                    ToolbarItem {
+                        hymnalsButton
+                    }
+                })
+#endif
+        }
+    }
+    
+    
+    // MARK: - Private Views
+    private var hymnalsButton: some View {
+        Button {
+            // TO Fill
+        } label: {
+            SFSymbol.bookCircle
+                .imageScale(.large)
+                .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
+                .padding()
+        }
+    }
+    
+    private var sortButton: some View {
+        Button {
+            withAnimation {
+                sortOption = sortOption == Sort.titleStr.rawValue ? Sort.number.rawValue : Sort.titleStr.rawValue
+                vm.toggleHymnsSorting(using: Sort(rawValue: sortOption) ?? .titleStr)
+            }
+        } label: {
+            Text(LocalizedStringKey(sortOption == Sort.titleStr.rawValue ? "Sort.Number" : "Sort.Title"))
+        }
+        
+    }
+    
+    private var content: some View {
+        NavigationView {
+            List {
+                ForEach(filteredHymns, id: \.id){ hymn in
+                    Text(sortOption == Sort.number.rawValue ? hymn.title : "\(hymn.titleStr) - \(hymn.number)")
+                        .headLineStyle()
+                        .lineLimit(1)
+                }
+            }
+            .navigationTitle(vm.selectedBook?.title ?? "")
+            .searchable(text: $filterQuery)
+            .resignKeyboardOnDragGesture()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading, content: {
+                    sortButton
+                })
+            }
+        }
+    }
+    
+    private var iOSContent: some View {
+        content
     }
 }
 
-struct HymnsView_Previews: PreviewProvider {
-    static var previews: some View {
-        HymnsView()
-    }
+enum Sort: String {
+    case number
+    case titleStr
 }

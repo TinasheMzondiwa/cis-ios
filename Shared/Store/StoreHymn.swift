@@ -13,7 +13,7 @@ public struct StoreHymn: Identifiable {
     /// Title of the Hymn
     public let title: String
     /// Title of the Hymn with the number inverted
-    public let titleStr: String?
+    public let titleStr: String
     /// Content of the Hymn
     public let content: String
     /// Modified version of thy hymn, defaults to content
@@ -23,7 +23,7 @@ public struct StoreHymn: Identifiable {
     /// Hymn number
     public let number: Int
     
-    public init(id: UUID, title: String, titleStr: String? = nil, content: String, editedContent: String? = nil , isFavorite: Bool = false, number: Int) {
+    public init(id: UUID, title: String, titleStr: String, content: String, editedContent: String? = nil , isFavorite: Bool = false, number: Int) {
         self.id = id
         self.title = title
         self.titleStr = titleStr

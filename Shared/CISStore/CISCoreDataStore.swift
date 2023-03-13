@@ -84,9 +84,6 @@ final class CISCoreDataStore: Store {
         
         return foundHymns
     }
-   
-    
-   
 }
 
 extension CISCoreDataStore {
@@ -152,7 +149,7 @@ extension CISCoreDataStore {
                 let hymn = HymnEntity(context: container.viewContext)
                 hymn.id = UUID()
                 hymn.title = fileHymn.title
-                hymn.titleStr = fileHymn.title
+                hymn.titleStr = fileHymn.title.titleStr
                 hymn.number = Int16(fileHymn.number)
                 hymn.content = fileHymn.content
                 hymn.editedContent = fileHymn.content
@@ -210,7 +207,7 @@ extension CollectionEntity {
 
 extension BookEntity {
     func toStoreBook() -> StoreBook {
-        StoreBook(id: self.id!, isSelected: self.isSelected, key: self.key!, language: self.language!, title: self.title!, titleStr: self.titleStr!, hymns: (self.hymns!.array as? [HymnEntity]).map( { entity in
+        StoreBook(id: self.id!, isSelected: self.isSelected, key: self.key!, language: self.language!, title: self.title!, hymns: (self.hymns!.array as? [HymnEntity]).map( { entity in
             entity.map { $0.toStoreHymn()}})!
         )
     }
@@ -218,6 +215,6 @@ extension BookEntity {
 
 extension HymnEntity {
     func toStoreHymn() -> StoreHymn {
-        StoreHymn(id: self.id!, title: self.title!, content: self.content!, number: Int(self.number))
+        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, content: self.content!, number: Int(self.number))
     }
 }

@@ -23,6 +23,7 @@ final class CISAppViewModel: ObservableObject {
     @Published var collectionsSheetShown: Bool = false
     
     @Published var switchBooks: [StoreBook] = []
+    @Published var bookSearchQuery: String = ""
     
     // MARK: - Initialization
     init(store: Store) {
@@ -38,11 +39,25 @@ final class CISAppViewModel: ObservableObject {
         selectedBook = allBooks.first(where: { $0.isSelected == true })
         if let selectedBook {
             hymnsFromSelectedBook = store.retrieveHymns(from: selectedBook)
+            filteredHymnsFromSelectedBook = hymnsFromSelectedBook
         }
     }
     
     func fetchAllCollections(){
         allCollections = store.retrieveAllCollections()
+    }
+    
+    func toggleHymnsSorting(using option: Sort) {
+        let initialList = hymnsFromSelectedBook
+        let sortedList = initialList.sorted {
+            switch option {
+            case .titleStr:
+                return $0.titleStr < $1.titleStr
+            default:
+                return $0.number < $1.number
+            }
+        }
+        hymnsFromSelectedBook = sortedList
     }
     
     func setSelectedBook(to storeBook: StoreBook) { }

@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-private enum Sort: String {
-    case number = "number"
-    case title = "titleStr"
-}
-
 struct OldHymnsView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
@@ -36,10 +31,10 @@ struct OldHymnsView: View {
     private var sortButton: some View {
         Button(action: {
             withAnimation {
-                sortOption = sortOption == Sort.title.rawValue ? Sort.number.rawValue : Sort.title.rawValue
+                sortOption = sortOption == Sort.titleStr.rawValue ? Sort.number.rawValue : Sort.titleStr.rawValue
             }
         }, label: {
-            Text(LocalizedStringKey(sortOption == Sort.title.rawValue ? "Sort.Number" : "Sort.Title"))
+            Text(LocalizedStringKey(sortOption == Sort.titleStr.rawValue ? "Sort.Number" : "Sort.Title"))
         })
     }
     

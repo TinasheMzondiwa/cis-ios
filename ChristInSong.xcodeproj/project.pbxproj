@@ -117,6 +117,8 @@
 		1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914129BFAC7E003C3260 /* FileLoader.swift */; };
 		1D1A914529BFC01A003C3260 /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914429BFC01A003C3260 /* HymnsView.swift */; };
 		1D1A914929BFC2F2003C3260 /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914829BFC2F2003C3260 /* CollectionsView.swift */; };
+		1D1A914B29BFCA60003C3260 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* config.json */; };
+		1D1A914C29BFCA60003C3260 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* config.json */; };
 		1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */; };
 		1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302629BB80F000C95AC1 /* StoreHymn.swift */; };
 		1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302829BB80FD00C95AC1 /* StoreCollection.swift */; };
@@ -226,6 +228,7 @@
 		1D1A914129BFAC7E003C3260 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		1D1A914429BFC01A003C3260 /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		1D1A914829BFC2F2003C3260 /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
+		1D1A914A29BFCA60003C3260 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTests.swift; sourceTree = "<group>"; };
 		1D45302629BB80F000C95AC1 /* StoreHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHymn.swift; sourceTree = "<group>"; };
@@ -357,6 +360,7 @@
 		087473412986BC0100167974 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1D1A914A29BFCA60003C3260 /* config.json */,
 				087473472986BC3F00167974 /* abagusii.json */,
 				0874734A2986BC3F00167974 /* chichewa.json */,
 				087473502986BC3F00167974 /* dholuo.json */,
@@ -753,6 +757,7 @@
 				087473552986BC3F00167974 /* shona.json in Resources */,
 				086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 				0874736B2986BC3F00167974 /* tonga.json in Resources */,
+				1D1A914B29BFCA60003C3260 /* config.json in Resources */,
 				0874735B2986BC3F00167974 /* abagusii.json in Resources */,
 				087473672986BC3F00167974 /* gikuyu.json in Resources */,
 				087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */,
@@ -778,6 +783,7 @@
 				087473562986BC3F00167974 /* shona.json in Resources */,
 				086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 				0874736C2986BC3F00167974 /* tonga.json in Resources */,
+				1D1A914C29BFCA60003C3260 /* config.json in Resources */,
 				0874735C2986BC3F00167974 /* abagusii.json in Resources */,
 				087473682986BC3F00167974 /* gikuyu.json in Resources */,
 				087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */,
