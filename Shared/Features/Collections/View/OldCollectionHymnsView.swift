@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CollectionHymnsView: View {
+struct OldCollectionHymnsView: View {
     
-    @ObservedObject private var viewModel = CollectionsViewModel()
+    @ObservedObject private var viewModel = OldCollectionsViewModel()
     
     let collectionId: UUID
     
@@ -29,12 +29,12 @@ struct CollectionHymnsView: View {
     private var listContent: some View {
         VStack {
             if viewModel.collectionHymns.isEmpty {
-                EmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
+                OldEmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
             } else {
                 List {
                     ForEach(viewModel.collectionHymns, id: \.self) { item in
                         NavigationLink(
-                            destination: HymnView(hymn: item),
+                            destination: OldHymnView(hymn: item),
                             label: {
                                 Text(item.title)
                                     .headLineStyle()
@@ -50,6 +50,6 @@ struct CollectionHymnsView: View {
 
 struct CollectionHymnsView_Previews: PreviewProvider {
     static var previews: some View {
-        CollectionHymnsView(collectionId: UUID())
+        OldCollectionHymnsView(collectionId: UUID())
     }
 }

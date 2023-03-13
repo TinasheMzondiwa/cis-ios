@@ -8,13 +8,13 @@
 import SwiftUI
 import WebKit
 
-struct HymnView: View {
+struct OldHymnView: View {
     
     @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
     @State private var showCollectionModal = false
     @State private var showHymnalsModal = false
     
-    @ObservedObject private var viewModel = HymnViewModel()
+    @ObservedObject private var viewModel = OldHymnViewModel()
     
     var hymn: HymnModel
     
@@ -44,14 +44,14 @@ struct HymnView: View {
         }
         .sheet(isPresented: $showCollectionModal) {
             if let model = viewModel.model {
-                AddToCollectionView(hymnId: model.id, onDismiss: {
+                OldAddToCollectionView(hymnId: model.id, onDismiss: {
                     showCollectionModal.toggle()
                 })
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             }
         }
         .sheet(isPresented: $showHymnalsModal) {
-            HymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
+            OldHymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
                 showHymnalsModal.toggle()
                 
                 if let hymnal: HymnalModel = item {
@@ -79,7 +79,7 @@ struct HymnView: View {
 struct HymnView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HymnView(hymn: HymnModel(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))
+            OldHymnView(hymn: HymnModel(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))
         }
         .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }

@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct AddToCollectionView: View {
+struct OldAddToCollectionView: View {
     
     @State private var state: ViewState = .add
     
     @State private var collectionTitle: String = ""
     @State private var collectionAbout: String = ""
     
-    @ObservedObject private var viewModel = CollectionsViewModel()
+    @ObservedObject private var viewModel = OldCollectionsViewModel()
     
     @FetchRequest(
         entity: Collection.entity(),
@@ -73,7 +73,7 @@ struct AddToCollectionView: View {
     private var addContent: some View {
         VStack {
             if collections.isEmpty {
-                EmptyCollectionsView(caption: NSLocalizedString("Collections.Empty.Prompt", comment: "Empty state"))
+                OldEmptyCollectionsView(caption: NSLocalizedString("Collections.Empty.Prompt", comment: "Empty state"))
             } else {
                 FilteredList(sortKey: "title") { (item: Collection) in
                     let added = item.containsHymn(id: hymnId)
@@ -82,7 +82,7 @@ struct AddToCollectionView: View {
                             viewModel.toggleCollection(hymnId: hymnId, collection: item)
                         }
                     }, label: {
-                        CollectionRowView(title: item.wrappedTitle, description: item.wrappedDescription, selected: added)
+                        OldCollectionRowView(title: item.wrappedTitle, description: item.wrappedDescription, selected: added)
                     })
                 }
                 .transition(.moveAndFade)
@@ -117,6 +117,6 @@ extension AnyTransition {
 
 struct AddToCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddToCollectionView(hymnId: UUID(), onDismiss: {})
+        OldAddToCollectionView(hymnId: UUID(), onDismiss: {})
     }
 }

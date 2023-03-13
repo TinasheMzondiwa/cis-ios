@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct HymnalsView: View {
+struct OldHymnalsView: View {
     
-    @ObservedObject var viewModel = HymnalsViewModel()
+    @ObservedObject var viewModel = OldHymnalsViewModel()
     
     var hymnal: String
     var onDismiss: (HymnalModel?) -> Void
@@ -27,7 +27,7 @@ struct HymnalsView: View {
                             
                             onDismiss(item)
                         }, label: {
-                            HymnalView(hymnal: item,
+                            OldHymnalView(hymnal: item,
                                        index: viewModel.hymnals.firstIndex(of: item) ?? 0)
                         })
                     }
@@ -54,11 +54,11 @@ struct HymnalsView: View {
 struct HymnalsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HymnalsView(hymnal: "") { item in }
+            OldHymnalsView(hymnal: "") { item in }
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
                 .previewLayout(.sizeThatFits)
             
-            HymnalsView(hymnal: "") { item in }
+            OldHymnalsView(hymnal: "") { item in }
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)

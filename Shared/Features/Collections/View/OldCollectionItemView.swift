@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CollectionItemView: View {
+struct OldCollectionItemView: View {
     let title: String
     let description: String
     let date: Date?
@@ -40,13 +40,13 @@ struct CollectionItemView: View {
 struct CollectionItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CollectionItemView(title: "Favorite Hymns", description: "Some of the very best hymns I love so much", date: Date(), hymns: 4)
+            OldCollectionItemView(title: "Favorite Hymns", description: "Some of the very best hymns I love so much", date: Date(), hymns: 4)
                 .previewLayout(.sizeThatFits)
-            CollectionItemView(title: "Sabbath Hymns", description: "Some hymns for the Sabbath I love so much", date: nil, hymns: 0)
+            OldCollectionItemView(title: "Sabbath Hymns", description: "Some hymns for the Sabbath I love so much", date: nil, hymns: 0)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
             
-            CollectionItemView(title: "Sabbath Hymns", description: "Some hymns for the Sabbath I love so much", date: nil, hymns: 23)
+            OldCollectionItemView(title: "Sabbath Hymns", description: "Some hymns for the Sabbath I love so much", date: nil, hymns: 23)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CollectionsViewModel: ObservableObject {
+class OldCollectionsViewModel: ObservableObject {
     
     private(set) lazy var persistance: PersistenceControllerProtocol = {
         PersistenceController.shared

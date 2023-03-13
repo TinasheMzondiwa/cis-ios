@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class HymnalsViewModel: ObservableObject {
+class OldHymnalsViewModel: ObservableObject {
     
     private(set) lazy var persistance: PersistenceControllerProtocol = {
         PersistenceController.shared

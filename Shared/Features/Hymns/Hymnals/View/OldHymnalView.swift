@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HymnalView: View {
+struct OldHymnalView: View {
     
     private let COLORS: [String] = ["#4b207f", "#5e3929", "#7f264a", "#2f557f", "#e36520", "#448d21", "#3e8391"]
     
@@ -57,7 +57,7 @@ struct HymnalView: View {
 struct HymnalView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HymnalView(hymnal: HymnalModel(
+            OldHymnalView(hymnal: HymnalModel(
                 id: "",
                 title: "Christ In Song",
                 language: "English",
@@ -65,7 +65,7 @@ struct HymnalView_Previews: PreviewProvider {
             ), index: 1)
             .previewLayout(.sizeThatFits)
             
-            HymnalView(hymnal: HymnalModel(
+            OldHymnalView(hymnal: HymnalModel(
                 id: "",
                 title: "Cristu Munzwiyo",
                 language: "Shona",
@@ -74,7 +74,7 @@ struct HymnalView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
             
-            HymnalView(hymnal: HymnalModel(
+            OldHymnalView(hymnal: HymnalModel(
                 id: "",
                 title: "Christ In Song",
                 language: "English",
@@ -82,7 +82,7 @@ struct HymnalView_Previews: PreviewProvider {
             ), index: 1)
             .previewLayout(.sizeThatFits)
             
-            HymnalView(hymnal: HymnalModel(
+            OldHymnalView(hymnal: HymnalModel(
                 id: "",
                 title: "Cristu Munzwiyo",
                 language: "Shona",

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct CollectionsView: View {
+struct OldCollectionsView: View {
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
-    @ObservedObject private var viewModel = CollectionsViewModel()
+    @ObservedObject private var viewModel = OldCollectionsViewModel()
     @State private var searchQuery: String = ""
     
     @FetchRequest(
@@ -54,14 +54,14 @@ struct CollectionsView: View {
     var content: some View {
         ZStack {
             if collections.isEmpty {
-                EmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
+                OldEmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
             } else {
                 
                 FilteredList(sortKey: "title", queryKey: "title", query: searchQuery, canDelete: true) { (item: Collection) in
                     NavigationLink(
-                        destination: CollectionHymnsView(collectionId: item.id!),
+                        destination: OldCollectionHymnsView(collectionId: item.id!),
                         label: {
-                            CollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
+                            OldCollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
                         })
                 }
                 .searchable(text: $searchQuery)
@@ -76,6 +76,6 @@ struct CollectionsView: View {
 
 struct CollectionsView_Previews: PreviewProvider {
     static var previews: some View {
-        CollectionsView()
+        OldCollectionsView()
     }
 }

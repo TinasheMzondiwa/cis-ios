@@ -12,7 +12,7 @@ private enum Sort: String {
     case title = "titleStr"
 }
 
-struct HymnsView: View {
+struct OldHymnsView: View {
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
@@ -69,7 +69,7 @@ struct HymnsView: View {
                      filterKey: "book", filterValue: hymnal,
                      queryKey: "content", query: searchQuery) { (item: Hymn) in
             NavigationLink(
-                destination: HymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
+                destination: OldHymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
                 label: {
                     Text(sortOption == Sort.number.rawValue ? item.wrappedTitle : "\(item.wrappedTitleStr) - \(item.number)")
                         .headLineStyle()
@@ -83,7 +83,7 @@ struct HymnsView: View {
         }
         .resignKeyboardOnDragGesture()
         .sheet(isPresented: $showModal) {
-            HymnalsView(hymnal: hymnal) { item in
+            OldHymnalsView(hymnal: hymnal) { item in
                 showModal.toggle()
                 
                 if let hymnal: HymnalModel = item {
@@ -103,7 +103,7 @@ struct HymnsView: View {
 struct HymnsView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone SE", "iPhone XS Max", "iPad Pro (11-inch) (2nd generation)"], id: \.self) { deviceName in
-            HymnsView()
+            OldHymnsView()
                 .previewDevice(PreviewDevice(rawValue: deviceName))
         }
         

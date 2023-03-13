@@ -18,12 +18,12 @@ struct ContentView: View {
         
         if (idiom == .phone) {
             TabView(selection: $selection) {
-                HymnsView()
+                OldHymnsView()
                     .tabItem {
                         NavLabel(item: NavItem.hymns)
                     }
                     .tag(0)
-                CollectionsView()
+                OldCollectionsView()
                     .tabItem {
                         NavLabel(item: NavItem.collections)
                     }
@@ -49,7 +49,7 @@ struct ContentView: View {
                         .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
                 #endif
                
-                HymnsView()
+                OldHymnsView()
             }
         }
         
@@ -57,11 +57,11 @@ struct ContentView: View {
     
     private var sidebarContent: some View {
         List {
-            NavigationLink(destination: HymnsView()) {
+            NavigationLink(destination: OldHymnsView()) {
                 NavLabel(item: NavItem.hymns)
             }
             
-            NavigationLink(destination: CollectionsView()) {
+            NavigationLink(destination: OldCollectionsView()) {
                 NavLabel(item: NavItem.collections)
             }
            
