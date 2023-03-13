@@ -76,7 +76,7 @@ struct OldHymnView: View {
     }
 }
 
-struct HymnView_Previews: PreviewProvider {
+struct OldHymnView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             OldHymnView(hymn: HymnModel(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))

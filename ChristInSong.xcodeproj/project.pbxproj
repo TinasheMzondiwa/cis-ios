@@ -115,6 +115,7 @@
 		08CB346725E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		1D1A913F29BFA2C2003C3260 /* CISStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A913D29BFA2C2003C3260 /* CISStore.xcdatamodeld */; };
 		1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914129BFAC7E003C3260 /* FileLoader.swift */; };
+		1D1A914529BFC01A003C3260 /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914429BFC01A003C3260 /* HymnsView.swift */; };
 		1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */; };
 		1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302629BB80F000C95AC1 /* StoreHymn.swift */; };
 		1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302829BB80FD00C95AC1 /* StoreCollection.swift */; };
@@ -222,6 +223,7 @@
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1A913E29BFA2C2003C3260 /* CISStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CISStore.xcdatamodel; sourceTree = "<group>"; };
 		1D1A914129BFAC7E003C3260 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		1D1A914429BFC01A003C3260 /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTests.swift; sourceTree = "<group>"; };
 		1D45302629BB80F000C95AC1 /* StoreHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHymn.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		086C93FA24BE93BC008AFBE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1D1A914329BFBFFC003C3260 /* Views */,
 				1D45302529BB80CB00C95AC1 /* ViewModel */,
 				1D45302429BB80B600C95AC1 /* CISStore */,
 				1D45302329BB80A300C95AC1 /* Store */,
@@ -552,6 +555,14 @@
 				1D1A914129BFAC7E003C3260 /* FileLoader.swift */,
 			);
 			path = Migrator;
+			sourceTree = "<group>";
+		};
+		1D1A914329BFBFFC003C3260 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D1A914429BFC01A003C3260 /* HymnsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1D45301A29BB790B00C95AC1 /* ChristInSongTests */ = {
@@ -855,6 +866,7 @@
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
 				082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */,
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
+				1D1A914529BFC01A003C3260 /* HymnsView.swift in Sources */,
 				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
 				08AB2E6925E8B2EA0086DA32 /* OldCollectionHymnsView.swift in Sources */,
 				1D45302D29BB811D00C95AC1 /* Store.swift in Sources */,

@@ -13,10 +13,16 @@ final class CISCoreDataStore: Store {
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
-    init() throws {
+    init() {
         container = NSPersistentContainer(name: .CISStore)
         container.loadPersistentStores { _, _ in }
-        try initializeStore()
+        
+        do {
+            try initializeStore()
+        } catch {
+            //TODO: - Better handle the error
+            print("Error: Initialization \(error.localizedDescription)")
+        }
     }
     
     func retrieveAllBooks() -> [StoreBook] {

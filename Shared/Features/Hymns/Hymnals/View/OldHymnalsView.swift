@@ -51,7 +51,7 @@ struct OldHymnalsView: View {
     }
 }
 
-struct HymnalsView_Previews: PreviewProvider {
+struct OldHymnalsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OldHymnalsView(hymnal: "") { item in }

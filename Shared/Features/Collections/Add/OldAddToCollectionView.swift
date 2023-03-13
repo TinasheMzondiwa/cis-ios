@@ -115,7 +115,7 @@ extension AnyTransition {
     }
 }
 
-struct AddToCollectionView_Previews: PreviewProvider {
+struct OldAddToCollectionView_Previews: PreviewProvider {
     static var previews: some View {
         OldAddToCollectionView(hymnId: UUID(), onDismiss: {})
     }

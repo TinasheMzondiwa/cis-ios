@@ -54,7 +54,7 @@ struct OldHymnalView: View {
     }
 }
 
-struct HymnalView_Previews: PreviewProvider {
+struct OldHymnalView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OldHymnalView(hymnal: HymnalModel(

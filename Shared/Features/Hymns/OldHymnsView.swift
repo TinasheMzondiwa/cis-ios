@@ -100,7 +100,7 @@ struct OldHymnsView: View {
     }
 }
 
-struct HymnsView_Previews: PreviewProvider {
+struct OldHymnsView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone SE", "iPhone XS Max", "iPad Pro (11-inch) (2nd generation)"], id: \.self) { deviceName in
             OldHymnsView()

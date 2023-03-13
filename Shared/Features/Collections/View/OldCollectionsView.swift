@@ -74,7 +74,7 @@ struct OldCollectionsView: View {
     }
 }
 
-struct CollectionsView_Previews: PreviewProvider {
+struct OldCollectionsView_Previews: PreviewProvider {
     static var previews: some View {
         OldCollectionsView()
     }

@@ -38,7 +38,7 @@ struct OldCollectionRowView: View {
     }
 }
 
-struct CollectionRowView_Previews: PreviewProvider {
+struct OldCollectionRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OldCollectionRowView(title: "Favorite Hymns", description: "Some of the very best hymns I love so much", selected: true)

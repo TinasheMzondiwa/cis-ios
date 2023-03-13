@@ -14,6 +14,12 @@ struct ChristInSongApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     let persistenceController = PersistenceController.shared
+    let viewModel: CISAppViewModel
+    
+    init() {
+        let store = CISCoreDataStore()
+        viewModel = CISAppViewModel(store: store)
+    }
     
     var body: some Scene {
         WindowGroup {

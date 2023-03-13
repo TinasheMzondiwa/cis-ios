@@ -48,7 +48,7 @@ struct OldCollectionHymnsView: View {
     }
 }
 
-struct CollectionHymnsView_Previews: PreviewProvider {
+struct OldCollectionHymnsView_Previews: PreviewProvider {
     static var previews: some View {
         OldCollectionHymnsView(collectionId: UUID())
     }
