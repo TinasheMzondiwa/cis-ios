@@ -22,13 +22,29 @@ final class CISAppViewModel: ObservableObject {
     @Published var bookSelectionShownFromHymnView: Bool = false
     @Published var collectionsSheetShown: Bool = false
     
+    @Published var switchBooks: [StoreBook] = []
+    
     // MARK: - Initialization
     init(store: Store) {
         self.store = store
+        fetchAllBooks()
+        fetchAllCollections()
     }
     
     // MARK: - Functions
-    func fetchAllBooks(){ }
+    func fetchAllBooks(){
+        allBooks = store.retrieveAllBooks()
+        switchBooks = allBooks
+        selectedBook = allBooks.first(where: { $0.isSelected == true })
+        if let selectedBook {
+            hymnsFromSelectedBook = store.retrieveHymns(from: selectedBook)
+        }
+    }
+    
+    func fetchAllCollections(){
+        allCollections = store.retrieveAllCollections()
+    }
+    
     func setSelectedBook(to storeBook: StoreBook) { }
     func setSelectedHymn(to selectedHymn: StoreHymn) { }
     func switchSongfromBook(to storeBook: StoreBook) {}
@@ -38,7 +54,7 @@ final class CISAppViewModel: ObservableObject {
     func toggleCollectionSheetVisibility() { }
     func addCollection(with title: String, and about: String?){ }
     func addHymnToCollection(hymn: StoreHymn, collection: StoreCollection) { }
-    func fetchAllCollection(){ }
+    
     
     // MARK: - Private
 }

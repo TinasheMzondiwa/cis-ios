@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 final class CISCoreDataStore: Store {
-    
+   
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
@@ -30,13 +30,14 @@ final class CISCoreDataStore: Store {
             let fetchBooks = try container.viewContext.fetch(request)
             books = fetchBooks.map { $0.toStoreBook() }
         } catch {
-            print("Fetching Books failed")
+            //TODO: - Better handle the error
+            print("Error: Fetching Books failed \(error.localizedDescription)")
         }
         
         return books
     }
     
-    func retreiveAllCollections() -> [StoreCollection] {
+    func retrieveAllCollections() -> [StoreCollection] {
         var collections: [StoreCollection] = []
         
         let request = NSFetchRequest<CollectionEntity>(entityName: .CollectionEntity)
@@ -48,11 +49,36 @@ final class CISCoreDataStore: Store {
             collections = fetchedCollections.map { $0.toStoreCollection()
             }
         } catch {
-            print("Fetching Collections failed")
+            //TODO: - Better handle the error
+            print("Error: Fetching Collections failed\(error.localizedDescription)")
         }
         
         return collections
     }
+    
+    func retrieveHymns(from book: StoreBook) -> [StoreHymn] {
+        let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
+        let predicate = NSPredicate(format: "id == %@", book.id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        var foundHymns: [StoreHymn] = []
+        
+        do {
+            let fetchedBook = try container.viewContext.fetch(request)
+            _ = (fetchedBook.first?.hymns?.array as? [HymnEntity]).map { hymnEntities in
+                for hymn in hymnEntities {
+                    foundHymns.append(hymn.toStoreHymn())
+                }
+            }
+        } catch {
+            //TODO: - Better handle the error
+            print("Error: Fetching Collections failed\(error.localizedDescription)")
+        }
+        
+        return foundHymns
+    }
+   
     
    
 }
@@ -78,11 +104,14 @@ extension CISCoreDataStore {
             case let .success(books):
                 allBooksFromFile = books
             case let .failure(error):
+                //TODO: - Better handle the error
                 print("Error \(error.localizedDescription)")
+                return
             }
         }
         
         guard !allBooksFromFile.isEmpty else {
+            //TODO: - Better handle the error
             print("Error: Migration failed")
             return
         }
@@ -95,12 +124,14 @@ extension CISCoreDataStore {
                 case let .success(hymns):
                     hymnsFromFile = hymns
                 case let .failure(error):
+                    //TODO: - Better handle the error
                     print("Error: Migration failed \(error.localizedDescription)")
                     return
                 }
             }
             
             guard !hymnsFromFile.isEmpty else {
+                //TODO: - Better handle the error
                 print("Error: Migration failed no songs found")
                 return
             }
