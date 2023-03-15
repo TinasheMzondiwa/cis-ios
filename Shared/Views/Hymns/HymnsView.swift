@@ -10,13 +10,14 @@ import SwiftUI
 struct HymnsView: View {
     
     @EnvironmentObject var vm: CISAppViewModel
-    @State var filterQuery: String = ""
+    @State private var filterQuery: String = ""
     
     var filteredHymns: [StoreHymn] {
         if filterQuery.trimmed.isEmpty {
             return vm.hymnsFromSelectedBook
         } else {
-            return vm.hymnsFromSelectedBook.filter { $0.title.localizedCaseInsensitiveContains(filterQuery)}
+            return vm.hymnsFromSelectedBook.filter { $0.title.localizedCaseInsensitiveContains(filterQuery) || $0.content.localizedCaseInsensitiveContains(filterQuery)
+            }
         }
     }
     

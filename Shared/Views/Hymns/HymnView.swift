@@ -76,5 +76,8 @@ struct HymnView: View {
                 vm.toggleBookSelectionShownFromHymnView()
             }
         }
+        .sheet(isPresented: $vm.collectionsSheetShown) {
+            CollectionsView()
+        }
     }
 }
