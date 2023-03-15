@@ -52,7 +52,7 @@ struct OldHymnsView: View {
                     .frame(minWidth: 300, idealWidth: 500)
                     .toolbar(items: {
                         ToolbarItem {
-                            hymnalsButton
+                            bookSwitchButton
                         }
                     })
             #endif

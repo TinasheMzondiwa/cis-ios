@@ -89,7 +89,7 @@ final class CISAppViewModel: ObservableObject {
         selectedHymn = hymn
     }
     
-    func toggleBookSelectionSheet() { }
+    
     func fetchSongsFromSelectedBook() { }
     func resetSwitchBooks() { }
     func toggleCollectionSheetVisibility() {
@@ -99,6 +99,9 @@ final class CISAppViewModel: ObservableObject {
     func addHymnToCollection(hymn: StoreHymn, collection: StoreCollection) { }
     func toggleBookSelectionShownFromHymnView() {
         bookSelectionShownFromHymnView.toggle()
+    }
+    func toggleBookSelectionSheet() {
+        bookSelectionShown.toggle()
     }
     
     

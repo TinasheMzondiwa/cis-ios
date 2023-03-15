@@ -35,7 +35,7 @@ struct HymnsView: View {
                 .frame(minWidth: 300, idealWidth: 500)
                 .toolbar(items: {
                     ToolbarItem {
-                        hymnalsButton
+                        bookSwitchButton
                     }
                 })
         #endif
@@ -44,9 +44,9 @@ struct HymnsView: View {
     
     
     // MARK: - Private Views
-    private var hymnalsButton: some View {
+    private var bookSwitchButton: some View {
         Button {
-            // TO Fill
+            vm.toggleBookSelectionSheet()
         } label: {
             SFSymbol.bookCircle
                 .imageScale(.large)
@@ -85,6 +85,17 @@ struct HymnsView: View {
                 ToolbarItem(placement: .navigationBarLeading, content: {
                     sortButton
                 })
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    bookSwitchButton
+                })
+            }
+            .sheet(isPresented: $vm.bookSelectionShown) {
+                BooksView(books: vm.allBooks) { _   in
+                    
+                } dismissAction: {
+                    vm.toggleBookSelectionSheet()
+                }
+
             }
         }
     }
