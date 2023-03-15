@@ -90,8 +90,8 @@ struct HymnsView: View {
                 })
             }
             .sheet(isPresented: $vm.bookSelectionShown) {
-                BooksView(books: vm.allBooks) { _   in
-                    
+                BooksView(books: vm.allBooks) { book in
+                    vm.setSelectedBook(to: book)
                 } dismissAction: {
                     vm.toggleBookSelectionSheet()
                 }

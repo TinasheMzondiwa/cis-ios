@@ -23,20 +23,23 @@ final class CISAppViewModel: ObservableObject {
     @Published var bookSelectionShownFromHymnView: Bool = false
     @Published var collectionsSheetShown: Bool = false
     
-    @Published var switchBooks: [StoreBook] = []
     @Published var bookSearchQuery: String = ""
     
     // MARK: - Initialization
     init(store: Store) {
         self.store = store
+        refreshAppContent()
+    }
+    
+    // MARK: - Functions
+    
+    func refreshAppContent() {
         fetchAllBooks()
         fetchAllCollections()
     }
     
-    // MARK: - Functions
     func fetchAllBooks(){
         allBooks = store.retrieveAllBooks()
-        switchBooks = allBooks
         selectedBook = allBooks.first(where: { $0.isSelected == true })
         if let selectedBook {
             hymnsFromSelectedBook = store.retrieveHymns(from: selectedBook)
@@ -60,35 +63,13 @@ final class CISAppViewModel: ObservableObject {
         hymnsFromSelectedBook = sortedList
     }
     
-    func switchSongfromBook(to book: StoreBook) {
-        print("Book: \(book)")
-        guard let currentlySelectedHymn = selectedHymn else { return }
-        
-        let foundHymn = book.hymns.first(where: { $0.number == currentlySelectedHymn.number })
-        if let foundHymn {
-            selectedHymn = foundHymn
-            selectedBookTitle = book.title
-            
-            let filterSwithBooks = switchBooks.map {
-                return StoreBook(id:$0.id , isSelected: $0 == book, key: $0.key, language: $0.language, title: $0.language, hymns: $0.hymns)
-            }
-            switchBooks = filterSwithBooks
-            bookSelectionShownFromHymnView.toggle()
-        } else {
-            return
-        }
-    }
-    
     func get(similarHymnTo hymn: StoreHymn,from book: StoreBook) -> StoreHymn? {
         book.hymns.first(where: { $0.number == hymn.number })
     }
     
-    func setSelectedBook(to storeBook: StoreBook) { }
-    
     func setSelectedHymn(to hymn: StoreHymn) {
         selectedHymn = hymn
     }
-    
     
     func fetchSongsFromSelectedBook() { }
     func resetSwitchBooks() { }
@@ -102,6 +83,18 @@ final class CISAppViewModel: ObservableObject {
     }
     func toggleBookSelectionSheet() {
         bookSelectionShown.toggle()
+    }
+    
+    func setSelectedBook(to storeBook: StoreBook) {
+        toggleBookSelectionSheet()
+        guard let selectedBook else { return }
+        guard storeBook.id != selectedBook.id else { return }
+        
+        // TODO: - Switch to completion handlers
+        if let _ = store.updateSelectedBook(from: selectedBook, to: storeBook) {
+        } else {
+            refreshAppContent()
+        }
     }
     
     

@@ -9,7 +9,6 @@ import Foundation
 import CoreData
 
 final class CISCoreDataStore: Store {
-   
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
@@ -83,6 +82,44 @@ final class CISCoreDataStore: Store {
         }
         
         return foundHymns
+    }
+    
+    private func retrieveBook(with id: UUID) -> BookEntity? {
+        let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        do {
+            let fetchedBook = try container.viewContext.fetch(request)
+            return fetchedBook.first(where: { $0.id == id })
+        } catch {
+            //TODO: - Better handle the error
+            print("Error: Fetching Collections failed\(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    
+    
+    func updateSelectedBook(from book: StoreBook, to newBook: StoreBook) -> Error? {
+        let previousSelectedBookEntity = retrieveBook(with: book.id)
+        let newlySelectedBookEntity = retrieveBook(with: newBook.id)
+        
+        if let previousSelectedBookEntity, let newlySelectedBookEntity {
+            previousSelectedBookEntity.isSelected = false
+            newlySelectedBookEntity.isSelected = true
+        
+            do {
+                try save()
+            } catch {
+                print("Error: Fetching Collections failed\(error.localizedDescription)")
+            }
+            
+            return nil
+        } else {
+            return "Unable to Switch books"
+        }
     }
 }
 
@@ -218,3 +255,5 @@ extension HymnEntity {
         StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, content: self.content!, number: Int(self.number))
     }
 }
+
+extension String: LocalizedError {}
