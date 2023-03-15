@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct StoreHymn: Identifiable {
+public struct StoreHymn: Identifiable, Equatable {
     /// Unique ID
     public let id: UUID
     /// Title of the Hymn

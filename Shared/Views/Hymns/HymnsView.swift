@@ -28,9 +28,9 @@ struct HymnsView: View {
         if (idiom == .phone) {
             iOSContent
         } else {
-#if os(iOS)
+        #if os(iOS)
             iOSContent
-#else
+        #else
             content
                 .frame(minWidth: 300, idealWidth: 500)
                 .toolbar(items: {
@@ -38,7 +38,7 @@ struct HymnsView: View {
                         hymnalsButton
                     }
                 })
-#endif
+        #endif
         }
     }
     
@@ -71,9 +71,11 @@ struct HymnsView: View {
         NavigationView {
             List {
                 ForEach(filteredHymns, id: \.id){ hymn in
-                    Text(sortOption == Sort.number.rawValue ? hymn.title : "\(hymn.titleStr) - \(hymn.number)")
-                        .headLineStyle()
-                        .lineLimit(1)
+                    NavigationLink(destination: HymnView(displayedHymn: hymn)) {
+                        Text(sortOption == Sort.number.rawValue ? hymn.title : "\(hymn.titleStr) - \(hymn.number)")
+                            .headLineStyle()
+                            .lineLimit(1)
+                    }
                 }
             }
             .navigationTitle(vm.selectedBook?.title ?? "")

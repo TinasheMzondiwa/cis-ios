@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct StoreBook: Identifiable {
+public struct StoreBook: Identifiable, Equatable {
     /// Unique identifier to the Book
     public let id: UUID
     /// Flag indicating if a the book is selected. Only one book can be selected at a time.
-    public let isSelected: Bool
+    public var isSelected: Bool
     /// Unique key to the book
     public let key: String
     /// Language of the hymns

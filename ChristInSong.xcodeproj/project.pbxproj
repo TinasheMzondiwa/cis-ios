@@ -127,6 +127,8 @@
 		1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */; };
 		1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */; };
 		1D45303329BB996900C95AC1 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303229BB996900C95AC1 /* MockStore.swift */; };
+		1DF244F729C0C10100A4DA7A /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF244F629C0C10100A4DA7A /* HymnView.swift */; };
+		1DF244F929C0CE9900A4DA7A /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF244F829C0CE9900A4DA7A /* BooksView.swift */; };
 		67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */; };
 		67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
 		67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
@@ -238,6 +240,8 @@
 		1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISCoreDataStore.swift; sourceTree = "<group>"; };
 		1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppViewModel.swift; sourceTree = "<group>"; };
 		1D45303229BB996900C95AC1 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
+		1DF244F629C0C10100A4DA7A /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
+		1DF244F829C0CE9900A4DA7A /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		3E60508D0E3E4FAFF6BD9322 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -576,6 +580,8 @@
 			isa = PBXGroup;
 			children = (
 				1D1A914429BFC01A003C3260 /* HymnsView.swift */,
+				1DF244F629C0C10100A4DA7A /* HymnView.swift */,
+				1DF244F829C0CE9900A4DA7A /* BooksView.swift */,
 			);
 			path = Hymns;
 			sourceTree = "<group>";
@@ -860,6 +866,7 @@
 				08CB33F325E2B7BE00609D65 /* PersistenceController.swift in Sources */,
 				084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */,
 				08927D9B24BEAAFC0035972C /* SupportView.swift in Sources */,
+				1DF244F929C0CE9900A4DA7A /* BooksView.swift in Sources */,
 				08CB340425E2D1C400609D65 /* JsonHymn.swift in Sources */,
 				0874737929872FD600167974 /* OldHymnViewModel.swift in Sources */,
 				0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */,
@@ -900,6 +907,7 @@
 				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
 				0874737B298749D200167974 /* AlertState.swift in Sources */,
 				08927D9724BEAAD00035972C /* OldCollectionsView.swift in Sources */,
+				1DF244F729C0C10100A4DA7A /* HymnView.swift in Sources */,
 				08927DA324BEAC240035972C /* OldHymnalsView.swift in Sources */,
 				08CB33A525E2115F00609D65 /* OldHymnalsViewModel.swift in Sources */,
 				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
