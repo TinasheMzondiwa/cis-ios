@@ -74,8 +74,16 @@ final class CISAppViewModel: ObservableObject {
     func fetchSongsFromSelectedBook() { }
     func resetSwitchBooks() { }
     
-    func addCollection(with title: String, and about: String?){ }
+    
     func addHymnToCollection(hymn: StoreHymn, collection: StoreCollection) { }
+    
+    func addCollection(with title: String, and about: String?){
+        if let _ = store.createCollection(with: title, and: about) {
+            // HANDLE ERROR
+        } else {
+            refreshAppContent()
+        }
+    }
     func toggleBookSelectionShownFromHymnView() {
         bookSelectionShownFromHymnView.toggle()
     }

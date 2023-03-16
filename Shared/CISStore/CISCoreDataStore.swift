@@ -9,6 +9,8 @@ import Foundation
 import CoreData
 
 final class CISCoreDataStore: Store {
+    
+    
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
@@ -119,6 +121,22 @@ final class CISCoreDataStore: Store {
             return nil
         } else {
             return "Unable to Switch books"
+        }
+    }
+    
+    func createCollection(with title: String, and about: String?) -> Error? {
+        let entity = CollectionEntity(context: container.viewContext)
+        entity.id = UUID()
+        entity.title = title
+        entity.dateCreated = .now
+        if let about, !about.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            entity.about = about
+        }
+        do {
+            try save()
+            return nil
+        } catch {
+            return "Unable to save collection"
         }
     }
 }

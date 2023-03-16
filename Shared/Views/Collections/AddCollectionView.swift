@@ -9,91 +9,89 @@ import SwiftUI
 
 struct AddCollectionView: View {
     @EnvironmentObject var vm: CISAppViewModel
-    @State var isAddingNewCollection: Bool = false
+    
+    @State private var state: ViewState = .add
+    
     @State private var collectionTitle: String = ""
     @State private var collectionAbout: String = ""
     @FocusState private var titleFocussed: Bool
     @FocusState private var aboutFocussed: Bool
     
-    private var navTitle: String {
-        if isAddingNewCollection {
-            return NSLocalizedString("Collections.New", comment: "New prompt")
-        } else {
-            return NSLocalizedString("Collections.Add", comment: "Add prompt")
+    private func leadingButtonAction() {
+        switch state {
+        case .add:
+            vm.toggleCollectionSheetVisibility()
+        case .create:
+            state = .add
         }
     }
     
-    private var navigationSymbol: SFSymbol {
-        if isAddingNewCollection {
-            return SFSymbol.arrowBackward
-        } else {
-            return SFSymbol.close
-        }
-    }
-    
-    private var actionTitle: String {
-        if isAddingNewCollection {
-            return NSLocalizedString("Common.Save", comment: "Save")
-        } else {
-            return NSLocalizedString("Common.New", comment: "New")
-        }
-    }
-    
-    private var trailingButtonIcon: SFSymbol {
-        if isAddingNewCollection {
-            return SFSymbol.checkmark
-        } else {
-            return SFSymbol.plus
-        }
+    private func clearForm() {
+        collectionTitle = ""
+        collectionAbout = ""
+        state = .add
     }
     
     private func trailingButtonAction() {
-        if isAddingNewCollection {
-            
-        } else {
-            isAddingNewCollection.toggle()
+        switch state {
+        case .add:
+            state = .create
+        case .create:
+            if !collectionTitle.trimmingCharacters(in: .whitespaces).isEmpty {
+                vm.addCollection(with: collectionTitle, and: collectionAbout)
+                clearForm()
+            }
         }
-    }
-    
-    private func leadingButtonAction() {
-        if isAddingNewCollection {
-            isAddingNewCollection.toggle()
-        } else {
-            vm.toggleCollectionSheetVisibility()
-        }
-        
     }
     
     
     var body: some View {
         NavigationView {
-            VStack {
-                if vm.allCollections.isEmpty {
-                    EmptyCollectionView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
-                } else {
-                    ForEach(vm.allCollections, id: \.id) { collection in
-                        NavigationLink(destination: Text("He"), label: {
-                            CollectionItemView(item: collection)
-                        })
+            ZStack {
+                switch state {
+                case .create:
+                    createCollection
+                default:
+                    VStack {
+                        if vm.allCollections.isEmpty {
+                            EmptyCollectionView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
+                        } else {
+                            List {
+                                ForEach(vm.allCollections, id: \.id) { collection in
+                                        CollectionItemView(item: collection)
+                                    
+                                }
+                            }
+                            
+                        }
                     }
+                    .transition(.moveAndFade)
                 }
             }
-            .navigationTitle(navTitle)
+            .navigationTitle(Text(state.title))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        leadingButtonAction()
+                        withAnimation {
+                            leadingButtonAction()
+                        }
                     } label: {
-                        navigationSymbol.navButtonStyle()
+                        state.navigation
+                            .navButtonStyle()
                     }
                     
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        trailingButtonAction()
+                        withAnimation {
+                            trailingButtonAction()
+                        }
                     } label: {
-                        trailingButtonIcon
+                        Label(
+                            title: { Text(state.actionTitle) },
+                            icon: { state.actionIcon }
+                        )
                     }
                 }
             }

@@ -30,10 +30,12 @@ struct CollectionsView: View {
                 if filteredCollections.isEmpty {
                     EmptyCollectionView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
                 } else {
-                    ForEach(filteredCollections, id: \.id) { collection in
-                        NavigationLink(destination: Text("He"), label: {
-                            CollectionItemView(item: collection)
-                        })
+                    List {
+                        ForEach(filteredCollections, id: \.id) { collection in
+                            NavigationLink(destination: Text("He"), label: {
+                                CollectionItemView(item: collection)
+                            })
+                        }
                     }
                 }
             }.navigationTitle(navTitle)
