@@ -25,14 +25,20 @@ struct CollectionsView: View {
     }
     
     var body: some View {
-        if filteredCollections.isEmpty {
-            EmptyCollectionView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
-        } else {
-            ForEach(filteredCollections, id: \.id) { collection in
-                NavigationLink(destination: Text("He"), label: {
-                    CollectionItemView(item: collection)
-                })
-            }
+        NavigationView {
+            VStack {
+                if filteredCollections.isEmpty {
+                    EmptyCollectionView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
+                } else {
+                    ForEach(filteredCollections, id: \.id) { collection in
+                        NavigationLink(destination: Text("He"), label: {
+                            CollectionItemView(item: collection)
+                        })
+                    }
+                }
+            }.navigationTitle(navTitle)
+                .searchable(text: $filterQuery)
+                .resignKeyboardOnDragGesture()
         }
     }
     
@@ -53,9 +59,7 @@ struct CollectionsView: View {
                 }
             }
         }
-        .navigationTitle(navTitle)
-        .searchable(text: $filterQuery)
-        .resignKeyboardOnDragGesture()
+        
     }
 }
 

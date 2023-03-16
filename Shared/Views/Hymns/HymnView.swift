@@ -77,7 +77,7 @@ struct HymnView: View {
             }
         }
         .sheet(isPresented: $vm.collectionsSheetShown) {
-            CollectionsView()
+            AddCollectionView()
         }
     }
 }
