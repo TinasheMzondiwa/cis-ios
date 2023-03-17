@@ -127,6 +127,7 @@
 		1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */; };
 		1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */; };
 		1D45303329BB996900C95AC1 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303229BB996900C95AC1 /* MockStore.swift */; };
+		1D746E6C29C459DD00335271 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D746E6B29C459DD00335271 /* CollectionHymnsView.swift */; };
 		1DF244F729C0C10100A4DA7A /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF244F629C0C10100A4DA7A /* HymnView.swift */; };
 		1DF244F929C0CE9900A4DA7A /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF244F829C0CE9900A4DA7A /* BooksView.swift */; };
 		1DF244FD29C2FAD000A4DA7A /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF244FC29C2FAD000A4DA7A /* AddCollectionView.swift */; };
@@ -241,6 +242,7 @@
 		1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISCoreDataStore.swift; sourceTree = "<group>"; };
 		1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppViewModel.swift; sourceTree = "<group>"; };
 		1D45303229BB996900C95AC1 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
+		1D746E6B29C459DD00335271 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		1DF244F629C0C10100A4DA7A /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
 		1DF244F829C0CE9900A4DA7A /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		1DF244FC29C2FAD000A4DA7A /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionView.swift; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 			children = (
 				1D1A914829BFC2F2003C3260 /* CollectionsView.swift */,
 				1DF244FC29C2FAD000A4DA7A /* AddCollectionView.swift */,
+				1D746E6B29C459DD00335271 /* CollectionHymnsView.swift */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */,
 				08927D9324BEA5B60035972C /* OldHymnsView.swift in Sources */,
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
+				1D746E6C29C459DD00335271 /* CollectionHymnsView.swift in Sources */,
 				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
 				1D1A914929BFC2F2003C3260 /* CollectionsView.swift in Sources */,
 				67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,

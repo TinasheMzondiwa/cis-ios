@@ -32,15 +32,23 @@ struct CollectionsView: View {
                 } else {
                     List {
                         ForEach(filteredCollections, id: \.id) { collection in
-                            NavigationLink(destination: Text("He"), label: {
+                            NavigationLink(destination: CollectionHymnsView(collection: collection), label: {
                                 CollectionItemView(item: collection)
                             })
+                        }
+                        .onDelete { indexSet in
+                            print("Deleting \(indexSet)")
                         }
                     }
                 }
             }.navigationTitle(navTitle)
                 .searchable(text: $filterQuery)
                 .resignKeyboardOnDragGesture()
+                .toolbar {
+                    if !filteredCollections.isEmpty {
+                        EditButton()
+                    }
+                }
         }
     }
     
