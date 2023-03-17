@@ -58,7 +58,7 @@ struct AddCollectionView: View {
                         } else {
                             List {
                                 ForEach(vm.allCollections, id: \.id) { collection in
-                                        CollectionItemView(item: collection)
+                                    AddCollectionItemView(item: collection)
                                     
                                 }
                             }
@@ -111,6 +111,32 @@ struct AddCollectionView: View {
         .resignKeyboardOnDragGesture()
         .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
     }
+}
+
+struct AddCollectionItemView: View {
+    let item: StoreCollection
+    @State var selected: Bool = false
     
+    var body: some View {
+        HStack {
+            CheckBoxView(checked: .constant(selected))
+            VStack(alignment: .leading) {
+                Text(item.title)
+                    .headLineStyle(selected: selected)
+                    .lineSpacing(4)
+                    .animation(.none)
+                if let about = item.about {
+                    Text(about)
+                        .footNoteStyle()
+                        .lineSpacing(4)
+                        .lineLimit(1)
+                }
+            }
+            .padding([.leading], 8)
+            Spacer()
+        }
+        .padding([.top, .bottom], 8)
+        .animation(.easeIn)
+    }
 }
 
