@@ -19,3 +19,27 @@ public protocol Store {
     func add(hymn: StoreHymn, to collection: StoreCollection) -> Error?
 //    func saveCollection()
 }
+
+
+final class CISPersistence {
+    
+}
+
+
+extension Hymn {
+    func toStoreHymn() -> StoreHymn {
+        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, content: self.content!, number: Int(self.number))
+    }
+}
+
+extension Collection {
+    func toStoreCollection() -> StoreCollection {
+        StoreCollection(id: self.id!, title: self.title!, dateCreated: self.created!, about: self.about, hymns: (self.hymns?.allObjects as? [Hymn]).map{ $0.map { $0.toStoreHymn()}})
+    }
+}
+
+extension String {
+    static var StoreName = "Main"
+    static var Hymn = "Hymn"
+    static var Collection = "Collection"
+}

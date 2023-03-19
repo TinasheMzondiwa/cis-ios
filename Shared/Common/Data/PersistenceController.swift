@@ -47,7 +47,7 @@ struct PersistenceController : PersistenceControllerProtocol {
     // An initializer to load Core Data, optionally able
     // to use an in-memory store.
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Main")
+        container = NSPersistentContainer(name: .StoreName)
         
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
@@ -76,7 +76,7 @@ struct PersistenceController : PersistenceControllerProtocol {
     
     private func migrateData() {
         let context = container.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
         let predicate = NSPredicate(format: "titleStr == nil")
         request.predicate = predicate
         request.returnsObjectsAsFaults = false
@@ -118,7 +118,7 @@ struct PersistenceController : PersistenceControllerProtocol {
     
     func query(book: String) -> Int {
         let context = container.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
         let predicate = NSPredicate(format: "book == %@", book)
         request.predicate = predicate
         request.fetchLimit = 1
@@ -135,7 +135,7 @@ struct PersistenceController : PersistenceControllerProtocol {
     
     func queryHymn(id: UUID) -> Hymn? {
         let context = container.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
         let predicate = NSPredicate(format: "id == %@", id as CVarArg)
         request.predicate = predicate
         request.fetchLimit = 1
@@ -153,7 +153,7 @@ struct PersistenceController : PersistenceControllerProtocol {
     
     func queryHymn(number: Int, book: String) -> Hymn? {
         let context = container.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Hymn")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
         let predicate = NSPredicate(format: "number == %i AND book == %@", number, book)
         
         request.predicate = predicate
@@ -204,7 +204,7 @@ struct PersistenceController : PersistenceControllerProtocol {
     
     func queryCollection(id: UUID) -> Collection? {
         let context = container.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Collection")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Collection)
         let predicate = NSPredicate(format: "id == %@", id as CVarArg)
         request.predicate = predicate
         request.fetchLimit = 1
@@ -222,7 +222,7 @@ struct PersistenceController : PersistenceControllerProtocol {
     
     func queryCollections() -> Int {
         let context = container.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Collection")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Collection)
         request.fetchLimit = 1
         request.returnsObjectsAsFaults = false
         request.fetchBatchSize = 1
