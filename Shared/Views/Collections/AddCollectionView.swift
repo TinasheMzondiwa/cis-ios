@@ -10,6 +10,8 @@ import SwiftUI
 struct AddCollectionView: View {
     @EnvironmentObject var vm: CISAppViewModel
     
+    let hymn: StoreHymn
+    
     @State private var state: ViewState = .add
     
     @State private var collectionTitle: String = ""
@@ -59,7 +61,10 @@ struct AddCollectionView: View {
                             List {
                                 ForEach(vm.allCollections, id: \.id) { collection in
                                     AddCollectionItemView(item: collection)
-                                    
+                                        .contentShape(Rectangle())
+                                        .onTapGesture {
+                                            vm.addHymnToCollection(hymn: hymn, collection: collection)
+                                        }
                                 }
                             }
                             

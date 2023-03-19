@@ -77,10 +77,7 @@ struct HymnView: View {
             }
         }
         .sheet(isPresented: $vm.collectionsSheetShown) {
-            AddCollectionView()
-//            OldAddToCollectionView(hymnId: UUID()) {
-//                print("Hehe")
-//            }
+            AddCollectionView(hymn: displayedHymn)
         }
     }
 }

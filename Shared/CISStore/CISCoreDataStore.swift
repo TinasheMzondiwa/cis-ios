@@ -9,8 +9,6 @@ import Foundation
 import CoreData
 
 final class CISCoreDataStore: Store {
-    
-    
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
@@ -62,6 +60,27 @@ final class CISCoreDataStore: Store {
         
         return collections
     }
+    func retrieveHymns(from collection: StoreCollection) -> [StoreHymn] {
+        let request = NSFetchRequest<CollectionEntity>(entityName: .CollectionEntity)
+        let predicate = NSPredicate(format: "id == %@", collection.id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        var foundHymns: [StoreHymn] = []
+        do {
+            let fetchedCollection = try container.viewContext.fetch(request)
+            _ = (fetchedCollection.first?.hymns?.allObjects as? [HymnEntity]).map({ hymnEntities in
+                for hymn in hymnEntities {
+                    foundHymns.append(hymn.toStoreHymn())
+                }
+            })
+        } catch {
+            //TODO: - Better handle the error
+            print("Error: Fetching Collections failed\(error.localizedDescription)")
+        }
+        
+        return foundHymns
+    }
+    
     
     func retrieveHymns(from book: StoreBook) -> [StoreHymn] {
         let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
@@ -139,6 +158,15 @@ final class CISCoreDataStore: Store {
             return "Unable to save collection"
         }
     }
+    
+    func add(hymn: StoreHymn, to collection: StoreCollection) -> Error? {
+        // Check if Collection already contains the hymn
+        // If yes, then remove it
+        // Otherwise, add hymn t the collection
+        
+        return nil
+    }
+    
 }
 
 extension CISCoreDataStore {
