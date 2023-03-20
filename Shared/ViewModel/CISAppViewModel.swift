@@ -10,6 +10,7 @@ import Foundation
 final class CISAppViewModel: ObservableObject {
     // MARK: - Properties
     private let store: Store
+    private let defaults = UserDefaults.standard
     
     
     // MARK: - Published properties
@@ -40,14 +41,33 @@ final class CISAppViewModel: ObservableObject {
     
     func fetchAllBooks(){
         allBooks = store.retrieveAllBooks()
-        selectedBook = allBooks.first(where: { $0.isSelected == true })
-        if let selectedBook {
-            hymnsFromSelectedBook = store.retrieveHymns(from: selectedBook)
+        if !allBooks.isEmpty {
+            // If no book has been selected - Select the English book by default
+            if !defaults.bool(forKey: .selectedBook) {
+                defaults.set("english", forKey: .selectedBook)
+            }
+            let selectedBook = defaults.string(forKey: .selectedBook) ?? .defaultSelectedBook
+            // Fetch all the hymns from the selected book
+            if let fetchedHymns = fetchHymns(from: selectedBook) {
+                hymnsFromSelectedBook = fetchedHymns
+            }
+        } else {
+            // TODO: To fix
+            // We're unable to fetch books, file is missing or corrupt
+            // Handle this scenario
         }
+//        selectedBook = allBooks.first(where: { $0.isSelected == true })
+//        if let selectedBook {
+//            hymnsFromSelectedBook = store.retrieveHymns(from: selectedBook)
+//        }
+    }
+    
+    func fetchHymns(from bookKey: String) -> [StoreHymn]? {
+        return store.retrieveHymns(from: bookKey)
     }
     
     func fetchAllCollections(){
-        allCollections = store.retrieveAllCollections()
+//        allCollections = store.retrieveAllCollections()
     }
     
     func toggleHymnsSorting(using option: Sort) {
@@ -63,9 +83,9 @@ final class CISAppViewModel: ObservableObject {
         hymnsFromSelectedBook = sortedList
     }
     
-    func get(similarHymnTo hymn: StoreHymn,from book: StoreBook) -> StoreHymn? {
-        book.hymns.first(where: { $0.number == hymn.number })
-    }
+//    func get(similarHymnTo hymn: StoreHymn,from book: StoreBook) -> StoreHymn? {
+//        book.hymns.first(where: { $0.number == hymn.number })
+//    }
     
     func setSelectedHymn(to hymn: StoreHymn) {
         selectedHymn = hymn
@@ -78,11 +98,11 @@ final class CISAppViewModel: ObservableObject {
     func addHymnToCollection(hymn: StoreHymn, collection: StoreCollection) { }
     
     func addCollection(with title: String, and about: String?){
-        if let _ = store.createCollection(with: title, and: about) {
-            // HANDLE ERROR
-        } else {
-            refreshAppContent()
-        }
+//        if let _ = store.createCollection(with: title, and: about) {
+//            // HANDLE ERROR
+//        } else {
+//            refreshAppContent()
+//        }
     }
     func toggleBookSelectionShownFromHymnView() {
         bookSelectionShownFromHymnView.toggle()
@@ -101,10 +121,10 @@ final class CISAppViewModel: ObservableObject {
         guard storeBook.id != selectedBook.id else { return }
         
         // TODO: - Switch to completion handlers
-        if let _ = store.updateSelectedBook(from: selectedBook, to: storeBook) {
-        } else {
-            refreshAppContent()
-        }
+//        if let _ = store.updateSelectedBook(from: selectedBook, to: storeBook) {
+//        } else {
+//            refreshAppContent()
+//        }
     }
     
     

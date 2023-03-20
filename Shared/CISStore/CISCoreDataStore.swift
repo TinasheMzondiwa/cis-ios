@@ -16,27 +16,30 @@ final class CISCoreDataStore: Store {
         container = NSPersistentContainer(name: .CISStore)
         container.loadPersistentStores { _, _ in }
         
-        do {
-            try initializeStore()
-        } catch {
-            //TODO: - Better handle the error
-            print("Error: Initialization \(error.localizedDescription)")
-        }
+        // Perform Migration
+//        do {
+//            try initializeStore()
+//        } catch {
+//            //TODO: - Better handle the error
+//            print("Error: Initialization \(error.localizedDescription)")
+//        }
     }
     
+    
+    /// Retrieves Books from the config.json file
+    /// - Returns: An array of StoreBooks
     func retrieveAllBooks() -> [StoreBook] {
         var books: [StoreBook] = []
         
-        let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
-        let titleSortDescriptor = NSSortDescriptor(key: .title, ascending: true)
-        request.sortDescriptors = [titleSortDescriptor]
+        let fileLoader = FileLoader<[LocalBook]>(fromFile: "config")
         
-        do {
-            let fetchBooks = try container.viewContext.fetch(request)
-            books = fetchBooks.map { $0.toStoreBook() }
-        } catch {
-            //TODO: - Better handle the error
-            print("Error: Fetching Books failed \(error.localizedDescription)")
+        fileLoader.load { result in
+            switch result {
+            case let .success(booksFromFile):
+                books = booksFromFile.map { $0.toStoreBook() }
+            default:
+                print("We couldn't fetch the books")
+            }
         }
         
         return books
@@ -49,58 +52,72 @@ final class CISCoreDataStore: Store {
         let titleSortDescriptor = NSSortDescriptor(key: .title, ascending: true)
         request.sortDescriptors = [titleSortDescriptor]
         
-        do  {
-            let fetchedCollections = try container.viewContext.fetch(request)
-            collections = fetchedCollections.map { $0.toStoreCollection()
-            }
-        } catch {
-            //TODO: - Better handle the error
-            print("Error: Fetching Collections failed\(error.localizedDescription)")
-        }
+//        do  {
+//            let fetchedCollections = try container.viewContext.fetch(request)
+//            collections = fetchedCollections.map { $0.toStoreCollection()
+//            }
+//        } catch {
+//            //TODO: - Better handle the error
+//            print("Error: Fetching Collections failed\(error.localizedDescription)")
+//        }
         
         return collections
     }
     func retrieveHymns(from collection: StoreCollection) -> [StoreHymn] {
         let request = NSFetchRequest<CollectionEntity>(entityName: .CollectionEntity)
         let predicate = NSPredicate(format: "id == %@", collection.id as CVarArg)
+        
         request.predicate = predicate
         request.fetchLimit = 1
         var foundHymns: [StoreHymn] = []
-        do {
-            let fetchedCollection = try container.viewContext.fetch(request)
-            _ = (fetchedCollection.first?.hymns?.allObjects as? [HymnEntity]).map({ hymnEntities in
-                for hymn in hymnEntities {
-                    foundHymns.append(hymn.toStoreHymn())
-                }
-            })
-        } catch {
-            //TODO: - Better handle the error
-            print("Error: Fetching Collections failed\(error.localizedDescription)")
-        }
+//        do {
+//            let fetchedCollection = try container.viewContext.fetch(request)
+//            _ = (fetchedCollection.first?.hymns?.allObjects as? [HymnEntity]).map({ hymnEntities in
+//                for hymn in hymnEntities {
+//                    foundHymns.append(hymn.toStoreHymn())
+//                }
+//            })
+//        } catch {
+//            //TODO: - Better handle the error
+//            print("Error: Fetching Collections failed\(error.localizedDescription)")
+//        }
         
         return foundHymns
     }
     
     
-    func retrieveHymns(from book: StoreBook) -> [StoreHymn] {
-        let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
-        let predicate = NSPredicate(format: "id == %@", book.id as CVarArg)
-        request.predicate = predicate
-        request.fetchLimit = 1
+    func retrieveHymns(from book: String) -> [StoreHymn]? {
+//        let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
+//        let predicate = NSPredicate(format: "id == %@", book.id as CVarArg)
+//        request.predicate = predicate
+//        request.fetchLimit = 1
         
         var foundHymns: [StoreHymn] = []
+        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+        let predicate = NSPredicate(format: "book == %@", book)
+        let titleSortDescriptor = NSSortDescriptor(key: .title, ascending: true)
+        request.predicate = predicate
+        request.sortDescriptors = [titleSortDescriptor]
         
         do {
-            let fetchedBook = try container.viewContext.fetch(request)
-            _ = (fetchedBook.first?.hymns?.array as? [HymnEntity]).map { hymnEntities in
-                for hymn in hymnEntities {
-                    foundHymns.append(hymn.toStoreHymn())
-                }
-            }
+            let fetchedHymns = try container.viewContext.fetch(request)
+            foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
         } catch {
             //TODO: - Better handle the error
-            print("Error: Fetching Collections failed\(error.localizedDescription)")
+             print("Error: Fetching Collections failed\(error.localizedDescription)")
         }
+        
+//        do {
+//            let fetchedBook = try container.viewContext.fetch(request)
+//            _ = (fetchedBook.first?.hymns?.array as? [HymnEntity]).map { hymnEntities in
+//                for hymn in hymnEntities {
+//                    foundHymns.append(hymn.toStoreHymn())
+//                }
+//            }
+//        } catch {
+//            //TODO: - Better handle the error
+//            print("Error: Fetching Collections failed\(error.localizedDescription)")
+//        }
         
         return foundHymns
     }
@@ -123,25 +140,25 @@ final class CISCoreDataStore: Store {
     
     
     
-    func updateSelectedBook(from book: StoreBook, to newBook: StoreBook) -> Error? {
-        let previousSelectedBookEntity = retrieveBook(with: book.id)
-        let newlySelectedBookEntity = retrieveBook(with: newBook.id)
-        
-        if let previousSelectedBookEntity, let newlySelectedBookEntity {
-            previousSelectedBookEntity.isSelected = false
-            newlySelectedBookEntity.isSelected = true
-        
-            do {
-                try save()
-            } catch {
-                print("Error: Fetching Collections failed\(error.localizedDescription)")
-            }
-            
-            return nil
-        } else {
-            return "Unable to Switch books"
-        }
-    }
+//    func updateSelectedBook(from book: StoreBook, to newBook: StoreBook) -> Error? {
+//        let previousSelectedBookEntity = retrieveBook(with: book.id)
+//        let newlySelectedBookEntity = retrieveBook(with: newBook.id)
+//
+//        if let previousSelectedBookEntity, let newlySelectedBookEntity {
+//            previousSelectedBookEntity.isSelected = false
+//            newlySelectedBookEntity.isSelected = true
+//
+//            do {
+//                try save()
+//            } catch {
+//                print("Error: Fetching Collections failed\(error.localizedDescription)")
+//            }
+//
+//            return nil
+//        } else {
+//            return "Unable to Switch books"
+//        }
+//    }
     
     func createCollection(with title: String, and about: String?) -> Error? {
         let entity = CollectionEntity(context: container.viewContext)
@@ -253,6 +270,10 @@ extension CISCoreDataStore {
         let key: String
         let title: String
         let language: String
+        
+        func toStoreBook() -> StoreBook {
+            StoreBook(key: key, language: language, title: title)
+        }
     }
     
     private struct LocalHymn: Decodable {
@@ -271,35 +292,39 @@ extension String {
     /// Entity: Book
     static let BookEntity = "BookEntity"
     /// Store Name: CISStore
-    static let CISStore = "CISStore"
+    static let CISStore = "Main"
     /// First time migration UserDefaults Key
     static let migrationKey = "firstTimeMigration"
     /// Key name: title
     static let title = "title"
     /// Key name: english
     static let english = "english"
+    /// UserDefaults Key for selected Hymn Book
+    static let selectedBook = "selectedBook"
+    /// Default Selected Book
+    static let defaultSelectedBook = "english"
 }
 
 
 extension CollectionEntity {
-    func toStoreCollection() -> StoreCollection {
-        StoreCollection(id: self.id!, title: self.title!, dateCreated: self.dateCreated!, about: self.about, hymns: (self.hymns?.allObjects as? [HymnEntity]).map({ $0.map { $0.toStoreHymn()}
-        }) ?? [])
-    }
+//    func toStoreCollection() -> StoreCollection {
+//        StoreCollection(id: self.id!, title: self.title!, dateCreated: self.dateCreated!, about: self.about, hymns: (self.hymns?.allObjects as? [HymnEntity]).map({ $0.map { $0.toStoreHymn()}
+//        }) ?? [])
+//    }
 }
 
 extension BookEntity {
-    func toStoreBook() -> StoreBook {
-        StoreBook(id: self.id!, isSelected: self.isSelected, key: self.key!, language: self.language!, title: self.title!, hymns: (self.hymns!.array as? [HymnEntity]).map( { entity in
-            entity.map { $0.toStoreHymn()}})!
-        )
-    }
+//    func toStoreBook() -> StoreBook {
+//        StoreBook(id: self.id!, isSelected: self.isSelected, key: self.key!, language: self.language!, title: self.title!, hymns: (self.hymns!.array as? [HymnEntity]).map( { entity in
+//            entity.map { $0.toStoreHymn()}})!
+//        )
+//    }
 }
 
 extension HymnEntity {
-    func toStoreHymn() -> StoreHymn {
-        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, content: self.content!, number: Int(self.number))
-    }
+//    func toStoreHymn() -> StoreHymn {
+//        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, content: self.content!, number: Int(self.number))
+//    }
 }
 
 extension String: LocalizedError {}
