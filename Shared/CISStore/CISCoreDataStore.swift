@@ -9,8 +9,10 @@ import Foundation
 import CoreData
 
 final class CISCoreDataStore: Store {
+    
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
+    
     
     init() {
         container = NSPersistentContainer(name: .CISStore)
@@ -43,6 +45,44 @@ final class CISCoreDataStore: Store {
         }
         
         return books
+    }
+    
+    
+    /// Retrieve Hymns from a book
+    /// - Parameter book: key of the book
+    /// - Returns: An optional array of hymns
+    func retrieveHymns(from book: String) -> [StoreHymn]? {
+        var foundHymns: [StoreHymn] = []
+        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+        let predicate = NSPredicate(format: "book == %@", book)
+        let titleSortDescriptor = NSSortDescriptor(key: .title, ascending: true)
+        request.predicate = predicate
+        request.sortDescriptors = [titleSortDescriptor]
+        
+        do {
+            let fetchedHymns = try container.viewContext.fetch(request)
+            // TODO: only use this after testing existing store
+//            if fetchedHymns.isEmpty {
+//                try migrateBook(with: book)
+//            }
+            foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
+        } catch {
+            //TODO: - Better handle the error
+             print("Error: Fetching hymns failed\(error.localizedDescription)")
+        }
+        
+        return foundHymns
+    }
+    
+    
+    /// Sets the selected book
+    /// - Parameter bookName: Name of the book
+    func setSelectedBook(to bookName: String) {
+        defaults.set(bookName, forKey: .selectedBook)
+    }
+    
+    func retrieveSelectedBook() -> String? {
+        defaults.string(forKey: .selectedBook)
     }
     
     func retrieveAllCollections() -> [StoreCollection] {
@@ -85,42 +125,6 @@ final class CISCoreDataStore: Store {
         return foundHymns
     }
     
-    
-    func retrieveHymns(from book: String) -> [StoreHymn]? {
-//        let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
-//        let predicate = NSPredicate(format: "id == %@", book.id as CVarArg)
-//        request.predicate = predicate
-//        request.fetchLimit = 1
-        
-        var foundHymns: [StoreHymn] = []
-        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
-        let predicate = NSPredicate(format: "book == %@", book)
-        let titleSortDescriptor = NSSortDescriptor(key: .title, ascending: true)
-        request.predicate = predicate
-        request.sortDescriptors = [titleSortDescriptor]
-        
-        do {
-            let fetchedHymns = try container.viewContext.fetch(request)
-            foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
-        } catch {
-            //TODO: - Better handle the error
-             print("Error: Fetching Collections failed\(error.localizedDescription)")
-        }
-        
-//        do {
-//            let fetchedBook = try container.viewContext.fetch(request)
-//            _ = (fetchedBook.first?.hymns?.array as? [HymnEntity]).map { hymnEntities in
-//                for hymn in hymnEntities {
-//                    foundHymns.append(hymn.toStoreHymn())
-//                }
-//            }
-//        } catch {
-//            //TODO: - Better handle the error
-//            print("Error: Fetching Collections failed\(error.localizedDescription)")
-//        }
-        
-        return foundHymns
-    }
     
     private func retrieveBook(with id: UUID) -> BookEntity? {
         let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
@@ -238,27 +242,59 @@ extension CISCoreDataStore {
                 print("Error: Migration failed no songs found")
                 return
             }
-            
-            let book = BookEntity(context: container.viewContext)
-            book.id = UUID()
-            book.title = bookFromFile.title
-            book.key = bookFromFile.key
-            book.language = bookFromFile.language
-            book.isSelected = (bookFromFile.key == .english) ? true : false
-            book.hymns = NSOrderedSet(array: hymnsFromFile.map { fileHymn in
-                let hymn = HymnEntity(context: container.viewContext)
+            for hymnFromFile in hymnsFromFile {
+                let hymn = Hymn(context: container.viewContext)
                 hymn.id = UUID()
-                hymn.title = fileHymn.title
-                hymn.titleStr = fileHymn.title.titleStr
-                hymn.number = Int16(fileHymn.number)
-                hymn.content = fileHymn.content
-                hymn.editedContent = fileHymn.content
-                hymn.isFavorite = false
-                return hymn
+                hymn.book = bookFromFile.key
+                hymn.title = hymnFromFile.title
+                hymn.titleStr = hymnFromFile.title.titleStr
+                hymn.number = Int16(hymnFromFile.number)
+                if hymnFromFile.content.contains(hymnFromFile.title) {
+                    hymn.content = hymnFromFile.content
+                } else {
+                    hymn.content = "<h3>\(hymnFromFile.title)</h3>\(hymnFromFile.content)"
                 }
-            )
+                
+                hymn.edited_content = hymn.content
+                
+            }
+
             try save()
         }
+    }
+    
+    private func migrateBook(with key: String) throws {
+        let fileLoader = FileLoader<[LocalHymn]>(fromFile: key)
+        var hymnsFromfile: [LocalHymn] = []
+        
+        fileLoader.load { result in
+            switch result {
+            case let .success(hymns):
+                hymnsFromfile = hymns
+            case .failure:
+                break
+            }
+        }
+        
+        // Migrate
+        for hymnFromFile in hymnsFromfile {
+            let hymn = Hymn(context: container.viewContext)
+            hymn.id = UUID()
+            hymn.book = key
+            hymn.title = hymnFromFile.title
+            hymn.titleStr = hymnFromFile.title.titleStr
+            hymn.number = Int16(hymnFromFile.number)
+            if hymnFromFile.content.contains(hymnFromFile.title) {
+                hymn.content = hymnFromFile.content
+            } else {
+                hymn.content = "<h3>\(hymnFromFile.title)</h3>\(hymnFromFile.content)"
+            }
+            
+            hymn.edited_content = hymn.content
+            
+        }
+
+        try save()
     }
     
     private func save() throws {
@@ -272,7 +308,7 @@ extension CISCoreDataStore {
         let language: String
         
         func toStoreBook() -> StoreBook {
-            StoreBook(key: key, language: language, title: title)
+            StoreBook(key: key, language: language, title: title, isSelected: key == .selectedBook)
         }
     }
     
@@ -302,7 +338,7 @@ extension String {
     /// UserDefaults Key for selected Hymn Book
     static let selectedBook = "selectedBook"
     /// Default Selected Book
-    static let defaultSelectedBook = "english"
+    static let defaultBook = "english"
 }
 
 

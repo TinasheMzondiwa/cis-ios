@@ -43,14 +43,19 @@ final class CISAppViewModel: ObservableObject {
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
             // If no book has been selected - Select the English book by default
-            if !defaults.bool(forKey: .selectedBook) {
-                defaults.set("english", forKey: .selectedBook)
+            if defaults.string(forKey: .selectedBook) == nil {
+                store.setSelectedBook(to: .defaultBook)
             }
-            let selectedBook = defaults.string(forKey: .selectedBook) ?? .defaultSelectedBook
+            
+            let selectedBookKey = store.retrieveSelectedBook() ?? .defaultBook
+            
+            selectedBook = allBooks.first(where: { $0.key == selectedBookKey })
+            
             // Fetch all the hymns from the selected book
-            if let fetchedHymns = fetchHymns(from: selectedBook) {
+            if let fetchedHymns = fetchHymns(from: selectedBookKey) {
                 hymnsFromSelectedBook = fetchedHymns
             }
+            
         } else {
             // TODO: To fix
             // We're unable to fetch books, file is missing or corrupt
@@ -118,8 +123,13 @@ final class CISAppViewModel: ObservableObject {
     func setSelectedBook(to storeBook: StoreBook) {
         toggleBookSelectionSheet()
         guard let selectedBook else { return }
-        guard storeBook.id != selectedBook.id else { return }
+        guard storeBook.key != selectedBook.key else { return }
         
+        store.setSelectedBook(to: storeBook.key)
+        
+        print("Selected Book: \(store.retrieveSelectedBook())")
+        
+        refreshAppContent()
         // TODO: - Switch to completion handlers
 //        if let _ = store.updateSelectedBook(from: selectedBook, to: storeBook) {
 //        } else {

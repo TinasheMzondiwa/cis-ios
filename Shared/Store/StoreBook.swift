@@ -19,12 +19,14 @@ public struct StoreBook: Identifiable, Equatable {
     /// Title to the book
     public let title: String
 //    /// Array of the hymns  in this book
+    public let isSelected: Bool
 //    public let hymns: [StoreHymn]
     
-    public init(key: String, language: String, title: String) {
+    public init(key: String, language: String, title: String, isSelected: Bool = false) {
         self.key = key
         self.language = language
         self.title = title
+        self.isSelected = isSelected
 //        self.hymns = hymns
     }
 }

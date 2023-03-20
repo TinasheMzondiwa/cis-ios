@@ -58,14 +58,14 @@ struct BookItemView: View {
                         .fill(Color.init(hex: COLORS[index % COLORS.count]))
                         .frame(width: 42, height: 42, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
-//                    SFSymbol.checkmark
-//                        .foregroundColor(.white)
-//                        .opacity(book.isSelected ? 1 : 0)
+                    SFSymbol.checkmark
+                        .foregroundColor(.white)
+                        .opacity(book.isSelected ? 1 : 0)
                 }
                 
                 VStack(alignment: .leading) {
                     Text(book.title)
-//                        .headLineStyle(selected: book.isSelected)
+                        .headLineStyle(selected: book.isSelected)
                     Text(book.language)
                         .subHeadLineStyle()
                 }
