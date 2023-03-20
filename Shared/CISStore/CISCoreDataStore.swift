@@ -88,18 +88,17 @@ final class CISCoreDataStore: Store {
     func retrieveAllCollections() -> [StoreCollection] {
         var collections: [StoreCollection] = []
         
-        let request = NSFetchRequest<CollectionEntity>(entityName: .CollectionEntity)
+        let request = NSFetchRequest<Collection>(entityName: .Collection)
         let titleSortDescriptor = NSSortDescriptor(key: .title, ascending: true)
         request.sortDescriptors = [titleSortDescriptor]
         
-//        do  {
-//            let fetchedCollections = try container.viewContext.fetch(request)
-//            collections = fetchedCollections.map { $0.toStoreCollection()
-//            }
-//        } catch {
-//            //TODO: - Better handle the error
-//            print("Error: Fetching Collections failed\(error.localizedDescription)")
-//        }
+        do  {
+            let fetchedCollections = try container.viewContext.fetch(request)
+            collections = fetchedCollections.map { $0.toStoreCollection() }
+        } catch {
+            //TODO: - Better handle the error
+            print("Error: Fetching Collections failed\(error.localizedDescription)")
+        }
         
         return collections
     }

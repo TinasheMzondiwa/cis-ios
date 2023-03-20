@@ -72,7 +72,7 @@ final class CISAppViewModel: ObservableObject {
     }
     
     func fetchAllCollections(){
-//        allCollections = store.retrieveAllCollections()
+        allCollections = store.retrieveAllCollections()
     }
     
     func toggleHymnsSorting(using option: Sort) {

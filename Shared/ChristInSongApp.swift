@@ -28,9 +28,9 @@ struct ChristInSongApp: App {
                     .tabItem {
                         NavLabel(item: NavItem.hymns)
                     }
-//                CollectionsView()
-//                    .tabItem { NavLabel(item: NavItem.collections)
-//                    }
+                CollectionsView()
+                    .tabItem { NavLabel(item: NavItem.collections)
+                    }
             }
             .environmentObject(viewModel)
         }
