@@ -35,10 +35,10 @@ final class CISCoreDataStore: Store {
         
         let fileLoader = FileLoader<[LocalBook]>(fromFile: "config")
         
-        fileLoader.load { result in
+        fileLoader.load {[weak self] result in
             switch result {
             case let .success(booksFromFile):
-                books = booksFromFile.map { $0.toStoreBook() }
+                books = booksFromFile.map { $0.toStoreBook(self?.getSelectedBookKey()) }
             default:
                 print("We couldn't fetch the books")
             }
@@ -63,7 +63,10 @@ final class CISCoreDataStore: Store {
             let fetchedHymns = try container.viewContext.fetch(request)
             // TODO: only use this after testing existing store
             if fetchedHymns.isEmpty {
-                try migrateBook(with: book)
+                // migrate the book
+//                try migrateBook(with: book)
+                // perform a fresh fetch
+//                fetchedHymns = try container.viewContext.fetch(request)
             }
             foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
         } catch {
@@ -187,6 +190,10 @@ final class CISCoreDataStore: Store {
         return nil
     }
     
+    private func getSelectedBookKey() -> String {
+        defaults.string(forKey: .selectedBook) ?? .defaultBook
+    }
+    
 }
 
 extension CISCoreDataStore {
@@ -306,8 +313,12 @@ extension CISCoreDataStore {
         let title: String
         let language: String
         
-        func toStoreBook() -> StoreBook {
-            StoreBook(key: key, language: language, title: title, isSelected: key == .selectedBook)
+        func toStoreBook(_ selectedBook: String?) -> StoreBook {
+            if selectedBook != nil {
+                return StoreBook(key: key, language: language, title: title, isSelected: key == selectedBook)
+            } else {
+                return StoreBook(key: key, language: language, title: title)
+            }
         }
     }
     

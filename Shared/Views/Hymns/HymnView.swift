@@ -15,19 +15,18 @@ struct HymnView: View {
     @State var displayedHymn: StoreHymn
     
     private var books: [StoreBook] {
-//        if let displayedBook {
-//            return vm.allBooks.map {
-//                StoreBook(id: $0.id,
-//                          isSelected: $0.id == displayedBook.id ,
-//                          key: $0.key,
-//                          language: $0.language,
-//                          title: $0.title,
-//                          hymns: $0.hymns
-//                )
-//            }
-//        } else {
+        if let displayedBook {
+            return vm.allBooks.map {
+                StoreBook(
+                    key: $0.key,
+                    language: $0.language,
+                    title: $0.title,
+                    isSelected: $0.key == displayedBook.key
+                )
+            }
+        } else {
             return vm.allBooks
-//        }
+        }
     }
     
     
