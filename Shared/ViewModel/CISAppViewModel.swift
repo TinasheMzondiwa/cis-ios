@@ -88,9 +88,11 @@ final class CISAppViewModel: ObservableObject {
         hymnsFromSelectedBook = sortedList
     }
     
-//    func get(similarHymnTo hymn: StoreHymn,from book: StoreBook) -> StoreHymn? {
-//        book.hymns.first(where: { $0.number == hymn.number })
-//    }
+    func get(similarHymnTo hymn: StoreHymn,from book: StoreBook) -> StoreHymn? {
+        let hymns = store.retrieveHymns(from: book.key)
+        
+        return hymns?.first(where: {$0.number == hymn.number})
+    }
     
     func setSelectedHymn(to hymn: StoreHymn) {
         selectedHymn = hymn

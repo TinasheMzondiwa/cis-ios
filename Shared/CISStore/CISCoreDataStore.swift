@@ -62,9 +62,9 @@ final class CISCoreDataStore: Store {
         do {
             let fetchedHymns = try container.viewContext.fetch(request)
             // TODO: only use this after testing existing store
-//            if fetchedHymns.isEmpty {
-//                try migrateBook(with: book)
-//            }
+            if fetchedHymns.isEmpty {
+                try migrateBook(with: book)
+            }
             foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
         } catch {
             //TODO: - Better handle the error

@@ -32,12 +32,12 @@ struct HymnView: View {
     
     
     private func setSelectedBook(to book: StoreBook) {
-//        if let newHymn = vm.get(similarHymnTo: displayedHymn, from: book) {
-//            displayedBook = book
-//            displayedHymn = newHymn
-//        } else {
-//            displayedBook = vm.selectedBook
-//        }
+        if let newHymn = vm.get(similarHymnTo: displayedHymn, from: book) {
+            displayedBook = book
+            displayedHymn = newHymn
+        } else {
+            displayedBook = vm.selectedBook
+        }
     }
     
     var body: some View {
