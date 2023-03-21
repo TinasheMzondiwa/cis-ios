@@ -101,7 +101,10 @@ final class CISAppViewModel: ObservableObject {
     func resetSwitchBooks() { }
     
     
-    func addHymnToCollection(hymn: StoreHymn, collection: StoreCollection) { }
+    func toggle(hymn: StoreHymn, collection: StoreCollection) {
+        store.toggle(hymn: hymn, in: collection)
+        refreshAppContent()
+    }
     
     func addCollection(with title: String, and about: String?){
         

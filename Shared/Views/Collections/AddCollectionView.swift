@@ -60,11 +60,14 @@ struct AddCollectionView: View {
                         } else {
                             List {
                                 ForEach(vm.allCollections, id: \.id) { collection in
-                                    AddCollectionItemView(item: collection)
-                                        .contentShape(Rectangle())
-                                        .onTapGesture {
-                                            vm.addHymnToCollection(hymn: hymn, collection: collection)
+                                    let added = collection.hymns?.contains(hymn)
+                                    Button {
+                                        withAnimation {
+                                            vm.toggle(hymn: hymn, collection: collection)
                                         }
+                                    } label: {
+                                        AddCollectionItemView(item: collection, selected: added)
+                                    }
                                 }
                             }
                             
@@ -120,14 +123,14 @@ struct AddCollectionView: View {
 
 struct AddCollectionItemView: View {
     let item: StoreCollection
-    @State var selected: Bool = false
+    let selected: Bool?
     
     var body: some View {
         HStack {
-            CheckBoxView(checked: .constant(selected))
+            CheckBoxView(checked: .constant(selected ?? false))
             VStack(alignment: .leading) {
                 Text(item.title)
-                    .headLineStyle(selected: selected)
+                    .headLineStyle(selected: selected ?? false)
                     .lineSpacing(4)
                     .animation(.none)
                 if let about = item.about {

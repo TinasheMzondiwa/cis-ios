@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 final class CISCoreDataStore: Store {
-
+   
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
@@ -161,15 +161,8 @@ final class CISCoreDataStore: Store {
     }
     
     func removeCollection(with id: UUID) {
-        let request = NSFetchRequest<Collection>(entityName: .Collection)
-        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
-        request.predicate = predicate
-        request.fetchLimit = 1
-        
-        if let res = try? container.viewContext.fetch(request) {
-            for obj in res {
-                container.viewContext.delete(obj)
-            }
+        if let res = retrieveCollection(with: id) {
+            container.viewContext.delete(res)
         }
         
         do {
@@ -178,6 +171,53 @@ final class CISCoreDataStore: Store {
             //TODO: - Better handle the error
             print("Error: Couldn't delete the collection")
         }
+    }
+    
+    func retrieveHymn(with id: UUID) -> Hymn? {
+        let req = NSFetchRequest<Hymn>(entityName: .Hymn)
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        req.predicate = predicate
+        req.fetchLimit = 1
+        
+        return try? container.viewContext.fetch(req).first
+    }
+    
+    func retrieveCollection(with id: UUID) -> Collection? {
+        let req = NSFetchRequest<Collection>(entityName: .Collection)
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        req.predicate = predicate
+        req.fetchLimit = 1
+        
+        return try? container.viewContext.fetch(req).first
+    }
+    
+    func toggle(hymn: StoreHymn,in collection: StoreCollection) {
+        
+        // fetch the hymn + collection from store
+        let fetchedCollection = retrieveCollection(with: collection.id)
+        let fetchedHymn = retrieveHymn(with: hymn.id)
+        // If either of the two is empty then do nothing
+        guard let fetchedHymn ,
+                let fetchedCollection  else { return }
+        // Check is the collection has the hymn
+        // if yes - remove it
+        // if no - add it
+        
+        if fetchedCollection.allHymns.contains(fetchedHymn) {
+            fetchedCollection.removeFromHymns(fetchedHymn)
+            fetchedHymn.removeFromCollection(fetchedCollection)
+        } else {
+            fetchedCollection.addToHymns(fetchedHymn)
+            fetchedHymn.addToCollection(fetchedCollection)
+        }
+        
+        do {
+            try save()
+        } catch {
+            // TODO: - Better handle any saving error
+            print("Error: Unable to toggle hymn in collection")
+        }
+        
     }
     
     

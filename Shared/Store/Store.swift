@@ -14,10 +14,13 @@ public protocol Store {
     func retrieveAllBooks() -> [StoreBook]
     func retrieveAllCollections() -> [StoreCollection]
     func retrieveHymns(from book: String) -> [StoreHymn]?
+    func retrieveHymn(with id: UUID) -> Hymn?
     func setSelectedBook(to bookName: String)
     func retrieveSelectedBook() -> String?
     func createCollection(with title: String, and about: String?)
+    func retrieveCollection(with id: UUID) -> Collection?
     func removeCollection(with id: UUID)
+    func toggle(hymn: StoreHymn,in collection: StoreCollection)
 //    func deleteCollection(with id: UUID)
 //    func retrieveHymns(from collection: StoreCollection) -> [StoreHymn]
 //    func updateSelectedBook(from book: StoreBook, to newBook: StoreBook) -> Error?
