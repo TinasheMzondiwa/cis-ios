@@ -37,7 +37,12 @@ struct CollectionsView: View {
                             })
                         }
                         .onDelete { indexSet in
-                            print("Deleting \(indexSet)")
+                            // Get the unique UUID of the collection being deleted
+                            for index in indexSet {
+                                let id = filteredCollections[index].id
+                                vm.removeCollection(with: id)
+                            }
+                            
                         }
                     }
                 }
@@ -45,9 +50,7 @@ struct CollectionsView: View {
                 .searchable(text: $filterQuery)
                 .resignKeyboardOnDragGesture()
                 .toolbar {
-                    if !filteredCollections.isEmpty {
-                        EditButton()
-                    }
+                    EditButton()
                 }
         }
     }

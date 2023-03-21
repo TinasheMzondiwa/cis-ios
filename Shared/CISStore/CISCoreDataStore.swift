@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 final class CISCoreDataStore: Store {
-    
+
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
@@ -145,31 +145,11 @@ final class CISCoreDataStore: Store {
     }
     
     
-    
-//    func updateSelectedBook(from book: StoreBook, to newBook: StoreBook) -> Error? {
-//        let previousSelectedBookEntity = retrieveBook(with: book.id)
-//        let newlySelectedBookEntity = retrieveBook(with: newBook.id)
-//
-//        if let previousSelectedBookEntity, let newlySelectedBookEntity {
-//            previousSelectedBookEntity.isSelected = false
-//            newlySelectedBookEntity.isSelected = true
-//
-//            do {
-//                try save()
-//            } catch {
-//                print("Error: Fetching Collections failed\(error.localizedDescription)")
-//            }
-//
-//            return nil
-//        } else {
-//            return "Unable to Switch books"
-//        }
-//    }
-    
     func createCollection(with title: String, and about: String?) {
         let collection = Collection(context: container.viewContext)
         collection.id = UUID()
         collection.title = title
+        
         collection.about = about
         collection.created = .now
         
@@ -179,6 +159,28 @@ final class CISCoreDataStore: Store {
             //TODO: Better handle any save errors
         }
     }
+    
+    func removeCollection(with id: UUID) {
+        let request = NSFetchRequest<Collection>(entityName: .Collection)
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        if let res = try? container.viewContext.fetch(request) {
+            for obj in res {
+                container.viewContext.delete(obj)
+            }
+        }
+        
+        do {
+            try save()
+        } catch {
+            //TODO: - Better handle the error
+            print("Error: Couldn't delete the collection")
+        }
+    }
+    
+    
     
     func add(hymn: StoreHymn, to collection: StoreCollection) -> Error? {
         // Check if Collection already contains the hymn

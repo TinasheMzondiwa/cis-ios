@@ -17,6 +17,8 @@ public protocol Store {
     func setSelectedBook(to bookName: String)
     func retrieveSelectedBook() -> String?
     func createCollection(with title: String, and about: String?)
+    func removeCollection(with id: UUID)
+//    func deleteCollection(with id: UUID)
 //    func retrieveHymns(from collection: StoreCollection) -> [StoreHymn]
 //    func updateSelectedBook(from book: StoreBook, to newBook: StoreBook) -> Error?
 //    func add(hymn: StoreHymn, to collection: StoreCollection) -> Error?

@@ -130,16 +130,15 @@ final class CISAppViewModel: ObservableObject {
         
         store.setSelectedBook(to: storeBook.key)
         
-        print("Selected Book: \(store.retrieveSelectedBook())")
-        
-        refreshAppContent()
-        // TODO: - Switch to completion handlers
-//        if let _ = store.updateSelectedBook(from: selectedBook, to: storeBook) {
-//        } else {
-//            refreshAppContent()
-//        }
+        fetchAllBooks()
+    }
+    
+    func removeCollection(with id: UUID) {
+        store.removeCollection(with: id)
+        fetchAllCollections()
     }
     
     
     // MARK: - Private
+    
 }
