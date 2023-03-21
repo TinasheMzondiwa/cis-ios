@@ -166,19 +166,17 @@ final class CISCoreDataStore: Store {
 //        }
 //    }
     
-    func createCollection(with title: String, and about: String?) -> Error? {
-        let entity = CollectionEntity(context: container.viewContext)
-        entity.id = UUID()
-        entity.title = title
-        entity.dateCreated = .now
-        if let about, !about.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            entity.about = about
-        }
+    func createCollection(with title: String, and about: String?) {
+        let collection = Collection(context: container.viewContext)
+        collection.id = UUID()
+        collection.title = title
+        collection.about = about
+        collection.created = .now
+        
         do {
             try save()
-            return nil
         } catch {
-            return "Unable to save collection"
+            //TODO: Better handle any save errors
         }
     }
     

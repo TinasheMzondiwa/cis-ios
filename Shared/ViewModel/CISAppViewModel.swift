@@ -39,6 +39,9 @@ final class CISAppViewModel: ObservableObject {
         fetchAllCollections()
     }
     
+    /// Fetch all books from the `config.json` file
+    /// It's important that this file is updated with the right key names otherwise this might lead to
+    /// an inconsistent app state.
     func fetchAllBooks(){
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
@@ -61,10 +64,6 @@ final class CISAppViewModel: ObservableObject {
             // We're unable to fetch books, file is missing or corrupt
             // Handle this scenario
         }
-//        selectedBook = allBooks.first(where: { $0.isSelected == true })
-//        if let selectedBook {
-//            hymnsFromSelectedBook = store.retrieveHymns(from: selectedBook)
-//        }
     }
     
     func fetchHymns(from bookKey: String) -> [StoreHymn]? {
@@ -105,11 +104,13 @@ final class CISAppViewModel: ObservableObject {
     func addHymnToCollection(hymn: StoreHymn, collection: StoreCollection) { }
     
     func addCollection(with title: String, and about: String?){
-//        if let _ = store.createCollection(with: title, and: about) {
-//            // HANDLE ERROR
-//        } else {
-//            refreshAppContent()
-//        }
+        
+        // Check if title is empty
+        if title.trimmed.isEmpty {
+            return
+        }
+        store.createCollection(with: title, and: about)
+        refreshAppContent()
     }
     func toggleBookSelectionShownFromHymnView() {
         bookSelectionShownFromHymnView.toggle()
