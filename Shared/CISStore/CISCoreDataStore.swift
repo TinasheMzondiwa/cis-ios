@@ -19,12 +19,12 @@ final class CISCoreDataStore: Store {
         container.loadPersistentStores { _, _ in }
         
         // Perform Migration
-//        do {
-//            try initializeStore()
-//        } catch {
-//            //TODO: - Better handle the error
-//            print("Error: Initialization \(error.localizedDescription)")
-//        }
+        do {
+            try initializeStore()
+        } catch {
+            //TODO: - Better handle the error
+            print("Error: Initialization \(error.localizedDescription)")
+        }
     }
     
     
@@ -45,6 +45,16 @@ final class CISCoreDataStore: Store {
         }
         
         return books
+    }
+    
+    private func isStoreEmpty() -> Bool {
+//        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
+        if let res = try? container.viewContext.fetch(request) {
+            return res.isEmpty
+        } else {
+            return false
+        }
     }
     
     
@@ -189,9 +199,12 @@ extension CISCoreDataStore {
     
     // MARK: - Private methods
     private func initializeStore() throws {
-        if !defaults.bool(forKey: .migrationKey) {
-            try performFirstTimeMigration()
-            defaults.set("true", forKey: .migrationKey)
+        // Perform only if the store is empty
+        if isStoreEmpty() {
+            if !defaults.bool(forKey: .migrationKey) {
+                try performFirstTimeMigration()
+                defaults.set("true", forKey: .migrationKey)
+            }
         }
     }
     
@@ -217,42 +230,7 @@ extension CISCoreDataStore {
         }
         
         for bookFromFile in allBooksFromFile {
-            let hymnsLoader = FileLoader<[LocalHymn]>(fromFile: bookFromFile.key)
-            var hymnsFromFile: [LocalHymn] = []
-            hymnsLoader.load { result in
-                switch result {
-                case let .success(hymns):
-                    hymnsFromFile = hymns
-                case let .failure(error):
-                    //TODO: - Better handle the error
-                    print("Error: Migration failed \(error.localizedDescription)")
-                    return
-                }
-            }
-            
-            guard !hymnsFromFile.isEmpty else {
-                //TODO: - Better handle the error
-                print("Error: Migration failed no songs found")
-                return
-            }
-            for hymnFromFile in hymnsFromFile {
-                let hymn = Hymn(context: container.viewContext)
-                hymn.id = UUID()
-                hymn.book = bookFromFile.key
-                hymn.title = hymnFromFile.title
-                hymn.titleStr = hymnFromFile.title.titleStr
-                hymn.number = Int16(hymnFromFile.number)
-                if hymnFromFile.content.contains(hymnFromFile.title) {
-                    hymn.content = hymnFromFile.content
-                } else {
-                    hymn.content = "<h3>\(hymnFromFile.title)</h3>\(hymnFromFile.content)"
-                }
-                
-                hymn.edited_content = hymn.content
-                
-            }
-
-            try save()
+            try migrateBook(with: bookFromFile.key)
         }
     }
     
@@ -267,6 +245,10 @@ extension CISCoreDataStore {
             case .failure:
                 break
             }
+        }
+        
+        guard !hymnsFromfile.isEmpty else {
+            throw "No hymns found during migration"
         }
         
         // Migrate
@@ -285,9 +267,10 @@ extension CISCoreDataStore {
             
             hymn.edited_content = hymn.content
             
+            try save()
         }
 
-        try save()
+        
     }
     
     private func save() throws {

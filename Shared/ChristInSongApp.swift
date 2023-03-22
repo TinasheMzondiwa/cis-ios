@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct ChristInSongApp: App {
 
-    let persistenceController = PersistenceController.shared
     let viewModel: CISAppViewModel
 
     init() {
