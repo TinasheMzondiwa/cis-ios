@@ -105,44 +105,6 @@ final class CISCoreDataStore: Store {
         
         return collections
     }
-    func retrieveHymns(from collection: StoreCollection) -> [StoreHymn] {
-        let request = NSFetchRequest<CollectionEntity>(entityName: .CollectionEntity)
-        let predicate = NSPredicate(format: "id == %@", collection.id as CVarArg)
-        
-        request.predicate = predicate
-        request.fetchLimit = 1
-        var foundHymns: [StoreHymn] = []
-//        do {
-//            let fetchedCollection = try container.viewContext.fetch(request)
-//            _ = (fetchedCollection.first?.hymns?.allObjects as? [HymnEntity]).map({ hymnEntities in
-//                for hymn in hymnEntities {
-//                    foundHymns.append(hymn.toStoreHymn())
-//                }
-//            })
-//        } catch {
-//            //TODO: - Better handle the error
-//            print("Error: Fetching Collections failed\(error.localizedDescription)")
-//        }
-        
-        return foundHymns
-    }
-    
-    
-    private func retrieveBook(with id: UUID) -> BookEntity? {
-        let request = NSFetchRequest<BookEntity>(entityName: .BookEntity)
-        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
-        request.predicate = predicate
-        request.fetchLimit = 1
-        
-        do {
-            let fetchedBook = try container.viewContext.fetch(request)
-            return fetchedBook.first(where: { $0.id == id })
-        } catch {
-            //TODO: - Better handle the error
-            print("Error: Fetching Collections failed\(error.localizedDescription)")
-            return nil
-        }
-    }
     
     
     func createCollection(with title: String, and about: String?) {
@@ -193,15 +155,10 @@ final class CISCoreDataStore: Store {
     
     func toggle(hymn: StoreHymn,in collection: StoreCollection) {
         
-        // fetch the hymn + collection from store
         let fetchedCollection = retrieveCollection(with: collection.id)
         let fetchedHymn = retrieveHymn(with: hymn.id)
-        // If either of the two is empty then do nothing
         guard let fetchedHymn ,
                 let fetchedCollection  else { return }
-        // Check is the collection has the hymn
-        // if yes - remove it
-        // if no - add it
         
         if fetchedCollection.allHymns.contains(fetchedHymn) {
             fetchedCollection.removeFromHymns(fetchedHymn)
@@ -218,16 +175,6 @@ final class CISCoreDataStore: Store {
             print("Error: Unable to toggle hymn in collection")
         }
         
-    }
-    
-    
-    
-    func add(hymn: StoreHymn, to collection: StoreCollection) -> Error? {
-        // Check if Collection already contains the hymn
-        // If yes, then remove it
-        // Otherwise, add hymn t the collection
-        
-        return nil
     }
     
     private func getSelectedBookKey() -> String {
@@ -371,12 +318,6 @@ extension CISCoreDataStore {
 
 
 extension String {
-    /// Entity: Collection
-    static let CollectionEntity = "CollectionEntity"
-    /// Entity: Hymn
-    static let HymnEntity = "HymnEntity"
-    /// Entity: Book
-    static let BookEntity = "BookEntity"
     /// Store Name: CISStore
     static let CISStore = "Main"
     /// First time migration UserDefaults Key
@@ -389,28 +330,6 @@ extension String {
     static let selectedBook = "selectedBook"
     /// Default Selected Book
     static let defaultBook = "english"
-}
-
-
-extension CollectionEntity {
-//    func toStoreCollection() -> StoreCollection {
-//        StoreCollection(id: self.id!, title: self.title!, dateCreated: self.dateCreated!, about: self.about, hymns: (self.hymns?.allObjects as? [HymnEntity]).map({ $0.map { $0.toStoreHymn()}
-//        }) ?? [])
-//    }
-}
-
-extension BookEntity {
-//    func toStoreBook() -> StoreBook {
-//        StoreBook(id: self.id!, isSelected: self.isSelected, key: self.key!, language: self.language!, title: self.title!, hymns: (self.hymns!.array as? [HymnEntity]).map( { entity in
-//            entity.map { $0.toStoreHymn()}})!
-//        )
-//    }
-}
-
-extension HymnEntity {
-//    func toStoreHymn() -> StoreHymn {
-//        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, content: self.content!, number: Int(self.number))
-//    }
 }
 
 extension String: LocalizedError {}

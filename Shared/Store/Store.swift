@@ -21,11 +21,6 @@ public protocol Store {
     func retrieveCollection(with id: UUID) -> Collection?
     func removeCollection(with id: UUID)
     func toggle(hymn: StoreHymn,in collection: StoreCollection)
-//    func deleteCollection(with id: UUID)
-//    func retrieveHymns(from collection: StoreCollection) -> [StoreHymn]
-//    func updateSelectedBook(from book: StoreBook, to newBook: StoreBook) -> Error?
-//    func add(hymn: StoreHymn, to collection: StoreCollection) -> Error?
-//    func saveCollection()
 }
 
 
