@@ -48,7 +48,6 @@ final class CISCoreDataStore: Store {
     }
     
     private func isStoreEmpty() -> Bool {
-//        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
         if let res = try? container.viewContext.fetch(request) {
             return res.isEmpty
@@ -70,13 +69,13 @@ final class CISCoreDataStore: Store {
         request.sortDescriptors = [titleSortDescriptor]
         
         do {
-            let fetchedHymns = try container.viewContext.fetch(request)
+            var fetchedHymns = try container.viewContext.fetch(request)
             // TODO: only use this after testing existing store
             if fetchedHymns.isEmpty {
                 // migrate the book
-//                try migrateBook(with: book)
+                try migrateBook(with: book)
                 // perform a fresh fetch
-//                fetchedHymns = try container.viewContext.fetch(request)
+                fetchedHymns = try container.viewContext.fetch(request)
             }
             foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
         } catch {

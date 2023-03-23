@@ -125,7 +125,7 @@
 		1D45302D29BB811D00C95AC1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302C29BB811D00C95AC1 /* Store.swift */; };
 		1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */; };
 		1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */; };
-		1D45303329BB996900C95AC1 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303229BB996900C95AC1 /* MockStore.swift */; };
+		1D45303329BB996900C95AC1 /* StoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303229BB996900C95AC1 /* StoreSpy.swift */; };
 		1D746E6C29C459DD00335271 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D746E6B29C459DD00335271 /* CollectionHymnsView.swift */; };
 		1DF244F729C0C10100A4DA7A /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF244F629C0C10100A4DA7A /* HymnView.swift */; };
 		1DF244F929C0CE9900A4DA7A /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF244F829C0CE9900A4DA7A /* BooksView.swift */; };
@@ -239,7 +239,7 @@
 		1D45302C29BB811D00C95AC1 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISCoreDataStore.swift; sourceTree = "<group>"; };
 		1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppViewModel.swift; sourceTree = "<group>"; };
-		1D45303229BB996900C95AC1 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
+		1D45303229BB996900C95AC1 /* StoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSpy.swift; sourceTree = "<group>"; };
 		1D746E6B29C459DD00335271 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		1DF244F629C0C10100A4DA7A /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
 		1DF244F829C0CE9900A4DA7A /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
@@ -602,7 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */,
-				1D45303229BB996900C95AC1 /* MockStore.swift */,
+				1D45303229BB996900C95AC1 /* StoreSpy.swift */,
 			);
 			path = ChristInSongTests;
 			sourceTree = "<group>";
@@ -972,7 +972,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */,
-				1D45303329BB996900C95AC1 /* MockStore.swift in Sources */,
+				1D45303329BB996900C95AC1 /* StoreSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
