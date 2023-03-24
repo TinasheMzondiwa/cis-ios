@@ -12,6 +12,7 @@ final class StoreSpy: Store {
     
     private(set) var messages = [Action]()
     private(set) var allBooks: [StoreBook]?
+    private(set) var allHymns: [StoreHymn]?
     private(set) var allCollections: [StoreCollection]?
     private(set) var selectedBook: String?
     
@@ -22,12 +23,7 @@ final class StoreSpy: Store {
     
     func retrieveHymns(from book: String) -> [ChristInSong.StoreHymn]? {
         messages.append(.retrieveHymns(book))
-        return nil
-    }
-    
-    func retrieveHymn(with id: UUID) -> ChristInSong.Hymn? {
-        messages.append(.retrieveHymn(id))
-        return nil
+        return allHymns?.filter { $0.book == book}
     }
     
     func setSelectedBook(to bookName: String) {
@@ -42,11 +38,6 @@ final class StoreSpy: Store {
     
     func createCollection(with title: String, and about: String?) {
         messages.append(.createCollection(title, about))
-    }
-    
-    func retrieveCollection(with id: UUID) -> ChristInSong.Collection? {
-        messages.append(.retrieveCollection(id))
-        return nil
     }
     
     func removeCollection(with id: UUID) {
@@ -90,11 +81,9 @@ extension StoreSpy {
         case retrieveAllBooks
         case toggle(StoreHymn, StoreCollection)
         case removeCollection(UUID)
-        case retrieveCollection(UUID)
         case createCollection(String, String?)
         case retrieveSelectedBook
         case setSelectedBook(String)
-        case retrieveHymn(UUID)
         case retrieveHymns(String)
         case retrieveAllCollections
         
@@ -110,14 +99,10 @@ extension StoreSpy {
                 return lhsStoreHymn == rhsStoreHymn && lhsStoreCollection == rhsStoreCollection
             case (.removeCollection(let lhsId), .removeCollection(let rhsId)):
                 return lhsId == rhsId
-            case (.retrieveCollection(let lhsId), .retrieveCollection(let rhsId)):
-                return lhsId == rhsId
             case (.createCollection(let lhsTitle, let lhsAbout), .createCollection(let rhsTitle, let rhsAbout)):
                 return lhsTitle == rhsTitle && lhsAbout == rhsAbout
             case (.setSelectedBook(let lhsKey), .setSelectedBook(let rhsKey)):
                 return lhsKey == rhsKey
-            case (.retrieveHymn(let lhsId), .retrieveHymn(let rhsId)):
-                return lhsId == rhsId
             case (.retrieveHymns(let lhsBook), .retrieveHymns(let rhsBook)):
                 return lhsBook == rhsBook
             default:
@@ -140,8 +125,8 @@ extension StoreBook {
 
 extension StoreHymn {
     
-    static func dummyHymn(_ id: UUID = UUID(), _ number: Int = 1) -> StoreHymn {
-        StoreHymn(id: id, title: "Dummy Title", titleStr: "Dummy Title", content: "a very long hymn", number: number)
+    static func dummyHymn(_ id: UUID = UUID(), _ number: Int = 1, book: String = .defaultBookKey) -> StoreHymn {
+        StoreHymn(id: id, title: "Dummy Title", titleStr: "Dummy Title", content: "a very long hymn", book: book, number: number)
     }
 }
 

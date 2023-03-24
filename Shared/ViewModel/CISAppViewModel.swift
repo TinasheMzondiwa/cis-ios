@@ -10,8 +10,6 @@ import Foundation
 final class CISAppViewModel: ObservableObject {
     // MARK: - Properties
     private let store: Store
-    private let defaults = UserDefaults.standard
-    
     
     // MARK: - Published properties
     @Published var allBooks: [StoreBook] = []

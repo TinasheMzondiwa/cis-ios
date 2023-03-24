@@ -18,18 +18,18 @@ public struct StoreHymn: Identifiable, Equatable {
     public let content: String
     /// Modified version of thy hymn, defaults to content
     public let editedContent: String?
-    /// Favorite flag
-    public let isFavorite: Bool
+    /// Key to book to which the hymn belongs
+    public let book: String
     /// Hymn number
     public let number: Int
     
-    public init(id: UUID, title: String, titleStr: String, content: String, editedContent: String? = nil , isFavorite: Bool = false, number: Int) {
+    public init(id: UUID, title: String, titleStr: String, content: String, editedContent: String? = nil, book: String, number: Int) {
         self.id = id
         self.title = title
         self.titleStr = titleStr
         self.content = content
         self.editedContent = editedContent
-        self.isFavorite = isFavorite
+        self.book = book
         self.number = number
     }
 }
