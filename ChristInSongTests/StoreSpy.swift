@@ -12,7 +12,7 @@ final class StoreSpy: Store {
     
     private(set) var messages = [Action]()
     private(set) var allBooks: [StoreBook]?
-    private(set) var allHymns: [StoreHymn]?
+    private(set) var hymnsFromSelectedBook: [StoreHymn]?
     private(set) var allCollections: [StoreCollection]?
     private(set) var selectedBook: String?
     
@@ -23,7 +23,7 @@ final class StoreSpy: Store {
     
     func retrieveHymns(from book: String) -> [ChristInSong.StoreHymn]? {
         messages.append(.retrieveHymns(book))
-        return allHymns?.filter { $0.book == book}
+        return hymnsFromSelectedBook?.filter { $0.book == book}
     }
     
     func setSelectedBook(to bookName: String) {
@@ -147,4 +147,5 @@ extension String {
     static var defaultBookKey = "english"
     static var defaultLanguage = "English"
     static var defaultTitle = "Christ In Song"
+    static var nonExistentBook = "i-am-not-a-real-book"
 }

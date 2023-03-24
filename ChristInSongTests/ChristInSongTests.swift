@@ -49,10 +49,10 @@ final class ChristInSongTests: XCTestCase {
         XCTAssertEqual(sut.allBooks, [.book()])
     }
     
-    func test_fetchHymns_returnsAllHymnsFromTheStore() {
+    func test_fetchHymns_fromDefaultBook_returnsAllHymnsFromBookFromTheStore() {
         let (sut, store) = makeSUT()
         let fetchedHymns = sut.fetchHymns(from: .defaultBookKey)
-        XCTAssertEqual(store.allHymns, fetchedHymns)
+        XCTAssertEqual(fetchedHymns, store.hymnsFromSelectedBook)
         
         XCTAssertEqual(store.messages, [
             // Calls from `init`
@@ -63,6 +63,17 @@ final class ChristInSongTests: XCTestCase {
             .retrieveHymns(.defaultBookKey)
         ])
     }
+    
+    func test_fetchHymns_fromAnNonExistentBook_returnsNil_when_storeRespondsWithNil() {
+        let (sut, store) = makeSUT()
+        let fetchedHymns = sut.fetchHymns(from: .nonExistentBook)
+        XCTAssertNil(fetchedHymns)
+        XCTAssertEqual(fetchedHymns, store.hymnsFromSelectedBook)
+    }
+    
+    
+    
+    
     // MARK: - Private
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: CISAppViewModel, store: StoreSpy) {
