@@ -105,6 +105,36 @@ final class ChristInSongTests: XCTestCase {
         )
     }
     
+    func test_get_similarHymn_returnsNIL_WhenSimilarHymnIsNotFound() {
+        let firstBook: StoreBook = .book()
+        let secondBook: StoreBook = .book(key: .secondBookKey, language: .secondLanguage, title: .secondLanguage)
+        let firstHymn: StoreHymn = .hymn(number: 1, book: .defaultBookKey)
+        let secondHymn: StoreHymn = .hymn(number: 1, book: .secondBookKey)
+        let thirdHymn: StoreHymn = .hymn(number: 2, book: .defaultBook)
+        
+        let (sut, store) = makeSUT()
+        store.completeFetchAllBooks(with: [firstBook, secondBook])
+        store.populateAllHymns(with: [firstHymn, secondHymn, thirdHymn])
+        
+        let fetchedHymn = sut.get(similarHymnTo: thirdHymn, from: secondBook)
+        XCTAssertEqual(fetchedHymn, nil)
+    }
+    
+    func test_get_similarHymn_returnsHymn_WhenSimilarHymnIsFound() {
+        let firstBook: StoreBook = .book()
+        let secondBook: StoreBook = .book(key: .secondBookKey, language: .secondLanguage, title: .secondLanguage)
+        let firstHymn: StoreHymn = .hymn(number: 1, book: .defaultBookKey)
+        let secondHymn: StoreHymn = .hymn(number: 1, book: .secondBookKey)
+        let thirdHymn: StoreHymn = .hymn(number: 2, book: .defaultBook)
+        
+        let (sut, store) = makeSUT()
+        store.completeFetchAllBooks(with: [firstBook, secondBook])
+        store.populateAllHymns(with: [firstHymn, secondHymn, thirdHymn])
+        
+        let fetchedHymn = sut.get(similarHymnTo: firstHymn, from: secondBook)
+        XCTAssertEqual(fetchedHymn, secondHymn)
+    }
+    
     
     
     

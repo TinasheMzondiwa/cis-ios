@@ -12,13 +12,15 @@ final class StoreSpy: Store {
     
     private(set) var messages = [Action]()
     private(set) var allBooks: [StoreBook]?
+    private(set) var allHymns: [StoreHymn]?
     private(set) var hymnsFromSelectedBook: [StoreHymn]?
     private(set) var allCollections: [StoreCollection]?
     private(set) var selectedBook: String?
     
     func retrieveHymns(from book: String) -> [ChristInSong.StoreHymn]? {
         messages.append(.retrieveHymns(book))
-        return hymnsFromSelectedBook?.filter { $0.book == book}
+        self.hymnsFromSelectedBook = allHymns?.filter { $0.book == book}
+        return self.hymnsFromSelectedBook
     }
     
     func setSelectedBook(to bookName: String) {
@@ -67,6 +69,10 @@ final class StoreSpy: Store {
     
     func completeFetchAllCollections(with collections: [StoreCollection]?) {
         self.allCollections = collections
+    }
+    
+    func populateAllHymns(with hymns: [StoreHymn]) {
+        self.allHymns = hymns
     }
 }
 
@@ -120,7 +126,7 @@ extension StoreBook {
 
 extension StoreHymn {
     
-    static func dummyHymn(_ id: UUID = UUID(), _ number: Int = 1, book: String = .defaultBookKey) -> StoreHymn {
+    static func hymn(_ id: UUID = UUID(), number: Int = 1, book: String = .defaultBookKey) -> StoreHymn {
         StoreHymn(id: id, title: "Dummy Title", titleStr: "Dummy Title", content: "a very long hymn", book: book, number: number)
     }
 }
@@ -140,7 +146,10 @@ extension StoreCollection: Equatable {
 
 extension String {
     static var defaultBookKey = "english"
+    static var secondBookKey = "swahili"
     static var defaultLanguage = "English"
+    static var secondLanguage = "Swahili"
     static var defaultTitle = "Christ In Song"
+    static var secondTitle = "Nyimbo Za Kristo"
     static var nonExistentBook = "i-am-not-a-real-book"
 }
