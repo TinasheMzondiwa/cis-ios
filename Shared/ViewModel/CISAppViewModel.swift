@@ -45,11 +45,6 @@ final class CISAppViewModel: ObservableObject {
     func fetchAllBooks(){
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
-            // If no book has been selected - Select the English book by default
-//            if defaults.string(forKey: .selectedBook) == nil {
-//                store.setSelectedBook(to: .defaultBook)
-//            }
-            
             if store.retrieveSelectedBook() == nil {
                 store.setSelectedBook(to: .defaultBook)
             }

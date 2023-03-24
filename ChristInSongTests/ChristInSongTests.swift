@@ -34,8 +34,10 @@ final class ChristInSongTests: XCTestCase {
         sut.fetchAllBooks()
         
         XCTAssertEqual(store.messages, [
+            // Calls from `init`
             .retrieveAllBooks,
             .retrieveAllCollections,
+            // Calls from `fetchAllBooks`
             .retrieveAllBooks,
             .retrieveSelectedBook,
             .setSelectedBook(.defaultBookKey),
