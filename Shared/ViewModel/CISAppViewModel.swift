@@ -34,7 +34,7 @@ final class CISAppViewModel: ObservableObject {
     
     func refreshAppContent() {
         fetchAllBooks()
-        fetchAllCollections()
+        allCollections = fetchAllCollections()
     }
     
     /// Fetch all books from the `config.json` file
@@ -68,8 +68,8 @@ final class CISAppViewModel: ObservableObject {
         return store.retrieveHymns(from: bookKey)
     }
     
-    func fetchAllCollections(){
-        allCollections = store.retrieveAllCollections()
+    func fetchAllCollections() -> [StoreCollection]{
+        store.retrieveAllCollections()
     }
     
     func toggleHymnsSorting(using option: Sort) {
@@ -94,10 +94,6 @@ final class CISAppViewModel: ObservableObject {
     func setSelectedHymn(to hymn: StoreHymn) {
         selectedHymn = hymn
     }
-    
-    func fetchSongsFromSelectedBook() { }
-    func resetSwitchBooks() { }
-    
     
     func toggle(hymn: StoreHymn, collection: StoreCollection) {
         store.toggle(hymn: hymn, in: collection)
@@ -136,7 +132,7 @@ final class CISAppViewModel: ObservableObject {
     
     func removeCollection(with id: UUID) {
         store.removeCollection(with: id)
-        fetchAllCollections()
+        allCollections = fetchAllCollections()
     }
     
     

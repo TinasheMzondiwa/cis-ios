@@ -16,11 +16,6 @@ final class StoreSpy: Store {
     private(set) var allCollections: [StoreCollection]?
     private(set) var selectedBook: String?
     
-    func retrieveAllCollections() -> [ChristInSong.StoreCollection] {
-        messages.append(.retrieveAllCollections)
-        return [.dummyCollection()]
-    }
-    
     func retrieveHymns(from book: String) -> [ChristInSong.StoreHymn]? {
         messages.append(.retrieveHymns(book))
         return hymnsFromSelectedBook?.filter { $0.book == book}
@@ -48,7 +43,7 @@ final class StoreSpy: Store {
         messages.append(.toggle(hymn, collection))
     }
     
-    func retreiveAllCollections() -> [ChristInSong.StoreCollection] {
+    func retrieveAllCollections() -> [ChristInSong.StoreCollection] {
         messages.append(.retrieveAllCollections)
         if let allCollections {
             return allCollections
@@ -70,8 +65,8 @@ final class StoreSpy: Store {
         self.allBooks = books
     }
     
-    func completeFetchAllCollections(with colection: [StoreCollection]) {
-        self.allCollections = colection
+    func completeFetchAllCollections(with collections: [StoreCollection]?) {
+        self.allCollections = collections
     }
 }
 
@@ -131,8 +126,8 @@ extension StoreHymn {
 }
 
 extension StoreCollection {
-    static func dummyCollection(_ id: UUID = UUID()) -> StoreCollection {
-        StoreCollection(id: id, title: "Dummy title", dateCreated: .now)
+    static func dummyCollection(_ id: UUID = UUID(), date: Date = .now) -> StoreCollection {
+        StoreCollection(id: id, title: "Dummy title", dateCreated: date)
     }
 }
 

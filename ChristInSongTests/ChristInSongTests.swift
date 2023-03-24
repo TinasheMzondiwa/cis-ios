@@ -71,6 +71,42 @@ final class ChristInSongTests: XCTestCase {
         XCTAssertEqual(fetchedHymns, store.hymnsFromSelectedBook)
     }
     
+    func test_fetchAllCollections_returnsEmptyList_whenTheStoreRespondsWithNil() {
+        let (sut, store) = makeSUT()
+        store.completeFetchAllCollections(with: nil)
+        let fetchedCollections = sut.fetchAllCollections()
+        
+        XCTAssertEqual(fetchedCollections,[])
+        
+        XCTAssertEqual(store.messages, [
+            // Calls from `init`
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            
+            .retrieveAllCollections]
+        )
+    }
+    
+    func test_fetchAllCollections_returnsListOfCollections_whenTheStoreRespondsWithAListOfCollection() {
+        let (sut, store) = makeSUT()
+        let id = UUID()
+        let collection: StoreCollection = .dummyCollection(id)
+        store.completeFetchAllCollections(with: [collection])
+        let fetchedCollections = sut.fetchAllCollections()
+        
+        XCTAssertEqual(fetchedCollections,[collection])
+        
+        XCTAssertEqual(store.messages, [
+            // Calls from `init`
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            
+            .retrieveAllCollections]
+        )
+    }
+    
+    
+    
     
     
     
