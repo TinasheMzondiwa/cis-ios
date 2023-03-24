@@ -53,6 +53,15 @@ final class ChristInSongTests: XCTestCase {
         let (sut, store) = makeSUT()
         let fetchedHymns = sut.fetchHymns(from: .defaultBookKey)
         XCTAssertEqual(store.allHymns, fetchedHymns)
+        
+        XCTAssertEqual(store.messages, [
+            // Calls from `init`
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            
+            // Call from `fetchHymns(from: .defaultBookKey)`
+            .retrieveHymns(.defaultBookKey)
+        ])
     }
     // MARK: - Private
     
