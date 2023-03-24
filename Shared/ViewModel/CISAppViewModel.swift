@@ -46,11 +46,16 @@ final class CISAppViewModel: ObservableObject {
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
             // If no book has been selected - Select the English book by default
-            if defaults.string(forKey: .selectedBook) == nil {
+//            if defaults.string(forKey: .selectedBook) == nil {
+//                store.setSelectedBook(to: .defaultBook)
+//            }
+            
+            if store.retrieveSelectedBook() == nil {
                 store.setSelectedBook(to: .defaultBook)
             }
             
-            let selectedBookKey = store.retrieveSelectedBook() ?? .defaultBook
+            let selectedBookKey =  store.retrieveSelectedBook() ?? .defaultBook
+            
             
             selectedBook = allBooks.first(where: { $0.key == selectedBookKey })
             

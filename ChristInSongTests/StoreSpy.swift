@@ -11,6 +11,9 @@ import ChristInSong
 final class StoreSpy: Store {
     
     private(set) var messages = [Action]()
+    private(set) var allBooks: [StoreBook]?
+    private(set) var allCollections: [StoreCollection]?
+    private(set) var selectedBook: String?
     
     func retrieveAllCollections() -> [ChristInSong.StoreCollection] {
         messages.append(.retrieveAllCollections)
@@ -29,11 +32,12 @@ final class StoreSpy: Store {
     
     func setSelectedBook(to bookName: String) {
         messages.append(.setSelectedBook(bookName))
+        self.selectedBook = bookName
     }
     
     func retrieveSelectedBook() -> String? {
         messages.append(.retrieveSelectedBook)
-        return nil
+        return self.selectedBook
     }
     
     func createCollection(with title: String, and about: String?) {
@@ -55,12 +59,28 @@ final class StoreSpy: Store {
     
     func retreiveAllCollections() -> [ChristInSong.StoreCollection] {
         messages.append(.retrieveAllCollections)
-        return [.dummyCollection()]
+        if let allCollections {
+            return allCollections
+        } else {
+            return []
+        }
     }
     
     func retrieveAllBooks() -> [ChristInSong.StoreBook] {
         messages.append(.retrieveAllBooks)
-        return [.dummyBook()]
+        if let allBooks {
+            return allBooks
+        } else {
+            return []
+        }
+    }
+    
+    func completeFetchAllBooks(with books : [StoreBook]) {
+        self.allBooks = books
+    }
+    
+    func completeFetchAllCollections(with colection: [StoreCollection]) {
+        self.allCollections = colection
     }
 }
 
@@ -109,8 +129,12 @@ extension StoreSpy {
 }
 
 extension StoreBook {
-    static func dummyBook(_ id: UUID = UUID(), _ number: Int = 1) -> StoreBook {
-        StoreBook(key: "dummy", language: "Language", title: "Title")
+    static func book(_ id: UUID = UUID(),
+                          key: String = .defaultBookKey,
+                          language: String = .defaultLanguage,
+                          title: String = .defaultTitle
+    ) -> StoreBook {
+        StoreBook(key: key, language: language, title: title)
     }
 }
 
@@ -133,3 +157,9 @@ extension StoreCollection: Equatable {
     }
 }
 
+
+extension String {
+    static var defaultBookKey = "english"
+    static var defaultLanguage = "English"
+    static var defaultTitle = "Christ In Song"
+}

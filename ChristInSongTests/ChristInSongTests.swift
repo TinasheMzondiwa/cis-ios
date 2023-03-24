@@ -14,12 +14,37 @@ final class ChristInSongTests: XCTestCase {
         let (_, store) = makeSUT()
         XCTAssertEqual(store.messages, [
             .retrieveAllBooks,
-            .retrieveSelectedBook,
-            .retrieveHymns("english"),
             .retrieveAllCollections]
         )
     }
     
+    func test_fetchAllBooks_receivesBooksReturnedFromStore() {
+        let (sut, store) = makeSUT()
+        store.completeFetchAllBooks(with: [.book()])
+        sut.fetchAllBooks()
+        
+        XCTAssertEqual(sut.allBooks, [.book()])
+    }
+    
+    func test_fetchAllBooks_checksForDefaultBook_and_setsDefaultBookIfIsNil() {
+        let (sut, store) = makeSUT()
+        store.completeFetchAllBooks(with: [.book()])
+        // NOTE: This adds an extra call to `retrieveAllBooks`
+        // Improvement will be to make the call asynchronous and make `fetchAllBooks` return a list of books or an error
+        sut.fetchAllBooks()
+        
+        XCTAssertEqual(store.messages, [
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            .retrieveAllBooks,
+            .retrieveSelectedBook,
+            .setSelectedBook(.defaultBookKey),
+            .retrieveSelectedBook,
+            .retrieveHymns(.defaultBookKey)]
+        )
+        
+        XCTAssertEqual(sut.selectedBook, .book())
+    }
     // MARK: - Private
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: CISAppViewModel, store: StoreSpy) {
