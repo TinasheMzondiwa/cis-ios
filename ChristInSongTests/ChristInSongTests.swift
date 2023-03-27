@@ -179,6 +179,39 @@ final class ChristInSongTests: XCTestCase {
         ])
     }
     
+    func test_setSelectedHymn() {
+        let (sut, _) = makeSUT()
+        let hymn: StoreHymn = .hymn()
+        
+        sut.setSelectedHymn(to: hymn)
+        
+        XCTAssertEqual(sut.selectedHymn, hymn)
+    }
+    
+    func test_toggleBookSelectionSheet() {
+        let (sut, _) = makeSUT()
+        let currentToggle = sut.bookSelectionShown
+        
+        sut.toggleBookSelectionSheet()
+        XCTAssertEqual(sut.bookSelectionShown, !currentToggle)
+    }
+    
+    func test_toggleCollectionSheetVisibility() {
+        let (sut, _) = makeSUT()
+        let currentToggleStatus = sut.collectionsSheetShown
+        
+        sut.toggleCollectionSheetVisibility()
+        XCTAssertEqual(sut.collectionsSheetShown, !currentToggleStatus)
+    }
+    
+    func test_toggleBookSelectionShownFromHymnView() {
+        let (sut, _) = makeSUT()
+        let currentToggleStatus = sut.bookSelectionShownFromHymnView
+        
+        sut.toggleBookSelectionShownFromHymnView()
+        XCTAssertEqual(sut.bookSelectionShownFromHymnView, !currentToggleStatus)
+    }
+    
     
     
     
