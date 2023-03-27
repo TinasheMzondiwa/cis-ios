@@ -69,6 +69,7 @@ struct OldHymnView: View {
                 vm.toggleBookSelectionShownFromHymnView()
             }
         }
+        // TODO: - Fix me
 //        .hud(state: viewModel.currState?.state, isPresented: $viewModel.showingHUD) {
 //            if let data = viewModel.currState {
 //                Label(

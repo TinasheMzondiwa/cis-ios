@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct OldCollectionsView: View {
+    @State private var navTitle: String = NSLocalizedString("Collections", comment: "Title")
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    @State private var filterQuery: String = ""
+    
+    @EnvironmentObject var vm: CISAppViewModel
     
     @ObservedObject private var viewModel = OldCollectionsViewModel()
-    @State private var searchQuery: String = ""
     
-    @FetchRequest(
-        entity: Collection.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Collection.title, ascending: true),
-        ]
-    ) var collections: FetchedResults<Collection>
+    private var filteredCollections: [StoreCollection] {
+        if filterQuery.trimmed.isEmpty {
+            return vm.allCollections
+        } else {
+            return vm.allCollections.filter { $0.title.localizedCaseInsensitiveContains(filterQuery) || (($0.about?.localizedCaseInsensitiveContains(filterQuery)) != nil)
+            }
+        }
+    }
     
-    @State private var navTitle: String = NSLocalizedString("Collections", comment: "Title")
     
     var body: some View {
         if (idiom == .phone) {
@@ -28,7 +32,7 @@ struct OldCollectionsView: View {
                 content
                     .navigationTitle(navTitle)
                     .toolbar {
-                        if !collections.isEmpty {
+                        if !filteredCollections.isEmpty {
                             EditButton()
                         }
                     }
@@ -39,7 +43,7 @@ struct OldCollectionsView: View {
                 content
                     .navigationTitle(navTitle)
                     .toolbar {
-                        if !collections.isEmpty {
+                        if !filteredCollections.isEmpty {
                             EditButton()
                         }
                     }
@@ -53,21 +57,23 @@ struct OldCollectionsView: View {
     
     var content: some View {
         ZStack {
-            if collections.isEmpty {
+            if filteredCollections.isEmpty {
                 OldEmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
             } else {
-                
-                FilteredList(sortKey: "title", queryKey: "title", query: searchQuery, canDelete: true) { (item: Collection) in
-                    NavigationLink(
-                        destination: OldCollectionHymnsView(collectionId: item.id!),
-                        label: {
-                            OldCollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
-                        })
+                List {
+                    ForEach(filteredCollections, id: \.id) { collection in
+                        NavigationLink {
+                            OldCollectionHymnsView(collection: collection)
+                        } label: {
+                            OldCollectionItemView(item: collection)
+                        }
+                    }
+                    //TODO: - On delete, perform deletion
+//                    .onDelete { <#IndexSet#> in
+//                        <#code#>
+//                    }
                 }
-                .searchable(text: $searchQuery)
-                .onChange(of: searchQuery) { query in
-                    searchQuery = query
-                }
+                .searchable(text: $filterQuery)
                 .resignKeyboardOnDragGesture()
             }
         }

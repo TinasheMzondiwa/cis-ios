@@ -20,7 +20,8 @@ struct CollectionsView: View {
         if filterQuery.trimmed.isEmpty {
             return vm.allCollections
         } else {
-            return vm.allCollections.filter { $0.title.localizedCaseInsensitiveContains(filterQuery) || (($0.about?.localizedCaseInsensitiveContains(filterQuery)) != nil)}
+            return vm.allCollections.filter { $0.title.localizedCaseInsensitiveContains(filterQuery) || (($0.about?.localizedCaseInsensitiveContains(filterQuery)) != nil)
+            }
         }
     }
     

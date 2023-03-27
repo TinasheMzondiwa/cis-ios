@@ -9,48 +9,43 @@ import SwiftUI
 
 struct OldCollectionHymnsView: View {
     
-    @ObservedObject private var viewModel = OldCollectionsViewModel()
-    
-    let collectionId: UUID
+    let collection: StoreCollection
     
     var body: some View {
         listContent
-            .navigationBarTitle(viewModel.collectionTitle, displayMode: .inline)
+            .navigationBarTitle(collection.title, displayMode: .inline)
             .toolbar {
-                if !viewModel.collectionHymns.isEmpty {
+                if let hymns = collection.hymns, !hymns.isEmpty {
                     EditButton()
                 }
             }
-        .onAppear {
-            viewModel.loadCollectionHymns(collectionId: collectionId)
-        }
     }
     
     private var listContent: some View {
         VStack {
-            if viewModel.collectionHymns.isEmpty {
-                OldEmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
-            } else {
+            if let collectionHymns = collection.hymns {
                 List {
-                    // TODO: - Fix me
-//                    ForEach(viewModel.collectionHymns, id: \.self) { item in
-//                        NavigationLink(
-//                            destination: OldHymnView(hymn: item),
-//                            label: {
-//                                Text(item.title)
-//                                    .headLineStyle()
-//                                    .lineLimit(1)
-//                            })
-//                    }
-//                    .onDelete(perform: viewModel.removeHymnFromCollection)
+                    ForEach(collectionHymns, id: \.id) { hymn in
+                        NavigationLink {
+                            OldHymnView(displayedHymn: hymn)
+                        } label: {
+                            Text(hymn.title)
+                                .headLineStyle()
+                                .lineLimit(1)
+                        }
+                    }
+                    // TODO: - onDelete
+                    // .onDelete(perform: viewModel.removeHymnFromCollection)
                 }
+            } else {
+                OldEmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
             }
         }
     }
 }
 
-struct OldCollectionHymnsView_Previews: PreviewProvider {
-    static var previews: some View {
-        OldCollectionHymnsView(collectionId: UUID())
-    }
-}
+//struct OldCollectionHymnsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OldCollectionHymnsView(collectionId: UUID())
+//    }
+//}

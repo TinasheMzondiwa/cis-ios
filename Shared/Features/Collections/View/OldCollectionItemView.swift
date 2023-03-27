@@ -8,22 +8,20 @@
 import SwiftUI
 
 struct OldCollectionItemView: View {
-    let title: String
-    let description: String
-    let date: Date?
-    let hymns: Int
+    
+    let item: StoreCollection
     
     var body: some View {
         HStack {
             VStack (alignment: .leading) {
                 HStack {
-                    Text(title)
+                    Text(item.title)
                         .headLineStyle()
                         .lineLimit(1)
                     
                 }
-                if !description.isEmpty {
-                    Text(description)
+                if let about = item.about {
+                    Text(about)
                         .subHeadLineStyle()
                 }
             }
@@ -31,7 +29,7 @@ struct OldCollectionItemView: View {
             
             Spacer()
             
-            Text(String(hymns))
+            Text(String(item.hymns?.count ?? 0))
                 .subHeadLineStyle()
         }
     }
@@ -40,15 +38,7 @@ struct OldCollectionItemView: View {
 struct OldCollectionItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OldCollectionItemView(title: "Favorite Hymns", description: "Some of the very best hymns I love so much", date: Date(), hymns: 4)
-                .previewLayout(.sizeThatFits)
-            OldCollectionItemView(title: "Sabbath Hymns", description: "Some hymns for the Sabbath I love so much", date: nil, hymns: 0)
-                .previewLayout(.sizeThatFits)
-                .preferredColorScheme(.dark)
-            
-            OldCollectionItemView(title: "Sabbath Hymns", description: "Some hymns for the Sabbath I love so much", date: nil, hymns: 23)
-                .previewLayout(.sizeThatFits)
-                .preferredColorScheme(.dark)
+            OldCollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now, hymns: [.init(id: UUID(), title: "Test Hymn", titleStr: "Test Hymn", content: "An amazing hymn", book: .defaultBook, number: 1)]), selected: false)
         }
     }
 }
