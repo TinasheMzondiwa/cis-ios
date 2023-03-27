@@ -212,7 +212,21 @@ final class ChristInSongTests: XCTestCase {
         XCTAssertEqual(sut.bookSelectionShownFromHymnView, !currentToggleStatus)
     }
     
-    
+    func test_toggleHymn_inCollection_messagesStoreWithHymnAndCollection() {
+        let hymn: StoreHymn = .hymn()
+        let collection: StoreCollection = .collection()
+        
+        let (sut, store) = makeSUT()
+        sut.toggle(hymn: hymn, collection: collection )
+        
+        XCTAssertEqual(store.messages, [
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            .toggle(hymn, collection),
+            .retrieveAllBooks,
+            .retrieveAllCollections
+        ])
+    }
     
     
     // MARK: - Private
