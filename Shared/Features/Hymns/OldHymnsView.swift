@@ -15,7 +15,7 @@ struct OldHymnsView: View {
     @AppStorage(Constants.hymnalTitleKey) var hymnalTitle: String = Constants.defHymnalTitle
     @AppStorage("sort") var sortOption: String = Sort.number.rawValue
 
-    @State private var searchQuery: String = ""
+    @State private var filterQuery: String = ""
     
     @State private var showModal = false
     
@@ -62,7 +62,7 @@ struct OldHymnsView: View {
     private var content: some View {
         FilteredList(sortKey: sortOption,
                      filterKey: "book", filterValue: hymnal,
-                     queryKey: "content", query: searchQuery) { (item: Hymn) in
+                     queryKey: "content", query: filterQuery) { (item: Hymn) in
             NavigationLink(
                 destination: OldHymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
                 label: {
@@ -72,9 +72,9 @@ struct OldHymnsView: View {
                 })
         }
         .navigationTitle(hymnalTitle)
-        .searchable(text: $searchQuery)
-        .onChange(of: searchQuery) { query in
-            searchQuery = query
+        .searchable(text: $filterQuery)
+        .onChange(of: filterQuery) { query in
+            filterQuery = query
         }
         .resignKeyboardOnDragGesture()
         .sheet(isPresented: $showModal) {
