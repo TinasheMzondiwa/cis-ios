@@ -32,16 +32,17 @@ struct OldCollectionHymnsView: View {
                 OldEmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
             } else {
                 List {
-                    ForEach(viewModel.collectionHymns, id: \.self) { item in
-                        NavigationLink(
-                            destination: OldHymnView(hymn: item),
-                            label: {
-                                Text(item.title)
-                                    .headLineStyle()
-                                    .lineLimit(1)
-                            })
-                    }
-                    .onDelete(perform: viewModel.removeHymnFromCollection)
+                    // TODO: - Fix me
+//                    ForEach(viewModel.collectionHymns, id: \.self) { item in
+//                        NavigationLink(
+//                            destination: OldHymnView(hymn: item),
+//                            label: {
+//                                Text(item.title)
+//                                    .headLineStyle()
+//                                    .lineLimit(1)
+//                            })
+//                    }
+//                    .onDelete(perform: viewModel.removeHymnFromCollection)
                 }
             }
         }

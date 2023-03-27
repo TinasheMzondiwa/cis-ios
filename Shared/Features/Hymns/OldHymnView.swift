@@ -9,69 +9,57 @@ import SwiftUI
 import WebKit
 
 struct OldHymnView: View {
+    @EnvironmentObject var vm: CISAppViewModel
     
-    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
-    @State private var showCollectionModal = false
-    @State private var showHymnalsModal = false
-    
-    @ObservedObject private var viewModel = OldHymnViewModel()
-    
-    var hymn: HymnModel
+    @State private var displayedBook: StoreBook?
+    @State var displayedHymn: StoreHymn
     
     var body: some View {
         
         ZStack {
-            if let model = viewModel.model {
-                HTMLText(html: model.content)
-            } else {
-                // TODO: Loading state and re-enter view
-                EmptyView()
-            }
+            HTMLText(html: displayedHymn.content)
         }
-        .navigationTitle(viewModel.model?.bookTitle ?? "")
+        .navigationTitle(displayedBook?.title ?? vm.selectedBook?.title ?? "")
         .toolbar {
             ToolbarItemGroup {
-                Button(action: { showCollectionModal.toggle() }) {
+                Button(action: { vm.toggleCollectionSheetVisibility() }) {
                     SFSymbol.textPlus
                         .accessibility(label: Text(LocalizedStringKey("Collections.Add")))
                 }
                 
-                Button(action: { showHymnalsModal.toggle() }) {
+                Button(action: {vm.toggleBookSelectionShownFromHymnView() }) {
                     SFSymbol.bookCircle
                         .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
                 }
             }
         }
-        .sheet(isPresented: $showCollectionModal) {
-            if let model = viewModel.model {
-                OldAddToCollectionView(hymnId: model.id, onDismiss: {
-                    showCollectionModal.toggle()
-                })
-                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-            }
+        .sheet(isPresented: $vm.collectionsSheetShown) {
+//            if let model = viewModel.model {
+//                OldAddToCollectionView(hymnId: model.id, onDismiss: {
+//                    showCollectionModal.toggle()
+//                })
+//                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+//            }
         }
-        .sheet(isPresented: $showHymnalsModal) {
-            OldHymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
-                showHymnalsModal.toggle()
-                
-                if let hymnal: HymnalModel = item {
-                    viewModel.switchHymnal(hymnal: hymnal)
-                }
-            }
+        .sheet(isPresented: $vm.bookSelectionShownFromHymnView) {
+//            OldHymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
+//                showHymnalsModal.toggle()
+//
+//                if let hymnal: HymnalModel = item {
+//                    viewModel.switchHymnal(hymnal: hymnal)
+//                }
+//            }
         }
-        .hud(state: viewModel.currState?.state, isPresented: $viewModel.showingHUD) {
-            if let data = viewModel.currState {
-                Label(
-                    data.message,
-                    systemImage: data.state.rawValue
-                )
-                .font(.body.weight(.bold))
-                .foregroundColor(data.state == .info ? Color.primary : .white)
-            }
-        }
-        .onAppear {
-            viewModel.onAppear(hymn: hymn)
-        }
+//        .hud(state: viewModel.currState?.state, isPresented: $viewModel.showingHUD) {
+//            if let data = viewModel.currState {
+//                Label(
+//                    data.message,
+//                    systemImage: data.state.rawValue
+//                )
+//                .font(.body.weight(.bold))
+//                .foregroundColor(data.state == .info ? Color.primary : .white)
+//            }
+//        }
     
     }
 }
@@ -79,7 +67,7 @@ struct OldHymnView: View {
 struct OldHymnView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            OldHymnView(hymn: HymnModel(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))
+            OldHymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", book: .defaultBook, number: 1))
         }
         .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }

@@ -68,23 +68,10 @@ struct OldHymnsView: View {
     }
     
     private var content: some View {
-        //        FilteredList(sortKey: sortOption,
-        //                     filterKey: "book", filterValue: hymnal,
-        //                     queryKey: "content", query: filterQuery) { (item: Hymn) in
-        //            NavigationLink(
-        //                destination: OldHymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
-        //                label: {
-        //                    Text(sortOption == Sort.number.rawValue ? item.wrappedTitle : "\(item.wrappedTitleStr) - \(item.number)")
-        //                        .headLineStyle()
-        //                        .lineLimit(1)
-        //                })
-        //        }
         List {
             ForEach(filteredHymns, id: \.id) { hymn in
                 NavigationLink {
-                    //TODO: - Fix me
-                    // destination: OldHymnView(hymn: HymnModel(hymn: item, bookTitle: hymnalTitle)),
-                    Text("")
+                    OldHymnView(displayedHymn: hymn)
                 } label: {
                     Text(sortOption == Sort.number.rawValue ? hymn.title : "\(hymn.titleStr) - \(hymn.number)")
                         .headLineStyle()
