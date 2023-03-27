@@ -20,6 +20,7 @@ struct OldHymnView: View {
             HTMLText(html: displayedHymn.content)
         }
         .navigationTitle(displayedBook?.title ?? vm.selectedBook?.title ?? "")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup {
                 Button(action: { vm.toggleCollectionSheetVisibility() }) {
