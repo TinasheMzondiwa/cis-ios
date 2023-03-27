@@ -90,7 +90,7 @@ final class ChristInSongTests: XCTestCase {
     func test_fetchAllCollections_returnsListOfCollections_whenTheStoreRespondsWithAListOfCollection() {
         let (sut, store) = makeSUT()
         let id = UUID()
-        let collection: StoreCollection = .dummyCollection(id)
+        let collection: StoreCollection = .collection(id)
         store.completeFetchAllCollections(with: [collection])
         let fetchedCollections = sut.fetchAllCollections()
         
@@ -135,7 +135,20 @@ final class ChristInSongTests: XCTestCase {
         XCTAssertEqual(fetchedHymn, secondHymn)
     }
     
-    
+    func test_addCollection_savesCollectionWithTitleAndEmptyDescription() {
+        let (sut, store) = makeSUT()
+        let title = "Awesome Collection"
+        
+        sut.addCollection(with: title, and: nil)
+        XCTAssertEqual(store.messages, [
+            // Calls from `init`
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            
+            .createCollection(title, nil),
+            .retrieveAllCollections
+        ])
+    }
     
     
     

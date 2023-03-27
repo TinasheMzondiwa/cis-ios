@@ -132,8 +132,8 @@ extension StoreHymn {
 }
 
 extension StoreCollection {
-    static func dummyCollection(_ id: UUID = UUID(), date: Date = .now) -> StoreCollection {
-        StoreCollection(id: id, title: "Dummy title", dateCreated: date)
+    static func collection(_ id: UUID = UUID(), title: String = "Dummy title", about: String? = nil, date: Date = .now) -> StoreCollection {
+        StoreCollection(id: id, title: title, dateCreated: date, about: about)
     }
 }
 

@@ -106,8 +106,9 @@ final class CISAppViewModel: ObservableObject {
         if title.trimmed.isEmpty {
             return
         }
-        store.createCollection(with: title, and: about)
-        refreshAppContent()
+        let aboutStr = about?.trimmingCharacters(in: .whitespacesAndNewlines)
+        store.createCollection(with: title, and: aboutStr)
+        allCollections = store.retrieveAllCollections()
     }
     func toggleBookSelectionShownFromHymnView() {
         bookSelectionShownFromHymnView.toggle()
