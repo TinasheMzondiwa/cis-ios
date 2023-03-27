@@ -59,12 +59,7 @@ struct OldHymnView: View {
             }
         }
         .sheet(isPresented: $vm.collectionsSheetShown) {
-//            if let model = viewModel.model {
-//                OldAddToCollectionView(hymnId: model.id, onDismiss: {
-//                    showCollectionModal.toggle()
-//                })
-//                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-//            }
+            OldAddToCollectionView(hymn: displayedHymn)
         }
         .sheet(isPresented: $vm.bookSelectionShownFromHymnView) {
             OldHymnalsView(books: books) { book in
@@ -73,14 +68,6 @@ struct OldHymnView: View {
             } dismissAction: {
                 vm.toggleBookSelectionShownFromHymnView()
             }
-
-//            OldHymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
-//                showHymnalsModal.toggle()
-//
-//                if let hymnal: HymnalModel = item {
-//                    viewModel.switchHymnal(hymnal: hymnal)
-//                }
-//            }
         }
 //        .hud(state: viewModel.currState?.state, isPresented: $viewModel.showingHUD) {
 //            if let data = viewModel.currState {

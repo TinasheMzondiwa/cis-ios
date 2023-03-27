@@ -8,30 +8,48 @@
 import SwiftUI
 
 struct OldAddToCollectionView: View {
+    @EnvironmentObject var vm: CISAppViewModel
+    
+    let hymn: StoreHymn
     
     @State private var state: ViewState = .add
     
     @State private var collectionTitle: String = ""
     @State private var collectionAbout: String = ""
     
-    @ObservedObject private var viewModel = OldCollectionsViewModel()
+    private func leadingButtonAction() {
+        switch state {
+        case .add:
+            vm.toggleCollectionSheetVisibility()
+        case .create:
+            state = .add
+        }
+    }
     
-    @FetchRequest(
-        entity: Collection.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Collection.title, ascending: true),
-        ]
-    ) var collections: FetchedResults<Collection>
+    private func clearForm() {
+        collectionTitle = ""
+        collectionAbout = ""
+        state = .add
+    }
     
-    let hymnId: UUID
-    let onDismiss: () -> Void
+    private func trailingButtonAction() {
+        switch state {
+        case .add:
+            state = .create
+        case .create:
+            if !collectionTitle.trimmingCharacters(in: .whitespaces).isEmpty {
+                vm.addCollection(with: collectionTitle, and: collectionAbout)
+                clearForm()
+            }
+        }
+    }
     
     var body: some View {
         NavigationView {
             ZStack {
                 switch state {
-                case .add: addContent
                 case .create: createContent
+                case .add: addContent
                 }
             }
             .navigationBarTitle(Text(state.title), displayMode: .inline)
@@ -39,10 +57,7 @@ struct OldAddToCollectionView: View {
                 leading:
                     Button(action: {
                         withAnimation {
-                            switch state {
-                            case .add: onDismiss()
-                            case .create: state = .add
-                            }
+                            leadingButtonAction()
                         }
                     }, label: {
                         state.navigation
@@ -51,14 +66,7 @@ struct OldAddToCollectionView: View {
                 trailing:
                     Button(action: {
                         withAnimation {
-                            switch state {
-                            case .add: state = .create
-                            case .create:
-                                viewModel.saveCollection(title: collectionTitle, about: collectionAbout)
-                                state = .add
-                                collectionTitle = ""
-                                collectionAbout = ""
-                            }
+                            trailingButtonAction()
                         }
                     }, label: {
                         Label(
@@ -72,18 +80,20 @@ struct OldAddToCollectionView: View {
     
     private var addContent: some View {
         VStack {
-            if collections.isEmpty {
+            if vm.allCollections.isEmpty {
                 OldEmptyCollectionsView(caption: NSLocalizedString("Collections.Empty.Prompt", comment: "Empty state"))
             } else {
-                FilteredList(sortKey: "title") { (item: Collection) in
-                    let added = item.containsHymn(id: hymnId)
-                    Button(action: {
-                        withAnimation {
-                            viewModel.toggleCollection(hymnId: hymnId, collection: item)
+                List {
+                    ForEach(vm.allCollections, id: \.id) { collection in
+                        let added = collection.hymns?.contains(hymn)
+                        Button {
+                            withAnimation {
+                                vm.toggle(hymn: hymn, collection: collection)
+                            }
+                        } label: {
+                            OldCollectionRowView(item: collection, selected: added)
                         }
-                    }, label: {
-                        OldCollectionRowView(title: item.wrappedTitle, description: item.wrappedDescription, selected: added)
-                    })
+                    }
                 }
                 .transition(.moveAndFade)
             }
