@@ -14,8 +14,6 @@ struct OldCollectionsView: View {
     
     @EnvironmentObject var vm: CISAppViewModel
     
-    @ObservedObject private var viewModel = OldCollectionsViewModel()
-    
     private var filteredCollections: [StoreCollection] {
         if filterQuery.trimmed.isEmpty {
             return vm.allCollections
