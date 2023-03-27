@@ -14,6 +14,30 @@ struct OldHymnView: View {
     @State private var displayedBook: StoreBook?
     @State var displayedHymn: StoreHymn
     
+    private var books: [StoreBook] {
+        if let displayedBook {
+            return vm.allBooks.map {
+                StoreBook(
+                    key: $0.key,
+                    language: $0.language,
+                    title: $0.title,
+                    isSelected: $0.key == displayedBook.key
+                )
+            }
+        } else {
+            return vm.allBooks
+        }
+    }
+    
+    private func setSelectedBook(to book: StoreBook) {
+        if let newHymn = vm.get(similarHymnTo: displayedHymn, from: book) {
+            displayedBook = book
+            displayedHymn = newHymn
+        } else {
+            displayedBook = vm.selectedBook
+        }
+    }
+    
     var body: some View {
         
         ZStack {
@@ -43,6 +67,13 @@ struct OldHymnView: View {
 //            }
         }
         .sheet(isPresented: $vm.bookSelectionShownFromHymnView) {
+            OldHymnalsView(books: books) { book in
+                setSelectedBook(to: book)
+                vm.toggleBookSelectionShownFromHymnView()
+            } dismissAction: {
+                vm.toggleBookSelectionShownFromHymnView()
+            }
+
 //            OldHymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
 //                showHymnalsModal.toggle()
 //
