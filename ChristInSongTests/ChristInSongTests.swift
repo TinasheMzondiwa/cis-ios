@@ -150,6 +150,35 @@ final class ChristInSongTests: XCTestCase {
         ])
     }
     
+    func test_SetSelectedBook_messagesStore_withBookKey() {
+        let(sut, store) = makeSUT()
+        sut.selectedBook = .book()
+        let anotetherBook: StoreBook = .book(key: "another-key", language: "Special Language")
+        
+        sut.setSelectedBook(to: anotetherBook)
+        
+        XCTAssertEqual(store.messages, [
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            .setSelectedBook("another-key"),
+            .retrieveAllBooks
+        ])
+    }
+    
+    func test_removeCollection_messagesStoreWithTheRespectiveCollectionID() {
+        let (sut, store) = makeSUT()
+        let collectionId: UUID = UUID()
+        
+        sut.removeCollection(with: collectionId)
+        
+        XCTAssertEqual(store.messages, [
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            .removeCollection(collectionId),
+            .retrieveAllCollections
+        ])
+    }
+    
     
     
     
