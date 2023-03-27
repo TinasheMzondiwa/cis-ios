@@ -11,6 +11,8 @@ struct HymnsView: View {
     
     @EnvironmentObject var vm: CISAppViewModel
     @State private var filterQuery: String = ""
+    @AppStorage("sort") var sortOption: String = Sort.number.rawValue
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     var filteredHymns: [StoreHymn] {
         if filterQuery.trimmed.isEmpty {
@@ -21,9 +23,7 @@ struct HymnsView: View {
         }
     }
     
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
-    @AppStorage("sort") var sortOption: String = Sort.number.rawValue
     
     var body: some View {
         if (idiom == .phone) {
