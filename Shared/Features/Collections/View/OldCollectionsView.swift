@@ -66,10 +66,12 @@ struct OldCollectionsView: View {
                             OldCollectionItemView(item: collection)
                         }
                     }
-                    //TODO: - On delete, perform deletion
-//                    .onDelete { <#IndexSet#> in
-//                        <#code#>
-//                    }
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            let id = filteredCollections[index].id
+                            vm.removeCollection(with: id)
+                        }
+                    }
                 }
                 .searchable(text: $filterQuery)
                 .resignKeyboardOnDragGesture()

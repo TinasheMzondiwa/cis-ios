@@ -27,3 +27,5 @@ public struct StoreCollection: Identifiable {
         self.hymns = hymns
     }
 }
+
+extension StoreCollection: Equatable {}
