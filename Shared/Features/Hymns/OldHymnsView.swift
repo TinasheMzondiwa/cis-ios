@@ -128,3 +128,8 @@ struct OldHymnsView_Previews: PreviewProvider {
         
     }
 }
+
+enum Sort: String {
+    case number
+    case titleStr
+}
