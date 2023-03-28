@@ -19,7 +19,6 @@
 		0846453F25E787EA003AE75A /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */; };
 		0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454425E7913A003AE75A /* RoundedCorner.swift */; };
 		0846454F25E79490003AE75A /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454E25E79490003AE75A /* FocusTextField.swift */; };
-		0846455625E798A7003AE75A /* OldCollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846455525E798A7003AE75A /* OldCollectionsViewModel.swift */; };
 		084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084BDAA625FD9CF8002090CD /* StoreKit.framework */; };
 		084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084BDAA825FD9DAA002090CD /* StoreManager.swift */; };
 		08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
@@ -158,7 +157,6 @@
 		0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0846454425E7913A003AE75A /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		0846454E25E79490003AE75A /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
-		0846455525E798A7003AE75A /* OldCollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldCollectionsViewModel.swift; sourceTree = "<group>"; };
 		084BDAA625FD9CF8002090CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		084BDAA825FD9DAA002090CD /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		08624FA024DBA67E00AF2904 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -282,14 +280,6 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
-		0846455425E79881003AE75A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0846455525E798A7003AE75A /* OldCollectionsViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		086C93F524BE93BC008AFBE5 = {
 			isa = PBXGroup;
 			children = (
@@ -387,7 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				08AB2E5225E8A50C0086DA32 /* View */,
-				0846455425E79881003AE75A /* ViewModel */,
 				0846452F25E77B16003AE75A /* Add */,
 			);
 			path = Collections;
@@ -856,7 +845,6 @@
 				08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */,
 				08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */,
 				67A174C5285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
-				0846455625E798A7003AE75A /* OldCollectionsViewModel.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
 				08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */,
 				08927E4024C3F8230035972C /* OldHymnView.swift in Sources */,
