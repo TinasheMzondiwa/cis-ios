@@ -93,16 +93,6 @@ struct OldHymnsView: View {
             } dismissAction: {
                 vm.toggleBookSelectionSheet()
             }
-
-            // TODO: - Fix me
-            //            OldHymnalsView(hymnal: hymnal) { item in
-            //                showModal.toggle()
-            //
-            //                if let hymnal: HymnalModel = item {
-            //                    self.hymnal = hymnal.id
-            //                    self.hymnalTitle = hymnal.title
-            //                }
-            //            }
         }
     }
     
