@@ -17,7 +17,7 @@ Contributions are most welcome in the form of Github issues and pull-requests.
 
 ## Building project
 * Clone the repo - `git clone`
-* Get submodules - `git submodule init`
+* Get submodules - `git submodule update --init --recursive`
 * Installs pods - `pods - install`
 * Launch `ChristInSong.xcworkspace`
 
