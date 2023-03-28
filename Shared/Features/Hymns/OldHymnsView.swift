@@ -77,8 +77,6 @@ struct OldHymnsView: View {
                         .headLineStyle()
                         .lineLimit(1)
                 }
-                
-                
             }
         }
         .navigationTitle(vm.selectedBook?.title ?? "")
@@ -115,7 +113,6 @@ struct OldHymnsView_Previews: PreviewProvider {
             OldHymnsView()
                 .previewDevice(PreviewDevice(rawValue: deviceName))
         }
-        
     }
 }
 

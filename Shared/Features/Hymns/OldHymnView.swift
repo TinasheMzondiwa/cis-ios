@@ -13,6 +13,8 @@ struct OldHymnView: View {
     
     @State private var displayedBook: StoreBook?
     @State var displayedHymn: StoreHymn
+    @State private var currState: (message: String, state: AlertState)? = nil
+    @State private var showingHUD = false
     
     private var books: [StoreBook] {
         if let displayedBook {
@@ -35,6 +37,9 @@ struct OldHymnView: View {
             displayedHymn = newHymn
         } else {
             displayedBook = vm.selectedBook
+            // Hymn not found
+            currState = ("Hymn \(displayedHymn.title) is unavailable in \(book.title)", .warning)
+            showingHUD = true
         }
     }
     
@@ -69,17 +74,16 @@ struct OldHymnView: View {
                 vm.toggleBookSelectionShownFromHymnView()
             }
         }
-        // TODO: - Fix me
-//        .hud(state: viewModel.currState?.state, isPresented: $viewModel.showingHUD) {
-//            if let data = viewModel.currState {
-//                Label(
-//                    data.message,
-//                    systemImage: data.state.rawValue
-//                )
-//                .font(.body.weight(.bold))
-//                .foregroundColor(data.state == .info ? Color.primary : .white)
-//            }
-//        }
+        .hud(state: currState?.state, isPresented: $showingHUD) {
+            if let data = currState {
+                Label(
+                    data.message,
+                    systemImage: data.state.rawValue
+                )
+                .font(.body.weight(.bold))
+                .foregroundColor(data.state == .info ? Color.primary : .white)
+            }
+        }
     
     }
 }
