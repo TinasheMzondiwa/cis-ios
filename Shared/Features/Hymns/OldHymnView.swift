@@ -10,6 +10,7 @@ import WebKit
 
 struct OldHymnView: View {
     @EnvironmentObject var vm: CISAppViewModel
+    @Environment(\.dismiss) private var dismiss
     
     @State private var displayedBook: StoreBook?
     @State var displayedHymn: StoreHymn
@@ -17,17 +18,13 @@ struct OldHymnView: View {
     @State private var showingHUD = false
     
     private var books: [StoreBook] {
-        if let displayedBook {
-            return vm.allBooks.map {
-                StoreBook(
-                    key: $0.key,
-                    language: $0.language,
-                    title: $0.title,
-                    isSelected: $0.key == displayedBook.key
-                )
-            }
-        } else {
-            return vm.allBooks
+        return vm.allBooks.map {
+            StoreBook(
+                key: $0.key,
+                language: $0.language,
+                title: $0.title,
+                isSelected: $0.key == displayedHymn.book
+            )
         }
     }
     
@@ -38,7 +35,7 @@ struct OldHymnView: View {
         } else {
             displayedBook = vm.selectedBook
             // Hymn not found
-            currState = ("Hymn \(displayedHymn.title) is unavailable in \(book.title)", .warning)
+            currState = ("Hymn \(displayedHymn.number) is not available in \(book.title)", .warning)
             showingHUD = true
         }
     }
@@ -48,9 +45,24 @@ struct OldHymnView: View {
         ZStack {
             HTMLText(html: displayedHymn.content)
         }
-        .navigationTitle(displayedBook?.title ?? vm.selectedBook?.title ?? "")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Button(action: {
+                        withAnimation {
+                            dismiss()
+                        }
+                    }, label: {
+                        SFSymbol.chevronBackward
+                    })
+                    
+                    Text(displayedBook?.title ?? defaultTitle())
+                        .font(.headline)
+                }
+            }
+            
             ToolbarItemGroup {
                 Button(action: { vm.toggleCollectionSheetVisibility() }) {
                     SFSymbol.textPlus
@@ -85,6 +97,10 @@ struct OldHymnView: View {
             }
         }
     
+    }
+    
+    func defaultTitle() -> String {
+        vm.allBooks.first { $0.key == displayedHymn.book }?.title ?? ""
     }
 }
 
