@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldHymnalView: View {
+struct HymnalView: View {
     
     private let COLORS: [String] = ["#4b207f", "#5e3929", "#7f264a", "#2f557f", "#e36520", "#448d21", "#3e8391"]
     
@@ -57,13 +57,13 @@ struct OldHymnalView: View {
 struct OldHymnalView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OldHymnalView(book: .init(key: "shona", language: "Shona", title: "Shona"), index: 1)
+            HymnalView(book: .init(key: "shona", language: "Shona", title: "Shona"), index: 1)
             .previewLayout(.sizeThatFits)
             
-            OldHymnalView(book: .init(key: "cis", language: "English", title: "Christ In Song"), index: 1)
+            HymnalView(book: .init(key: "cis", language: "English", title: "Christ In Song"), index: 1)
             .previewLayout(.sizeThatFits)
             
-            OldHymnalView(book: .init(key: "shona-2", language: "Cristu Munzwiyo", title: "Shona"), index: 4)
+            HymnalView(book: .init(key: "shona-2", language: "Cristu Munzwiyo", title: "Shona"), index: 4)
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
             

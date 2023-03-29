@@ -78,8 +78,8 @@
 		08927E3724C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
 		08927E4024C3F8230035972C /* OldHymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* OldHymnView.swift */; };
 		08927E4124C3F8230035972C /* OldHymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* OldHymnView.swift */; };
-		08927E4524C402BF0035972C /* OldHymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* OldHymnalView.swift */; };
-		08927E4624C402BF0035972C /* OldHymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* OldHymnalView.swift */; };
+		08927E4524C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
+		08927E4624C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
 		08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
 		08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EAD24C6A43E0035972C /* ActivityViewController.swift */; };
 		08927EB324C6A98C0035972C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927EB224C6A98C0035972C /* MailView.swift */; };
@@ -193,7 +193,7 @@
 		08927DAD24BEBBBB0035972C /* HymnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnModel.swift; sourceTree = "<group>"; };
 		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		08927E3F24C3F8230035972C /* OldHymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHymnView.swift; sourceTree = "<group>"; };
-		08927E4424C402BF0035972C /* OldHymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHymnalView.swift; sourceTree = "<group>"; };
+		08927E4424C402BF0035972C /* HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalView.swift; sourceTree = "<group>"; };
 		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		08927EB224C6A98C0035972C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		08A3366825FDB9A900852566 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
@@ -495,7 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				08927DA224BEAC240035972C /* HymnalsView.swift */,
-				08927E4424C402BF0035972C /* OldHymnalView.swift */,
+				08927E4424C402BF0035972C /* HymnalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -836,7 +836,7 @@
 				67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
 				08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */,
 				67A174C2285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
-				08927E4524C402BF0035972C /* OldHymnalView.swift in Sources */,
+				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */,
 				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
@@ -893,7 +893,7 @@
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08927D9424BEA5B60035972C /* OldHymnsView.swift in Sources */,
 				08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */,
-				08927E4624C402BF0035972C /* OldHymnalView.swift in Sources */,
+				08927E4624C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927DAF24BEBBBB0035972C /* HymnModel.swift in Sources */,
 				08927E4124C3F8230035972C /* OldHymnView.swift in Sources */,
