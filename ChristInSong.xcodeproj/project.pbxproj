@@ -100,7 +100,6 @@
 		08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33B925E21AB600609D65 /* SFSymbol.swift */; };
 		08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */; };
-		08CB33F325E2B7BE00609D65 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33F225E2B7BE00609D65 /* PersistenceController.swift */; };
 		08CB340425E2D1C400609D65 /* JsonHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340325E2D1C400609D65 /* JsonHymn.swift */; };
 		08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */; };
 		08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */; };
@@ -204,7 +203,6 @@
 		08C3C0A125F08E81004194B2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		08CB33B925E21AB600609D65 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		08CB33EC25E22DD200609D65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
-		08CB33F225E2B7BE00609D65 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		08CB340325E2D1C400609D65 /* JsonHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHymn.swift; sourceTree = "<group>"; };
 		08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -503,7 +501,6 @@
 				08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */,
 				08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */,
 				08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */,
-				08CB33F225E2B7BE00609D65 /* PersistenceController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -803,7 +800,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08CB33F325E2B7BE00609D65 /* PersistenceController.swift in Sources */,
 				084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */,
 				08927D9B24BEAAFC0035972C /* SupportView.swift in Sources */,
 				08CB340425E2D1C400609D65 /* JsonHymn.swift in Sources */,
