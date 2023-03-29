@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldCollectionHymnsView: View {
+struct CollectionHymnsView: View {
     
     let collection: StoreCollection
     

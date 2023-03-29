@@ -61,7 +61,7 @@ struct CollectionsView: View {
                 List {
                     ForEach(filteredCollections, id: \.id) { collection in
                         NavigationLink {
-                            OldCollectionHymnsView(collection: collection)
+                            CollectionHymnsView(collection: collection)
                         } label: {
                             CollectionItemView(item: collection)
                         }
