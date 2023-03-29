@@ -100,7 +100,6 @@
 		08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */; };
 		08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */; };
 		08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */; };
-		08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB341525E2FE2500609D65 /* FilteredList.swift */; };
 		08CB346625E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		08CB346725E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914129BFAC7E003C3260 /* FileLoader.swift */; };
@@ -201,7 +200,6 @@
 		08CB33EC25E22DD200609D65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		08CB341525E2FE2500609D65 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1A914129BFAC7E003C3260 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
@@ -400,7 +398,6 @@
 				08927EAD24C6A43E0035972C /* ActivityViewController.swift */,
 				08927EB224C6A98C0035972C /* MailView.swift */,
 				0844563D24CD793D00AE352F /* PendingView.swift */,
-				08CB341525E2FE2500609D65 /* FilteredList.swift */,
 				0846454425E7913A003AE75A /* RoundedCorner.swift */,
 				0846454E25E79490003AE75A /* FocusTextField.swift */,
 				081801D725EA43D10053D295 /* CheckBoxView.swift */,
@@ -815,7 +812,6 @@
 				08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */,
 				67A174C5285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
-				08CB341625E2FE2500609D65 /* FilteredList.swift in Sources */,
 				08927E4024C3F8230035972C /* HymnView.swift in Sources */,
 				0846453125E77B41003AE75A /* AddToCollectionView.swift in Sources */,
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
