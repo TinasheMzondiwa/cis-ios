@@ -76,7 +76,7 @@ struct OldHymnView: View {
             }
         }
         .sheet(isPresented: $vm.collectionsSheetShown) {
-            OldAddToCollectionView(hymn: displayedHymn)
+            AddToCollectionView(hymn: displayedHymn)
         }
         .sheet(isPresented: $vm.bookSelectionShownFromHymnView) {
             OldHymnalsView(books: books) { book in

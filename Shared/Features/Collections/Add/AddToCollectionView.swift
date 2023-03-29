@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldAddToCollectionView: View {
+struct AddToCollectionView: View {
     @EnvironmentObject var vm: CISAppViewModel
     
     let hymn: StoreHymn
