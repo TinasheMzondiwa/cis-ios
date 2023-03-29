@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldCollectionsView: View {
+struct CollectionsView: View {
     @State private var navTitle: String = NSLocalizedString("Collections", comment: "Title")
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     @State private var filterQuery: String = ""
@@ -82,6 +82,6 @@ struct OldCollectionsView: View {
 
 struct OldCollectionsView_Previews: PreviewProvider {
     static var previews: some View {
-        OldCollectionsView()
+        CollectionsView()
     }
 }

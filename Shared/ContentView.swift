@@ -23,7 +23,7 @@ struct ContentView: View {
                         NavLabel(item: NavItem.hymns)
                     }
                     .tag(0)
-                OldCollectionsView()
+                CollectionsView()
                     .tabItem {
                         NavLabel(item: NavItem.collections)
                     }
@@ -61,7 +61,7 @@ struct ContentView: View {
                 NavLabel(item: NavItem.hymns)
             }
             
-            NavigationLink(destination: OldCollectionsView()) {
+            NavigationLink(destination: CollectionsView()) {
                 NavLabel(item: NavItem.collections)
             }
            
