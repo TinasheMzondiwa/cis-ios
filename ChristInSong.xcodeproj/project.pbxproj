@@ -72,8 +72,6 @@
 		08927DA024BEAB1F0035972C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9E24BEAB1F0035972C /* InfoView.swift */; };
 		08927DA324BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
 		08927DA424BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
-		08927E3624C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
-		08927E3724C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
 		08927E4024C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
 		08927E4124C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
 		08927E4524C402BF0035972C /* HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E4424C402BF0035972C /* HymnalView.swift */; };
@@ -184,7 +182,6 @@
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		08927D9E24BEAB1F0035972C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		08927DA224BEAC240035972C /* HymnalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsView.swift; sourceTree = "<group>"; };
-		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		08927E3F24C3F8230035972C /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
 		08927E4424C402BF0035972C /* HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalView.swift; sourceTree = "<group>"; };
 		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -415,7 +412,6 @@
 		08927DA924BEBB3B0035972C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				08927E3524C3E7BE0035972C /* Data.swift */,
 				0874737A298749D200167974 /* AlertState.swift */,
 			);
 			path = Model;
@@ -828,7 +824,6 @@
 				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
 				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
 				1D45302D29BB811D00C95AC1 /* Store.swift in Sources */,
-				08927E3624C3E7BE0035972C /* Data.swift in Sources */,
 				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
 				0874737B298749D200167974 /* AlertState.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
@@ -874,7 +869,6 @@
 				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
 				08C0928025F7479000845BA1 /* WebLink.swift in Sources */,
-				08927E3724C3E7BE0035972C /* Data.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
