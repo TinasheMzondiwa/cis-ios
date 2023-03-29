@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldHymnalsView: View {
+struct HymnalsView: View {
     
     let books: [StoreBook]
     let action: (StoreBook) -> Void

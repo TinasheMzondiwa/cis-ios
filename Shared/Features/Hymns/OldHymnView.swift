@@ -79,7 +79,7 @@ struct OldHymnView: View {
             AddToCollectionView(hymn: displayedHymn)
         }
         .sheet(isPresented: $vm.bookSelectionShownFromHymnView) {
-            OldHymnalsView(books: books) { book in
+            HymnalsView(books: books) { book in
                 setSelectedBook(to: book)
                 vm.toggleBookSelectionShownFromHymnView()
             } dismissAction: {

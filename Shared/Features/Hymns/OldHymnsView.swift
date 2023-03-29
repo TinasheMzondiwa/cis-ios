@@ -86,7 +86,7 @@ struct OldHymnsView: View {
         }
         .resignKeyboardOnDragGesture()
         .sheet(isPresented: $vm.bookSelectionShown) {
-            OldHymnalsView(books: vm.allBooks) { book in
+            HymnalsView(books: vm.allBooks) { book in
                 vm.setSelectedBook(to: book)
             } dismissAction: {
                 vm.toggleBookSelectionSheet()
