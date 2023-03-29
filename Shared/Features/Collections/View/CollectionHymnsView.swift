@@ -24,7 +24,7 @@ struct CollectionHymnsView: View {
     
     private var listContent: some View {
         VStack {
-            if let collectionHymns = collection.hymns {
+            if let collectionHymns = collection.hymns, collectionHymns.count != 0 {
                 List {
                     ForEach(collectionHymns, id: \.id) { hymn in
                         NavigationLink {
@@ -41,8 +41,6 @@ struct CollectionHymnsView: View {
                             vm.removeHymn(with: id, fromCollectionId: collection.id)
                         }
                     }
-                    // TODO: - onDelete
-                    // .onDelete(perform: viewModel.removeHymnFromCollection)
                 }
             } else {
                 EmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
