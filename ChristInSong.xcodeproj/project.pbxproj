@@ -100,7 +100,6 @@
 		08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0929C25F74FE500845BA1 /* NavItem.swift */; };
 		08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
 		08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3C0A125F08E81004194B2 /* FontExtensions.swift */; };
-		08CB33A525E2115F00609D65 /* OldHymnalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33A425E2115F00609D65 /* OldHymnalsViewModel.swift */; };
 		08CB33AF25E2122500609D65 /* HymnalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33AE25E2122500609D65 /* HymnalModel.swift */; };
 		08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33B925E21AB600609D65 /* SFSymbol.swift */; };
 		08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */; };
@@ -207,7 +206,6 @@
 		08C0929525F74FC500845BA1 /* NavLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLabel.swift; sourceTree = "<group>"; };
 		08C0929C25F74FE500845BA1 /* NavItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavItem.swift; sourceTree = "<group>"; };
 		08C3C0A125F08E81004194B2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
-		08CB33A425E2115F00609D65 /* OldHymnalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHymnalsViewModel.swift; sourceTree = "<group>"; };
 		08CB33AE25E2122500609D65 /* HymnalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalModel.swift; sourceTree = "<group>"; };
 		08CB33B925E21AB600609D65 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		08CB33EC25E22DD200609D65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				08CB33A225E2112F00609D65 /* View */,
-				08CB33A125E2112200609D65 /* ViewModel */,
 			);
 			path = Hymnals;
 			sourceTree = "<group>";
@@ -481,14 +478,6 @@
 				08C0929C25F74FE500845BA1 /* NavItem.swift */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		08CB33A125E2112200609D65 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				08CB33A425E2115F00609D65 /* OldHymnalsViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		08CB33A225E2112F00609D65 /* View */ = {
@@ -860,7 +849,6 @@
 				0874737B298749D200167974 /* AlertState.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
-				08CB33A525E2115F00609D65 /* OldHymnalsViewModel.swift in Sources */,
 				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
 				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
 				08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */,
