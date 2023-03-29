@@ -9,58 +9,85 @@ import SwiftUI
 import WebKit
 
 struct HymnView: View {
+    @EnvironmentObject var vm: CISAppViewModel
+    @Environment(\.dismiss) private var dismiss
     
-    @AppStorage(Constants.hymnalKey) var hymnal: String = Constants.defHymnal
-    @State private var showCollectionModal = false
-    @State private var showHymnalsModal = false
+    @State private var displayedBook: StoreBook?
+    @State var displayedHymn: StoreHymn
+    @State private var currState: (message: String, state: AlertState)? = nil
+    @State private var showingHUD = false
     
-    @ObservedObject private var viewModel = HymnViewModel()
+    private var books: [StoreBook] {
+        return vm.allBooks.map {
+            StoreBook(
+                key: $0.key,
+                language: $0.language,
+                title: $0.title,
+                isSelected: $0.key == displayedHymn.book
+            )
+        }
+    }
     
-    var hymn: HymnModel
+    private func setSelectedBook(to book: StoreBook) {
+        if let newHymn = vm.get(similarHymnTo: displayedHymn, from: book) {
+            displayedBook = book
+            displayedHymn = newHymn
+        } else {
+            displayedBook = vm.selectedBook
+            // Hymn not found
+            currState = ("Hymn \(displayedHymn.number) is not available in \(book.title)", .warning)
+            showingHUD = true
+        }
+    }
     
     var body: some View {
         
         ZStack {
-            if let model = viewModel.model {
-                HTMLText(html: model.content)
-            } else {
-                // TODO: Loading state and re-enter view
-                EmptyView()
-            }
+            HTMLText(html: displayedHymn.content)
         }
-        .navigationTitle(viewModel.model?.bookTitle ?? "")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Button(action: {
+                        withAnimation {
+                            dismiss()
+                        }
+                    }, label: {
+                        SFSymbol.chevronBackward
+                    })
+                    
+                    Text(displayedBook?.title ?? defaultTitle())
+                        .font(.headline)
+                }
+            }
+            
             ToolbarItemGroup {
-                Button(action: { showCollectionModal.toggle() }) {
+                Button(action: { vm.toggleCollectionSheetVisibility() }) {
                     SFSymbol.textPlus
                         .accessibility(label: Text(LocalizedStringKey("Collections.Add")))
                 }
                 
-                Button(action: { showHymnalsModal.toggle() }) {
+                Button(action: {vm.toggleBookSelectionShownFromHymnView() }) {
                     SFSymbol.bookCircle
                         .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
                 }
             }
         }
-        .sheet(isPresented: $showCollectionModal) {
-            if let model = viewModel.model {
-                AddToCollectionView(hymnId: model.id, onDismiss: {
-                    showCollectionModal.toggle()
-                })
-                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+        .sheet(isPresented: $vm.collectionsSheetShown) {
+            AddToCollectionView(hymn: displayedHymn)
+        }
+        .sheet(isPresented: $vm.bookSelectionShownFromHymnView) {
+            HymnalsView(books: books) { book in
+                setSelectedBook(to: book)
+                vm.toggleBookSelectionShownFromHymnView()
+            } dismissAction: {
+                vm.toggleBookSelectionShownFromHymnView()
             }
         }
-        .sheet(isPresented: $showHymnalsModal) {
-            HymnalsView(hymnal: viewModel.hymnal?.id ?? hymnal) { item in
-                showHymnalsModal.toggle()
-                
-                if let hymnal: HymnalModel = item {
-                    viewModel.switchHymnal(hymnal: hymnal)
-                }
-            }
-        }
-        .hud(state: viewModel.currState?.state, isPresented: $viewModel.showingHUD) {
-            if let data = viewModel.currState {
+        .hud(state: currState?.state, isPresented: $showingHUD) {
+            if let data = currState {
                 Label(
                     data.message,
                     systemImage: data.state.rawValue
@@ -69,17 +96,18 @@ struct HymnView: View {
                 .foregroundColor(data.state == .info ? Color.primary : .white)
             }
         }
-        .onAppear {
-            viewModel.onAppear(hymn: hymn)
-        }
     
+    }
+    
+    func defaultTitle() -> String {
+        vm.allBooks.first { $0.key == displayedHymn.book }?.title ?? ""
     }
 }
 
-struct HymnView_Previews: PreviewProvider {
+struct OldHymnView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HymnView(hymn: HymnModel(content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live."))
+            HymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", book: .defaultBook, number: 1))
         }
         .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }

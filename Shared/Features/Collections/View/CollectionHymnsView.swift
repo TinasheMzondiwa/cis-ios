@@ -9,47 +9,42 @@ import SwiftUI
 
 struct CollectionHymnsView: View {
     
-    @ObservedObject private var viewModel = CollectionsViewModel()
-    
-    let collectionId: UUID
+    let collection: StoreCollection
+    @EnvironmentObject var vm: CISAppViewModel
     
     var body: some View {
         listContent
-            .navigationBarTitle(viewModel.collectionTitle, displayMode: .inline)
+            .navigationBarTitle(collection.title, displayMode: .inline)
             .toolbar {
-                if !viewModel.collectionHymns.isEmpty {
+                if let hymns = collection.hymns, !hymns.isEmpty {
                     EditButton()
                 }
             }
-        .onAppear {
-            viewModel.loadCollectionHymns(collectionId: collectionId)
-        }
     }
     
     private var listContent: some View {
         VStack {
-            if viewModel.collectionHymns.isEmpty {
-                EmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
-            } else {
+            if let collectionHymns = collection.hymns, collectionHymns.count != 0 {
                 List {
-                    ForEach(viewModel.collectionHymns, id: \.self) { item in
-                        NavigationLink(
-                            destination: HymnView(hymn: item),
-                            label: {
-                                Text(item.title)
-                                    .headLineStyle()
-                                    .lineLimit(1)
-                            })
+                    ForEach(collectionHymns, id: \.id) { hymn in
+                        NavigationLink {
+                            HymnView(displayedHymn: hymn)
+                        } label: {
+                            Text(hymn.title)
+                                .headLineStyle()
+                                .lineLimit(1)
+                        }
                     }
-                    .onDelete(perform: viewModel.removeHymnFromCollection)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            let id = collectionHymns[index].id
+                            vm.removeHymn(with: id, fromCollectionId: collection.id)
+                        }
+                    }
                 }
+            } else {
+                EmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
             }
         }
-    }
-}
-
-struct CollectionHymnsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CollectionHymnsView(collectionId: UUID())
     }
 }

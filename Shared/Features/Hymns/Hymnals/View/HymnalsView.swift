@@ -9,10 +9,9 @@ import SwiftUI
 
 struct HymnalsView: View {
     
-    @ObservedObject var viewModel = HymnalsViewModel()
-    
-    var hymnal: String
-    var onDismiss: (HymnalModel?) -> Void
+    let books: [StoreBook]
+    let action: (StoreBook) -> Void
+    let dismissAction: () -> Void
     
     var body: some View {
         
@@ -20,48 +19,30 @@ struct HymnalsView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     Spacer()
-                    ForEach(self.viewModel.hymnals, id: \.id) {  item in
+                    ForEach(books, id: \.id) {  book in
                         
                         Button(action: {
-                            viewModel.hymnalSelected(id: item.id)
-                            
-                            onDismiss(item)
+                            action(book)
                         }, label: {
-                            HymnalView(hymnal: item,
-                                       index: viewModel.hymnals.firstIndex(of: item) ?? 0)
+                            HymnalView(book: book,
+                                       index: books.firstIndex(of: book) ?? 0)
                         })
                     }
                 }
                 .padding([.leading, .trailing])
             }
             .navigationBarTitle(LocalizedStringKey("Hymnals"), displayMode: .inline)
-            .navigationBarItems(
-                leading:
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        onDismiss(nil)
+                        dismissAction()
                     }, label: {
                         SFSymbol.close
                             .navButtonStyle()
-                    }))
+                    })
+                }
+            }
         }
-        .onAppear(perform: {
-            viewModel.onAppear(selectedId: hymnal)
-        })
         
-    }
-}
-
-struct HymnalsView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            HymnalsView(hymnal: "") { item in }
-                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-                .previewLayout(.sizeThatFits)
-            
-            HymnalsView(hymnal: "") { item in }
-                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-                .previewLayout(.sizeThatFits)
-                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-        }
     }
 }

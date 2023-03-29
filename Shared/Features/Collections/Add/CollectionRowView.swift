@@ -9,21 +9,20 @@ import SwiftUI
 
 struct CollectionRowView: View {
     
-    let title: String
-    let description: String
-    let selected: Bool
+    let item: StoreCollection
+    let selected: Bool?
     
     var body: some View {
         HStack {
-            CheckBoxView(checked: .constant(selected))
+            CheckBoxView(checked: .constant(selected ?? false))
             
             VStack(alignment: .leading) {
-                Text(title)
-                    .headLineStyle(selected: selected)
+                Text(item.title)
+                    .headLineStyle(selected: selected ?? false)
                     .lineSpacing(4)
                     .animation(.none)
-                if !description.isEmpty {
-                    Text(description)
+                if let about = item.about {
+                    Text(about)
                         .footNoteStyle()
                         .lineSpacing(4)
                         .lineLimit(1)
@@ -41,15 +40,11 @@ struct CollectionRowView: View {
 struct CollectionRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CollectionRowView(title: "Favorite Hymns", description: "Some of the very best hymns I love so much", selected: true)
+            CollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now), selected: true)
                 .previewLayout(.sizeThatFits)
-            CollectionRowView(title: "Sabbath Hymns", description: "Some hymns for the Sabbath I love so much", selected: false)
+            CollectionRowView(item: .init(id: UUID(), title: "Sabbath Hymns", dateCreated: .now), selected: false)
                 .previewLayout(.sizeThatFits)
-            
-            CollectionRowView(title: "Sabbath Hymns", description: "", selected: false)
-                .previewLayout(.sizeThatFits)
-            
-            CollectionRowView(title: "Favorite Hymns", description: "Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much", selected: false)
+            CollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now, about: "Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much"), selected: false)
                 .previewLayout(.sizeThatFits)
             
         }

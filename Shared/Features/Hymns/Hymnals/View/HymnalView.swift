@@ -11,7 +11,7 @@ struct HymnalView: View {
     
     private let COLORS: [String] = ["#4b207f", "#5e3929", "#7f264a", "#2f557f", "#e36520", "#448d21", "#3e8391"]
     
-    var hymnal: HymnalModel
+    let book: StoreBook
     var index: Int
     
     var body: some View {
@@ -24,14 +24,14 @@ struct HymnalView: View {
                     
                     SFSymbol.checkmark
                         .foregroundColor(.white)
-                        .opacity(hymnal.selected ? 1 : 0)
+                        .opacity(book.isSelected ? 1 : 0)
                 }
                 
                 VStack(alignment: .leading) {
-                    Text(hymnal.title)
-                        .headLineStyle(selected: hymnal.selected)
+                    Text(book.title)
+                        .headLineStyle(selected: book.isSelected)
                         
-                    Text(hymnal.language)
+                    Text(book.language)
                         .subHeadLineStyle()
                 }.padding(.leading, 16)
                 
@@ -57,37 +57,13 @@ struct HymnalView: View {
 struct HymnalView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HymnalView(hymnal: HymnalModel(
-                id: "",
-                title: "Christ In Song",
-                language: "English",
-                selected: true
-            ), index: 1)
+            HymnalView(book: .init(key: "shona", language: "Shona", title: "Shona"), index: 1)
             .previewLayout(.sizeThatFits)
             
-            HymnalView(hymnal: HymnalModel(
-                id: "",
-                title: "Cristu Munzwiyo",
-                language: "Shona",
-                selected: false
-            ), index: 4)
-            .previewLayout(.sizeThatFits)
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-            
-            HymnalView(hymnal: HymnalModel(
-                id: "",
-                title: "Christ In Song",
-                language: "English",
-                selected: false
-            ), index: 1)
+            HymnalView(book: .init(key: "cis", language: "English", title: "Christ In Song"), index: 1)
             .previewLayout(.sizeThatFits)
             
-            HymnalView(hymnal: HymnalModel(
-                id: "",
-                title: "Cristu Munzwiyo",
-                language: "Shona",
-                selected: true
-            ), index: 4)
+            HymnalView(book: .init(key: "shona-2", language: "Cristu Munzwiyo", title: "Shona"), index: 4)
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
             

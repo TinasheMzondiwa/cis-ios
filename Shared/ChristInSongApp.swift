@@ -9,18 +9,17 @@ import SwiftUI
 
 @main
 struct ChristInSongApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    let viewModel: CISAppViewModel
     
-    @Environment(\.scenePhase) var scenePhase
-    
-    let persistenceController = PersistenceController.shared
-    
+    init() {
+        let store = CISCoreDataStore()
+        viewModel = CISAppViewModel(store: store)
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }.onChange(of: scenePhase) { _ in
-            persistenceController.save()
+                .environmentObject(viewModel)
         }
     }
 }

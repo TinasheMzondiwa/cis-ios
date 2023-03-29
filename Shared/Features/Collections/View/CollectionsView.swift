@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct CollectionsView: View {
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-    
-    @ObservedObject private var viewModel = CollectionsViewModel()
-    @State private var searchQuery: String = ""
-    
-    @FetchRequest(
-        entity: Collection.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Collection.title, ascending: true),
-        ]
-    ) var collections: FetchedResults<Collection>
-    
     @State private var navTitle: String = NSLocalizedString("Collections", comment: "Title")
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    @State private var filterQuery: String = ""
+    
+    @EnvironmentObject var vm: CISAppViewModel
+    
+    private var filteredCollections: [StoreCollection] {
+        if filterQuery.trimmed.isEmpty {
+            return vm.allCollections
+        } else {
+            return vm.allCollections.filter { $0.title.localizedCaseInsensitiveContains(filterQuery) || (($0.about?.localizedCaseInsensitiveContains(filterQuery)) != nil)
+            }
+        }
+    }
+    
     
     var body: some View {
         if (idiom == .phone) {
@@ -28,7 +30,7 @@ struct CollectionsView: View {
                 content
                     .navigationTitle(navTitle)
                     .toolbar {
-                        if !collections.isEmpty {
+                        if !filteredCollections.isEmpty {
                             EditButton()
                         }
                     }
@@ -39,7 +41,7 @@ struct CollectionsView: View {
                 content
                     .navigationTitle(navTitle)
                     .toolbar {
-                        if !collections.isEmpty {
+                        if !filteredCollections.isEmpty {
                             EditButton()
                         }
                     }
@@ -53,21 +55,25 @@ struct CollectionsView: View {
     
     var content: some View {
         ZStack {
-            if collections.isEmpty {
+            if filteredCollections.isEmpty {
                 EmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
             } else {
-                
-                FilteredList(sortKey: "title", queryKey: "title", query: searchQuery, canDelete: true) { (item: Collection) in
-                    NavigationLink(
-                        destination: CollectionHymnsView(collectionId: item.id!),
-                        label: {
-                            CollectionItemView(title: item.wrappedTitle, description: item.wrappedDescription, date: item.created, hymns: item.allHymns.count)
-                        })
+                List {
+                    ForEach(filteredCollections, id: \.id) { collection in
+                        NavigationLink {
+                            CollectionHymnsView(collection: collection)
+                        } label: {
+                            CollectionItemView(item: collection)
+                        }
+                    }
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            let id = filteredCollections[index].id
+                            vm.removeCollection(with: id)
+                        }
+                    }
                 }
-                .searchable(text: $searchQuery)
-                .onChange(of: searchQuery) { query in
-                    searchQuery = query
-                }
+                .searchable(text: $filterQuery)
                 .resignKeyboardOnDragGesture()
             }
         }

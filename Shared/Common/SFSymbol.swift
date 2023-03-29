@@ -11,6 +11,7 @@ import SwiftUI
 enum SFSymbol: String, View {
     case arrowBackward = "arrow.backward"
     case bookCircle = "book.circle"
+    case chevronBackward = "chevron.backward"
     case chevronDown = "chevron.down"
     case chevronRight = "chevron.right"
     case close = "xmark"
