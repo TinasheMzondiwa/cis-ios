@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldCollectionRowView: View {
+struct CollectionRowView: View {
     
     let item: StoreCollection
     let selected: Bool?
@@ -40,11 +40,11 @@ struct OldCollectionRowView: View {
 struct OldCollectionRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OldCollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now), selected: true)
+            CollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now), selected: true)
                 .previewLayout(.sizeThatFits)
-            OldCollectionRowView(item: .init(id: UUID(), title: "Sabbath Hymns", dateCreated: .now), selected: false)
+            CollectionRowView(item: .init(id: UUID(), title: "Sabbath Hymns", dateCreated: .now), selected: false)
                 .previewLayout(.sizeThatFits)
-            OldCollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now, about: "Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much"), selected: false)
+            CollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now, about: "Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much Some hymns for the Sabbath I love so much"), selected: false)
                 .previewLayout(.sizeThatFits)
             
         }

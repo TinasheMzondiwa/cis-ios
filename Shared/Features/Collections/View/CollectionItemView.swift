@@ -38,7 +38,7 @@ struct CollectionItemView: View {
 struct OldCollectionItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OldCollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now, hymns: [.init(id: UUID(), title: "Test Hymn", titleStr: "Test Hymn", content: "An amazing hymn", book: .defaultBook, number: 1)]), selected: false)
+            CollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now, hymns: [.init(id: UUID(), title: "Test Hymn", titleStr: "Test Hymn", content: "An amazing hymn", book: .defaultBook, number: 1)]), selected: false)
         }
     }
 }

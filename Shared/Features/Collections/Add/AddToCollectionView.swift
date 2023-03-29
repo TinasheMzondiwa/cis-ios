@@ -91,7 +91,7 @@ struct AddToCollectionView: View {
                                 vm.toggle(hymn: hymn, collection: collection)
                             }
                         } label: {
-                            OldCollectionRowView(item: collection, selected: added)
+                            CollectionRowView(item: collection, selected: added)
                         }
                     }
                 }
