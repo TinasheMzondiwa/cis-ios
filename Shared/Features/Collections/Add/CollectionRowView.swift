@@ -37,7 +37,7 @@ struct CollectionRowView: View {
     }
 }
 
-struct OldCollectionRowView_Previews: PreviewProvider {
+struct CollectionRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now), selected: true)

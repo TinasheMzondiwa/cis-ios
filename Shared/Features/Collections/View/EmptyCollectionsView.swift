@@ -29,7 +29,7 @@ struct EmptyCollectionsView: View {
     }
 }
 
-struct OldEmptyCollectionsView_Previews: PreviewProvider {
+struct EmptyCollectionsView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyCollectionsView(caption: "Create a collection")
             .previewLayout(.sizeThatFits)

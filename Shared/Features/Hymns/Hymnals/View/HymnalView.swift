@@ -54,7 +54,7 @@ struct HymnalView: View {
     }
 }
 
-struct OldHymnalView_Previews: PreviewProvider {
+struct HymnalView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HymnalView(book: .init(key: "shona", language: "Shona", title: "Shona"), index: 1)

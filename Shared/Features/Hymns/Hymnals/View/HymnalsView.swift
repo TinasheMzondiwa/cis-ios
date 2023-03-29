@@ -46,18 +46,3 @@ struct HymnalsView: View {
         
     }
 }
-
-//struct OldHymnalsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            OldHymnalsView(hymnal: "") { item in }
-//                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-//                .previewLayout(.sizeThatFits)
-//
-//            OldHymnalsView(hymnal: "") { item in }
-//                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-//                .previewLayout(.sizeThatFits)
-//                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-//        }
-//    }
-//}

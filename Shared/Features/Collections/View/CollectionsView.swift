@@ -80,7 +80,7 @@ struct CollectionsView: View {
     }
 }
 
-struct OldCollectionsView_Previews: PreviewProvider {
+struct CollectionsView_Previews: PreviewProvider {
     static var previews: some View {
         CollectionsView()
     }
