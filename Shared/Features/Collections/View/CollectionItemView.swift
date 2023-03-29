@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldCollectionItemView: View {
+struct CollectionItemView: View {
     
     let item: StoreCollection
     

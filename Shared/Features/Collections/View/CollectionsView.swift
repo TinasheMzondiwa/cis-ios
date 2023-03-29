@@ -63,7 +63,7 @@ struct CollectionsView: View {
                         NavigationLink {
                             OldCollectionHymnsView(collection: collection)
                         } label: {
-                            OldCollectionItemView(item: collection)
+                            CollectionItemView(item: collection)
                         }
                     }
                     .onDelete { indexSet in
