@@ -9,6 +9,7 @@ import Foundation
 import ChristInSong
 
 final class StoreSpy: Store {
+   
     
     private(set) var messages = [Action]()
     private(set) var allBooks: [StoreBook]?
@@ -74,6 +75,9 @@ final class StoreSpy: Store {
     func populateAllHymns(with hymns: [StoreHymn]) {
         self.allHymns = hymns
     }
+    func removeHymn(with id: UUID, from collectionID: UUID) {
+        messages.append(.removeHym(id, collectionID))
+    }
 }
 
 extension StoreSpy {
@@ -82,6 +86,7 @@ extension StoreSpy {
         case retrieveAllBooks
         case toggle(StoreHymn, StoreCollection)
         case removeCollection(UUID)
+        case removeHym(UUID, UUID)
         case createCollection(String, String?)
         case retrieveSelectedBook
         case setSelectedBook(String)
@@ -106,6 +111,8 @@ extension StoreSpy {
                 return lhsKey == rhsKey
             case (.retrieveHymns(let lhsBook), .retrieveHymns(let rhsBook)):
                 return lhsBook == rhsBook
+            case (.removeHym(let lhsHymId, let lhsCollectioId), .removeHym(let rhsHymnId, let rhsCollectionID)):
+                return lhsHymId == rhsHymnId && lhsCollectioId == rhsCollectionID
             default:
                 return false
             }

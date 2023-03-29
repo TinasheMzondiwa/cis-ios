@@ -10,6 +10,7 @@ import SwiftUI
 struct CollectionHymnsView: View {
     
     let collection: StoreCollection
+    @EnvironmentObject var vm: CISAppViewModel
     
     var body: some View {
         listContent
@@ -32,6 +33,12 @@ struct CollectionHymnsView: View {
                             Text(hymn.title)
                                 .headLineStyle()
                                 .lineLimit(1)
+                        }
+                    }
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            let id = collectionHymns[index].id
+                            vm.removeHymn(with: id, fromCollectionId: collection.id)
                         }
                     }
                     // TODO: - onDelete

@@ -228,6 +228,20 @@ final class ChristInSongTests: XCTestCase {
         ])
     }
     
+    func test_removeHymn_fromCollection_messagesStore() {
+        let hymn: StoreHymn = .hymn()
+        let collection: StoreCollection = .collection()
+        
+        let (sut, store) = makeSUT()
+        sut.removeHymn(with: hymn.id, fromCollectionId: collection.id)
+        
+        XCTAssertEqual(store.messages, [
+            .retrieveAllBooks,
+            .retrieveAllCollections,
+            .removeHym(hymn.id, collection.id),
+            .retrieveAllCollections ])
+    }
+    
     
     // MARK: - Private
     

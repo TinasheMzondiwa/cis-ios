@@ -136,6 +136,11 @@ final class CISAppViewModel: ObservableObject {
         allCollections = fetchAllCollections()
     }
     
+    func removeHymn(with id: UUID, fromCollectionId collectionId: UUID) {
+        store.removeHymn(with: id, from: collectionId)
+        allCollections = fetchAllCollections()
+    }
+    
     
     // MARK: - Private
     

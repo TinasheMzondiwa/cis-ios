@@ -34,6 +34,10 @@ public protocol Store {
     /// Deletes a collection from the store
     /// - Parameter id: the unique `id` (UUID) of the collection
     func removeCollection(with id: UUID)
+    /// Deletes a hymn from a collection
+    /// - Parameter id: the unique `id` (UUID) of the hymn
+    /// - Parameter collectionID: the unique `id` of the collection
+    func removeHymn(with id: UUID, from collectionID: UUID)
     /// Toggle the presence of a hymn in a collection. (Removes/Add)
     /// - Parameters:
     ///   - hymn: hymn

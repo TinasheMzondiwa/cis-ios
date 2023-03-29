@@ -190,6 +190,18 @@ final class CISCoreDataStore: Store {
         defaults.string(forKey: .selectedBook) ?? .defaultBook
     }
     
+    func removeHymn(with id: UUID, from collectionID: UUID) {
+        if let collection = retrieveCollection(with: collectionID) {
+            if let hymn = retrieveHymn(with: id) {
+                collection.removeFromHymns(hymn)
+                do  {
+                    try save()
+                } catch {}
+            }
+        }
+    }
+    
+    
 }
 
 extension CISCoreDataStore {
