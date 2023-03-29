@@ -72,8 +72,6 @@
 		08927DA024BEAB1F0035972C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9E24BEAB1F0035972C /* InfoView.swift */; };
 		08927DA324BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
 		08927DA424BEAC240035972C /* HymnalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DA224BEAC240035972C /* HymnalsView.swift */; };
-		08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* HymnModel.swift */; };
-		08927DAF24BEBBBB0035972C /* HymnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927DAD24BEBBBB0035972C /* HymnModel.swift */; };
 		08927E3624C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
 		08927E3724C3E7BE0035972C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3524C3E7BE0035972C /* Data.swift */; };
 		08927E4024C3F8230035972C /* HymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927E3F24C3F8230035972C /* HymnView.swift */; };
@@ -188,7 +186,6 @@
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		08927D9E24BEAB1F0035972C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		08927DA224BEAC240035972C /* HymnalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsView.swift; sourceTree = "<group>"; };
-		08927DAD24BEBBBB0035972C /* HymnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnModel.swift; sourceTree = "<group>"; };
 		08927E3524C3E7BE0035972C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		08927E3F24C3F8230035972C /* HymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnView.swift; sourceTree = "<group>"; };
 		08927E4424C402BF0035972C /* HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalView.swift; sourceTree = "<group>"; };
@@ -422,7 +419,6 @@
 		08927DA924BEBB3B0035972C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				08927DAD24BEBBBB0035972C /* HymnModel.swift */,
 				08927E3524C3E7BE0035972C /* Data.swift */,
 				08CB340325E2D1C400609D65 /* JsonHymn.swift */,
 				0874737A298749D200167974 /* AlertState.swift */,
@@ -828,7 +824,6 @@
 				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
 				08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */,
 				08C0929625F74FC500845BA1 /* NavLabel.swift in Sources */,
-				08927DAE24BEBBBB0035972C /* HymnModel.swift in Sources */,
 				08C0929D25F74FE500845BA1 /* NavItem.swift in Sources */,
 				67A174C5285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
 				08CB33BA25E21AB600609D65 /* SFSymbol.swift in Sources */,
@@ -879,7 +874,6 @@
 				08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */,
 				08927E4624C402BF0035972C /* HymnalView.swift in Sources */,
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
-				08927DAF24BEBBBB0035972C /* HymnModel.swift in Sources */,
 				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
 				0844563F24CD793D00AE352F /* PendingView.swift in Sources */,
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
