@@ -71,7 +71,7 @@ struct HymnsView: View {
         List {
             ForEach(filteredHymns, id: \.id) { hymn in
                 NavigationLink {
-                    OldHymnView(displayedHymn: hymn)
+                    HymnView(displayedHymn: hymn)
                 } label: {
                     Text(sortOption == Sort.number.rawValue ? hymn.title : "\(hymn.titleStr) - \(hymn.number)")
                         .headLineStyle()

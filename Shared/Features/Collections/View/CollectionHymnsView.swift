@@ -27,7 +27,7 @@ struct CollectionHymnsView: View {
                 List {
                     ForEach(collectionHymns, id: \.id) { hymn in
                         NavigationLink {
-                            OldHymnView(displayedHymn: hymn)
+                            HymnView(displayedHymn: hymn)
                         } label: {
                             Text(hymn.title)
                                 .headLineStyle()

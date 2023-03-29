@@ -8,7 +8,7 @@
 import SwiftUI
 import WebKit
 
-struct OldHymnView: View {
+struct HymnView: View {
     @EnvironmentObject var vm: CISAppViewModel
     @Environment(\.dismiss) private var dismiss
     
@@ -107,7 +107,7 @@ struct OldHymnView: View {
 struct OldHymnView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            OldHymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", book: .defaultBook, number: 1))
+            HymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", book: .defaultBook, number: 1))
         }
         .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }
