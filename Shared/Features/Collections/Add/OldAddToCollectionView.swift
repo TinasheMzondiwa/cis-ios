@@ -81,7 +81,7 @@ struct OldAddToCollectionView: View {
     private var addContent: some View {
         VStack {
             if vm.allCollections.isEmpty {
-                OldEmptyCollectionsView(caption: NSLocalizedString("Collections.Empty.Prompt", comment: "Empty state"))
+                EmptyCollectionsView(caption: NSLocalizedString("Collections.Empty.Prompt", comment: "Empty state"))
             } else {
                 List {
                     ForEach(vm.allCollections, id: \.id) { collection in

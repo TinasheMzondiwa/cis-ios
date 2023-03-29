@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OldEmptyCollectionsView: View {
+struct EmptyCollectionsView: View {
     
     let caption: String
     
@@ -31,10 +31,10 @@ struct OldEmptyCollectionsView: View {
 
 struct OldEmptyCollectionsView_Previews: PreviewProvider {
     static var previews: some View {
-        OldEmptyCollectionsView(caption: "Create a collection")
+        EmptyCollectionsView(caption: "Create a collection")
             .previewLayout(.sizeThatFits)
         
-        OldEmptyCollectionsView(caption: "Create a collection")
+        EmptyCollectionsView(caption: "Create a collection")
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
     }

@@ -38,7 +38,7 @@ struct CollectionHymnsView: View {
                     // .onDelete(perform: viewModel.removeHymnFromCollection)
                 }
             } else {
-                OldEmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
+                EmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
             }
         }
     }

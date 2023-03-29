@@ -56,7 +56,7 @@ struct CollectionsView: View {
     var content: some View {
         ZStack {
             if filteredCollections.isEmpty {
-                OldEmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
+                EmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
             } else {
                 List {
                     ForEach(filteredCollections, id: \.id) { collection in
