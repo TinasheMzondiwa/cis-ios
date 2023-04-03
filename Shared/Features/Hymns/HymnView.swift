@@ -43,9 +43,18 @@ struct HymnView: View {
     var body: some View {
         
         ZStack {
-            HTMLText(html: displayedHymn.content)
+            if let html = displayedHymn.html {
+                HTMLText(html: html)
+            } else if let markdown = displayedHymn.markdown {
+                ScrollView {
+                   Text(LocalizedStringKey(markdown))
+                        .bodyStyle()
+                        .textSelection(.enabled)
+                        .padding()
+                }
+            }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.automatic)
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -107,7 +116,7 @@ struct HymnView: View {
 struct OldHymnView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", content: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", book: .defaultBook, number: 1))
+            HymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", html: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", markdown: nil, book: .defaultBook, number: 1))
         }
         .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }

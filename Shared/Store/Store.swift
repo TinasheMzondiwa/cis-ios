@@ -47,7 +47,7 @@ public protocol Store {
 
 extension Hymn {
     func toStoreHymn() -> StoreHymn {
-        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, content: self.content!, book: self.book!, number: Int(self.number))
+        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, html: self.content, markdown: self.markdown ?? nil, book: self.book!, number: Int(self.number))
     }
 }
 

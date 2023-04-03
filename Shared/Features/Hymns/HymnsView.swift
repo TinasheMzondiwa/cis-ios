@@ -21,7 +21,8 @@ struct HymnsView: View {
         } else {
             return vm.hymnsFromSelectedBook.filter {
                 $0.title.localizedCaseInsensitiveContains(filterQuery) ||
-                $0.content.localizedCaseInsensitiveContains(filterQuery)
+                ($0.html ?? "").localizedCaseInsensitiveContains(filterQuery) ||
+                ($0.markdown ?? "").localizedCaseInsensitiveContains(filterQuery)
             }
         }
     }

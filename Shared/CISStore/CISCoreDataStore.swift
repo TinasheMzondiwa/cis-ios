@@ -270,11 +270,15 @@ extension CISCoreDataStore {
             hymn.title = hymnFromFile.title
             hymn.titleStr = hymnFromFile.title.titleStr
             hymn.number = Int16(hymnFromFile.number)
-            if hymnFromFile.content.contains(hymnFromFile.title) {
-                hymn.content = hymnFromFile.content
-            } else {
-                hymn.content = "<h3>\(hymnFromFile.title)</h3>\(hymnFromFile.content)"
+        
+            if let html = hymnFromFile.content {
+                if html.contains(hymnFromFile.title) {
+                    hymn.content = html
+                } else {
+                    hymn.content = "<h3>\(hymnFromFile.title)</h3>\(html)"
+                }
             }
+            hymn.markdown = hymnFromFile.markdown
             
             hymn.edited_content = hymn.content
             
@@ -306,7 +310,8 @@ extension CISCoreDataStore {
     private struct LocalHymn: Decodable {
         let title: String
         let number: Int
-        let content: String
+        let content: String?
+        let markdown: String?
     }
 }
 
