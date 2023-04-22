@@ -18,7 +18,9 @@ struct CollectionsView: View {
         if filterQuery.trimmed.isEmpty {
             return vm.allCollections
         } else {
-            return vm.allCollections.filter { $0.title.localizedCaseInsensitiveContains(filterQuery) || (($0.about?.localizedCaseInsensitiveContains(filterQuery)) != nil)
+            return vm.allCollections.filter {
+                $0.title.localizedCaseInsensitiveContains(filterQuery) ||
+                ($0.about ?? "" ).localizedCaseInsensitiveContains(filterQuery)
             }
         }
     }
@@ -27,13 +29,15 @@ struct CollectionsView: View {
     var body: some View {
         if (idiom == .phone) {
             NavigationView {
-                content
-                    .navigationTitle(navTitle)
-                    .toolbar {
-                        if !filteredCollections.isEmpty {
-                            EditButton()
+                EditModeContext {
+                    content
+                        .navigationTitle(navTitle)
+                        .toolbar {
+                            if !filteredCollections.isEmpty {
+                                EditButton()
+                            }
                         }
-                    }
+                }
             }
             .navigationViewStyle(StackNavigationViewStyle())
         } else {
@@ -55,7 +59,7 @@ struct CollectionsView: View {
     
     var content: some View {
         ZStack {
-            if filteredCollections.isEmpty {
+            if filteredCollections.isEmpty && filterQuery.isEmpty {
                 EmptyCollectionsView(caption: NSLocalizedString("Collections.Organise.Prompt", comment: "Empty prompt"))
             } else {
                 List {
@@ -74,6 +78,9 @@ struct CollectionsView: View {
                     }
                 }
                 .searchable(text: $filterQuery)
+                .onChange(of: filterQuery) { query in
+                    filterQuery = query
+                }
                 .resignKeyboardOnDragGesture()
             }
         }

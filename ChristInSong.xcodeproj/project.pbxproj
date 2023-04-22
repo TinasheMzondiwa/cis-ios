@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080518A429F48ABF00D9C95A /* EditModeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080518A329F48ABF00D9C95A /* EditModeContext.swift */; };
 		081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
@@ -138,6 +139,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		082E002425FDCFE100E163A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0844563D24CD793D00AE352F /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				0846454E25E79490003AE75A /* FocusTextField.swift */,
 				081801D725EA43D10053D295 /* CheckBoxView.swift */,
 				08A3366825FDB9A900852566 /* HUD.swift */,
+				080518A329F48ABF00D9C95A /* EditModeContext.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */,
 				67A174C2285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
 				08927E4524C402BF0035972C /* HymnalView.swift in Sources */,
+				080518A429F48ABF00D9C95A /* EditModeContext.swift in Sources */,
 				086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */,
 				0846453E25E787EA003AE75A /* Collection+CoreDataClass.swift in Sources */,
