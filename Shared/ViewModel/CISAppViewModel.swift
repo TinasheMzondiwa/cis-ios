@@ -91,6 +91,16 @@ final class CISAppViewModel: ObservableObject {
         return hymns?.first(where: {$0.number == hymn.number})
     }
     
+    func getNextOrPreviousHymn(to hymn: StoreHymn, swipeDirection: SwipeDirection) -> StoreHymn? {
+        let hymns = store.retrieveHymns(from: hymn.book)
+        switch swipeDirection {
+        case .forward:
+            return hymns?.first(where: {$0.number == hymn.number + 1})
+        case .backward:
+            return hymns?.first(where: {$0.number == hymn.number - 1})
+        }
+    }
+    
     func setSelectedHymn(to hymn: StoreHymn) {
         selectedHymn = hymn
     }
@@ -141,7 +151,8 @@ final class CISAppViewModel: ObservableObject {
         allCollections = fetchAllCollections()
     }
     
-    
-    // MARK: - Private
-    
+    enum SwipeDirection {
+        case forward
+        case backward
+    }
 }
