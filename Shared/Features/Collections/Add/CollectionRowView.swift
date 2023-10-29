@@ -20,7 +20,6 @@ struct CollectionRowView: View {
                 Text(item.title)
                     .headLineStyle(selected: selected ?? false)
                     .lineSpacing(4)
-                    .animation(.none)
                 if let about = item.about {
                     Text(about)
                         .footNoteStyle()
@@ -33,7 +32,6 @@ struct CollectionRowView: View {
             Spacer()
         }
         .padding([.top, .bottom], 8)
-        .animation(.easeIn)
     }
 }
 

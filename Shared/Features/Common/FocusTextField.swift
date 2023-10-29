@@ -17,11 +17,7 @@ struct FocusTextField: View {
         ZStack(alignment: .bottom) {
             TextField(hint, text: $text, onEditingChanged: { (editingChanged) in
                 withAnimation {
-                    if editingChanged {
-                        enabled = true
-                    } else {
-                        enabled = false
-                    }
+                    enabled = editingChanged
                 }
             })
             .lineLimit(1)
