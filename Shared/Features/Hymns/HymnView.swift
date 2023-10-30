@@ -28,6 +28,23 @@ struct HymnView: View {
         }
     }
     
+    private func swipeTo(direction: CISAppViewModel.SwipeDirection) {
+        var newHymn: StoreHymn?
+        switch direction {
+            
+        case .forward:
+            newHymn = vm.getNextOrPreviousHymn(to: displayedHymn, swipeDirection: .forward)
+        case .backward:
+            newHymn = vm.getNextOrPreviousHymn(to: displayedHymn, swipeDirection: .backward)
+        }
+        
+        if let newHymn {
+            displayedHymn = newHymn
+        } else {
+            currState = ("No more Hymns", .warning)
+        }
+    }
+    
     private func setSelectedBook(to book: StoreBook) {
         if let newHymn = vm.get(similarHymnTo: displayedHymn, from: book) {
             displayedBook = book
@@ -105,7 +122,18 @@ struct HymnView: View {
                 .foregroundColor(data.state == .info ? Color.primary : .white)
             }
         }
-    
+        .gesture(DragGesture(minimumDistance: 5, coordinateSpace: .local)
+            .onEnded({ value in
+                if value.translation.width < 0 {
+                    // Next
+                    swipeTo(direction: .forward)
+                }
+                
+                if value.translation.width > 0 {
+                    // Previous
+                    swipeTo(direction: .backward)
+                }
+            }))
     }
     
     func defaultTitle() -> String {
@@ -141,13 +169,13 @@ private struct HTMLText: UIViewRepresentable {
         </style>
     </HEAD>
     """
-        
+    
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.loadHTMLString(contentScalingSetting + html, baseURL: nil)
         return webView
     }
-
+    
     func updateUIView(_ uiView: WKWebView, context: Context) {
         uiView.loadHTMLString(contentScalingSetting + html, baseURL: nil)
     }
