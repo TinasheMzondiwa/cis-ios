@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,6 +65,7 @@
 		087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087473752986BD0B00167974 /* GoogleService-Info.plist */; };
 		087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087473752986BD0B00167974 /* GoogleService-Info.plist */; };
 		0874737B298749D200167974 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874737A298749D200167974 /* AlertState.swift */; };
+		0876892C2B4B2D9500D630BA /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0876892B2B4B2D9500D630BA /* MarkdownUI */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -236,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0876892C2B4B2D9500D630BA /* MarkdownUI in Frameworks */,
 				7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */,
 				084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */,
 			);
@@ -602,6 +604,9 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				0876892B2B4B2D9500D630BA /* MarkdownUI */,
+			);
 			productName = iOS;
 			productReference = 086C940224BE93BD008AFBE5 /* ChristInSong.app */;
 			productType = "com.apple.product-type.application";
@@ -672,6 +677,9 @@
 				Base,
 			);
 			mainGroup = 086C93F524BE93BC008AFBE5;
+			packageReferences = (
+				0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
 			productRefGroup = 086C940324BE93BD008AFBE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1217,6 +1225,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0876892B2B4B2D9500D630BA /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */ = {

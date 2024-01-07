@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WebKit
+import MarkdownUI
 
 struct HymnView: View {
     @EnvironmentObject var vm: CISAppViewModel
@@ -64,8 +65,7 @@ struct HymnView: View {
                 HTMLText(html: html)
             } else if let markdown = displayedHymn.markdown {
                 ScrollView {
-                   Text(LocalizedStringKey(markdown))
-                        .bodyStyle()
+                    Markdown(markdown)
                         .textSelection(.enabled)
                         .padding()
                 }
