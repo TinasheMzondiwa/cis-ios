@@ -66,6 +66,18 @@
 		087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087473752986BD0B00167974 /* GoogleService-Info.plist */; };
 		0874737B298749D200167974 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874737A298749D200167974 /* AlertState.swift */; };
 		0876892C2B4B2D9500D630BA /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0876892B2B4B2D9500D630BA /* MarkdownUI */; };
+		087689332B4B308F00D630BA /* tumbuka.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892D2B4B308F00D630BA /* tumbuka.json */; };
+		087689342B4B308F00D630BA /* tumbuka.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892D2B4B308F00D630BA /* tumbuka.json */; };
+		087689352B4B308F00D630BA /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892E2B4B308F00D630BA /* es.json */; };
+		087689362B4B308F00D630BA /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892E2B4B308F00D630BA /* es.json */; };
+		087689372B4B308F00D630BA /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892F2B4B308F00D630BA /* pt.json */; };
+		087689382B4B308F00D630BA /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892F2B4B308F00D630BA /* pt.json */; };
+		087689392B4B308F00D630BA /* sepedi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689302B4B308F00D630BA /* sepedi.json */; };
+		0876893A2B4B308F00D630BA /* sepedi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689302B4B308F00D630BA /* sepedi.json */; };
+		0876893B2B4B308F00D630BA /* kirundi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689312B4B308F00D630BA /* kirundi.json */; };
+		0876893C2B4B308F00D630BA /* kirundi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689312B4B308F00D630BA /* kirundi.json */; };
+		0876893D2B4B308F00D630BA /* ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689322B4B308F00D630BA /* ru.json */; };
+		0876893E2B4B308F00D630BA /* ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689322B4B308F00D630BA /* ru.json */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -182,6 +194,12 @@
 		087473502986BC3F00167974 /* dholuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dholuo.json; sourceTree = "<group>"; };
 		087473752986BD0B00167974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0874737A298749D200167974 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
+		0876892D2B4B308F00D630BA /* tumbuka.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tumbuka.json; sourceTree = "<group>"; };
+		0876892E2B4B308F00D630BA /* es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = es.json; sourceTree = "<group>"; };
+		0876892F2B4B308F00D630BA /* pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pt.json; sourceTree = "<group>"; };
+		087689302B4B308F00D630BA /* sepedi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sepedi.json; sourceTree = "<group>"; };
+		087689312B4B308F00D630BA /* kirundi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kirundi.json; sourceTree = "<group>"; };
+		087689322B4B308F00D630BA /* ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ru.json; sourceTree = "<group>"; };
 		08927D9224BEA5B60035972C /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		08927D9624BEAAD00035972C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
@@ -334,6 +352,12 @@
 		087473412986BC0100167974 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0876892E2B4B308F00D630BA /* es.json */,
+				087689312B4B308F00D630BA /* kirundi.json */,
+				0876892F2B4B308F00D630BA /* pt.json */,
+				087689322B4B308F00D630BA /* ru.json */,
+				087689302B4B308F00D630BA /* sepedi.json */,
+				0876892D2B4B308F00D630BA /* tumbuka.json */,
 				086ACA5929DA6C3B00F9AF45 /* kinyarwanda.json */,
 				1D1A914A29BFCA60003C3260 /* config.json */,
 				087473472986BC3F00167974 /* abagusii.json */,
@@ -696,7 +720,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087689372B4B308F00D630BA /* pt.json in Resources */,
 				08C0927625F7440A00845BA1 /* Localizable.strings in Resources */,
+				0876893B2B4B308F00D630BA /* kirundi.json in Resources */,
 				0874735D2986BC3F00167974 /* tswana.json in Resources */,
 				0874736D2986BC3F00167974 /* dholuo.json in Resources */,
 				087473592986BC3F00167974 /* sdah.json in Resources */,
@@ -705,8 +731,10 @@
 				087473552986BC3F00167974 /* shona.json in Resources */,
 				086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 				0874736B2986BC3F00167974 /* tonga.json in Resources */,
+				087689332B4B308F00D630BA /* tumbuka.json in Resources */,
 				1D1A914B29BFCA60003C3260 /* config.json in Resources */,
 				0874735B2986BC3F00167974 /* abagusii.json in Resources */,
+				0876893D2B4B308F00D630BA /* ru.json in Resources */,
 				087473672986BC3F00167974 /* gikuyu.json in Resources */,
 				087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */,
 				086ACA5A29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */,
@@ -715,7 +743,9 @@
 				087473652986BC3F00167974 /* ndebele.json in Resources */,
 				087473532986BC3F00167974 /* venda.json in Resources */,
 				087473692986BC3F00167974 /* english.json in Resources */,
+				087689392B4B308F00D630BA /* sepedi.json in Resources */,
 				087473512986BC3F00167974 /* sotho.json in Resources */,
+				087689352B4B308F00D630BA /* es.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,7 +753,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087689382B4B308F00D630BA /* pt.json in Resources */,
 				08C0927725F7440A00845BA1 /* Localizable.strings in Resources */,
+				0876893C2B4B308F00D630BA /* kirundi.json in Resources */,
 				0874735E2986BC3F00167974 /* tswana.json in Resources */,
 				0874736E2986BC3F00167974 /* dholuo.json in Resources */,
 				0874735A2986BC3F00167974 /* sdah.json in Resources */,
@@ -732,8 +764,10 @@
 				087473562986BC3F00167974 /* shona.json in Resources */,
 				086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 				0874736C2986BC3F00167974 /* tonga.json in Resources */,
+				087689342B4B308F00D630BA /* tumbuka.json in Resources */,
 				1D1A914C29BFCA60003C3260 /* config.json in Resources */,
 				0874735C2986BC3F00167974 /* abagusii.json in Resources */,
+				0876893E2B4B308F00D630BA /* ru.json in Resources */,
 				087473682986BC3F00167974 /* gikuyu.json in Resources */,
 				087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */,
 				086ACA5B29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */,
@@ -742,7 +776,9 @@
 				087473662986BC3F00167974 /* ndebele.json in Resources */,
 				087473542986BC3F00167974 /* venda.json in Resources */,
 				0874736A2986BC3F00167974 /* english.json in Resources */,
+				0876893A2B4B308F00D630BA /* sepedi.json in Resources */,
 				087473522986BC3F00167974 /* sotho.json in Resources */,
+				087689362B4B308F00D630BA /* es.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1043,16 +1079,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -1070,16 +1107,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
