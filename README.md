@@ -2,7 +2,7 @@
 
 **Christ In Song** is a collection of SDA venecular hymns available in multiple languages. 
 
-Written entirely in SwiftUi (beginner level). 
+Written entirely in SwiftUI (beginner level). 
 
 ## Screenshots
 <img src="art/1.png" width="20%" /><img src="art/2.png" width="20%" /><img src="art/3.png" width="20%" /><img src="art/4.png" width="20%" /><img src="art/5.png" width="20%" />
@@ -28,7 +28,7 @@ Contributions are most welcome in the form of Github issues and pull-requests.
 
 ## License
 
-    Copyright 2023 Tinashe Mzondiwa
+    Copyright 2024 Tinashe Mzondiwa
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
