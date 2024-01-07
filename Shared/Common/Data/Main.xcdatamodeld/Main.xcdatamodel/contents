@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E252" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Collection" representedClassName="Collection" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -12,13 +12,10 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="edited_content" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="markdown" optional="YES" attributeType="String"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="titleStr" optional="YES" attributeType="String"/>
         <relationship name="collection" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Collection" inverseName="hymns" inverseEntity="Collection"/>
     </entity>
-    <elements>
-        <element name="Collection" positionX="-63" positionY="27" width="128" height="104"/>
-        <element name="Hymn" positionX="-63" positionY="-18" width="128" height="149"/>
-    </elements>
 </model>

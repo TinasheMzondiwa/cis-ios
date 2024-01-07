@@ -134,7 +134,7 @@ extension StoreBook {
 extension StoreHymn {
     
     static func hymn(_ id: UUID = UUID(), number: Int = 1, book: String = .defaultBookKey) -> StoreHymn {
-        StoreHymn(id: id, title: "Dummy Title", titleStr: "Dummy Title", content: "a very long hymn", book: book, number: number)
+        StoreHymn(id: id, title: "Dummy Title", titleStr: "Dummy Title", html: "a very long hymn", markdown: nil, book: book, number: number)
     }
 }
 

@@ -14,8 +14,10 @@ public struct StoreHymn: Identifiable, Equatable {
     public let title: String
     /// Title of the Hymn with the number inverted
     public let titleStr: String
-    /// Content of the Hymn
-    public let content: String
+    /// Content of the Hymn in html
+    public let html: String?
+    /// Content of the Hymn in markdown
+    public let markdown: String?
     /// Modified version of thy hymn, defaults to content
     public let editedContent: String?
     /// Key to book to which the hymn belongs
@@ -23,11 +25,12 @@ public struct StoreHymn: Identifiable, Equatable {
     /// Hymn number
     public let number: Int
     
-    public init(id: UUID, title: String, titleStr: String, content: String, editedContent: String? = nil, book: String, number: Int) {
+    public init(id: UUID, title: String, titleStr: String, html: String?, markdown: String?, editedContent: String? = nil, book: String, number: Int) {
         self.id = id
         self.title = title
         self.titleStr = titleStr
-        self.content = content
+        self.html = html
+        self.markdown = markdown
         self.editedContent = editedContent
         self.book = book
         self.number = number
