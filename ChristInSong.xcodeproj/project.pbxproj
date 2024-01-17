@@ -174,7 +174,7 @@
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		086C93FD24BE93BD008AFBE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		086C940224BE93BD008AFBE5 /* Christ In Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Christ In Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		086C940224BE93BD008AFBE5 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChristInSong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		086C940524BE93BD008AFBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		086C940A24BE93BD008AFBE5 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristInSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086C940C24BE93BD008AFBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 		086C940324BE93BD008AFBE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				086C940224BE93BD008AFBE5 /* Christ In Song.app */,
+				086C940224BE93BD008AFBE5 /* ChristInSong.app */,
 				086C940A24BE93BD008AFBE5 /* ChristInSong.app */,
 				1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */,
 			);
@@ -635,7 +635,7 @@
 				0876892B2B4B2D9500D630BA /* MarkdownUI */,
 			);
 			productName = iOS;
-			productReference = 086C940224BE93BD008AFBE5 /* Christ In Song.app */;
+			productReference = 086C940224BE93BD008AFBE5 /* ChristInSong.app */;
 			productType = "com.apple.product-type.application";
 		};
 		086C940924BE93BD008AFBE5 /* macOS */ = {
