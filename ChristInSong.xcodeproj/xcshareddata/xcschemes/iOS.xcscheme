@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "086C940124BE93BD008AFBE5"
-               BuildableName = "ChristInSong.app"
+               BuildableName = "Christ In Song.app"
                BlueprintName = "iOS"
                ReferencedContainer = "container:ChristInSong.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "086C940124BE93BD008AFBE5"
-            BuildableName = "ChristInSong.app"
+            BuildableName = "Christ In Song.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:ChristInSong.xcodeproj">
          </BuildableReference>
@@ -88,7 +88,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "086C940124BE93BD008AFBE5"
-            BuildableName = "ChristInSong.app"
+            BuildableName = "Christ In Song.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:ChristInSong.xcodeproj">
          </BuildableReference>
@@ -105,7 +105,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "086C940124BE93BD008AFBE5"
-            BuildableName = "ChristInSong.app"
+            BuildableName = "Christ In Song.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:ChristInSong.xcodeproj">
          </BuildableReference>

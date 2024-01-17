@@ -13,6 +13,7 @@ enum SFSymbol: String, View {
     case bookCircle = "book.circle"
     case chevronBackward = "chevron.backward"
     case chevronDown = "chevron.down"
+    case chevronLeft = "chevron.left"
     case chevronRight = "chevron.right"
     case close = "xmark"
     case checkmark = "checkmark"
