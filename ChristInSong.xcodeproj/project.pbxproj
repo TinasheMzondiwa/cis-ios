@@ -174,7 +174,7 @@
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		086C93FD24BE93BD008AFBE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		086C940224BE93BD008AFBE5 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChristInSong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		086C940224BE93BD008AFBE5 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristInSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086C940524BE93BD008AFBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		086C940A24BE93BD008AFBE5 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristInSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086C940C24BE93BD008AFBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1096,7 +1096,7 @@
 				);
 				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
-				PRODUCT_NAME = "Christ In Song";
+				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -1125,7 +1125,7 @@
 				);
 				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
-				PRODUCT_NAME = "Christ In Song";
+				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
