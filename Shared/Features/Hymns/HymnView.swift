@@ -122,18 +122,15 @@ struct HymnView: View {
                 .foregroundColor(data.state == .info ? Color.primary : .white)
             }
         }
-        .gesture(DragGesture(minimumDistance: 5, coordinateSpace: .local)
-            .onEnded({ value in
-                if value.translation.width < 0 {
-                    // Next
-                    swipeTo(direction: .forward)
-                }
+        .overlay(
+            HStack {
+                FloatingActionButtonView(icon: SFSymbol.chevronLeft, size: 40, action: { swipeTo(direction: .backward)})
                 
-                if value.translation.width > 0 {
-                    // Previous
-                    swipeTo(direction: .backward)
-                }
-            }))
+                Spacer()
+                
+                FloatingActionButtonView(icon: SFSymbol.chevronRight, size: 40, action: { swipeTo(direction: .forward) })
+            }.padding()
+        )
     }
     
     func defaultTitle() -> String {
@@ -141,12 +138,9 @@ struct HymnView: View {
     }
 }
 
-struct OldHymnView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            HymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", html: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", markdown: nil, book: .defaultBook, number: 1))
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
+#Preview {
+    NavigationView {
+        HymnView( displayedHymn: .init(id: UUID(), title: "1. Watchman Blow The Gospel Trumpet", titleStr: "Watchman Blow The Gospel Trumpet", html: "<h1>1 Watchman Blow The Gospel Trumpet.</h1>\n<p>\nWatchman, blow the gospel trumpet,<br/>\nEvery  soul a warning give;<br/>\n Whosoever hears the message <br/>\nMay repent, and turn, and live.", markdown: nil, book: .defaultBook, number: 1))
     }
 }
 

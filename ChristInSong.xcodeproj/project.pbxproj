@@ -10,6 +10,7 @@
 		080518A429F48ABF00D9C95A /* EditModeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080518A329F48ABF00D9C95A /* EditModeContext.swift */; };
 		081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
+		081D97142B57D1FA00F44C4D /* FloatingActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */; };
 		082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
 		082E002625FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
 		0844563E24CD793D00AE352F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0844563D24CD793D00AE352F /* PendingView.swift */; };
@@ -156,6 +157,7 @@
 /* Begin PBXFileReference section */
 		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButtonView.swift; sourceTree = "<group>"; };
 		082E002425FDCFE100E163A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0844563D24CD793D00AE352F /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
 		0846450025E773F7003AE75A /* ChristInSong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChristInSong.entitlements; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				081801D725EA43D10053D295 /* CheckBoxView.swift */,
 				08A3366825FDB9A900852566 /* HUD.swift */,
 				080518A329F48ABF00D9C95A /* EditModeContext.swift */,
+				081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
 				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
 				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
+				081D97142B57D1FA00F44C4D /* FloatingActionButtonView.swift in Sources */,
 				1D45302D29BB811D00C95AC1 /* Store.swift in Sources */,
 				0846453725E77E18003AE75A /* ViewState.swift in Sources */,
 				0874737B298749D200167974 /* AlertState.swift in Sources */,
@@ -1079,17 +1083,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Christ In Song";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -1107,17 +1112,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Christ In Song";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
