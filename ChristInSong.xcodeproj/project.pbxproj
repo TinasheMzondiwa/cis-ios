@@ -102,6 +102,9 @@
 		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
 		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
 		08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */; };
+		08B0765B2BD2189000444D7B /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 08B0765A2BD2189000444D7B /* RichText */; };
+		08B0765D2BD21C3600444D7B /* PendingHymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0765C2BD21C3600444D7B /* PendingHymnView.swift */; };
+		08B076622BD22ADC00444D7B /* proxima_nova_soft_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08B076612BD22ADC00444D7B /* proxima_nova_soft_regular.ttf */; };
 		08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */; };
 		08C0927625F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
 		08C0927725F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
@@ -216,6 +219,8 @@
 		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
 		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionsView.swift; sourceTree = "<group>"; };
+		08B0765C2BD21C3600444D7B /* PendingHymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingHymnView.swift; sourceTree = "<group>"; };
+		08B076612BD22ADC00444D7B /* proxima_nova_soft_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = proxima_nova_soft_regular.ttf; sourceTree = "<group>"; };
 		08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyles.swift; sourceTree = "<group>"; };
 		08C0927825F7440A00845BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		08C0927E25F7479000845BA1 /* WebLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLink.swift; sourceTree = "<group>"; };
@@ -260,6 +265,7 @@
 				0876892C2B4B2D9500D630BA /* MarkdownUI in Frameworks */,
 				7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */,
 				084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */,
+				08B0765B2BD2189000444D7B /* RichText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +313,7 @@
 		086C93FA24BE93BC008AFBE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				08B076612BD22ADC00444D7B /* proxima_nova_soft_regular.ttf */,
 				1D45302529BB80CB00C95AC1 /* ViewModel */,
 				1D45302429BB80B600C95AC1 /* CISStore */,
 				1D45302329BB80A300C95AC1 /* Store */,
@@ -387,6 +394,7 @@
 				08927DA124BEAC110035972C /* Hymnals */,
 				08927D9224BEA5B60035972C /* HymnsView.swift */,
 				08927E3F24C3F8230035972C /* HymnView.swift */,
+				08B0765C2BD21C3600444D7B /* PendingHymnView.swift */,
 			);
 			path = Hymns;
 			sourceTree = "<group>";
@@ -633,6 +641,7 @@
 			name = iOS;
 			packageProductDependencies = (
 				0876892B2B4B2D9500D630BA /* MarkdownUI */,
+				08B0765A2BD2189000444D7B /* RichText */,
 			);
 			productName = iOS;
 			productReference = 086C940224BE93BD008AFBE5 /* ChristInSong.app */;
@@ -706,6 +715,7 @@
 			mainGroup = 086C93F524BE93BC008AFBE5;
 			packageReferences = (
 				0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				08B076592BD2189000444D7B /* XCRemoteSwiftPackageReference "RichText" */,
 			);
 			productRefGroup = 086C940324BE93BD008AFBE5 /* Products */;
 			projectDirPath = "";
@@ -739,6 +749,7 @@
 				0874735B2986BC3F00167974 /* abagusii.json in Resources */,
 				0876893D2B4B308F00D630BA /* ru.json in Resources */,
 				087473672986BC3F00167974 /* gikuyu.json in Resources */,
+				08B076622BD22ADC00444D7B /* proxima_nova_soft_regular.ttf in Resources */,
 				087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */,
 				086ACA5A29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */,
 				087473572986BC3F00167974 /* xitsonga.json in Resources */,
@@ -886,6 +897,7 @@
 				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
 				08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */,
 				1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */,
+				08B0765D2BD21C3600444D7B /* PendingHymnView.swift in Sources */,
 				1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */,
 				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
@@ -1083,7 +1095,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1094,7 +1106,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.2;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -1112,7 +1124,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1123,7 +1135,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.2;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -1279,6 +1291,14 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		08B076592BD2189000444D7B /* XCRemoteSwiftPackageReference "RichText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NuPlay/RichText.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1286,6 +1306,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		08B0765A2BD2189000444D7B /* RichText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08B076592BD2189000444D7B /* XCRemoteSwiftPackageReference "RichText" */;
+			productName = RichText;
 		};
 /* End XCSwiftPackageProductDependency section */
 
