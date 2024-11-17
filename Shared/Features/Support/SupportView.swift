@@ -65,7 +65,7 @@ struct SupportView: View {
                     Button(action: {
                         UIApplication.shared.open(URL(string: WebLink.paypal.rawValue)!)
                     }, label: {
-                        Text("Donate")
+                        Text(LocalizedStringKey("Donate"))
                             .foregroundColor(.accentColor)
                             .padding([.top, .bottom], 6)
                             .padding([.trailing, .leading], 12)
@@ -85,8 +85,7 @@ struct SupportView: View {
                         
                         ForEach(manager.donations, id: \.self) { product in
                             Button(action: {
-                                let success = manager.donate(for: product)
-                                debugPrint("State was: \(success)")
+                                let _ = manager.donate(for: product)
                             }, label: {
                                 Text(product.formattedPrice)
                                     .font(.system(.headline, design: .rounded))

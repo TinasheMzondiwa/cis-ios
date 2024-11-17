@@ -7,11 +7,13 @@
 
 import Foundation
 import CoreData
+import OSLog
 
 final class CISCoreDataStore: Store {
    
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
+    private let logger = Logger(subsystem: .subsystem, category: .categoryCoreDatastore)
     
     
     init() {
@@ -22,8 +24,7 @@ final class CISCoreDataStore: Store {
         do {
             try initializeStore()
         } catch {
-            //TODO: - Better handle the error
-            print("Error: Initialization \(error.localizedDescription)")
+            logger.error("store initialization failed: \(error.localizedDescription)")
         }
     }
     
@@ -40,7 +41,7 @@ final class CISCoreDataStore: Store {
             case let .success(booksFromFile):
                 books = booksFromFile.map { $0.toStoreBook(self?.getSelectedBookKey()) }
             default:
-                print("We couldn't fetch the books")
+                self?.logger.error("failed to retrieveAllBooks")
             }
         }
         
@@ -79,8 +80,7 @@ final class CISCoreDataStore: Store {
             }
             foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
         } catch {
-            //TODO: - Better handle the error
-             print("Error: Fetching hymns failed\(error.localizedDescription)")
+            logger.error("failed to retrieveHymns from \(book): \(error.localizedDescription)")
         }
         
         return foundHymns
@@ -108,8 +108,7 @@ final class CISCoreDataStore: Store {
             let fetchedCollections = try container.viewContext.fetch(request)
             collections = fetchedCollections.map { $0.toStoreCollection() }
         } catch {
-            //TODO: - Better handle the error
-            print("Error: Fetching Collections failed\(error.localizedDescription)")
+            logger.error("failed to retrieveAllCollections : \(error.localizedDescription)")
         }
         
         return collections
@@ -127,7 +126,7 @@ final class CISCoreDataStore: Store {
         do {
             try save()
         } catch {
-            //TODO: Better handle any save errors
+            logger.error("failed to createCollection with: \(title) : \(error.localizedDescription)")
         }
     }
     
@@ -139,8 +138,7 @@ final class CISCoreDataStore: Store {
         do {
             try save()
         } catch {
-            //TODO: - Better handle the error
-            print("Error: Couldn't delete the collection")
+            logger.error("failed to removeCollection: \(error.localizedDescription)")
         }
     }
     
@@ -150,7 +148,12 @@ final class CISCoreDataStore: Store {
         req.predicate = predicate
         req.fetchLimit = 1
         
-        return try? container.viewContext.fetch(req).first
+        do {
+            return try container.viewContext.fetch(req).first
+        } catch {
+            logger.error("failed to retrieveHymn: \(error.localizedDescription)")
+        }
+        return nil
     }
     
     func retrieveCollection(with id: UUID) -> Collection? {
@@ -159,7 +162,12 @@ final class CISCoreDataStore: Store {
         req.predicate = predicate
         req.fetchLimit = 1
         
-        return try? container.viewContext.fetch(req).first
+        do {
+            return try container.viewContext.fetch(req).first
+        } catch {
+            logger.error("failed to retrieveCollection: \(error.localizedDescription)")
+        }
+        return nil
     }
     
     func toggle(hymn: StoreHymn,in collection: StoreCollection) {
@@ -180,10 +188,8 @@ final class CISCoreDataStore: Store {
         do {
             try save()
         } catch {
-            // TODO: - Better handle any saving error
-            print("Error: Unable to toggle hymn in collection")
+            logger.error("failed to retrieveCollection: \(error.localizedDescription)")
         }
-        
     }
     
     private func getSelectedBookKey() -> String {
@@ -191,17 +197,16 @@ final class CISCoreDataStore: Store {
     }
     
     func removeHymn(with id: UUID, from collectionID: UUID) {
-        if let collection = retrieveCollection(with: collectionID) {
-            if let hymn = retrieveHymn(with: id) {
+        if let collection = retrieveCollection(with: collectionID),
+           let hymn = retrieveHymn(with: id) {
                 collection.removeFromHymns(hymn)
                 do  {
                     try save()
-                } catch {}
+                } catch {
+                    logger.error("failed to removeHymn: \(error.localizedDescription)")
+                }
             }
-        }
     }
-    
-    
 }
 
 extension CISCoreDataStore {
@@ -223,21 +228,18 @@ extension CISCoreDataStore {
         let booksLoader = FileLoader<[LocalBook]>(fromFile: "config")
         var allBooksFromFile: [LocalBook] = []
         
-        booksLoader.load { result in
+        booksLoader.load { [weak self] result in
             switch result {
             case let .success(books):
                 allBooksFromFile = books
             case let .failure(error):
-                //TODO: - Better handle the error
-                print("Error \(error.localizedDescription)")
+                self?.logger.error("firstTimeMigration failed with: \(error.localizedDescription)")
                 return
             }
         }
         
         guard !allBooksFromFile.isEmpty else {
-            //TODO: - Better handle the error
-            print("Error: Migration failed")
-            return
+            throw "firstTimeMigration failed: No books found in file"
         }
         
         for bookFromFile in allBooksFromFile {

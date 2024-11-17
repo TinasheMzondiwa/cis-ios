@@ -144,6 +144,7 @@
 		67A174C5285F1562006A5BC1 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174C4285F1562006A5BC1 /* Color+Extensions.swift */; };
 		67A174C6285F1562006A5BC1 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174C4285F1562006A5BC1 /* Color+Extensions.swift */; };
 		7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */; };
+		B47E3A812CEA6D840075DB29 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3A802CEA6D840075DB29 /* Logger+.swift */; };
 		F5947F82F4F1C75BA8501F80 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18412AEF9D7D003FF64B695B /* Pods_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -254,6 +255,7 @@
 		69B0579CBBCF659E463C333F /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		949D2313131E8C41E56BCA10 /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B1F48F3EE68CB913F921E0A8 /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		B47E3A802CEA6D840075DB29 /* Logger+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 		B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -461,6 +463,7 @@
 		08927DB024BEC0160035972C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B47E3A7F2CEA6D6A0075DB29 /* Logging */,
 				08C0928525F74E7600845BA1 /* Navigation */,
 				08927D9924BEAAE80035972C /* Support */,
 				08927D9124BEA58A0035972C /* Hymns */,
@@ -620,6 +623,14 @@
 				69B0579CBBCF659E463C333F /* Pods-macOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B47E3A7F2CEA6D6A0075DB29 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				B47E3A802CEA6D840075DB29 /* Logger+.swift */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -900,6 +911,7 @@
 				08B0765D2BD21C3600444D7B /* PendingHymnView.swift in Sources */,
 				1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */,
 				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
+				B47E3A812CEA6D840075DB29 /* Logger+.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
 				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
 				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,

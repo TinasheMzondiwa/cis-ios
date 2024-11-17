@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 /// FileLoader is reads the contents of a file,  as type `T`, where T is Decodable
 class FileLoader<T> where T: Decodable {
@@ -14,6 +15,7 @@ class FileLoader<T> where T: Decodable {
     private let bundle: Bundle
     
     private let decoder = JSONDecoder()
+    private let logger = Logger(subsystem: .subsystem, category: .categoryFileloader)
     
     init(fromFile fileName: String, withExtension fileExt: String = "json", bundle: Bundle = .main){
         self.fileName = fileName
@@ -37,6 +39,7 @@ class FileLoader<T> where T: Decodable {
             let information = try decoder.decode(T.self, from: data)
             completion(.success(information))
         } catch {
+            logger.error("loading/decoding failed: \(error.localizedDescription)")
             completion(.failure(.corruptedFile))
         }
     }
