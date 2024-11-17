@@ -67,6 +67,9 @@ struct HymnView: View {
                     RichText(html: html)
                         .fontType(.customName("Proxima"))
                         .customCSS("""
+                            :root {
+                                font: -apple-system-body;
+                            }
                             @font-face {
                                 font-family: 'Proxima';
                                 src: url("proxima_nova_soft_regular.ttf") format('truetype');
