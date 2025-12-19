@@ -35,11 +35,11 @@ struct FloatingActionButtonView: View {
                 icon
                     .font(.system(size: size / 2))
                     .foregroundColor(foregroundColor)
+                    .padding(6)
             }
-            .frame(width: size, height: size)
-            .background(backgroundColor)
-            .cornerRadius(30)
-            .shadow(radius: 10)
+            .buttonStyle(.glassProminent)
+            .tint(backgroundColor)
+            .clipShape(Circle())
         }
     }
 }

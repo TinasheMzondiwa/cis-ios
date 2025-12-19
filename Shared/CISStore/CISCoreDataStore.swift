@@ -331,4 +331,5 @@ extension String {
     static let defaultBook = "english"
 }
 
-extension String: LocalizedError {}
+extension String: @retroactive Error {}
+extension String: @retroactive LocalizedError {}

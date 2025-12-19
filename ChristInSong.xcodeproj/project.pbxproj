@@ -14,6 +14,8 @@
 		081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
 		081BE5FE2EF47E4F00EDC921 /* icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* icibemba.json */; };
 		081BE5FF2EF47E4F00EDC921 /* icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* icibemba.json */; };
+		081BE6012EF48C0900EDC921 /* twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* twi.json */; };
+		081BE6022EF48C0900EDC921 /* twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* twi.json */; };
 		081D97142B57D1FA00F44C4D /* FloatingActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */; };
 		082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
 		082E002625FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
@@ -27,6 +29,8 @@
 		0846454F25E79490003AE75A /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454E25E79490003AE75A /* FocusTextField.swift */; };
 		084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084BDAA625FD9CF8002090CD /* StoreKit.framework */; };
 		084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084BDAA825FD9DAA002090CD /* StoreManager.swift */; };
+		085675462EF49C4800C1DC2A /* dg.json in Resources */ = {isa = PBXBuildFile; fileRef = 085675452EF49C4800C1DC2A /* dg.json */; };
+		085675472EF49C4800C1DC2A /* dg.json in Resources */ = {isa = PBXBuildFile; fileRef = 085675452EF49C4800C1DC2A /* dg.json */; };
 		08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		086ACA5A29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */ = {isa = PBXBuildFile; fileRef = 086ACA5929DA6C3B00F9AF45 /* kinyarwanda.json */; };
@@ -166,6 +170,7 @@
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		081BE5FD2EF47E4F00EDC921 /* icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = icibemba.json; sourceTree = "<group>"; };
+		081BE6002EF48C0900EDC921 /* twi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = twi.json; sourceTree = "<group>"; };
 		081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButtonView.swift; sourceTree = "<group>"; };
 		082E002425FDCFE100E163A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0844563D24CD793D00AE352F /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
@@ -178,6 +183,7 @@
 		0846454E25E79490003AE75A /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
 		084BDAA625FD9CF8002090CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		084BDAA825FD9DAA002090CD /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		085675452EF49C4800C1DC2A /* dg.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dg.json; sourceTree = "<group>"; };
 		08624FA024DBA67E00AF2904 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		086ACA5929DA6C3B00F9AF45 /* kinyarwanda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kinyarwanda.json; sourceTree = "<group>"; };
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
@@ -368,6 +374,8 @@
 		087473412986BC0100167974 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				085675452EF49C4800C1DC2A /* dg.json */,
+				081BE6002EF48C0900EDC921 /* twi.json */,
 				081BE5FD2EF47E4F00EDC921 /* icibemba.json */,
 				0876892E2B4B308F00D630BA /* es.json */,
 				087689312B4B308F00D630BA /* kirundi.json */,
@@ -749,6 +757,7 @@
 				087473592986BC3F00167974 /* sdah.json in Resources */,
 				0874735F2986BC3F00167974 /* swahili.json in Resources */,
 				087473632986BC3F00167974 /* xhosa.json in Resources */,
+				081BE6022EF48C0900EDC921 /* twi.json in Resources */,
 				087473552986BC3F00167974 /* shona.json in Resources */,
 				086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 				0874736B2986BC3F00167974 /* tonga.json in Resources */,
@@ -759,6 +768,7 @@
 				0876893D2B4B308F00D630BA /* ru.json in Resources */,
 				087473672986BC3F00167974 /* gikuyu.json in Resources */,
 				08B076622BD22ADC00444D7B /* proxima_nova_soft_regular.ttf in Resources */,
+				085675462EF49C4800C1DC2A /* dg.json in Resources */,
 				087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */,
 				086ACA5A29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */,
 				081BE5FE2EF47E4F00EDC921 /* icibemba.json in Resources */,
@@ -790,10 +800,12 @@
 				086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */,
 				0874736C2986BC3F00167974 /* tonga.json in Resources */,
 				081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */,
+				081BE6012EF48C0900EDC921 /* twi.json in Resources */,
 				087689342B4B308F00D630BA /* tumbuka.json in Resources */,
 				1D1A914C29BFCA60003C3260 /* config.json in Resources */,
 				0874735C2986BC3F00167974 /* abagusii.json in Resources */,
 				0876893E2B4B308F00D630BA /* ru.json in Resources */,
+				085675472EF49C4800C1DC2A /* dg.json in Resources */,
 				087473682986BC3F00167974 /* gikuyu.json in Resources */,
 				087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */,
 				086ACA5B29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */,
@@ -1107,18 +1119,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Christ In Song";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -1136,18 +1148,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Christ In Song";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;

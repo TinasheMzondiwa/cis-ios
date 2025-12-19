@@ -30,9 +30,7 @@ struct HymnsView: View {
     private var hymnalsButton: some View {
         Button(action: { vm.toggleBookSelectionSheet()}) {
             SFSymbol.bookCircle
-                .imageScale(.large)
                 .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
-                .padding()
         }
     }
     
@@ -82,8 +80,8 @@ struct HymnsView: View {
         }
         .navigationTitle(vm.selectedBook?.title ?? "")
         .searchable(text: $filterQuery)
-        .onChange(of: filterQuery) { query in
-            filterQuery = query
+        .onChange(of: filterQuery) { old, new in
+            filterQuery = new
         }
         .resignKeyboardOnDragGesture()
         .sheet(isPresented: $vm.bookSelectionShown) {
@@ -98,10 +96,11 @@ struct HymnsView: View {
     private var iOSContent: some View {
         content
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
                     sortButton
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                
+                ToolbarItem(placement: .topBarTrailing) {
                     hymnalsButton
                 }
             }

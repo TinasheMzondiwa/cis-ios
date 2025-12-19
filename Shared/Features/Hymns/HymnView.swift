@@ -91,23 +91,18 @@ struct HymnView: View {
                 }
             }
         }
-        .navigationBarTitleDisplayMode(.automatic)
-        .navigationBarBackButtonHidden()
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                HStack {
-                    Button(action: {
-                        withAnimation {
-                            dismiss()
-                        }
-                    }, label: {
-                        SFSymbol.chevronBackward
-                    })
-                    
-                    Text(displayedBook?.title ?? defaultTitle())
-                        .font(.headline)
-                }
+            
+            ToolbarSpacer(.flexible)
+            
+            ToolbarItem(placement: .title) {
+                Text(displayedBook?.title ?? defaultTitle())
+                    .font(.headline)
+                    .padding()
+                    .glassEffect()
             }
+            
+            ToolbarSpacer(.flexible)
             
             ToolbarItemGroup {
                 Button(action: { vm.toggleCollectionSheetVisibility() }) {

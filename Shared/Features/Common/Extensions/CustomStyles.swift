@@ -20,7 +20,5 @@ struct SfSymbolModifier: ViewModifier {
             .imageScale(.small)
             .foregroundColor(.primary)
             .padding(.all, 10)
-            .background(Color.gray.opacity(0.1))
-            .clipShape(Circle())
     }
 }

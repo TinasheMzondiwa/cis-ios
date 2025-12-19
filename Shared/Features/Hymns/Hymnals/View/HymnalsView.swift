@@ -24,8 +24,7 @@ struct HymnalsView: View {
                         Button(action: {
                             action(book)
                         }, label: {
-                            HymnalView(book: book,
-                                       index: books.firstIndex(of: book) ?? 0)
+                            HymnalView(book: book, index: books.firstIndex(of: book) ?? 0)
                         })
                     }
                 }
