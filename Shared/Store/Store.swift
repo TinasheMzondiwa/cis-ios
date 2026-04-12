@@ -47,7 +47,12 @@ public protocol Store {
 
 extension Hymn {
     func toStoreHymn() -> StoreHymn {
-        StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, html: self.content, markdown: self.markdown ?? nil, book: self.book!, number: Int(self.number))
+        var storeLyrics: [StoreLyric] = []
+        if let data = self.content?.data(using: .utf8) {
+            storeLyrics = (try? JSONDecoder().decode([StoreLyric].self, from: data)) ?? []
+        }
+        
+        return StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, lyrics: storeLyrics, book: self.book!, number: Int(self.number))
     }
 }
 

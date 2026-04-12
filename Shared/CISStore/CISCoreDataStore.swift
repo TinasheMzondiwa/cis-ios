@@ -271,16 +271,10 @@ extension CISCoreDataStore {
             hymn.titleStr = hymnFromFile.title.titleStr
             hymn.number = Int16(hymnFromFile.number)
         
-            if let html = hymnFromFile.content {
-                if html.contains(hymnFromFile.title) {
-                    hymn.content = html
-                } else {
-                    hymn.content = "<h3>\(hymnFromFile.title)</h3>\(html)"
-                }
+            if let lyricsData = try? JSONEncoder().encode(hymnFromFile.lyrics),
+               let lyricsString = String(data: lyricsData, encoding: .utf8) {
+                hymn.content = lyricsString
             }
-            hymn.markdown = hymnFromFile.markdown
-            
-            hymn.edited_content = hymn.content
             
             try save()
         }
@@ -289,7 +283,11 @@ extension CISCoreDataStore {
     }
     
     private func save() throws {
-        try container.viewContext.save()
+        do {
+            try container.viewContext.save()
+        } catch {
+            print("Failure saving context: \(error)")
+        }
     }
     
     // MARK: - Private properties
@@ -310,8 +308,7 @@ extension CISCoreDataStore {
     private struct LocalHymn: Decodable {
         let title: String
         let number: Int
-        let content: String?
-        let markdown: String?
+        let lyrics: [StoreLyric]
     }
 }
 

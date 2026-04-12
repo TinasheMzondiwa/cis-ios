@@ -62,33 +62,35 @@ struct HymnView: View {
     var body: some View {
         
         ZStack {
-            if let html = displayedHymn.html {
-                ScrollView {
-                    RichText(html: html)
-                        .fontType(.customName("Proxima"))
-                        .customCSS("""
-                            @font-face {
-                                font-family: 'Proxima';
-                                src: url("proxima_nova_soft_regular.ttf") format('truetype');
-                            }
-                        
-                            body {
-                                font-size: 1.2rem;
-                                padding: 2rem;
-                            }
-                        """)
-                        .placeholder {
-                            PendingHymnView(title: displayedHymn.title)
-                        }
-                        .padding()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .center) {
+                        Text(displayedHymn.number.formatted())
+                        Text(displayedHymn.title)
+                    }
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .padding(.bottom, 8)
+                    
+                    
+                    VStack(spacing: 20) {
+                       ForEach(displayedHymn.lyrics) { lyric in
+                           if lyric.type == "refrain" {
+                               ChorusUiView(lines: lyric.lines)
+                           } else {
+                               VerseUIView(
+                                   index: lyric.index ?? 0,
+                                   lines: lyric.lines
+                               )
+                           }
+                       }
+                   }
+                    
                 }
-                
-            } else if let markdown = displayedHymn.markdown {
-                ScrollView {
-                    Markdown(markdown)
-                        .textSelection(.enabled)
-                        .padding()
-                }
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .toolbar {

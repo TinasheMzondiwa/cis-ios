@@ -1,0 +1,873 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild build -workspace ChristInSong.xcworkspace -scheme iOS -sdk iphonesimulator
+
+Build settings from command line:
+    SDKROOT = iphonesimulator26.4
+
+2026-04-12 21:05:36.369 xcodebuild[98397:6108022]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2026-04-12 21:05:36.370 xcodebuild[98397:6107975] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2026-04-12 21:05:36.370 xcodebuild[98397:6108022]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2026-04-12 21:05:36.416 xcodebuild[98397:6107975] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+Resolve Package Graph
+
+
+Resolved source packages:
+  cmark-gfm: https://github.com/swiftlang/swift-cmark @ 0.7.1
+  swift-markdown-ui: https://github.com/gonzalezreal/swift-markdown-ui @ 2.4.1
+  RichText: https://github.com/NuPlay/RichText.git @ 2.7.0
+  NetworkImage: https://github.com/gonzalezreal/NetworkImage @ 6.0.1
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
+{ platform:iOS Simulator, arch:arm64, id:78E53135-5022-425E-9B94-C44CD98D1B28, OS:26.0, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:249B3C31-8D90-454E-966B-723BCD85284E, OS:26.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:9BD46575-A9F0-4886-94B2-49E8983DCFB2, OS:26.2, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:FD209D1C-B7C0-4431-B574-26A0784A5659, OS:26.4, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:1CC0709C-338E-497B-AAD7-E80F8F696B5B, OS:26.0, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:7169D9B6-75AD-40F6-A4D2-9CF558B37881, OS:26.1, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:E2DDCBD1-4FDE-4888-AD37-8E4A53FBA004, OS:26.2, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:F77A6C32-DB99-40F8-A822-48804D129D09, OS:26.4, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:721E1F24-0953-4E8E-B7D9-3849E227B351, OS:26.0, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:9DA42C03-CBB1-4A32-8928-FF03597672EF, OS:26.1, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:0BBEE322-267C-4B5A-870E-94178472B359, OS:26.2, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:163A877A-3C91-4197-BEFA-4B990E0843AC, OS:26.4, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:FD67144C-AE36-425D-BB7D-2C7ACAD9CDAD, OS:26.0, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:29963509-1A14-4747-8227-DAF05C5A86D2, OS:26.0, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:FB72AC82-7088-4F5C-99C0-096D5DBCF22A, OS:26.1, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:C41C778D-4FEA-449A-A6EB-DEA2AA18A283, OS:26.2, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:C19580DE-FAE0-43CC-81FD-9F7FDCDF961F, OS:26.4, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:D065B0E3-EF2D-4036-9B2C-EC0B7D406C37, OS:26.0, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:FBE4F07F-ED04-438B-9E6B-281C9F1A25DB, OS:26.0, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:8C45DEC0-014C-4973-B129-036AAE865728, OS:26.1, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:EC73B67E-2742-4F8E-958E-A4F7FFCB0EF6, OS:26.2, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:EBF10454-3F9C-4D2A-A849-652CE08F51AB, OS:26.4, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:D05C039E-323F-4668-A02E-248D13304EE3, OS:26.0, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:1DC3EFCB-6D75-4EA2-87AC-EB6F45BD40AD, OS:26.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:6E51CBAA-4354-4304-9BDB-9440439525CE, OS:26.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:E18BE753-7FD0-4E25-9406-752565C6CDF0, OS:26.4, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:A19D1A06-B5B2-4E7D-9E64-B8281B848F2E, OS:26.0, name:iPhone 16 }
+{ platform:iOS Simulator, arch:arm64, id:9E636170-F084-4343-B538-81EF34F35488, OS:26.0, name:iPhone 16 Plus }
+{ platform:iOS Simulator, arch:arm64, id:831045BB-5994-42B0-A7DF-FA70BDFEFC5C, OS:26.0, name:iPhone 16 Pro }
+{ platform:iOS Simulator, arch:arm64, id:2BA2654F-8A7E-4950-93A3-B7A7370362B5, OS:26.0, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:365074B6-58BA-46DA-A2C5-4F174B90F722, OS:26.0, name:iPhone 16e }
+{ platform:iOS Simulator, arch:arm64, id:FD4185B4-DDB9-49E9-9001-2C59B8EC46FD, OS:26.1, name:iPhone 16e }
+{ platform:iOS Simulator, arch:arm64, id:37E2FBAA-E909-45F3-9C8B-1FED0338EF42, OS:26.2, name:iPhone 16e }
+{ platform:iOS Simulator, arch:arm64, id:3D55FD08-E284-43B7-ADC8-A7878BB43A31, OS:26.0, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:31436A8B-1145-4400-8D45-0086B2776AEA, OS:26.1, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:07526691-5816-498B-9232-783F9CA14B08, OS:26.2, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:CFBAB4E3-3FF4-4369-8507-344C1C35ECC3, OS:26.4, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:2013FBF2-1403-4D2E-8905-F92FE9328016, OS:26.0, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:E549BEF8-F7E1-42BF-B03C-64319A15E333, OS:26.1, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:9DB1E214-7F1F-4615-8432-002D109B91A8, OS:26.2, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:E3E6A049-C630-4768-AA0F-D29752DA5E95, OS:26.4, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:5F4FB279-F6DD-4C75-A620-C649003A18F6, OS:26.0, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:13A9463F-B83C-4BF0-A15A-37F49254683A, OS:26.1, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:B8372A09-2892-49B1-AAB1-3AECDDAF971F, OS:26.2, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:FB0FD1D7-4FC6-4CB2-A9C9-4A2F4B5BBCB7, OS:26.4, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:066E4B4A-5FDD-4A3A-8EFA-A5FC47297B4D, OS:26.4, name:iPhone 17e }
+{ platform:iOS Simulator, arch:arm64, id:B64A62F8-0C7C-46E3-84D1-EAA19D01EB88, OS:26.0, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:5B41C442-41BC-4690-ADF8-832C3DE2BAE9, OS:26.1, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:526AAD83-FD43-4572-8D61-A2AC825FFBC4, OS:26.2, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:A65F8FFA-8FA8-4D39-83B5-5FA18A06CC3D, OS:26.4, name:iPhone Air }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:00006030-001A09123452001C, name:My Mac }
+{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
+{ platform:iOS, arch:arm64, id:00008120-001671503E00C01E, name:Tinashe’s iPhone 14 }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (12 targets)
+    Target 'iOS' in project 'ChristInSong'
+        ➜ Implicit dependency on target 'Pods-iOS' in project 'Pods' via file 'Pods_iOS.framework' in build phase 'Link Binary'
+        ➜ Explicit dependency on target 'MarkdownUI' in project 'swift-markdown-ui'
+        ➜ Explicit dependency on target 'RichText' in project 'RichText'
+    Target 'RichText' in project 'RichText'
+        ➜ Explicit dependency on target 'RichText' in project 'RichText'
+    Target 'RichText' in project 'RichText' (no dependencies)
+    Target 'MarkdownUI' in project 'swift-markdown-ui'
+        ➜ Explicit dependency on target 'MarkdownUI' in project 'swift-markdown-ui'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'NetworkImage' in project 'NetworkImage'
+    Target 'MarkdownUI' in project 'swift-markdown-ui'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'NetworkImage' in project 'NetworkImage'
+    Target 'NetworkImage' in project 'NetworkImage'
+        ➜ Explicit dependency on target 'NetworkImage' in project 'NetworkImage'
+    Target 'NetworkImage' in project 'NetworkImage' (no dependencies)
+    Target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+    Target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+    Target 'cmark-gfm' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+    Target 'cmark-gfm' in project 'cmark-gfm' (no dependencies)
+    Target 'Pods-iOS' in project 'Pods' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+SwiftDriver iOS normal arm64 com.apple.xcode.tools.swift.compiler (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ChristInSong -Onone @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/iOS-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/iOS_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-generated-files.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-own-target-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/ChristInSong-e0f91768ab77e6bb62a51db07193e7a8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-project-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/src/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/extensions/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources-normal/arm64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/arm64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong-Swift.h -working-directory /Users/tinashe/Dev/FaithUnfeigned/cis-ios -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver iOS normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ChristInSong -Onone @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/iOS-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/iOS_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-generated-files.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-own-target-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/ChristInSong-e0f91768ab77e6bb62a51db07193e7a8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-project-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/src/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/extensions/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources-normal/x86_64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/x86_64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong-Swift.h -working-directory /Users/tinashe/Dev/FaithUnfeigned/cis-ios -experimental-emit-module-separately -disable-cmo
+
+CompileAssetCatalogVariant thinned /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Assets.xcassets (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Assets.xcassets --compile /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 26.0 --platform iphonesimulator
+CoreSVG has logged an error. Set environment variable "CORESVG_VERBOSE" to learn more.
+/* com.apple.actool.document.notices */
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Assets.xcassets:./AppIcon.appiconset/[][ipad][76x76][][][1x][][][][]: notice: 76x76@1x app icons only apply to iPad apps targeting releases of iOS prior to 10.0.
+/* com.apple.actool.compilation-results */
+/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_generated_info.plist_thinned
+/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_output/thinned/AppIcon60x60@2x.png
+/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_output/thinned/AppIcon76x76@2x~ipad.png
+/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_inttypes-8CVQLZPGYRAD4R6KQKNXS6VAV.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-E2QPE6FQHIVSKMI41L5EDN6TI.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ ChristInSong (in target 'iOS' from project 'ChristInSong')
+
+EmitSwiftModule normal arm64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:37:33: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+    @Published var donations = [SKProduct]()
+                                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:47:37: warning: 'SKProductsRequest' was deprecated in iOS 18.0: Use Product.products(for:).
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+                                    ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:47:77: warning: 'SKProductsResponse' was deprecated in iOS 18.0: Get products using Product.products(for:).
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+                                                                            ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:55:30: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+    func donate(for product: SKProduct) -> Bool {
+                             ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:31:49: warning: 'SKProductsRequestDelegate' was deprecated in iOS 18.0: Get products using Product.products(for:).
+class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
+                                                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:66:11: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+extension SKProduct {
+          ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:80:32: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+                               ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:80:83: warning: 'SKPaymentTransaction' was deprecated in iOS 18.0: Use PurchaseResult from Product.purchase(confirmIn:options:).
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+                                                                                  ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:75:25: warning: 'SKPaymentTransactionObserver' was deprecated in iOS 18.0: Use StoreKit 2 Transaction APIs.
+extension StoreManager: SKPaymentTransactionObserver {
+                        ^
+
+SwiftCompile normal arm64 Compiling\ Store.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/Store.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/Store.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal arm64 Compiling\ CollectionItemView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionItemView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionItemView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal arm64 Compiling\ HymnView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal arm64 Compiling\ CISAppViewModel.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ViewModel/CISAppViewModel.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ViewModel/CISAppViewModel.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal arm64 Compiling\ AddToCollectionView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/AddToCollectionView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/AddToCollectionView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal arm64 Compiling\ HymnsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnsView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal arm64 Compiling\ CollectionsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionsView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionsView.swift:81:18: warning: 'onChange(of:perform:)' was deprecated in iOS 17.0: Use `onChange` with a two or zero parameter action closure instead.
+                .onChange(of: filterQuery) { query in
+                 ^
+
+SwiftCompile normal arm64 Compiling\ CollectionHymnsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionHymnsView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionHymnsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal arm64 Compiling\ PendingHymnView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/PendingHymnView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/PendingHymnView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Darwin-72XE08YP77L55GN8KDE28S8KD.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling Store.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 Compiling\ CISCoreDataStore.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/CISStore/CISCoreDataStore.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal arm64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/CISStore/CISCoreDataStore.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling PendingHymnView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/simd-4L127DU54L1V3D3JXPIDS5TFK.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling CollectionItemView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal arm64 Compiling CollectionHymnsView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal arm64 Compiling CollectionsView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AddToCollectionView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal arm64 Compiling CISAppViewModel.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal arm64 Compiling HymnsView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for ChristInSong (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriver\ Compilation\ Requirements iOS normal arm64 com.apple.xcode.tools.swift.compiler (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ChristInSong -Onone @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/iOS-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/iOS_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-generated-files.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-own-target-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/ChristInSong-e0f91768ab77e6bb62a51db07193e7a8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-project-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/src/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/extensions/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources-normal/arm64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/arm64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong-Swift.h -working-directory /Users/tinashe/Dev/FaithUnfeigned/cis-ios -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftmodule (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftmodule /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.abi.json (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.abi.json /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftdoc (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftdoc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftsourceinfo (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftsourceinfo /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MachO-98QQ8XYJ0VKV8XJUOV7F98KSN.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ObjectiveC-DVJZ2UHALZ3D973A6PK9D0BXM.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling HymnView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Spatial-52PFCGG71DH5JWKCLRUBGVIRP.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling CISCoreDataStore.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriver\ Compilation iOS normal arm64 com.apple.xcode.tools.swift.compiler (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ChristInSong -Onone @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/iOS-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/iOS_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-generated-files.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-own-target-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/ChristInSong-e0f91768ab77e6bb62a51db07193e7a8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-project-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/src/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/extensions/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources-normal/arm64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/arm64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong-Swift.h -working-directory /Users/tinashe/Dev/FaithUnfeigned/cis-ios -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_object-CRGX7DIBY84F63XLGNJ3Z6145.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_workgroup-5KA83R0TKFYR6582BUAN601AZ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Dispatch-2LARZHW8KGOMAPEF05X1CMVF7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/XPC-8K7ZLUNLB1YMYZZ803P69PYRP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreFoundation-BLVEPL1RZCK1XL8KYB18N3XLI.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/dnssd-2YMYQYZ28X6TMASKM1ZGR5SIA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os-1UZ58HVR89W8TWVORMZS4URN3.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Security-4SA1B2OHHYK0Q0IH36RWJ0U39.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CFNetwork-78DMTM751F2GPXGFKN9DW64KR.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreGraphics-63X7J0DC3BBUQ7GWOWHZJL5R0.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Foundation-A1JDQN93AB3DUDBB3LGW7CEGY.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ImageIO-2M1R14NFUPIFDY0V2MSHJSBL.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreText-3K8MCVG3Y2ZXD3Z7LKQ07S8VQ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/IOSurface-C8IY9WYJR3X0JRQ0ELZF18ZMU.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/LocalAuthentication-DOS97WCUTQV0TPTV6I6PMB0CK.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/FileProvider-5QDLXHHPRPO7P0Y5Z3E8NJ8KG.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Symbols-95MW645CWSAD61XMHKVAJ5PXF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIUtilities-2XXN5RABNWI90TX587ON9P1L9.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OSLog-DVJ3GOKYJMTQ536J7Z4BTT16G.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OpenGLES-93QC1DLDW3Z6M5T18EFUPKNL5.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/BackgroundAssets-33DX1Y5ZN7E4E7RGIC0YG7PFB.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Accessibility-9RUXPWIUL5F6UM3Y8B02C2OA1.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreData-9MJVQ8UX6K3PN9MWTX1ZU3BIF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-B5L2EMM117KF6LHMAAHF1D6ZY.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Network-FAV5UH4NA7Z2XCQ75PA3CY6K.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreTransferable-33OBLYOYSP4AQG6JCHFCGUE4B.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DataDetection-4DBE57BS3082AH3TFCJ0H3HP6.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UserNotifications-7VQVD363LB04N23ZVQ9XPW7FF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Metal-6QFPVK7B4VZT55QQA42D0HM8B.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreVideo-TDUWE4KCR7TIPXEL5HW7WEIQ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreImage-3BJW57KQGX1M1JOVSQPUMB7B0.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/QuartzCore-D6BIUJ2Z51L1PONCQ9NF24TQC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUICore-VT811JNILJAXXTVQJCP0MMAZ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIKit-ROLN9F9ZPRT9XXVHBOSW9LVW.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUI-32A6TGQ4S1O1ZHLCTID7GFJIR.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/WebKit-1WPOAPJABJNJALFZA2W41ZFLN.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/StoreKit-6QC2JVA74ETN00ANCV5H3T2T3.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AuthenticationServices-BHEJIAXSUSTLRAP4QIWDTQZC1.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MessageUI-DCDJZFUMALZYYI0I6NCZE3YP0.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SafariServices-9I9NL7J01VINUNJE0HA3SFKA5.pcm
+
+SwiftEmitModule normal x86_64 Emitting\ module\ for\ ChristInSong (in target 'iOS' from project 'ChristInSong')
+
+EmitSwiftModule normal x86_64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:37:33: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+    @Published var donations = [SKProduct]()
+                                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:47:37: warning: 'SKProductsRequest' was deprecated in iOS 18.0: Use Product.products(for:).
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+                                    ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:47:77: warning: 'SKProductsResponse' was deprecated in iOS 18.0: Get products using Product.products(for:).
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+                                                                            ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:55:30: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+    func donate(for product: SKProduct) -> Bool {
+                             ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:31:49: warning: 'SKProductsRequestDelegate' was deprecated in iOS 18.0: Get products using Product.products(for:).
+class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
+                                                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:66:11: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+extension SKProduct {
+          ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:80:32: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+                               ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:80:83: warning: 'SKPaymentTransaction' was deprecated in iOS 18.0: Use PurchaseResult from Product.purchase(confirmIn:options:).
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+                                                                                  ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:75:25: warning: 'SKPaymentTransactionObserver' was deprecated in iOS 18.0: Use StoreKit 2 Transaction APIs.
+extension StoreManager: SKPaymentTransactionObserver {
+                        ^
+
+SwiftCompile normal x86_64 Compiling\ EmptyCollectionsView.swift,\ CollectionRowView.swift,\ StoreHymn.swift,\ PendingHymnView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/EmptyCollectionsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/CollectionRowView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/StoreHymn.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/PendingHymnView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/EmptyCollectionsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/CollectionRowView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/StoreHymn.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/PendingHymnView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ AlertState.swift,\ CollectionsView.swift,\ HymnalsView.swift,\ RoundedCorner.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/Model/AlertState.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/Hymnals/View/HymnalsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/RoundedCorner.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/Model/AlertState.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionsView.swift:81:18: warning: 'onChange(of:perform:)' was deprecated in iOS 17.0: Use `onChange` with a two or zero parameter action closure instead.
+                .onChange(of: filterQuery) { query in
+                 ^
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/Hymnals/View/HymnalsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/RoundedCorner.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ StoreBook.swift,\ CustomStyles.swift,\ InfoView.swift,\ FocusTextField.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/StoreBook.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/CustomStyles.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Info/InfoView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/FocusTextField.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/StoreBook.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/CustomStyles.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Info/InfoView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/FocusTextField.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ PendingView.swift,\ AppDelegate.swift,\ MailView.swift,\ HUD.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/PendingView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/AppDelegate.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/MailView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/HUD.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/PendingView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/AppDelegate.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/MailView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/HUD.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ CISAppViewModel.swift,\ Hymn+CoreDataProperties.swift,\ ChristInSongApp.swift,\ GeneratedAssetSymbols.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ViewModel/CISAppViewModel.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Hymn+CoreDataProperties.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ChristInSongApp.swift /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ViewModel/CISAppViewModel.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Hymn+CoreDataProperties.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ChristInSongApp.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ WebLink.swift,\ CISCoreDataStore.swift,\ FileLoader.swift,\ ActivityViewController.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/WebLink.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/CISStore/CISCoreDataStore.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/CISStore/Migrator/FileLoader.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/ActivityViewController.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/WebLink.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/CISStore/CISCoreDataStore.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/CISStore/Migrator/FileLoader.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/ActivityViewController.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ UIApplication+Extensions.swift,\ Hymn+CoreDataClass.swift,\ ViewModifier+Extensions.swift,\ HymnalView.swift,\ EditModeContext.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/UIApplication+Extensions.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Hymn+CoreDataClass.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/ViewModifier+Extensions.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/Hymnals/View/HymnalView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/EditModeContext.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/UIApplication+Extensions.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/UIApplication+Extensions.swift:12:14: warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead
+        self.windows
+             ^
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Hymn+CoreDataClass.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/ViewModifier+Extensions.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/Hymnals/View/HymnalView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/EditModeContext.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ NavItem.swift,\ Color+Extensions.swift,\ SFSymbol.swift,\ HymnView.swift,\ AddToCollectionView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Navigation/NavItem.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/Color+Extensions.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/SFSymbol.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/AddToCollectionView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Navigation/NavItem.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/Color+Extensions.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/SFSymbol.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/AddToCollectionView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ CollectionHymnsView.swift,\ FloatingActionButtonView.swift,\ Store.swift,\ ViewState.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionHymnsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/FloatingActionButtonView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/Store.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/ViewState.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionHymnsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/FloatingActionButtonView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/Store.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/Add/ViewState.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ ContentView.swift,\ Bundle+Extensions.swift,\ Collection+CoreDataClass.swift,\ CollectionItemView.swift,\ NavLabel.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ContentView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/Extensions/Bundle+Extensions.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Collection+CoreDataClass.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionItemView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Navigation/NavLabel.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/ContentView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/Extensions/Bundle+Extensions.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Collection+CoreDataClass.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Collections/View/CollectionItemView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Navigation/NavLabel.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 Compiling\ View+Extensions.swift,\ StoreCollection.swift,\ HymnsView.swift,\ CheckBoxView.swift,\ FontExtensions.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/View+Extensions.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/StoreCollection.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnsView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/CheckBoxView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/FontExtensions.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/View+Extensions.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Store/StoreCollection.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Hymns/HymnsView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/CheckBoxView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/FontExtensions.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftDriverJobDiscovery normal x86_64 Emitting module for ChristInSong (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriver\ Compilation\ Requirements iOS normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ChristInSong -Onone @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/iOS-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/iOS_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-generated-files.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-own-target-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/ChristInSong-e0f91768ab77e6bb62a51db07193e7a8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-project-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/src/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/extensions/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources-normal/x86_64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/x86_64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong-Swift.h -working-directory /Users/tinashe/Dev/FaithUnfeigned/cis-ios -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal x86_64 Compiling UIApplication+Extensions.swift, Hymn+CoreDataClass.swift, ViewModifier+Extensions.swift, HymnalView.swift, EditModeContext.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 Compiling\ StoreManager.swift,\ SupportView.swift,\ Collection+CoreDataProperties.swift,\ StringExtensions.swift,\ Constants.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/SupportView.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Collection+CoreDataProperties.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/StringExtensions.swift /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/Constants.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:37:33: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+    @Published var donations = [SKProduct]()
+                                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:47:37: warning: 'SKProductsRequest' was deprecated in iOS 18.0: Use Product.products(for:).
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+                                    ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:47:77: warning: 'SKProductsResponse' was deprecated in iOS 18.0: Get products using Product.products(for:).
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+                                                                            ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:55:30: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+    func donate(for product: SKProduct) -> Bool {
+                             ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:31:49: warning: 'SKProductsRequestDelegate' was deprecated in iOS 18.0: Get products using Product.products(for:).
+class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate {
+                                                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:66:11: warning: 'SKProduct' was deprecated in iOS 18.0: Use Product.
+extension SKProduct {
+          ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:80:32: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+                               ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:80:83: warning: 'SKPaymentTransaction' was deprecated in iOS 18.0: Use PurchaseResult from Product.purchase(confirmIn:options:).
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+                                                                                  ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:75:25: warning: 'SKPaymentTransactionObserver' was deprecated in iOS 18.0: Use StoreKit 2 Transaction APIs.
+extension StoreManager: SKPaymentTransactionObserver {
+                        ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:42:23: warning: 'SKProductsRequest' was deprecated in iOS 18.0: Use Product.products(for:).
+        let request = SKProductsRequest(productIdentifiers: Set(productIDs))
+                      ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:50:68: warning: 'price' was deprecated in iOS 18.0: Use Product.displayPrice.
+                self.donations = response.products.sorted(by: { $0.price.compare($1.price) == .orderedAscending })
+                                                                   ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:50:85: warning: 'price' was deprecated in iOS 18.0: Use Product.displayPrice.
+                self.donations = response.products.sorted(by: { $0.price.compare($1.price) == .orderedAscending })
+                                                                                    ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:59:27: warning: 'SKPayment' was deprecated in iOS 18.0: Use Product.purchase(confirmIn:options:).
+            let payment = SKPayment(product: product)
+                          ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:60:13: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+            SKPaymentQueue.default().add(payment)
+            ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:60:38: warning: 'add' was deprecated in iOS 18.0: Use Product.purchase(confirmIn:options:).
+            SKPaymentQueue.default().add(payment)
+                                     ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:70:33: warning: 'priceLocale' was deprecated in iOS 18.0: Use Product.displayPrice.
+        formatter.locale = self.priceLocale
+                                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:71:44: warning: 'price' was deprecated in iOS 18.0: Use Product.displayPrice.
+        return formatter.string(from: self.price) ?? ""
+                                           ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:77:14: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+      return SKPaymentQueue.canMakePayments()
+             ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:77:29: warning: 'canMakePayments()' was deprecated in iOS 18.0: Use AppStore.canMakePayments.
+      return SKPaymentQueue.canMakePayments()
+                            ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:84:17: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+                SKPaymentQueue.default().finishTransaction(transaction)
+                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:84:42: warning: 'finishTransaction' was deprecated in iOS 18.0: Use Transaction.finish().
+                SKPaymentQueue.default().finishTransaction(transaction)
+                                         ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:90:17: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+                SKPaymentQueue.default().finishTransaction(transaction)
+                ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:90:42: warning: 'finishTransaction' was deprecated in iOS 18.0: Use Transaction.finish().
+                SKPaymentQueue.default().finishTransaction(transaction)
+                                         ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:102:9: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+        SKPaymentQueue.default().add(self)
+        ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:102:34: warning: 'add' was deprecated in iOS 18.0: Use Transaction.updates or PurchaseResult from Product.purchase(confirmIn:options:).
+        SKPaymentQueue.default().add(self)
+                                 ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:106:9: warning: 'SKPaymentQueue' was deprecated in iOS 18.0: No longer supported.
+        SKPaymentQueue.default().remove(self)
+        ^
+/Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/StoreManager.swift:106:34: warning: 'remove' was deprecated in iOS 18.0: No longer supported.
+        SKPaymentQueue.default().remove(self)
+                                 ^
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Support/SupportView.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Collection+CoreDataProperties.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Features/Common/Extensions/StringExtensions.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftCompile normal x86_64 /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Common/Constants.swift (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+
+SwiftMergeGeneratedHeaders /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/ChristInSong-Swift.h /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong-Swift.h /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong-Swift.h (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-swiftHeaderTool -arch arm64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong-Swift.h -arch x86_64 /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong-Swift.h -o /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/ChristInSong-Swift.h
+
+SwiftDriverJobDiscovery normal x86_64 Compiling CISAppViewModel.swift, Hymn+CoreDataProperties.swift, ChristInSongApp.swift, GeneratedAssetSymbols.swift (in target 'iOS' from project 'ChristInSong')
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftmodule (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftmodule /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftdoc (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftdoc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.abi.json (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.abi.json /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/x86_64-apple-ios-simulator.abi.json
+
+Copy /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftsourceinfo (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftsourceinfo /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal x86_64 Compiling ContentView.swift, Bundle+Extensions.swift, Collection+CoreDataClass.swift, CollectionItemView.swift, NavLabel.swift (in target 'iOS' from project 'ChristInSong')
+
+Ld /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong.debug.dylib normal arm64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -filelist /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.LinkFileList -install_name @rpath/ChristInSong.debug.dylib -Xlinker -rpath -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong-linker-args.resp -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -framework Pods_iOS -framework StoreKit -Xlinker -no_adhoc_codesign -o /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong.debug.dylib -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/swift-markdown-ui.build/Debug-iphonesimulator/MarkdownUI.build/Objects-normal/arm64/MarkdownUI.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/swift-markdown-ui.build/Debug-iphonesimulator/MarkdownUI.build/Objects-normal/arm64/MarkdownUI-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/NetworkImage.build/Debug-iphonesimulator/NetworkImage.build/Objects-normal/arm64/NetworkImage.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/NetworkImage.build/Debug-iphonesimulator/NetworkImage.build/Objects-normal/arm64/NetworkImage-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/RichText.build/Debug-iphonesimulator/RichText.build/Objects-normal/arm64/RichText.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/RichText.build/Debug-iphonesimulator/RichText.build/Objects-normal/arm64/RichText-linker-args.resp
+
+SwiftDriverJobDiscovery normal x86_64 Compiling CollectionHymnsView.swift, FloatingActionButtonView.swift, Store.swift, ViewState.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling AlertState.swift, CollectionsView.swift, HymnalsView.swift, RoundedCorner.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling EmptyCollectionsView.swift, CollectionRowView.swift, StoreHymn.swift, PendingHymnView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling WebLink.swift, CISCoreDataStore.swift, FileLoader.swift, ActivityViewController.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling NavItem.swift, Color+Extensions.swift, SFSymbol.swift, HymnView.swift, AddToCollectionView.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling View+Extensions.swift, StoreCollection.swift, HymnsView.swift, CheckBoxView.swift, FontExtensions.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling StoreBook.swift, CustomStyles.swift, InfoView.swift, FocusTextField.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling PendingView.swift, AppDelegate.swift, MailView.swift, HUD.swift (in target 'iOS' from project 'ChristInSong')
+
+ConstructStubExecutorLinkFileList /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-ExecutorLinkFileList-normal-arm64.txt (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    construct-stub-executor-link-file-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'iOS' from project 'ChristInSong')
+
+Ld /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong normal arm64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong.app-Simulated.xcent.der /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong
+
+SwiftDriverJobDiscovery normal x86_64 Compiling StoreManager.swift, SupportView.swift, Collection+CoreDataProperties.swift, StringExtensions.swift, Constants.swift (in target 'iOS' from project 'ChristInSong')
+
+SwiftDriver\ Compilation iOS normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ChristInSong -Onone @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/iOS-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/iOS_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-generated-files.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-own-target-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/ChristInSong-e0f91768ab77e6bb62a51db07193e7a8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-project-headers.hmap -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/src/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/SourcePackages/checkouts/swift-cmark/extensions/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources-normal/x86_64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources/x86_64 -Xcc -I/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/DerivedSources -Xcc -DDEBUG\=1 -Xcc -DCOCOAPODS\=1 -emit-objc-header -emit-objc-header-path /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong-Swift.h -working-directory /Users/tinashe/Dev/FaithUnfeigned/cis-ios -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong.debug.dylib normal x86_64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios26.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -filelist /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.LinkFileList -install_name @rpath/ChristInSong.debug.dylib -Xlinker -rpath -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong-linker-args.resp -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -framework Pods_iOS -framework StoreKit -Xlinker -no_adhoc_codesign -o /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong.debug.dylib -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/swift-markdown-ui.build/Debug-iphonesimulator/MarkdownUI.build/Objects-normal/x86_64/MarkdownUI.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/swift-markdown-ui.build/Debug-iphonesimulator/MarkdownUI.build/Objects-normal/x86_64/MarkdownUI-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/NetworkImage.build/Debug-iphonesimulator/NetworkImage.build/Objects-normal/x86_64/NetworkImage.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/NetworkImage.build/Debug-iphonesimulator/NetworkImage.build/Objects-normal/x86_64/NetworkImage-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/RichText.build/Debug-iphonesimulator/RichText.build/Objects-normal/x86_64/RichText.swiftmodule @/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/RichText.build/Debug-iphonesimulator/RichText.build/Objects-normal/x86_64/RichText-linker-args.resp
+
+ConstructStubExecutorLinkFileList /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-ExecutorLinkFileList-normal-x86_64.txt (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    construct-stub-executor-link-file-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-ExecutorLinkFileList-normal-x86_64.txt
+note: Using stub executor library with Swift entry point. (in target 'iOS' from project 'ChristInSong')
+
+CreateUniversalBinary /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong.debug.dylib normal arm64\ x86_64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong.debug.dylib /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong.debug.dylib -output /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong.debug.dylib
+
+Ld /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong normal x86_64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios26.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-DebugDylibPath-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-DebugDylibInstallName-normal-x86_64.txt -Xlinker -filelist -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong-ExecutorLinkFileList-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong.app-Simulated.xcent.der /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong
+
+CreateUniversalBinary /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong normal arm64\ x86_64 (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/Binary/ChristInSong /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/Binary/ChristInSong -output /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong
+
+LinkAssetCatalog /Users/tinashe/Dev/FaithUnfeigned/cis-ios/Shared/Assets.xcassets (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-linkAssetCatalog --thinned /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_output/thinned --thinned-dependencies /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_generated_info.plist_unthinned --output /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app --plist-output /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/AppIcon60x60@2x.png (in target 'iOS' from project 'ChristInSong')
+note: Emplaced /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/Assets.car (in target 'iOS' from project 'ChristInSong')
+note: Emplaced /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/AppIcon76x76@2x~ipad.png (in target 'iOS' from project 'ChristInSong')
+
+ProcessInfoPlistFile /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/Info.plist /Users/tinashe/Dev/FaithUnfeigned/cis-ios/iOS/Info.plist (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-infoPlistUtility /Users/tinashe/Dev/FaithUnfeigned/cis-ios/iOS/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/assetcatalog_generated_info.plist -o /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/Info.plist
+
+CopySwiftLibs /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong.debug.dylib --scan-folder /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/Frameworks --scan-folder /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/PlugIns --scan-folder /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/SystemExtensions --scan-folder /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/Extensions --scan-folder /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/Pods_iOS.framework --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/StoreKit.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name ChristInSong --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk --xcode-version 17E192 --platform-family iOS --deployment-target 26.0 --bundle-identifier com.tinashe.ChristInSong --output /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app --target-triple arm64-apple-ios26.0-simulator --target-triple x86_64-apple-ios26.0-simulator --binary-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong --dependency-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong_dependency_info.dat --dependency-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong_dependency_info.dat --stringsdata-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.SwiftFileList --source-file-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.SwiftFileList --metadata-file-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong.DependencyMetadataFileList --static-metadata-file-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong.DependencyStaticMetadataFileList --swift-const-vals-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/arm64/ChristInSong.SwiftConstValuesFileList --swift-const-vals-list /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/Objects-normal/x86_64/ChristInSong.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-04-12 21:05:51.218 appintentsmetadataprocessor[98514:6108781] Starting appintentsmetadataprocessor export
+2026-04-12 21:05:51.229 appintentsmetadataprocessor[98514:6108781] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CodeSign /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong.debug.dylib (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/ChristInSong.debug.dylib
+
+CodeSign /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/__preview.dylib (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app/__preview.dylib
+
+CodeSign /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Intermediates.noindex/ChristInSong.build/Debug-iphonesimulator/iOS.build/ChristInSong.app.xcent --timestamp\=none --generate-entitlement-der /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app
+
+Validate /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app (in target 'iOS' from project 'ChristInSong')
+    cd /Users/tinashe/Dev/FaithUnfeigned/cis-ios
+    builtin-validationUtility /Users/tinashe/Library/Developer/Xcode/DerivedData/ChristInSong-eckbronxtvvpcyaotxvgcqpkcmoo/Build/Products/Debug-iphonesimulator/ChristInSong.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+

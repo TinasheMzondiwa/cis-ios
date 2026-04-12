@@ -40,7 +40,7 @@ final class CISAppViewModel: ObservableObject {
     /// Fetch all books from the `config.json` file
     /// It's important that this file is updated with the right key names otherwise this might lead to
     /// an inconsistent app state.
-    func fetchAllBooks(){
+    func fetchAllBooks() {
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
             if store.retrieveSelectedBook() == nil {
@@ -58,6 +58,7 @@ final class CISAppViewModel: ObservableObject {
             }
             
         } else {
+            print("We're unable to fetch books, file is missing or corrupt")
             // TODO: To fix
             // We're unable to fetch books, file is missing or corrupt
             // Handle this scenario

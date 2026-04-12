@@ -15,7 +15,7 @@ class FileLoader<T> where T: Decodable {
     
     private let decoder = JSONDecoder()
     
-    init(fromFile fileName: String, withExtension fileExt: String = "json", bundle: Bundle = .main){
+    init(fromFile fileName: String, withExtension fileExt: String = "json", bundle: Bundle = .main) {
         self.fileName = fileName
         self.fileExt = fileExt
         self.bundle = bundle
