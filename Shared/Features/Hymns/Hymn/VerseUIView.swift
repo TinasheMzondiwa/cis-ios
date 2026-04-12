@@ -37,7 +37,7 @@ struct VerseUIView: View {
                 }
             }
             .multilineTextAlignment(.leading)
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
