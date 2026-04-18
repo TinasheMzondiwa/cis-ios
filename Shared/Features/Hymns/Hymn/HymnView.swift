@@ -13,6 +13,8 @@ import RichText
 struct HymnView: View {
     @EnvironmentObject var vm: CISAppViewModel
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("hymnalFontSize") private var fontSize: Double = 22.0
+    @AppStorage("hymnalTypeface") private var selectedFontRaw: String = AppTypeface.defaultTypeface.rawValue
     
     @State private var displayedBook: StoreBook?
     @State var displayedHymn: StoreHymn
@@ -60,6 +62,7 @@ struct HymnView: View {
     }
     
     var body: some View {
+        let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
         
         ZStack {
             ScrollView {
@@ -68,8 +71,7 @@ struct HymnView: View {
                         Text(displayedHymn.number.formatted())
                         Text(displayedHymn.title)
                     }
-                    .font(.title2)
-                    .fontWeight(.bold)
+                    .font(typeface.font(size: fontSize + 4, weight: .bold))
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, 8)
@@ -99,25 +101,33 @@ struct HymnView: View {
             
             ToolbarItem(placement: .title) {
                 Text(displayedBook?.title ?? defaultTitle())
-                    .font(.headline)
+                    .font(AppTypeface.lato.font(size: 16, weight: .medium))
                     .padding()
                     .glassEffect()
             }
             
             ToolbarSpacer(.flexible)
             
-            ToolbarItemGroup {
-                Button(action: { vm.toggleCollectionSheetVisibility() }) {
-                    SFSymbol.textPlus
-                        .accessibility(label: Text(LocalizedStringKey("Collections.Add")))
-                }
-                
-                Button(action: {vm.toggleBookSelectionShownFromHymnView() }) {
-                    SFSymbol.bookCircle
-                        .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu {
+                    Button(action: { vm.toggleCollectionSheetVisibility() }) {
+                        Label("Add to Collection", systemImage: "text.badge.plus")
+                    }
+                    
+                    Button(action: { vm.toggleBookSelectionShownFromHymnView() }) {
+                        Label("Switch Hymnal", systemImage: "book.circle")
+                    }
+                    
+                    Button(action: {}) {
+                        Label(LocalizedStringKey("Text.Format"), systemImage: SFSymbol.textFormat.rawValue)
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
                 }
             }
         }
+
         .sheet(isPresented: $vm.collectionsSheetShown) {
             AddToCollectionView(hymn: displayedHymn)
         }

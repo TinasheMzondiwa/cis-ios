@@ -20,6 +20,7 @@ enum SFSymbol: String, View {
     case musicNote = "music.note"
     case plus = "plus"
     case search = "magnifyingglass"
+    case textFormat = "textformat"
     case textPlus = "text.badge.plus"
     case xmarkFill = "xmark.circle.fill"
     

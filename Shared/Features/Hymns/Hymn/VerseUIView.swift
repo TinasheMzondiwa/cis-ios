@@ -10,6 +10,9 @@ import SwiftUI
 struct VerseUIView: View {
     
     @Environment(\.colorScheme) private var colorScheme
+    
+    @AppStorage("hymnalFontSize") private var fontSize: Double = 22.0
+    @AppStorage("hymnalTypeface") private var selectedFontRaw: String = AppTypeface.defaultTypeface.rawValue
 
     var colors: HymnColors {
         HymnColors(scheme: colorScheme)
@@ -19,10 +22,12 @@ struct VerseUIView: View {
     let lines: [String]
 
     var body: some View {
+        let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
+        
         HStack(alignment: .top) {
             // Index bubble
             Text("\(index)")
-                .font(.system(size: 14, weight: .semibold))
+                .font(typeface.font(size: fontSize - 4, weight: .bold))
                 .foregroundColor(colors.onSurfaceVariant)
                 .frame(width: 28, height: 28)
                 .background(colors.surfaceVariant)
@@ -31,7 +36,7 @@ struct VerseUIView: View {
             VStack(alignment: .leading) {
                 ForEach(lines, id: \.self) { line in
                     Text(line)
-                        .font(.system(size: 17))
+                        .font(typeface.font(size: fontSize, weight: .regular))
                         .foregroundColor(colors.onBackground)
                         .lineSpacing(6)
                 }
