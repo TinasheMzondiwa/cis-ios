@@ -20,7 +20,7 @@ struct HymnsView: View {
             return vm.hymnsFromSelectedBook
         } else {
             return vm.hymnsFromSelectedBook.filter {
-                $0.title.localizedCaseInsensitiveContains(filterQuery) ||
+                "\($0.number) - \($0.title)".localizedCaseInsensitiveContains(filterQuery) ||
                 $0.lyrics.contains(where: {
                     $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(filterQuery) })
                 })
