@@ -46,14 +46,23 @@ struct InfoView: View {
                     List {
                         Section(header: Text(LocalizedStringKey("Info.About"))) {
                             Button(action: {
-                                UIApplication.shared.open(URL(string: WebLink.github.rawValue)!)
+                                HapticsManager.instance.trigger(.light)
+                                UIApplication.shared.open(URL(string: WebLink.appWebsite.rawValue)!)
                                 
+                            }, label: {
+                                CustomLineItem(title: "Info.Website")
+                            })
+                            
+                            Button(action: {
+                                HapticsManager.instance.trigger(.light)
+                                UIApplication.shared.open(URL(string: WebLink.github.rawValue)!)
                                 
                             }, label: {
                                 CustomLineItem(title: "Info.Github")
                             })
                             
                             Button(action: {
+                                HapticsManager.instance.trigger(.light)
                                 UIApplication.shared.open(URL(string: WebLink.twitter.rawValue)!)
                             }, label: {
                                 CustomLineItem(title: "Info.Twitter", title2: WebLink.twitterUsername.rawValue)
@@ -62,6 +71,7 @@ struct InfoView: View {
                         Section(header: Text(LocalizedStringKey("Info.More"))) {
                             if MFMailComposeViewController.canSendMail() {
                                 Button(action: {
+                                    HapticsManager.instance.trigger(.light)
                                     showingEmailSheet.toggle()
                                 }, label: {
                                     CustomLineItem(title: "Info.Help")
@@ -72,11 +82,13 @@ struct InfoView: View {
                             }
                             
                             Button(action: {
+                                HapticsManager.instance.trigger(.light)
                                 UIApplication.shared.open(URL(string: WebLink.appStore.rawValue)!)
                             }, label: {
                                 CustomLineItem(title: "Info.Review")
                             })
                             Button(action: {
+                                HapticsManager.instance.trigger(.light)
                                 showingShareSheet.toggle()
                             }, label: {
                                 CustomLineItem(title: "Info.Share")
@@ -102,14 +114,7 @@ struct InfoView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            InfoView()
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-            
-            InfoView()
-                .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-        }
+        InfoView()
     }
 }
 
