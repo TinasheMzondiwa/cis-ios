@@ -85,7 +85,7 @@ struct HymnView: View {
                         
                         
                         VStack(spacing: 20) {
-                            ForEach(displayedHymn.lyrics) { lyric in
+                            ForEach(Array(displayedHymn.lyrics.enumerated()), id: \.offset) { _, lyric in
                                 if lyric.type == "refrain" {
                                     ChorusUiView(lines: lyric.lines)
                                 } else {

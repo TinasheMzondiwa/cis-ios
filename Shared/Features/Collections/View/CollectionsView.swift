@@ -78,8 +78,8 @@ struct CollectionsView: View {
                     }
                 }
                 .searchable(text: $filterQuery)
-                .onChange(of: filterQuery) { query in
-                    filterQuery = query
+                .onChange(of: filterQuery) { oldValue, newValue in
+                    filterQuery = newValue
                 }
                 .resignKeyboardOnDragGesture()
             }
