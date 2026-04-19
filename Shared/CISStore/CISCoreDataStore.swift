@@ -227,26 +227,8 @@ extension CISCoreDataStore {
     
     // MARK: - Private methods
     private func initializeStore(context: NSManagedObjectContext) throws {
-        // Verify that hymn content is loaded and valid (v2), if not, delete legacy mappings and load it.
-        if !isStoreValid(context: context) {
-            try purgeLegacyData(context: context)
-            try loadInitialContent(context: context)
-        }
-    }
-    
-    private func purgeLegacyData(context: NSManagedObjectContext) throws {
-        let hymnRequest = NSFetchRequest<NSManagedObject>(entityName: .Hymn)
-        let hymns = try context.fetch(hymnRequest)
-        for h in hymns {
-            context.delete(h)
-        }
-        
-        let colRequest = NSFetchRequest<NSManagedObject>(entityName: .Collection)
-        let collections = try context.fetch(colRequest)
-        for c in collections {
-            context.delete(c)
-        }
-        try context.save()
+        // Evaluate config extraction.
+        try loadInitialContent(context: context)
     }
     
     private func loadInitialContent(context: NSManagedObjectContext) throws {
@@ -271,11 +253,28 @@ extension CISCoreDataStore {
         }
         
         for bookFromFile in allBooksFromFile {
-            try migrateBook(with: bookFromFile.key, context: context)
+            let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+            request.predicate = NSPredicate(format: "book == %@", bookFromFile.key)
+            request.fetchLimit = 1
+            
+            if let first = try? context.fetch(request).first {
+                // Book exists. Validate if it's already using the V2 stringified JSON format
+                if let data = first.content?.data(using: .utf8),
+                   let _ = try? JSONDecoder().decode([StoreLyric].self, from: data) {
+                    continue // Successfully mapped V2, skip loading this book
+                }
+            }
+            
+            // If we reach here, the book is either completely missing, or runs legacy V1 HTML structures. Upsert it safely.
+            do {
+                try upsertBook(with: bookFromFile.key, context: context)
+            } catch {
+                print("Failed to upsert book \(bookFromFile.key): \(error)")
+            }
         }
     }
     
-    private func migrateBook(with key: String, context: NSManagedObjectContext) throws {
+    private func upsertBook(with key: String, context: NSManagedObjectContext) throws {
         let fileLoader = FileLoader<[LocalHymn]>(fromFile: key)
         var hymnsFromfile: [LocalHymn] = []
         
@@ -292,14 +291,29 @@ extension CISCoreDataStore {
             throw "No hymns found during migration"
         }
         
-        // Migrate
+        // Grab pre-existing hymns to update without discarding their unique IDs and breaking user collections
+        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+        request.predicate = NSPredicate(format: "book == %@", key)
+        let existingHymns = (try? context.fetch(request)) ?? []
+        let existingHymnsDict = Dictionary(grouping: existingHymns, by: { $0.number })
+        
+        // Upsert
         for hymnFromFile in hymnsFromfile {
-            let hymn = Hymn(context: context)
-            hymn.id = UUID()
-            hymn.book = key
+            let number = Int16(hymnFromFile.number)
+            let hymn: Hymn
+            
+            // Re-use an existing matching number to preserve bindings, or create brand new one if appending/missing.
+            if let existingList = existingHymnsDict[number], let existing = existingList.first {
+                hymn = existing
+            } else {
+                hymn = Hymn(context: context)
+                hymn.id = UUID()
+                hymn.book = key
+                hymn.number = number
+            }
+            
             hymn.title = hymnFromFile.title
             hymn.titleStr = hymnFromFile.title.titleStr
-            hymn.number = Int16(hymnFromFile.number)
         
             if let lyricsData = try? JSONEncoder().encode(hymnFromFile.lyrics),
                let lyricsString = String(data: lyricsData, encoding: .utf8) {
@@ -312,7 +326,7 @@ extension CISCoreDataStore {
                 try context.save()
             }
         } catch {
-            print("Failure saving background context: \(error)")
+            print("Failure saving background context for upsert: \(error)")
         }
     }
     
