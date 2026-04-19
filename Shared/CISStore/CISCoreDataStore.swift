@@ -65,13 +65,19 @@ final class CISCoreDataStore: Store {
         return books
     }
     
-    private func isStoreEmpty(context: NSManagedObjectContext) -> Bool {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
-        if let res = try? context.fetch(request) {
-            return res.isEmpty
-        } else {
-            return false
+    private func isStoreValid(context: NSManagedObjectContext) -> Bool {
+        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+        request.fetchLimit = 1
+        if let res = try? context.fetch(request), let first = res.first {
+            // Verify if the content string is structured JSON from v2 instead of raw v1 HTML payload
+            if let data = first.content?.data(using: .utf8),
+               let _ = try? JSONDecoder().decode([StoreLyric].self, from: data) {
+                 return true // Successfully mapped as v2
+             } else {
+                 return false // Is mapped as old v1 string logic, or corrupted.
+             }
         }
+        return false // Empty, not valid
     }
     
     
@@ -87,14 +93,7 @@ final class CISCoreDataStore: Store {
         request.sortDescriptors = [titleSortDescriptor]
         
         do {
-            var fetchedHymns = try container.viewContext.fetch(request)
-            // TODO: only use this after testing existing store
-            if fetchedHymns.isEmpty {
-                // migrate the book
-                try migrateBook(with: book, context: container.viewContext)
-                // perform a fresh fetch
-                fetchedHymns = try container.viewContext.fetch(request)
-            }
+            let fetchedHymns = try container.viewContext.fetch(request)
             foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
         } catch {
             //TODO: - Better handle the error
@@ -228,16 +227,29 @@ extension CISCoreDataStore {
     
     // MARK: - Private methods
     private func initializeStore(context: NSManagedObjectContext) throws {
-        // Perform only if the store is empty
-        if isStoreEmpty(context: context) {
-            if !defaults.bool(forKey: .migrationKey) {
-                try performFirstTimeMigration(context: context)
-                defaults.set("true", forKey: .migrationKey)
-            }
+        // Verify that hymn content is loaded and valid (v2), if not, delete legacy mappings and load it.
+        if !isStoreValid(context: context) {
+            try purgeLegacyData(context: context)
+            try loadInitialContent(context: context)
         }
     }
     
-    private func performFirstTimeMigration(context: NSManagedObjectContext) throws {
+    private func purgeLegacyData(context: NSManagedObjectContext) throws {
+        let hymnRequest = NSFetchRequest<NSManagedObject>(entityName: .Hymn)
+        let hymns = try context.fetch(hymnRequest)
+        for h in hymns {
+            context.delete(h)
+        }
+        
+        let colRequest = NSFetchRequest<NSManagedObject>(entityName: .Collection)
+        let collections = try context.fetch(colRequest)
+        for c in collections {
+            context.delete(c)
+        }
+        try context.save()
+    }
+    
+    private func loadInitialContent(context: NSManagedObjectContext) throws {
         let booksLoader = FileLoader<[LocalBook]>(fromFile: "config")
         var allBooksFromFile: [LocalBook] = []
         
@@ -338,8 +350,6 @@ extension CISCoreDataStore {
 extension String {
     /// Store Name: CISStore
     static let CISStore = "Main"
-    /// First time migration UserDefaults Key
-    static let migrationKey = "firstTimeMigration"
     /// Key name: title
     static let title = "title"
     /// Key name: english
