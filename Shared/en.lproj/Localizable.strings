@@ -38,7 +38,7 @@
 "Sort.Title" = "ABC";
 
 "Support" = "Support";
-"Support.Promo.Title" = "Support me with a Donation!";
-"Support.Promo.Desc" = "If you find this app useful please consider supporting with a donation.";
-"Support.Promo.Terms" = "A One-time Donation/Tip (In-App Purchase) is not required to access any feature of this app, All features are available for free and will always be.";
+"Support.Promo.Title" = "Support This App";
+"Support.Promo.Desc" = "If this app has been helpful to you, consider supporting its continued development.\n\nYour contribution helps cover ongoing costs like the Apple Developer subscription and ensures the app remains free for everyone.";
+"Support.Promo.Terms" = "No features are locked — your support simply keeps the app alive and improving.";
 "Text.Format" = "Text Format";

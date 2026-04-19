@@ -189,6 +189,8 @@
 		0889FE112F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE082F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf */; };
 		0889FE122F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE092F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf */; };
 		0889FE132F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE0A2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf */; };
+		0889FE152F94FC7100FF8B09 /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE142F94FC7100FF8B09 /* ThankYouView.swift */; };
+		0889FE162F94FC7100FF8B09 /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE142F94FC7100FF8B09 /* ThankYouView.swift */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -371,6 +373,7 @@
 		0889FE092F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-Medium.ttf"; sourceTree = "<group>"; };
 		0889FE0A2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-Regular.ttf"; sourceTree = "<group>"; };
 		0889FE0B2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-SemiBold.ttf"; sourceTree = "<group>"; };
+		0889FE142F94FC7100FF8B09 /* ThankYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
 		08927D9224BEA5B60035972C /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		08927D9624BEAAD00035972C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
@@ -652,6 +655,7 @@
 			children = (
 				08927D9A24BEAAFC0035972C /* SupportView.swift */,
 				084BDAA825FD9DAA002090CD /* StoreManager.swift */,
+				0889FE142F94FC7100FF8B09 /* ThankYouView.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -1250,6 +1254,7 @@
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */,
 				0889FDEA2F94702300FF8B09 /* SwiftUi+View.swift in Sources */,
+				0889FE162F94FC7100FF8B09 /* ThankYouView.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
 				08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */,
 				0889FDE12F945E8600FF8B09 /* HymnContainerView.swift in Sources */,
@@ -1288,6 +1293,7 @@
 				08C0928025F7479000845BA1 /* WebLink.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
+				0889FE152F94FC7100FF8B09 /* ThankYouView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
