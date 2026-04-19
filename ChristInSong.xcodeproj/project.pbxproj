@@ -170,6 +170,10 @@
 		0889FDD72F9404F400FF8B09 /* EBGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCB2F9404F400FF8B09 /* EBGaramond-Regular.ttf */; };
 		0889FDDB2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCA2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf */; };
 		0889FDDD2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCC2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf */; };
+		0889FDE02F945E8600FF8B09 /* HymnContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */; };
+		0889FDE12F945E8600FF8B09 /* HymnContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */; };
+		0889FDE32F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */; };
+		0889FDE42F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -343,6 +347,8 @@
 		0889FDCA2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-MediumItalic.ttf"; sourceTree = "<group>"; };
 		0889FDCB2F9404F400FF8B09 /* EBGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Regular.ttf"; sourceTree = "<group>"; };
 		0889FDCC2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-SemiBold.ttf"; sourceTree = "<group>"; };
+		0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnContainerView.swift; sourceTree = "<group>"; };
+		0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsPickerUIView.swift; sourceTree = "<group>"; };
 		08927D9224BEA5B60035972C /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		08927D9624BEAAD00035972C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
@@ -537,6 +543,7 @@
 				0889E7212F8C295800FF8B09 /* HymnColors.swift */,
 				0889E7242F8C299D00FF8B09 /* ChorusUiView.swift */,
 				0889E7272F8C2A3D00FF8B09 /* VerseUIView.swift */,
+				0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */,
 			);
 			path = Hymn;
 			sourceTree = "<group>";
@@ -628,6 +635,7 @@
 			isa = PBXGroup;
 			children = (
 				08CB33A225E2112F00609D65 /* View */,
+				0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */,
 			);
 			path = Hymnals;
 			sourceTree = "<group>";
@@ -1194,11 +1202,13 @@
 				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
 				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,
 				1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */,
+				0889FDE32F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */,
 				1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
 				08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */,
+				0889FDE12F945E8600FF8B09 /* HymnContainerView.swift in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1211,6 +1221,8 @@
 				08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */,
 				67A174C6285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
+				0889FDE42F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */,
+				0889FDE02F945E8600FF8B09 /* HymnContainerView.swift in Sources */,
 				08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */,
 				0889E7232F8C295800FF8B09 /* HymnColors.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
