@@ -33,35 +33,13 @@ extension Font.TextStyle {
     }
 }
 
-enum CustomFont : String {
-    case regular = "EBGaramond-Regular"
-    case medium = "EBGaramond-Medium"
-    case italic = "EBGaramond-Italic"
-    case boldItalic = "EBGaramond-BoldItalic"
-    case bold = "EBGaramond-Bold"
-    case semiBold = "EBGaramond-SemiBold"
-    case extraBold = "EBGaramond-ExtraBold"
-    
-    init(weight: Font.Weight) {
-        switch(weight) {
-        case .regular: self = .regular
-        case .medium: self = .medium
-        case .semibold: self = .semiBold
-        case .thin: self = .italic
-        case .black: self = .extraBold
-        case .bold: self = .bold
-        default: self = .regular
-        }
-    }
-}
-
 enum AppTypeface: String, CaseIterable {
     case baskerville = "Baskerville"
     case cormorantGaramond = "Cormorant Garamond"
     case garamond = "EB Garamond"
     case googleSans = "Google Sans"
     case lato = "Lato"
-    case newsreader = "Newsreader"
+    case proximaNova = "Proxima Nova Soft"
     case sfRounded = "SF Rounded"
     
     static let defaultTypeface = AppTypeface.garamond
@@ -74,8 +52,8 @@ enum AppTypeface: String, CaseIterable {
         case .garamond: return "EBGaramond"
         case .googleSans: return "GoogleSans"
         case .lato: return "Lato"
-        case .newsreader: return "Newsreader"
         case .sfRounded: return "System"
+        case .proximaNova: return "proxima-nova-soft"
         }
     }
     
@@ -90,7 +68,7 @@ enum AppTypeface: String, CaseIterable {
         case .black:
             switch self {
             case .garamond: weightStr = "ExtraBold"
-            case .lato, .newsreader: weightStr = "Black"
+            case .lato: weightStr = "Black"
             default: weightStr = "Bold"
             }
         default:       weightStr = "Regular"
