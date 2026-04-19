@@ -19,7 +19,6 @@ final class CISAppViewModel: ObservableObject {
     @Published var selectedHymn: StoreHymn?
     @Published var selectedBookTitle: String?
     @Published var bookSelectionShown: Bool = false
-    @Published var bookSelectionShownFromHymnView: Bool = false
     @Published var collectionsSheetShown: Bool = false
     
     @Published var bookSearchQuery: String = ""
@@ -121,9 +120,7 @@ final class CISAppViewModel: ObservableObject {
         store.createCollection(with: title, and: aboutStr)
         allCollections = store.retrieveAllCollections()
     }
-    func toggleBookSelectionShownFromHymnView() {
-        bookSelectionShownFromHymnView.toggle()
-    }
+    
     func toggleBookSelectionSheet() {
         bookSelectionShown.toggle()
     }
