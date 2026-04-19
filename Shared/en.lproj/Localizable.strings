@@ -41,5 +41,8 @@
 "Support" = "Support";
 "Support.Promo.Title" = "Support This App";
 "Support.Promo.Desc" = "If this app has been helpful to you, consider supporting its continued development.\n\nYour contribution helps cover ongoing costs like the Apple Developer subscription and ensures the app remains free for everyone.";
+"Support.Privacy" = "Privacy Policy";
 "Support.Promo.Terms" = "No features are locked — your support simply keeps the app alive and improving.";
+"Support.Terms" = "Terms of Use";
+
 "Text.Format" = "Text Format";

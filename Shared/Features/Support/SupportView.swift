@@ -68,6 +68,12 @@ struct SupportView: View {
                     .footNoteStyle()
                     .multilineTextAlignment(.center)
                     .padding()
+                
+                HStack(spacing: 16) {
+                    Link(LocalizedStringKey("Support.Terms"), destination: URL(string: WebLink.appleTerms.rawValue)!)
+                    Link(LocalizedStringKey("Support.Privacy"), destination: URL(string: WebLink.policy.rawValue)!)
+                }
+                .font(.footnote.weight(.medium))
             }
             
         }
