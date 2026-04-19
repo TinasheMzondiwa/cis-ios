@@ -12,8 +12,8 @@
 		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081BE5FB2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
 		081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
-		081BE5FE2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json */; };
-		081BE5FF2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json */; };
+		081BE5FE2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */; };
+		081BE5FF2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */; };
 		081BE6012EF48C0900EDC921 /* v2/twi/twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* v2/twi/twi.json */; };
 		081BE6022EF48C0900EDC921 /* v2/twi/twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* v2/twi/twi.json */; };
 		081D97142B57D1FA00F44C4D /* FloatingActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */; };
@@ -260,7 +260,7 @@
 		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		081BE5FD2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/icibemba/Icibemba.json; sourceTree = "<group>"; };
+		081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/icibemba/icibemba.json; sourceTree = "<group>"; };
 		081BE6002EF48C0900EDC921 /* v2/twi/twi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/twi/twi.json; sourceTree = "<group>"; };
 		081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButtonView.swift; sourceTree = "<group>"; };
 		082E002425FDCFE100E163A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -513,7 +513,7 @@
 			children = (
 				085675452EF49C4800C1DC2A /* v2/français/dg.json */,
 				081BE6002EF48C0900EDC921 /* v2/twi/twi.json */,
-				081BE5FD2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json */,
+				081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */,
 				0876892E2B4B308F00D630BA /* v2/español/es.json */,
 				087689312B4B308F00D630BA /* v2/kirundi/kirundi.json */,
 				0876892F2B4B308F00D630BA /* v2/portuguese/pt.json */,
@@ -978,7 +978,7 @@
 				08B076622BD22ADC00444D7B /* proxima_nova_soft_regular.ttf in Resources */,
 				085675462EF49C4800C1DC2A /* v2/français/dg.json in Resources */,
 				086ACA5A29DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json in Resources */,
-				081BE5FE2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json in Resources */,
+				081BE5FE2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */,
 				087473572986BC3F00167974 /* v2/xitsonga/xitsonga.json in Resources */,
 				087473612986BC3F00167974 /* v2/chichewa/chichewa.json in Resources */,
 				087473652986BC3F00167974 /* v2/ndebele/ndebele.json in Resources */,
@@ -1034,7 +1034,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				087689382B4B308F00D630BA /* v2/portuguese/pt.json in Resources */,
-				081BE5FF2EF47E4F00EDC921 /* v2/icibemba/Icibemba.json in Resources */,
+				081BE5FF2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */,
 				08C0927725F7440A00845BA1 /* Localizable.strings in Resources */,
 				0876893C2B4B308F00D630BA /* v2/kirundi/kirundi.json in Resources */,
 				0874735E2986BC3F00167974 /* v2/tswana/tswana.json in Resources */,
