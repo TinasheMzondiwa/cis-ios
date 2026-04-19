@@ -174,6 +174,12 @@
 		0889FDE12F945E8600FF8B09 /* HymnContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */; };
 		0889FDE32F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */; };
 		0889FDE42F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */; };
+		0889FDE72F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */; };
+		0889FDE82F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */; };
+		0889FDEA2F94702300FF8B09 /* SwiftUi+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE92F94702300FF8B09 /* SwiftUi+View.swift */; };
+		0889FDEC2F94704C00FF8B09 /* TextSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */; };
+		0889FDED2F94704C00FF8B09 /* TextSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */; };
+		0889FDEF2F9473DA00FF8B09 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDEE2F9473DA00FF8B09 /* HapticsManager.swift */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -349,6 +355,10 @@
 		0889FDCC2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-SemiBold.ttf"; sourceTree = "<group>"; };
 		0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnContainerView.swift; sourceTree = "<group>"; };
 		0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsPickerUIView.swift; sourceTree = "<group>"; };
+		0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSettingsPresentation.swift; sourceTree = "<group>"; };
+		0889FDE92F94702300FF8B09 /* SwiftUi+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUi+View.swift"; sourceTree = "<group>"; };
+		0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSettingsView.swift; sourceTree = "<group>"; };
+		0889FDEE2F9473DA00FF8B09 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		08927D9224BEA5B60035972C /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		08927D9624BEAAD00035972C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
@@ -538,6 +548,7 @@
 		0889E7202F8C292700FF8B09 /* Hymn */ = {
 			isa = PBXGroup;
 			children = (
+				0889FDE52F946FD900FF8B09 /* Options */,
 				08927E3F24C3F8230035972C /* HymnView.swift */,
 				08B0765C2BD21C3600444D7B /* PendingHymnView.swift */,
 				0889E7212F8C295800FF8B09 /* HymnColors.swift */,
@@ -593,6 +604,15 @@
 				0889FD592F93FF6400FF8B09 /* Newsreader-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0889FDE52F946FD900FF8B09 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */,
+				0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */,
+			);
+			path = Options;
 			sourceTree = "<group>";
 		};
 		08927D9124BEA58A0035972C /* Hymns */ = {
@@ -653,6 +673,7 @@
 				08A3366825FDB9A900852566 /* HUD.swift */,
 				080518A329F48ABF00D9C95A /* EditModeContext.swift */,
 				081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */,
+				0889FDEE2F9473DA00FF8B09 /* HapticsManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -816,6 +837,7 @@
 			children = (
 				67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */,
 				0889FD222F93FDFF00FF8B09 /* SwiftUi+Font.swift */,
+				0889FDE92F94702300FF8B09 /* SwiftUi+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1159,6 +1181,8 @@
 				67A174BF285F1459006A5BC1 /* View+Extensions.swift in Sources */,
 				1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
+				0889FDED2F94704C00FF8B09 /* TextSettingsView.swift in Sources */,
+				0889FDEF2F9473DA00FF8B09 /* HapticsManager.swift in Sources */,
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
 				67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
@@ -1198,6 +1222,7 @@
 				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
 				0889E7222F8C295800FF8B09 /* HymnColors.swift in Sources */,
 				0889FD232F93FDFF00FF8B09 /* SwiftUi+Font.swift in Sources */,
+				0889FDE72F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
 				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
 				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,
@@ -1206,6 +1231,7 @@
 				1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */,
+				0889FDEA2F94702300FF8B09 /* SwiftUi+View.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
 				08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */,
 				0889FDE12F945E8600FF8B09 /* HymnContainerView.swift in Sources */,
@@ -1225,6 +1251,7 @@
 				0889FDE02F945E8600FF8B09 /* HymnContainerView.swift in Sources */,
 				08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */,
 				0889E7232F8C295800FF8B09 /* HymnColors.swift in Sources */,
+				0889FDEC2F94704C00FF8B09 /* TextSettingsView.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
 				08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */,
@@ -1234,6 +1261,7 @@
 				0844563F24CD793D00AE352F /* PendingView.swift in Sources */,
 				0889E7282F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */,
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
+				0889FDE82F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */,
 				67A174C3285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
 				67A174C0285F1459006A5BC1 /* View+Extensions.swift in Sources */,
 				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,

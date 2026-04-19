@@ -13,6 +13,7 @@ import RichText
 struct HymnView: View {
     @EnvironmentObject var vm: CISAppViewModel
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
     @AppStorage("hymnalFontSize") private var fontSize: Double = 22.0
     @AppStorage("hymnalTypeface") private var selectedFontRaw: String = AppTypeface.defaultTypeface.rawValue
     
@@ -20,6 +21,7 @@ struct HymnView: View {
     @State var displayedHymn: StoreHymn
     @State private var currState: (message: String, state: AlertState)? = nil
     @State private var showingHUD = false
+    @State private var showingTextSettings = false
     
     private var books: [StoreBook] {
         return vm.allBooks.map {
@@ -123,16 +125,32 @@ struct HymnView: View {
             
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
-                    Button(action: { vm.toggleCollectionSheetVisibility() }) {
+                    Button(action: {
+                        HapticsManager.instance.trigger(.buttonPress)
+                        vm.toggleCollectionSheetVisibility()
+                    }) {
                         Label("Add to Collection", systemImage: "text.badge.plus")
                     }
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        HapticsManager.instance.trigger(.buttonPress)
+                        
+                        withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
+                            showingTextSettings.toggle()
+                        }
+                    }) {
                         Label(LocalizedStringKey("Text.Format"), systemImage: SFSymbol.textFormat.rawValue)
                     }
+                    
                 } label: {
                     Image(systemName: "ellipsis.circle")
                 }
+                .modifier(
+                    TextSettingsPresentation(
+                        isPresented: $showingTextSettings,
+                        isCompact: horizontalSizeClass == .compact,
+                    )
+                )
             }
         }
         .sheet(isPresented: $vm.collectionsSheetShown) {
