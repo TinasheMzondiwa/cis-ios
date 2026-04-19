@@ -20,7 +20,7 @@ struct HymnalsPickerUIView: View {
     
     var body: some View {
         Button(action: {
-            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            HapticsManager.instance.trigger(.light)
             
             if horizontalSizeClass == .compact {
                 isFullScreenPresented = true
