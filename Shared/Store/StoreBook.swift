@@ -18,13 +18,16 @@ public struct StoreBook: Identifiable, Equatable {
     public let language: String
     /// Title to the book
     public let title: String
+    /// Custom refrain label
+    public let refrainLabel: String?
     /// Boolean flag for when book is selected
     public let isSelected: Bool
     
-    public init(key: String, language: String, title: String, isSelected: Bool = false) {
+    public init(key: String, language: String, title: String, isSelected: Bool = false, refrainLabel: String? = nil) {
         self.key = key
         self.language = language
         self.title = title
+        self.refrainLabel = refrainLabel
         self.isSelected = isSelected
     }
 }

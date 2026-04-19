@@ -343,12 +343,13 @@ extension CISCoreDataStore {
         let key: String
         let title: String
         let language: String
+        let refrain_label: String?
         
         func toStoreBook(_ selectedBook: String?) -> StoreBook {
             if selectedBook != nil {
-                return StoreBook(key: key, language: language, title: title, isSelected: key == selectedBook)
+                return StoreBook(key: key, language: language, title: title, isSelected: key == selectedBook, refrainLabel: refrain_label)
             } else {
-                return StoreBook(key: key, language: language, title: title)
+                return StoreBook(key: key, language: language, title: title, refrainLabel: refrain_label)
             }
         }
     }

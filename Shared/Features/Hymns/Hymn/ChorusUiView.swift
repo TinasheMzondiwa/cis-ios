@@ -18,6 +18,7 @@ struct ChorusUiView: View {
     }
     
     let lines: [String]
+    let refrainLabel: String?
     
     var body: some View {
         let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
@@ -33,7 +34,7 @@ struct ChorusUiView: View {
                     .background(colors.secondaryContainer)
                     .clipShape(Circle())
                 
-                Text("Chorus") // todo: Use value from config
+                Text(refrainLabel ?? "Chorus")
                     .font(typeface.font(size: fontSize - 2, weight: .semibold))
                     .foregroundColor(colors.onSurfaceVariant)
                 
@@ -73,5 +74,5 @@ struct ChorusUiView: View {
         "Till my trophies at last I lay down",
         "I will cling to the old rugged cross",
         "And exchange it someday for a crown",
-    ])
+    ], refrainLabel: nil)
 }

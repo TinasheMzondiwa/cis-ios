@@ -26,7 +26,8 @@ struct HymnView: View {
                 key: $0.key,
                 language: $0.language,
                 title: $0.title,
-                isSelected: $0.key == displayedHymn.book
+                isSelected: $0.key == displayedHymn.book,
+                refrainLabel: $0.refrainLabel
             )
         }
     }
@@ -87,7 +88,10 @@ struct HymnView: View {
                         VStack(spacing: 20) {
                             ForEach(Array(displayedHymn.lyrics.enumerated()), id: \.offset) { _, lyric in
                                 if lyric.type == "refrain" {
-                                    ChorusUiView(lines: lyric.lines)
+                                    ChorusUiView(
+                                        lines: lyric.lines,
+                                        refrainLabel: vm.selectedBook?.refrainLabel
+                                    )
                                 } else {
                                     VerseUIView(
                                         index: lyric.index ?? 0,
