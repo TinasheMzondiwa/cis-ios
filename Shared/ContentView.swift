@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: CISAppViewModel
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
@@ -15,6 +16,15 @@ struct ContentView: View {
     
     @ViewBuilder
     var body: some View {
+        if viewModel.isLoadingStore {
+            ProgressView("Please wait...")
+        } else {
+            mainView
+        }
+    }
+    
+    @ViewBuilder
+    private var mainView: some View {
         
         if (idiom == .phone) {
             TabView(selection: $selection) {

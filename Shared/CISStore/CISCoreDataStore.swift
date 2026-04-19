@@ -10,20 +10,38 @@ import CoreData
 
 final class CISCoreDataStore: Store {
    
+    var onStoreLoaded: (() -> Void)?
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
     
     init() {
         container = NSPersistentContainer(name: .CISStore)
-        container.loadPersistentStores { _, _ in }
+        if let description = container.persistentStoreDescriptions.first {
+            description.shouldAddStoreAsynchronously = true
+        }
         
-        // Perform Migration
-        do {
-            try initializeStore()
-        } catch {
-            //TODO: - Better handle the error
-            print("Error: Initialization \(error.localizedDescription)")
+        container.loadPersistentStores { [weak self] _, error in
+            if let error = error {
+                print("Error loading store: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let self = self else { return }
+            
+            self.container.performBackgroundTask { context in
+                // Perform Migration
+                do {
+                    try self.initializeStore(context: context)
+                } catch {
+                    //TODO: - Better handle the error
+                    print("Error: Initialization \(error.localizedDescription)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.onStoreLoaded?()
+                }
+            }
         }
     }
     
@@ -47,13 +65,19 @@ final class CISCoreDataStore: Store {
         return books
     }
     
-    private func isStoreEmpty() -> Bool {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
-        if let res = try? container.viewContext.fetch(request) {
-            return res.isEmpty
-        } else {
-            return false
+    private func isStoreValid(context: NSManagedObjectContext) -> Bool {
+        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+        request.fetchLimit = 1
+        if let res = try? context.fetch(request), let first = res.first {
+            // Verify if the content string is structured JSON from v2 instead of raw v1 HTML payload
+            if let data = first.content?.data(using: .utf8),
+               let _ = try? JSONDecoder().decode([StoreLyric].self, from: data) {
+                 return true // Successfully mapped as v2
+             } else {
+                 return false // Is mapped as old v1 string logic, or corrupted.
+             }
         }
+        return false // Empty, not valid
     }
     
     
@@ -69,14 +93,7 @@ final class CISCoreDataStore: Store {
         request.sortDescriptors = [titleSortDescriptor]
         
         do {
-            var fetchedHymns = try container.viewContext.fetch(request)
-            // TODO: only use this after testing existing store
-            if fetchedHymns.isEmpty {
-                // migrate the book
-                try migrateBook(with: book)
-                // perform a fresh fetch
-                fetchedHymns = try container.viewContext.fetch(request)
-            }
+            let fetchedHymns = try container.viewContext.fetch(request)
             foundHymns = fetchedHymns.map { $0.toStoreHymn() }.sorted(by: {$0.number < $1.number})
         } catch {
             //TODO: - Better handle the error
@@ -209,17 +226,12 @@ extension CISCoreDataStore {
     
     
     // MARK: - Private methods
-    private func initializeStore() throws {
-        // Perform only if the store is empty
-        if isStoreEmpty() {
-            if !defaults.bool(forKey: .migrationKey) {
-                try performFirstTimeMigration()
-                defaults.set("true", forKey: .migrationKey)
-            }
-        }
+    private func initializeStore(context: NSManagedObjectContext) throws {
+        // Evaluate config extraction.
+        try loadInitialContent(context: context)
     }
     
-    private func performFirstTimeMigration() throws {
+    private func loadInitialContent(context: NSManagedObjectContext) throws {
         let booksLoader = FileLoader<[LocalBook]>(fromFile: "config")
         var allBooksFromFile: [LocalBook] = []
         
@@ -241,11 +253,28 @@ extension CISCoreDataStore {
         }
         
         for bookFromFile in allBooksFromFile {
-            try migrateBook(with: bookFromFile.key)
+            let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+            request.predicate = NSPredicate(format: "book == %@", bookFromFile.key)
+            request.fetchLimit = 1
+            
+            if let first = try? context.fetch(request).first {
+                // Book exists. Validate if it's already using the V2 stringified JSON format
+                if let data = first.content?.data(using: .utf8),
+                   let _ = try? JSONDecoder().decode([StoreLyric].self, from: data) {
+                    continue // Successfully mapped V2, skip loading this book
+                }
+            }
+            
+            // If we reach here, the book is either completely missing, or runs legacy V1 HTML structures. Upsert it safely.
+            do {
+                try upsertBook(with: bookFromFile.key, context: context)
+            } catch {
+                print("Failed to upsert book \(bookFromFile.key): \(error)")
+            }
         }
     }
     
-    private func migrateBook(with key: String) throws {
+    private func upsertBook(with key: String, context: NSManagedObjectContext) throws {
         let fileLoader = FileLoader<[LocalHymn]>(fromFile: key)
         var hymnsFromfile: [LocalHymn] = []
         
@@ -262,34 +291,51 @@ extension CISCoreDataStore {
             throw "No hymns found during migration"
         }
         
-        // Migrate
+        // Grab pre-existing hymns to update without discarding their unique IDs and breaking user collections
+        let request = NSFetchRequest<Hymn>(entityName: .Hymn)
+        request.predicate = NSPredicate(format: "book == %@", key)
+        let existingHymns = (try? context.fetch(request)) ?? []
+        let existingHymnsDict = Dictionary(grouping: existingHymns, by: { $0.number })
+        
+        // Upsert
         for hymnFromFile in hymnsFromfile {
-            let hymn = Hymn(context: container.viewContext)
-            hymn.id = UUID()
-            hymn.book = key
+            let number = Int16(hymnFromFile.number)
+            let hymn: Hymn
+            
+            // Re-use an existing matching number to preserve bindings, or create brand new one if appending/missing.
+            if let existingList = existingHymnsDict[number], let existing = existingList.first {
+                hymn = existing
+            } else {
+                hymn = Hymn(context: context)
+                hymn.id = UUID()
+                hymn.book = key
+                hymn.number = number
+            }
+            
             hymn.title = hymnFromFile.title
             hymn.titleStr = hymnFromFile.title.titleStr
-            hymn.number = Int16(hymnFromFile.number)
         
-            if let html = hymnFromFile.content {
-                if html.contains(hymnFromFile.title) {
-                    hymn.content = html
-                } else {
-                    hymn.content = "<h3>\(hymnFromFile.title)</h3>\(html)"
-                }
+            if let lyricsData = try? JSONEncoder().encode(hymnFromFile.lyrics),
+               let lyricsString = String(data: lyricsData, encoding: .utf8) {
+                hymn.content = lyricsString
             }
-            hymn.markdown = hymnFromFile.markdown
-            
-            hymn.edited_content = hymn.content
-            
-            try save()
         }
-
         
+        do {
+            if context.hasChanges {
+                try context.save()
+            }
+        } catch {
+            print("Failure saving background context for upsert: \(error)")
+        }
     }
     
     private func save() throws {
-        try container.viewContext.save()
+        do {
+            try container.viewContext.save()
+        } catch {
+            print("Failure saving context: \(error)")
+        }
     }
     
     // MARK: - Private properties
@@ -297,12 +343,13 @@ extension CISCoreDataStore {
         let key: String
         let title: String
         let language: String
+        let refrain_label: String?
         
         func toStoreBook(_ selectedBook: String?) -> StoreBook {
             if selectedBook != nil {
-                return StoreBook(key: key, language: language, title: title, isSelected: key == selectedBook)
+                return StoreBook(key: key, language: language, title: title, isSelected: key == selectedBook, refrainLabel: refrain_label)
             } else {
-                return StoreBook(key: key, language: language, title: title)
+                return StoreBook(key: key, language: language, title: title, refrainLabel: refrain_label)
             }
         }
     }
@@ -310,8 +357,7 @@ extension CISCoreDataStore {
     private struct LocalHymn: Decodable {
         let title: String
         let number: Int
-        let content: String?
-        let markdown: String?
+        let lyrics: [StoreLyric]
     }
 }
 
@@ -319,8 +365,6 @@ extension CISCoreDataStore {
 extension String {
     /// Store Name: CISStore
     static let CISStore = "Main"
-    /// First time migration UserDefaults Key
-    static let migrationKey = "firstTimeMigration"
     /// Key name: title
     static let title = "title"
     /// Key name: english

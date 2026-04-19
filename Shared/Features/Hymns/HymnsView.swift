@@ -20,9 +20,10 @@ struct HymnsView: View {
             return vm.hymnsFromSelectedBook
         } else {
             return vm.hymnsFromSelectedBook.filter {
-                $0.title.localizedCaseInsensitiveContains(filterQuery) ||
-                ($0.html ?? "").localizedCaseInsensitiveContains(filterQuery) ||
-                ($0.markdown ?? "").localizedCaseInsensitiveContains(filterQuery)
+                "\($0.number) - \($0.title)".localizedCaseInsensitiveContains(filterQuery) ||
+                $0.lyrics.contains(where: {
+                    $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(filterQuery) })
+                })
             }
         }
     }
@@ -72,7 +73,7 @@ struct HymnsView: View {
                 NavigationLink {
                     HymnView(displayedHymn: hymn)
                 } label: {
-                    Text(sortOption == Sort.number.rawValue ? hymn.title : "\(hymn.titleStr) - \(hymn.number)")
+                    Text(sortOption == Sort.number.rawValue ? "\(hymn.number) - \(hymn.title)" : "\(hymn.titleStr) - \(hymn.number)")
                         .headLineStyle()
                         .lineLimit(1)
                 }

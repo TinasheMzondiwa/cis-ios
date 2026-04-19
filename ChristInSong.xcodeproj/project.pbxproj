@@ -12,10 +12,10 @@
 		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081BE5FB2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
 		081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
-		081BE5FE2EF47E4F00EDC921 /* icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* icibemba.json */; };
-		081BE5FF2EF47E4F00EDC921 /* icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* icibemba.json */; };
-		081BE6012EF48C0900EDC921 /* twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* twi.json */; };
-		081BE6022EF48C0900EDC921 /* twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* twi.json */; };
+		081BE5FE2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */; };
+		081BE5FF2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */; };
+		081BE6012EF48C0900EDC921 /* v2/twi/twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* v2/twi/twi.json */; };
+		081BE6022EF48C0900EDC921 /* v2/twi/twi.json in Resources */ = {isa = PBXBuildFile; fileRef = 081BE6002EF48C0900EDC921 /* v2/twi/twi.json */; };
 		081D97142B57D1FA00F44C4D /* FloatingActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */; };
 		082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
 		082E002625FDCFE100E163A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E002425FDCFE100E163A8 /* AppDelegate.swift */; };
@@ -29,64 +29,168 @@
 		0846454F25E79490003AE75A /* FocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0846454E25E79490003AE75A /* FocusTextField.swift */; };
 		084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084BDAA625FD9CF8002090CD /* StoreKit.framework */; };
 		084BDAA925FD9DAA002090CD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084BDAA825FD9DAA002090CD /* StoreManager.swift */; };
-		085675462EF49C4800C1DC2A /* dg.json in Resources */ = {isa = PBXBuildFile; fileRef = 085675452EF49C4800C1DC2A /* dg.json */; };
-		085675472EF49C4800C1DC2A /* dg.json in Resources */ = {isa = PBXBuildFile; fileRef = 085675452EF49C4800C1DC2A /* dg.json */; };
+		085675462EF49C4800C1DC2A /* v2/français/dg.json in Resources */ = {isa = PBXBuildFile; fileRef = 085675452EF49C4800C1DC2A /* v2/français/dg.json */; };
+		085675472EF49C4800C1DC2A /* v2/français/dg.json in Resources */ = {isa = PBXBuildFile; fileRef = 085675452EF49C4800C1DC2A /* v2/français/dg.json */; };
 		08624FA124DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
 		08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08624FA024DBA67E00AF2904 /* StringExtensions.swift */; };
-		086ACA5A29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */ = {isa = PBXBuildFile; fileRef = 086ACA5929DA6C3B00F9AF45 /* kinyarwanda.json */; };
-		086ACA5B29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */ = {isa = PBXBuildFile; fileRef = 086ACA5929DA6C3B00F9AF45 /* kinyarwanda.json */; };
+		086ACA5A29DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json in Resources */ = {isa = PBXBuildFile; fileRef = 086ACA5929DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json */; };
+		086ACA5B29DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json in Resources */ = {isa = PBXBuildFile; fileRef = 086ACA5929DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json */; };
 		086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */; };
 		086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */; };
 		086C942624BE93BD008AFBE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C93FC24BE93BC008AFBE5 /* ContentView.swift */; };
 		086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C93FC24BE93BC008AFBE5 /* ContentView.swift */; };
 		086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086C93FD24BE93BD008AFBE5 /* Assets.xcassets */; };
 		086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086C93FD24BE93BD008AFBE5 /* Assets.xcassets */; };
-		087473512986BC3F00167974 /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473422986BC3E00167974 /* sotho.json */; };
-		087473522986BC3F00167974 /* sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473422986BC3E00167974 /* sotho.json */; };
-		087473532986BC3F00167974 /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473432986BC3F00167974 /* venda.json */; };
-		087473542986BC3F00167974 /* venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473432986BC3F00167974 /* venda.json */; };
-		087473552986BC3F00167974 /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473442986BC3F00167974 /* shona.json */; };
-		087473562986BC3F00167974 /* shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473442986BC3F00167974 /* shona.json */; };
-		087473572986BC3F00167974 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473452986BC3F00167974 /* xitsonga.json */; };
-		087473582986BC3F00167974 /* xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473452986BC3F00167974 /* xitsonga.json */; };
-		087473592986BC3F00167974 /* sdah.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473462986BC3F00167974 /* sdah.json */; };
-		0874735A2986BC3F00167974 /* sdah.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473462986BC3F00167974 /* sdah.json */; };
-		0874735B2986BC3F00167974 /* abagusii.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473472986BC3F00167974 /* abagusii.json */; };
-		0874735C2986BC3F00167974 /* abagusii.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473472986BC3F00167974 /* abagusii.json */; };
-		0874735D2986BC3F00167974 /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473482986BC3F00167974 /* tswana.json */; };
-		0874735E2986BC3F00167974 /* tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473482986BC3F00167974 /* tswana.json */; };
-		0874735F2986BC3F00167974 /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473492986BC3F00167974 /* swahili.json */; };
-		087473602986BC3F00167974 /* swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473492986BC3F00167974 /* swahili.json */; };
-		087473612986BC3F00167974 /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734A2986BC3F00167974 /* chichewa.json */; };
-		087473622986BC3F00167974 /* chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734A2986BC3F00167974 /* chichewa.json */; };
-		087473632986BC3F00167974 /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734B2986BC3F00167974 /* xhosa.json */; };
-		087473642986BC3F00167974 /* xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734B2986BC3F00167974 /* xhosa.json */; };
-		087473652986BC3F00167974 /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734C2986BC3F00167974 /* ndebele.json */; };
-		087473662986BC3F00167974 /* ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734C2986BC3F00167974 /* ndebele.json */; };
-		087473672986BC3F00167974 /* gikuyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734D2986BC3F00167974 /* gikuyu.json */; };
-		087473682986BC3F00167974 /* gikuyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734D2986BC3F00167974 /* gikuyu.json */; };
-		087473692986BC3F00167974 /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734E2986BC3F00167974 /* english.json */; };
-		0874736A2986BC3F00167974 /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734E2986BC3F00167974 /* english.json */; };
-		0874736B2986BC3F00167974 /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734F2986BC3F00167974 /* tonga.json */; };
-		0874736C2986BC3F00167974 /* tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734F2986BC3F00167974 /* tonga.json */; };
-		0874736D2986BC3F00167974 /* dholuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473502986BC3F00167974 /* dholuo.json */; };
-		0874736E2986BC3F00167974 /* dholuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473502986BC3F00167974 /* dholuo.json */; };
-		087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087473752986BD0B00167974 /* GoogleService-Info.plist */; };
-		087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087473752986BD0B00167974 /* GoogleService-Info.plist */; };
+		087473512986BC3F00167974 /* v2/sotho/sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473422986BC3E00167974 /* v2/sotho/sotho.json */; };
+		087473522986BC3F00167974 /* v2/sotho/sotho.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473422986BC3E00167974 /* v2/sotho/sotho.json */; };
+		087473532986BC3F00167974 /* v2/venda/venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473432986BC3F00167974 /* v2/venda/venda.json */; };
+		087473542986BC3F00167974 /* v2/venda/venda.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473432986BC3F00167974 /* v2/venda/venda.json */; };
+		087473552986BC3F00167974 /* v2/shona/shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473442986BC3F00167974 /* v2/shona/shona.json */; };
+		087473562986BC3F00167974 /* v2/shona/shona.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473442986BC3F00167974 /* v2/shona/shona.json */; };
+		087473572986BC3F00167974 /* v2/xitsonga/xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473452986BC3F00167974 /* v2/xitsonga/xitsonga.json */; };
+		087473582986BC3F00167974 /* v2/xitsonga/xitsonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473452986BC3F00167974 /* v2/xitsonga/xitsonga.json */; };
+		087473592986BC3F00167974 /* v2/english/sdah.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473462986BC3F00167974 /* v2/english/sdah.json */; };
+		0874735A2986BC3F00167974 /* v2/english/sdah.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473462986BC3F00167974 /* v2/english/sdah.json */; };
+		0874735B2986BC3F00167974 /* v2/abagusii/abagusii.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473472986BC3F00167974 /* v2/abagusii/abagusii.json */; };
+		0874735C2986BC3F00167974 /* v2/abagusii/abagusii.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473472986BC3F00167974 /* v2/abagusii/abagusii.json */; };
+		0874735D2986BC3F00167974 /* v2/tswana/tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473482986BC3F00167974 /* v2/tswana/tswana.json */; };
+		0874735E2986BC3F00167974 /* v2/tswana/tswana.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473482986BC3F00167974 /* v2/tswana/tswana.json */; };
+		0874735F2986BC3F00167974 /* v2/swahili/swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473492986BC3F00167974 /* v2/swahili/swahili.json */; };
+		087473602986BC3F00167974 /* v2/swahili/swahili.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473492986BC3F00167974 /* v2/swahili/swahili.json */; };
+		087473612986BC3F00167974 /* v2/chichewa/chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734A2986BC3F00167974 /* v2/chichewa/chichewa.json */; };
+		087473622986BC3F00167974 /* v2/chichewa/chichewa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734A2986BC3F00167974 /* v2/chichewa/chichewa.json */; };
+		087473632986BC3F00167974 /* v2/isiXhosa/xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734B2986BC3F00167974 /* v2/isiXhosa/xhosa.json */; };
+		087473642986BC3F00167974 /* v2/isiXhosa/xhosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734B2986BC3F00167974 /* v2/isiXhosa/xhosa.json */; };
+		087473652986BC3F00167974 /* v2/ndebele/ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734C2986BC3F00167974 /* v2/ndebele/ndebele.json */; };
+		087473662986BC3F00167974 /* v2/ndebele/ndebele.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734C2986BC3F00167974 /* v2/ndebele/ndebele.json */; };
+		087473672986BC3F00167974 /* v2/kikuyu/gikuyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734D2986BC3F00167974 /* v2/kikuyu/gikuyu.json */; };
+		087473682986BC3F00167974 /* v2/kikuyu/gikuyu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734D2986BC3F00167974 /* v2/kikuyu/gikuyu.json */; };
+		087473692986BC3F00167974 /* v2/english/english.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734E2986BC3F00167974 /* v2/english/english.json */; };
+		0874736A2986BC3F00167974 /* v2/english/english.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734E2986BC3F00167974 /* v2/english/english.json */; };
+		0874736B2986BC3F00167974 /* v2/tonga/tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734F2986BC3F00167974 /* v2/tonga/tonga.json */; };
+		0874736C2986BC3F00167974 /* v2/tonga/tonga.json in Resources */ = {isa = PBXBuildFile; fileRef = 0874734F2986BC3F00167974 /* v2/tonga/tonga.json */; };
+		0874736D2986BC3F00167974 /* v2/dholuo/dholuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473502986BC3F00167974 /* v2/dholuo/dholuo.json */; };
+		0874736E2986BC3F00167974 /* v2/dholuo/dholuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 087473502986BC3F00167974 /* v2/dholuo/dholuo.json */; };
 		0874737B298749D200167974 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874737A298749D200167974 /* AlertState.swift */; };
-		0876892C2B4B2D9500D630BA /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0876892B2B4B2D9500D630BA /* MarkdownUI */; };
-		087689332B4B308F00D630BA /* tumbuka.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892D2B4B308F00D630BA /* tumbuka.json */; };
-		087689342B4B308F00D630BA /* tumbuka.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892D2B4B308F00D630BA /* tumbuka.json */; };
-		087689352B4B308F00D630BA /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892E2B4B308F00D630BA /* es.json */; };
-		087689362B4B308F00D630BA /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892E2B4B308F00D630BA /* es.json */; };
-		087689372B4B308F00D630BA /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892F2B4B308F00D630BA /* pt.json */; };
-		087689382B4B308F00D630BA /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892F2B4B308F00D630BA /* pt.json */; };
-		087689392B4B308F00D630BA /* sepedi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689302B4B308F00D630BA /* sepedi.json */; };
-		0876893A2B4B308F00D630BA /* sepedi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689302B4B308F00D630BA /* sepedi.json */; };
-		0876893B2B4B308F00D630BA /* kirundi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689312B4B308F00D630BA /* kirundi.json */; };
-		0876893C2B4B308F00D630BA /* kirundi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689312B4B308F00D630BA /* kirundi.json */; };
-		0876893D2B4B308F00D630BA /* ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689322B4B308F00D630BA /* ru.json */; };
-		0876893E2B4B308F00D630BA /* ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689322B4B308F00D630BA /* ru.json */; };
+		087689332B4B308F00D630BA /* v2/tumbuka/tumbuka.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892D2B4B308F00D630BA /* v2/tumbuka/tumbuka.json */; };
+		087689342B4B308F00D630BA /* v2/tumbuka/tumbuka.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892D2B4B308F00D630BA /* v2/tumbuka/tumbuka.json */; };
+		087689352B4B308F00D630BA /* v2/español/es.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892E2B4B308F00D630BA /* v2/español/es.json */; };
+		087689362B4B308F00D630BA /* v2/español/es.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892E2B4B308F00D630BA /* v2/español/es.json */; };
+		087689372B4B308F00D630BA /* v2/portuguese/pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892F2B4B308F00D630BA /* v2/portuguese/pt.json */; };
+		087689382B4B308F00D630BA /* v2/portuguese/pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 0876892F2B4B308F00D630BA /* v2/portuguese/pt.json */; };
+		087689392B4B308F00D630BA /* v2/sepedi/sepedi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689302B4B308F00D630BA /* v2/sepedi/sepedi.json */; };
+		0876893A2B4B308F00D630BA /* v2/sepedi/sepedi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689302B4B308F00D630BA /* v2/sepedi/sepedi.json */; };
+		0876893B2B4B308F00D630BA /* v2/kirundi/kirundi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689312B4B308F00D630BA /* v2/kirundi/kirundi.json */; };
+		0876893C2B4B308F00D630BA /* v2/kirundi/kirundi.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689312B4B308F00D630BA /* v2/kirundi/kirundi.json */; };
+		0876893D2B4B308F00D630BA /* v2/russian/ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689322B4B308F00D630BA /* v2/russian/ru.json */; };
+		0876893E2B4B308F00D630BA /* v2/russian/ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 087689322B4B308F00D630BA /* v2/russian/ru.json */; };
+		0889E7222F8C295800FF8B09 /* HymnColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889E7212F8C295800FF8B09 /* HymnColors.swift */; };
+		0889E7232F8C295800FF8B09 /* HymnColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889E7212F8C295800FF8B09 /* HymnColors.swift */; };
+		0889E7252F8C299D00FF8B09 /* ChorusUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889E7242F8C299D00FF8B09 /* ChorusUiView.swift */; };
+		0889E7262F8C299D00FF8B09 /* ChorusUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889E7242F8C299D00FF8B09 /* ChorusUiView.swift */; };
+		0889E7282F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889E7272F8C2A3D00FF8B09 /* VerseUIView.swift */; };
+		0889E7292F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889E7272F8C2A3D00FF8B09 /* VerseUIView.swift */; };
+		0889FD232F93FDFF00FF8B09 /* SwiftUi+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FD222F93FDFF00FF8B09 /* SwiftUi+Font.swift */; };
+		0889FD5A2F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD512F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf */; };
+		0889FD5D2F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD502F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf */; };
+		0889FD5E2F93FF6400FF8B09 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD482F93FF6400FF8B09 /* Lato-Medium.ttf */; };
+		0889FD5F2F93FF6400FF8B09 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD452F93FF6400FF8B09 /* Lato-BoldItalic.ttf */; };
+		0889FD602F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4F2F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf */; };
+		0889FD612F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD402F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf */; };
+		0889FD632F93FF6400FF8B09 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD462F93FF6400FF8B09 /* Lato-Italic.ttf */; };
+		0889FD642F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD522F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf */; };
+		0889FD652F93FF6400FF8B09 /* GoogleSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3E2F93FF6400FF8B09 /* GoogleSans-Italic.ttf */; };
+		0889FD662F93FF6400FF8B09 /* EBGaramond-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD332F93FF6400FF8B09 /* EBGaramond-Italic.ttf */; };
+		0889FD672F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4D2F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf */; };
+		0889FD682F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD432F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf */; };
+		0889FD6B2F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4E2F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf */; };
+		0889FD6C2F93FF6400FF8B09 /* EBGaramond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD2F2F93FF6400FF8B09 /* EBGaramond-Bold.ttf */; };
+		0889FD6D2F93FF6400FF8B09 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4A2F93FF6400FF8B09 /* Lato-Regular.ttf */; };
+		0889FD6E2F93FF6400FF8B09 /* GoogleSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD412F93FF6400FF8B09 /* GoogleSans-Regular.ttf */; };
+		0889FD6F2F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4B2F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf */; };
+		0889FD722F93FF6400FF8B09 /* GoogleSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3F2F93FF6400FF8B09 /* GoogleSans-Medium.ttf */; };
+		0889FD732F93FF6400FF8B09 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD492F93FF6400FF8B09 /* Lato-MediumItalic.ttf */; };
+		0889FD762F93FF6400FF8B09 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD442F93FF6400FF8B09 /* Lato-Black.ttf */; };
+		0889FD772F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD302F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf */; };
+		0889FD7F2F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD322F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf */; };
+		0889FD832F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD422F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf */; };
+		0889FD852F93FF6400FF8B09 /* GoogleSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3C2F93FF6400FF8B09 /* GoogleSans-Bold.ttf */; };
+		0889FD8B2F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4C2F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf */; };
+		0889FD8C2F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD312F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf */; };
+		0889FD8D2F93FF6400FF8B09 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD472F93FF6400FF8B09 /* Lato-Light.ttf */; };
+		0889FD8E2F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3D2F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf */; };
+		0889FD8F2F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD512F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf */; };
+		0889FD922F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD502F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf */; };
+		0889FD932F93FF6400FF8B09 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD482F93FF6400FF8B09 /* Lato-Medium.ttf */; };
+		0889FD942F93FF6400FF8B09 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD452F93FF6400FF8B09 /* Lato-BoldItalic.ttf */; };
+		0889FD952F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4F2F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf */; };
+		0889FD962F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD402F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf */; };
+		0889FD982F93FF6400FF8B09 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD462F93FF6400FF8B09 /* Lato-Italic.ttf */; };
+		0889FD992F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD522F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf */; };
+		0889FD9A2F93FF6400FF8B09 /* GoogleSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3E2F93FF6400FF8B09 /* GoogleSans-Italic.ttf */; };
+		0889FD9B2F93FF6400FF8B09 /* EBGaramond-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD332F93FF6400FF8B09 /* EBGaramond-Italic.ttf */; };
+		0889FD9C2F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4D2F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf */; };
+		0889FD9D2F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD432F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf */; };
+		0889FDA02F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4E2F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf */; };
+		0889FDA12F93FF6400FF8B09 /* EBGaramond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD2F2F93FF6400FF8B09 /* EBGaramond-Bold.ttf */; };
+		0889FDA22F93FF6400FF8B09 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4A2F93FF6400FF8B09 /* Lato-Regular.ttf */; };
+		0889FDA32F93FF6400FF8B09 /* GoogleSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD412F93FF6400FF8B09 /* GoogleSans-Regular.ttf */; };
+		0889FDA42F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4B2F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf */; };
+		0889FDA72F93FF6400FF8B09 /* GoogleSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3F2F93FF6400FF8B09 /* GoogleSans-Medium.ttf */; };
+		0889FDA82F93FF6400FF8B09 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD492F93FF6400FF8B09 /* Lato-MediumItalic.ttf */; };
+		0889FDAB2F93FF6400FF8B09 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD442F93FF6400FF8B09 /* Lato-Black.ttf */; };
+		0889FDAC2F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD302F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf */; };
+		0889FDB42F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD322F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf */; };
+		0889FDB82F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD422F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf */; };
+		0889FDBA2F93FF6400FF8B09 /* GoogleSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3C2F93FF6400FF8B09 /* GoogleSans-Bold.ttf */; };
+		0889FDC02F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD4C2F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf */; };
+		0889FDC12F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD312F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf */; };
+		0889FDC22F93FF6400FF8B09 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD472F93FF6400FF8B09 /* Lato-Light.ttf */; };
+		0889FDC32F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FD3D2F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf */; };
+		0889FDCD2F9404F400FF8B09 /* EBGaramond-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDC92F9404F400FF8B09 /* EBGaramond-Medium.ttf */; };
+		0889FDCE2F9404F400FF8B09 /* EBGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCB2F9404F400FF8B09 /* EBGaramond-Regular.ttf */; };
+		0889FDD22F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCA2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf */; };
+		0889FDD42F9404F400FF8B09 /* EBGaramond-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCC2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf */; };
+		0889FDD62F9404F400FF8B09 /* EBGaramond-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDC92F9404F400FF8B09 /* EBGaramond-Medium.ttf */; };
+		0889FDD72F9404F400FF8B09 /* EBGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCB2F9404F400FF8B09 /* EBGaramond-Regular.ttf */; };
+		0889FDDB2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCA2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf */; };
+		0889FDDD2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDCC2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf */; };
+		0889FDE02F945E8600FF8B09 /* HymnContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */; };
+		0889FDE12F945E8600FF8B09 /* HymnContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */; };
+		0889FDE32F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */; };
+		0889FDE42F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */; };
+		0889FDE72F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */; };
+		0889FDE82F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */; };
+		0889FDEA2F94702300FF8B09 /* SwiftUi+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDE92F94702300FF8B09 /* SwiftUi+View.swift */; };
+		0889FDEC2F94704C00FF8B09 /* TextSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */; };
+		0889FDED2F94704C00FF8B09 /* TextSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */; };
+		0889FDEF2F9473DA00FF8B09 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FDEE2F9473DA00FF8B09 /* HapticsManager.swift */; };
+		0889FDF82F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF02F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf */; };
+		0889FDF92F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF42F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf */; };
+		0889FDFA2F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF52F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf */; };
+		0889FDFB2F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF72F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf */; };
+		0889FDFC2F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF62F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf */; };
+		0889FDFD2F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF12F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf */; };
+		0889FDFE2F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF22F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf */; };
+		0889FDFF2F94EB0000FF8B09 /* CormorantGaramond-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF32F94EB0000FF8B09 /* CormorantGaramond-Light.ttf */; };
+		0889FE002F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF02F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf */; };
+		0889FE012F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF42F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf */; };
+		0889FE022F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF52F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf */; };
+		0889FE032F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF72F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf */; };
+		0889FE042F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF62F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf */; };
+		0889FE052F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF12F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf */; };
+		0889FE062F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF22F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf */; };
+		0889FE072F94EB0000FF8B09 /* CormorantGaramond-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FDF32F94EB0000FF8B09 /* CormorantGaramond-Light.ttf */; };
+		0889FE0C2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE0B2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf */; };
+		0889FE0D2F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE082F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf */; };
+		0889FE0E2F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE092F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf */; };
+		0889FE0F2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE0A2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf */; };
+		0889FE102F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE0B2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf */; };
+		0889FE112F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE082F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf */; };
+		0889FE122F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE092F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf */; };
+		0889FE132F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0889FE0A2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf */; };
+		0889FE152F94FC7100FF8B09 /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE142F94FC7100FF8B09 /* ThankYouView.swift */; };
+		0889FE162F94FC7100FF8B09 /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE142F94FC7100FF8B09 /* ThankYouView.swift */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -110,9 +214,7 @@
 		08AB2E5825E8A5470086DA32 /* CollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */; };
 		08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */; };
 		08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */; };
-		08B0765B2BD2189000444D7B /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 08B0765A2BD2189000444D7B /* RichText */; };
 		08B0765D2BD21C3600444D7B /* PendingHymnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0765C2BD21C3600444D7B /* PendingHymnView.swift */; };
-		08B076622BD22ADC00444D7B /* proxima_nova_soft_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08B076612BD22ADC00444D7B /* proxima_nova_soft_regular.ttf */; };
 		08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */; };
 		08C0927625F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
 		08C0927725F7440A00845BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08C0927925F7440A00845BA1 /* Localizable.strings */; };
@@ -131,8 +233,8 @@
 		08CB346625E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		08CB346725E4C5DE00609D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB346525E4C5DE00609D65 /* Constants.swift */; };
 		1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A914129BFAC7E003C3260 /* FileLoader.swift */; };
-		1D1A914B29BFCA60003C3260 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* config.json */; };
-		1D1A914C29BFCA60003C3260 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* config.json */; };
+		1D1A914B29BFCA60003C3260 /* v2/config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* v2/config.json */; };
+		1D1A914C29BFCA60003C3260 /* v2/config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* v2/config.json */; };
 		1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */; };
 		1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302629BB80F000C95AC1 /* StoreHymn.swift */; };
 		1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302829BB80FD00C95AC1 /* StoreCollection.swift */; };
@@ -169,8 +271,8 @@
 		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		081BE5FD2EF47E4F00EDC921 /* icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = icibemba.json; sourceTree = "<group>"; };
-		081BE6002EF48C0900EDC921 /* twi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = twi.json; sourceTree = "<group>"; };
+		081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/icibemba/icibemba.json; sourceTree = "<group>"; };
+		081BE6002EF48C0900EDC921 /* v2/twi/twi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/twi/twi.json; sourceTree = "<group>"; };
 		081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButtonView.swift; sourceTree = "<group>"; };
 		082E002425FDCFE100E163A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0844563D24CD793D00AE352F /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
@@ -183,9 +285,9 @@
 		0846454E25E79490003AE75A /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
 		084BDAA625FD9CF8002090CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		084BDAA825FD9DAA002090CD /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		085675452EF49C4800C1DC2A /* dg.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dg.json; sourceTree = "<group>"; };
+		085675452EF49C4800C1DC2A /* v2/français/dg.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "v2/français/dg.json"; sourceTree = "<group>"; };
 		08624FA024DBA67E00AF2904 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		086ACA5929DA6C3B00F9AF45 /* kinyarwanda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kinyarwanda.json; sourceTree = "<group>"; };
+		086ACA5929DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/kinyarwanda/kinyarwanda.json; sourceTree = "<group>"; };
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		086C93FD24BE93BD008AFBE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -194,29 +296,84 @@
 		086C940A24BE93BD008AFBE5 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristInSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086C940C24BE93BD008AFBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		086C940D24BE93BD008AFBE5 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		087473422986BC3E00167974 /* sotho.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sotho.json; sourceTree = "<group>"; };
-		087473432986BC3F00167974 /* venda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = venda.json; sourceTree = "<group>"; };
-		087473442986BC3F00167974 /* shona.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shona.json; sourceTree = "<group>"; };
-		087473452986BC3F00167974 /* xitsonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xitsonga.json; sourceTree = "<group>"; };
-		087473462986BC3F00167974 /* sdah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sdah.json; sourceTree = "<group>"; };
-		087473472986BC3F00167974 /* abagusii.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = abagusii.json; sourceTree = "<group>"; };
-		087473482986BC3F00167974 /* tswana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tswana.json; sourceTree = "<group>"; };
-		087473492986BC3F00167974 /* swahili.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swahili.json; sourceTree = "<group>"; };
-		0874734A2986BC3F00167974 /* chichewa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chichewa.json; sourceTree = "<group>"; };
-		0874734B2986BC3F00167974 /* xhosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xhosa.json; sourceTree = "<group>"; };
-		0874734C2986BC3F00167974 /* ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ndebele.json; sourceTree = "<group>"; };
-		0874734D2986BC3F00167974 /* gikuyu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gikuyu.json; sourceTree = "<group>"; };
-		0874734E2986BC3F00167974 /* english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
-		0874734F2986BC3F00167974 /* tonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tonga.json; sourceTree = "<group>"; };
-		087473502986BC3F00167974 /* dholuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dholuo.json; sourceTree = "<group>"; };
+		087473422986BC3E00167974 /* v2/sotho/sotho.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/sotho/sotho.json; sourceTree = "<group>"; };
+		087473432986BC3F00167974 /* v2/venda/venda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/venda/venda.json; sourceTree = "<group>"; };
+		087473442986BC3F00167974 /* v2/shona/shona.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/shona/shona.json; sourceTree = "<group>"; };
+		087473452986BC3F00167974 /* v2/xitsonga/xitsonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/xitsonga/xitsonga.json; sourceTree = "<group>"; };
+		087473462986BC3F00167974 /* v2/english/sdah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/english/sdah.json; sourceTree = "<group>"; };
+		087473472986BC3F00167974 /* v2/abagusii/abagusii.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/abagusii/abagusii.json; sourceTree = "<group>"; };
+		087473482986BC3F00167974 /* v2/tswana/tswana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/tswana/tswana.json; sourceTree = "<group>"; };
+		087473492986BC3F00167974 /* v2/swahili/swahili.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/swahili/swahili.json; sourceTree = "<group>"; };
+		0874734A2986BC3F00167974 /* v2/chichewa/chichewa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/chichewa/chichewa.json; sourceTree = "<group>"; };
+		0874734B2986BC3F00167974 /* v2/isiXhosa/xhosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/isiXhosa/xhosa.json; sourceTree = "<group>"; };
+		0874734C2986BC3F00167974 /* v2/ndebele/ndebele.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/ndebele/ndebele.json; sourceTree = "<group>"; };
+		0874734D2986BC3F00167974 /* v2/kikuyu/gikuyu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/kikuyu/gikuyu.json; sourceTree = "<group>"; };
+		0874734E2986BC3F00167974 /* v2/english/english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/english/english.json; sourceTree = "<group>"; };
+		0874734F2986BC3F00167974 /* v2/tonga/tonga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/tonga/tonga.json; sourceTree = "<group>"; };
+		087473502986BC3F00167974 /* v2/dholuo/dholuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/dholuo/dholuo.json; sourceTree = "<group>"; };
 		087473752986BD0B00167974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0874737A298749D200167974 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
-		0876892D2B4B308F00D630BA /* tumbuka.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tumbuka.json; sourceTree = "<group>"; };
-		0876892E2B4B308F00D630BA /* es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = es.json; sourceTree = "<group>"; };
-		0876892F2B4B308F00D630BA /* pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pt.json; sourceTree = "<group>"; };
-		087689302B4B308F00D630BA /* sepedi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sepedi.json; sourceTree = "<group>"; };
-		087689312B4B308F00D630BA /* kirundi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kirundi.json; sourceTree = "<group>"; };
-		087689322B4B308F00D630BA /* ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ru.json; sourceTree = "<group>"; };
+		0876892D2B4B308F00D630BA /* v2/tumbuka/tumbuka.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/tumbuka/tumbuka.json; sourceTree = "<group>"; };
+		0876892E2B4B308F00D630BA /* v2/español/es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "v2/español/es.json"; sourceTree = "<group>"; };
+		0876892F2B4B308F00D630BA /* v2/portuguese/pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/portuguese/pt.json; sourceTree = "<group>"; };
+		087689302B4B308F00D630BA /* v2/sepedi/sepedi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/sepedi/sepedi.json; sourceTree = "<group>"; };
+		087689312B4B308F00D630BA /* v2/kirundi/kirundi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/kirundi/kirundi.json; sourceTree = "<group>"; };
+		087689322B4B308F00D630BA /* v2/russian/ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/russian/ru.json; sourceTree = "<group>"; };
+		0889E7212F8C295800FF8B09 /* HymnColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnColors.swift; sourceTree = "<group>"; };
+		0889E7242F8C299D00FF8B09 /* ChorusUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChorusUiView.swift; sourceTree = "<group>"; };
+		0889E7272F8C2A3D00FF8B09 /* VerseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseUIView.swift; sourceTree = "<group>"; };
+		0889FD222F93FDFF00FF8B09 /* SwiftUi+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUi+Font.swift"; sourceTree = "<group>"; };
+		0889FD2F2F93FF6400FF8B09 /* EBGaramond-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Bold.ttf"; sourceTree = "<group>"; };
+		0889FD302F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FD312F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0889FD322F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FD332F93FF6400FF8B09 /* EBGaramond-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Italic.ttf"; sourceTree = "<group>"; };
+		0889FD3C2F93FF6400FF8B09 /* GoogleSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Bold.ttf"; sourceTree = "<group>"; };
+		0889FD3D2F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FD3E2F93FF6400FF8B09 /* GoogleSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Italic.ttf"; sourceTree = "<group>"; };
+		0889FD3F2F93FF6400FF8B09 /* GoogleSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Medium.ttf"; sourceTree = "<group>"; };
+		0889FD402F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0889FD412F93FF6400FF8B09 /* GoogleSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Regular.ttf"; sourceTree = "<group>"; };
+		0889FD422F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		0889FD432F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FD442F93FF6400FF8B09 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		0889FD452F93FF6400FF8B09 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FD462F93FF6400FF8B09 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		0889FD472F93FF6400FF8B09 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		0889FD482F93FF6400FF8B09 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		0889FD492F93FF6400FF8B09 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0889FD4A2F93FF6400FF8B09 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		0889FD4B2F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Bold.ttf"; sourceTree = "<group>"; };
+		0889FD4C2F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FD4D2F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Italic.ttf"; sourceTree = "<group>"; };
+		0889FD4E2F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Medium.ttf"; sourceTree = "<group>"; };
+		0889FD4F2F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0889FD502F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
+		0889FD512F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-SemiBold.ttf"; sourceTree = "<group>"; };
+		0889FD522F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FDC92F9404F400FF8B09 /* EBGaramond-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Medium.ttf"; sourceTree = "<group>"; };
+		0889FDCA2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0889FDCB2F9404F400FF8B09 /* EBGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Regular.ttf"; sourceTree = "<group>"; };
+		0889FDCC2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-SemiBold.ttf"; sourceTree = "<group>"; };
+		0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnContainerView.swift; sourceTree = "<group>"; };
+		0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalsPickerUIView.swift; sourceTree = "<group>"; };
+		0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSettingsPresentation.swift; sourceTree = "<group>"; };
+		0889FDE92F94702300FF8B09 /* SwiftUi+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUi+View.swift"; sourceTree = "<group>"; };
+		0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSettingsView.swift; sourceTree = "<group>"; };
+		0889FDEE2F9473DA00FF8B09 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		0889FDF02F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Bold.ttf"; sourceTree = "<group>"; };
+		0889FDF12F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FDF22F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Italic.ttf"; sourceTree = "<group>"; };
+		0889FDF32F94EB0000FF8B09 /* CormorantGaramond-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Light.ttf"; sourceTree = "<group>"; };
+		0889FDF42F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Medium.ttf"; sourceTree = "<group>"; };
+		0889FDF52F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Regular.ttf"; sourceTree = "<group>"; };
+		0889FDF62F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-SemiBold.ttf"; sourceTree = "<group>"; };
+		0889FDF72F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		0889FE082F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-Bold.ttf"; sourceTree = "<group>"; };
+		0889FE092F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-Medium.ttf"; sourceTree = "<group>"; };
+		0889FE0A2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-Regular.ttf"; sourceTree = "<group>"; };
+		0889FE0B2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-SemiBold.ttf"; sourceTree = "<group>"; };
+		0889FE142F94FC7100FF8B09 /* ThankYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
 		08927D9224BEA5B60035972C /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		08927D9624BEAAD00035972C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
@@ -232,7 +389,6 @@
 		08AB2E6825E8B2EA0086DA32 /* CollectionHymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHymnsView.swift; sourceTree = "<group>"; };
 		08AB2E7225E944340086DA32 /* EmptyCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionsView.swift; sourceTree = "<group>"; };
 		08B0765C2BD21C3600444D7B /* PendingHymnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingHymnView.swift; sourceTree = "<group>"; };
-		08B076612BD22ADC00444D7B /* proxima_nova_soft_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = proxima_nova_soft_regular.ttf; sourceTree = "<group>"; };
 		08B2C58A25F4CF1A00A37655 /* CustomStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyles.swift; sourceTree = "<group>"; };
 		08C0927825F7440A00845BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		08C0927E25F7479000845BA1 /* WebLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLink.swift; sourceTree = "<group>"; };
@@ -246,7 +402,7 @@
 		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1A914129BFAC7E003C3260 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
-		1D1A914A29BFCA60003C3260 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		1D1A914A29BFCA60003C3260 /* v2/config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/config.json; sourceTree = "<group>"; };
 		1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTests.swift; sourceTree = "<group>"; };
 		1D45302629BB80F000C95AC1 /* StoreHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHymn.swift; sourceTree = "<group>"; };
@@ -274,10 +430,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0876892C2B4B2D9500D630BA /* MarkdownUI in Frameworks */,
 				7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */,
 				084BDAA725FD9CF8002090CD /* StoreKit.framework in Frameworks */,
-				08B0765B2BD2189000444D7B /* RichText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +479,6 @@
 		086C93FA24BE93BC008AFBE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				08B076612BD22ADC00444D7B /* proxima_nova_soft_regular.ttf */,
 				1D45302529BB80CB00C95AC1 /* ViewModel */,
 				1D45302429BB80B600C95AC1 /* CISStore */,
 				1D45302329BB80A300C95AC1 /* Store */,
@@ -374,43 +527,116 @@
 		087473412986BC0100167974 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				085675452EF49C4800C1DC2A /* dg.json */,
-				081BE6002EF48C0900EDC921 /* twi.json */,
-				081BE5FD2EF47E4F00EDC921 /* icibemba.json */,
-				0876892E2B4B308F00D630BA /* es.json */,
-				087689312B4B308F00D630BA /* kirundi.json */,
-				0876892F2B4B308F00D630BA /* pt.json */,
-				087689322B4B308F00D630BA /* ru.json */,
-				087689302B4B308F00D630BA /* sepedi.json */,
-				0876892D2B4B308F00D630BA /* tumbuka.json */,
-				086ACA5929DA6C3B00F9AF45 /* kinyarwanda.json */,
-				1D1A914A29BFCA60003C3260 /* config.json */,
-				087473472986BC3F00167974 /* abagusii.json */,
-				0874734A2986BC3F00167974 /* chichewa.json */,
-				087473502986BC3F00167974 /* dholuo.json */,
-				0874734E2986BC3F00167974 /* english.json */,
-				0874734D2986BC3F00167974 /* gikuyu.json */,
-				0874734C2986BC3F00167974 /* ndebele.json */,
-				087473462986BC3F00167974 /* sdah.json */,
-				087473442986BC3F00167974 /* shona.json */,
-				087473422986BC3E00167974 /* sotho.json */,
-				087473492986BC3F00167974 /* swahili.json */,
-				0874734F2986BC3F00167974 /* tonga.json */,
-				087473482986BC3F00167974 /* tswana.json */,
-				087473432986BC3F00167974 /* venda.json */,
-				0874734B2986BC3F00167974 /* xhosa.json */,
-				087473452986BC3F00167974 /* xitsonga.json */,
+				085675452EF49C4800C1DC2A /* v2/français/dg.json */,
+				081BE6002EF48C0900EDC921 /* v2/twi/twi.json */,
+				081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */,
+				0876892E2B4B308F00D630BA /* v2/español/es.json */,
+				087689312B4B308F00D630BA /* v2/kirundi/kirundi.json */,
+				0876892F2B4B308F00D630BA /* v2/portuguese/pt.json */,
+				087689322B4B308F00D630BA /* v2/russian/ru.json */,
+				087689302B4B308F00D630BA /* v2/sepedi/sepedi.json */,
+				0876892D2B4B308F00D630BA /* v2/tumbuka/tumbuka.json */,
+				086ACA5929DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json */,
+				1D1A914A29BFCA60003C3260 /* v2/config.json */,
+				087473472986BC3F00167974 /* v2/abagusii/abagusii.json */,
+				0874734A2986BC3F00167974 /* v2/chichewa/chichewa.json */,
+				087473502986BC3F00167974 /* v2/dholuo/dholuo.json */,
+				0874734E2986BC3F00167974 /* v2/english/english.json */,
+				0874734D2986BC3F00167974 /* v2/kikuyu/gikuyu.json */,
+				0874734C2986BC3F00167974 /* v2/ndebele/ndebele.json */,
+				087473462986BC3F00167974 /* v2/english/sdah.json */,
+				087473442986BC3F00167974 /* v2/shona/shona.json */,
+				087473422986BC3E00167974 /* v2/sotho/sotho.json */,
+				087473492986BC3F00167974 /* v2/swahili/swahili.json */,
+				0874734F2986BC3F00167974 /* v2/tonga/tonga.json */,
+				087473482986BC3F00167974 /* v2/tswana/tswana.json */,
+				087473432986BC3F00167974 /* v2/venda/venda.json */,
+				0874734B2986BC3F00167974 /* v2/isiXhosa/xhosa.json */,
+				087473452986BC3F00167974 /* v2/xitsonga/xitsonga.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0889E7202F8C292700FF8B09 /* Hymn */ = {
+			isa = PBXGroup;
+			children = (
+				0889FDE52F946FD900FF8B09 /* Options */,
+				08927E3F24C3F8230035972C /* HymnView.swift */,
+				08B0765C2BD21C3600444D7B /* PendingHymnView.swift */,
+				0889E7212F8C295800FF8B09 /* HymnColors.swift */,
+				0889E7242F8C299D00FF8B09 /* ChorusUiView.swift */,
+				0889E7272F8C2A3D00FF8B09 /* VerseUIView.swift */,
+				0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */,
+			);
+			path = Hymn;
+			sourceTree = "<group>";
+		};
+		0889FD242F93FF2100FF8B09 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0889FE082F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf */,
+				0889FE092F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf */,
+				0889FE0A2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf */,
+				0889FE0B2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf */,
+				0889FDF02F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf */,
+				0889FDF12F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf */,
+				0889FDF22F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf */,
+				0889FDF32F94EB0000FF8B09 /* CormorantGaramond-Light.ttf */,
+				0889FDF42F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf */,
+				0889FDF52F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf */,
+				0889FDF62F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf */,
+				0889FDF72F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf */,
+				0889FDC92F9404F400FF8B09 /* EBGaramond-Medium.ttf */,
+				0889FDCA2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf */,
+				0889FDCB2F9404F400FF8B09 /* EBGaramond-Regular.ttf */,
+				0889FDCC2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf */,
+				0889FD2F2F93FF6400FF8B09 /* EBGaramond-Bold.ttf */,
+				0889FD302F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf */,
+				0889FD312F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf */,
+				0889FD322F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf */,
+				0889FD332F93FF6400FF8B09 /* EBGaramond-Italic.ttf */,
+				0889FD3C2F93FF6400FF8B09 /* GoogleSans-Bold.ttf */,
+				0889FD3D2F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf */,
+				0889FD3E2F93FF6400FF8B09 /* GoogleSans-Italic.ttf */,
+				0889FD3F2F93FF6400FF8B09 /* GoogleSans-Medium.ttf */,
+				0889FD402F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf */,
+				0889FD412F93FF6400FF8B09 /* GoogleSans-Regular.ttf */,
+				0889FD422F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf */,
+				0889FD432F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf */,
+				0889FD442F93FF6400FF8B09 /* Lato-Black.ttf */,
+				0889FD452F93FF6400FF8B09 /* Lato-BoldItalic.ttf */,
+				0889FD462F93FF6400FF8B09 /* Lato-Italic.ttf */,
+				0889FD472F93FF6400FF8B09 /* Lato-Light.ttf */,
+				0889FD482F93FF6400FF8B09 /* Lato-Medium.ttf */,
+				0889FD492F93FF6400FF8B09 /* Lato-MediumItalic.ttf */,
+				0889FD4A2F93FF6400FF8B09 /* Lato-Regular.ttf */,
+				0889FD4B2F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf */,
+				0889FD4C2F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf */,
+				0889FD4D2F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf */,
+				0889FD4E2F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf */,
+				0889FD4F2F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf */,
+				0889FD502F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf */,
+				0889FD512F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf */,
+				0889FD522F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0889FDE52F946FD900FF8B09 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */,
+				0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */,
+			);
+			path = Options;
 			sourceTree = "<group>";
 		};
 		08927D9124BEA58A0035972C /* Hymns */ = {
 			isa = PBXGroup;
 			children = (
+				0889E7202F8C292700FF8B09 /* Hymn */,
 				08927DA124BEAC110035972C /* Hymnals */,
 				08927D9224BEA5B60035972C /* HymnsView.swift */,
-				08927E3F24C3F8230035972C /* HymnView.swift */,
-				08B0765C2BD21C3600444D7B /* PendingHymnView.swift */,
 			);
 			path = Hymns;
 			sourceTree = "<group>";
@@ -429,6 +655,7 @@
 			children = (
 				08927D9A24BEAAFC0035972C /* SupportView.swift */,
 				084BDAA825FD9DAA002090CD /* StoreManager.swift */,
+				0889FE142F94FC7100FF8B09 /* ThankYouView.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -445,6 +672,7 @@
 			isa = PBXGroup;
 			children = (
 				08CB33A225E2112F00609D65 /* View */,
+				0889FDE22F9462DE00FF8B09 /* HymnalsPickerUIView.swift */,
 			);
 			path = Hymnals;
 			sourceTree = "<group>";
@@ -462,6 +690,7 @@
 				08A3366825FDB9A900852566 /* HUD.swift */,
 				080518A329F48ABF00D9C95A /* EditModeContext.swift */,
 				081D97132B57D1FA00F44C4D /* FloatingActionButtonView.swift */,
+				0889FDEE2F9473DA00FF8B09 /* HapticsManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -533,6 +762,7 @@
 		08CB33B825E21AA300609D65 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0889FD242F93FF2100FF8B09 /* Fonts */,
 				67A174B3285F084D006A5BC1 /* Extensions */,
 				08CB33EA25E22D9E00609D65 /* Data */,
 				08927DA924BEBB3B0035972C /* Model */,
@@ -623,6 +853,8 @@
 			isa = PBXGroup;
 			children = (
 				67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */,
+				0889FD222F93FDFF00FF8B09 /* SwiftUi+Font.swift */,
+				0889FDE92F94702300FF8B09 /* SwiftUi+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -656,8 +888,6 @@
 			);
 			name = iOS;
 			packageProductDependencies = (
-				0876892B2B4B2D9500D630BA /* MarkdownUI */,
-				08B0765A2BD2189000444D7B /* RichText */,
 			);
 			productName = iOS;
 			productReference = 086C940224BE93BD008AFBE5 /* ChristInSong.app */;
@@ -705,8 +935,9 @@
 		086C93F624BE93BC008AFBE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					086C940124BE93BD008AFBE5 = {
 						CreatedOnToolsVersion = 12.0;
@@ -730,8 +961,6 @@
 			);
 			mainGroup = 086C93F524BE93BC008AFBE5;
 			packageReferences = (
-				0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				08B076592BD2189000444D7B /* XCRemoteSwiftPackageReference "RichText" */,
 			);
 			productRefGroup = 086C940324BE93BD008AFBE5 /* Products */;
 			projectDirPath = "";
@@ -749,37 +978,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				087689372B4B308F00D630BA /* pt.json in Resources */,
+				087689372B4B308F00D630BA /* v2/portuguese/pt.json in Resources */,
 				08C0927625F7440A00845BA1 /* Localizable.strings in Resources */,
-				0876893B2B4B308F00D630BA /* kirundi.json in Resources */,
-				0874735D2986BC3F00167974 /* tswana.json in Resources */,
-				0874736D2986BC3F00167974 /* dholuo.json in Resources */,
-				087473592986BC3F00167974 /* sdah.json in Resources */,
-				0874735F2986BC3F00167974 /* swahili.json in Resources */,
-				087473632986BC3F00167974 /* xhosa.json in Resources */,
-				081BE6022EF48C0900EDC921 /* twi.json in Resources */,
-				087473552986BC3F00167974 /* shona.json in Resources */,
+				0876893B2B4B308F00D630BA /* v2/kirundi/kirundi.json in Resources */,
+				0874735D2986BC3F00167974 /* v2/tswana/tswana.json in Resources */,
+				0874736D2986BC3F00167974 /* v2/dholuo/dholuo.json in Resources */,
+				087473592986BC3F00167974 /* v2/english/sdah.json in Resources */,
+				0874735F2986BC3F00167974 /* v2/swahili/swahili.json in Resources */,
+				087473632986BC3F00167974 /* v2/isiXhosa/xhosa.json in Resources */,
+				081BE6022EF48C0900EDC921 /* v2/twi/twi.json in Resources */,
+				087473552986BC3F00167974 /* v2/shona/shona.json in Resources */,
 				086C942824BE93BD008AFBE5 /* Assets.xcassets in Resources */,
-				0874736B2986BC3F00167974 /* tonga.json in Resources */,
-				087689332B4B308F00D630BA /* tumbuka.json in Resources */,
-				1D1A914B29BFCA60003C3260 /* config.json in Resources */,
+				0874736B2986BC3F00167974 /* v2/tonga/tonga.json in Resources */,
+				087689332B4B308F00D630BA /* v2/tumbuka/tumbuka.json in Resources */,
+				1D1A914B29BFCA60003C3260 /* v2/config.json in Resources */,
 				081BE5FB2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */,
-				0874735B2986BC3F00167974 /* abagusii.json in Resources */,
-				0876893D2B4B308F00D630BA /* ru.json in Resources */,
-				087473672986BC3F00167974 /* gikuyu.json in Resources */,
-				08B076622BD22ADC00444D7B /* proxima_nova_soft_regular.ttf in Resources */,
-				085675462EF49C4800C1DC2A /* dg.json in Resources */,
-				087473762986BD0B00167974 /* GoogleService-Info.plist in Resources */,
-				086ACA5A29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */,
-				081BE5FE2EF47E4F00EDC921 /* icibemba.json in Resources */,
-				087473572986BC3F00167974 /* xitsonga.json in Resources */,
-				087473612986BC3F00167974 /* chichewa.json in Resources */,
-				087473652986BC3F00167974 /* ndebele.json in Resources */,
-				087473532986BC3F00167974 /* venda.json in Resources */,
-				087473692986BC3F00167974 /* english.json in Resources */,
-				087689392B4B308F00D630BA /* sepedi.json in Resources */,
-				087473512986BC3F00167974 /* sotho.json in Resources */,
-				087689352B4B308F00D630BA /* es.json in Resources */,
+				0874735B2986BC3F00167974 /* v2/abagusii/abagusii.json in Resources */,
+				0876893D2B4B308F00D630BA /* v2/russian/ru.json in Resources */,
+				087473672986BC3F00167974 /* v2/kikuyu/gikuyu.json in Resources */,
+				085675462EF49C4800C1DC2A /* v2/français/dg.json in Resources */,
+				086ACA5A29DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json in Resources */,
+				081BE5FE2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */,
+				087473572986BC3F00167974 /* v2/xitsonga/xitsonga.json in Resources */,
+				087473612986BC3F00167974 /* v2/chichewa/chichewa.json in Resources */,
+				087473652986BC3F00167974 /* v2/ndebele/ndebele.json in Resources */,
+				087473532986BC3F00167974 /* v2/venda/venda.json in Resources */,
+				087473692986BC3F00167974 /* v2/english/english.json in Resources */,
+				087689392B4B308F00D630BA /* v2/sepedi/sepedi.json in Resources */,
+				087473512986BC3F00167974 /* v2/sotho/sotho.json in Resources */,
+				0889FD8F2F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf in Resources */,
+				0889FD922F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf in Resources */,
+				0889FD932F93FF6400FF8B09 /* Lato-Medium.ttf in Resources */,
+				0889FD942F93FF6400FF8B09 /* Lato-BoldItalic.ttf in Resources */,
+				0889FD952F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf in Resources */,
+				0889FD962F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf in Resources */,
+				0889FD982F93FF6400FF8B09 /* Lato-Italic.ttf in Resources */,
+				0889FD992F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf in Resources */,
+				0889FD9A2F93FF6400FF8B09 /* GoogleSans-Italic.ttf in Resources */,
+				0889FD9B2F93FF6400FF8B09 /* EBGaramond-Italic.ttf in Resources */,
+				0889FD9C2F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf in Resources */,
+				0889FD9D2F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf in Resources */,
+				0889FDA02F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf in Resources */,
+				0889FDA12F93FF6400FF8B09 /* EBGaramond-Bold.ttf in Resources */,
+				0889FDA22F93FF6400FF8B09 /* Lato-Regular.ttf in Resources */,
+				0889FDA32F93FF6400FF8B09 /* GoogleSans-Regular.ttf in Resources */,
+				0889FDA42F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf in Resources */,
+				0889FDA72F93FF6400FF8B09 /* GoogleSans-Medium.ttf in Resources */,
+				0889FE102F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf in Resources */,
+				0889FE112F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf in Resources */,
+				0889FE122F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf in Resources */,
+				0889FE132F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf in Resources */,
+				0889FDA82F93FF6400FF8B09 /* Lato-MediumItalic.ttf in Resources */,
+				0889FDD62F9404F400FF8B09 /* EBGaramond-Medium.ttf in Resources */,
+				0889FDD72F9404F400FF8B09 /* EBGaramond-Regular.ttf in Resources */,
+				0889FDDB2F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf in Resources */,
+				0889FDDD2F9404F400FF8B09 /* EBGaramond-SemiBold.ttf in Resources */,
+				0889FDAB2F93FF6400FF8B09 /* Lato-Black.ttf in Resources */,
+				0889FE002F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf in Resources */,
+				0889FE012F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf in Resources */,
+				0889FE022F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf in Resources */,
+				0889FE032F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf in Resources */,
+				0889FE042F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf in Resources */,
+				0889FE052F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf in Resources */,
+				0889FE062F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf in Resources */,
+				0889FE072F94EB0000FF8B09 /* CormorantGaramond-Light.ttf in Resources */,
+				0889FDAC2F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf in Resources */,
+				0889FDB42F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf in Resources */,
+				0889FDB82F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf in Resources */,
+				0889FDBA2F93FF6400FF8B09 /* GoogleSans-Bold.ttf in Resources */,
+				0889FDC02F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf in Resources */,
+				0889FDC12F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf in Resources */,
+				0889FDC22F93FF6400FF8B09 /* Lato-Light.ttf in Resources */,
+				0889FDC32F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf in Resources */,
+				087689352B4B308F00D630BA /* v2/español/es.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,36 +1058,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				087689382B4B308F00D630BA /* pt.json in Resources */,
-				081BE5FF2EF47E4F00EDC921 /* icibemba.json in Resources */,
+				087689382B4B308F00D630BA /* v2/portuguese/pt.json in Resources */,
+				081BE5FF2EF47E4F00EDC921 /* v2/icibemba/icibemba.json in Resources */,
 				08C0927725F7440A00845BA1 /* Localizable.strings in Resources */,
-				0876893C2B4B308F00D630BA /* kirundi.json in Resources */,
-				0874735E2986BC3F00167974 /* tswana.json in Resources */,
-				0874736E2986BC3F00167974 /* dholuo.json in Resources */,
-				0874735A2986BC3F00167974 /* sdah.json in Resources */,
-				087473602986BC3F00167974 /* swahili.json in Resources */,
-				087473642986BC3F00167974 /* xhosa.json in Resources */,
-				087473562986BC3F00167974 /* shona.json in Resources */,
+				0876893C2B4B308F00D630BA /* v2/kirundi/kirundi.json in Resources */,
+				0874735E2986BC3F00167974 /* v2/tswana/tswana.json in Resources */,
+				0874736E2986BC3F00167974 /* v2/dholuo/dholuo.json in Resources */,
+				0874735A2986BC3F00167974 /* v2/english/sdah.json in Resources */,
+				087473602986BC3F00167974 /* v2/swahili/swahili.json in Resources */,
+				087473642986BC3F00167974 /* v2/isiXhosa/xhosa.json in Resources */,
+				087473562986BC3F00167974 /* v2/shona/shona.json in Resources */,
 				086C942924BE93BD008AFBE5 /* Assets.xcassets in Resources */,
-				0874736C2986BC3F00167974 /* tonga.json in Resources */,
+				0874736C2986BC3F00167974 /* v2/tonga/tonga.json in Resources */,
 				081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */,
-				081BE6012EF48C0900EDC921 /* twi.json in Resources */,
-				087689342B4B308F00D630BA /* tumbuka.json in Resources */,
-				1D1A914C29BFCA60003C3260 /* config.json in Resources */,
-				0874735C2986BC3F00167974 /* abagusii.json in Resources */,
-				0876893E2B4B308F00D630BA /* ru.json in Resources */,
-				085675472EF49C4800C1DC2A /* dg.json in Resources */,
-				087473682986BC3F00167974 /* gikuyu.json in Resources */,
-				087473772986BD0B00167974 /* GoogleService-Info.plist in Resources */,
-				086ACA5B29DA6C3B00F9AF45 /* kinyarwanda.json in Resources */,
-				087473582986BC3F00167974 /* xitsonga.json in Resources */,
-				087473622986BC3F00167974 /* chichewa.json in Resources */,
-				087473662986BC3F00167974 /* ndebele.json in Resources */,
-				087473542986BC3F00167974 /* venda.json in Resources */,
-				0874736A2986BC3F00167974 /* english.json in Resources */,
-				0876893A2B4B308F00D630BA /* sepedi.json in Resources */,
-				087473522986BC3F00167974 /* sotho.json in Resources */,
-				087689362B4B308F00D630BA /* es.json in Resources */,
+				081BE6012EF48C0900EDC921 /* v2/twi/twi.json in Resources */,
+				087689342B4B308F00D630BA /* v2/tumbuka/tumbuka.json in Resources */,
+				1D1A914C29BFCA60003C3260 /* v2/config.json in Resources */,
+				0889FD5A2F93FF6400FF8B09 /* LibreBaskerville-SemiBold.ttf in Resources */,
+				0889FD5D2F93FF6400FF8B09 /* LibreBaskerville-Regular.ttf in Resources */,
+				0889FD5E2F93FF6400FF8B09 /* Lato-Medium.ttf in Resources */,
+				0889FDF82F94EB0000FF8B09 /* CormorantGaramond-Bold.ttf in Resources */,
+				0889FDF92F94EB0000FF8B09 /* CormorantGaramond-Medium.ttf in Resources */,
+				0889FDFA2F94EB0000FF8B09 /* CormorantGaramond-Regular.ttf in Resources */,
+				0889FDFB2F94EB0000FF8B09 /* CormorantGaramond-SemiBoldItalic.ttf in Resources */,
+				0889FDFC2F94EB0000FF8B09 /* CormorantGaramond-SemiBold.ttf in Resources */,
+				0889FDFD2F94EB0000FF8B09 /* CormorantGaramond-BoldItalic.ttf in Resources */,
+				0889FDFE2F94EB0000FF8B09 /* CormorantGaramond-Italic.ttf in Resources */,
+				0889FDFF2F94EB0000FF8B09 /* CormorantGaramond-Light.ttf in Resources */,
+				0889FD5F2F93FF6400FF8B09 /* Lato-BoldItalic.ttf in Resources */,
+				0889FD602F93FF6400FF8B09 /* LibreBaskerville-MediumItalic.ttf in Resources */,
+				0889FD612F93FF6400FF8B09 /* GoogleSans-MediumItalic.ttf in Resources */,
+				0889FD632F93FF6400FF8B09 /* Lato-Italic.ttf in Resources */,
+				0889FD642F93FF6400FF8B09 /* LibreBaskerville-SemiBoldItalic.ttf in Resources */,
+				0889FD652F93FF6400FF8B09 /* GoogleSans-Italic.ttf in Resources */,
+				0889FD662F93FF6400FF8B09 /* EBGaramond-Italic.ttf in Resources */,
+				0889FD672F93FF6400FF8B09 /* LibreBaskerville-Italic.ttf in Resources */,
+				0889FD682F93FF6400FF8B09 /* GoogleSans-SemiBoldItalic.ttf in Resources */,
+				0889FD6B2F93FF6400FF8B09 /* LibreBaskerville-Medium.ttf in Resources */,
+				0889FD6C2F93FF6400FF8B09 /* EBGaramond-Bold.ttf in Resources */,
+				0889FD6D2F93FF6400FF8B09 /* Lato-Regular.ttf in Resources */,
+				0889FD6E2F93FF6400FF8B09 /* GoogleSans-Regular.ttf in Resources */,
+				0889FD6F2F93FF6400FF8B09 /* LibreBaskerville-Bold.ttf in Resources */,
+				0889FD722F93FF6400FF8B09 /* GoogleSans-Medium.ttf in Resources */,
+				0889FD732F93FF6400FF8B09 /* Lato-MediumItalic.ttf in Resources */,
+				0889FD762F93FF6400FF8B09 /* Lato-Black.ttf in Resources */,
+				0889FD772F93FF6400FF8B09 /* EBGaramond-BoldItalic.ttf in Resources */,
+				0889FD7F2F93FF6400FF8B09 /* EBGaramond-ExtraBoldItalic.ttf in Resources */,
+				0889FE0C2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf in Resources */,
+				0889FE0D2F94EE3300FF8B09 /* proxima-nova-soft-Bold.ttf in Resources */,
+				0889FE0E2F94EE3300FF8B09 /* proxima-nova-soft-Medium.ttf in Resources */,
+				0889FE0F2F94EE3300FF8B09 /* proxima-nova-soft-Regular.ttf in Resources */,
+				0889FD832F93FF6400FF8B09 /* GoogleSans-SemiBold.ttf in Resources */,
+				0889FD852F93FF6400FF8B09 /* GoogleSans-Bold.ttf in Resources */,
+				0889FD8B2F93FF6400FF8B09 /* LibreBaskerville-BoldItalic.ttf in Resources */,
+				0889FD8C2F93FF6400FF8B09 /* EBGaramond-ExtraBold.ttf in Resources */,
+				0889FD8D2F93FF6400FF8B09 /* Lato-Light.ttf in Resources */,
+				0889FD8E2F93FF6400FF8B09 /* GoogleSans-BoldItalic.ttf in Resources */,
+				0874735C2986BC3F00167974 /* v2/abagusii/abagusii.json in Resources */,
+				0876893E2B4B308F00D630BA /* v2/russian/ru.json in Resources */,
+				085675472EF49C4800C1DC2A /* v2/français/dg.json in Resources */,
+				087473682986BC3F00167974 /* v2/kikuyu/gikuyu.json in Resources */,
+				086ACA5B29DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json in Resources */,
+				087473582986BC3F00167974 /* v2/xitsonga/xitsonga.json in Resources */,
+				087473622986BC3F00167974 /* v2/chichewa/chichewa.json in Resources */,
+				087473662986BC3F00167974 /* v2/ndebele/ndebele.json in Resources */,
+				087473542986BC3F00167974 /* v2/venda/venda.json in Resources */,
+				0874736A2986BC3F00167974 /* v2/english/english.json in Resources */,
+				0876893A2B4B308F00D630BA /* v2/sepedi/sepedi.json in Resources */,
+				0889FDCD2F9404F400FF8B09 /* EBGaramond-Medium.ttf in Resources */,
+				0889FDCE2F9404F400FF8B09 /* EBGaramond-Regular.ttf in Resources */,
+				0889FDD22F9404F400FF8B09 /* EBGaramond-MediumItalic.ttf in Resources */,
+				0889FDD42F9404F400FF8B09 /* EBGaramond-SemiBold.ttf in Resources */,
+				087473522986BC3F00167974 /* v2/sotho/sotho.json in Resources */,
+				087689362B4B308F00D630BA /* v2/español/es.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,6 +1203,8 @@
 				67A174BF285F1459006A5BC1 /* View+Extensions.swift in Sources */,
 				1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
+				0889FDED2F94704C00FF8B09 /* TextSettingsView.swift in Sources */,
+				0889FDEF2F9473DA00FF8B09 /* HapticsManager.swift in Sources */,
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
 				67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
@@ -917,22 +1233,31 @@
 				0874737B298749D200167974 /* AlertState.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
+				0889E7252F8C299D00FF8B09 /* ChorusUiView.swift in Sources */,
 				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
 				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
 				08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */,
 				1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */,
 				08B0765D2BD21C3600444D7B /* PendingHymnView.swift in Sources */,
+				0889E7292F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */,
 				1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */,
 				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
+				0889E7222F8C295800FF8B09 /* HymnColors.swift in Sources */,
+				0889FD232F93FDFF00FF8B09 /* SwiftUi+Font.swift in Sources */,
+				0889FDE72F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */,
 				08927D9F24BEAB1F0035972C /* InfoView.swift in Sources */,
 				0846454F25E79490003AE75A /* FocusTextField.swift in Sources */,
 				08C0927F25F7479000845BA1 /* WebLink.swift in Sources */,
 				1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */,
+				0889FDE32F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */,
 				1D1A914229BFAC7E003C3260 /* FileLoader.swift in Sources */,
 				08927EAE24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */,
+				0889FDEA2F94702300FF8B09 /* SwiftUi+View.swift in Sources */,
+				0889FE162F94FC7100FF8B09 /* ThankYouView.swift in Sources */,
 				08CB341025E2FD2E00609D65 /* Hymn+CoreDataProperties.swift in Sources */,
 				08CB33ED25E22DD200609D65 /* Main.xcdatamodeld in Sources */,
+				0889FDE12F945E8600FF8B09 /* HymnContainerView.swift in Sources */,
 				086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,7 +1270,11 @@
 				08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */,
 				67A174C6285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
+				0889FDE42F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */,
+				0889FDE02F945E8600FF8B09 /* HymnContainerView.swift in Sources */,
 				08C3C0A325F08E81004194B2 /* FontExtensions.swift in Sources */,
+				0889E7232F8C295800FF8B09 /* HymnColors.swift in Sources */,
+				0889FDEC2F94704C00FF8B09 /* TextSettingsView.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
 				08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */,
@@ -953,14 +1282,18 @@
 				086C942724BE93BD008AFBE5 /* ContentView.swift in Sources */,
 				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
 				0844563F24CD793D00AE352F /* PendingView.swift in Sources */,
+				0889E7282F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */,
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
+				0889FDE82F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */,
 				67A174C3285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
 				67A174C0285F1459006A5BC1 /* View+Extensions.swift in Sources */,
 				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
+				0889E7262F8C299D00FF8B09 /* ChorusUiView.swift in Sources */,
 				08C0928025F7479000845BA1 /* WebLink.swift in Sources */,
 				08927D9824BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA424BEAC240035972C /* HymnalsView.swift in Sources */,
+				0889FE152F94FC7100FF8B09 /* ThankYouView.swift in Sources */,
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
@@ -1034,9 +1367,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1054,6 +1389,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1093,9 +1429,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1106,6 +1444,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -1119,7 +1458,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 32;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1130,7 +1469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -1148,7 +1487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/ChristInSong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 32;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1159,7 +1498,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -1180,6 +1519,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1188,7 +1528,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = macosx;
@@ -1206,6 +1546,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = E7Y77TZ7V4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1214,7 +1555,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = macosx;
@@ -1305,38 +1646,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
-			};
-		};
-		08B076592BD2189000444D7B /* XCRemoteSwiftPackageReference "RichText" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NuPlay/RichText.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0876892B2B4B2D9500D630BA /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0876892A2B4B2D9500D630BA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
-		08B0765A2BD2189000444D7B /* RichText */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 08B076592BD2189000444D7B /* XCRemoteSwiftPackageReference "RichText" */;
-			productName = RichText;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		08CB33EB25E22DD200609D65 /* Main.xcdatamodeld */ = {

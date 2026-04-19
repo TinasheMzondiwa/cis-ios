@@ -7,6 +7,20 @@
 
 import Foundation
 
+public struct StoreLyric: Equatable, Codable, Identifiable {
+    public var id: UUID { UUID() }
+    
+    public let type: String
+    public let index: Int?
+    public let lines: [String]
+    
+    public init(type: String, index: Int? = nil, lines: [String]) {
+        self.type = type
+        self.index = index
+        self.lines = lines
+    }
+}
+
 public struct StoreHymn: Identifiable, Equatable {
     /// Unique ID
     public let id: UUID
@@ -14,24 +28,18 @@ public struct StoreHymn: Identifiable, Equatable {
     public let title: String
     /// Title of the Hymn with the number inverted
     public let titleStr: String
-    /// Content of the Hymn in html
-    public let html: String?
-    /// Content of the Hymn in markdown
-    public let markdown: String?
-    /// Modified version of thy hymn, defaults to content
-    public let editedContent: String?
+    /// Lyrics of the Hymn
+    public let lyrics: [StoreLyric]
     /// Key to book to which the hymn belongs
     public let book: String
     /// Hymn number
     public let number: Int
     
-    public init(id: UUID, title: String, titleStr: String, html: String?, markdown: String?, editedContent: String? = nil, book: String, number: Int) {
+    public init(id: UUID, title: String, titleStr: String, lyrics: [StoreLyric], book: String, number: Int) {
         self.id = id
         self.title = title
         self.titleStr = titleStr
-        self.html = html
-        self.markdown = markdown
-        self.editedContent = editedContent
+        self.lyrics = lyrics
         self.book = book
         self.number = number
     }

@@ -20,7 +20,10 @@ enum SFSymbol: String, View {
     case musicNote = "music.note"
     case plus = "plus"
     case search = "magnifyingglass"
+    case textFormat = "textformat"
     case textPlus = "text.badge.plus"
+    case testFormatLarger = "textformat.size.larger"
+    case testFormatSmaller = "textformat.size.smaller"
     case xmarkFill = "xmark.circle.fill"
     
     var body: Image {

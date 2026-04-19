@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>proxima_nova_soft_regular</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -26,6 +22,52 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>EBGaramond-Bold.ttf</string>
+		<string>EBGaramond-Medium.ttf</string>
+		<string>EBGaramond-MediumItalic.ttf</string>
+		<string>EBGaramond-Regular.ttf</string>
+		<string>EBGaramond-SemiBold.ttf</string>
+		<string>EBGaramond-BoldItalic.ttf</string>
+		<string>EBGaramond-ExtraBold.ttf</string>
+		<string>EBGaramond-Italic.ttf</string>
+		<string>GoogleSans-Bold.ttf</string>
+		<string>GoogleSans-BoldItalic.ttf</string>
+		<string>GoogleSans-Italic.ttf</string>
+		<string>GoogleSans-Medium.ttf</string>
+		<string>GoogleSans-MediumItalic.ttf</string>
+		<string>GoogleSans-Regular.ttf</string>
+		<string>GoogleSans-SemiBold.ttf</string>
+		<string>GoogleSans-SemiBoldItalic.ttf</string>
+		<string>Lato-Black.ttf</string>
+		<string>Lato-BoldItalic.ttf</string>
+		<string>Lato-Italic.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>Lato-Medium.ttf</string>
+		<string>Lato-MediumItalic.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>LibreBaskerville-Bold.ttf</string>
+		<string>LibreBaskerville-BoldItalic.ttf</string>
+		<string>LibreBaskerville-Italic.ttf</string>
+		<string>LibreBaskerville-Medium.ttf</string>
+		<string>LibreBaskerville-MediumItalic.ttf</string>
+		<string>LibreBaskerville-Regular.ttf</string>
+		<string>LibreBaskerville-SemiBold.ttf</string>
+		<string>LibreBaskerville-SemiBoldItalic.ttf</string>
+		<string>CormorantGaramond-Bold.ttf</string>
+		<string>CormorantGaramond-BoldItalic.ttf</string>
+		<string>CormorantGaramond-Italic.ttf</string>
+		<string>CormorantGaramond-Light.ttf</string>
+		<string>CormorantGaramond-Medium.ttf</string>
+		<string>CormorantGaramond-Regular.ttf</string>
+		<string>CormorantGaramond-SemiBold.ttf</string>
+		<string>CormorantGaramond-SemiBoldItalic.ttf</string>
+		<string>proxima-nova-soft-Bold.ttf</string>
+		<string>proxima-nova-soft-Medium.ttf</string>
+		<string>proxima-nova-soft-Regular.ttf</string>
+		<string>proxima-nova-soft-SemiBold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

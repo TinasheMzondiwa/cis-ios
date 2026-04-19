@@ -18,7 +18,7 @@ Contributions are most welcome in the form of Github issues and pull-requests.
 ## Building project
 * Clone the repo - `git clone`
 * Install [rbenv](https://github.com/rbenv/rbenv)
-* Get submodules - `git submodule update --init --recursive`
+* Get submodules - `./setup_submodules.sh`
 * Installs pods - `bundle install` and `bundle exec pod install`
 * Launch `ChristInSong.xcworkspace`
 

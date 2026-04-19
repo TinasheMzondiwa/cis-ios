@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct ChristInSongApp: App {
     let viewModel: CISAppViewModel
+    @StateObject private var manager = StoreManager.shared
     
     init() {
         let store = CISCoreDataStore()
@@ -20,6 +21,7 @@ struct ChristInSongApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .environmentObject(manager)
         }
     }
 }

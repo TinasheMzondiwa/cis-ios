@@ -9,9 +9,10 @@ import Foundation
 
 final class CISAppViewModel: ObservableObject {
     // MARK: - Properties
-    private let store: Store
+    private var store: Store
     
     // MARK: - Published properties
+    @Published var isLoadingStore: Bool = true
     @Published var allBooks: [StoreBook] = []
     @Published var allCollections: [StoreCollection] = []
     @Published var hymnsFromSelectedBook: [StoreHymn] = []
@@ -19,7 +20,6 @@ final class CISAppViewModel: ObservableObject {
     @Published var selectedHymn: StoreHymn?
     @Published var selectedBookTitle: String?
     @Published var bookSelectionShown: Bool = false
-    @Published var bookSelectionShownFromHymnView: Bool = false
     @Published var collectionsSheetShown: Bool = false
     
     @Published var bookSearchQuery: String = ""
@@ -27,7 +27,10 @@ final class CISAppViewModel: ObservableObject {
     // MARK: - Initialization
     init(store: Store) {
         self.store = store
-        refreshAppContent()
+        self.store.onStoreLoaded = { [weak self] in
+            self?.isLoadingStore = false
+            self?.refreshAppContent()
+        }
     }
     
     // MARK: - Functions
@@ -40,7 +43,7 @@ final class CISAppViewModel: ObservableObject {
     /// Fetch all books from the `config.json` file
     /// It's important that this file is updated with the right key names otherwise this might lead to
     /// an inconsistent app state.
-    func fetchAllBooks(){
+    func fetchAllBooks() {
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
             if store.retrieveSelectedBook() == nil {
@@ -58,6 +61,7 @@ final class CISAppViewModel: ObservableObject {
             }
             
         } else {
+            print("We're unable to fetch books, file is missing or corrupt")
             // TODO: To fix
             // We're unable to fetch books, file is missing or corrupt
             // Handle this scenario
@@ -120,9 +124,7 @@ final class CISAppViewModel: ObservableObject {
         store.createCollection(with: title, and: aboutStr)
         allCollections = store.retrieveAllCollections()
     }
-    func toggleBookSelectionShownFromHymnView() {
-        bookSelectionShownFromHymnView.toggle()
-    }
+    
     func toggleBookSelectionSheet() {
         bookSelectionShown.toggle()
     }
