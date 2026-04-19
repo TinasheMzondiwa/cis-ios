@@ -10,6 +10,7 @@ import CoreData
 
 /// Conform to this protocol to perfom any store operations within the CIS applicaiton
 public protocol Store {
+    var onStoreLoaded: (() -> Void)? { get set }
     /// Retrieve all books from the store
     /// - Returns: a list of ``StoreBook``
     func retrieveAllBooks() -> [StoreBook]

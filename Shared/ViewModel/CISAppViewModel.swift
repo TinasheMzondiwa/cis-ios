@@ -9,9 +9,10 @@ import Foundation
 
 final class CISAppViewModel: ObservableObject {
     // MARK: - Properties
-    private let store: Store
+    private var store: Store
     
     // MARK: - Published properties
+    @Published var isLoadingStore: Bool = true
     @Published var allBooks: [StoreBook] = []
     @Published var allCollections: [StoreCollection] = []
     @Published var hymnsFromSelectedBook: [StoreHymn] = []
@@ -26,7 +27,10 @@ final class CISAppViewModel: ObservableObject {
     // MARK: - Initialization
     init(store: Store) {
         self.store = store
-        refreshAppContent()
+        self.store.onStoreLoaded = { [weak self] in
+            self?.isLoadingStore = false
+            self?.refreshAppContent()
+        }
     }
     
     // MARK: - Functions

@@ -10,20 +10,38 @@ import CoreData
 
 final class CISCoreDataStore: Store {
    
+    var onStoreLoaded: (() -> Void)?
     private let container: NSPersistentContainer
     private let defaults = UserDefaults.standard
     
     
     init() {
         container = NSPersistentContainer(name: .CISStore)
-        container.loadPersistentStores { _, _ in }
+        if let description = container.persistentStoreDescriptions.first {
+            description.shouldAddStoreAsynchronously = true
+        }
         
-        // Perform Migration
-        do {
-            try initializeStore()
-        } catch {
-            //TODO: - Better handle the error
-            print("Error: Initialization \(error.localizedDescription)")
+        container.loadPersistentStores { [weak self] _, error in
+            if let error = error {
+                print("Error loading store: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let self = self else { return }
+            
+            self.container.performBackgroundTask { context in
+                // Perform Migration
+                do {
+                    try self.initializeStore(context: context)
+                } catch {
+                    //TODO: - Better handle the error
+                    print("Error: Initialization \(error.localizedDescription)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.onStoreLoaded?()
+                }
+            }
         }
     }
     
@@ -47,9 +65,9 @@ final class CISCoreDataStore: Store {
         return books
     }
     
-    private func isStoreEmpty() -> Bool {
+    private func isStoreEmpty(context: NSManagedObjectContext) -> Bool {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: .Hymn)
-        if let res = try? container.viewContext.fetch(request) {
+        if let res = try? context.fetch(request) {
             return res.isEmpty
         } else {
             return false
@@ -73,7 +91,7 @@ final class CISCoreDataStore: Store {
             // TODO: only use this after testing existing store
             if fetchedHymns.isEmpty {
                 // migrate the book
-                try migrateBook(with: book)
+                try migrateBook(with: book, context: container.viewContext)
                 // perform a fresh fetch
                 fetchedHymns = try container.viewContext.fetch(request)
             }
@@ -209,17 +227,17 @@ extension CISCoreDataStore {
     
     
     // MARK: - Private methods
-    private func initializeStore() throws {
+    private func initializeStore(context: NSManagedObjectContext) throws {
         // Perform only if the store is empty
-        if isStoreEmpty() {
+        if isStoreEmpty(context: context) {
             if !defaults.bool(forKey: .migrationKey) {
-                try performFirstTimeMigration()
+                try performFirstTimeMigration(context: context)
                 defaults.set("true", forKey: .migrationKey)
             }
         }
     }
     
-    private func performFirstTimeMigration() throws {
+    private func performFirstTimeMigration(context: NSManagedObjectContext) throws {
         let booksLoader = FileLoader<[LocalBook]>(fromFile: "config")
         var allBooksFromFile: [LocalBook] = []
         
@@ -241,11 +259,11 @@ extension CISCoreDataStore {
         }
         
         for bookFromFile in allBooksFromFile {
-            try migrateBook(with: bookFromFile.key)
+            try migrateBook(with: bookFromFile.key, context: context)
         }
     }
     
-    private func migrateBook(with key: String) throws {
+    private func migrateBook(with key: String, context: NSManagedObjectContext) throws {
         let fileLoader = FileLoader<[LocalHymn]>(fromFile: key)
         var hymnsFromfile: [LocalHymn] = []
         
@@ -264,7 +282,7 @@ extension CISCoreDataStore {
         
         // Migrate
         for hymnFromFile in hymnsFromfile {
-            let hymn = Hymn(context: container.viewContext)
+            let hymn = Hymn(context: context)
             hymn.id = UUID()
             hymn.book = key
             hymn.title = hymnFromFile.title
@@ -275,11 +293,15 @@ extension CISCoreDataStore {
                let lyricsString = String(data: lyricsData, encoding: .utf8) {
                 hymn.content = lyricsString
             }
-            
-            try save()
         }
-
         
+        do {
+            if context.hasChanges {
+                try context.save()
+            }
+        } catch {
+            print("Failure saving background context: \(error)")
+        }
     }
     
     private func save() throws {
