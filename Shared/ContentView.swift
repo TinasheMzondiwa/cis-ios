@@ -72,36 +72,50 @@ struct ContentView: View {
                     .tag(3)
             }
         } else {
-            NavigationView {
+            NavigationSplitView {
                 #if os(iOS)
-                    sidebarContent
+                    SidebarView(selection: $selection)
                         .navigationTitle("")
                 #else
-                    sidebarContent
+                    SidebarView(selection: $selection)
                         .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
                 #endif
-               
-                HymnsView()
+            } detail: {
+                switch selection {
+                case 0: HymnsView()
+                case 1: CollectionsView()
+                case 2: SupportView()
+                case 3: InfoView()
+                default: HymnsView()
+                }
             }
         }
     }
+}
+
+struct SidebarView: View {
+    @Binding var selection: Int
     
-    private var sidebarContent: some View {
-        let selectionBinding = Binding<Int?>(get: { self.selection }, set: { if let v = $0 { self.selection = v } })
-        return List {
-            NavigationLink(destination: HymnsView(), tag: 0, selection: selectionBinding) {
+    var body: some View {
+        let selectionBinding = Binding<Int?>(
+            get: { selection },
+            set: { if let v = $0 { selection = v } }
+        )
+        
+        List(selection: selectionBinding) {
+            NavigationLink(value: 0) {
                 NavLabel(item: NavItem.hymns)
             }
             
-            NavigationLink(destination: CollectionsView(), tag: 1, selection: selectionBinding) {
+            NavigationLink(value: 1) {
                 NavLabel(item: NavItem.collections)
             }
            
-            NavigationLink(destination: SupportView(), tag: 2, selection: selectionBinding) {
+            NavigationLink(value: 2) {
                 NavLabel(item: NavItem.support)
             }
             
-            NavigationLink(destination: InfoView(), tag: 3, selection: selectionBinding) {
+            NavigationLink(value: 3) {
                 NavLabel(item: NavItem.info)
             }
         }
@@ -112,5 +126,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(CISAppViewModel(store: StoreManager.shared as! Store))
     }
 }
