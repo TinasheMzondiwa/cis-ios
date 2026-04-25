@@ -54,22 +54,22 @@ struct ContentView: View {
                     .tabItem {
                         NavLabel(item: NavItem.hymns)
                     }
-                    .tag(TabItem.hymns.rawValue)
+                    .tag(TabItem.hymns)
                 CollectionsView()
                     .tabItem {
                         NavLabel(item: NavItem.collections)
                     }
-                    .tag(TabItem.collections.rawValue)
+                    .tag(TabItem.collections)
                 SupportView()
                     .tabItem {
                         NavLabel(item: NavItem.support)
                     }
-                    .tag(TabItem.support.rawValue)
+                    .tag(TabItem.support)
                 InfoView()
                     .tabItem {
                         NavLabel(item: NavItem.info)
                     }
-                    .tag(TabItem.info.rawValue)
+                    .tag(TabItem.info)
             }
         } else {
             NavigationSplitView {
@@ -129,9 +129,11 @@ enum TabItem: Int, CaseIterable {
     case info = 3
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(CISAppViewModel.sample)
     }
 }
+#endif

@@ -153,12 +153,14 @@ struct HymnsView: View {
     }
 }
 
+#if DEBUG
 struct HymnsView_Previews: PreviewProvider {
     static var previews: some View {
         HymnsView()
             .environmentObject(CISAppViewModel.sample)
     }
 }
+#endif
 
 enum Sort: String {
     case number

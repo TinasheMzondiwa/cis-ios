@@ -203,9 +203,11 @@ struct HymnView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     NavigationStack {
         HymnView(displayedHymn: CISAppViewModel.sample.hymnsFromSelectedBook.first!)
     }
     .environmentObject(CISAppViewModel.sample)
 }
+#endif

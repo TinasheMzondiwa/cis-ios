@@ -2,6 +2,8 @@
 //  NumberPickerView.swift
 //  ChristInSong
 //
+//  Created by Tinashe  on 2026/04/25.
+//
 
 import SwiftUI
 
@@ -29,10 +31,14 @@ struct NumberPickerView: View {
             // Custom Navigation Bar Header
             ZStack {
                 HStack {
-                    Button("Cancel") { dismiss() }
+                    Button("Cancel") {
+                        HapticsManager.instance.trigger(.light)
+                        dismiss()
+                    }
                     Spacer()
                     Button(action: {
                         if let num = Int(enteredString), isValid {
+                            HapticsManager.instance.trigger(.success)
                             onSelect(num)
                             dismiss()
                         }
@@ -100,6 +106,11 @@ struct NumberPickerView: View {
             }
             .padding(.horizontal, 40)
             .padding(.bottom, 20)
+            .onChange(of: isValid) { old, new in
+                if !new, !enteredString.isEmpty {
+                    HapticsManager.instance.trigger(.error)
+                }
+            }
         }
     }
     
