@@ -158,3 +158,44 @@ final class CISAppViewModel: ObservableObject {
         case backward
     }
 }
+
+#if DEBUG
+class PreviewStore: Store {
+    var onStoreLoaded: (() -> Void)?
+    
+    func retrieveAllBooks() -> [StoreBook] {
+        return [
+            StoreBook(key: "english", language: "English", title: "Christ In Song", isSelected: true, refrainLabel: "Chorus"),
+            StoreBook(key: "swahili", language: "Swahili", title: "Nyimbo Za Kristo", isSelected: false, refrainLabel: "Kibwagizo")
+        ]
+    }
+    
+    func retrieveHymns(from book: String) -> [StoreHymn]? {
+        let dummyLyric1 = StoreLyric(type: "verse", index: 1, lines: ["There's a land that is fairer than day,", "And by faith we can see it afar;"])
+        let dummyLyric2 = StoreLyric(type: "refrain", index: nil, lines: ["In the sweet by and by,", "We shall meet on that beautiful shore."])
+        
+        return [
+            StoreHymn(id: UUID(), title: "Sweet By And By", titleStr: "Sweet By And By", lyrics: [dummyLyric1, dummyLyric2], book: "english", number: 428),
+            StoreHymn(id: UUID(), title: "O For A Thousand Tongues", titleStr: "O For A Thousand Tongues", lyrics: [dummyLyric1], book: "english", number: 1)
+        ]
+    }
+    
+    func retrieveSelectedBook() -> String? { "english" }
+    func setSelectedBook(to bookName: String) {}
+    func retrieveAllCollections() -> [StoreCollection] { [] }
+    func createCollection(with title: String, and about: String?) {}
+    func removeCollection(with id: UUID) {}
+    func removeHymn(with id: UUID, from collectionID: UUID) {}
+    func toggle(hymn: StoreHymn, in collection: StoreCollection) {}
+}
+
+extension CISAppViewModel {
+    static var sample: CISAppViewModel {
+        let store = PreviewStore()
+        let vm = CISAppViewModel(store: store)
+        vm.isLoadingStore = false
+        store.onStoreLoaded?()
+        return vm
+    }
+}
+#endif
