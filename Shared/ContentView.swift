@@ -17,7 +17,7 @@ struct ContentView: View {
     @ViewBuilder
     var body: some View {
         if viewModel.isLoadingStore {
-            ProgressView("Please wait...")
+            ShimmerPlaceholderView()
         } else {
             mainView
         }

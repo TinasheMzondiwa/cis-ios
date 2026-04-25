@@ -30,6 +30,5 @@ struct ChristInSongApp: App {
 struct ChristInSongApp_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
     }
 }
