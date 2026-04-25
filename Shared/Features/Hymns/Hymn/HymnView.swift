@@ -83,6 +83,7 @@ struct HymnView: View {
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
                         .padding(.bottom, 8)
+                        .padding(.horizontal, 16)
                         
                         
                         VStack(spacing: 20) {
