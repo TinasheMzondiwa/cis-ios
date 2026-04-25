@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HymnalsView: View {
     
+    @Environment(\.horizontalSizeClass) private var sizeClass: UserInterfaceSizeClass?
+    
     let books: [StoreBook]
     let action: (StoreBook) -> Void
     let dismissAction: () -> Void
@@ -18,7 +20,6 @@ struct HymnalsView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 0) {
-                    Spacer()
                     ForEach(books, id: \.id) {  book in
                         
                         Button(action: {
@@ -29,6 +30,7 @@ struct HymnalsView: View {
                     }
                 }
                 .padding([.leading, .trailing])
+                .padding(.horizontal, sizeClass == .regular ? 32 : 0)
             }
             .navigationBarTitle(LocalizedStringKey("Hymnals"), displayMode: .inline)
             .toolbar {

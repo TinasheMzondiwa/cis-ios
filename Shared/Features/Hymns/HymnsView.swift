@@ -28,10 +28,15 @@ struct HymnsView: View {
         }
     }
     
-    private var hymnalsButton: some View {
-        Button(action: { vm.toggleBookSelectionSheet()}) {
-            SFSymbol.bookCircle
-                .accessibility(label: Text(LocalizedStringKey("Hymnals.Switch")))
+    private var books: [StoreBook] {
+        return vm.allBooks.map {
+            StoreBook(
+                key: $0.key,
+                language: $0.language,
+                title: $0.title,
+                isSelected: $0.key == vm.selectedBook?.key,
+                refrainLabel: $0.refrainLabel
+            )
         }
     }
     
@@ -61,8 +66,12 @@ struct HymnsView: View {
             content
                 .frame(minWidth: 300, idealWidth: 500)
                 .toolbar(items: {
-                    ToolbarItem {
-                        bookSwitchButton
+                    ToolbarItem(placement: .principal) {
+                        HymnalsPickerUIView(
+                            book: vm.selectedBook?.title ?? "Christ In Song",
+                            books: books,
+                            onSelect: { book in vm.setSelectedBook(to: book) }
+                        )
                     }
                 })
 #endif
@@ -81,19 +90,12 @@ struct HymnsView: View {
                 }
             }
         }
-        .navigationTitle(vm.selectedBook?.title ?? "")
+        .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $filterQuery)
         .onChange(of: filterQuery) { old, new in
             filterQuery = new
         }
         .resignKeyboardOnDragGesture()
-        .sheet(isPresented: $vm.bookSelectionShown) {
-            HymnalsView(books: vm.allBooks) { book in
-                vm.setSelectedBook(to: book)
-            } dismissAction: {
-                vm.toggleBookSelectionSheet()
-            }
-        }
     }
     
     private var iOSContent: some View {
@@ -103,8 +105,12 @@ struct HymnsView: View {
                     sortButton
                 }
                 
-                ToolbarItem(placement: .topBarTrailing) {
-                    hymnalsButton
+                ToolbarItem(placement: .principal) {
+                    HymnalsPickerUIView(
+                        book: vm.selectedBook?.title ?? "Christ In Song",
+                        books: books,
+                        onSelect: { book in vm.setSelectedBook(to: book) }
+                    )
                 }
             }
     }
