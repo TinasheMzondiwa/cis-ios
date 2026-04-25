@@ -6,11 +6,8 @@ Kristu Mu Nyimbo (Icibemba) has been added to our growing library.
 ### SF:textformat.size Custom Font Settings
 Personalize your reading experience with new adjustable font options.
 
-### SF:magnifyingglass Enhanced Search
-Finding your favorite hymns is now quicker and more reliable.
-
-### SF:text.quote Custom Refrains
-Hymnals now display their native, customized refrain labels where available.
+### SF:number Hymn Number Picker
+Skip the scrolling and save time. Use the new number picker to pull up any hymn instantly.
 
 ### SF:heart Support This App
 Support ongoing development directly from the Support tab!

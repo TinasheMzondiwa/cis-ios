@@ -36,10 +36,10 @@ struct WhatsNewView: View {
                         ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
                             HStack(alignment: .top, spacing: 20) {
                                 Image(systemName: item.iconName)
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 26))
                                     .symbolRenderingMode(.hierarchical)
                                     .foregroundColor(.accentColor)
-                                    .frame(width: 24, height: 24, alignment: .center)
+                                    .frame(width: 30, height: 30, alignment: .center)
                                 
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(item.title)
