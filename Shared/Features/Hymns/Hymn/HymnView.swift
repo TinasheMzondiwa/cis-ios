@@ -19,6 +19,7 @@ struct HymnView: View {
     @State private var currState: (message: String, state: AlertState)? = nil
     @State private var showingHUD = false
     @State private var showingTextSettings = false
+    @State private var showingNumberPicker = false
     
     private var books: [StoreBook] {
         return vm.allBooks.map {
@@ -126,7 +127,24 @@ struct HymnView: View {
             ToolbarSpacer(.flexible)
             
             
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {
+                    showingNumberPicker.toggle()
+                } label: {
+                    Image(systemName: "number")
+                }
+                .modifier(
+                    NumberPickerPresentation(
+                        isPresented: $showingNumberPicker,
+                        maxNumber: vm.hymnsFromSelectedBook.count,
+                        onSelect: { selectedNumber in
+                            if let hymn = vm.hymnsFromSelectedBook.first(where: { $0.number == selectedNumber }) {
+                                displayedHymn = hymn
+                            }
+                        }
+                    )
+                )
+                
                 Menu {
                     Button(action: {
                         HapticsManager.instance.trigger(.buttonPress)
@@ -146,7 +164,7 @@ struct HymnView: View {
                     }
                     
                 } label: {
-                    Image(systemName: "ellipsis.circle")
+                    Image(systemName: "ellipsis")
                 }
                 .modifier(
                     TextSettingsPresentation(
@@ -174,4 +192,11 @@ struct HymnView: View {
     func defaultTitle() -> String {
         vm.allBooks.first { $0.key == displayedHymn.book }?.title ?? ""
     }
+}
+
+#Preview {
+    NavigationStack {
+        HymnView(displayedHymn: CISAppViewModel.sample.hymnsFromSelectedBook.first!)
+    }
+    .environmentObject(CISAppViewModel.sample)
 }

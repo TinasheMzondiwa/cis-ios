@@ -146,7 +146,7 @@ struct HymnsView: View {
                     Button {
                         showingNumberPicker.toggle()
                     } label: {
-                        Image(systemName: "number.circle")
+                        Image(systemName: "number")
                     }
                 }
             }
