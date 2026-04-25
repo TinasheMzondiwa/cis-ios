@@ -12,8 +12,12 @@ struct HymnsView: View {
     @EnvironmentObject var vm: CISAppViewModel
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
     @State private var filterQuery: String = ""
     @AppStorage("sort") var sortOption: String = Sort.number.rawValue
+    
+    @State private var showingNumberPicker = false
+    @State private var hymnToOpen: StoreHymn?
     
     var filteredHymns: [StoreHymn] {
         if filterQuery.trimmed.isEmpty {
@@ -53,10 +57,9 @@ struct HymnsView: View {
     
     var body: some View {
         if (idiom == .phone) {
-            NavigationView {
+            NavigationStack {
                 iOSContent
             }
-            .navigationViewStyle(StackNavigationViewStyle())
         } else {
 #if os(iOS)
             NavigationStack {
@@ -72,6 +75,13 @@ struct HymnsView: View {
                             books: books,
                             onSelect: { book in vm.setSelectedBook(to: book) }
                         )
+                    }
+                    ToolbarItem(placement: .navigation) {
+                        Button {
+                            showingNumberPicker.toggle()
+                        } label: {
+                            Image(systemName: "number.circle")
+                        }
                     }
                 })
 #endif
@@ -96,6 +106,25 @@ struct HymnsView: View {
             filterQuery = new
         }
         .resignKeyboardOnDragGesture()
+        .navigationDestination(isPresented: Binding(
+            get: { hymnToOpen != nil },
+            set: { if !$0 { hymnToOpen = nil } }
+        )) {
+            if let hymn = hymnToOpen {
+                HymnView(displayedHymn: hymn)
+            }
+        }
+        .modifier(
+            NumberPickerPresentation(
+                isPresented: $showingNumberPicker,
+                maxNumber: vm.hymnsFromSelectedBook.count,
+                onSelect: { selectedNumber in
+                    if let hymn = vm.hymnsFromSelectedBook.first(where: { $0.number == selectedNumber }) {
+                        hymnToOpen = hymn
+                    }
+                }
+            )
+        )
     }
     
     private var iOSContent: some View {
@@ -111,6 +140,14 @@ struct HymnsView: View {
                         books: books,
                         onSelect: { book in vm.setSelectedBook(to: book) }
                     )
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingNumberPicker.toggle()
+                    } label: {
+                        Image(systemName: "number.circle")
+                    }
                 }
             }
     }
