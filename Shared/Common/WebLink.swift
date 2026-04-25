@@ -17,4 +17,5 @@ enum WebLink: String {
     case policy = "https://www.christinsong.app/privacy-policy"
     case twitter = "https://twitter.com/christinsongapp"
     case twitterUsername = "@christinsongapp"
+    case userJot = "https://christinsong.userjot.com/"
 }

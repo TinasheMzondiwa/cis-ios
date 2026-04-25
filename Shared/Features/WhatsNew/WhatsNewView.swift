@@ -81,7 +81,7 @@ struct WhatsNewView: View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.accentColor)
-                            .cornerRadius(14)
+                            .cornerRadius(30)
                     }
                     .buttonStyle(PressableButtonStyle())
                     

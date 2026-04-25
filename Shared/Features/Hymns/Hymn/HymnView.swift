@@ -163,6 +163,15 @@ struct HymnView: View {
                         Label(LocalizedStringKey("Text.Format"), systemImage: SFSymbol.textFormat.rawValue)
                     }
                     
+                    Divider()
+                    
+                    Button(action: {
+                        HapticsManager.instance.trigger(.buttonPress)
+                        UIApplication.shared.open(URL(string: WebLink.userJot.rawValue)!)
+                    }) {
+                        Label("Report an Issue", systemImage: "exclamationmark.bubble")
+                    }
+                    
                 } label: {
                     Image(systemName: "ellipsis")
                 }
