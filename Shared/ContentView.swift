@@ -102,19 +102,19 @@ struct SidebarView: View {
         )
         
         List(selection: selectionBinding) {
-            NavigationLink(value: TabItem.hymns.rawValue) {
+            NavigationLink(value: TabItem.hymns) {
                 NavLabel(item: NavItem.hymns)
             }
             
-            NavigationLink(value: TabItem.collections.rawValue) {
+            NavigationLink(value: TabItem.collections) {
                 NavLabel(item: NavItem.collections)
             }
             
-            NavigationLink(value: TabItem.support.rawValue) {
+            NavigationLink(value: TabItem.support) {
                 NavLabel(item: NavItem.support)
             }
             
-            NavigationLink(value: TabItem.info.rawValue) {
+            NavigationLink(value: TabItem.info) {
                 NavLabel(item: NavItem.info)
             }
         }

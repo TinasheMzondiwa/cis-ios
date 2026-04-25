@@ -56,6 +56,8 @@ struct AddToCollectionView: View {
             .navigationBarItems(
                 leading:
                     Button(action: {
+                        HapticsManager.instance.trigger(.buttonPress)
+                        
                         withAnimation {
                             leadingButtonAction()
                         }
@@ -65,6 +67,8 @@ struct AddToCollectionView: View {
                     }),
                 trailing:
                     Button(action: {
+                        HapticsManager.instance.trigger(.buttonPress)
+                        
                         withAnimation {
                             trailingButtonAction()
                         }
