@@ -27,8 +27,10 @@ struct InfoView: View {
             }
         } else {
             #if os(iOS)
-                content
-                    .navigationTitle(navTitle)
+                NavigationStack {
+                    content
+                        .navigationTitle(navTitle)
+                }
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)

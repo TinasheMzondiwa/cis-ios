@@ -42,13 +42,15 @@ struct CollectionsView: View {
             .navigationViewStyle(StackNavigationViewStyle())
         } else {
             #if os(iOS)
-                content
-                    .navigationTitle(navTitle)
-                    .toolbar {
-                        if !filteredCollections.isEmpty {
-                            EditButton()
+                NavigationStack {
+                    content
+                        .navigationTitle(navTitle)
+                        .toolbar {
+                            if !filteredCollections.isEmpty {
+                                EditButton()
+                            }
                         }
-                    }
+                }
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)

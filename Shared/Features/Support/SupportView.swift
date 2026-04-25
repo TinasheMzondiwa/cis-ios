@@ -11,6 +11,7 @@ import StoreKit
 struct SupportView: View {
     
     @EnvironmentObject var manager: StoreManager
+    @Environment(\.horizontalSizeClass) private var sizeClass: UserInterfaceSizeClass?
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
@@ -24,8 +25,10 @@ struct SupportView: View {
             }
         } else {
             #if os(iOS)
-                content
-                    .navigationTitle(navTitle)
+                NavigationStack {
+                    content
+                        .navigationTitle(navTitle)
+                }
             #else
                 content
                     .frame(minWidth: 300, idealWidth: 500)
@@ -77,6 +80,7 @@ struct SupportView: View {
             }
             
         }
+        .padding(.horizontal, sizeClass == .regular ? 32 : 0)
         .sheet(isPresented: $manager.showThankYou) {
             ThankYouView(productID: manager.lastProductID)
         }

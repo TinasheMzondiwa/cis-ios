@@ -74,7 +74,7 @@ struct HymnView: View {
                 onNextHymn: { swipeTo(direction: .forward) },
             ) {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .center, spacing: 20) {
                         VStack(alignment: .center) {
                             Text(displayedHymn.number.formatted())
                             Text(displayedHymn.title)
@@ -86,7 +86,7 @@ struct HymnView: View {
                         .padding(.horizontal, 16)
                         
                         
-                        VStack(spacing: 20) {
+                        VStack(alignment: .center, spacing: 20) {
                             ForEach(Array(displayedHymn.lyrics.enumerated()), id: \.offset) { _, lyric in
                                 if lyric.type == "refrain" {
                                     ChorusUiView(
@@ -104,7 +104,8 @@ struct HymnView: View {
                         
                     }
                     .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(maxWidth: 700)
+                    .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
             

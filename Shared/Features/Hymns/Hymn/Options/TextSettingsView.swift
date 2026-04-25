@@ -18,7 +18,6 @@ struct TextSettingsView: View {
         VStack(alignment: .leading, spacing: 20, ) {
             
             Spacer()
-                .frame(height: 20)
             
             Section(header: Text(LocalizedStringKey("Typeface"))
                 .font(.footnote.weight(.semibold))
@@ -36,7 +35,6 @@ struct TextSettingsView: View {
                     HStack {
                         Text(selectedFontRaw)
                             .font(typeface.font(size: 20))
-                            
                         Spacer()
                         SFSymbol.chevronRight.font(.caption.bold())
                     }
@@ -59,6 +57,8 @@ struct TextSettingsView: View {
                         SFSymbol.testFormatLarger
                     }
             }
+            
+            Spacer()
             
         }
         .padding(20)

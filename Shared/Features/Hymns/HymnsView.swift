@@ -54,7 +54,9 @@ struct HymnsView: View {
             .navigationViewStyle(StackNavigationViewStyle())
         } else {
 #if os(iOS)
-            iOSContent
+            NavigationStack {
+                iOSContent
+            }
 #else
             content
                 .frame(minWidth: 300, idealWidth: 500)
