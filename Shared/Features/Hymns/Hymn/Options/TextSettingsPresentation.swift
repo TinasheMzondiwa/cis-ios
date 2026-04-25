@@ -22,7 +22,7 @@ struct TextSettingsPresentation : ViewModifier {
             }
             .popover(isPresented: isCompact ? .constant(false) : $isPresented) {
                 TextSettingsView()
-                    .frame(width: 350, height: 300)
+                    .frame(width: 350, height: 400)
             }
     }
     

@@ -11,6 +11,7 @@ struct TextSettingsView: View {
     
     @AppStorage("hymnalFontSize") private var fontSize: Double = 22.0
     @AppStorage("hymnalTypeface") private var selectedFontRaw: String = AppTypeface.defaultTypeface.rawValue
+    @AppStorage("hymnalTextAlignment") private var textAlignment: HymnalTextAlignment = .leading
     
     var body: some View {
         let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
@@ -45,7 +46,7 @@ struct TextSettingsView: View {
             }
                 .padding(.top)
             
-            Divider().padding()
+            Divider()
             
             Section(header: Text(LocalizedStringKey("Text Size"))
                 .font(.footnote.weight(.semibold))
@@ -56,6 +57,21 @@ struct TextSettingsView: View {
                         Slider(value: $fontSize, in: 12...40)
                         SFSymbol.testFormatLarger
                     }
+            }
+            
+            Divider()
+            
+            Section(header: Text(LocalizedStringKey("Alignment"))
+                .font(.footnote.weight(.semibold))
+                .foregroundColor(.primary)) {
+                    
+                    Picker("Alignment", selection: $textAlignment) {
+                        ForEach(HymnalTextAlignment.allCases) { alignment in
+                            Image(systemName: alignment.icon)
+                                .tag(alignment)
+                        }
+                    }
+                    .pickerStyle(.segmented)
             }
             
             Spacer()

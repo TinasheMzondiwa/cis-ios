@@ -192,6 +192,8 @@
 		0889FE152F94FC7100FF8B09 /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE142F94FC7100FF8B09 /* ThankYouView.swift */; };
 		0889FE162F94FC7100FF8B09 /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE142F94FC7100FF8B09 /* ThankYouView.swift */; };
 		0889FE182F9CD1D500FF8B09 /* ShimmerPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE172F9CD1D500FF8B09 /* ShimmerPlaceholderView.swift */; };
+		0889FE1A2F9D13D900FF8B09 /* HymnalTextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE192F9D13D900FF8B09 /* HymnalTextAlignment.swift */; };
+		0889FE1B2F9D13D900FF8B09 /* HymnalTextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889FE192F9D13D900FF8B09 /* HymnalTextAlignment.swift */; };
 		08927D9324BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9424BEA5B60035972C /* HymnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9224BEA5B60035972C /* HymnsView.swift */; };
 		08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08927D9624BEAAD00035972C /* CollectionsView.swift */; };
@@ -380,6 +382,7 @@
 		0889FE0B2F94EE3300FF8B09 /* proxima-nova-soft-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-soft-SemiBold.ttf"; sourceTree = "<group>"; };
 		0889FE142F94FC7100FF8B09 /* ThankYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
 		0889FE172F9CD1D500FF8B09 /* ShimmerPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerPlaceholderView.swift; sourceTree = "<group>"; };
+		0889FE192F9D13D900FF8B09 /* HymnalTextAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalTextAlignment.swift; sourceTree = "<group>"; };
 		08927D9224BEA5B60035972C /* HymnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnsView.swift; sourceTree = "<group>"; };
 		08927D9624BEAAD00035972C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		08927D9A24BEAAFC0035972C /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
@@ -407,7 +410,7 @@
 		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		13556F81BFCCC8E12B408861 /* WhatsNewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WhatsNewItem.swift; sourceTree = "<group>"; };
-		13A350B58CDD38960B9AA55D /* changelog.md */ = {isa = PBXFileReference; includeInIndex = 1; path = changelog.md; sourceTree = "<group>"; };
+		13A350B58CDD38960B9AA55D /* changelog.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = changelog.md; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1A914129BFAC7E003C3260 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		1D1A914A29BFCA60003C3260 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/config.json; sourceTree = "<group>"; };
@@ -638,6 +641,7 @@
 			children = (
 				0889FDE62F946FE800FF8B09 /* TextSettingsPresentation.swift */,
 				0889FDEB2F94704C00FF8B09 /* TextSettingsView.swift */,
+				0889FE192F9D13D900FF8B09 /* HymnalTextAlignment.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -890,7 +894,6 @@
 				661DCC9A009FFF3B3EE31F2E /* ChangelogParser.swift */,
 				2390A2AC41ED8EF2D254E5A0 /* WhatsNewView.swift */,
 			);
-			name = WhatsNew;
 			path = WhatsNew;
 			sourceTree = "<group>";
 		};
@@ -1246,6 +1249,7 @@
 				0844563E24CD793D00AE352F /* PendingView.swift in Sources */,
 				082E002525FDCFE100E163A8 /* AppDelegate.swift in Sources */,
 				08927EB324C6A98C0035972C /* MailView.swift in Sources */,
+				0889FE1B2F9D13D900FF8B09 /* HymnalTextAlignment.swift in Sources */,
 				08A3366925FDB9A900852566 /* HUD.swift in Sources */,
 				08AB2E6925E8B2EA0086DA32 /* CollectionHymnsView.swift in Sources */,
 				081D97142B57D1FA00F44C4D /* FloatingActionButtonView.swift in Sources */,
@@ -1294,6 +1298,7 @@
 				08CB346725E4C5DE00609D65 /* Constants.swift in Sources */,
 				08C0929725F74FC500845BA1 /* NavLabel.swift in Sources */,
 				67A174C6285F1562006A5BC1 /* Color+Extensions.swift in Sources */,
+				0889FE1A2F9D13D900FF8B09 /* HymnalTextAlignment.swift in Sources */,
 				08927D9C24BEAAFC0035972C /* SupportView.swift in Sources */,
 				0889FDE42F9462DE00FF8B09 /* HymnalsPickerUIView.swift in Sources */,
 				0889FDE02F945E8600FF8B09 /* HymnContainerView.swift in Sources */,

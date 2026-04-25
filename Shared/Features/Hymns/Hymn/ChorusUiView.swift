@@ -12,6 +12,7 @@ struct ChorusUiView: View {
     
     @AppStorage("hymnalFontSize") private var fontSize: Double = 22.0
     @AppStorage("hymnalTypeface") private var selectedFontRaw: String = AppTypeface.defaultTypeface.rawValue
+    @AppStorage("hymnalTextAlignment") private var textAlignment: HymnalTextAlignment = .leading
     
     var colors: HymnColors {
         HymnColors(scheme: colorScheme)
@@ -23,10 +24,11 @@ struct ChorusUiView: View {
     var body: some View {
         let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
         
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: textAlignment.horizontalAlignment, spacing: 10) {
             
             // Header
             HStack(spacing: 8) {
+                if textAlignment == .trailing || textAlignment == .center { Spacer() }
                 Image(systemName: "music.note")
                     .font(.system(size: 14, weight: .bold))
                     .foregroundColor(colors.onSecondaryContainer)
@@ -38,33 +40,44 @@ struct ChorusUiView: View {
                     .font(typeface.font(size: fontSize - 2, weight: .semibold))
                     .foregroundColor(colors.onSurfaceVariant)
                 
-                Spacer()
+                if textAlignment == .leading || textAlignment == .center { Spacer() }
             }
             
             // Content container
             HStack(spacing: 0) {
                 
-                // Left accent bar
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(colors.onSecondaryContainer)
-                    .frame(width: 6)
+                if textAlignment != .trailing {
+                    // Left accent bar
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(colors.onSecondaryContainer)
+                        .frame(width: 6)
+                }
                 
-                VStack(alignment: .leading, spacing: 6) {
+                VStack(alignment: textAlignment.horizontalAlignment, spacing: 6) {
                     ForEach(lines, id: \.self) { line in
                         Text(line)
                             .font(typeface.font(size: fontSize, weight: .regular))
                             .foregroundColor(colors.onSecondaryContainer)
                             .lineSpacing(6)
+                            .multilineTextAlignment(textAlignment.textAlignment)
                     }
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 14)
+                
+                if textAlignment == .trailing {
+                    // Right accent bar
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(colors.onSecondaryContainer)
+                        .frame(width: 6)
+                }
             }
             .background(colors.secondaryContainer)
             .clipShape(RoundedRectangle(cornerRadius: 16))
         }
-        .padding(.leading, 32)
-        .padding(.bottom, 16)
+        .padding(.leading, textAlignment == .trailing ? 0 : (textAlignment == .center ? 16 : 32))
+        .padding(.trailing, textAlignment == .leading ? 0 : (textAlignment == .center ? 16 : 32))
+        .padding(.bottom, 24)
     }
 }
 

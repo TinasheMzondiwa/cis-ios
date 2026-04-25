@@ -13,6 +13,7 @@ struct VerseUIView: View {
     
     @AppStorage("hymnalFontSize") private var fontSize: Double = 22.0
     @AppStorage("hymnalTypeface") private var selectedFontRaw: String = AppTypeface.defaultTypeface.rawValue
+    @AppStorage("hymnalTextAlignment") private var textAlignment: HymnalTextAlignment = .leading
 
     var colors: HymnColors {
         HymnColors(scheme: colorScheme)
@@ -21,28 +22,55 @@ struct VerseUIView: View {
     let index: Int
     let lines: [String]
 
+    @ViewBuilder
+    private func indexBubble(font: Font) -> some View {
+        Text("\(index)")
+            .font(font)
+            .foregroundColor(colors.onSurfaceVariant)
+            .frame(width: fontSize + 6, height: fontSize + 6)
+            .background(colors.surfaceVariant)
+            .clipShape(Circle())
+    }
+    
+    @ViewBuilder
+    private func linesView(font: Font) -> some View {
+        VStack(alignment: textAlignment.horizontalAlignment) {
+            ForEach(lines, id: \.self) { line in
+                Text(line)
+                    .font(font)
+                    .foregroundColor(colors.onBackground)
+                    .lineSpacing(6)
+            }
+        }
+        .multilineTextAlignment(textAlignment.textAlignment)
+    }
+
     var body: some View {
         let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
+        let titleFont = typeface.font(size: fontSize - 4, weight: .bold)
+        let bodyFont = typeface.font(size: fontSize, weight: .regular)
         
-        HStack(alignment: .top) {
-            // Index bubble
-            Text("\(index)")
-                .font(typeface.font(size: fontSize - 4, weight: .bold))
-                .foregroundColor(colors.onSurfaceVariant)
-                .frame(width: 28, height: 28)
-                .background(colors.surfaceVariant)
-                .clipShape(Circle())
-
-            VStack(alignment: .leading) {
-                ForEach(lines, id: \.self) { line in
-                    Text(line)
-                        .font(typeface.font(size: fontSize, weight: .regular))
-                        .foregroundColor(colors.onBackground)
-                        .lineSpacing(6)
+        Group {
+            if textAlignment == .center {
+                VStack(alignment: .center, spacing: 12) {
+                    indexBubble(font: titleFont)
+                    linesView(font: bodyFont)
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+            } else {
+                HStack(alignment: .top) {
+                    if textAlignment == .leading {
+                        indexBubble(font: titleFont)
+                    }
+                    
+                    linesView(font: bodyFont)
+                        .frame(maxWidth: .infinity, alignment: textAlignment.frameAlignment)
+                    
+                    if textAlignment == .trailing {
+                        indexBubble(font: titleFont)
+                    }
                 }
             }
-            .multilineTextAlignment(.leading)
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
