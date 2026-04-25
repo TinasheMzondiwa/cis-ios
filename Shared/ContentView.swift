@@ -14,12 +14,34 @@ struct ContentView: View {
     
     @State private var selection = 0
     
+    @AppStorage("lastSeenWhatsNewVersion") private var lastSeenWhatsNewVersion: String = ""
+    @State private var showingWhatsNew = false
+    private let currentVersion = Bundle.versionString
+    
     @ViewBuilder
     var body: some View {
         if viewModel.isLoadingStore {
             ShimmerPlaceholderView()
         } else {
             mainView
+                .onAppear {
+                    if lastSeenWhatsNewVersion != currentVersion {
+                        let items = ChangelogParser.getWhatsNewItems(for: currentVersion)
+                        
+                        if !items.isEmpty {
+                            showingWhatsNew = true
+                        } else {
+                            lastSeenWhatsNewVersion = currentVersion
+                        }
+                    }
+                }
+                .sheet(isPresented: $showingWhatsNew, onDismiss: {
+                    lastSeenWhatsNewVersion = currentVersion
+                }) {
+                    WhatsNewView(isPresented: $showingWhatsNew, navigateToSupport: {
+                        selection = 2
+                    }, items: ChangelogParser.getWhatsNewItems(for: currentVersion))
+                }
         }
     }
     
@@ -62,24 +84,24 @@ struct ContentView: View {
                 HymnsView()
             }
         }
-        
     }
     
     private var sidebarContent: some View {
-        List {
-            NavigationLink(destination: HymnsView()) {
+        let selectionBinding = Binding<Int?>(get: { self.selection }, set: { if let v = $0 { self.selection = v } })
+        return List {
+            NavigationLink(destination: HymnsView(), tag: 0, selection: selectionBinding) {
                 NavLabel(item: NavItem.hymns)
             }
             
-            NavigationLink(destination: CollectionsView()) {
+            NavigationLink(destination: CollectionsView(), tag: 1, selection: selectionBinding) {
                 NavLabel(item: NavItem.collections)
             }
            
-            NavigationLink(destination: SupportView()) {
+            NavigationLink(destination: SupportView(), tag: 2, selection: selectionBinding) {
                 NavLabel(item: NavItem.support)
             }
             
-            NavigationLink(destination: InfoView()) {
+            NavigationLink(destination: InfoView(), tag: 3, selection: selectionBinding) {
                 NavLabel(item: NavItem.info)
             }
         }

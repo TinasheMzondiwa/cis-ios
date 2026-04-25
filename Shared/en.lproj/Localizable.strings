@@ -46,3 +46,7 @@
 "Support.Terms" = "Terms of Use";
 
 "Text.Format" = "Text Format";
+
+"WhatsNew.Title" = "What's New";
+"WhatsNew.Desc" = "A better experience, built with care.";
+"WhatsNew.Continue" = "Continue";
