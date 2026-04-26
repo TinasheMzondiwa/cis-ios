@@ -25,6 +25,8 @@ enum SFSymbol: String, View {
     case testFormatLarger = "textformat.size.larger"
     case testFormatSmaller = "textformat.size.smaller"
     case xmarkFill = "xmark.circle.fill"
+    case number = "number"
+    case ellipsis = "ellipsis"
     
     var body: Image {
         Image(systemName: rawValue)

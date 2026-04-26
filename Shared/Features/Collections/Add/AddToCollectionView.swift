@@ -45,7 +45,7 @@ struct AddToCollectionView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 switch state {
                 case .create: createContent
@@ -91,6 +91,13 @@ struct AddToCollectionView: View {
                     ForEach(vm.allCollections, id: \.id) { collection in
                         let added = collection.hymns?.contains(hymn)
                         Button {
+                            
+                            if added == true {
+                                HapticsManager.instance.trigger(.success)
+                            } else {
+                                HapticsManager.instance.trigger(.light)
+                            }
+                            
                             withAnimation {
                                 vm.toggle(hymn: hymn, collection: collection)
                             }

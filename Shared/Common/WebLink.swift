@@ -18,4 +18,6 @@ enum WebLink: String {
     case twitter = "https://twitter.com/christinsongapp"
     case twitterUsername = "@christinsongapp"
     case userJot = "https://christinsong.userjot.com/"
+    case threads = "https://www.threads.com/@christinsong.app"
+    case threadsUsername = "@christinsong.app"
 }

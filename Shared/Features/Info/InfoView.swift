@@ -10,33 +10,21 @@ import MessageUI
 
 struct InfoView: View {
     
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-    
     @State private var showingShareSheet = false
     @State private var showingEmailSheet = false
     @State var result: Result<MFMailComposeResult, Error>? = nil
     
-    private var navTitle = "Info"
-    
     @ViewBuilder
     var body: some View {
-        if (idiom == .phone) {
-            NavigationView {
-                content
-                    .navigationTitle(navTitle)
-            }
-        } else {
-            #if os(iOS)
-                NavigationStack {
-                    content
-                        .navigationTitle(navTitle)
-                }
-            #else
-                content
-                    .frame(minWidth: 300, idealWidth: 500)
-            #endif
-            
+#if os(iOS)
+        NavigationStack {
+            content
+                .navigationTitle(LocalizedStringKey("Info"))
         }
+#else
+        content
+            .frame(minWidth: 300, idealWidth: 500)
+#endif
     }
     
     var content: some View {
@@ -61,6 +49,13 @@ struct InfoView: View {
                                 
                             }, label: {
                                 CustomLineItem(title: "Info.Github")
+                            })
+                            
+                            Button(action: {
+                                HapticsManager.instance.trigger(.light)
+                                UIApplication.shared.open(URL(string: WebLink.threads.rawValue)!)
+                            }, label: {
+                                CustomLineItem(title: "Info.Threads", title2: WebLink.threadsUsername.rawValue)
                             })
                             
                             Button(action: {
@@ -99,6 +94,13 @@ struct InfoView: View {
                                 let shareData: [Any] = [NSLocalizedString("Info.Share.Prompt", comment: "Share Prompt"), URL(string: WebLink.appStoreShort.rawValue)!]
                                 ActivityViewController(items: shareData)
                             }
+                            
+                            Button(action: {
+                                HapticsManager.instance.trigger(.light)
+                                UIApplication.shared.open(URL(string: WebLink.policy.rawValue)!)
+                            }, label: {
+                                CustomLineItem(title: "Support.Privacy")
+                            })
                         }
                         
                         Text(LocalizedStringKey("Info.About.Description"))

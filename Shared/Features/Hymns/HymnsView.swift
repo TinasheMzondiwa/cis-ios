@@ -11,7 +11,6 @@ struct HymnsView: View {
     
     @EnvironmentObject var vm: CISAppViewModel
     
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
     @State private var filterQuery: String = ""
     @AppStorage("sort") var sortOption: String = Sort.number.rawValue
@@ -46,6 +45,8 @@ struct HymnsView: View {
     
     private var sortButton: some View {
         Button(action: {
+            HapticsManager.instance.trigger(.light)
+            
             withAnimation {
                 sortOption = sortOption == Sort.titleStr.rawValue ? Sort.number.rawValue : Sort.titleStr.rawValue
                 vm.toggleHymnsSorting(using: Sort(rawValue: sortOption) ?? .titleStr)
@@ -56,36 +57,30 @@ struct HymnsView: View {
     }
     
     var body: some View {
-        if (idiom == .phone) {
-            NavigationStack {
-                iOSContent
-            }
-        } else {
 #if os(iOS)
-            NavigationStack {
-                iOSContent
-            }
-#else
-            content
-                .frame(minWidth: 300, idealWidth: 500)
-                .toolbar(items: {
-                    ToolbarItem(placement: .principal) {
-                        HymnalsPickerUIView(
-                            book: vm.selectedBook?.title ?? "Christ In Song",
-                            books: books,
-                            onSelect: { book in vm.setSelectedBook(to: book) }
-                        )
-                    }
-                    ToolbarItem(placement: .navigation) {
-                        Button {
-                            showingNumberPicker.toggle()
-                        } label: {
-                            Image(systemName: "number.circle")
-                        }
-                    }
-                })
-#endif
+        NavigationStack {
+            iOSContent
         }
+#else
+        content
+            .frame(minWidth: 300, idealWidth: 500)
+            .toolbar(items: {
+                ToolbarItem(placement: .principal) {
+                    HymnalsPickerUIView(
+                        book: vm.selectedBook?.title ?? "Christ In Song",
+                        books: books,
+                        onSelect: { book in vm.setSelectedBook(to: book) }
+                    )
+                }
+                ToolbarItem(placement: .navigation) {
+                    Button {
+                        showingNumberPicker.toggle()
+                    } label: {
+                        Image(systemName: "number.circle")
+                    }
+                }
+            })
+#endif
     }
     
     private var content: some View {
@@ -144,9 +139,10 @@ struct HymnsView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        HapticsManager.instance.trigger(.light)
                         showingNumberPicker.toggle()
                     } label: {
-                        Image(systemName: "number")
+                        SFSymbol.number
                     }
                 }
             }

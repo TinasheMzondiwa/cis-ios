@@ -13,28 +13,18 @@ struct SupportView: View {
     @EnvironmentObject var manager: StoreManager
     @Environment(\.horizontalSizeClass) private var sizeClass: UserInterfaceSizeClass?
     
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-    
     private var navTitle: String = NSLocalizedString("Support.Promo.Title", comment: "Title")
     
     var body: some View {
-        if (idiom == .phone) {
-            NavigationView {
-                content
-                    .navigationTitle(navTitle)
-            }
-        } else {
-            #if os(iOS)
-                NavigationStack {
-                    content
-                        .navigationTitle(navTitle)
-                }
-            #else
-                content
-                    .frame(minWidth: 300, idealWidth: 500)
-            #endif
-            
+#if os(iOS)
+        NavigationStack {
+            content
+                .navigationTitle(navTitle)
         }
+#else
+        content
+            .frame(minWidth: 300, idealWidth: 500)
+#endif
     }
     
     var content: some View {
@@ -57,8 +47,8 @@ struct SupportView: View {
                         ForEach(manager.productIDs, id: \.self) { product in
                             ProductView(id: product)
                                 .productViewStyle(.regular)
-                                    .padding()
-                                    .cornerRadius(16)
+                                .padding()
+                                .cornerRadius(16)
                         }
                         
                         Spacer()

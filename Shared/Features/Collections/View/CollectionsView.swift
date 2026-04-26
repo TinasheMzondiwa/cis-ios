@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CollectionsView: View {
-    @State private var navTitle: String = NSLocalizedString("Collections", comment: "Title")
-    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
     @State private var filterQuery: String = ""
     
     @EnvironmentObject var vm: CISAppViewModel
@@ -27,36 +26,20 @@ struct CollectionsView: View {
     
     
     var body: some View {
-        if (idiom == .phone) {
-            NavigationView {
-                EditModeContext {
-                    content
-                        .navigationTitle(navTitle)
-                        .toolbar {
-                            if !filteredCollections.isEmpty {
-                                EditButton()
-                            }
-                        }
+#if os(iOS)
+        NavigationStack {
+            content
+                .navigationTitle(LocalizedStringKey("Collections"))
+                .toolbar {
+                    if !filteredCollections.isEmpty {
+                        EditButton()
+                    }
                 }
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-        } else {
-            #if os(iOS)
-                NavigationStack {
-                    content
-                        .navigationTitle(navTitle)
-                        .toolbar {
-                            if !filteredCollections.isEmpty {
-                                EditButton()
-                            }
-                        }
-                }
-            #else
-                content
-                    .frame(minWidth: 300, idealWidth: 500)
-            #endif
-            
         }
+#else
+        content
+            .frame(minWidth: 300, idealWidth: 500)
+#endif
     }
     
     var content: some View {

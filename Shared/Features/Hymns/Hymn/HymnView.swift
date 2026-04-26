@@ -129,9 +129,10 @@ struct HymnView: View {
             
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
+                    HapticsManager.instance.trigger(.buttonPress)
                     showingNumberPicker.toggle()
                 } label: {
-                    Image(systemName: "number")
+                    SFSymbol.number
                 }
                 .modifier(
                     NumberPickerPresentation(
@@ -173,7 +174,7 @@ struct HymnView: View {
                     }
                     
                 } label: {
-                    Image(systemName: "ellipsis")
+                    SFSymbol.ellipsis
                 }
                 .modifier(
                     TextSettingsPresentation(
