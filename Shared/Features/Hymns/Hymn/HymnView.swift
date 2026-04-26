@@ -109,12 +109,8 @@ struct HymnView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
-            
-            
         }
         .toolbar {
-            
-            ToolbarSpacer(.flexible)
             
             ToolbarItem(placement: .principal) {
                 HymnalsPickerUIView(
@@ -122,10 +118,8 @@ struct HymnView: View {
                     books: books,
                     onSelect: { book in setSelectedBook(to: book) }
                 )
+                .fixedSize()
             }
-            
-            ToolbarSpacer(.flexible)
-            
             
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
