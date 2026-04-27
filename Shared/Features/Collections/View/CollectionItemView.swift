@@ -34,11 +34,3 @@ struct CollectionItemView: View {
         }
     }
 }
-
-struct CollectionItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            CollectionRowView(item: .init(id: UUID(), title: "Favorite Hymns", dateCreated: .now, hymns: [.init(id: UUID(), title: "Test Hymn", titleStr: "Test Hymn", lyrics: [StoreLyric(type: "verse", index: 1, lines: ["An amazing hymn"])], book: .defaultBook, number: 1)]), selected: false)
-        }
-    }
-}

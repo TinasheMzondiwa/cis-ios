@@ -81,7 +81,7 @@ final class CISAppViewModel: ObservableObject {
         let sortedList = initialList.sorted {
             switch option {
             case .titleStr:
-                return $0.titleStr < $1.titleStr
+                return $0.title < $1.title
             default:
                 return $0.number < $1.number
             }
@@ -175,8 +175,24 @@ class PreviewStore: Store {
         let dummyLyric2 = StoreLyric(type: "refrain", index: nil, lines: ["In the sweet by and by,", "We shall meet on that beautiful shore."])
         
         return [
-            StoreHymn(id: UUID(), title: "Sweet By And By", titleStr: "Sweet By And By", lyrics: [dummyLyric1, dummyLyric2], book: "english", number: 428),
-            StoreHymn(id: UUID(), title: "O For A Thousand Tongues", titleStr: "O For A Thousand Tongues", lyrics: [dummyLyric1], book: "english", number: 1)
+            StoreHymn(
+                id: UUID(),
+                title: "Sweet By And By",
+                lyrics: [dummyLyric1, dummyLyric2],
+                book: "english",
+                number: 428,
+                titleEnglish: "By and by, sweet",
+                hymnalReferences: "CIS 23 (1990)",
+            ),
+            StoreHymn(
+                id: UUID(),
+                title: "O For A Thousand Tongues",
+                lyrics: [dummyLyric1],
+                book: "english",
+                number: 1,
+                titleEnglish: nil,
+                hymnalReferences: nil,
+            )
         ]
     }
     

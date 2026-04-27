@@ -26,21 +26,24 @@ public struct StoreHymn: Identifiable, Equatable {
     public let id: UUID
     /// Title of the Hymn
     public let title: String
-    /// Title of the Hymn with the number inverted
-    public let titleStr: String
     /// Lyrics of the Hymn
     public let lyrics: [StoreLyric]
     /// Key to book to which the hymn belongs
     public let book: String
     /// Hymn number
     public let number: Int
+    /// The english title of the hymn
+    public let titleEnglish: String?
+    /// Other hymnal references
+    public let hymnalReferences: String?
     
-    public init(id: UUID, title: String, titleStr: String, lyrics: [StoreLyric], book: String, number: Int) {
+    public init(id: UUID, title: String, lyrics: [StoreLyric], book: String, number: Int, titleEnglish: String?, hymnalReferences: String?) {
         self.id = id
         self.title = title
-        self.titleStr = titleStr
         self.lyrics = lyrics
         self.book = book
         self.number = number
+        self.titleEnglish = titleEnglish
+        self.hymnalReferences = hymnalReferences
     }
 }

@@ -18,12 +18,11 @@ extension Hymn {
 
     @NSManaged public var book: String?
     @NSManaged public var content: String?
-    @NSManaged public var markdown: String?
-    @NSManaged public var edited_content: String?
     @NSManaged public var id: UUID?
     @NSManaged public var number: Int16
     @NSManaged public var title: String?
-    @NSManaged public var titleStr: String?
+    @NSManaged public var titleEnglish: String?
+    @NSManaged public var hymnalReferences: String?
     @NSManaged public var collection: NSSet?
 
 }
@@ -48,12 +47,6 @@ extension Hymn {
 extension Hymn : Identifiable {
     var wrappedTitle: String {
         title ?? ""
-    }
-    var wrappedTitleStr: String {
-        titleStr ?? wrappedTitle.titleStr
-    }
-    var wrappedContent: String {
-        content ?? (markdown ?? "")
     }
     var collections: [Collection] {
         let set = collection as? Set<Collection> ?? []

@@ -313,7 +313,6 @@ extension CISCoreDataStore {
             }
             
             hymn.title = hymnFromFile.title
-            hymn.titleStr = hymnFromFile.title.titleStr
         
             if let lyricsData = try? JSONEncoder().encode(hymnFromFile.lyrics),
                let lyricsString = String(data: lyricsData, encoding: .utf8) {
@@ -357,6 +356,8 @@ extension CISCoreDataStore {
     private struct LocalHymn: Decodable {
         let title: String
         let number: Int
+        let titleEnglish: String?
+        let hymnalReferences: String?
         let lyrics: [StoreLyric]
     }
 }

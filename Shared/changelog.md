@@ -1,7 +1,7 @@
 # 3.0.0
 
-### SF:books.vertical New Hymnal
-Kristu Mu Nyimbo (Icibemba) has been added to our growing library.
+### SF:books.vertical New Hymnals
+Kristu Mu Nyimbo (Icibemba) and SDA Twi Hymnal have been added to our growing library.
 
 ### SF:textformat.size Custom Font Settings
 Personalize your reading experience with new adjustable font options.

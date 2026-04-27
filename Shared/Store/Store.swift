@@ -53,7 +53,15 @@ extension Hymn {
             storeLyrics = (try? JSONDecoder().decode([StoreLyric].self, from: data)) ?? []
         }
         
-        return StoreHymn(id: self.id!, title: self.title!, titleStr: self.titleStr!, lyrics: storeLyrics, book: self.book!, number: Int(self.number))
+        return StoreHymn(
+            id: self.id!,
+            title: self.title!,
+            lyrics: storeLyrics,
+            book: self.book!,
+            number: Int(self.number),
+            titleEnglish: self.titleEnglish,
+            hymnalReferences: self.hymnalReferences,
+        )
     }
 }
 
