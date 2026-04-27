@@ -76,16 +76,13 @@ struct HymnView: View {
             ) {
                 ScrollView {
                     VStack(alignment: .center, spacing: 20) {
-                        VStack(alignment: .center) {
-                            Text(displayedHymn.number.formatted())
-                            Text(displayedHymn.title)
-                        }
-                        .font(typeface.font(size: fontSize + 4, weight: .bold))
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity)
-                        .padding(.bottom, 8)
-                        .padding(.horizontal, 16)
                         
+                        HymnInfoUIView(
+                            title: displayedHymn.title,
+                            hymnNumber: displayedHymn.number,
+                            titleEnglish: displayedHymn.titleEnglish,
+                            hymnalReferences: displayedHymn.hymnalReferences,
+                        )
                         
                         VStack(alignment: .center, spacing: 20) {
                             ForEach(Array(displayedHymn.lyrics.enumerated()), id: \.offset) { _, lyric in
@@ -118,7 +115,6 @@ struct HymnView: View {
                     books: books,
                     onSelect: { book in setSelectedBook(to: book) }
                 )
-                .fixedSize()
             }
             
             ToolbarItemGroup(placement: .navigationBarTrailing) {

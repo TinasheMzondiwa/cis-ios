@@ -89,7 +89,7 @@ struct HymnsView: View {
                 NavigationLink {
                     HymnView(displayedHymn: hymn)
                 } label: {
-                    Text(sortOption == Sort.number.rawValue ? "\(hymn.number) - \(hymn.title)" : "\(hymn.titleStr) - \(hymn.number)")
+                    Text(sortOption == Sort.number.rawValue ? "\(hymn.number) - \(hymn.title)" : "\(hymn.title) - \(hymn.number)")
                         .headLineStyle()
                         .lineLimit(1)
                 }
@@ -97,9 +97,6 @@ struct HymnsView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $filterQuery)
-        .onChange(of: filterQuery) { old, new in
-            filterQuery = new
-        }
         .resignKeyboardOnDragGesture()
         .navigationDestination(isPresented: Binding(
             get: { hymnToOpen != nil },
