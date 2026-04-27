@@ -11,8 +11,6 @@ struct HymnView: View {
     @EnvironmentObject var vm: CISAppViewModel
     @Environment(\.dismiss) private var dismiss
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
-    @AppStorage("hymnalFontSize") private var fontSize: Double = 22.0
-    @AppStorage("hymnalTypeface") private var selectedFontRaw: String = AppTypeface.defaultTypeface.rawValue
     
     @State private var displayedBook: StoreBook?
     @State var displayedHymn: StoreHymn
@@ -63,10 +61,7 @@ struct HymnView: View {
     }
     
     var body: some View {
-        let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
-        
         ZStack {
-            
             HymnContainerView(
                 previousHymn: displayedHymn.number > 1 ? displayedHymn.number - 1 : nil,
                 nextHymn: displayedHymn.number < vm.hymnsFromSelectedBook.count ? displayedHymn.number + 1 : nil,
