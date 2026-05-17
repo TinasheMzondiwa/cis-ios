@@ -16,6 +16,9 @@ struct HymnInfoUIView: View {
     let hymnNumber: Int
     let titleEnglish: String?
     let hymnalReferences: String?
+    let bookKey: String
+    
+    @EnvironmentObject private var tunePlayer: TunePlayer
     
     var body: some View {
         let typeface = AppTypeface(rawValue: selectedFontRaw) ?? .defaultTypeface
@@ -43,6 +46,12 @@ struct HymnInfoUIView: View {
         .frame(maxWidth: .infinity)
         .padding(.bottom, 8)
         .padding(.horizontal, 16)
+        .onAppear {
+            tunePlayer.load(bookKey: bookKey, hymnNumber: hymnNumber, title: title)
+        }
+        .onChange(of: hymnNumber) { _, _ in
+            tunePlayer.load(bookKey: bookKey, hymnNumber: hymnNumber, title: title)
+        }
     }
 }
 
@@ -53,6 +62,7 @@ struct HymnInfoUIView: View {
             hymnNumber: 1,
             titleEnglish: "Watchman, Blow The Gospel Trumpet",
             hymnalReferences: "AH 350 CH 613",
+            bookKey: "sdah"
         )
         
         Divider()
@@ -62,6 +72,7 @@ struct HymnInfoUIView: View {
             hymnNumber: 1,
             titleEnglish: nil,
             hymnalReferences: nil,
+            bookKey: "christ_in_song"
         )
         
         Divider()
@@ -71,6 +82,10 @@ struct HymnInfoUIView: View {
             hymnNumber: 1,
             titleEnglish: "Watchman, Blow The Gospel Trumpet",
             hymnalReferences: nil,
+            bookKey: "sdah"
         )
+    }
+    .onAppear {
+        // Load for previews if needed
     }
 }

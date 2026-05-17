@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: CISAppViewModel
+    @EnvironmentObject var tunePlayer: TunePlayer
     
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
@@ -73,6 +74,7 @@ struct ContentView: View {
             }
             .tabBarMinimizeBehavior(.onScrollDown)
             .tabViewStyle(.sidebarAdaptable)
+            .applyMiniPlayerAccessory(hasTrack: tunePlayer.hasTrack)
         } else {
             NavigationSplitView {
 #if os(iOS)
@@ -90,6 +92,7 @@ struct ContentView: View {
                 case .info: InfoView()
                 }
             }
+            .applyMiniPlayerAccessory(hasTrack: tunePlayer.hasTrack)
         }
     }
 }

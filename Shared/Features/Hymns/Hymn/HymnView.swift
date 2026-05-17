@@ -77,6 +77,7 @@ struct HymnView: View {
                             hymnNumber: displayedHymn.number,
                             titleEnglish: displayedHymn.titleEnglish,
                             hymnalReferences: displayedHymn.hymnalReferences,
+                            bookKey: displayedHymn.book
                         )
                         
                         VStack(alignment: .center, spacing: 20) {

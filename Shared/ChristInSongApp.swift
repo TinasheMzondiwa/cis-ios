@@ -13,6 +13,7 @@ struct ChristInSongApp: App {
     @UIApplicationDelegateAdaptor(ChristInSongAppDelegate.self) var appDelegate
     let viewModel: CISAppViewModel
     @StateObject private var manager = StoreManager.shared
+    @StateObject private var tunePlayer = TunePlayer()
     
     init() {
         let store = CISCoreDataStore()
@@ -24,6 +25,7 @@ struct ChristInSongApp: App {
             ContentView()
                 .environmentObject(viewModel)
                 .environmentObject(manager)
+                .environmentObject(tunePlayer)
         }
     }
 }
