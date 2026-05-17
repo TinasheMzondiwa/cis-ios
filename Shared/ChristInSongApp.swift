@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct ChristInSongApp: App {
+    
+    @UIApplicationDelegateAdaptor(ChristInSongAppDelegate.self) var appDelegate
     let viewModel: CISAppViewModel
     @StateObject private var manager = StoreManager.shared
     
