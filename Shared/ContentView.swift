@@ -71,6 +71,8 @@ struct ContentView: View {
                     }
                     .tag(TabItem.info)
             }
+            .tabBarMinimizeBehavior(.onScrollDown)
+            .tabViewStyle(.sidebarAdaptable)
         } else {
             NavigationSplitView {
 #if os(iOS)
