@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct StoreLyric: Equatable, Codable, Identifiable {
+public struct StoreLyric: Equatable, Codable, Identifiable, Hashable {
     public var id: UUID { UUID() }
     
     public let type: String
@@ -21,7 +21,7 @@ public struct StoreLyric: Equatable, Codable, Identifiable {
     }
 }
 
-public struct StoreHymn: Identifiable, Equatable {
+public struct StoreHymn: Identifiable, Equatable, Hashable {
     /// Unique ID
     public let id: UUID
     /// Title of the Hymn

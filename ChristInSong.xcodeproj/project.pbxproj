@@ -1432,6 +1432,8 @@
 		086468E82FBA204A003C2B35 /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086468E62FBA204A003C2B35 /* MiniPlayerView.swift */; };
 		086468EA2FBA3E75003C2B35 /* MarqueeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086468E92FBA3E75003C2B35 /* MarqueeText.swift */; };
 		086468EB2FBA3E75003C2B35 /* MarqueeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086468E92FBA3E75003C2B35 /* MarqueeText.swift */; };
+		086468F02FBA51FE003C2B35 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086468EF2FBA51FE003C2B35 /* SearchView.swift */; };
+		086468F12FBA51FE003C2B35 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086468EF2FBA51FE003C2B35 /* SearchView.swift */; };
 		086ACA5A29DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json in Resources */ = {isa = PBXBuildFile; fileRef = 086ACA5929DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json */; };
 		086ACA5B29DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json in Resources */ = {isa = PBXBuildFile; fileRef = 086ACA5929DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json */; };
 		086C942424BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */; };
@@ -2395,6 +2397,7 @@
 		086463772FBA103F003C2B35 /* 695.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = 695.mid; sourceTree = "<group>"; };
 		086468E62FBA204A003C2B35 /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
 		086468E92FBA3E75003C2B35 /* MarqueeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeText.swift; sourceTree = "<group>"; };
+		086468EF2FBA51FE003C2B35 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		086ACA5929DA6C3B00F9AF45 /* v2/kinyarwanda/kinyarwanda.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/kinyarwanda/kinyarwanda.json; sourceTree = "<group>"; };
 		086C93FB24BE93BC008AFBE5 /* ChristInSongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongApp.swift; sourceTree = "<group>"; };
 		086C93FC24BE93BC008AFBE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -3553,6 +3556,7 @@
 				08927DA524BEB9360035972C /* Common */,
 				08927D9D24BEAB0C0035972C /* Info */,
 				ABF6896E1DCE04D081B3E386 /* WhatsNew */,
+				673FDA079BE164279260D75A /* Search */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -3688,6 +3692,14 @@
 				1D70F75A29CCF54900F806E2 /* XCTestCase+TrackForMemoryLeaks.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		673FDA079BE164279260D75A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				086468EF2FBA51FE003C2B35 /* SearchView.swift */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		67A174B3285F084D006A5BC1 /* Extensions */ = {
@@ -5476,6 +5488,7 @@
 				0874737B298749D200167974 /* AlertState.swift in Sources */,
 				08927D9724BEAAD00035972C /* CollectionsView.swift in Sources */,
 				08927DA324BEAC240035972C /* HymnalsView.swift in Sources */,
+				086468F02FBA51FE003C2B35 /* SearchView.swift in Sources */,
 				0889E7252F8C299D00FF8B09 /* ChorusUiView.swift in Sources */,
 				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
 				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
@@ -5551,6 +5564,7 @@
 				08927DA024BEAB1F0035972C /* InfoView.swift in Sources */,
 				08927EAF24C6A43E0035972C /* ActivityViewController.swift in Sources */,
 				086468EB2FBA3E75003C2B35 /* MarqueeText.swift in Sources */,
+				086468F12FBA51FE003C2B35 /* SearchView.swift in Sources */,
 				086C942524BE93BD008AFBE5 /* ChristInSongApp.swift in Sources */,
 				082E002625FDCFE100E163A8 /* AppDelegate.swift in Sources */,
 				A3638FE18400BE568780ED59 /* NumberPickerView.swift in Sources */,

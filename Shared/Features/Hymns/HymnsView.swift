@@ -62,7 +62,7 @@ struct HymnsView: View {
             iOSContent
         }
 #else
-        content
+        searchableContent
             .frame(minWidth: 300, idealWidth: 500)
             .toolbar(items: {
                 ToolbarItem(placement: .principal) {
@@ -96,7 +96,6 @@ struct HymnsView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .searchable(text: $filterQuery)
         .resignKeyboardOnDragGesture()
         .navigationDestination(isPresented: Binding(
             get: { hymnToOpen != nil },
@@ -119,8 +118,18 @@ struct HymnsView: View {
         )
     }
     
+    @ViewBuilder
+    private var searchableContent: some View {
+        if #available(iOS 18.0, *) {
+            content
+        } else {
+            content
+                .searchable(text: $filterQuery)
+        }
+    }
+    
     private var iOSContent: some View {
-        content
+        searchableContent
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     sortButton

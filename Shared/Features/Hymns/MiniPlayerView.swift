@@ -41,8 +41,8 @@ struct MiniPlayerView: View {
                 }
                 if let number = tunePlayer.activeHymnNumber {
                     Text("SDAH \(number)")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                        .font(.caption2)
+                        .foregroundColor(.primary)
                 }
             }
             

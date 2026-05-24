@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct StoreBook: Identifiable, Equatable {
+public struct StoreBook: Identifiable, Equatable, Hashable {
     /// Use the key to uniquely identify a book
     public var id: String {
         self.key

@@ -153,6 +153,32 @@ final class CISAppViewModel: ObservableObject {
         allCollections = fetchAllCollections()
     }
     
+    @MainActor
+    func searchAllBooks(query: String) async -> [StoreBook: [StoreHymn]] {
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedQuery.isEmpty else { return [:] }
+        
+        var results: [StoreBook: [StoreHymn]] = [:]
+        
+        for book in allBooks {
+            if let hymns = fetchHymns(from: book.key) {
+                let filtered = hymns.filter {
+                    "\($0.number) - \($0.title)".localizedCaseInsensitiveContains(trimmedQuery) ||
+                    $0.lyrics.contains(where: { lyric in
+                        lyric.lines.contains(where: { line in
+                            line.localizedCaseInsensitiveContains(trimmedQuery)
+                        })
+                    })
+                }
+                if !filtered.isEmpty {
+                    results[book] = filtered
+                }
+            }
+        }
+        
+        return results
+    }
+    
     enum SwipeDirection {
         case forward
         case backward

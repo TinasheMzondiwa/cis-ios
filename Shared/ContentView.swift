@@ -50,31 +50,56 @@ struct ContentView: View {
     private var mainView: some View {
         
         if (idiom == .phone) {
-            TabView(selection: $selection) {
-                HymnsView()
-                    .tabItem {
-                        NavLabel(item: NavItem.hymns)
+            if #available(iOS 18.0, *) {
+                TabView(selection: $selection) {
+                    Tab(NavItem.hymns.title, systemImage: NavItem.hymns.icon, value: .hymns) {
+                        HymnsView()
                     }
-                    .tag(TabItem.hymns)
-                CollectionsView()
-                    .tabItem {
-                        NavLabel(item: NavItem.collections)
+                    
+                    Tab("Search", systemImage: "magnifyingglass", value: .search, role: .search) {
+                        SearchView()
                     }
-                    .tag(TabItem.collections)
-                SupportView()
-                    .tabItem {
-                        NavLabel(item: NavItem.support)
+                    
+                    Tab(NavItem.collections.title, systemImage: NavItem.collections.icon, value: .collections) {
+                        CollectionsView()
                     }
-                    .tag(TabItem.support)
-                InfoView()
-                    .tabItem {
-                        NavLabel(item: NavItem.info)
+                    
+                    Tab(NavItem.support.title, systemImage: NavItem.support.icon, value: .support) {
+                        SupportView()
                     }
-                    .tag(TabItem.info)
+                    
+                    Tab(NavItem.info.title, systemImage: NavItem.info.icon, value: .info) {
+                        InfoView()
+                    }
+                }
+                .tabBarMinimizeBehavior(.onScrollDown)
+                .tabViewStyle(.sidebarAdaptable)
+                .applyMiniPlayerAccessory(hasTrack: tunePlayer.hasTrack)
+            } else {
+                TabView(selection: $selection) {
+                    HymnsView()
+                        .tabItem {
+                            NavLabel(item: NavItem.hymns)
+                        }
+                        .tag(TabItem.hymns)
+                    CollectionsView()
+                        .tabItem {
+                            NavLabel(item: NavItem.collections)
+                        }
+                        .tag(TabItem.collections)
+                    SupportView()
+                        .tabItem {
+                            NavLabel(item: NavItem.support)
+                        }
+                        .tag(TabItem.support)
+                    InfoView()
+                        .tabItem {
+                            NavLabel(item: NavItem.info)
+                        }
+                        .tag(TabItem.info)
+                }
+                .applyMiniPlayerAccessory(hasTrack: tunePlayer.hasTrack)
             }
-            .tabBarMinimizeBehavior(.onScrollDown)
-            .tabViewStyle(.sidebarAdaptable)
-            .applyMiniPlayerAccessory(hasTrack: tunePlayer.hasTrack)
         } else {
             NavigationSplitView {
 #if os(iOS)
@@ -87,6 +112,12 @@ struct ContentView: View {
             } detail: {
                 switch selection {
                 case .hymns: HymnsView()
+                case .search:
+                    if #available(iOS 18.0, *) {
+                        SearchView()
+                    } else {
+                        EmptyView()
+                    }
                 case .collections: CollectionsView()
                 case .support: SupportView()
                 case .info: InfoView()
@@ -111,6 +142,12 @@ struct SidebarView: View {
                 NavLabel(item: NavItem.hymns)
             }
             
+            if #available(iOS 18.0, *) {
+                NavigationLink(value: TabItem.search) {
+                    NavLabel(item: NavItem.search)
+                }
+            }
+            
             NavigationLink(value: TabItem.collections) {
                 NavLabel(item: NavItem.collections)
             }
@@ -129,9 +166,10 @@ struct SidebarView: View {
 
 enum TabItem: Int, CaseIterable {
     case hymns = 0
-    case collections = 1
-    case support = 2
-    case info = 3
+    case search = 1
+    case collections = 2
+    case support = 3
+    case info = 4
 }
 
 #if DEBUG
