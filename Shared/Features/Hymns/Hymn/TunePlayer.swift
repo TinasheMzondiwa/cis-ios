@@ -24,18 +24,13 @@ final class TunePlayer: ObservableObject {
 
     // MARK: - Audio Engine
 
-    private let engine = AVAudioEngine()
-    private let sampler = AVAudioUnitSampler()
-    private var sequencer: AVAudioSequencer!
-
+    private var midiPlayer: AVMIDIPlayer?
     private var timer: Timer?
 
     // MARK: - Init
 
     init() {
         setupAudioSession()
-        setupAudioGraph()
-        sequencer = AVAudioSequencer(audioEngine: engine)
         setupRemoteTransportControls()
     }
     
@@ -80,7 +75,7 @@ final class TunePlayer: ObservableObject {
         nowPlayingInfo[MPMediaItemPropertyTitle] = activeTitle ?? "Christ In Song"
         
         if let number = activeHymnNumber {
-            nowPlayingInfo[MPMediaItemPropertyArtist] = "Hymn \(number)"
+            nowPlayingInfo[MPMediaItemPropertyArtist] = "SDAH \(number)"
         }
         
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = duration
@@ -95,18 +90,6 @@ final class TunePlayer: ObservableObject {
         #endif
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
-    }
-
-    // MARK: - Setup (ONE TIME ONLY)
-
-    private func setupAudioGraph() {
-        engine.attach(sampler)
-
-        engine.connect(
-            sampler,
-            to: engine.mainMixerNode,
-            format: nil
-        )
     }
 
     // MARK: - Load
@@ -139,17 +122,10 @@ final class TunePlayer: ObservableObject {
         stop()
 
         do {
-            try sequencer.load(from: url)
-
-            // Route ALL tracks to sampler
-            for track in sequencer.tracks {
-                track.destinationAudioUnit = sampler
-            }
-
-            duration = sequencer.tracks
-                .map(\.lengthInSeconds)
-                .max() ?? 0
-
+            midiPlayer = try AVMIDIPlayer(contentsOf: url, soundBankURL: nil)
+            midiPlayer?.prepareToPlay()
+            
+            duration = midiPlayer?.duration ?? 0
             currentTime = 0
             progress = 0
             hasTrack = true
@@ -166,27 +142,36 @@ final class TunePlayer: ObservableObject {
         guard !isPlaying else { return }
         guard hasTrack else { return }
 
-        do {
-            if !engine.isRunning {
-                try engine.start()
+        // If we are at the end of the track, reset position to start
+        if let player = midiPlayer, player.currentPosition >= player.duration - 0.5 {
+            player.currentPosition = 0
+            currentTime = 0
+            progress = 0
+        }
+
+        isPlaying = true
+        updateNowPlayingInfo(isPause: false)
+        startTimer()
+
+        midiPlayer?.play { [weak self] in
+            Task { @MainActor [weak self] in
+                guard let self = self else { return }
+                guard self.isPlaying else { return }
+                print("Finished playing")
+                self.isPlaying = false
+                self.currentTime = self.duration
+                self.progress = 1.0
+                self.midiPlayer?.currentPosition = 0
+                self.stopTimer()
+                self.updateNowPlayingInfo(isPause: true)
             }
-
-            try sequencer.start()
-
-            isPlaying = true
-            updateNowPlayingInfo(isPause: false)
-            startTimer()
-
-        } catch {
-            print("Play failed:", error)
         }
     }
 
     func pause() {
         guard isPlaying else { return }
 
-        sequencer.stop()
-        engine.pause()
+        midiPlayer?.stop()
         
         isPlaying = false
         updateNowPlayingInfo(isPause: true)
@@ -194,11 +179,8 @@ final class TunePlayer: ObservableObject {
     }
 
     func stop() {
-
-        sequencer?.stop()
-        engine.stop()
-
-        sequencer.currentPositionInSeconds = 0
+        midiPlayer?.stop()
+        midiPlayer?.currentPosition = 0
 
         isPlaying = false
         currentTime = 0
@@ -206,28 +188,6 @@ final class TunePlayer: ObservableObject {
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
         stopTimer()
-    }
-
-    func seek(to progress: Double) {
-
-        guard duration > 0 else { return }
-
-        let time = duration * progress
-        sequencer.currentPositionInSeconds = time
-
-        currentTime = time
-        self.progress = progress
-
-        if isPlaying {
-            do {
-                try sequencer.start()
-                updateNowPlayingInfo(isPause: false)
-            } catch {
-                print("Seek restart failed:", error)
-            }
-        } else {
-            updateNowPlayingInfo(isPause: true)
-        }
     }
 
     // MARK: - Timer
@@ -248,7 +208,7 @@ final class TunePlayer: ObservableObject {
     }
 
     private func update() {
-        let t = sequencer.currentPositionInSeconds
+        let t = midiPlayer?.currentPosition ?? 0
 
         currentTime = t
 
@@ -260,6 +220,7 @@ final class TunePlayer: ObservableObject {
             isPlaying = false
             stopTimer()
             progress = 1
+            midiPlayer?.currentPosition = 0
             MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
         }
     }
