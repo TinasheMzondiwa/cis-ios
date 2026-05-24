@@ -10,6 +10,7 @@ import Foundation
 final class CISAppViewModel: ObservableObject {
     // MARK: - Properties
     private var store: Store
+    private var hymnsCache: [String: [StoreHymn]] = [:]
     
     // MARK: - Published properties
     @Published var isLoadingStore: Bool = true
@@ -158,13 +159,42 @@ final class CISAppViewModel: ObservableObject {
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedQuery.isEmpty else { return [:] }
         
-        var results: [StoreBook: [StoreHymn]] = [:]
+        let pinnedHymnalsString = UserDefaults.standard.string(forKey: "pinnedHymnals") ?? ""
+        let pinnedKeys = pinnedHymnalsString.isEmpty
+            ? []
+            : pinnedHymnalsString.split(separator: ",").map(String.init)
         
+        var booksToSearch: [StoreBook] = []
+        if let selected = selectedBook {
+            booksToSearch.append(selected)
+        }
         for book in allBooks {
-            if let hymns = fetchHymns(from: book.key) {
-                let filtered = hymns.filter {
-                    "\($0.number) - \($0.title)".localizedCaseInsensitiveContains(trimmedQuery) ||
-                    $0.lyrics.contains(where: { lyric in
+            if pinnedKeys.contains(book.key) && !booksToSearch.contains(where: { $0.key == book.key }) {
+                booksToSearch.append(book)
+            }
+        }
+        
+        var booksWithHymns: [(StoreBook, [StoreHymn])] = []
+        for book in booksToSearch {
+            let hymns: [StoreHymn]
+            if let cached = hymnsCache[book.key] {
+                hymns = cached
+            } else if let fetched = fetchHymns(from: book.key) {
+                hymnsCache[book.key] = fetched
+                hymns = fetched
+            } else {
+                hymns = []
+            }
+            booksWithHymns.append((book, hymns))
+        }
+        
+        let filteredResults = await Task.detached(priority: .userInitiated) {
+            var results: [StoreBook: [StoreHymn]] = [:]
+            
+            for (book, hymns) in booksWithHymns {
+                let filtered = hymns.filter { hymn in
+                    "\(hymn.number) - \(hymn.title)".localizedCaseInsensitiveContains(trimmedQuery) ||
+                    hymn.lyrics.contains(where: { lyric in
                         lyric.lines.contains(where: { line in
                             line.localizedCaseInsensitiveContains(trimmedQuery)
                         })
@@ -174,9 +204,10 @@ final class CISAppViewModel: ObservableObject {
                     results[book] = filtered
                 }
             }
-        }
+            return results
+        }.value
         
-        return results
+        return filteredResults
     }
     
     enum SwipeDirection {

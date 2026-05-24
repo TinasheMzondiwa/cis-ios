@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @EnvironmentObject var vm: CISAppViewModel
     @State private var filterQuery: String = ""
+    @State private var searchTask: Task<Void, Never>? = nil
     
     @State private var allMatches: [StoreBook: [StoreHymn]] = [:]
     @State private var selectedBookKey: String? = nil
@@ -125,10 +126,21 @@ struct SearchView: View {
         .searchable(text: $filterQuery, prompt: "Search Hymns")
         .resignKeyboardOnDragGesture()
         .onChange(of: filterQuery) { query in
-            Task {
-                allMatches = await vm.searchAllBooks(query: query)
+            searchTask?.cancel()
+            searchTask = Task {
+                // Debounce search slightly to avoid heavy work on every keystroke
+                try? await Task.sleep(nanoseconds: 150_000_000) // 150ms
+                guard !Task.isCancelled else { return }
+                
+                let matches = await vm.searchAllBooks(query: query)
+                guard !Task.isCancelled else { return }
+                
+                allMatches = matches
                 selectedBookKey = vm.selectedBook?.key ?? matchingBooks.first?.key
             }
+        }
+        .onDisappear {
+            searchTask?.cancel()
         }
         .navigationDestination(for: StoreHymn.self) { hymn in
             HymnView(displayedHymn: hymn)
