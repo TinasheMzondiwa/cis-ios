@@ -43,6 +43,7 @@ struct VerseUIView: View {
             }
         }
         .multilineTextAlignment(textAlignment.textAlignment)
+        .textSelection(.enabled)
     }
 
     var body: some View {

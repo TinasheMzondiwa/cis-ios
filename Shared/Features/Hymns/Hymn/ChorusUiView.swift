@@ -64,6 +64,7 @@ struct ChorusUiView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 14)
+                .textSelection(.enabled)
                 
                 if textAlignment == .trailing {
                     // Right accent bar

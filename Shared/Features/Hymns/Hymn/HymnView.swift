@@ -95,6 +95,7 @@ struct HymnView: View {
                                 }
                             }
                         }
+                        .textSelectionAffinity(.upstream)
                         
                     }
                     .padding()
