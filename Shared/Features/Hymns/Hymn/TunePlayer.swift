@@ -27,11 +27,17 @@ final class TunePlayer: ObservableObject {
     private var midiPlayer: AVMIDIPlayer?
     private var timer: Timer?
 
+    private var deferredURL: URL?
+    private var lastNowPlayingUpdateTime: Double = 0.0
+    @Published var isSoundBankReady = false
+    @Published var isDownloadingSoundBank = false
+
     // MARK: - Init
 
     init() {
         setupAudioSession()
         setupRemoteTransportControls()
+        checkAndDownloadSoundBank()
     }
     
     // MARK: - Integration
@@ -121,8 +127,21 @@ final class TunePlayer: ObservableObject {
 
         stop()
 
+        guard isSoundBankReady else {
+            print("Soundbank is not ready yet. Deferring MIDI load.")
+            deferredURL = url
+            return
+        }
+
         do {
-            midiPlayer = try AVMIDIPlayer(contentsOf: url, soundBankURL: nil)
+            let fileManager = FileManager.default
+            guard let appSupportDirectory = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
+                hasTrack = false
+                return
+            }
+            let soundbankURL = appSupportDirectory.appendingPathComponent("TimGM6mb.sf2")
+
+            midiPlayer = try AVMIDIPlayer(contentsOf: url, soundBankURL: soundbankURL)
             midiPlayer?.prepareToPlay()
             
             duration = midiPlayer?.duration ?? 0
@@ -134,6 +153,71 @@ final class TunePlayer: ObservableObject {
             print("MIDI load failed:", error)
             hasTrack = false
         }
+    }
+
+    // MARK: - SoundBank Manager
+    
+    private func checkAndDownloadSoundBank() {
+        let fileManager = FileManager.default
+        guard let appSupportDirectory = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
+            return
+        }
+
+        // Ensure the directory exists
+        try? fileManager.createDirectory(at: appSupportDirectory, withIntermediateDirectories: true)
+        
+        let soundbankURL = appSupportDirectory.appendingPathComponent("TimGM6mb.sf2")
+
+        if fileManager.fileExists(atPath: soundbankURL.path) {
+            self.isSoundBankReady = true
+            return
+        }
+
+        self.isDownloadingSoundBank = true
+        let downloadURL = URL(string: "https://raw.githubusercontent.com/craffel/pretty-midi/master/pretty_midi/TimGM6mb.sf2")!
+        
+        let task = URLSession.shared.downloadTask(with: downloadURL) { [weak self] localURL, response, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Soundbank download failed:", error)
+                Task { @MainActor [weak self] in
+                    self?.isDownloadingSoundBank = false
+                }
+                return
+            }
+            
+            guard let tempURL = localURL else {
+                Task { @MainActor [weak self] in
+                    self?.isDownloadingSoundBank = false
+                }
+                return
+            }
+            
+            do {
+                if fileManager.fileExists(atPath: soundbankURL.path) {
+                    try fileManager.removeItem(at: soundbankURL)
+                }
+                try fileManager.moveItem(at: tempURL, to: soundbankURL)
+                
+                Task { @MainActor [weak self] in
+                    guard let self = self else { return }
+                    self.isDownloadingSoundBank = false
+                    self.isSoundBankReady = true
+                    print("Soundbank successfully downloaded and saved.")
+                    if let deferred = self.deferredURL {
+                        self.load(url: deferred)
+                        self.deferredURL = nil
+                    }
+                }
+            } catch {
+                print("Failed to move downloaded soundbank:", error)
+                Task { @MainActor [weak self] in
+                    self?.isDownloadingSoundBank = false
+                }
+            }
+        }
+        task.resume()
     }
 
     // MARK: - Playback
@@ -150,6 +234,7 @@ final class TunePlayer: ObservableObject {
         }
 
         isPlaying = true
+        lastNowPlayingUpdateTime = midiPlayer?.currentPosition ?? 0
         updateNowPlayingInfo(isPause: false)
         startTimer()
 
@@ -214,6 +299,12 @@ final class TunePlayer: ObservableObject {
 
         if duration > 0 {
             progress = t / duration
+        }
+
+        // Update now playing info every 1 second during playback to sync Lock Screen progress
+        if isPlaying && (t - lastNowPlayingUpdateTime >= 1.0 || t < lastNowPlayingUpdateTime) {
+            updateNowPlayingInfo(isPause: false)
+            lastNowPlayingUpdateTime = t
         }
 
         if t >= duration, duration > 0 {

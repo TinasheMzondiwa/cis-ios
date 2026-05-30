@@ -57,12 +57,18 @@ struct MiniPlayerView: View {
                     tunePlayer.play()
                 }
             } label: {
-                Image(systemName: tunePlayer.isPlaying ? "pause.fill" : "play.fill")
-                    .font(.title2)
-                    .foregroundColor(.primary)
-                    .frame(width: 30, height: 30)
-                    .clipShape(Circle())
+                if tunePlayer.isDownloadingSoundBank {
+                    ProgressView()
+                        .frame(width: 30, height: 30)
+                } else {
+                    Image(systemName: tunePlayer.isPlaying ? "pause.fill" : "play.fill")
+                        .font(.title2)
+                        .foregroundColor(tunePlayer.isSoundBankReady ? .primary : .secondary)
+                        .frame(width: 30, height: 30)
+                        .clipShape(Circle())
+                }
             }
+            .disabled(!tunePlayer.isSoundBankReady)
             
             if placement != .inline {
                 Button {
