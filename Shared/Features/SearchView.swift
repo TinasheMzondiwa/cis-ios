@@ -47,31 +47,49 @@ struct SearchView: View {
     }
     
     private var chipsView: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 12) {
-                ForEach(matchingBooks, id: \.key) { book in
-                    let count = allMatches[book]?.count ?? 0
-                    let isSelected = (selectedBookKey == book.key)
-                    
-                    Button(action: {
-                        selectedBookKey = book.key
-                    }) {
-                        Text("\(book.title) (\(count))")
-                            .font(.subheadline)
-                            .fontWeight(isSelected ? .semibold : .regular)
+        ScrollViewReader { proxy in
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(matchingBooks, id: \.key) { book in
+                        let count = allMatches[book]?.count ?? 0
+                        let isSelected = (selectedBookKey == book.key)
+                        
+                        Button(action: {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                                selectedBookKey = book.key
+                            }
+                        }) {
+                            HStack(spacing: 6) {
+                                if book.isSelected {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .font(.footnote)
+                                        .transition(.scale.combined(with: .opacity))
+                                }
+                                
+                                Text("\(book.title) (\(count))")
+                                    .font(.system(.subheadline, design: .rounded))
+                                    .fontWeight(isSelected ? .semibold : .medium)
+                            }
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
                             .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(isSelected ? Color.accentColor : Color.gray.opacity(0.5), lineWidth: 1)
-                                    .background(isSelected ? Color.accentColor.opacity(0.1) : Color.clear)
+                                Capsule()
+                                    .fill(isSelected ? Color.accentColor : Color(.secondarySystemBackground))
                             )
-                            .foregroundColor(isSelected ? .accentColor : .primary)
+                            .foregroundColor(isSelected ? .white : .secondary)
+                        }
+                        .id(book.key)
                     }
                 }
+                .padding(.horizontal)
+                .padding(.vertical, 10)
             }
-            .padding(.horizontal)
-            .padding(.vertical, 12)
+            // Automatically scroll to the chip when selectedBookKey changes
+            .onChange(of: selectedBookKey) { _, newValue in
+                withAnimation(.easeOut(duration: 0.25)) {
+                    proxy.scrollTo(newValue, anchor: .center) // .center keeps it beautifully framed
+                }
+            }
         }
     }
     
@@ -125,7 +143,7 @@ struct SearchView: View {
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $filterQuery, prompt: "Search Hymns")
         .resignKeyboardOnDragGesture()
-        .onChange(of: filterQuery) { query in
+        .onChange(of: filterQuery) { _, query in
             searchTask?.cancel()
             searchTask = Task {
                 // Debounce search slightly to avoid heavy work on every keystroke
