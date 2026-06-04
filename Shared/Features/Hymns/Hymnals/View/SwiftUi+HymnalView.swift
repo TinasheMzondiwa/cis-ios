@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AppleMailSwipeModifier: ViewModifier {
     let pinAction: () -> Void
+    let forTip: Bool
     let isPinned: Bool
     
     @State private var dragOffset: CGFloat = 0
@@ -41,14 +42,25 @@ struct AppleMailSwipeModifier: ViewModifier {
                         }
                     }) {
                         ZStack {
-                            Circle()
-                                .fill(isPinned ? Color.orange : Color.blue)
-                                .frame(width: 50, height: 50)
-                            
-                            Image(systemName: isPinned ? "pin.slash.fill" : "pin.fill")
-                                .font(.system(size: 18, weight: .semibold))
-                                .foregroundColor(.white)
-                                .scaleEffect(0.7 + (dragProgress * 0.3))
+                            if forTip {
+                                Circle()
+                                    .fill(Color.green)
+                                    .frame(width: 50, height: 50)
+                                
+                                Image(systemName: "checkmark.circle.fill")
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(.white)
+                                    .scaleEffect(0.7 + (dragProgress * 0.3))
+                            } else {
+                                Circle()
+                                    .fill(isPinned ? Color.orange : Color.blue)
+                                    .frame(width: 50, height: 50)
+                                
+                                Image(systemName: isPinned ? "pin.slash.fill" : "pin.fill")
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(.white)
+                                    .scaleEffect(0.7 + (dragProgress * 0.3))
+                            }
                         }
                     }
                     .padding(.trailing, 8)
@@ -106,7 +118,7 @@ struct AppleMailSwipeModifier: ViewModifier {
                             }
                         }
                 )
-                .padding([.top], isCellShifted ? 8 : 0)
+                .padding([.top], isCellShifted ? (forTip ? 0 : 8) : 0)
         }
         // Smoothly animates the background color change during the spring reset
         .animation(.spring(response: 0.25, dampingFraction: 0.8), value: isCellShifted)
@@ -123,7 +135,7 @@ struct AppleMailSwipeModifier: ViewModifier {
 }
 
 extension View {
-    func swipeToPin(isPinned: Bool, action: @escaping () -> Void) -> some View {
-        self.modifier(AppleMailSwipeModifier(pinAction: action, isPinned: isPinned))
+    func swipeToPin(isPinned: Bool, forTip: Bool = false, action: @escaping () -> Void) -> some View {
+        self.modifier(AppleMailSwipeModifier(pinAction: action, forTip: forTip, isPinned: isPinned))
     }
 }

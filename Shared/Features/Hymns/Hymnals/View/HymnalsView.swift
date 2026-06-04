@@ -20,6 +20,7 @@ struct HymnalsView: View {
     
     @AppStorage("pinnedHymnals") private var pinnedHymnalsString: String = ""
     @AppStorage("showOnlyPinnedHymnals") private var showOnlyPinned: Bool = false
+    @AppStorage("showSwipeEducation") private var showSwipeEducation = true
     
     private var pinnedKeys: [String] {
         pinnedHymnalsString.isEmpty
@@ -85,6 +86,17 @@ struct HymnalsView: View {
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack(spacing: 0) {
+                        
+                        if showSwipeEducation, filterQuery.isEmpty {
+                            SwipeEducationCard {
+                                showSwipeEducation = false
+                            }
+                            .padding(.horizontal)
+                            .transition(.move(edge: .top).combined(with: .opacity))
+                            
+                            Spacer()
+                                .frame(height: 10)
+                        }
                         
                         if showOnlyPinned && filteredBooks.isEmpty {
                             emptyPinnedState
