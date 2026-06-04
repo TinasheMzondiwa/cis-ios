@@ -178,6 +178,7 @@ final class TunePlayer: ObservableObject {
         
         let task = URLSession.shared.downloadTask(with: downloadURL) { [weak self] localURL, response, error in
             guard let self = self else { return }
+            let fm = FileManager.default
             
             if let error = error {
                 print("Soundbank download failed:", error)
@@ -195,10 +196,10 @@ final class TunePlayer: ObservableObject {
             }
             
             do {
-                if fileManager.fileExists(atPath: soundbankURL.path) {
-                    try fileManager.removeItem(at: soundbankURL)
+                if fm.fileExists(atPath: soundbankURL.path) {
+                    try fm.removeItem(at: soundbankURL)
                 }
-                try fileManager.moveItem(at: tempURL, to: soundbankURL)
+                try fm.moveItem(at: tempURL, to: soundbankURL)
                 
                 Task { @MainActor [weak self] in
                     guard let self = self else { return }
