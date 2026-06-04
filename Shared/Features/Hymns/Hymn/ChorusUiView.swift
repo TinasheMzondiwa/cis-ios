@@ -53,18 +53,14 @@ struct ChorusUiView: View {
                         .frame(width: 6)
                 }
                 
-                VStack(alignment: textAlignment.horizontalAlignment, spacing: 6) {
-                    ForEach(lines, id: \.self) { line in
-                        Text(line)
-                            .font(typeface.font(size: fontSize, weight: .regular))
-                            .foregroundColor(colors.onSecondaryContainer)
-                            .lineSpacing(6)
-                            .multilineTextAlignment(textAlignment.textAlignment)
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 14)
-                .textSelection(.enabled)
+                Text(lines.joined(separator: "\n"))
+                    .font(typeface.font(size: fontSize, weight: .regular))
+                    .foregroundColor(colors.onSecondaryContainer)
+                    .lineSpacing(6)
+                    .multilineTextAlignment(textAlignment.textAlignment)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .textSelection(.enabled)
                 
                 if textAlignment == .trailing {
                     // Right accent bar

@@ -34,16 +34,12 @@ struct VerseUIView: View {
     
     @ViewBuilder
     private func linesView(font: Font) -> some View {
-        VStack(alignment: textAlignment.horizontalAlignment) {
-            ForEach(lines, id: \.self) { line in
-                Text(line)
-                    .font(font)
-                    .foregroundColor(colors.onBackground)
-                    .lineSpacing(6)
-            }
-        }
-        .multilineTextAlignment(textAlignment.textAlignment)
-        .textSelection(.enabled)
+        Text(lines.joined(separator: "\n"))
+            .font(font)
+            .foregroundColor(colors.onBackground)
+            .lineSpacing(6)
+            .multilineTextAlignment(textAlignment.textAlignment)
+            .textSelection(.enabled)
     }
 
     var body: some View {
@@ -73,6 +69,7 @@ struct VerseUIView: View {
                 }
             }
         }
+        .padding(.top)
     }
 }
 

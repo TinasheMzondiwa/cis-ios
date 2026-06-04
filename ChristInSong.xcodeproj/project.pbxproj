@@ -1666,6 +1666,8 @@
 		7E4164197D401D670F56DFBF /* WhatsNewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13556F81BFCCC8E12B408861 /* WhatsNewItem.swift */; };
 		811E014721BED2F512A94732 /* changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 13A350B58CDD38960B9AA55D /* changelog.md */; };
 		A3638FE18400BE568780ED59 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B261DFFC695D1E81D5B04F /* NumberPickerView.swift */; };
+		AED2E169976B09A1CF9847C5 /* StoreHymn+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */; };
+		BE460BFB385C4745F37BCFD5 /* StoreHymn+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */; };
 		EDAF0FBEB653D514D4EC1585 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B261DFFC695D1E81D5B04F /* NumberPickerView.swift */; };
 		F5947F82F4F1C75BA8501F80 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18412AEF9D7D003FF64B695B /* Pods_macOS.framework */; };
 /* End PBXBuildFile section */
@@ -2542,6 +2544,7 @@
 		B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B261DFFC695D1E81D5B04F /* NumberPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		D1885A22888C9BBEFD3F33AF /* TunePlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TunePlayer.swift; sourceTree = "<group>"; };
+		EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "StoreHymn+Extensions.swift"; sourceTree = "<group>"; };
 		FA5C3956AD3B4BF2F7BF138E /* NumberPickerPresentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberPickerPresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2577,6 +2580,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080C11D62FD10AA0008EB3DA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0889E7212F8C295800FF8B09 /* HymnColors.swift */,
+				0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */,
+				D1885A22888C9BBEFD3F33AF /* TunePlayer.swift */,
+				08B0765C2BD21C3600444D7B /* PendingHymnView.swift */,
+				EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		0846452F25E77B16003AE75A /* Add */ = {
 			isa = PBXGroup;
 			children = (
@@ -3397,15 +3412,12 @@
 		0889E7202F8C292700FF8B09 /* Hymn */ = {
 			isa = PBXGroup;
 			children = (
+				080C11D62FD10AA0008EB3DA /* Helper */,
 				0889FDE52F946FD900FF8B09 /* Options */,
 				08927E3F24C3F8230035972C /* HymnView.swift */,
-				08B0765C2BD21C3600444D7B /* PendingHymnView.swift */,
-				0889E7212F8C295800FF8B09 /* HymnColors.swift */,
 				0889E7242F8C299D00FF8B09 /* ChorusUiView.swift */,
 				0889E7272F8C2A3D00FF8B09 /* VerseUIView.swift */,
-				0889FDDF2F945E8600FF8B09 /* HymnContainerView.swift */,
 				088909182F9F913300FF8B09 /* HymnInfoUIView.swift */,
-				D1885A22888C9BBEFD3F33AF /* TunePlayer.swift */,
 			);
 			path = Hymn;
 			sourceTree = "<group>";
@@ -5523,6 +5535,7 @@
 				EDAF0FBEB653D514D4EC1585 /* NumberPickerView.swift in Sources */,
 				2712EA2DCFA3489EC36809D5 /* NumberPickerPresentation.swift in Sources */,
 				18B4199B63A170F47F78E777 /* TunePlayer.swift in Sources */,
+				BE460BFB385C4745F37BCFD5 /* StoreHymn+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5569,6 +5582,7 @@
 				082E002625FDCFE100E163A8 /* AppDelegate.swift in Sources */,
 				A3638FE18400BE568780ED59 /* NumberPickerView.swift in Sources */,
 				0A712AF759F01C88F5594936 /* NumberPickerPresentation.swift in Sources */,
+				AED2E169976B09A1CF9847C5 /* StoreHymn+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
