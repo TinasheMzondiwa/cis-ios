@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		080518A429F48ABF00D9C95A /* EditModeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080518A329F48ABF00D9C95A /* EditModeContext.swift */; };
+		080C11D82FD121D2008EB3DA /* SwiftUi+HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */; };
+		080C11D92FD121D2008EB3DA /* SwiftUi+HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */; };
 		081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
@@ -1684,6 +1686,7 @@
 
 /* Begin PBXFileReference section */
 		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
+		080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUi+HymnalView.swift"; sourceTree = "<group>"; };
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/icibemba/icibemba.json; sourceTree = "<group>"; };
@@ -3612,6 +3615,7 @@
 			children = (
 				08927DA224BEAC240035972C /* HymnalsView.swift */,
 				08927E4424C402BF0035972C /* HymnalView.swift */,
+				080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5474,6 +5478,7 @@
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
 				67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
+				080C11D92FD121D2008EB3DA /* SwiftUi+HymnalView.swift in Sources */,
 				08CB340F25E2FD2E00609D65 /* Hymn+CoreDataClass.swift in Sources */,
 				0889091A2F9F913300FF8B09 /* HymnInfoUIView.swift in Sources */,
 				67A174C2285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
@@ -5563,6 +5568,7 @@
 				08927E4124C3F8230035972C /* HymnView.swift in Sources */,
 				0889E7282F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */,
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
+				080C11D82FD121D2008EB3DA /* SwiftUi+HymnalView.swift in Sources */,
 				0889FDE82F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */,
 				67A174C3285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
 				67A174C0285F1459006A5BC1 /* View+Extensions.swift in Sources */,

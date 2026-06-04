@@ -90,8 +90,13 @@ struct HymnalsView: View {
                             emptyPinnedState
                         } else {
                             ForEach(orderedBooks, id: \.id) { book in
-                                bookRow(book)
-                                    .id(book.id)
+                                VStack {
+                                    bookRow(book)
+                                        .id(book.id)
+                                    
+                                    Divider()
+                                        .padding(.leading, 70)
+                                }
                             }
                         }
                     }
@@ -139,6 +144,9 @@ struct HymnalsView: View {
                     }
                 }
             }
+            .onChange(of: showOnlyPinned) { _, _ in
+                HapticsManager.instance.trigger(.success)
+            }
         }
     }
     
@@ -160,6 +168,8 @@ struct HymnalsView: View {
     
     @ViewBuilder
     private func bookRow(_ book: StoreBook) -> some View {
+        let isPinned = pinnedKeys.contains(book.key)
+        
         Button {
             HapticsManager.instance.trigger(.success)
             action(book)
@@ -167,11 +177,12 @@ struct HymnalsView: View {
             HymnalView(
                 book: book,
                 index: books.firstIndex(of: book) ?? 0,
-                isPinned: pinnedKeys.contains(book.key),
-                onTogglePin: {
-                    togglePin(for: book.key)
-                }
+                isPinned: isPinned,
             )
+            .swipeToPin(isPinned: isPinned) {
+                HapticsManager.instance.trigger(.toggleSwitch)
+                togglePin(for: book.key)
+            }
         }
         .padding(.horizontal)
         .padding(.horizontal, sizeClass == .regular ? 32 : 0)
@@ -190,5 +201,9 @@ struct HymnalsView: View {
 }
 
 #Preview {
-    HymnalsView(books: [], action: { _ in }, dismissAction: { })
+    HymnalsView(books: [
+        .init(key: "shona", language: "Shona", title: "Shona", isSelected: true),
+        .init(key: "cis", language: "English", title: "Christ In Song"),
+        .init(key: "shona-2", language: "Cristu Munzwiyo", title: "Shona")
+    ], action: { _ in }, dismissAction: { })
 }

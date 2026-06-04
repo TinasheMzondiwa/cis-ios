@@ -14,49 +14,44 @@ struct HymnalView: View {
     let book: StoreBook
     var index: Int
     let isPinned: Bool
-    let onTogglePin: () -> Void
     
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    HapticsManager.instance.trigger(.buttonPress)
-                    onTogglePin()
-                } label: {
-                    
-                    ZStack {
-                        
-                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(Color(hex: COLORS[index % COLORS.count]))
-                            .frame(width: 42, height: 42)
-                        
-                        Image(systemName: isPinned ? "pin.fill" : "plus")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.white)
-                            .scaleEffect(isPinned ? 1.0 : 0.9)
-                            .rotationEffect(.degrees(isPinned ? 45 : 0))
-                            .symbolEffect(.bounce, value: isPinned)
-                    }
-                }
-                .buttonStyle(.plain)
-                .animation(.easeInOut(duration: 0.2), value: isPinned)
-                
-                VStack(alignment: .leading) {
-                    Text(book.title)
-                        .headLineStyle(selected: book.isSelected)
-                    
-                    Text(book.language)
-                        .subHeadLineStyle()
-                }.padding(.leading, 16)
-                
-                Spacer()
-            }
-            .padding([.bottom], 8)
-            .padding([.top], 16)
+        HStack {
             
-            Divider()
-                .padding(.leading, 70)
+            ZStack {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .fill(Color(hex: COLORS[index % COLORS.count]))
+                    .frame(width: 42, height: 42)
+                
+                if book.isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(.white)
+                }
+            }
+            
+            VStack(alignment: .leading) {
+                Text(book.title)
+                    .headLineStyle(selected: book.isSelected)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                
+                Text(book.language)
+                    .subHeadLineStyle()
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading, 10)
+            
+            if isPinned {
+                Image(systemName: "pin.fill")
+                    .resizable()
+                    .frame(width: 16, height: 16)
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal, 4)
+            }
         }
+        .padding(8)
     }
     
     func getColor() -> Color {
@@ -72,13 +67,13 @@ struct HymnalView_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                HymnalView(book: .init(key: "shona", language: "Shona", title: "Shona"), index: 1, isPinned: false, onTogglePin: {})
+                HymnalView(book: .init(key: "shona", language: "Shona", title: "Shona", isSelected: true), index: 1, isPinned: true)
                     .previewLayout(.sizeThatFits)
                 
-                HymnalView(book: .init(key: "cis", language: "English", title: "Christ In Song"), index: 1, isPinned: true, onTogglePin: {})
+                HymnalView(book: .init(key: "cis", language: "English", title: "Christ In Song"), index: 1, isPinned: true)
                     .previewLayout(.sizeThatFits)
                 
-                HymnalView(book: .init(key: "shona-2", language: "Cristu Munzwiyo", title: "Shona"), index: 4, isPinned: false, onTogglePin: {})
+                HymnalView(book: .init(key: "shona-2", language: "Cristu Munzwiyo", title: "Shona"), index: 4, isPinned: false)
                     .previewLayout(.sizeThatFits)
                     .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
                 
