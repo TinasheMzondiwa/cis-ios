@@ -18,6 +18,8 @@ struct HymnView: View {
     @State private var showingHUD = false
     @State private var showingTextSettings = false
     @State private var showingNumberPicker = false
+    @State private var showingShareSheet = false
+    @State private var shareText = ""
     
     private var books: [StoreBook] {
         return vm.allBooks.map {
@@ -155,6 +157,16 @@ struct HymnView: View {
                     
                     Button(action: {
                         HapticsManager.instance.trigger(.buttonPress)
+                        shareText = displayedHymn.shareText(refrainLabel: vm.selectedBook?.refrainLabel)
+                        showingShareSheet = true
+                    }) {
+                        Label("Share Hymn Text", systemImage: "square.and.arrow.up")
+                    }
+                    
+                    Divider()
+                    
+                    Button(action: {
+                        HapticsManager.instance.trigger(.buttonPress)
                         UIApplication.shared.open(URL(string: WebLink.userJot.rawValue)!)
                     }) {
                         Label("Report an Issue", systemImage: "exclamationmark.bubble")
@@ -173,6 +185,9 @@ struct HymnView: View {
         }
         .sheet(isPresented: $vm.collectionsSheetShown) {
             AddToCollectionView(hymn: displayedHymn)
+        }
+        .sheet(isPresented: $showingShareSheet) {
+            ActivityViewController(items: [shareText])
         }
         .hud(state: currState?.state, isPresented: $showingHUD) {
             if let data = currState {
