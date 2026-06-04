@@ -53,7 +53,9 @@ struct ContentView: View {
             if #available(iOS 18.0, *) {
                 TabView(selection: $selection) {
                     Tab(NavItem.hymns.title, systemImage: NavItem.hymns.icon, value: .hymns) {
-                        HymnsView()
+                        HymnsView(navigateToSupport: {
+                            selection = .support
+                        })
                     }
                     
                     Tab("Search", systemImage: "magnifyingglass", value: .search, role: .search) {
@@ -77,7 +79,9 @@ struct ContentView: View {
                 .applyMiniPlayerAccessory(hasTrack: tunePlayer.hasTrack)
             } else {
                 TabView(selection: $selection) {
-                    HymnsView()
+                    HymnsView(navigateToSupport: {
+                        selection = .support
+                    })
                         .tabItem {
                             NavLabel(item: NavItem.hymns)
                         }
@@ -111,7 +115,9 @@ struct ContentView: View {
 #endif
             } detail: {
                 switch selection {
-                case .hymns: HymnsView()
+                case .hymns: HymnsView(navigateToSupport: {
+                    selection = .support
+                })
                 case .search:
                     if #available(iOS 18.0, *) {
                         SearchView()

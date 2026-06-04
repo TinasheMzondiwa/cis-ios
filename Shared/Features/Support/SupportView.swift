@@ -12,6 +12,7 @@ struct SupportView: View {
     
     @EnvironmentObject var manager: StoreManager
     @Environment(\.horizontalSizeClass) private var sizeClass: UserInterfaceSizeClass?
+    @StateObject private var bannerManager = BannerManager.shared
     
     private var navTitle: String = NSLocalizedString("Support.Promo.Title", comment: "Title")
     
@@ -47,6 +48,14 @@ struct SupportView: View {
                         ForEach(manager.productIDs, id: \.self) { product in
                             ProductView(id: product)
                                 .productViewStyle(.regular)
+                                .onInAppPurchaseCompletion { _, result in
+                                    if case .success(let purchaseResult) = result,
+                                       case .success(let verificationResult) = purchaseResult,
+                                       case .verified(let transaction) = verificationResult {
+                                        manager.lastProductID = transaction.productID
+                                        manager.showThankYou = true
+                                    }
+                                }
                                 .padding()
                                 .cornerRadius(16)
                         }
@@ -73,6 +82,11 @@ struct SupportView: View {
         .padding(.horizontal, sizeClass == .regular ? 32 : 0)
         .sheet(isPresented: $manager.showThankYou) {
             ThankYouView(productID: manager.lastProductID)
+        }
+        .onChange(of: manager.showThankYou) { _, showThankYou in
+            if showThankYou {
+                bannerManager.dismissBanner()
+            }
         }
     }
 }

@@ -55,6 +55,8 @@ struct SearchView: View {
                         let isSelected = (selectedBookKey == book.key)
                         
                         Button(action: {
+                            HapticsManager.instance.trigger(.toggleSwitch)
+                            
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                                 selectedBookKey = book.key
                             }
@@ -87,7 +89,7 @@ struct SearchView: View {
             // Automatically scroll to the chip when selectedBookKey changes
             .onChange(of: selectedBookKey) { _, newValue in
                 withAnimation(.easeOut(duration: 0.25)) {
-                    proxy.scrollTo(newValue, anchor: .center) // .center keeps it beautifully framed
+                    proxy.scrollTo(newValue, anchor: .center)
                 }
             }
         }

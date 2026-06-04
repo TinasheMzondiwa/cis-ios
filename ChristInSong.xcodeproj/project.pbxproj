@@ -12,6 +12,10 @@
 		080C11D92FD121D2008EB3DA /* SwiftUi+HymnalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */; };
 		080C11DB2FD13406008EB3DA /* SwipeEducationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11DA2FD13406008EB3DA /* SwipeEducationCard.swift */; };
 		080C11DC2FD13406008EB3DA /* SwipeEducationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11DA2FD13406008EB3DA /* SwipeEducationCard.swift */; };
+		080C11DF2FD14A12008EB3DA /* BannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11DE2FD14A12008EB3DA /* BannerManager.swift */; };
+		080C11E02FD14A12008EB3DA /* BannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11DE2FD14A12008EB3DA /* BannerManager.swift */; };
+		080C11E22FD14BFD008EB3DA /* SupportBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11E12FD14BFD008EB3DA /* SupportBannerView.swift */; };
+		080C11E32FD14BFD008EB3DA /* SupportBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11E12FD14BFD008EB3DA /* SupportBannerView.swift */; };
 		081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
@@ -1690,6 +1694,8 @@
 		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
 		080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUi+HymnalView.swift"; sourceTree = "<group>"; };
 		080C11DA2FD13406008EB3DA /* SwipeEducationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeEducationCard.swift; sourceTree = "<group>"; };
+		080C11DE2FD14A12008EB3DA /* BannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerManager.swift; sourceTree = "<group>"; };
+		080C11E12FD14BFD008EB3DA /* SupportBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportBannerView.swift; sourceTree = "<group>"; };
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/icibemba/icibemba.json; sourceTree = "<group>"; };
@@ -2596,6 +2602,14 @@
 				EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		080C11DD2FD14A02008EB3DA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				080C11DE2FD14A12008EB3DA /* BannerManager.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		0846452F25E77B16003AE75A /* Add */ = {
@@ -3517,6 +3531,7 @@
 				08927D9A24BEAAFC0035972C /* SupportView.swift */,
 				084BDAA825FD9DAA002090CD /* StoreManager.swift */,
 				0889FE142F94FC7100FF8B09 /* ThankYouView.swift */,
+				080C11E12FD14BFD008EB3DA /* SupportBannerView.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -3627,6 +3642,7 @@
 		08CB33B825E21AA300609D65 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				080C11DD2FD14A02008EB3DA /* Config */,
 				0889FD242F93FF2100FF8B09 /* Fonts */,
 				67A174B3285F084D006A5BC1 /* Extensions */,
 				08CB33EA25E22D9E00609D65 /* Data */,
@@ -5479,6 +5495,7 @@
 				082ED43E2FB9D7E5001694FF /* ChristInSongAppDelegate.swift in Sources */,
 				08927D9324BEA5B60035972C /* HymnsView.swift in Sources */,
 				0889FDED2F94704C00FF8B09 /* TextSettingsView.swift in Sources */,
+				080C11DF2FD14A12008EB3DA /* BannerManager.swift in Sources */,
 				0889FDEF2F9473DA00FF8B09 /* HapticsManager.swift in Sources */,
 				081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				08C3C0A225F08E81004194B2 /* FontExtensions.swift in Sources */,
@@ -5515,6 +5532,7 @@
 				0846454525E7913A003AE75A /* RoundedCorner.swift in Sources */,
 				08AB2E7325E944340086DA32 /* EmptyCollectionsView.swift in Sources */,
 				08AB2E4D25E8974F0086DA32 /* CollectionRowView.swift in Sources */,
+				080C11E22FD14BFD008EB3DA /* SupportBannerView.swift in Sources */,
 				1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */,
 				08B0765D2BD21C3600444D7B /* PendingHymnView.swift in Sources */,
 				0889E7292F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */,
@@ -5565,6 +5583,7 @@
 				0889FDEC2F94704C00FF8B09 /* TextSettingsView.swift in Sources */,
 				08624FA224DBA67E00AF2904 /* StringExtensions.swift in Sources */,
 				08927D9424BEA5B60035972C /* HymnsView.swift in Sources */,
+				080C11E32FD14BFD008EB3DA /* SupportBannerView.swift in Sources */,
 				08C0929E25F74FE500845BA1 /* NavItem.swift in Sources */,
 				080C11DB2FD13406008EB3DA /* SwipeEducationCard.swift in Sources */,
 				08927E4624C402BF0035972C /* HymnalView.swift in Sources */,
@@ -5576,6 +5595,7 @@
 				08927EB424C6A98C0035972C /* MailView.swift in Sources */,
 				080C11D82FD121D2008EB3DA /* SwiftUi+HymnalView.swift in Sources */,
 				0889FDE82F946FE800FF8B09 /* TextSettingsPresentation.swift in Sources */,
+				080C11E02FD14A12008EB3DA /* BannerManager.swift in Sources */,
 				67A174C3285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
 				67A174C0285F1459006A5BC1 /* View+Extensions.swift in Sources */,
 				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,

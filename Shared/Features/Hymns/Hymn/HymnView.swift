@@ -19,7 +19,6 @@ struct HymnView: View {
     @State private var showingTextSettings = false
     @State private var showingNumberPicker = false
     @State private var showingShareSheet = false
-    @State private var shareText = ""
     
     private var books: [StoreBook] {
         return vm.allBooks.map {
@@ -157,7 +156,6 @@ struct HymnView: View {
                     
                     Button(action: {
                         HapticsManager.instance.trigger(.buttonPress)
-                        shareText = displayedHymn.shareText(refrainLabel: vm.selectedBook?.refrainLabel)
                         showingShareSheet = true
                     }) {
                         Label("Share Hymn Text", systemImage: "square.and.arrow.up")
@@ -187,7 +185,7 @@ struct HymnView: View {
             AddToCollectionView(hymn: displayedHymn)
         }
         .sheet(isPresented: $showingShareSheet) {
-            ActivityViewController(items: [shareText])
+            ActivityViewController(items: [displayedHymn.shareText(refrainLabel: vm.selectedBook?.refrainLabel)])
         }
         .hud(state: currState?.state, isPresented: $showingHUD) {
             if let data = currState {

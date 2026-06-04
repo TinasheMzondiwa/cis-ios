@@ -10,6 +10,7 @@ import SwiftUI
 struct HymnsView: View {
     
     @EnvironmentObject var vm: CISAppViewModel
+    @StateObject private var bannerManager = BannerManager.shared
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
     @State private var filterQuery: String = ""
@@ -17,6 +18,8 @@ struct HymnsView: View {
     
     @State private var showingNumberPicker = false
     @State private var hymnToOpen: StoreHymn?
+    
+    var navigateToSupport: (() -> Void)? = nil
     
     var filteredHymns: [StoreHymn] {
         if filterQuery.trimmed.isEmpty {
@@ -85,6 +88,13 @@ struct HymnsView: View {
     
     private var content: some View {
         List {
+            
+            if bannerManager.isBannerVisible {
+                SupportBannerView(action: {
+                    navigateToSupport?()
+                })
+            }
+            
             ForEach(filteredHymns, id: \.id) { hymn in
                 NavigationLink {
                     HymnView(displayedHymn: hymn)
@@ -104,6 +114,10 @@ struct HymnsView: View {
             if let hymn = hymnToOpen {
                 HymnView(displayedHymn: hymn)
             }
+        }
+        .task {
+            // Asynchronously updates the Firebase flag safely when user launches this screen
+            await bannerManager.fetchBannerStatus()
         }
         .modifier(
             NumberPickerPresentation(
