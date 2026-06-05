@@ -7,6 +7,7 @@
 
 import SwiftUI
 import StoreKit
+import FirebaseAnalytics
 
 struct SupportView: View {
     
@@ -54,6 +55,9 @@ struct SupportView: View {
                                        case .verified(let transaction) = verificationResult {
                                         manager.lastProductID = transaction.productID
                                         manager.showThankYou = true
+                                        
+                                        Analytics.logTransaction(transaction)
+                                        await transaction.finish()
                                     }
                                 }
                                 .padding()
