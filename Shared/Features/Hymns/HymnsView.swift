@@ -116,6 +116,7 @@ struct HymnsView: View {
             }
         }
         .task {
+            AnalyticsManager.shared.logScreen(name: "HymnsView")
             // Asynchronously updates the Firebase flag safely when user launches this screen
             await bannerManager.fetchBannerStatus()
         }

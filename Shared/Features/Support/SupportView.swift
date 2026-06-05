@@ -88,6 +88,9 @@ struct SupportView: View {
                 bannerManager.dismissBanner()
             }
         }
+        .task {
+            AnalyticsManager.shared.logScreen(name: "SupportView")
+        }
     }
 }
 

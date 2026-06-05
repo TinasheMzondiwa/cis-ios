@@ -16,6 +16,8 @@
 		080C11E02FD14A12008EB3DA /* BannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11DE2FD14A12008EB3DA /* BannerManager.swift */; };
 		080C11E22FD14BFD008EB3DA /* SupportBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11E12FD14BFD008EB3DA /* SupportBannerView.swift */; };
 		080C11E32FD14BFD008EB3DA /* SupportBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C11E12FD14BFD008EB3DA /* SupportBannerView.swift */; };
+		080C1CE12FD2F628008EB3DA /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C1CE02FD2F628008EB3DA /* AnalyticsManager.swift */; };
+		080C1CE22FD2F628008EB3DA /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C1CE02FD2F628008EB3DA /* AnalyticsManager.swift */; };
 		081801D825EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081801D725EA43D10053D295 /* CheckBoxView.swift */; };
 		081BE5FC2EF47C5300EDC921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */; };
@@ -1696,6 +1698,7 @@
 		080C11DA2FD13406008EB3DA /* SwipeEducationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeEducationCard.swift; sourceTree = "<group>"; };
 		080C11DE2FD14A12008EB3DA /* BannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerManager.swift; sourceTree = "<group>"; };
 		080C11E12FD14BFD008EB3DA /* SupportBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportBannerView.swift; sourceTree = "<group>"; };
+		080C1CE02FD2F628008EB3DA /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		081801D725EA43D10053D295 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		081BE5FA2EF47C5300EDC921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		081BE5FD2EF47E4F00EDC921 /* v2/icibemba/icibemba.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v2/icibemba/icibemba.json; sourceTree = "<group>"; };
@@ -2608,6 +2611,7 @@
 			isa = PBXGroup;
 			children = (
 				080C11DE2FD14A12008EB3DA /* BannerManager.swift */,
+				080C1CE02FD2F628008EB3DA /* AnalyticsManager.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -5538,6 +5542,7 @@
 				0889E7292F8C2A3D00FF8B09 /* VerseUIView.swift in Sources */,
 				1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */,
 				0889FE182F9CD1D500FF8B09 /* ShimmerPlaceholderView.swift in Sources */,
+				080C1CE12FD2F628008EB3DA /* AnalyticsManager.swift in Sources */,
 				08B2C58B25F4CF1A00A37655 /* CustomStyles.swift in Sources */,
 				0889E7222F8C295800FF8B09 /* HymnColors.swift in Sources */,
 				0889FD232F93FDFF00FF8B09 /* SwiftUi+Font.swift in Sources */,
@@ -5598,6 +5603,7 @@
 				080C11E02FD14A12008EB3DA /* BannerManager.swift in Sources */,
 				67A174C3285F1478006A5BC1 /* ViewModifier+Extensions.swift in Sources */,
 				67A174C0285F1459006A5BC1 /* View+Extensions.swift in Sources */,
+				080C1CE22FD2F628008EB3DA /* AnalyticsManager.swift in Sources */,
 				081801D925EA43D10053D295 /* CheckBoxView.swift in Sources */,
 				67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */,
 				0889E7262F8C299D00FF8B09 /* ChorusUiView.swift in Sources */,

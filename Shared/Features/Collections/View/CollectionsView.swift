@@ -69,6 +69,9 @@ struct CollectionsView: View {
                 .resignKeyboardOnDragGesture()
             }
         }
+        .task {
+            AnalyticsManager.shared.logScreen(name: "CollectionsView")
+        }
     }
 }
 

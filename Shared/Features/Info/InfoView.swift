@@ -113,6 +113,9 @@ struct InfoView: View {
                 }
             }
         }
+        .task {
+            AnalyticsManager.shared.logScreen(name: "InfoView")
+        }
     }
 }
 

@@ -165,6 +165,9 @@ struct SearchView: View {
         .navigationDestination(for: StoreHymn.self) { hymn in
             HymnView(displayedHymn: hymn)
         }
+        .task {
+            AnalyticsManager.shared.logScreen(name: "SearchView")
+        }
     }
 }
 
