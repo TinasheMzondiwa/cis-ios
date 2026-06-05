@@ -62,7 +62,7 @@ struct SearchView: View {
                             }
                         }) {
                             HStack(spacing: 6) {
-                                if book.isSelected {
+                                if vm.selectedBook?.key == book.key {
                                     Image(systemName: "checkmark.circle.fill")
                                         .font(.footnote)
                                         .transition(.scale.combined(with: .opacity))
