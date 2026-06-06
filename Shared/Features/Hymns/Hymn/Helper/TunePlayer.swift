@@ -238,6 +238,8 @@ final class TunePlayer: ObservableObject {
         lastNowPlayingUpdateTime = midiPlayer?.currentPosition ?? 0
         updateNowPlayingInfo(isPause: false)
         startTimer()
+        
+        AnalyticsManager.shared.logEvent("click_play_tune", parameters: ["number": "\(activeHymnNumber ?? 0)"])
 
         midiPlayer?.play { [weak self] in
             Task { @MainActor [weak self] in

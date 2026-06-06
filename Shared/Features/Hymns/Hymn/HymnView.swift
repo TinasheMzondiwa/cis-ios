@@ -119,6 +119,7 @@ struct HymnView: View {
                 Button {
                     HapticsManager.instance.trigger(.buttonPress)
                     showingNumberPicker.toggle()
+                    AnalyticsManager.shared.logEvent("click_show_number_picker", parameters: ["source": "hymn_view"])
                 } label: {
                     SFSymbol.number
                 }
@@ -138,12 +139,14 @@ struct HymnView: View {
                     Button(action: {
                         HapticsManager.instance.trigger(.buttonPress)
                         vm.toggleCollectionSheetVisibility()
+                        AnalyticsManager.shared.logEvent("click_add_hymn_to_collection")
                     }) {
                         Label("Add to Collection", systemImage: "text.badge.plus")
                     }
                     
                     Button(action: {
                         HapticsManager.instance.trigger(.buttonPress)
+                        AnalyticsManager.shared.logEvent("click_hymn_text_options")
                         
                         withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
                             showingTextSettings.toggle()
@@ -157,6 +160,7 @@ struct HymnView: View {
                     Button(action: {
                         HapticsManager.instance.trigger(.buttonPress)
                         showingShareSheet = true
+                        AnalyticsManager.shared.logEvent("click_share_hymn_text")
                     }) {
                         Label("Share Hymn Text", systemImage: "square.and.arrow.up")
                     }

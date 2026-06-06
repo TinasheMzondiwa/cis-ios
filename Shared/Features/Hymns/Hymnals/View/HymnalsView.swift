@@ -30,6 +30,7 @@ struct HymnalsView: View {
     
     private func togglePin(for key: String) {
         lastToggledKey = key
+        AnalyticsManager.shared.logEvent("toggle_hymnal_pin", parameters: ["hymnal": key])
         
         withAnimation(.easeInOut(duration: 0.25)) {
             var keys = pinnedKeys
@@ -183,6 +184,7 @@ struct HymnalsView: View {
         let isPinned = pinnedKeys.contains(book.key)
         
         Button {
+            AnalyticsManager.shared.logEvent("switch_hymnal", parameters: ["hymanl": book.key])
             HapticsManager.instance.trigger(.success)
             action(book)
         } label: {

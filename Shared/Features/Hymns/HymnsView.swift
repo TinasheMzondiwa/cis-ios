@@ -49,6 +49,7 @@ struct HymnsView: View {
     private var sortButton: some View {
         Button(action: {
             HapticsManager.instance.trigger(.light)
+            AnalyticsManager.shared.logEvent("click_sort_hymns")
             
             withAnimation {
                 sortOption = sortOption == Sort.titleStr.rawValue ? Sort.number.rawValue : Sort.titleStr.rawValue
@@ -91,6 +92,8 @@ struct HymnsView: View {
             
             if bannerManager.isBannerVisible {
                 SupportBannerView(action: {
+                    AnalyticsManager.shared.logEvent("click_support_banner")
+                    HapticsManager.instance.trigger(.success)
                     navigateToSupport?()
                 })
             }
@@ -117,7 +120,7 @@ struct HymnsView: View {
         }
         .task {
             AnalyticsManager.shared.logScreen(name: "HymnsView")
-            // Asynchronously updates the Firebase flag safely when user launches this screen
+            // Asynchronously updates FCM
             await bannerManager.fetchBannerStatus()
         }
         .modifier(
@@ -126,6 +129,9 @@ struct HymnsView: View {
                 maxNumber: vm.hymnsFromSelectedBook.count,
                 onSelect: { selectedNumber in
                     if let hymn = vm.hymnsFromSelectedBook.first(where: { $0.number == selectedNumber }) {
+                        
+                        AnalyticsManager.shared.logEvent("click_hymn_number_picker", parameters: ["number": selectedNumber])
+                        
                         hymnToOpen = hymn
                     }
                 }
@@ -162,6 +168,7 @@ struct HymnsView: View {
                     Button {
                         HapticsManager.instance.trigger(.light)
                         showingNumberPicker.toggle()
+                        AnalyticsManager.shared.logEvent("click_show_number_picker", parameters: ["source": "hymns_view"])
                     } label: {
                         SFSymbol.number
                     }
