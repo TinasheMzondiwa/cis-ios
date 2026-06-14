@@ -12,7 +12,6 @@ import FirebaseAnalytics
 struct SupportView: View {
     
     @EnvironmentObject var manager: StoreManager
-    @Environment(\.horizontalSizeClass) private var sizeClass: UserInterfaceSizeClass?
     @StateObject private var bannerManager = BannerManager.shared
     
     private var navTitle: String = NSLocalizedString("Support.Promo.Title", comment: "Title")
@@ -41,6 +40,7 @@ struct SupportView: View {
                     .bodyStyle()
                     .multilineTextAlignment(.center)
                     .padding()
+                    .padding(.horizontal, 32)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .center, spacing: 20) {
@@ -61,7 +61,12 @@ struct SupportView: View {
                                     }
                                 }
                                 .padding()
-                                .cornerRadius(16)
+                                .background(.background)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .strokeBorder(.separator, lineWidth: 1)
+                                )
                         }
                         
                         Spacer()
@@ -74,6 +79,7 @@ struct SupportView: View {
                     .footNoteStyle()
                     .multilineTextAlignment(.center)
                     .padding()
+                    .padding(.horizontal, 32)
                 
                 HStack(spacing: 16) {
                     Link(LocalizedStringKey("Support.Terms"), destination: URL(string: WebLink.appleTerms.rawValue)!)
@@ -82,8 +88,10 @@ struct SupportView: View {
                 .font(.footnote.weight(.medium))
             }
             
+            Spacer()
+                .frame(height: 100)
+            
         }
-        .padding(.horizontal, sizeClass == .regular ? 32 : 0)
         .sheet(isPresented: $manager.showThankYou) {
             ThankYouView(productID: manager.lastProductID)
         }

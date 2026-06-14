@@ -12,7 +12,6 @@ struct HymnsView: View {
     @EnvironmentObject var vm: CISAppViewModel
     @StateObject private var bannerManager = BannerManager.shared
     
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
     @State private var filterQuery: String = ""
     @AppStorage("sort") var sortOption: String = Sort.number.rawValue
     

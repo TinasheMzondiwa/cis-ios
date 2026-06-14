@@ -28,91 +28,86 @@ struct InfoView: View {
     }
     
     var content: some View {
-        GeometryReader { g in
-            ScrollView {
-                VStack(spacing: 0) {
-                    AppInfoView()
+        List {
+            
+            AppInfoView()
+                .listRowBackground(Color.clear)
+            
+            Section(header: Text(LocalizedStringKey("Info.About"))) {
+                Button(action: {
+                    HapticsManager.instance.trigger(.light)
+                    UIApplication.shared.open(URL(string: WebLink.appWebsite.rawValue)!)
                     
-                    List {
-                        Section(header: Text(LocalizedStringKey("Info.About"))) {
-                            Button(action: {
-                                HapticsManager.instance.trigger(.light)
-                                UIApplication.shared.open(URL(string: WebLink.appWebsite.rawValue)!)
-                                
-                            }, label: {
-                                CustomLineItem(title: "Info.Website")
-                            })
-                            
-                            Button(action: {
-                                HapticsManager.instance.trigger(.light)
-                                UIApplication.shared.open(URL(string: WebLink.github.rawValue)!)
-                                
-                            }, label: {
-                                CustomLineItem(title: "Info.Github")
-                            })
-                            
-                            Button(action: {
-                                HapticsManager.instance.trigger(.light)
-                                UIApplication.shared.open(URL(string: WebLink.threads.rawValue)!)
-                            }, label: {
-                                CustomLineItem(title: "Info.Threads", title2: WebLink.threadsUsername.rawValue)
-                            })
-                            
-                            Button(action: {
-                                HapticsManager.instance.trigger(.light)
-                                UIApplication.shared.open(URL(string: WebLink.twitter.rawValue)!)
-                            }, label: {
-                                CustomLineItem(title: "Info.Twitter", title2: WebLink.twitterUsername.rawValue)
-                            })
-                        }
-                        Section(header: Text(LocalizedStringKey("Info.More"))) {
-                            if MFMailComposeViewController.canSendMail() {
-                                Button(action: {
-                                    HapticsManager.instance.trigger(.light)
-                                    showingEmailSheet.toggle()
-                                }, label: {
-                                    CustomLineItem(title: "Info.Help")
-                                })
-                                .sheet(isPresented: $showingEmailSheet) {
-                                    MailView(result: self.$result)
-                                }
-                            }
-                            
-                            Button(action: {
-                                HapticsManager.instance.trigger(.light)
-                                UIApplication.shared.open(URL(string: WebLink.appStore.rawValue)!)
-                            }, label: {
-                                CustomLineItem(title: "Info.Review")
-                            })
-                            Button(action: {
-                                HapticsManager.instance.trigger(.light)
-                                showingShareSheet.toggle()
-                            }, label: {
-                                CustomLineItem(title: "Info.Share")
-                            })
-                            .sheet(isPresented: $showingShareSheet) {
-                                let shareData: [Any] = [NSLocalizedString("Info.Share.Prompt", comment: "Share Prompt"), URL(string: WebLink.appStoreShort.rawValue)!]
-                                ActivityViewController(items: shareData)
-                            }
-                            
-                            Button(action: {
-                                HapticsManager.instance.trigger(.light)
-                                UIApplication.shared.open(URL(string: WebLink.policy.rawValue)!)
-                            }, label: {
-                                CustomLineItem(title: "Support.Privacy")
-                            })
-                        }
-                        
-                        Text(LocalizedStringKey("Info.About.Description"))
-                            .multilineTextAlignment(.center)
-                            .footNoteStyle()
-                            .listRowBackground(Color(.systemGroupedBackground))
-                    }
-                    .listStyle(InsetGroupedListStyle())
-                    .frame(width: g.size.width, height: g.size.height, alignment: .center)
-                }
+                }, label: {
+                    CustomLineItem(title: "Info.Website")
+                })
+                
+                Button(action: {
+                    HapticsManager.instance.trigger(.light)
+                    UIApplication.shared.open(URL(string: WebLink.github.rawValue)!)
+                    
+                }, label: {
+                    CustomLineItem(title: "Info.Github")
+                })
+                
+                Button(action: {
+                    HapticsManager.instance.trigger(.light)
+                    UIApplication.shared.open(URL(string: WebLink.threads.rawValue)!)
+                }, label: {
+                    CustomLineItem(title: "Info.Threads", title2: WebLink.threadsUsername.rawValue)
+                })
+                
+                Button(action: {
+                    HapticsManager.instance.trigger(.light)
+                    UIApplication.shared.open(URL(string: WebLink.twitter.rawValue)!)
+                }, label: {
+                    CustomLineItem(title: "Info.Twitter", title2: WebLink.twitterUsername.rawValue)
+                })
             }
+            Section(header: Text(LocalizedStringKey("Info.More"))) {
+                if MFMailComposeViewController.canSendMail() {
+                    Button(action: {
+                        HapticsManager.instance.trigger(.light)
+                        showingEmailSheet.toggle()
+                    }, label: {
+                        CustomLineItem(title: "Info.Help")
+                    })
+                    .sheet(isPresented: $showingEmailSheet) {
+                        MailView(result: self.$result)
+                    }
+                }
+                
+                Button(action: {
+                    HapticsManager.instance.trigger(.light)
+                    UIApplication.shared.open(URL(string: WebLink.appStore.rawValue)!)
+                }, label: {
+                    CustomLineItem(title: "Info.Review")
+                })
+                Button(action: {
+                    HapticsManager.instance.trigger(.light)
+                    showingShareSheet.toggle()
+                }, label: {
+                    CustomLineItem(title: "Info.Share")
+                })
+                .sheet(isPresented: $showingShareSheet) {
+                    let shareData: [Any] = [NSLocalizedString("Info.Share.Prompt", comment: "Share Prompt"), URL(string: WebLink.appStoreShort.rawValue)!]
+                    ActivityViewController(items: shareData)
+                }
+                
+                Button(action: {
+                    HapticsManager.instance.trigger(.light)
+                    UIApplication.shared.open(URL(string: WebLink.policy.rawValue)!)
+                }, label: {
+                    CustomLineItem(title: "Support.Privacy")
+                })
+            }
+            
+            Text(LocalizedStringKey("Info.About.Description"))
+                .multilineTextAlignment(.center)
+                .footNoteStyle()
+                .listRowBackground(Color(.systemGroupedBackground))
         }
+        .listStyle(InsetGroupedListStyle())
         .task {
             AnalyticsManager.shared.logScreen(name: "InfoView")
         }
@@ -127,7 +122,7 @@ struct InfoView_Previews: PreviewProvider {
 
 struct AppInfoView: View {
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             Image("logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -141,7 +136,8 @@ struct AppInfoView: View {
                 Text(Constants.getAppVersion())
                     .font(.system(.caption2, design: .rounded))
             }
-        }.padding(8)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 
