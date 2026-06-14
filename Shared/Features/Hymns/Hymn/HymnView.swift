@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HymnView: View {
     @EnvironmentObject var vm: CISAppViewModel
+    @EnvironmentObject var tunePlayer: TunePlayer
     @Environment(\.dismiss) private var dismiss
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass: UserInterfaceSizeClass?
     
@@ -98,6 +99,10 @@ struct HymnView: View {
                         }
                         .textSelectionAffinity(.upstream)
                         
+                        if tunePlayer.hasTrack {
+                            Spacer()
+                                .frame(height: 80)
+                        }
                     }
                     .padding()
                     .frame(maxWidth: 700)
@@ -214,5 +219,6 @@ struct HymnView: View {
         HymnView(displayedHymn: CISAppViewModel.sample.hymnsFromSelectedBook.first!)
     }
     .environmentObject(CISAppViewModel.sample)
+    .environmentObject(TunePlayer())
 }
 #endif

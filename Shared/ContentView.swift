@@ -129,7 +129,27 @@ struct ContentView: View {
                 case .info: InfoView()
                 }
             }
-            .applyMiniPlayerAccessory(hasTrack: tunePlayer.hasTrack)
+            .safeAreaInset(edge: .bottom) {
+                if tunePlayer.hasTrack {
+                    HStack {
+                        Spacer()
+                        MiniPlayerView()
+                            .frame(maxWidth: 500)
+                            .background(.ultraThinMaterial)
+                            .cornerRadius(12)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)
+                            )
+                            .shadow(color: Color.black.opacity(0.08), radius: 10, y: 5)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 12)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
+            }
+            .animation(.spring(), value: tunePlayer.hasTrack)
         }
     }
 }
