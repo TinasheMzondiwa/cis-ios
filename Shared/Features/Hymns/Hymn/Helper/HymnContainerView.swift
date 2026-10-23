@@ -45,6 +45,7 @@ struct HymnContainerView<Content: View>: View {
                 // Previous Hymn Preview
                 HymnPreviewView(number: previousHymn ?? 0)
                     .frame(width: previewWidth)
+                    .opacity(dragOffset > 0 ? min(1.0, Double(dragOffset / (previewWidth * 0.5))) : 0)
                 
                 // User-provided content view
                 content
@@ -53,6 +54,7 @@ struct HymnContainerView<Content: View>: View {
                 // Next Hymn Preview
                 HymnPreviewView(number: nextHymn ?? 0)
                     .frame(width: previewWidth)
+                    .opacity(dragOffset < 0 ? min(1.0, Double(-dragOffset / (previewWidth * 0.5))) : 0)
             }
             .offset(x: -previewWidth + dragOffset)
             .simultaneousGesture(drag, isEnabled: enabled)

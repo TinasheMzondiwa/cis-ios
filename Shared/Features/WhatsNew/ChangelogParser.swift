@@ -55,7 +55,7 @@ struct ChangelogParser {
     
     static func getWhatsNewItems(for version: String) -> [WhatsNewItem] {
         guard let url = Bundle.main.url(forResource: "changelog", withExtension: "md"),
-              let content = try? String(contentsOf: url) else {
+              let content = try? String(contentsOf: url, encoding: .utf8) else {
             return []
         }
         return parse(for: version, from: content)
