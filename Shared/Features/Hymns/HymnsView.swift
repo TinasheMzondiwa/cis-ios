@@ -10,6 +10,7 @@ import SwiftUI
 struct HymnsView: View {
     
     @EnvironmentObject var vm: CISAppViewModel
+    @Environment(\.horizontalSizeClass) private var sizeClass
     @StateObject private var bannerManager = BannerManager.shared
     
     @State private var filterQuery: String = ""
@@ -107,6 +108,8 @@ struct HymnsView: View {
                 }
             }
         }
+        .padding(.horizontal, sizeClass == .regular ? 44 : 0)
+        .background(Color(.systemGroupedBackground))
         .navigationBarTitleDisplayMode(.inline)
         .resignKeyboardOnDragGesture()
         .navigationDestination(isPresented: Binding(

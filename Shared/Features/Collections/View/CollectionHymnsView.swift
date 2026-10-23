@@ -11,6 +11,7 @@ struct CollectionHymnsView: View {
     
     let collection: StoreCollection
     @EnvironmentObject var vm: CISAppViewModel
+    @Environment(\.horizontalSizeClass) private var sizeClass
     
     var body: some View {
         listContent
@@ -42,6 +43,8 @@ struct CollectionHymnsView: View {
                         }
                     }
                 }
+                .padding(.horizontal, sizeClass == .regular ? 44 : 0)
+                .background(Color(.systemGroupedBackground))
             } else {
                 EmptyCollectionsView(caption: NSLocalizedString("Collection.Empty.Prompt", comment: "Empty prompt"))
             }

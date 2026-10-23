@@ -10,6 +10,7 @@ import MessageUI
 
 struct InfoView: View {
     
+    @Environment(\.horizontalSizeClass) private var sizeClass
     @State private var showingShareSheet = false
     @State private var showingEmailSheet = false
     @State var result: Result<MFMailComposeResult, Error>? = nil
@@ -108,6 +109,8 @@ struct InfoView: View {
                 .listRowBackground(Color(.systemGroupedBackground))
         }
         .listStyle(InsetGroupedListStyle())
+        .padding(.horizontal, sizeClass == .regular ? 44 : 0)
+        .background(Color(.systemGroupedBackground))
         .task {
             AnalyticsManager.shared.logScreen(name: "InfoView")
         }

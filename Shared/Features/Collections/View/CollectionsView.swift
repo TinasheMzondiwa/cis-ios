@@ -12,6 +12,7 @@ struct CollectionsView: View {
     @State private var filterQuery: String = ""
     
     @EnvironmentObject var vm: CISAppViewModel
+    @Environment(\.horizontalSizeClass) private var sizeClass
     
     private var filteredCollections: [StoreCollection] {
         if filterQuery.trimmed.isEmpty {
@@ -62,6 +63,8 @@ struct CollectionsView: View {
                         }
                     }
                 }
+                .padding(.horizontal, sizeClass == .regular ? 44 : 0)
+                .background(Color(.systemGroupedBackground))
                 .searchable(text: $filterQuery)
                 .onChange(of: filterQuery) { oldValue, newValue in
                     filterQuery = newValue
