@@ -2,13 +2,11 @@
   "images" : [
     {
       "idiom" : "tv",
-      "scale" : "1x",
-      "size" : "400x240"
+      "scale" : "1x"
     },
     {
       "idiom" : "tv",
-      "scale" : "2x",
-      "size" : "400x240"
+      "scale" : "2x"
     }
   ],
   "info" : {

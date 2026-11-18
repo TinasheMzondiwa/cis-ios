@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tvOS App Icon Large-1280x768.png",
+      "idiom" : "tv"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
