@@ -21,6 +21,7 @@ struct ChristInSongTVApp: App {
             TVRootView()
                 .environmentObject(viewModel)
                 .environmentObject(tunePlayer)
+                .tint(Color.white)
         }
     }
 }

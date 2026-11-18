@@ -13,6 +13,9 @@ struct TVAddToCollectionSheet: View {
     @State private var showingCreateDialog = false
     @State private var newCollectionTitle = ""
     @State private var newCollectionAbout = ""
+    @FocusState private var focusedCollectionId: UUID?
+    @FocusState private var isNewColFocused: Bool
+    @FocusState private var isDoneFocused: Bool
     
     private var collections: [StoreCollection] {
         vm.allCollections
@@ -24,19 +27,20 @@ struct TVAddToCollectionSheet: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 24) {
+            VStack(spacing: 20) {
                 // Header
-                VStack(spacing: 8) {
+                VStack(spacing: 6) {
                     Text(LocalizedStringKey("Lyrics.SelectCollections"))
-                        .font(TVStyle.titleFont(size: 38))
+                        .font(TVStyle.titleFont(size: 36))
                         .foregroundStyle(Color.white)
                     
                     Text("\(String(format: NSLocalizedString("Lyrics.HymnNumberPrefix", comment: ""), hymn.number)) • \(hymn.title)")
-                        .font(TVStyle.uiFont(size: 20, weight: .semibold))
-                        .foregroundStyle(TVStyle.accentGold)
+                        .font(TVStyle.uiFont(size: 19, weight: .semibold))
+                        .foregroundStyle(Color.white.opacity(0.85))
+                        .lineLimit(1)
                     
                     Text(LocalizedStringKey("Lyrics.SelectCollectionsDesc"))
-                        .font(TVStyle.uiFont(size: 18))
+                        .font(TVStyle.uiFont(size: 16))
                         .foregroundStyle(Color.white.opacity(0.65))
                 }
                 .padding(.top, 24)
@@ -46,13 +50,14 @@ struct TVAddToCollectionSheet: View {
                     showingCreateDialog = true
                 } label: {
                     Label(LocalizedStringKey("Collections.Create"), systemImage: "plus.circle.fill")
-                        .font(TVStyle.uiFont(size: 20, weight: .bold))
-                        .padding(.horizontal, 20)
+                        .font(TVStyle.uiFont(size: 18, weight: .bold))
+                        .padding(.horizontal, 22)
                         .padding(.vertical, 10)
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(TVStyle.accentGold)
-                .foregroundStyle(Color.black)
+                .tint(isNewColFocused ? Color.white : Color.white.opacity(0.18))
+                .foregroundStyle(isNewColFocused ? Color.black : Color.white)
+                .focused($isNewColFocused)
                 
                 if collections.isEmpty {
                     VStack(spacing: 14) {
@@ -70,55 +75,24 @@ struct TVAddToCollectionSheet: View {
                     }
                     .frame(maxHeight: .infinity)
                 } else {
-                    ScrollView {
-                        LazyVGrid(
-                            columns: [
-                                GridItem(.flexible(), spacing: 20),
-                                GridItem(.flexible(), spacing: 20)
-                            ],
-                            spacing: 20
-                        ) {
+                    List {
+                        Section {
                             ForEach(collections) { col in
                                 let included = isHymn(in: col)
                                 Button {
                                     vm.toggle(hymn: hymn, collection: col)
                                 } label: {
-                                    HStack(spacing: 16) {
-                                        Image(systemName: included ? "checkmark.circle.fill" : "circle")
-                                            .font(.system(size: 28, weight: .bold))
-                                            .foregroundStyle(included ? TVStyle.accentGold : Color.white.opacity(0.4))
-                                        
-                                        VStack(alignment: .leading, spacing: 4) {
-                                            Text(col.title)
-                                                .font(TVStyle.uiFont(size: 22, weight: .bold))
-                                                .foregroundStyle(Color.white)
-                                                .lineLimit(1)
-                                            
-                                            Text(String(format: NSLocalizedString("Collections.HymnsCount", comment: ""), col.hymns?.count ?? 0))
-                                                .font(TVStyle.uiFont(size: 16))
-                                                .foregroundStyle(Color.white.opacity(0.6))
-                                        }
-                                        
-                                        Spacer()
-                                    }
-                                    .padding(20)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: TVStyle.cardCornerRadius)
-                                            .fill(included ? TVStyle.accentGold.opacity(0.12) : TVStyle.cardBackground)
-                                    )
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: TVStyle.cardCornerRadius)
-                                            .stroke(included ? TVStyle.accentGold.opacity(0.6) : TVStyle.cardBorder, lineWidth: 1)
+                                    TVCollectionSheetListRow(
+                                        collection: col,
+                                        isIncluded: included,
+                                        isRowFocused: focusedCollectionId == col.id
                                     )
                                 }
-                                .buttonStyle(.card)
+                                .focused($focusedCollectionId, equals: col.id)
                             }
                         }
-                        .padding(.horizontal, 60)
-                        .padding(.top, 16)
-                        .padding(.bottom, 40)
                     }
+                    .frame(maxWidth: 820)
                 }
                 
                 // Done Button
@@ -126,11 +100,14 @@ struct TVAddToCollectionSheet: View {
                     dismiss()
                 } label: {
                     Text(LocalizedStringKey("Common.Done"))
-                        .font(TVStyle.uiFont(size: 20, weight: .semibold))
+                        .font(TVStyle.uiFont(size: 18, weight: .semibold))
                         .padding(.horizontal, 36)
                         .padding(.vertical, 10)
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(.borderedProminent)
+                .tint(isDoneFocused ? Color.white : Color.white.opacity(0.18))
+                .foregroundStyle(isDoneFocused ? Color.black : Color.white)
+                .focused($isDoneFocused)
                 .padding(.bottom, 24)
             }
             .tvAmbientBackground()
@@ -155,5 +132,53 @@ struct TVAddToCollectionSheet: View {
                 }
             }
         }
+    }
+}
+
+// MARK: - Focus-Aware Sheet List Row
+private struct TVCollectionSheetListRow: View {
+    let collection: StoreCollection
+    let isIncluded: Bool
+    var isRowFocused: Bool = false
+    @Environment(\.isFocused) private var envIsFocused
+    
+    private var isFocused: Bool {
+        isRowFocused || envIsFocused
+    }
+    
+    var body: some View {
+        HStack(spacing: 20) {
+            // Checkmark Indicator
+            Image(systemName: isIncluded ? "checkmark.circle.fill" : "circle")
+                .font(.system(size: 26, weight: .bold))
+                .foregroundStyle(isFocused ? (isIncluded ? Color.black : Color.black.opacity(0.45)) : (isIncluded ? Color.white : Color.white.opacity(0.4)))
+            
+            // Collection Details
+            VStack(alignment: .leading, spacing: 4) {
+                Text(collection.title)
+                    .font(TVStyle.uiFont(size: 22, weight: .bold))
+                    .foregroundStyle(isFocused ? Color.black : Color.white)
+                    .lineLimit(1)
+                
+                Text(String(format: NSLocalizedString("Collections.HymnsCount", comment: ""), collection.hymns?.count ?? 0))
+                    .font(TVStyle.uiFont(size: 16))
+                    .foregroundStyle(isFocused ? Color.black.opacity(0.70) : Color.white.opacity(0.6))
+            }
+            
+            Spacer()
+            
+            // "In Collection" pill indicator
+            if isIncluded {
+                Text(LocalizedStringKey("Lyrics.InCollection"))
+                    .font(TVStyle.uiFont(size: 14, weight: .bold))
+                    .foregroundStyle(isFocused ? Color.black.opacity(0.85) : Color.white.opacity(0.9))
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(
+                        Capsule().fill(isFocused ? Color.black.opacity(0.10) : Color.white.opacity(0.14))
+                    )
+            }
+        }
+        .padding(.vertical, 10)
     }
 }

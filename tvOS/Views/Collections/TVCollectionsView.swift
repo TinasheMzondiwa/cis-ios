@@ -36,7 +36,7 @@ struct TVCollectionsView: View {
                 VStack(spacing: 24) {
                     Image(systemName: "music.note.list")
                         .font(.system(size: 80))
-                        .foregroundStyle(TVStyle.accentGold.opacity(0.6))
+                        .foregroundStyle(Color.white.opacity(0.6))
                     
                     Text(LocalizedStringKey("Collections.Empty.Title"))
                         .font(TVStyle.titleFont(size: 38))
@@ -57,7 +57,7 @@ struct TVCollectionsView: View {
                             .padding(.vertical, 14)
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(TVStyle.accentGold)
+                    .tint(Color.white)
                     .foregroundStyle(Color.black)
                     .padding(.top, 12)
                 }
@@ -85,7 +85,7 @@ struct TVCollectionsView: View {
                                     .padding(.vertical, 8)
                             }
                             .buttonStyle(.bordered)
-                            .tint(TVStyle.accentGold)
+                            .tint(Color.white)
                         }
                         .padding(.horizontal, 16)
                         
@@ -98,15 +98,15 @@ struct TVCollectionsView: View {
                                         selectedCollectionId = col.id
                                     } label: {
                                         HStack(spacing: 16) {
-                                            // Golden/Translucent Playlist Emblem
+                                            // Playlist Emblem
                                             ZStack {
                                                 RoundedRectangle(cornerRadius: 10)
-                                                    .fill(isSelected ? TVStyle.accentGold : Color.white.opacity(0.12))
+                                                    .fill(isSelected ? Color.white : Color.white.opacity(0.12))
                                                     .frame(width: 48, height: 48)
                                                 
                                                 Image(systemName: "music.note.list")
                                                     .font(.system(size: 20, weight: .bold))
-                                                    .foregroundStyle(isSelected ? Color.black : TVStyle.accentGold)
+                                                    .foregroundStyle(isSelected ? Color.black : Color.white)
                                             }
                                             
                                             VStack(alignment: .leading, spacing: 4) {
@@ -125,7 +125,7 @@ struct TVCollectionsView: View {
                                             if isSelected {
                                                 Image(systemName: "chevron.right")
                                                     .font(.system(size: 14, weight: .bold))
-                                                    .foregroundStyle(TVStyle.accentGold)
+                                                    .foregroundStyle(Color.white)
                                             }
                                         }
                                         .padding(.horizontal, 18)
@@ -137,7 +137,7 @@ struct TVCollectionsView: View {
                                         )
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 16)
-                                                .stroke(isSelected ? TVStyle.accentGold.opacity(0.8) : TVStyle.cardBorder, lineWidth: isSelected ? 2 : 1)
+                                                .stroke(isSelected ? Color.white.opacity(0.8) : TVStyle.cardBorder, lineWidth: isSelected ? 2 : 1)
                                         )
                                     }
                                     .buttonStyle(.card)
@@ -180,7 +180,7 @@ struct TVCollectionsView: View {
                                                 .padding(.vertical, 12)
                                         }
                                         .buttonStyle(.borderedProminent)
-                                        .tint(TVStyle.accentGold)
+                                        .tint(Color.white)
                                         .foregroundStyle(Color.black)
                                     }
                                     
@@ -206,7 +206,7 @@ struct TVCollectionsView: View {
                                     Spacer()
                                     Image(systemName: "music.note.list")
                                         .font(.system(size: 64))
-                                        .foregroundStyle(TVStyle.accentGold.opacity(0.4))
+                                        .foregroundStyle(Color.white.opacity(0.4))
                                     
                                     Text(LocalizedStringKey("Collections.NoHymns"))
                                         .font(TVStyle.uiFont(size: 26, weight: .semibold))
@@ -227,7 +227,7 @@ struct TVCollectionsView: View {
                                             .padding(.vertical, 12)
                                     }
                                     .buttonStyle(.bordered)
-                                    .tint(TVStyle.accentGold)
+                                    .tint(Color.white)
                                     .padding(.top, 8)
                                     
                                     Spacer()

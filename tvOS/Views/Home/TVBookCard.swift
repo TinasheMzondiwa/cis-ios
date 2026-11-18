@@ -92,7 +92,7 @@ struct TVBookCard: View {
                     Spacer()
                 }
                 
-                // Gold Foil Embossed Frame & Cover Content with generous interior padding
+                // Silver Foil Embossed Frame & Cover Content with generous interior padding
                 VStack(spacing: 12) {
                     VStack(spacing: 12) {
                         // Top Header: Language Tag & Tune Icon
@@ -100,14 +100,14 @@ struct TVBookCard: View {
                             Text(book.language.uppercased())
                                 .font(TVStyle.uiFont(size: 13, weight: .bold))
                                 .tracking(2)
-                                .foregroundStyle(TVStyle.accentGold)
+                                .foregroundStyle(Color.white.opacity(0.85))
                             
                             Spacer()
                             
                             if isSDAH {
                                 Image(systemName: "music.note")
                                     .font(.system(size: 14, weight: .bold))
-                                    .foregroundStyle(TVStyle.accentGold)
+                                    .foregroundStyle(Color.white.opacity(0.85))
                             }
                         }
                         
@@ -116,9 +116,9 @@ struct TVBookCard: View {
                         // Sacred Emblem
                         Image(systemName: isSDAH ? "music.quarternote.3" : "books.vertical.fill")
                             .font(.system(size: 28))
-                            .foregroundStyle(TVStyle.accentGold.opacity(0.9))
+                            .foregroundStyle(Color.white.opacity(0.85))
                         
-                        // Book Title (Serif Gold Lettering)
+                        // Book Title
                         Text(book.title)
                             .font(TVStyle.titleFont(size: 23))
                             .foregroundStyle(Color.white)
@@ -132,13 +132,13 @@ struct TVBookCard: View {
                         Text(String(format: NSLocalizedString("Collections.HymnsCount", comment: ""), hymnCount))
                             .font(TVStyle.uiFont(size: 14, weight: .semibold))
                             .tracking(1)
-                            .foregroundStyle(TVStyle.accentGold.opacity(0.9))
+                            .foregroundStyle(Color.white.opacity(0.85))
                     }
                     .padding(.horizontal, 14)
                     .padding(.vertical, 16)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(TVStyle.accentGold.opacity(0.35), lineWidth: 1)
+                            .stroke(Color.white.opacity(0.25), lineWidth: 1)
                     )
                 }
                 .padding(.leading, 22)

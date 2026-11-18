@@ -75,6 +75,7 @@ struct TVRootView: View {
                     }
                     .tag(TVTab.collections)
                 }
+                .tint(Color.white)
             }
         }
     }

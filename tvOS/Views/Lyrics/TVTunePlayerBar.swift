@@ -42,7 +42,7 @@ struct TVTunePlayerBar: View {
                         .padding(.vertical, 12)
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(TVStyle.accentGold)
+                    .tint(Color.white)
                     .foregroundStyle(Color.black)
                     
                     if tunePlayer.isDownloadingSoundBank {
@@ -56,7 +56,7 @@ struct TVTunePlayerBar: View {
                         // Progress Bar & Time
                         VStack(spacing: 6) {
                             ProgressView(value: max(0, min(1, tunePlayer.progress)))
-                                .tint(TVStyle.accentGold)
+                                .tint(Color.white)
                                 .frame(width: 420)
                             
                             HStack {
@@ -82,7 +82,7 @@ struct TVTunePlayerBar: View {
                     HStack(spacing: 8) {
                         Image(systemName: "playpause.fill")
                             .font(.system(size: 18))
-                            .foregroundStyle(TVStyle.accentGold)
+                            .foregroundStyle(Color.white.opacity(0.85))
                         Text(LocalizedStringKey("Tune.RemoteHint"))
                             .font(TVStyle.uiFont(size: 16))
                             .foregroundStyle(Color.white.opacity(0.65))

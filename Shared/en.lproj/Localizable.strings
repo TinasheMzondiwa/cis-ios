@@ -75,7 +75,8 @@
 "Home.Brand" = "FAITH UNFEIGNED";
 "Home.Title" = "Worship at Home";
 "Home.Subtitle" = "Sing praises together with rich lyrics and accompaniment tunes.";
-"Home.DialHymn" = "Dial Hymn Number";
+"Home.DialHymn" = "Search Hymns";
+"Home.SearchHymns" = "Search Hymns";
 "Home.SingSDAH" = "Sing SDA Hymnal";
 "Home.TunesAvailable" = "Accompaniment Tunes Available";
 "Home.SDAHDescription" = "Play tunes and worship along to Seventh-day Adventist Hymnal tracks.";
@@ -90,7 +91,7 @@
 "Search.MatchingHymns" = "Matching Hymns (%lld)";
 "Search.EnterHymnNumberPrompt" = "Enter a hymn number";
 "Search.NoHymnsMatchNumber" = "No hymns match '%@'";
-"Search.Placeholder" = "Search hymns by title or lyrics...";
+"Search.Placeholder" = "Search hymns by number, title, or lyrics...";
 "Search.Searching" = "Searching...";
 "Search.TypeWordsPrompt" = "Type words from any hymn title or verse";
 "Search.NoHymnsFound" = "No hymns found matching '%@'";

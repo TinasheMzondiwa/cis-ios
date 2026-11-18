@@ -149,7 +149,7 @@ struct TVLyricsView: View {
                         Text(String(format: NSLocalizedString("Lyrics.HymnNumberPrefix", comment: ""), hymn.number))
                             .font(TVStyle.uiFont(size: 16, weight: .bold))
                             .tracking(2.5)
-                            .foregroundStyle(TVStyle.accentGold)
+                            .foregroundStyle(Color.white.opacity(0.85))
                         
                         Text(hymn.title)
                             .font(TVStyle.titleFont(size: 38))
@@ -169,7 +169,8 @@ struct TVLyricsView: View {
                     if isControlsHUDVisible {
                         HStack(spacing: 16) {
                             TVHUDAddToCollectionButton(
-                                isInAnyCollection: isInAnyCollection
+                                isInAnyCollection: isInAnyCollection,
+                                isFocused: focusedArea == .addToCollection
                             ) {
                                 resetAutoDismissTimer()
                                 showingAddToCollection = true
@@ -178,7 +179,8 @@ struct TVLyricsView: View {
                             
                             if isSDAH {
                                 TVHUDTuneButton(
-                                    tunePlayer: tunePlayer
+                                    tunePlayer: tunePlayer,
+                                    isFocused: focusedArea == .playTune
                                 ) {
                                     resetAutoDismissTimer()
                                     if tunePlayer.isPlaying {
@@ -234,18 +236,18 @@ struct TVLyricsView: View {
                         Text(book?.refrainLabel?.uppercased() ?? NSLocalizedString("Common.Chorus", comment: ""))
                             .font(TVStyle.uiFont(size: 18, weight: .bold))
                             .tracking(3)
-                            .foregroundStyle(TVStyle.accentGold)
+                            .foregroundStyle(Color.white)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 6)
-                            .background(Capsule().fill(TVStyle.accentGold.opacity(0.18)))
+                            .background(Capsule().fill(Color.white.opacity(0.18)))
                     } else if let index = currentLyric?.index {
                         Text("\(index)")
                             .font(TVStyle.uiFont(size: 26, weight: .bold))
-                            .foregroundStyle(TVStyle.accentGold)
+                            .foregroundStyle(Color.white.opacity(0.85))
                     } else {
                         Text("\(currentVerseIndex + 1)")
                             .font(TVStyle.uiFont(size: 26, weight: .bold))
-                            .foregroundStyle(TVStyle.accentGold)
+                            .foregroundStyle(Color.white.opacity(0.85))
                     }
                     
                     // Stanza Poetic Lines
@@ -278,7 +280,7 @@ struct TVLyricsView: View {
                                 .frame(height: 3)
                             
                             Rectangle()
-                                .fill(TVStyle.accentGold)
+                                .fill(Color.white)
                                 .frame(
                                     width: max(12, geo.size.width * (CGFloat(currentVerseIndex + 1) / CGFloat(totalVerses))),
                                     height: 3
@@ -394,7 +396,13 @@ struct TVLyricsView: View {
 
 private struct TVHUDAddToCollectionButton: View {
     let isInAnyCollection: Bool
+    var isFocused: Bool = false
     let action: () -> Void
+    @Environment(\.isFocused) private var envIsFocused
+    
+    private var focused: Bool {
+        isFocused || envIsFocused
+    }
     
     var body: some View {
         Button(action: action) {
@@ -406,13 +414,20 @@ private struct TVHUDAddToCollectionButton: View {
             }
         }
         .buttonStyle(.borderedProminent)
-        .tint(isInAnyCollection ? TVStyle.accentGold : Color.white.opacity(0.2))
+        .tint(focused ? Color.white : (isInAnyCollection ? Color.white.opacity(0.35) : Color.white.opacity(0.18)))
+        .foregroundStyle(focused ? Color.black : Color.white)
     }
 }
 
 private struct TVHUDTuneButton: View {
     @ObservedObject var tunePlayer: TunePlayer
+    var isFocused: Bool = false
     let action: () -> Void
+    @Environment(\.isFocused) private var envIsFocused
+    
+    private var focused: Bool {
+        isFocused || envIsFocused
+    }
     
     private func formatTime(_ seconds: Double) -> String {
         guard !seconds.isNaN, !seconds.isInfinite, seconds >= 0 else { return "0:00" }
@@ -433,11 +448,12 @@ private struct TVHUDTuneButton: View {
                 if tunePlayer.hasTrack {
                     Text(formatTime(tunePlayer.currentTime) + " / " + formatTime(tunePlayer.duration))
                         .font(TVStyle.uiFont(size: 15))
-                        .opacity(0.85)
+                        .opacity(focused ? 0.75 : 0.85)
                 }
             }
         }
         .buttonStyle(.borderedProminent)
-        .tint(tunePlayer.isPlaying ? TVStyle.accentGold : Color.white.opacity(0.2))
+        .tint(focused ? Color.white : (tunePlayer.isPlaying ? Color.white.opacity(0.35) : Color.white.opacity(0.18)))
+        .foregroundStyle(focused ? Color.black : Color.white)
     }
 }

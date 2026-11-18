@@ -30,12 +30,12 @@ struct TVHymnGridCard: View {
                 HStack(alignment: .center) {
                     Text("\(hymn.number)")
                         .font(TVStyle.uiFont(size: 20, weight: .bold))
-                        .foregroundStyle(isFocused ? Color.black : TVStyle.accentGold)
+                        .foregroundStyle(isFocused ? Color.black : Color.white)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 4)
                         .background(
                             Capsule()
-                                .fill(isFocused ? TVStyle.accentGold : TVStyle.accentGold.opacity(0.18))
+                                .fill(isFocused ? Color.white : Color.white.opacity(0.16))
                         )
                     
                     Spacer()

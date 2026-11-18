@@ -29,11 +29,11 @@ struct TVHomeView: View {
                     HStack(spacing: 12) {
                         Image(systemName: "music.note.house.fill")
                             .font(.system(size: 28))
-                            .foregroundStyle(TVStyle.accentGold)
+                            .foregroundStyle(Color.white.opacity(0.9))
                         Text(LocalizedStringKey("Home.Brand"))
                             .font(TVStyle.uiFont(size: 16, weight: .bold))
                             .tracking(3)
-                            .foregroundStyle(TVStyle.accentGold.opacity(0.9))
+                            .foregroundStyle(Color.white.opacity(0.85))
                     }
                     
                     Text(LocalizedStringKey("Home.Title"))
@@ -49,7 +49,7 @@ struct TVHomeView: View {
                         Button {
                             onNavigateToSearch()
                         } label: {
-                            Label(LocalizedStringKey("Home.DialHymn"), systemImage: "number.circle.fill")
+                            Label(LocalizedStringKey("Home.SearchHymns"), systemImage: "magnifyingglass")
                                 .font(TVStyle.uiFont(size: 22, weight: .bold))
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 12)
@@ -87,10 +87,10 @@ struct TVHomeView: View {
                                 
                                 Label(LocalizedStringKey("Home.TunesAvailable"), systemImage: "music.note")
                                     .font(TVStyle.uiFont(size: 16, weight: .semibold))
-                                    .foregroundStyle(TVStyle.accentGold)
+                                    .foregroundStyle(Color.white.opacity(0.9))
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 4)
-                                    .background(Capsule().fill(TVStyle.accentGold.opacity(0.18)))
+                                    .background(Capsule().fill(Color.white.opacity(0.12)))
                             }
                             Text(LocalizedStringKey("Home.SDAHDescription"))
                                 .font(TVStyle.uiFont(size: 20))

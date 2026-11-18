@@ -221,17 +221,21 @@ final class CISAppViewModel: ObservableObject {
     }
     
     @MainActor
-    func searchHymns(query: String, in bookKey: String? = nil) async -> [(book: StoreBook, hymn: StoreHymn)] {
+    func searchHymns(query: String, in bookKey: String? = nil, prioritizedBookKey: String? = nil) async -> [(book: StoreBook, hymn: StoreHymn)] {
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedQuery.isEmpty else { return [] }
+        
+        let targetSelectedKey = prioritizedBookKey ?? bookKey ?? selectedBook?.key
         
         let booksToSearch: [StoreBook]
         if let bookKey = bookKey, let book = allBooks.first(where: { $0.key == bookKey }) {
             booksToSearch = [book]
-        } else if let selected = selectedBook {
-            booksToSearch = [selected]
         } else {
-            booksToSearch = allBooks
+            if let targetSelectedKey = targetSelectedKey, let selected = allBooks.first(where: { $0.key == targetSelectedKey }) {
+                booksToSearch = [selected] + allBooks.filter { $0.key != targetSelectedKey }
+            } else {
+                booksToSearch = allBooks
+            }
         }
         
         var booksWithHymns: [(StoreBook, [StoreHymn])] = []
@@ -248,21 +252,55 @@ final class CISAppViewModel: ObservableObject {
             booksWithHymns.append((book, hymns))
         }
         
+        let queryNumber = Int(trimmedQuery)
+        
         return await Task.detached(priority: .userInitiated) {
-            var matches: [(book: StoreBook, hymn: StoreHymn)] = []
+            var selectedExact: [(book: StoreBook, hymn: StoreHymn)] = []
+            var selectedStartsWith: [(book: StoreBook, hymn: StoreHymn)] = []
+            var selectedTitle: [(book: StoreBook, hymn: StoreHymn)] = []
+            var selectedLyrics: [(book: StoreBook, hymn: StoreHymn)] = []
+            
+            var otherExact: [(book: StoreBook, hymn: StoreHymn)] = []
+            var otherStartsWith: [(book: StoreBook, hymn: StoreHymn)] = []
+            var otherTitle: [(book: StoreBook, hymn: StoreHymn)] = []
+            var otherLyrics: [(book: StoreBook, hymn: StoreHymn)] = []
+            
             for (book, hymns) in booksWithHymns {
+                let isSelected = (book.key == targetSelectedKey)
+                
                 for hymn in hymns {
-                    let matchesNumber = "\(hymn.number)".starts(with: trimmedQuery) || "\(hymn.number)" == trimmedQuery
-                    let matchesTitle = hymn.title.localizedCaseInsensitiveContains(trimmedQuery)
-                    let matchesLyrics = hymn.lyrics.contains { lyric in
-                        lyric.lines.contains { $0.localizedCaseInsensitiveContains(trimmedQuery) }
-                    }
-                    if matchesNumber || matchesTitle || matchesLyrics {
-                        matches.append((book, hymn))
+                    if let qNum = queryNumber, hymn.number == qNum {
+                        if isSelected {
+                            selectedExact.append((book, hymn))
+                        } else {
+                            otherExact.append((book, hymn))
+                        }
+                    } else if "\(hymn.number)".starts(with: trimmedQuery) {
+                        if isSelected {
+                            selectedStartsWith.append((book, hymn))
+                        } else {
+                            otherStartsWith.append((book, hymn))
+                        }
+                    } else if hymn.title.localizedCaseInsensitiveContains(trimmedQuery) {
+                        if isSelected {
+                            selectedTitle.append((book, hymn))
+                        } else {
+                            otherTitle.append((book, hymn))
+                        }
+                    } else if hymn.lyrics.contains(where: { $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(trimmedQuery) }) }) {
+                        if isSelected {
+                            selectedLyrics.append((book, hymn))
+                        } else {
+                            otherLyrics.append((book, hymn))
+                        }
                     }
                 }
             }
-            return matches
+            
+            let selectedResults = selectedExact + selectedStartsWith + selectedTitle + selectedLyrics
+            let otherResults = otherExact + otherStartsWith + otherTitle + otherLyrics
+            
+            return selectedResults + otherResults
         }.value
     }
     

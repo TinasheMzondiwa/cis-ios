@@ -29,12 +29,12 @@ struct TVVerseCardView: View {
             Text(headerText)
                 .font(TVStyle.uiFont(size: 18, weight: .bold))
                 .tracking(2.5)
-                .foregroundStyle(isChorus ? TVStyle.accentGold : Color.white.opacity(0.6))
+                .foregroundStyle(isChorus ? Color.white : Color.white.opacity(0.6))
                 .padding(.horizontal, 16)
                 .padding(.vertical, 6)
                 .background(
                     Capsule()
-                        .fill(isChorus ? TVStyle.accentGold.opacity(0.18) : Color.white.opacity(0.08))
+                        .fill(isChorus ? Color.white.opacity(0.18) : Color.white.opacity(0.08))
                 )
             
             // Stanza Poetic Lines

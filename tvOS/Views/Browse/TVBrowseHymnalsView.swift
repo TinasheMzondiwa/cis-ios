@@ -109,7 +109,7 @@ private struct TVBrowseHymnalChip: View {
                 }
             }
             .buttonStyle(.borderedProminent)
-            .tint(TVStyle.accentGold)
+            .tint(Color.white)
             .foregroundStyle(Color.black)
         } else {
             Button(action: action) {
