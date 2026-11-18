@@ -333,6 +333,9 @@ struct TVLyricsView: View {
         }
         .onDisappear {
             cancelAutoDismissTimer()
+            if !showingAddToCollection {
+                tunePlayer.stop()
+            }
         }
         .onChange(of: focusedArea) { newFocus in
             if newFocus == .canvas && isControlsHUDVisible {
