@@ -23,11 +23,21 @@ struct TVRootView: View {
         Group {
             if vm.isLoadingStore {
                 VStack(spacing: 24) {
+                    
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 64, height: 64)
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(Color.white.opacity(0.22), lineWidth: 1)
+                        )
+                        .shadow(color: Color.black.opacity(0.35), radius: 8, y: 3)
+                    
                     ProgressView()
                         .scaleEffect(1.8)
-                    Text(LocalizedStringKey("Common.Loading"))
-                        .font(TVStyle.uiFont(size: 26, weight: .semibold))
-                        .foregroundStyle(Color.white.opacity(0.7))
+                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .tvAmbientBackground()

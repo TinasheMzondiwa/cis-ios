@@ -31,7 +31,7 @@ struct TVHomeView: View {
                 // Header: iOS-Style Squircle App Icon + Dynamic Greeting + Title & Subtitle
                 VStack(alignment: .leading, spacing: 14) {
                     HStack(spacing: 14) {
-                        Image("AppLogo")
+                        Image("logo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 44, height: 44)
