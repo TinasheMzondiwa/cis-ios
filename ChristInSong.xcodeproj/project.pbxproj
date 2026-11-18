@@ -2506,23 +2506,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08TV00000000000000000101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tvOS/Info.plist"; sourceTree = "<group>"; };
-		08TV00000000000000000102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "tvOS/Assets.xcassets"; sourceTree = "<group>"; };
-		08TV00000000000000000103 /* ChristInSongTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/ChristInSongTVApp.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000104 /* TVStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Common/TVStyle.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000105 /* TVRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/TVRootView.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000106 /* TVHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Home/TVHomeView.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000110 /* TVBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Home/TVBookCard.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000107 /* TVBrowseHymnalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Browse/TVBrowseHymnalsView.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000108 /* TVHymnGridCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Browse/TVHymnGridCard.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000109 /* TVSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Search/TVSearchView.swift"; sourceTree = "<group>"; };
-		08TV0000000000000000010A /* TVNumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Search/TVNumberPadView.swift"; sourceTree = "<group>"; };
-		08TV0000000000000000010B /* TVSearchResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Search/TVSearchResultCard.swift"; sourceTree = "<group>"; };
-		08TV0000000000000000010C /* TVLyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Lyrics/TVLyricsView.swift"; sourceTree = "<group>"; };
-		08TV0000000000000000010D /* TVVerseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Lyrics/TVVerseCardView.swift"; sourceTree = "<group>"; };
-		08TV0000000000000000010E /* TVTunePlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Lyrics/TVTunePlayerBar.swift"; sourceTree = "<group>"; };
-		08TV00000000000000000111 /* TVAddToCollectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Lyrics/TVAddToCollectionSheet.swift"; sourceTree = "<group>"; };
-		08TV0000000000000000010F /* TVCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tvOS/Views/Collections/TVCollectionsView.swift"; sourceTree = "<group>"; };
+		08TV00000000000000000101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08TV00000000000000000102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08TV00000000000000000103 /* ChristInSongTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTVApp.swift; sourceTree = "<group>"; };
+		08TV00000000000000000104 /* TVStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVStyle.swift; sourceTree = "<group>"; };
+		08TV00000000000000000105 /* TVRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVRootView.swift; sourceTree = "<group>"; };
+		08TV00000000000000000106 /* TVHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeView.swift; sourceTree = "<group>"; };
+		08TV00000000000000000110 /* TVBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBookCard.swift; sourceTree = "<group>"; };
+		08TV00000000000000000107 /* TVBrowseHymnalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBrowseHymnalsView.swift; sourceTree = "<group>"; };
+		08TV00000000000000000108 /* TVHymnGridCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHymnGridCard.swift; sourceTree = "<group>"; };
+		08TV00000000000000000109 /* TVSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSearchView.swift; sourceTree = "<group>"; };
+		08TV0000000000000000010A /* TVNumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNumberPadView.swift; sourceTree = "<group>"; };
+		08TV0000000000000000010B /* TVSearchResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSearchResultCard.swift; sourceTree = "<group>"; };
+		08TV0000000000000000010C /* TVLyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVLyricsView.swift; sourceTree = "<group>"; };
+		08TV0000000000000000010D /* TVVerseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVVerseCardView.swift; sourceTree = "<group>"; };
+		08TV0000000000000000010E /* TVTunePlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTunePlayerBar.swift; sourceTree = "<group>"; };
+		08TV00000000000000000111 /* TVAddToCollectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAddToCollectionSheet.swift; sourceTree = "<group>"; };
+		08TV0000000000000000010F /* TVCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionsView.swift; sourceTree = "<group>"; };
 		08TV00000000000000000002 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristInSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
 		080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUi+HymnalView.swift"; sourceTree = "<group>"; };
@@ -4263,6 +4263,7 @@
 				086C93FA24BE93BC008AFBE5 /* Shared */,
 				086C940424BE93BD008AFBE5 /* iOS */,
 				086C940B24BE93BD008AFBE5 /* macOS */,
+				08TV00000000000000000009 /* tvOS */,
 				1D45301A29BB790B00C95AC1 /* ChristInSongTests */,
 				086C940324BE93BD008AFBE5 /* Products */,
 				82FF486EAF9A7E141CAB3B35 /* Pods */,
