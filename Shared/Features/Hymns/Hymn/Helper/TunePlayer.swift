@@ -3,7 +3,7 @@ import AVFoundation
 import Combine
 import MediaPlayer
 
-#if os(iOS)
+#if canImport(UIKit)
 import UIKit
 #endif
 
@@ -13,9 +13,9 @@ final class TunePlayer: ObservableObject {
     // MARK: - Published State
 
     @Published var isPlaying = false
-    var progress: Double = 0
-    var duration: Double = 0
-    var currentTime: Double = 0
+    @Published var progress: Double = 0
+    @Published var duration: Double = 0
+    @Published var currentTime: Double = 0
 
     @Published var activeBookKey: String?
     @Published var activeHymnNumber: Int?
@@ -88,7 +88,7 @@ final class TunePlayer: ObservableObject {
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = currentTime
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = isPause ? 0.0 : 1.0
         
-        #if os(iOS)
+        #if canImport(UIKit)
         if let image = UIImage(named: "logo") {
             let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
             nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
@@ -283,7 +283,7 @@ final class TunePlayer: ObservableObject {
     private func startTimer() {
         stopTimer()
 
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
             Task { @MainActor in
                 self?.update()
             }

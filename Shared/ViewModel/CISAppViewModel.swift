@@ -47,17 +47,22 @@ final class CISAppViewModel: ObservableObject {
     func fetchAllBooks() {
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
+            #if os(tvOS)
+            let defaultKey = "sdah"
+            #else
+            let defaultKey = String.defaultBook
+            #endif
+            
             if store.retrieveSelectedBook() == nil {
-                store.setSelectedBook(to: .defaultBook)
+                store.setSelectedBook(to: defaultKey)
             }
             
-            let selectedBookKey =  store.retrieveSelectedBook() ?? .defaultBook
+            let selectedBookKey = store.retrieveSelectedBook() ?? defaultKey
             
-            
-            selectedBook = allBooks.first(where: { $0.key == selectedBookKey })
+            selectedBook = allBooks.first(where: { $0.key == selectedBookKey }) ?? allBooks.first
             
             // Fetch all the hymns from the selected book
-            if let fetchedHymns = fetchHymns(from: selectedBookKey) {
+            if let activeKey = selectedBook?.key, let fetchedHymns = fetchHymns(from: activeKey) {
                 hymnsFromSelectedBook = fetchedHymns
             }
             
@@ -75,6 +80,11 @@ final class CISAppViewModel: ObservableObject {
     
     func fetchAllCollections() -> [StoreCollection]{
         store.retrieveAllCollections()
+    }
+    
+    enum Sort: String {
+        case number
+        case titleStr
     }
     
     func toggleHymnsSorting(using option: Sort) {
@@ -208,6 +218,52 @@ final class CISAppViewModel: ObservableObject {
         }.value
         
         return filteredResults
+    }
+    
+    @MainActor
+    func searchHymns(query: String, in bookKey: String? = nil) async -> [(book: StoreBook, hymn: StoreHymn)] {
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedQuery.isEmpty else { return [] }
+        
+        let booksToSearch: [StoreBook]
+        if let bookKey = bookKey, let book = allBooks.first(where: { $0.key == bookKey }) {
+            booksToSearch = [book]
+        } else if let selected = selectedBook {
+            booksToSearch = [selected]
+        } else {
+            booksToSearch = allBooks
+        }
+        
+        var booksWithHymns: [(StoreBook, [StoreHymn])] = []
+        for book in booksToSearch {
+            let hymns: [StoreHymn]
+            if let cached = hymnsCache[book.key] {
+                hymns = cached
+            } else if let fetched = fetchHymns(from: book.key) {
+                hymnsCache[book.key] = fetched
+                hymns = fetched
+            } else {
+                hymns = []
+            }
+            booksWithHymns.append((book, hymns))
+        }
+        
+        return await Task.detached(priority: .userInitiated) {
+            var matches: [(book: StoreBook, hymn: StoreHymn)] = []
+            for (book, hymns) in booksWithHymns {
+                for hymn in hymns {
+                    let matchesNumber = "\(hymn.number)".starts(with: trimmedQuery) || "\(hymn.number)" == trimmedQuery
+                    let matchesTitle = hymn.title.localizedCaseInsensitiveContains(trimmedQuery)
+                    let matchesLyrics = hymn.lyrics.contains { lyric in
+                        lyric.lines.contains { $0.localizedCaseInsensitiveContains(trimmedQuery) }
+                    }
+                    if matchesNumber || matchesTitle || matchesLyrics {
+                        matches.append((book, hymn))
+                    }
+                }
+            }
+            return matches
+        }.value
     }
     
     enum SwipeDirection {

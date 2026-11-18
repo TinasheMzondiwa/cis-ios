@@ -188,7 +188,4 @@ struct HymnsView_Previews: PreviewProvider {
 }
 #endif
 
-enum Sort: String {
-    case number
-    case titleStr
-}
+typealias Sort = CISAppViewModel.Sort

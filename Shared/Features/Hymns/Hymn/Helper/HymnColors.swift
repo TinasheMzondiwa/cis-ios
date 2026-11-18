@@ -12,7 +12,11 @@ struct HymnColors {
     let scheme: ColorScheme
 
     var background: Color {
+        #if os(tvOS)
+        Color.black
+        #else
         Color(.systemBackground)
+        #endif
     }
 
     var onBackground: Color {

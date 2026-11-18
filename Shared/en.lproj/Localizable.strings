@@ -16,7 +16,9 @@
 
 "Common.App.Name" = "Christ In Song App";
 "Common.New" = "NEW";
-"Common.Save" = "SAVE";
+"Common.Save" = "Save";
+"Common.Cancel" = "Cancel";
+"Common.Done" = "Done";
 "Common.Title" = "Title";
 
 "Hymnals" = "Hymnals";
@@ -51,3 +53,84 @@
 "WhatsNew.Title" = "What's New";
 "WhatsNew.Desc" = "A better experience, built with care.";
 "WhatsNew.Continue" = "Continue";
+
+/* Navigation */
+"Navigation.Home" = "Home";
+"Navigation.Search" = "Search";
+
+/* Common Actions & Labels */
+"Common.Back" = "Back";
+"Common.Prev" = "Prev";
+"Common.Previous" = "Previous";
+"Common.Next" = "Next";
+"Common.Go" = "Go";
+"Common.Clear" = "Clear";
+"Common.Tune" = "Tune";
+"Common.Loading" = "Loading Christ In Song...";
+"Common.Verse" = "VERSE";
+"Common.VerseNumber" = "VERSE %lld";
+"Common.Chorus" = "CHORUS";
+
+/* Home */
+"Home.Brand" = "FAITH UNFEIGNED";
+"Home.Title" = "Worship at Home";
+"Home.Subtitle" = "Sing praises together with rich lyrics and accompaniment tunes.";
+"Home.DialHymn" = "Dial Hymn Number";
+"Home.SingSDAH" = "Sing SDA Hymnal";
+"Home.TunesAvailable" = "Accompaniment Tunes Available";
+"Home.SDAHDescription" = "Play tunes and worship along to Seventh-day Adventist Hymnal tracks.";
+"Home.AllHymnals" = "All Hymnals";
+"Home.BrowseCollection" = "Browse Collection →";
+
+/* Search */
+"Search.Mode.Number" = "Number Dial";
+"Search.Mode.Text" = "Title & Lyrics";
+"Search.AllHymnals" = "All Hymnals";
+"Search.DialHymnNumber" = "Dial Hymn Number";
+"Search.MatchingHymns" = "Matching Hymns (%lld)";
+"Search.EnterHymnNumberPrompt" = "Enter a hymn number";
+"Search.NoHymnsMatchNumber" = "No hymns match '%@'";
+"Search.Placeholder" = "Search hymns by title or lyrics...";
+"Search.Searching" = "Searching...";
+"Search.TypeWordsPrompt" = "Type words from any hymn title or verse";
+"Search.NoHymnsFound" = "No hymns found matching '%@'";
+
+/* Browse */
+"Browse.HymnsCount" = "%lld Hymns • %@";
+
+/* Tune */
+"Tune.Pause" = "Pause Tune";
+"Tune.Play" = "Play Tune";
+"Tune.PreparingSoundbank" = "Preparing soundbank...";
+"Tune.Ready" = "SDAH Tune Ready";
+"Tune.RemoteHint" = "Press remote Play/Pause";
+
+/* Collections */
+"Collections.Worship" = "Worship Collections";
+"Collections.Worship.Desc" = "Playlists and favorite hymns for family worship and church service.";
+"Collections.Empty.Title" = "No Collections Yet";
+"Collections.Empty.Subtitle" = "Create collections to organize hymns for family worship, Sabbath, and special services.";
+"Collections.HymnsCount" = "%lld hymns";
+"Collections.NoHymns" = "No hymns in this collection yet.";
+"Collections.EmptyCollection.Desc" = "Browse hymnals or use Search to add hymns to this collection.";
+"Collections.BrowseHymnals" = "Browse Hymnals";
+"Collections.SingCollection" = "Sing from Collection";
+"Collections.Create" = "New Collection";
+"Collections.CreateFirst" = "Create First Collection";
+"Collections.TitlePrompt" = "Collection Name";
+"Collections.AboutPrompt" = "Description (Optional)";
+"Collections.Delete" = "Delete Collection";
+"Collections.DeleteConfirm" = "Are you sure you want to delete this collection?";
+"Collections.RemoveHymn" = "Remove";
+
+/* Lyrics */
+"Lyrics.VerseProgress" = "VERSE %lld OF %lld";
+"Lyrics.ChorusProgress" = "CHORUS • %lld OF %lld";
+"Lyrics.HymnNumberPrefix" = "NO. %lld";
+"Lyrics.AddToCollection" = "Add to Collection";
+"Lyrics.InCollection" = "Saved to Collection";
+"Lyrics.ControlsHint" = "Press ↑ for Controls";
+"Lyrics.HideControlsHint" = "Press ↓ to Hide";
+"Lyrics.SelectCollections" = "Worship Collections";
+"Lyrics.SelectCollectionsDesc" = "Toggle the collections you want to include this hymn in.";
+

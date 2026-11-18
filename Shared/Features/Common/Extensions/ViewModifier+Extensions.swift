@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if !os(tvOS)
 struct ResignKeyboardOnDragGesture: ViewModifier {
     var gesture = DragGesture().onChanged{_ in
         UIApplication.shared.endEditing(true)
@@ -15,3 +16,10 @@ struct ResignKeyboardOnDragGesture: ViewModifier {
         content.gesture(gesture)
     }
 }
+#else
+struct ResignKeyboardOnDragGesture: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+    }
+}
+#endif
