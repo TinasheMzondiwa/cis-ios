@@ -135,3 +135,9 @@
 "Lyrics.SelectCollections" = "Worship Collections";
 "Lyrics.SelectCollectionsDesc" = "Toggle the collections you want to include this hymn in.";
 
+/* Settings */
+"Settings.Title" = "Settings";
+"Settings.Version" = "Version %@ (%@)";
+"Settings.Theme" = "Background Theme";
+
+

@@ -39,46 +39,101 @@ enum TVStyle {
     }
 }
 
+// MARK: - Ambient Background Themes
+enum TVTheme: String, CaseIterable, Identifiable {
+    case slate = "slate"
+    case pine = "pine"
+    case black = "black"
+    
+    var id: String { rawValue }
+    
+    var title: String {
+        switch self {
+        case .slate:
+            return "Midnight Slate"
+        case .pine:
+            return "Sacred Pine & Bronze"
+        case .black:
+            return "Pure Black"
+        }
+    }
+    
+    var subtitle: String {
+        switch self {
+        case .slate:
+            return "Subtle atmospheric navy and slate glow"
+        case .pine:
+            return "Downtoned evergreen with warm bronze tint"
+        case .black:
+            return "OLED true black for minimal distraction"
+        }
+    }
+}
+
 // MARK: - Ambient Apple-Style Fluid Mesh Background
 struct TVAmbientBackground: View {
+    @AppStorage("tv_background_theme") private var themeRaw: String = TVTheme.pine.rawValue
     @State private var animate = false
+    
+    private var currentTheme: TVTheme {
+        TVTheme(rawValue: themeRaw) ?? .pine
+    }
     
     var body: some View {
         ZStack {
-            // Base atmospheric deep navy
-            Color(red: 8/255, green: 12/255, blue: 22/255)
+            switch currentTheme {
+            case .slate:
+                slateMesh
+            case .pine:
+                pineMesh
+            case .black:
+                Color.black.ignoresSafeArea()
+            }
+        }
+        .animation(.easeInOut(duration: 0.6), value: themeRaw)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 10).repeatForever(autoreverses: true)) {
+                animate = true
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var slateMesh: some View {
+        ZStack {
+            // Base deep navy / obsidian
+            Color(red: 6/255, green: 9/255, blue: 17/255)
                 .ignoresSafeArea()
             
-            // Fluid Apple-style ambient color mesh
             GeometryReader { proxy in
                 let w = proxy.size.width
                 let h = proxy.size.height
                 
                 ZStack {
-                    // 1. Top-Left: Warm Coral / Rose Orb
+                    // 1. Top-Left: Muted Dusky Rose
                     Circle()
-                        .fill(Color(red: 215/255, green: 110/255, blue: 135/255).opacity(0.48))
+                        .fill(Color(red: 135/255, green: 65/255, blue: 82/255).opacity(0.28))
                         .frame(width: w * 0.58, height: w * 0.58)
                         .position(x: animate ? w * 0.22 : w * 0.17, y: animate ? h * 0.24 : h * 0.18)
                         .blur(radius: 110)
                     
-                    // 2. Top-Center: Electric Azure / Sky Blue Orb
+                    // 2. Top-Center: Muted Slate Azure
                     Ellipse()
-                        .fill(Color(red: 0/255, green: 148/255, blue: 235/255).opacity(0.60))
+                        .fill(Color(red: 20/255, green: 82/255, blue: 145/255).opacity(0.38))
                         .frame(width: w * 0.68, height: h * 0.72)
                         .position(x: animate ? w * 0.53 : w * 0.47, y: animate ? h * 0.28 : h * 0.33)
                         .blur(radius: 120)
                     
-                    // 3. Top-Right: Pearlescent / Pale Sky Mist Orb
+                    // 3. Top-Right: Pale Slate Sky
                     Circle()
-                        .fill(Color(red: 180/255, green: 210/255, blue: 238/255).opacity(0.45))
+                        .fill(Color(red: 90/255, green: 125/255, blue: 160/255).opacity(0.20))
                         .frame(width: w * 0.52, height: w * 0.52)
                         .position(x: animate ? w * 0.83 : w * 0.77, y: animate ? h * 0.19 : h * 0.25)
                         .blur(radius: 110)
                     
-                    // 4. Center-Lower: Luminous Cerulean / Aqua Body
+                    // 4. Center-Lower: Deep Muted Cerulean
                     Ellipse()
-                        .fill(Color(red: 45/255, green: 140/255, blue: 225/255).opacity(0.52))
+                        .fill(Color(red: 22/255, green: 70/255, blue: 125/255).opacity(0.32))
                         .frame(width: w * 0.78, height: h * 0.62)
                         .position(x: animate ? w * 0.47 : w * 0.53, y: animate ? h * 0.68 : h * 0.62)
                         .blur(radius: 130)
@@ -87,23 +142,77 @@ struct TVAmbientBackground: View {
             }
             .ignoresSafeArea()
             
-            // Atmospheric Vignette & Contrast Scrim for Apple HIG Legibility
+            // Atmospheric Vignette & Contrast Scrim
             LinearGradient(
                 stops: [
-                    .init(color: Color.black.opacity(0.18), location: 0.0),
-                    .init(color: Color.clear, location: 0.28),
-                    .init(color: Color.black.opacity(0.38), location: 0.75),
-                    .init(color: Color.black.opacity(0.68), location: 1.0)
+                    .init(color: Color.black.opacity(0.35), location: 0.0),
+                    .init(color: Color.clear, location: 0.32),
+                    .init(color: Color.black.opacity(0.60), location: 0.75),
+                    .init(color: Color.black.opacity(0.88), location: 1.0)
                 ],
                 startPoint: .top,
                 endPoint: .bottom
             )
             .ignoresSafeArea()
         }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 10).repeatForever(autoreverses: true)) {
-                animate = true
+    }
+    
+    @ViewBuilder
+    private var pineMesh: some View {
+        ZStack {
+            // Base deep dark forest shade
+            Color(red: 4/255, green: 9/255, blue: 6/255)
+                .ignoresSafeArea()
+            
+            GeometryReader { proxy in
+                let w = proxy.size.width
+                let h = proxy.size.height
+                
+                ZStack {
+                    // 1. Top-Left: Antique Bronze
+                    Circle()
+                        .fill(Color(red: 155/255, green: 115/255, blue: 32/255).opacity(0.26))
+                        .frame(width: w * 0.58, height: w * 0.58)
+                        .position(x: animate ? w * 0.22 : w * 0.17, y: animate ? h * 0.24 : h * 0.18)
+                        .blur(radius: 110)
+                    
+                    // 2. Top-Center: Deep Pine
+                    Ellipse()
+                        .fill(Color(red: 16/255, green: 52/255, blue: 30/255).opacity(0.48))
+                        .frame(width: w * 0.68, height: h * 0.72)
+                        .position(x: animate ? w * 0.53 : w * 0.47, y: animate ? h * 0.28 : h * 0.33)
+                        .blur(radius: 120)
+                    
+                    // 3. Top-Right: Warm Gold Tint
+                    Circle()
+                        .fill(Color(red: 135/255, green: 105/255, blue: 40/255).opacity(0.18))
+                        .frame(width: w * 0.52, height: w * 0.52)
+                        .position(x: animate ? w * 0.83 : w * 0.77, y: animate ? h * 0.19 : h * 0.25)
+                        .blur(radius: 110)
+                    
+                    // 4. Center-Lower: Rich Spruce
+                    Ellipse()
+                        .fill(Color(red: 10/255, green: 38/255, blue: 22/255).opacity(0.40))
+                        .frame(width: w * 0.78, height: h * 0.62)
+                        .position(x: animate ? w * 0.47 : w * 0.53, y: animate ? h * 0.68 : h * 0.62)
+                        .blur(radius: 130)
+                }
+                .drawingGroup()
             }
+            .ignoresSafeArea()
+            
+            // Atmospheric Vignette & Contrast Scrim
+            LinearGradient(
+                stops: [
+                    .init(color: Color.black.opacity(0.38), location: 0.0),
+                    .init(color: Color.clear, location: 0.30),
+                    .init(color: Color.black.opacity(0.65), location: 0.75),
+                    .init(color: Color.black.opacity(0.90), location: 1.0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
         }
     }
 }
