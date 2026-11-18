@@ -330,6 +330,9 @@ struct TVLyricsView: View {
         .onAppear {
             loadTune()
             focusedArea = .canvas
+            if let bookKey = book?.key {
+                TVRecentsManager.shared.record(hymn: hymn, bookKey: bookKey)
+            }
         }
         .onDisappear {
             cancelAutoDismissTimer()

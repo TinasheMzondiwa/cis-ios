@@ -222,3 +222,80 @@ extension View {
         self.background(TVAmbientBackground())
     }
 }
+
+// MARK: - Dynamic Greeting Helper
+enum TVGreetingHelper {
+    static func greeting(date: Date = Date()) -> String {
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: date) // 1=Sun, 6=Fri, 7=Sat
+        let hour = calendar.component(.hour, from: date)
+        
+        // Sabbath: Friday 5:00 PM (17:00) through Saturday 5:00 PM (16:59)
+        if (weekday == 6 && hour >= 17) || (weekday == 7 && hour < 17) {
+            return NSLocalizedString("Home.Greeting.Sabbath", value: "Happy Sabbath!", comment: "")
+        }
+        
+        switch hour {
+        case 4..<12:
+            return NSLocalizedString("Home.Greeting.Morning", value: "Good morning!", comment: "")
+        case 12..<17:
+            return NSLocalizedString("Home.Greeting.Afternoon", value: "Good afternoon!", comment: "")
+        default:
+            return NSLocalizedString("Home.Greeting.Evening", value: "Good evening!", comment: "")
+        }
+    }
+}
+
+// MARK: - Recents Manager
+struct TVRecentItem: Codable, Identifiable, Equatable {
+    var id: UUID { hymnId }
+    let hymnId: UUID
+    let bookKey: String
+    let hymnNumber: Int
+    let title: String
+    let viewedAt: Date
+}
+
+@MainActor
+final class TVRecentsManager: ObservableObject {
+    static let shared = TVRecentsManager()
+    
+    @Published private(set) var recents: [TVRecentItem] = []
+    
+    private let userDefaultsKey = "cis.tv.recent_hymns"
+    private let maxItems = 10
+    
+    init() {
+        load()
+    }
+    
+    func record(hymn: StoreHymn, bookKey: String) {
+        var items = recents.filter { $0.hymnId != hymn.id }
+        let newItem = TVRecentItem(
+            hymnId: hymn.id,
+            bookKey: bookKey,
+            hymnNumber: hymn.number,
+            title: hymn.title,
+            viewedAt: Date()
+        )
+        items.insert(newItem, at: 0)
+        recents = Array(items.prefix(maxItems))
+        save()
+    }
+    
+    private func load() {
+        guard let data = UserDefaults.standard.data(forKey: userDefaultsKey),
+              let decoded = try? JSONDecoder().decode([TVRecentItem].self, from: data) else {
+            recents = []
+            return
+        }
+        recents = Array(decoded.prefix(maxItems))
+    }
+    
+    private func save() {
+        if let data = try? JSONEncoder().encode(recents) {
+            UserDefaults.standard.set(data, forKey: userDefaultsKey)
+        }
+    }
+}
+

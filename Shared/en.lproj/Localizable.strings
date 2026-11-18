@@ -140,4 +140,16 @@
 "Settings.Version" = "Version %@ (%@)";
 "Settings.Theme" = "Background Theme";
 
+/* Greetings */
+"Home.Greeting.Sabbath" = "Happy Sabbath!";
+"Home.Greeting.Morning" = "Good morning!";
+"Home.Greeting.Afternoon" = "Good afternoon!";
+"Home.Greeting.Evening" = "Good evening!";
+
+/* Recents & Shelves */
+"Home.Recents" = "Recently Viewed";
+"Home.RecentsSubtitle" = "Pick up where you left off";
+"Home.ViewAll" = "View All";
+"Home.ViewAllHymnal" = "Browse all hymns in %@";
+
 
