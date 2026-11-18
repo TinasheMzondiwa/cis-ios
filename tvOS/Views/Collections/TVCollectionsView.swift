@@ -307,3 +307,9 @@ struct TVCollectionsView: View {
         }
     }
 }
+
+#Preview {
+    TVCollectionsView(onNavigateToBrowse: {})
+        .environmentObject(CISAppViewModel.sample)
+        .environmentObject(TunePlayer())
+}

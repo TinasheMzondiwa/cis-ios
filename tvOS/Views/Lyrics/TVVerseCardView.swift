@@ -74,3 +74,30 @@ struct TVVerseCardView: View {
         )
     }
 }
+
+#Preview {
+    let sampleVerse = StoreLyric(
+        type: "verse",
+        index: 1,
+        lines: [
+            "Come, Thou Fount of every blessing,",
+            "Tune my heart to sing Thy grace;",
+            "Streams of mercy, never ceasing,",
+            "Call for songs of loudest praise."
+        ]
+    )
+    let sampleChorus = StoreLyric(
+        type: "refrain",
+        index: nil,
+        lines: [
+            "Praise the mount! I'm fixed upon it,",
+            "Mount of Thy redeeming love."
+        ]
+    )
+    return VStack(spacing: 30) {
+        TVVerseCardView(lyric: sampleVerse, refrainLabel: "Chorus")
+        TVVerseCardView(lyric: sampleChorus, refrainLabel: "Chorus")
+    }
+    .padding(50)
+    .background(Color.black)
+}

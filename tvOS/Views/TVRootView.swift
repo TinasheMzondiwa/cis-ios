@@ -80,3 +80,9 @@ struct TVRootView: View {
         }
     }
 }
+
+#Preview {
+    TVRootView()
+        .environmentObject(CISAppViewModel.sample)
+        .environmentObject(TunePlayer())
+}

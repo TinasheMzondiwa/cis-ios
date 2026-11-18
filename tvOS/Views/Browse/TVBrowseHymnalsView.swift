@@ -129,3 +129,9 @@ private struct TVBrowseHymnalChip: View {
         }
     }
 }
+
+#Preview {
+    TVBrowseHymnalsView()
+        .environmentObject(CISAppViewModel.sample)
+        .environmentObject(TunePlayer())
+}

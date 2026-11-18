@@ -150,3 +150,18 @@ struct TVBookCard: View {
         .buttonStyle(.card)
     }
 }
+
+#Preview {
+    let sampleBook = StoreBook(
+        key: "sdah",
+        language: "English",
+        title: "The Seventh-day Adventist Hymnal",
+        isSelected: true,
+        refrainLabel: "Chorus"
+    )
+    return TVBookCard(book: sampleBook, hymnCount: 695) {
+        print("Book selected")
+    }
+    .padding(50)
+    .background(Color.black)
+}

@@ -89,3 +89,23 @@ struct TVHymnGridCard: View {
         .focused($isFocused)
     }
 }
+
+#Preview {
+    let sampleHymn = StoreHymn(
+        id: UUID(),
+        title: "Come, Thou Fount of Every Blessing",
+        lyrics: [
+            StoreLyric(type: "verse", index: 1, lines: ["Come, Thou Fount of every blessing,"])
+        ],
+        book: "sdah",
+        number: 334,
+        titleEnglish: nil,
+        hymnalReferences: "SDAH 334"
+    )
+    return TVHymnGridCard(hymn: sampleHymn, bookTitle: "The Seventh-day Adventist Hymnal") {
+        print("Hymn tapped")
+    }
+    .frame(width: 400)
+    .padding(50)
+    .background(Color.black)
+}

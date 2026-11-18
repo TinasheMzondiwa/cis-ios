@@ -189,3 +189,9 @@ struct TVSearchListRow: View {
         .padding(.vertical, 8)
     }
 }
+
+#Preview {
+    TVSearchView()
+        .environmentObject(CISAppViewModel.sample)
+        .environmentObject(TunePlayer())
+}

@@ -457,3 +457,30 @@ private struct TVHUDTuneButton: View {
         .foregroundStyle(focused ? Color.black : Color.white)
     }
 }
+
+#Preview {
+    let dummyLyric1 = StoreLyric(type: "verse", index: 1, lines: [
+        "Come, Thou Fount of every blessing,",
+        "Tune my heart to sing Thy grace;",
+        "Streams of mercy, never ceasing,",
+        "Call for songs of loudest praise."
+    ])
+    let dummyLyric2 = StoreLyric(type: "refrain", index: nil, lines: [
+        "Praise the mount! I'm fixed upon it,",
+        "Mount of Thy redeeming love."
+    ])
+    let sampleHymn = StoreHymn(
+        id: UUID(),
+        title: "Come, Thou Fount of Every Blessing",
+        lyrics: [dummyLyric1, dummyLyric2],
+        book: "sdah",
+        number: 334,
+        titleEnglish: nil,
+        hymnalReferences: "SDAH 334"
+    )
+    let sampleBook = StoreBook(key: "sdah", language: "English", title: "The Seventh-day Adventist Hymnal", isSelected: true, refrainLabel: "Chorus")
+    
+    return TVLyricsView(hymn: sampleHymn, book: sampleBook)
+        .environmentObject(CISAppViewModel.sample)
+        .environmentObject(TunePlayer())
+}

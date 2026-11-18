@@ -182,3 +182,17 @@ private struct TVCollectionSheetListRow: View {
         .padding(.vertical, 10)
     }
 }
+
+#Preview {
+    let sampleHymn = StoreHymn(
+        id: UUID(),
+        title: "Praise to the Lord",
+        lyrics: [],
+        book: "sdah",
+        number: 1,
+        titleEnglish: nil,
+        hymnalReferences: nil
+    )
+    return TVAddToCollectionSheet(hymn: sampleHymn)
+        .environmentObject(CISAppViewModel.sample)
+}

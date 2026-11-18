@@ -144,3 +144,12 @@ struct TVHomeView: View {
         }
     }
 }
+
+#Preview {
+    TVHomeView(
+        onNavigateToSearch: {},
+        onNavigateToBrowse: { _ in }
+    )
+    .environmentObject(CISAppViewModel.sample)
+    .environmentObject(TunePlayer())
+}
