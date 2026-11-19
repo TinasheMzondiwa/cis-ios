@@ -90,7 +90,7 @@ struct TVBrowseHymnalsView: View {
             }
         }
         .tvAmbientBackground()
-        .navigationDestination(item: $activeLyricsHymn) { hymn in
+        .fullScreenCover(item: $activeLyricsHymn) { hymn in
             TVLyricsView(hymn: hymn, book: currentBook)
         }
     }
