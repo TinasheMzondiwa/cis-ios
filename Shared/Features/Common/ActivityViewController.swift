@@ -5,6 +5,7 @@
 //  Created by Tinashe  on 2020/07/21.
 //
 
+#if os(iOS)
 import Foundation
 import SwiftUI
 import UIKit
@@ -26,3 +27,4 @@ struct ActivityViewController: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityViewController>) {}
     
 }
+#endif

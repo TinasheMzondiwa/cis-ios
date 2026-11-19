@@ -3,7 +3,7 @@ import AVFoundation
 import Combine
 import MediaPlayer
 
-#if os(iOS)
+#if canImport(UIKit)
 import UIKit
 #endif
 
@@ -13,9 +13,9 @@ final class TunePlayer: ObservableObject {
     // MARK: - Published State
 
     @Published var isPlaying = false
-    var progress: Double = 0
-    var duration: Double = 0
-    var currentTime: Double = 0
+    @Published var progress: Double = 0
+    @Published var duration: Double = 0
+    @Published var currentTime: Double = 0
 
     @Published var activeBookKey: String?
     @Published var activeHymnNumber: Int?
@@ -88,7 +88,7 @@ final class TunePlayer: ObservableObject {
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = currentTime
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = isPause ? 0.0 : 1.0
         
-        #if os(iOS)
+        #if canImport(UIKit)
         if let image = UIImage(named: "logo") {
             let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
             nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
@@ -123,8 +123,25 @@ final class TunePlayer: ObservableObject {
         load(url: url)
     }
 
-    private func load(url: URL) {
+    private var soundbankURL: URL? {
+        let fm = FileManager.default
+        #if os(tvOS)
+        // On tvOS, Caches directory is the only permitted writable location for downloaded media assets
+        guard let baseDir = fm.urls(for: .cachesDirectory, in: .userDomainMask).first else { return nil }
+        return baseDir.appendingPathComponent("TimGM6mb.sf2")
+        #else
+        // On iOS, check Application Support first (for existing installs), else use Caches
+        if let appSupport = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent("TimGM6mb.sf2"),
+           fm.fileExists(atPath: appSupport.path) {
+            return appSupport
+        }
+        let baseDir = fm.urls(for: .cachesDirectory, in: .userDomainMask).first
+            ?? fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
+        return baseDir?.appendingPathComponent("TimGM6mb.sf2")
+        #endif
+    }
 
+    private func load(url: URL) {
         stop()
 
         guard isSoundBankReady else {
@@ -133,22 +150,20 @@ final class TunePlayer: ObservableObject {
             return
         }
 
-        do {
-            let fileManager = FileManager.default
-            guard let appSupportDirectory = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
-                hasTrack = false
-                return
-            }
-            let soundbankURL = appSupportDirectory.appendingPathComponent("TimGM6mb.sf2")
+        guard let targetURL = soundbankURL, FileManager.default.fileExists(atPath: targetURL.path) else {
+            print("Soundbank file missing at path.")
+            hasTrack = false
+            return
+        }
 
-            midiPlayer = try AVMIDIPlayer(contentsOf: url, soundBankURL: soundbankURL)
+        do {
+            midiPlayer = try AVMIDIPlayer(contentsOf: url, soundBankURL: targetURL)
             midiPlayer?.prepareToPlay()
             
             duration = midiPlayer?.duration ?? 0
             currentTime = 0
             progress = 0
             hasTrack = true
-
         } catch {
             print("MIDI load failed:", error)
             hasTrack = false
@@ -158,17 +173,14 @@ final class TunePlayer: ObservableObject {
     // MARK: - SoundBank Manager
     
     private func checkAndDownloadSoundBank() {
+        guard let targetURL = soundbankURL else { return }
+        let targetDir = targetURL.deletingLastPathComponent()
         let fileManager = FileManager.default
-        guard let appSupportDirectory = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
-            return
-        }
 
-        // Ensure the directory exists
-        try? fileManager.createDirectory(at: appSupportDirectory, withIntermediateDirectories: true)
-        
-        let soundbankURL = appSupportDirectory.appendingPathComponent("TimGM6mb.sf2")
+        // Ensure target directory exists
+        try? fileManager.createDirectory(at: targetDir, withIntermediateDirectories: true)
 
-        if fileManager.fileExists(atPath: soundbankURL.path) {
+        if fileManager.fileExists(atPath: targetURL.path) {
             self.isSoundBankReady = true
             return
         }
@@ -196,23 +208,34 @@ final class TunePlayer: ObservableObject {
             }
             
             do {
-                if fm.fileExists(atPath: soundbankURL.path) {
-                    try fm.removeItem(at: soundbankURL)
+                try fm.createDirectory(at: targetDir, withIntermediateDirectories: true)
+                if fm.fileExists(atPath: targetURL.path) {
+                    try? fm.removeItem(at: targetURL)
                 }
-                try fm.moveItem(at: tempURL, to: soundbankURL)
+                
+                // Attempt move, fallback to copy if cross-volume move fails
+                do {
+                    try fm.moveItem(at: tempURL, to: targetURL)
+                } catch {
+                    print("moveItem failed, falling back to copyItem:", error)
+                    if fm.fileExists(atPath: targetURL.path) {
+                        try? fm.removeItem(at: targetURL)
+                    }
+                    try fm.copyItem(at: tempURL, to: targetURL)
+                }
                 
                 Task { @MainActor [weak self] in
                     guard let self = self else { return }
                     self.isDownloadingSoundBank = false
                     self.isSoundBankReady = true
-                    print("Soundbank successfully downloaded and saved.")
+                    print("Soundbank successfully downloaded and saved to:", targetURL.path)
                     if let deferred = self.deferredURL {
                         self.load(url: deferred)
                         self.deferredURL = nil
                     }
                 }
             } catch {
-                print("Failed to move downloaded soundbank:", error)
+                print("Failed to save downloaded soundbank:", error)
                 Task { @MainActor [weak self] in
                     self?.isDownloadingSoundBank = false
                 }
@@ -283,7 +306,7 @@ final class TunePlayer: ObservableObject {
     private func startTimer() {
         stopTimer()
 
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
             Task { @MainActor in
                 self?.update()
             }

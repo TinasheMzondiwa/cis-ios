@@ -49,4 +49,31 @@ extension String {
     var trimmed: String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    
+    /// Normalizes text for search by folding case/diacritics, removing apostrophes,
+    /// stripping punctuation (commas, periods, hyphens, etc.), and collapsing whitespace.
+    var normalizedForSearch: String {
+        let folded = self.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: .current)
+        var scalars = String.UnicodeScalarView()
+        scalars.reserveCapacity(folded.unicodeScalars.count)
+        var lastWasSpace = true
+        
+        for scalar in folded.unicodeScalars {
+            if scalar == "'" || scalar == "\u{2019}" || scalar == "\u{2018}" {
+                continue
+            } else if CharacterSet.alphanumerics.contains(scalar) {
+                scalars.append(scalar)
+                lastWasSpace = false
+            } else if !lastWasSpace {
+                scalars.append(" ")
+                lastWasSpace = true
+            }
+        }
+        
+        var result = String(scalars)
+        if result.hasSuffix(" ") {
+            result.removeLast()
+        }
+        return result
+    }
 }

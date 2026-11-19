@@ -32,6 +32,7 @@ class HapticsManager {
     static let instance = HapticsManager()
     
     func trigger(_ type: HapticType) {
+        #if os(iOS)
         switch type {
         case .buttonPress, .light:
             let generator = UIImpactFeedbackGenerator(style: .light)
@@ -65,6 +66,7 @@ class HapticsManager {
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.error)
         }
+        #endif
     }
 }
 

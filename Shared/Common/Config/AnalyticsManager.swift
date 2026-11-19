@@ -6,7 +6,9 @@
 //
 
 import Foundation
+#if !os(tvOS)
 import FirebaseAnalytics
+#endif
 
 final class AnalyticsManager {
     static let shared = AnalyticsManager()
@@ -18,7 +20,7 @@ final class AnalyticsManager {
     ///   - name: The name of the event (e.g. "read_chapter")
     ///   - parameters: A dictionary of parameters (e.g. ["book": "Genesis", "chapter": 1])
     func logEvent(_ name: String, parameters: [String: Any]? = nil) {
-        #if DEBUG
+        #if DEBUG || os(tvOS)
         print("Analytics Event: \(name), Parameters: \(String(describing: parameters))")
         #else
         Analytics.logEvent(name, parameters: parameters)
@@ -29,7 +31,7 @@ final class AnalyticsManager {
     /// - Parameters:
     ///   - name: The name of the screen (e.g. "ReadUIView")
     func logScreen(name: String) {
-        #if DEBUG
+        #if DEBUG || os(tvOS)
         print("Analytics Screen: \(name)")
         #else
         Analytics.logEvent(AnalyticsEventScreenView, parameters: [

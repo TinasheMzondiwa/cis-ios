@@ -47,17 +47,22 @@ final class CISAppViewModel: ObservableObject {
     func fetchAllBooks() {
         allBooks = store.retrieveAllBooks()
         if !allBooks.isEmpty {
+            #if os(tvOS)
+            let defaultKey = "sdah"
+            #else
+            let defaultKey = String.defaultBook
+            #endif
+            
             if store.retrieveSelectedBook() == nil {
-                store.setSelectedBook(to: .defaultBook)
+                store.setSelectedBook(to: defaultKey)
             }
             
-            let selectedBookKey =  store.retrieveSelectedBook() ?? .defaultBook
+            let selectedBookKey = store.retrieveSelectedBook() ?? defaultKey
             
-            
-            selectedBook = allBooks.first(where: { $0.key == selectedBookKey })
+            selectedBook = allBooks.first(where: { $0.key == selectedBookKey }) ?? allBooks.first
             
             // Fetch all the hymns from the selected book
-            if let fetchedHymns = fetchHymns(from: selectedBookKey) {
+            if let activeKey = selectedBook?.key, let fetchedHymns = fetchHymns(from: activeKey) {
                 hymnsFromSelectedBook = fetchedHymns
             }
             
@@ -75,6 +80,11 @@ final class CISAppViewModel: ObservableObject {
     
     func fetchAllCollections() -> [StoreCollection]{
         store.retrieveAllCollections()
+    }
+    
+    enum Sort: String {
+        case number
+        case titleStr
     }
     
     func toggleHymnsSorting(using option: Sort) {
@@ -188,12 +198,16 @@ final class CISAppViewModel: ObservableObject {
             booksWithHymns.append((book, hymns))
         }
         
+        let normalizedQuery = trimmedQuery.normalizedForSearch
         let filteredResults = await Task.detached(priority: .userInitiated) {
             var results: [StoreBook: [StoreHymn]] = [:]
             
             for (book, hymns) in booksWithHymns {
                 let filtered = hymns.filter { hymn in
-                    "\(hymn.number) - \(hymn.title)".localizedCaseInsensitiveContains(trimmedQuery) ||
+                    if !normalizedQuery.isEmpty && (hymn.normalizedTitle.contains(normalizedQuery) || hymn.normalizedLyrics.contains(normalizedQuery)) {
+                        return true
+                    }
+                    return "\(hymn.number) - \(hymn.title)".localizedCaseInsensitiveContains(trimmedQuery) ||
                     hymn.lyrics.contains(where: { lyric in
                         lyric.lines.contains(where: { line in
                             line.localizedCaseInsensitiveContains(trimmedQuery)
@@ -210,13 +224,97 @@ final class CISAppViewModel: ObservableObject {
         return filteredResults
     }
     
+    @MainActor
+    func searchHymns(query: String, in bookKey: String? = nil, prioritizedBookKey: String? = nil) async -> [(book: StoreBook, hymn: StoreHymn)] {
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedQuery.isEmpty else { return [] }
+        
+        let targetSelectedKey = prioritizedBookKey ?? bookKey ?? selectedBook?.key
+        
+        let booksToSearch: [StoreBook]
+        if let bookKey = bookKey, let book = allBooks.first(where: { $0.key == bookKey }) {
+            booksToSearch = [book]
+        } else {
+            if let targetSelectedKey = targetSelectedKey, let selected = allBooks.first(where: { $0.key == targetSelectedKey }) {
+                booksToSearch = [selected] + allBooks.filter { $0.key != targetSelectedKey }
+            } else {
+                booksToSearch = allBooks
+            }
+        }
+        
+        var booksWithHymns: [(StoreBook, [StoreHymn])] = []
+        for book in booksToSearch {
+            let hymns: [StoreHymn]
+            if let cached = hymnsCache[book.key] {
+                hymns = cached
+            } else if let fetched = fetchHymns(from: book.key) {
+                hymnsCache[book.key] = fetched
+                hymns = fetched
+            } else {
+                hymns = []
+            }
+            booksWithHymns.append((book, hymns))
+        }
+        
+        let queryNumber = Int(trimmedQuery)
+        let normalizedQuery = trimmedQuery.normalizedForSearch
+        
+        return await Task.detached(priority: .userInitiated) {
+            var selectedExact: [(book: StoreBook, hymn: StoreHymn)] = []
+            var selectedStartsWith: [(book: StoreBook, hymn: StoreHymn)] = []
+            var selectedTitle: [(book: StoreBook, hymn: StoreHymn)] = []
+            var selectedLyrics: [(book: StoreBook, hymn: StoreHymn)] = []
+            
+            var otherExact: [(book: StoreBook, hymn: StoreHymn)] = []
+            var otherStartsWith: [(book: StoreBook, hymn: StoreHymn)] = []
+            var otherTitle: [(book: StoreBook, hymn: StoreHymn)] = []
+            var otherLyrics: [(book: StoreBook, hymn: StoreHymn)] = []
+            
+            for (book, hymns) in booksWithHymns {
+                let isSelected = (book.key == targetSelectedKey)
+                
+                for hymn in hymns {
+                    if let qNum = queryNumber, hymn.number == qNum {
+                        if isSelected {
+                            selectedExact.append((book, hymn))
+                        } else {
+                            otherExact.append((book, hymn))
+                        }
+                    } else if "\(hymn.number)".starts(with: trimmedQuery) {
+                        if isSelected {
+                            selectedStartsWith.append((book, hymn))
+                        } else {
+                            otherStartsWith.append((book, hymn))
+                        }
+                    } else if (!normalizedQuery.isEmpty && hymn.normalizedTitle.contains(normalizedQuery)) || hymn.title.localizedCaseInsensitiveContains(trimmedQuery) {
+                        if isSelected {
+                            selectedTitle.append((book, hymn))
+                        } else {
+                            otherTitle.append((book, hymn))
+                        }
+                    } else if (!normalizedQuery.isEmpty && hymn.normalizedLyrics.contains(normalizedQuery)) || hymn.lyrics.contains(where: { $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(trimmedQuery) }) }) {
+                        if isSelected {
+                            selectedLyrics.append((book, hymn))
+                        } else {
+                            otherLyrics.append((book, hymn))
+                        }
+                    }
+                }
+            }
+            
+            let selectedResults = selectedExact + selectedStartsWith + selectedTitle + selectedLyrics
+            let otherResults = otherExact + otherStartsWith + otherTitle + otherLyrics
+            
+            return selectedResults + otherResults
+        }.value
+    }
+    
     enum SwipeDirection {
         case forward
         case backward
     }
 }
 
-#if DEBUG
 class PreviewStore: Store {
     var onStoreLoaded: (() -> Void)?
     
@@ -271,4 +369,3 @@ extension CISAppViewModel {
         return vm
     }
 }
-#endif
