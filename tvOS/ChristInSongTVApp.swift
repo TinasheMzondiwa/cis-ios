@@ -24,7 +24,6 @@ struct ChristInSongTVApp: App {
         
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().tintColor = .white
-        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .black
     }
     
     var body: some Scene {

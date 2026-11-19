@@ -14,6 +14,7 @@ struct TVSearchView: View {
     @State private var activeLyricsHymn: StoreHymn?
     @State private var activeLyricsBook: StoreBook?
     @FocusState private var focusedHymnId: UUID?
+    @State private var searchTask: Task<Void, Never>?
     
     // When query is empty, show initial hymns list
     private var defaultHymns: [(book: StoreBook, hymn: StoreHymn)] {
@@ -30,6 +31,7 @@ struct TVSearchView: View {
     }
     
     private func performSearch(query: String) {
+        searchTask?.cancel()
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else {
             searchResults = []
@@ -39,11 +41,14 @@ struct TVSearchView: View {
         
         isSearching = true
         let selectedKey = vm.selectedBook?.key
-        Task {
+        searchTask = Task {
             let results = await vm.searchHymns(query: trimmed, prioritizedBookKey: selectedKey)
+            if Task.isCancelled { return }
             await MainActor.run {
-                self.searchResults = results
-                self.isSearching = false
+                if !Task.isCancelled {
+                    self.searchResults = results
+                    self.isSearching = false
+                }
             }
         }
     }

@@ -288,7 +288,6 @@ struct TVCollectionsView: View {
         } message: {
             Text(LocalizedStringKey("Collections.DeleteConfirm"))
         }
-        .tint((showingCreateDialog || showingDeleteDialog) ? Color.black : nil)
     }
 }
 

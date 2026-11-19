@@ -47,7 +47,7 @@ struct TVHomeView: View {
             }
             for book in vm.allBooks {
                 if let hymns = vm.fetchHymns(from: book.key),
-                   let hymn = hymns.first(where: { $0.id == item.hymnId }) {
+                   let hymn = hymns.first(where: { $0.id == item.hymnId || ($0.number == item.hymnNumber && $0.title == item.title) }) {
                     return (book, hymn)
                 }
             }

@@ -286,7 +286,7 @@ final class CISAppViewModel: ObservableObject {
                         } else {
                             otherStartsWith.append((book, hymn))
                         }
-                    } else if (!normalizedQuery.isEmpty && hymn.normalizedTitle.contains(normalizedQuery)) || hymn.title.localizedCaseInsensitiveContains(trimmedQuery) {
+                    } else if (!normalizedQuery.isEmpty && (hymn.normalizedTitle.contains(normalizedQuery) || hymn.title.normalizedForSearch.contains(normalizedQuery))) || hymn.title.localizedCaseInsensitiveContains(trimmedQuery) {
                         if isSelected {
                             selectedTitle.append((book, hymn))
                         } else {
