@@ -310,7 +310,6 @@ final class CISAppViewModel: ObservableObject {
     }
 }
 
-#if DEBUG
 class PreviewStore: Store {
     var onStoreLoaded: (() -> Void)?
     
@@ -365,4 +364,3 @@ extension CISAppViewModel {
         return vm
     }
 }
-#endif
