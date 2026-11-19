@@ -90,6 +90,7 @@ fastlane/test_output
 iOSInjectionProject/
 
 *.DS_Store
+*.log
 Shared/Resources/*
 
 iOS/GoogleService-Info.plist
