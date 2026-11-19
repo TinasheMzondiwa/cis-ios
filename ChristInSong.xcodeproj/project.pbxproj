@@ -2522,8 +2522,8 @@
 		0846450025E773F7003AE75A /* ChristInSong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChristInSong.entitlements; sourceTree = "<group>"; };
 		0846453025E77B41003AE75A /* AddToCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCollectionView.swift; sourceTree = "<group>"; };
 		0846453625E77E18003AE75A /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0846453C25E787EA003AE75A /* Collection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0846453D25E787EA003AE75A /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0846454425E7913A003AE75A /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		0846454E25E79490003AE75A /* FocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextField.swift; sourceTree = "<group>"; };
 		084BDAA625FD9CF8002090CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -3340,8 +3340,8 @@
 		08C3C0A125F08E81004194B2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		08CB33B925E21AB600609D65 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		08CB33EC25E22DD200609D65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
-		08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		08CB340D25E2FD2E00609D65 /* Hymn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataClass.swift"; sourceTree = "<group>"; };
+		08CB340E25E2FD2E00609D65 /* Hymn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hymn+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		08CB346525E4C5DE00609D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		08TV00000000000000000002 /* ChristInSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristInSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08TV00000000000000000101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
