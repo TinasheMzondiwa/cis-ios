@@ -36,6 +36,10 @@ public struct StoreHymn: Identifiable, Equatable, Hashable {
     public let titleEnglish: String?
     /// Other hymnal references
     public let hymnalReferences: String?
+    /// Pre-normalized title (and English subtitle if present) for punctuation-insensitive search
+    public let normalizedTitle: String
+    /// Pre-normalized full lyrics text for punctuation-insensitive search
+    public let normalizedLyrics: String
     
     public init(id: UUID, title: String, lyrics: [StoreLyric], book: String, number: Int, titleEnglish: String?, hymnalReferences: String?) {
         self.id = id
@@ -45,5 +49,11 @@ public struct StoreHymn: Identifiable, Equatable, Hashable {
         self.number = number
         self.titleEnglish = titleEnglish
         self.hymnalReferences = hymnalReferences
+        if let english = titleEnglish, !english.isEmpty {
+            self.normalizedTitle = "\(title) \(english)".normalizedForSearch
+        } else {
+            self.normalizedTitle = title.normalizedForSearch
+        }
+        self.normalizedLyrics = lyrics.flatMap(\.lines).joined(separator: " ").normalizedForSearch
     }
 }

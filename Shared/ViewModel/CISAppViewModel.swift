@@ -198,12 +198,16 @@ final class CISAppViewModel: ObservableObject {
             booksWithHymns.append((book, hymns))
         }
         
+        let normalizedQuery = trimmedQuery.normalizedForSearch
         let filteredResults = await Task.detached(priority: .userInitiated) {
             var results: [StoreBook: [StoreHymn]] = [:]
             
             for (book, hymns) in booksWithHymns {
                 let filtered = hymns.filter { hymn in
-                    "\(hymn.number) - \(hymn.title)".localizedCaseInsensitiveContains(trimmedQuery) ||
+                    if !normalizedQuery.isEmpty && (hymn.normalizedTitle.contains(normalizedQuery) || hymn.normalizedLyrics.contains(normalizedQuery)) {
+                        return true
+                    }
+                    return "\(hymn.number) - \(hymn.title)".localizedCaseInsensitiveContains(trimmedQuery) ||
                     hymn.lyrics.contains(where: { lyric in
                         lyric.lines.contains(where: { line in
                             line.localizedCaseInsensitiveContains(trimmedQuery)
@@ -253,6 +257,7 @@ final class CISAppViewModel: ObservableObject {
         }
         
         let queryNumber = Int(trimmedQuery)
+        let normalizedQuery = trimmedQuery.normalizedForSearch
         
         return await Task.detached(priority: .userInitiated) {
             var selectedExact: [(book: StoreBook, hymn: StoreHymn)] = []
@@ -281,13 +286,13 @@ final class CISAppViewModel: ObservableObject {
                         } else {
                             otherStartsWith.append((book, hymn))
                         }
-                    } else if hymn.title.localizedCaseInsensitiveContains(trimmedQuery) {
+                    } else if (!normalizedQuery.isEmpty && hymn.normalizedTitle.contains(normalizedQuery)) || hymn.title.localizedCaseInsensitiveContains(trimmedQuery) {
                         if isSelected {
                             selectedTitle.append((book, hymn))
                         } else {
                             otherTitle.append((book, hymn))
                         }
-                    } else if hymn.lyrics.contains(where: { $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(trimmedQuery) }) }) {
+                    } else if (!normalizedQuery.isEmpty && hymn.normalizedLyrics.contains(normalizedQuery)) || hymn.lyrics.contains(where: { $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(trimmedQuery) }) }) {
                         if isSelected {
                             selectedLyrics.append((book, hymn))
                         } else {

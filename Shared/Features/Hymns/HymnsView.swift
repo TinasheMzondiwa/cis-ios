@@ -22,13 +22,18 @@ struct HymnsView: View {
     var navigateToSupport: (() -> Void)? = nil
     
     var filteredHymns: [StoreHymn] {
-        if filterQuery.trimmed.isEmpty {
+        let trimmed = filterQuery.trimmed
+        if trimmed.isEmpty {
             return vm.hymnsFromSelectedBook
         } else {
-            return vm.hymnsFromSelectedBook.filter {
-                "\($0.number) - \($0.title)".localizedCaseInsensitiveContains(filterQuery) ||
-                $0.lyrics.contains(where: {
-                    $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(filterQuery) })
+            let normalizedQuery = trimmed.normalizedForSearch
+            return vm.hymnsFromSelectedBook.filter { hymn in
+                if !normalizedQuery.isEmpty && (hymn.normalizedTitle.contains(normalizedQuery) || hymn.normalizedLyrics.contains(normalizedQuery)) {
+                    return true
+                }
+                return "\(hymn.number) - \(hymn.title)".localizedCaseInsensitiveContains(trimmed) ||
+                hymn.lyrics.contains(where: {
+                    $0.lines.contains(where: { $0.localizedCaseInsensitiveContains(trimmed) })
                 })
             }
         }
