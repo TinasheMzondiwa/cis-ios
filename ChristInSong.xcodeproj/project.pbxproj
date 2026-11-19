@@ -1660,6 +1660,8 @@
 		08TV0000000000000000020C /* TVTunePlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV0000000000000000010E /* TVTunePlayerBar.swift */; };
 		08TV0000000000000000020D /* TVCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV0000000000000000010F /* TVCollectionsView.swift */; };
 		08TV00000000000000000210 /* TVBookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000110 /* TVBookCard.swift */; };
+		08TV00000000000000000215 /* TVScriptureCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000115 /* TVScriptureCatalog.swift */; };
+		08TV00000000000000000216 /* TVDailyScriptureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000116 /* TVDailyScriptureCard.swift */; };
 		08TV00000000000000000211 /* TVAddToCollectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000111 /* TVAddToCollectionSheet.swift */; };
 		08TV00000000000000000213 /* TVSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000113 /* TVSettingsView.swift */; };
 		08TV00000000000000000301 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874737A298749D200167974 /* AlertState.swift */; };
@@ -2467,6 +2469,8 @@
 		1D1A914B29BFCA60003C3260 /* v2/config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* v2/config.json */; };
 		1D1A914C29BFCA60003C3260 /* v2/config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* v2/config.json */; };
 		1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */; };
+		1D45308029BB790B00C95AC1 /* TVScriptureCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000115 /* TVScriptureCatalog.swift */; };
+		1D45308229BB790B00C95AC1 /* TVScriptureCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45308129BB790B00C95AC1 /* TVScriptureCatalogTests.swift */; };
 		1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302629BB80F000C95AC1 /* StoreHymn.swift */; };
 		1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302829BB80FD00C95AC1 /* StoreCollection.swift */; };
 		1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302A29BB810D00C95AC1 /* StoreBook.swift */; };
@@ -3361,6 +3365,8 @@
 		08TV0000000000000000010E /* TVTunePlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTunePlayerBar.swift; sourceTree = "<group>"; };
 		08TV0000000000000000010F /* TVCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionsView.swift; sourceTree = "<group>"; };
 		08TV00000000000000000110 /* TVBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBookCard.swift; sourceTree = "<group>"; };
+		08TV00000000000000000115 /* TVScriptureCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScriptureCatalog.swift; sourceTree = "<group>"; };
+		08TV00000000000000000116 /* TVDailyScriptureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDailyScriptureCard.swift; sourceTree = "<group>"; };
 		08TV00000000000000000111 /* TVAddToCollectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAddToCollectionSheet.swift; sourceTree = "<group>"; };
 		08TV00000000000000000113 /* TVSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSettingsView.swift; sourceTree = "<group>"; };
 		13556F81BFCCC8E12B408861 /* WhatsNewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WhatsNewItem.swift; sourceTree = "<group>"; };
@@ -3370,6 +3376,7 @@
 		1D1A914A29BFCA60003C3260 /* v2/config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/config.json; sourceTree = "<group>"; };
 		1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTests.swift; sourceTree = "<group>"; };
+		1D45308129BB790B00C95AC1 /* TVScriptureCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScriptureCatalogTests.swift; sourceTree = "<group>"; };
 		1D45302629BB80F000C95AC1 /* StoreHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHymn.swift; sourceTree = "<group>"; };
 		1D45302829BB80FD00C95AC1 /* StoreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollection.swift; sourceTree = "<group>"; };
 		1D45302A29BB810D00C95AC1 /* StoreBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBook.swift; sourceTree = "<group>"; };
@@ -4551,6 +4558,8 @@
 			children = (
 				08TV00000000000000000106 /* TVHomeView.swift */,
 				08TV00000000000000000110 /* TVBookCard.swift */,
+				08TV00000000000000000115 /* TVScriptureCatalog.swift */,
+				08TV00000000000000000116 /* TVDailyScriptureCard.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -4624,6 +4633,7 @@
 			children = (
 				1D70F75929CCF52300F806E2 /* Helpers */,
 				1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */,
+				1D45308129BB790B00C95AC1 /* TVScriptureCatalogTests.swift */,
 				1D45303229BB996900C95AC1 /* StoreSpy.swift */,
 			);
 			path = ChristInSongTests;
@@ -7358,6 +7368,8 @@
 				08TV00000000000000000213 /* TVSettingsView.swift in Sources */,
 				08TV00000000000000000204 /* TVHomeView.swift in Sources */,
 				08TV00000000000000000210 /* TVBookCard.swift in Sources */,
+				08TV00000000000000000215 /* TVScriptureCatalog.swift in Sources */,
+				08TV00000000000000000216 /* TVDailyScriptureCard.swift in Sources */,
 				08TV00000000000000000205 /* TVBrowseHymnalsView.swift in Sources */,
 				08TV00000000000000000206 /* TVHymnGridCard.swift in Sources */,
 				08TV00000000000000000207 /* TVSearchView.swift in Sources */,
@@ -7406,6 +7418,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */,
+				1D45308029BB790B00C95AC1 /* TVScriptureCatalog.swift in Sources */,
+				1D45308229BB790B00C95AC1 /* TVScriptureCatalogTests.swift in Sources */,
 				1D45303329BB996900C95AC1 /* StoreSpy.swift in Sources */,
 				1D70F75B29CCF54900F806E2 /* XCTestCase+TrackForMemoryLeaks.swift in Sources */,
 			);
@@ -7728,7 +7742,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -7749,7 +7763,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

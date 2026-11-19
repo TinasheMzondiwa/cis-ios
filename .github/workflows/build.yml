@@ -56,3 +56,20 @@ jobs:
             ONLY_ACTIVE_ARCH=YES \
             CODE_SIGNING_ALLOWED=NO \
             build
+
+      - name: Run Unit Tests
+        run: |
+          DESTINATION_ID=$(xcrun simctl list devices available | grep -i "iPhone" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')
+          if [ -n "$DESTINATION_ID" ]; then
+            DESTINATION="platform=iOS Simulator,id=$DESTINATION_ID"
+          else
+            DESTINATION="platform=iOS Simulator,OS=latest,name=iPhone 16"
+          fi
+          echo "Running tests on: $DESTINATION"
+          xcodebuild -workspace ChristInSong.xcworkspace \
+            -scheme iOS \
+            -destination "$DESTINATION" \
+            -configuration Debug \
+            ONLY_ACTIVE_ARCH=YES \
+            CODE_SIGNING_ALLOWED=NO \
+            test -only-testing:ChristInSongTests

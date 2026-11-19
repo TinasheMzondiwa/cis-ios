@@ -58,30 +58,36 @@ struct TVHomeView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 44) {
-                // Header: iOS-Style Squircle App Icon + Dynamic Greeting + Title & Subtitle
-                VStack(alignment: .leading, spacing: 14) {
-                    HStack(spacing: 14) {
-                        Image("logo")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 44, height: 44)
-                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke(Color.white.opacity(0.22), lineWidth: 1)
-                            )
-                            .shadow(color: Color.black.opacity(0.35), radius: 8, y: 3)
-                        
-                        Text(TVGreetingHelper.greeting())
-                            .font(TVStyle.uiFont(size: 40, weight: .bold))
-                            .tracking(1.5)
-                            .foregroundStyle(Color.white.opacity(0.9))
+                // Header: Left Greeting + Right Daily Scripture Card
+                HStack(alignment: .center, spacing: 32) {
+                    VStack(alignment: .leading, spacing: 14) {
+                        HStack(spacing: 14) {
+                            Image("logo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 44, height: 44)
+                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .stroke(Color.white.opacity(0.22), lineWidth: 1)
+                                )
+                                .shadow(color: Color.black.opacity(0.35), radius: 8, y: 3)
+                            
+                            Text(TVGreetingHelper.greeting())
+                                .font(TVStyle.uiFont(size: 40, weight: .bold))
+                                .tracking(1.5)
+                                .foregroundStyle(Color.white.opacity(0.9))
+                        }
+                                            
+                        Text(LocalizedStringKey("Home.Subtitle"))
+                            .font(TVStyle.uiFont(size: 24, weight: .regular))
+                            .foregroundStyle(Color.white.opacity(0.7))
+                            .frame(maxWidth: 800, alignment: .leading)
                     }
-                                        
-                    Text(LocalizedStringKey("Home.Subtitle"))
-                        .font(TVStyle.uiFont(size: 24, weight: .regular))
-                        .foregroundStyle(Color.white.opacity(0.7))
-                        .frame(maxWidth: 850, alignment: .leading)
+                    
+                    Spacer(minLength: 24)
+                    
+                    TVDailyScriptureCard()
                 }
                 .padding(.horizontal, TVStyle.horizontalPadding)
                 .padding(.top, 36)
