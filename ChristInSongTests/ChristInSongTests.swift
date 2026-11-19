@@ -248,6 +248,7 @@ final class ChristInSongTests: XCTestCase {
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: CISAppViewModel, store: StoreSpy) {
         let store = StoreSpy()
         let sut = CISAppViewModel(store: store)
+        store.onStoreLoaded?()
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, store)

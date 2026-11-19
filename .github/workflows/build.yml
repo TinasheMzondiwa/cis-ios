@@ -59,11 +59,20 @@ jobs:
 
       - name: Run Unit Tests
         run: |
-          DESTINATION_ID=$(xcrun simctl list devices available | grep -i "iPhone" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')
+          # Query compatible destinations for the iOS scheme to pick a compatible simulator ID
+          DESTINATION_ID=$(xcodebuild -workspace ChristInSong.xcworkspace -scheme iOS -showdestinations | \
+            awk '/Destinations compatible with the "iOS" scheme:/,/Ineligible destinations/' | \
+            grep "platform:iOS Simulator" | grep "name:iPhone" | head -1 | sed -E 's/.*id:([0-9A-F-]+).*/\1/')
+          if [ -z "$DESTINATION_ID" ]; then
+            DESTINATION_ID=$(xcrun simctl list devices available | awk '/-- iOS 2[6-9]/,0' | grep -i "iPhone" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')
+          fi
+          if [ -z "$DESTINATION_ID" ]; then
+            DESTINATION_ID=$(xcrun simctl list devices available | grep -i "iPhone" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')
+          fi
           if [ -n "$DESTINATION_ID" ]; then
             DESTINATION="platform=iOS Simulator,id=$DESTINATION_ID"
           else
-            DESTINATION="platform=iOS Simulator,OS=latest,name=iPhone 16"
+            DESTINATION="platform=iOS Simulator,name=iPhone 17"
           fi
           echo "Running tests on: $DESTINATION"
           xcodebuild -workspace ChristInSong.xcworkspace \
