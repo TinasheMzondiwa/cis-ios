@@ -20,27 +20,10 @@ struct TVRootView: View {
     }
     
     var body: some View {
-        Group {
+        ZStack {
             if vm.isLoadingStore {
-                VStack(spacing: 24) {
-                    
-                    Image("logo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 64, height: 64)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .stroke(Color.white.opacity(0.22), lineWidth: 1)
-                        )
-                        .shadow(color: Color.black.opacity(0.35), radius: 8, y: 3)
-                    
-                    ProgressView()
-                        .scaleEffect(1.8)
-                    
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .tvAmbientBackground()
+                TVSplashView()
+                    .transition(.opacity)
             } else {
                 ZStack(alignment: .topTrailing) {
                     TabView(selection: $selectedTab) {
@@ -113,6 +96,41 @@ struct TVRootView: View {
                 .fullScreenCover(isPresented: $showSettings) {
                     TVSettingsView()
                 }
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.45), value: vm.isLoadingStore)
+    }
+}
+
+// MARK: - TVSplashView
+struct TVSplashView: View {
+    @State private var pulse = false
+    
+    var body: some View {
+        ZStack {
+            TVAmbientBackground()
+            
+            // Centered emblem aligned with UILaunchScreen's SplashScreenLogo
+            Image("SplashScreenLogo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 240, height: 240)
+                .scaleEffect(pulse ? 1.03 : 1.0)
+                .opacity(pulse ? 1.0 : 0.92)
+            
+            // Subtle progress indicator anchored near the bottom so the center logo never shifts
+            VStack {
+                Spacer()
+                ProgressView()
+                    .tint(Color.white.opacity(0.65))
+                    .padding(.bottom, 120)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1.6).repeatForever(autoreverses: true)) {
+                pulse = true
             }
         }
     }
