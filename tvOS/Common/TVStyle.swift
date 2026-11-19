@@ -299,3 +299,50 @@ final class TVRecentsManager: ObservableObject {
     }
 }
 
+// MARK: - Pinned Hymnals Manager
+@MainActor
+final class TVPinnedHymnalsManager: ObservableObject {
+    static let shared = TVPinnedHymnalsManager()
+    
+    @Published private(set) var pinnedKeys: [String] = []
+    private let userDefaultsKey = "cis.tv.pinned_hymnals"
+    
+    init() {
+        load()
+    }
+    
+    func isPinned(_ bookKey: String) -> Bool {
+        pinnedKeys.contains(bookKey)
+    }
+    
+    func togglePin(_ bookKey: String) {
+        if let index = pinnedKeys.firstIndex(of: bookKey) {
+            pinnedKeys.remove(at: index)
+        } else {
+            pinnedKeys.append(bookKey)
+        }
+        save()
+    }
+    
+    /// Returns books with pinned hymnals floated to the front (in pin order), followed by remaining books
+    func sortedBooks(_ books: [StoreBook]) -> [StoreBook] {
+        let pinned = pinnedKeys.compactMap { key in books.first(where: { $0.key == key }) }
+        let unpinned = books.filter { !pinnedKeys.contains($0.key) }
+        return pinned + unpinned
+    }
+    
+    /// Returns only the pinned books
+    func pinnedBooks(from books: [StoreBook]) -> [StoreBook] {
+        pinnedKeys.compactMap { key in books.first(where: { $0.key == key }) }
+    }
+    
+    private func load() {
+        pinnedKeys = UserDefaults.standard.stringArray(forKey: userDefaultsKey) ?? []
+    }
+    
+    private func save() {
+        UserDefaults.standard.set(pinnedKeys, forKey: userDefaultsKey)
+    }
+}
+
+

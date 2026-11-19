@@ -8,7 +8,11 @@ import SwiftUI
 struct TVBookCard: View {
     let book: StoreBook
     let hymnCount: Int
+    var isPinned: Bool = false
+    var onTogglePin: (() -> Void)? = nil
     let action: () -> Void
+    
+    @FocusState private var isFocused: Bool
     
     private var isSDAH: Bool {
         book.key == "sdah"
@@ -95,14 +99,22 @@ struct TVBookCard: View {
                 // Silver Foil Embossed Frame & Cover Content with generous interior padding
                 VStack(spacing: 12) {
                     VStack(spacing: 12) {
-                        // Top Header: Language Tag & Tune Icon
-                        HStack {
+                        // Top Header: Language Tag, Pin Icon & Tune Icon
+                        HStack(alignment: .top, spacing: 6) {
                             Text(book.language.uppercased())
-                                .font(TVStyle.uiFont(size: 13, weight: .bold))
-                                .tracking(2)
+                                .font(TVStyle.uiFont(size: 12, weight: .bold))
+                                .tracking(1.5)
                                 .foregroundStyle(Color.white.opacity(0.85))
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.8)
                             
-                            Spacer()
+                            Spacer(minLength: 4)
+                            
+                            if isPinned {
+                                Image(systemName: "pin.fill")
+                                    .font(.system(size: 13, weight: .bold))
+                                    .foregroundStyle(Color.white.opacity(0.95))
+                            }
                             
                             if isSDAH {
                                 Image(systemName: "music.note")
@@ -111,7 +123,7 @@ struct TVBookCard: View {
                             }
                         }
                         
-                        Spacer()
+                        Spacer(minLength: 6)
                         
                         // Sacred Emblem
                         Image(systemName: isSDAH ? "music.quarternote.3" : "books.vertical.fill")
@@ -120,13 +132,16 @@ struct TVBookCard: View {
                         
                         // Book Title
                         Text(book.title)
-                            .font(TVStyle.titleFont(size: 23))
+                            .font(TVStyle.titleFont(size: 22))
                             .foregroundStyle(Color.white)
                             .multilineTextAlignment(.center)
                             .lineLimit(3)
+                            .minimumScaleFactor(0.75)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .layoutPriority(1)
                             .shadow(color: Color.black.opacity(0.6), radius: 4, x: 0, y: 2)
                         
-                        Spacer()
+                        Spacer(minLength: 6)
                         
                         // Bottom: Hymn Count Stamp
                         Text(String(format: NSLocalizedString("Collections.HymnsCount", comment: ""), hymnCount))
@@ -134,7 +149,7 @@ struct TVBookCard: View {
                             .tracking(1)
                             .foregroundStyle(Color.white.opacity(0.85))
                     }
-                    .padding(.horizontal, 14)
+                    .padding(.horizontal, 10)
                     .padding(.vertical, 16)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
@@ -148,6 +163,22 @@ struct TVBookCard: View {
             .frame(width: 220, height: 310)
         }
         .buttonStyle(.card)
+        .focused($isFocused)
+        .contextMenu {
+            if let onTogglePin {
+                Button(action: onTogglePin) {
+                    Label(
+                        LocalizedStringKey(isPinned ? "Home.UnpinHymnal" : "Home.PinHymnal"),
+                        systemImage: isPinned ? "pin.slash.fill" : "pin.fill"
+                    )
+                }
+            }
+        }
+        .onPlayPauseCommand {
+            if isFocused {
+                onTogglePin?()
+            }
+        }
     }
 }
 

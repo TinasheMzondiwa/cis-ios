@@ -7,12 +7,17 @@ import SwiftUI
 
 struct TVBrowseHymnalsView: View {
     @EnvironmentObject private var vm: CISAppViewModel
+    @ObservedObject private var pinnedManager = TVPinnedHymnalsManager.shared
     @State var selectedBook: StoreBook?
     
     @State private var activeLyricsHymn: StoreHymn?
     
+    private var orderedBooks: [StoreBook] {
+        pinnedManager.sortedBooks(vm.allBooks)
+    }
+    
     private var currentBook: StoreBook? {
-        selectedBook ?? vm.selectedBook ?? vm.allBooks.first
+        selectedBook ?? vm.selectedBook ?? orderedBooks.first
     }
     
     private var hymns: [StoreHymn] {
@@ -22,13 +27,20 @@ struct TVBrowseHymnalsView: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            // Hymnal Switcher Shelf
+            // Hymnal Switcher Shelf (Pinned floated first)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(vm.allBooks, id: \.key) { book in
+                    ForEach(orderedBooks, id: \.key) { book in
+                        let pinned = pinnedManager.isPinned(book.key)
                         TVBrowseHymnalChip(
                             book: book,
-                            isSelected: currentBook?.key == book.key
+                            isSelected: currentBook?.key == book.key,
+                            isPinned: pinned,
+                            onTogglePin: {
+                                withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
+                                    pinnedManager.togglePin(book.key)
+                                }
+                            }
                         ) {
                             selectedBook = book
                             vm.setSelectedBook(to: book)
@@ -89,43 +101,65 @@ struct TVBrowseHymnalsView: View {
 private struct TVBrowseHymnalChip: View {
     let book: StoreBook
     let isSelected: Bool
+    var isPinned: Bool = false
+    var onTogglePin: (() -> Void)? = nil
     let action: () -> Void
     
     var body: some View {
-        if isSelected {
-            Button(action: action) {
-                HStack(spacing: 8) {
-                    Image(systemName: "checkmark")
-                        .font(.system(size: 13, weight: .bold))
-                    if book.key == "sdah" {
-                        Image(systemName: "music.note")
-                            .font(.system(size: 15, weight: .bold))
+        Group {
+            if isSelected {
+                Button(action: action) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 13, weight: .bold))
+                        if isPinned {
+                            Image(systemName: "pin.fill")
+                                .font(.system(size: 13, weight: .bold))
+                        }
+                        if book.key == "sdah" {
+                            Image(systemName: "music.note")
+                                .font(.system(size: 15, weight: .bold))
+                        }
+                        Text(book.title)
+                            .font(TVStyle.uiFont(size: 20, weight: .bold))
+                        Text(book.language.uppercased())
+                            .font(TVStyle.uiFont(size: 13, weight: .bold))
+                            .opacity(0.85)
                     }
-                    Text(book.title)
-                        .font(TVStyle.uiFont(size: 20, weight: .bold))
-                    Text(book.language.uppercased())
-                        .font(TVStyle.uiFont(size: 13, weight: .bold))
-                        .opacity(0.85)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(Color.white)
+                .foregroundStyle(Color.black)
+            } else {
+                Button(action: action) {
+                    HStack(spacing: 8) {
+                        if isPinned {
+                            Image(systemName: "pin.fill")
+                                .font(.system(size: 13, weight: .bold))
+                        }
+                        if book.key == "sdah" {
+                            Image(systemName: "music.note")
+                                .font(.system(size: 16, weight: .bold))
+                        }
+                        Text(book.title)
+                            .font(TVStyle.uiFont(size: 20, weight: .medium))
+                        Text(book.language.uppercased())
+                            .font(TVStyle.uiFont(size: 13, weight: .bold))
+                            .opacity(0.6)
+                    }
+                }
+                .buttonStyle(.bordered)
+            }
+        }
+        .contextMenu {
+            if let onTogglePin {
+                Button(action: onTogglePin) {
+                    Label(
+                        LocalizedStringKey(isPinned ? "Home.UnpinHymnal" : "Home.PinHymnal"),
+                        systemImage: isPinned ? "pin.slash.fill" : "pin.fill"
+                    )
                 }
             }
-            .buttonStyle(.borderedProminent)
-            .tint(Color.white)
-            .foregroundStyle(Color.black)
-        } else {
-            Button(action: action) {
-                HStack(spacing: 8) {
-                    if book.key == "sdah" {
-                        Image(systemName: "music.note")
-                            .font(.system(size: 16, weight: .bold))
-                    }
-                    Text(book.title)
-                        .font(TVStyle.uiFont(size: 20, weight: .medium))
-                    Text(book.language.uppercased())
-                        .font(TVStyle.uiFont(size: 13, weight: .bold))
-                        .opacity(0.6)
-                }
-            }
-            .buttonStyle(.bordered)
         }
     }
 }

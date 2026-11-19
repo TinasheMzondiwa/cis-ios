@@ -9,6 +9,8 @@ import SwiftUI
 struct TVHomeView: View {
     @EnvironmentObject private var vm: CISAppViewModel
     @ObservedObject private var recentsManager = TVRecentsManager.shared
+    @ObservedObject private var pinnedManager = TVPinnedHymnalsManager.shared
+    @AppStorage("tv_hymnals_show_pinned_only") private var showPinnedOnly: Bool = false
     
     let onNavigateToSearch: () -> Void
     let onNavigateToBrowse: (StoreBook) -> Void
@@ -23,6 +25,17 @@ struct TVHomeView: View {
     private var fallbackHymns: [StoreHymn] {
         guard let bookKey = activeBook?.key else { return [] }
         return vm.fetchHymns(from: bookKey) ?? []
+    }
+    
+    private var isShowingPinnedOnly: Bool {
+        showPinnedOnly && !pinnedManager.pinnedKeys.isEmpty
+    }
+    
+    private var displayedBooks: [StoreBook] {
+        if isShowingPinnedOnly {
+            return pinnedManager.pinnedBooks(from: vm.allBooks)
+        }
+        return pinnedManager.sortedBooks(vm.allBooks)
     }
     
     var body: some View {
@@ -145,18 +158,66 @@ struct TVHomeView: View {
                     }
                 }
                 
-                // Hymnals Bookshelf: Designed as sacred hymn books
+                // Hymnals Bookshelf: Designed as sacred hymn books with Pin & Filter support
                 VStack(alignment: .leading, spacing: 14) {
-                    Text(LocalizedStringKey("Home.AllHymnals"))
-                        .font(TVStyle.titleFont(size: 36))
-                        .foregroundStyle(Color.white)
-                        .padding(.horizontal, TVStyle.horizontalPadding)
+                    HStack(alignment: .bottom, spacing: 24) {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text(LocalizedStringKey(isShowingPinnedOnly ? "Home.PinnedHymnals" : "Home.AllHymnals"))
+                                .font(TVStyle.titleFont(size: 36))
+                                .foregroundStyle(Color.white)
+                            
+                            Text(LocalizedStringKey("Home.PinHint"))
+                                .font(TVStyle.uiFont(size: 18))
+                                .foregroundStyle(Color.white.opacity(0.55))
+                        }
+                        
+                        if !pinnedManager.pinnedKeys.isEmpty {
+                            HStack(spacing: 12) {
+                                TVBookshelfFilterChip(
+                                    title: NSLocalizedString("Home.Filter.All", comment: ""),
+                                    icon: nil,
+                                    isSelected: !isShowingPinnedOnly
+                                ) {
+                                    withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
+                                        showPinnedOnly = false
+                                    }
+                                }
+                                
+                                TVBookshelfFilterChip(
+                                    title: String(format: NSLocalizedString("Home.Filter.Pinned", comment: ""), pinnedManager.pinnedKeys.count),
+                                    icon: "pin.fill",
+                                    isSelected: isShowingPinnedOnly
+                                ) {
+                                    withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
+                                        showPinnedOnly = true
+                                    }
+                                }
+                            }
+                            .padding(.bottom, 4)
+                        }
+                        
+                        Spacer()
+                    }
+                    .padding(.horizontal, TVStyle.horizontalPadding)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 36) {
-                            ForEach(vm.allBooks, id: \.key) { book in
+                            ForEach(displayedBooks, id: \.key) { book in
                                 let count = vm.fetchHymns(from: book.key)?.count ?? 0
-                                TVBookCard(book: book, hymnCount: count) {
+                                let pinned = pinnedManager.isPinned(book.key)
+                                TVBookCard(
+                                    book: book,
+                                    hymnCount: count,
+                                    isPinned: pinned,
+                                    onTogglePin: {
+                                        withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
+                                            pinnedManager.togglePin(book.key)
+                                            if pinnedManager.pinnedKeys.isEmpty {
+                                                showPinnedOnly = false
+                                            }
+                                        }
+                                    }
+                                ) {
                                     onNavigateToBrowse(book)
                                 }
                             }
@@ -171,6 +232,48 @@ struct TVHomeView: View {
         .tvAmbientBackground()
         .navigationDestination(item: $activeLyricsHymn) { hymn in
             TVLyricsView(hymn: hymn, book: activeLyricsBook ?? vm.selectedBook)
+        }
+    }
+}
+
+// MARK: - Bookshelf Filter Chip
+private struct TVBookshelfFilterChip: View {
+    let title: String
+    let icon: String?
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        if isSelected {
+            Button(action: action) {
+                HStack(spacing: 8) {
+                    if let icon {
+                        Image(systemName: icon)
+                            .font(.system(size: 14, weight: .bold))
+                    }
+                    Text(title)
+                        .font(TVStyle.uiFont(size: 18, weight: .bold))
+                }
+                .padding(.horizontal, 14)
+                .padding(.vertical, 6)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(Color.white)
+            .foregroundStyle(Color.black)
+        } else {
+            Button(action: action) {
+                HStack(spacing: 8) {
+                    if let icon {
+                        Image(systemName: icon)
+                            .font(.system(size: 14, weight: .semibold))
+                    }
+                    Text(title)
+                        .font(TVStyle.uiFont(size: 18, weight: .medium))
+                }
+                .padding(.horizontal, 14)
+                .padding(.vertical, 6)
+            }
+            .buttonStyle(.bordered)
         }
     }
 }

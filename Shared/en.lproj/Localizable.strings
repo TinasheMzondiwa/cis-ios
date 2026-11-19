@@ -151,5 +151,12 @@
 "Home.RecentsSubtitle" = "Pick up where you left off";
 "Home.ViewAll" = "View All";
 "Home.ViewAllHymnal" = "Browse all hymns in %@";
+"Home.PinnedHymnals" = "Pinned Hymnals";
+"Home.PinHint" = "Long-press a hymnal to pin it for quick access";
+"Home.Filter.All" = "All";
+"Home.Filter.Pinned" = "Pinned (%lld)";
+"Home.PinHymnal" = "Pin Hymnal";
+"Home.UnpinHymnal" = "Unpin Hymnal";
+
 
 
