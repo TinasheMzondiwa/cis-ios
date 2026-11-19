@@ -56,3 +56,29 @@ jobs:
             ONLY_ACTIVE_ARCH=YES \
             CODE_SIGNING_ALLOWED=NO \
             build
+
+      - name: Run Unit Tests
+        run: |
+          # Query compatible destinations for the iOS scheme to pick a compatible simulator ID
+          DESTINATION_ID=$(xcodebuild -workspace ChristInSong.xcworkspace -scheme iOS -showdestinations | \
+            awk '/Destinations compatible with the "iOS" scheme:/,/Ineligible destinations/' | \
+            grep "platform:iOS Simulator" | grep "name:iPhone" | head -1 | sed -E 's/.*id:([0-9A-F-]+).*/\1/')
+          if [ -z "$DESTINATION_ID" ]; then
+            DESTINATION_ID=$(xcrun simctl list devices available | awk '/-- iOS 2[6-9]/,0' | grep -i "iPhone" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')
+          fi
+          if [ -z "$DESTINATION_ID" ]; then
+            DESTINATION_ID=$(xcrun simctl list devices available | grep -i "iPhone" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')
+          fi
+          if [ -n "$DESTINATION_ID" ]; then
+            DESTINATION="platform=iOS Simulator,id=$DESTINATION_ID"
+          else
+            DESTINATION="platform=iOS Simulator,name=iPhone 17"
+          fi
+          echo "Running tests on: $DESTINATION"
+          xcodebuild -workspace ChristInSong.xcworkspace \
+            -scheme iOS \
+            -destination "$DESTINATION" \
+            -configuration Debug \
+            ONLY_ACTIVE_ARCH=YES \
+            CODE_SIGNING_ALLOWED=NO \
+            test -only-testing:ChristInSongTests

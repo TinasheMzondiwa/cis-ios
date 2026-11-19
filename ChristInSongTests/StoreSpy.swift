@@ -9,6 +9,7 @@ import Foundation
 import ChristInSong
 
 final class StoreSpy: Store {
+    var onStoreLoaded: (() -> Void)?
    
     
     private(set) var messages = [Action]()
@@ -135,19 +136,13 @@ extension StoreHymn {
     
     static func hymn(_ id: UUID = UUID(), number: Int = 1, book: String = .defaultBookKey) -> StoreHymn {
         let dummyLyric = StoreLyric(type: "verse", index: 1, lines: ["a very long hymn"])
-        return StoreHymn(id: id, title: "Dummy Title", titleStr: "Dummy Title", lyrics: [dummyLyric], book: book, number: number)
+        return StoreHymn(id: id, title: "Dummy Title", lyrics: [dummyLyric], book: book, number: number, titleEnglish: nil, hymnalReferences: nil)
     }
 }
 
 extension StoreCollection {
     static func collection(_ id: UUID = UUID(), title: String = "Dummy title", about: String? = nil, date: Date = .now) -> StoreCollection {
         StoreCollection(id: id, title: title, dateCreated: date, about: about)
-    }
-}
-
-extension StoreCollection: Equatable {
-    public static func == (lhs: StoreCollection, rhs: StoreCollection) -> Bool {
-        lhs.id == rhs.id
     }
 }
 

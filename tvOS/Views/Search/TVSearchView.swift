@@ -114,7 +114,7 @@ struct TVSearchView: View {
             }
         }
         .tvAmbientBackground()
-        .navigationDestination(item: $activeLyricsHymn) { hymn in
+        .fullScreenCover(item: $activeLyricsHymn) { hymn in
             let book = vm.allBooks.first(where: { $0.key == hymn.book }) ?? activeLyricsBook ?? vm.selectedBook
             TVLyricsView(hymn: hymn, book: book)
         }

@@ -204,12 +204,12 @@ final class ChristInSongTests: XCTestCase {
         XCTAssertEqual(sut.collectionsSheetShown, !currentToggleStatus)
     }
     
-    func test_toggleBookSelectionShownFromHymnView() {
+    func test_toggleBookSelectionShown() {
         let (sut, _) = makeSUT()
-        let currentToggleStatus = sut.bookSelectionShownFromHymnView
+        let currentToggleStatus = sut.bookSelectionShown
         
-        sut.toggleBookSelectionShownFromHymnView()
-        XCTAssertEqual(sut.bookSelectionShownFromHymnView, !currentToggleStatus)
+        sut.toggleBookSelectionSheet()
+        XCTAssertEqual(sut.bookSelectionShown, !currentToggleStatus)
     }
     
     func test_toggleHymn_inCollection_messagesStoreWithHymnAndCollection() {
@@ -248,6 +248,7 @@ final class ChristInSongTests: XCTestCase {
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: CISAppViewModel, store: StoreSpy) {
         let store = StoreSpy()
         let sut = CISAppViewModel(store: store)
+        store.onStoreLoaded?()
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, store)

@@ -327,6 +327,15 @@ struct TVLyricsView: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .tabBar)
+        .onExitCommand {
+            if isControlsHUDVisible {
+                hideControlsHUD()
+            } else if canGoBack {
+                goToPreviousVerse()
+            } else {
+                dismiss()
+            }
+        }
         .onAppear {
             loadTune()
             focusedArea = .canvas
