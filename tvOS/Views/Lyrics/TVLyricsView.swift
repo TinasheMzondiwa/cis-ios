@@ -338,7 +338,7 @@ struct TVLyricsView: View {
                 tunePlayer.stop()
             }
         }
-        .onChange(of: focusedArea) { newFocus in
+        .onChange(of: focusedArea) { _, newFocus in
             if newFocus == .canvas && isControlsHUDVisible {
                 hideControlsHUD()
             }

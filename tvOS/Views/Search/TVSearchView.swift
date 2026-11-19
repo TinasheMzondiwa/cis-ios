@@ -105,7 +105,7 @@ struct TVSearchView: View {
             text: $searchQuery,
             prompt: Text(LocalizedStringKey("Search.Placeholder"))
         )
-        .onChange(of: searchQuery) { newValue in
+        .onChange(of: searchQuery) { _, newValue in
             performSearch(query: newValue)
         }
         .onAppear {
