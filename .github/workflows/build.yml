@@ -1,0 +1,58 @@
+name: Build Verification
+
+on:
+  push:
+    branches:
+      - main
+      - "tm/**"
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build iOS & tvOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Initialize Hymnal Resources Submodule
+        run: ./setup_submodules.sh
+
+      - name: Select Latest Available Xcode
+        run: |
+          if [ -d "/Applications/Xcode_26.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_26.app/Contents/Developer
+          fi
+          xcodebuild -version
+
+      - name: Resolve Swift Package Dependencies
+        run: xcodebuild -project ChristInSong.xcodeproj -resolvePackageDependencies
+
+      - name: Build tvOS Target
+        run: |
+          xcodebuild -project ChristInSong.xcodeproj \
+            -scheme tvOS \
+            -destination 'generic/platform=tvOS Simulator' \
+            -configuration Debug \
+            ONLY_ACTIVE_ARCH=YES \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Install CocoaPods for iOS Workspace
+        run: pod install
+
+      - name: Build iOS Target
+        run: |
+          xcodebuild -workspace ChristInSong.xcworkspace \
+            -scheme iOS \
+            -destination 'generic/platform=iOS Simulator' \
+            -configuration Debug \
+            ONLY_ACTIVE_ARCH=YES \
+            CODE_SIGNING_ALLOWED=NO \
+            build
