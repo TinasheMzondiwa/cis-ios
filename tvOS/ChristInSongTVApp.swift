@@ -24,7 +24,7 @@ struct ChristInSongTVApp: App {
         
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().tintColor = .white
-        UIView.appearance().tintColor = .white
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .black
     }
     
     var body: some Scene {
@@ -32,7 +32,6 @@ struct ChristInSongTVApp: App {
             TVRootView()
                 .environmentObject(viewModel)
                 .environmentObject(tunePlayer)
-                .tint(Color.white)
         }
     }
 }

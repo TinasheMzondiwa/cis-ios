@@ -131,6 +131,7 @@ struct TVAddToCollectionSheet: View {
                     newCollectionAbout = ""
                 }
             }
+            .tint(showingCreateDialog ? Color.black : nil)
         }
     }
 }

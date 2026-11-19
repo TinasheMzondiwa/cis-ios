@@ -71,7 +71,6 @@ struct TVRootView: View {
                         }
                         .tag(TVTab.collections)
                     }
-                    .tint(Color.white)
                     
                     // Trailing Settings Icon on the right side of the Tab Bar
                     Button {
