@@ -218,18 +218,6 @@ struct TVCollectionsView: View {
                                         .multilineTextAlignment(.center)
                                         .frame(maxWidth: 520)
                                     
-                                    Button {
-                                        onNavigateToBrowse?()
-                                    } label: {
-                                        Label(LocalizedStringKey("Collections.BrowseHymnals"), systemImage: "books.vertical.fill")
-                                            .font(TVStyle.uiFont(size: 18, weight: .semibold))
-                                            .padding(.horizontal, 24)
-                                            .padding(.vertical, 12)
-                                    }
-                                    .buttonStyle(.bordered)
-                                    .tint(Color.white)
-                                    .padding(.top, 8)
-                                    
                                     Spacer()
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -299,11 +287,6 @@ struct TVCollectionsView: View {
             Button(LocalizedStringKey("Common.Cancel"), role: .cancel) {}
         } message: {
             Text(LocalizedStringKey("Collections.DeleteConfirm"))
-        }
-        .onAppear {
-            if vm.allCollections.isEmpty {
-                vm.addCollection(with: "Sabbath Songs", and: "We love these during rest")
-            }
         }
     }
 }

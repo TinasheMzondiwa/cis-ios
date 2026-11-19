@@ -38,6 +38,23 @@ struct TVHomeView: View {
         return pinnedManager.sortedBooks(vm.allBooks)
     }
     
+    private var resolvedRecents: [(book: StoreBook, hymn: StoreHymn)] {
+        recentsManager.recents.compactMap { item in
+            if let book = vm.allBooks.first(where: { $0.key == item.bookKey }),
+               let hymns = vm.fetchHymns(from: item.bookKey),
+               let hymn = hymns.first(where: { $0.id == item.hymnId || ($0.number == item.hymnNumber && $0.title == item.title) }) {
+                return (book, hymn)
+            }
+            for book in vm.allBooks {
+                if let hymns = vm.fetchHymns(from: book.key),
+                   let hymn = hymns.first(where: { $0.id == item.hymnId }) {
+                    return (book, hymn)
+                }
+            }
+            return nil
+        }
+    }
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 44) {
@@ -70,7 +87,8 @@ struct TVHomeView: View {
                 .padding(.top, 36)
                 
                 // Primary Shelf: Recently Viewed or Fallback to Active Hymnal
-                if !recentsManager.recents.isEmpty {
+                let recentsList = resolvedRecents
+                if !recentsList.isEmpty {
                     // Recents Shelf
                     VStack(alignment: .leading, spacing: 12) {
                         VStack(alignment: .leading, spacing: 6) {
@@ -86,16 +104,12 @@ struct TVHomeView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 32) {
-                                ForEach(recentsManager.recents) { item in
-                                    if let book = vm.allBooks.first(where: { $0.key == item.bookKey }),
-                                       let hymns = vm.fetchHymns(from: item.bookKey),
-                                       let hymn = hymns.first(where: { $0.id == item.hymnId }) {
-                                        TVHymnGridCard(hymn: hymn, bookTitle: book.title) {
-                                            activeLyricsBook = book
-                                            activeLyricsHymn = hymn
-                                        }
-                                        .frame(width: 340)
+                                ForEach(recentsList, id: \.hymn.id) { entry in
+                                    TVHymnGridCard(hymn: entry.hymn, bookTitle: entry.book.title) {
+                                        activeLyricsBook = entry.book
+                                        activeLyricsHymn = entry.hymn
                                     }
+                                    .frame(width: 340)
                                 }
                             }
                             .padding(.horizontal, TVStyle.horizontalPadding)
@@ -231,7 +245,8 @@ struct TVHomeView: View {
         }
         .tvAmbientBackground()
         .navigationDestination(item: $activeLyricsHymn) { hymn in
-            TVLyricsView(hymn: hymn, book: activeLyricsBook ?? vm.selectedBook)
+            let book = vm.allBooks.first(where: { $0.key == hymn.book }) ?? activeLyricsBook ?? vm.selectedBook
+            TVLyricsView(hymn: hymn, book: book)
         }
     }
 }

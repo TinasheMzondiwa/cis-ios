@@ -156,7 +156,7 @@ struct TVLyricsView: View {
                             .foregroundStyle(Color.white)
                             .lineLimit(1)
                         
-                        if let bookTitle = book?.title {
+                        if let bookTitle = (vm.allBooks.first(where: { $0.key == hymn.book }) ?? book)?.title {
                             Text(bookTitle)
                                 .font(TVStyle.uiFont(size: 18, weight: .medium))
                                 .foregroundStyle(Color.white.opacity(0.6))
@@ -330,9 +330,7 @@ struct TVLyricsView: View {
         .onAppear {
             loadTune()
             focusedArea = .canvas
-            if let bookKey = book?.key {
-                TVRecentsManager.shared.record(hymn: hymn, bookKey: bookKey)
-            }
+            TVRecentsManager.shared.record(hymn: hymn, bookKey: hymn.book)
         }
         .onDisappear {
             cancelAutoDismissTimer()
