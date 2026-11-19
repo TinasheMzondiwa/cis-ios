@@ -40,7 +40,7 @@ struct TVRootView: View {
     @ViewBuilder
     private var nativeSidebarView: some View {
         TabView(selection: $selectedTab) {
-            Tab(LocalizedStringKey("Navigation.Home"), systemImage: "house.fill", value: TVTab.home) {
+            Tab(value: TVTab.home) {
                 NavigationStack {
                     TVHomeView(
                         onNavigateToSearch: { selectedTab = .search },
@@ -50,21 +50,36 @@ struct TVRootView: View {
                         }
                     )
                 }
+            } label: {
+                Label(
+                    LocalizedStringKey("Navigation.Home"),
+                    image: selectedTab == .home ? "tv_home_fill" : "tv_home_outline"
+                )
             }
             
-            Tab(LocalizedStringKey("Navigation.Search"), systemImage: "magnifyingglass", value: TVTab.search, role: .search) {
+            Tab(value: TVTab.search, role: .search) {
                 NavigationStack {
                     TVSearchView()
                 }
+            } label: {
+                Label(LocalizedStringKey("Navigation.Search"), systemImage: "magnifyingglass")
             }
             
-            Tab(LocalizedStringKey("Hymnals"), systemImage: "books.vertical.fill", value: TVTab.browse) {
+            Tab(
+                LocalizedStringKey("Hymnals"),
+                systemImage: selectedTab == .browse ? "books.vertical.fill" : "books.vertical",
+                value: TVTab.browse
+            ) {
                 NavigationStack {
                     TVBrowseHymnalsView(selectedBook: browseSelectedBook)
                 }
             }
             
-            Tab(LocalizedStringKey("Collections"), systemImage: "music.note.list", value: TVTab.collections) {
+            Tab(
+                LocalizedStringKey("Collections"),
+                systemImage: "music.note.list",
+                value: TVTab.collections
+            ) {
                 NavigationStack {
                     TVCollectionsView(
                         onNavigateToBrowse: { selectedTab = .browse }
@@ -73,7 +88,11 @@ struct TVRootView: View {
             }
             
             TabSection {
-                Tab(LocalizedStringKey("Settings.Title"), systemImage: "gearshape.fill", value: TVTab.settings) {
+                Tab(
+                    LocalizedStringKey("Settings.Title"),
+                    systemImage: selectedTab == .settings ? "gearshape.fill" : "gearshape",
+                    value: TVTab.settings
+                ) {
                     TVSettingsView()
                 }
             }
@@ -94,7 +113,10 @@ struct TVRootView: View {
                 )
             }
             .tabItem {
-                Label(LocalizedStringKey("Navigation.Home"), systemImage: "house.fill")
+                Label(
+                    LocalizedStringKey("Navigation.Home"),
+                    image: selectedTab == .home ? "tv_home_fill" : "tv_home_outline"
+                )
             }
             .tag(TVTab.home)
             
@@ -102,7 +124,11 @@ struct TVRootView: View {
                 TVSearchView()
             }
             .tabItem {
-                Label(LocalizedStringKey("Navigation.Search"), systemImage: "magnifyingglass")
+                if selectedTab == .search {
+                    Label(LocalizedStringKey("Navigation.Search"), image: "tv_search_fill")
+                } else {
+                    Label(LocalizedStringKey("Navigation.Search"), systemImage: "magnifyingglass")
+                }
             }
             .tag(TVTab.search)
             
@@ -110,7 +136,10 @@ struct TVRootView: View {
                 TVBrowseHymnalsView(selectedBook: browseSelectedBook)
             }
             .tabItem {
-                Label(LocalizedStringKey("Hymnals"), systemImage: "books.vertical.fill")
+                Label(
+                    LocalizedStringKey("Hymnals"),
+                    systemImage: selectedTab == .browse ? "books.vertical.fill" : "books.vertical"
+                )
             }
             .tag(TVTab.browse)
             
@@ -126,7 +155,10 @@ struct TVRootView: View {
             
             TVSettingsView()
                 .tabItem {
-                    Label(LocalizedStringKey("Settings.Title"), systemImage: "gearshape.fill")
+                    Label(
+                        LocalizedStringKey("Settings.Title"),
+                        systemImage: selectedTab == .settings ? "gearshape.fill" : "gearshape"
+                    )
                 }
                 .tag(TVTab.settings)
         }
