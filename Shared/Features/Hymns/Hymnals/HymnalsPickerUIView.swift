@@ -37,6 +37,7 @@ struct HymnalsPickerUIView: View {
                     .foregroundStyle(.secondary)
             }
         }
+        .accessibilityIdentifier("hymnal_picker_button")
         .padding()
         .buttonStyle(.glass)
         .matchedTransitionSource(id: "transition-id", in: namespace)

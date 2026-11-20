@@ -1,0 +1,27 @@
+# A list of devices you want to take the screenshots from
+devices([
+  "iPhone 16 Pro"
+])
+
+languages([
+  "en-US"
+])
+
+# The workspace and scheme
+workspace("ChristInSong.xcworkspace")
+scheme("iOS")
+
+# Where should the screenshots be stored?
+output_directory("screenshots/ios")
+
+# Force dark mode appearance
+dark_mode(true)
+
+# Clear old screenshots
+clear_previous_screenshots(true)
+
+# Arguments to pass to the app on launch
+launch_arguments([
+  "-UITesting YES",
+  "-AppleInterfaceStyle Dark"
+])

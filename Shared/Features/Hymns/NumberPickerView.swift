@@ -48,6 +48,7 @@ struct NumberPickerView: View {
                             .padding(.vertical, 4)
                             .font(.body.bold())
                     }
+                    .accessibilityIdentifier("go_to_hymn_button")
                     .buttonStyle(.glassProminent)
                     .disabled(!isValid)
                 }

@@ -1,0 +1,64 @@
+name: Generate App Store Screenshots
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Platforms to capture'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - ios
+          - tvos
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  screenshots:
+    name: Capture & Frame Screenshots
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Initialize Hymnal Submodules
+        run: ./setup_submodules.sh
+
+      - name: Select Latest Available Xcode
+        run: |
+          if [ -d "/Applications/Xcode_26.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_26.app/Contents/Developer
+          fi
+          xcodebuild -version
+
+      - name: Set up Ruby & Bundler
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Install ImageMagick & Dependencies
+        run: brew install imagemagick
+
+      - name: Install CocoaPods
+        run: bundle exec pod install
+
+      - name: Run Fastlane Screenshots
+        run: |
+          if [ "${{ inputs.platform }}" = "ios" ]; then
+            bundle exec fastlane screenshots
+          elif [ "${{ inputs.platform }}" = "tvos" ]; then
+            bundle exec fastlane tvos_screenshots
+          else
+            bundle exec fastlane all_screenshots
+          fi
+
+      - name: Upload Processed Screenshots Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-store-screenshots
+          path: screenshots/

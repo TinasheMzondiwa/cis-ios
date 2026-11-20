@@ -81,6 +81,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+screenshots/**/screenshots.html
+screenshots/**/screenshots.json
 
 # Code Injection
 #
@@ -94,6 +96,7 @@ iOSInjectionProject/
 Shared/Resources/*
 
 iOS/GoogleService-Info.plist
+.bundle/
 vendor
 
 xcode-skills/*

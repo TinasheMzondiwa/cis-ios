@@ -71,6 +71,16 @@
                ReferencedContainer = "container:ChristInSong.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "089E6D3630AFE4AE00E3F500"
+               BuildableName = "ChristInSongUITests.xctest"
+               ReferencedContainer = "container:ChristInSong.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

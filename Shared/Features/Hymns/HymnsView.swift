@@ -179,6 +179,7 @@ struct HymnsView: View {
                     } label: {
                         SFSymbol.number
                     }
+                    .accessibilityIdentifier("number_picker_button")
                 }
             }
     }

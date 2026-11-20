@@ -17,20 +17,19 @@ Written entirely in **SwiftUI** with Swift Concurrency and Core Data.
 Fast, touch-optimized hymn browsing with quick number jumping and swipe transitions.
 
 <p align="center">
-  <img src="art/1.png" width="18%" alt="Hymn List" />
-  <img src="art/2.png" width="18%" alt="Hymn Lyrics" />
-  <img src="art/3.png" width="18%" alt="Collections" />
-  <img src="art/4.png" width="18%" alt="Search" />
-  <img src="art/5.png" width="18%" alt="Hymnals" />
+  <img src="screenshots/ios/en-US/iPhone%2016%20Pro-01_HymnList.png" width="23%" alt="Hymn List" />
+  <img src="screenshots/ios/en-US/iPhone%2016%20Pro-02_HymnDetail.png" width="23%" alt="Hymn Lyrics" />
+  <img src="screenshots/ios/en-US/iPhone%2016%20Pro-03_Collections.png" width="23%" alt="Collections" />
+  <img src="screenshots/ios/en-US/iPhone%2016%20Pro-04_HymnalPicker.png" width="23%" alt="Hymnals" />
 </p>
 
 ### Apple TV (tvOS 17+)
 A 10-foot living room experience tailored for the Siri Remote, featuring ambient worship themes, Top Shelf integration, and verse navigation.
 
 <p align="center">
-  <img src="art/tvos_1.png" width="32%" alt="Apple TV - Home Shelf" />
-  <img src="art/tvos_2.png" width="32%" alt="Apple TV - Lyrics View" />
-  <img src="art/tvos_3.png" width="32%" alt="Apple TV - Collections & Browse" />
+  <img src="screenshots/tvos/en-US/Apple%20TV%204K%20(4th%20generation)-01_TV_Home.png" width="32%" alt="Apple TV - Home Shelf" />
+  <img src="screenshots/tvos/en-US/Apple%20TV%204K%20(4th%20generation)-02_TV_Lyrics.png" width="32%" alt="Apple TV - Lyrics View" />
+  <img src="screenshots/tvos/en-US/Apple%20TV%204K%20(4th%20generation)-03_TV_Sidebar.png" width="32%" alt="Apple TV - Sidebar & Navigation" />
 </p>
 
 ---
