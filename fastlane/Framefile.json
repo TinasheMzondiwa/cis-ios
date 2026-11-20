@@ -1,0 +1,54 @@
+{
+  "default": {
+    "keyword": {
+      "color": "#FFFFFF",
+      "font": "../../fastlane/fonts/ArialRoundedBold.ttf"
+    },
+    "title": {
+      "color": "#FFFFFF",
+      "font": "../../fastlane/fonts/ArialRoundedBold.ttf"
+    },
+    "background": "../../fastlane/background.png",
+    "padding": 50,
+    "show_complete_frame": true,
+    "stack_title": true
+  },
+  "data": [
+    {
+      "filter": "01_HymnList",
+      "keyword": {
+        "text": "Multi-language"
+      },
+      "title": {
+        "text": "Christ In Song app!"
+      }
+    },
+    {
+      "filter": "02_HymnDetail",
+      "keyword": {
+        "text": "Complete Lyrics"
+      },
+      "title": {
+        "text": "Designed for distraction-free worship"
+      }
+    },
+    {
+      "filter": "03_Collections",
+      "keyword": {
+        "text": "Organize Favorites"
+      },
+      "title": {
+        "text": "Create custom songlists and sets"
+      }
+    },
+    {
+      "filter": "04_HymnalPicker",
+      "keyword": {
+        "text": "Over 14 Languages"
+      },
+      "title": {
+        "text": "All available offline"
+      }
+    }
+  ]
+}

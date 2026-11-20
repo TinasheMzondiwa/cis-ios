@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1660,10 +1660,10 @@
 		08TV0000000000000000020C /* TVTunePlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV0000000000000000010E /* TVTunePlayerBar.swift */; };
 		08TV0000000000000000020D /* TVCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV0000000000000000010F /* TVCollectionsView.swift */; };
 		08TV00000000000000000210 /* TVBookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000110 /* TVBookCard.swift */; };
-		08TV00000000000000000215 /* TVScriptureCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000115 /* TVScriptureCatalog.swift */; };
-		08TV00000000000000000216 /* TVDailyScriptureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000116 /* TVDailyScriptureCard.swift */; };
 		08TV00000000000000000211 /* TVAddToCollectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000111 /* TVAddToCollectionSheet.swift */; };
 		08TV00000000000000000213 /* TVSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000113 /* TVSettingsView.swift */; };
+		08TV00000000000000000215 /* TVScriptureCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000115 /* TVScriptureCatalog.swift */; };
+		08TV00000000000000000216 /* TVDailyScriptureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000116 /* TVDailyScriptureCard.swift */; };
 		08TV00000000000000000301 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874737A298749D200167974 /* AlertState.swift */; };
 		08TV00000000000000000302 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C1CE02FD2F628008EB3DA /* AnalyticsManager.swift */; };
 		08TV00000000000000000303 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */; };
@@ -2469,8 +2469,6 @@
 		1D1A914B29BFCA60003C3260 /* v2/config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* v2/config.json */; };
 		1D1A914C29BFCA60003C3260 /* v2/config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1A914A29BFCA60003C3260 /* v2/config.json */; };
 		1D45301C29BB790B00C95AC1 /* ChristInSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */; };
-		1D45308029BB790B00C95AC1 /* TVScriptureCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000115 /* TVScriptureCatalog.swift */; };
-		1D45308229BB790B00C95AC1 /* TVScriptureCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45308129BB790B00C95AC1 /* TVScriptureCatalogTests.swift */; };
 		1D45302729BB80F000C95AC1 /* StoreHymn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302629BB80F000C95AC1 /* StoreHymn.swift */; };
 		1D45302929BB80FD00C95AC1 /* StoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302829BB80FD00C95AC1 /* StoreCollection.swift */; };
 		1D45302B29BB810D00C95AC1 /* StoreBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302A29BB810D00C95AC1 /* StoreBook.swift */; };
@@ -2478,9 +2476,13 @@
 		1D45302F29BB813100C95AC1 /* CISCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */; };
 		1D45303129BB814A00C95AC1 /* CISAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */; };
 		1D45303329BB996900C95AC1 /* StoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45303229BB996900C95AC1 /* StoreSpy.swift */; };
+		1D45308029BB790B00C95AC1 /* TVScriptureCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08TV00000000000000000115 /* TVScriptureCatalog.swift */; };
+		1D45308229BB790B00C95AC1 /* TVScriptureCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45308129BB790B00C95AC1 /* TVScriptureCatalogTests.swift */; };
 		1D70F75B29CCF54900F806E2 /* XCTestCase+TrackForMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D70F75A29CCF54900F806E2 /* XCTestCase+TrackForMemoryLeaks.swift */; };
 		2712EA2DCFA3489EC36809D5 /* NumberPickerPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C3956AD3B4BF2F7BF138E /* NumberPickerPresentation.swift */; };
+		46EBF479AB96D3C04BB3C3EB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD7D74283A539C405435A9 /* SnapshotHelper.swift */; };
 		5ADBD1B19FF0A5A738CFDA69 /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2390A2AC41ED8EF2D254E5A0 /* WhatsNewView.swift */; };
+		64DCB01FCE7FC8AB5E7B97B2 /* tvOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343C8D26C6E6DFA1CA58C24 /* tvOSUITests.swift */; };
 		67A174B5285F0876006A5BC1 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174B4285F0876006A5BC1 /* Bundle+Extensions.swift */; };
 		67A174BC285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
 		67A174BD285F1402006A5BC1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A174BB285F1402006A5BC1 /* UIApplication+Extensions.swift */; };
@@ -2493,6 +2495,7 @@
 		7171DECB21D09E811EF29010 /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */; };
 		7E4164197D401D670F56DFBF /* WhatsNewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13556F81BFCCC8E12B408861 /* WhatsNewItem.swift */; };
 		811E014721BED2F512A94732 /* changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 13A350B58CDD38960B9AA55D /* changelog.md */; };
+		967A007DC24E4D206FB4E8A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12CBF775B550D6BDCF6D703 /* Foundation.framework */; };
 		A3638FE18400BE568780ED59 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B261DFFC695D1E81D5B04F /* NumberPickerView.swift */; };
 		AED2E169976B09A1CF9847C5 /* StoreHymn+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */; };
 		BE460BFB385C4745F37BCFD5 /* StoreHymn+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */; };
@@ -2501,6 +2504,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		089E6D3B30AFE4AE00E3F500 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 086C93F624BE93BC008AFBE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 086C940124BE93BD008AFBE5;
+			remoteInfo = iOS;
+		};
 		1D45301D29BB790B00C95AC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 086C93F624BE93BC008AFBE5 /* Project object */;
@@ -2508,9 +2518,18 @@
 			remoteGlobalIDString = 086C940124BE93BD008AFBE5;
 			remoteInfo = iOS;
 		};
+		1E095E6D942B8F24E1429747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 086C93F624BE93BC008AFBE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08TV00000000000000000001;
+			remoteInfo = tvOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05AD7D74283A539C405435A9 /* SnapshotHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		0794D9D3F709C0BBB8F2AFBD /* tvOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tvOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		080518A329F48ABF00D9C95A /* EditModeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModeContext.swift; sourceTree = "<group>"; };
 		080C11D72FD121D2008EB3DA /* SwiftUi+HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUi+HymnalView.swift"; sourceTree = "<group>"; };
 		080C11DA2FD13406008EB3DA /* SwipeEducationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeEducationCard.swift; sourceTree = "<group>"; };
@@ -3331,6 +3350,7 @@
 		08927E4424C402BF0035972C /* HymnalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HymnalView.swift; sourceTree = "<group>"; };
 		08927EAD24C6A43E0035972C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		08927EB224C6A98C0035972C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		089E6D3730AFE4AE00E3F500 /* ChristInSongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A3366825FDB9A900852566 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		08AB2E4C25E8974F0086DA32 /* CollectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowView.swift; sourceTree = "<group>"; };
 		08AB2E5725E8A5470086DA32 /* CollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemView.swift; sourceTree = "<group>"; };
@@ -3365,10 +3385,10 @@
 		08TV0000000000000000010E /* TVTunePlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTunePlayerBar.swift; sourceTree = "<group>"; };
 		08TV0000000000000000010F /* TVCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionsView.swift; sourceTree = "<group>"; };
 		08TV00000000000000000110 /* TVBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBookCard.swift; sourceTree = "<group>"; };
-		08TV00000000000000000115 /* TVScriptureCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScriptureCatalog.swift; sourceTree = "<group>"; };
-		08TV00000000000000000116 /* TVDailyScriptureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDailyScriptureCard.swift; sourceTree = "<group>"; };
 		08TV00000000000000000111 /* TVAddToCollectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAddToCollectionSheet.swift; sourceTree = "<group>"; };
 		08TV00000000000000000113 /* TVSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSettingsView.swift; sourceTree = "<group>"; };
+		08TV00000000000000000115 /* TVScriptureCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScriptureCatalog.swift; sourceTree = "<group>"; };
+		08TV00000000000000000116 /* TVDailyScriptureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDailyScriptureCard.swift; sourceTree = "<group>"; };
 		13556F81BFCCC8E12B408861 /* WhatsNewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WhatsNewItem.swift; sourceTree = "<group>"; };
 		13A350B58CDD38960B9AA55D /* changelog.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = changelog.md; sourceTree = "<group>"; };
 		18412AEF9D7D003FF64B695B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3376,7 +3396,6 @@
 		1D1A914A29BFCA60003C3260 /* v2/config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2/config.json; sourceTree = "<group>"; };
 		1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristInSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D45301B29BB790B00C95AC1 /* ChristInSongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristInSongTests.swift; sourceTree = "<group>"; };
-		1D45308129BB790B00C95AC1 /* TVScriptureCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScriptureCatalogTests.swift; sourceTree = "<group>"; };
 		1D45302629BB80F000C95AC1 /* StoreHymn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHymn.swift; sourceTree = "<group>"; };
 		1D45302829BB80FD00C95AC1 /* StoreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollection.swift; sourceTree = "<group>"; };
 		1D45302A29BB810D00C95AC1 /* StoreBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBook.swift; sourceTree = "<group>"; };
@@ -3384,6 +3403,7 @@
 		1D45302E29BB813100C95AC1 /* CISCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISCoreDataStore.swift; sourceTree = "<group>"; };
 		1D45303029BB814A00C95AC1 /* CISAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppViewModel.swift; sourceTree = "<group>"; };
 		1D45303229BB996900C95AC1 /* StoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSpy.swift; sourceTree = "<group>"; };
+		1D45308129BB790B00C95AC1 /* TVScriptureCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScriptureCatalogTests.swift; sourceTree = "<group>"; };
 		1D70F75A29CCF54900F806E2 /* XCTestCase+TrackForMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+TrackForMemoryLeaks.swift"; sourceTree = "<group>"; };
 		2390A2AC41ED8EF2D254E5A0 /* WhatsNewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		3E60508D0E3E4FAFF6BD9322 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -3394,14 +3414,20 @@
 		67A174C1285F1478006A5BC1 /* ViewModifier+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModifier+Extensions.swift"; sourceTree = "<group>"; };
 		67A174C4285F1562006A5BC1 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		69B0579CBBCF659E463C333F /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		7343C8D26C6E6DFA1CA58C24 /* tvOSUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = tvOSUITests.swift; sourceTree = "<group>"; };
 		949D2313131E8C41E56BCA10 /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B1F48F3EE68CB913F921E0A8 /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B261DFFC695D1E81D5B04F /* NumberPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		D1885A22888C9BBEFD3F33AF /* TunePlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TunePlayer.swift; sourceTree = "<group>"; };
+		E12CBF775B550D6BDCF6D703 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC265DBD5F6A10BBD6373C4B /* StoreHymn+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "StoreHymn+Extensions.swift"; sourceTree = "<group>"; };
 		FA5C3956AD3B4BF2F7BF138E /* NumberPickerPresentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumberPickerPresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		089E6D3830AFE4AE00E3F500 /* ChristInSongUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ChristInSongUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		086C93FF24BE93BD008AFBE5 /* Frameworks */ = {
@@ -3425,6 +3451,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		089E6D3430AFE4AE00E3F500 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08TV00000000000000000004 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -3436,6 +3469,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60CE12F7BDE1E5F4F7112429 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				967A007DC24E4D206FB4E8A3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4192,9 +4233,11 @@
 				086C940B24BE93BD008AFBE5 /* macOS */,
 				08TV00000000000000000009 /* tvOS */,
 				1D45301A29BB790B00C95AC1 /* ChristInSongTests */,
+				089E6D3830AFE4AE00E3F500 /* ChristInSongUITests */,
 				086C940324BE93BD008AFBE5 /* Products */,
 				82FF486EAF9A7E141CAB3B35 /* Pods */,
 				1BDE369C9E3073CFD7BC1332 /* Frameworks */,
+				8038123916666B7750C91EA6 /* tvOSUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -4226,6 +4269,8 @@
 				086C940224BE93BD008AFBE5 /* ChristInSong.app */,
 				086C940A24BE93BD008AFBE5 /* ChristInSong.app */,
 				1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */,
+				089E6D3730AFE4AE00E3F500 /* ChristInSongUITests.xctest */,
+				0794D9D3F709C0BBB8F2AFBD /* tvOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4594,14 +4639,6 @@
 			path = Lyrics;
 			sourceTree = "<group>";
 		};
-		08TV00000000000000000011 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				08TV00000000000000000113 /* TVSettingsView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		08TV00000000000000000010 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
@@ -4610,12 +4647,21 @@
 			path = Collections;
 			sourceTree = "<group>";
 		};
+		08TV00000000000000000011 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				08TV00000000000000000113 /* TVSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		1BDE369C9E3073CFD7BC1332 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				084BDAA625FD9CF8002090CD /* StoreKit.framework */,
 				B8DADCE9E89E74D46C8EB2A9 /* Pods_iOS.framework */,
 				18412AEF9D7D003FF64B695B /* Pods_macOS.framework */,
+				C4ADFE9E0F59D6A8FAB9DBF6 /* tvOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -4693,6 +4739,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8038123916666B7750C91EA6 /* tvOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				05AD7D74283A539C405435A9 /* SnapshotHelper.swift */,
+				7343C8D26C6E6DFA1CA58C24 /* tvOSUITests.swift */,
+			);
+			path = tvOSUITests;
+			sourceTree = "<group>";
+		};
 		82FF486EAF9A7E141CAB3B35 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -4712,6 +4767,14 @@
 				2390A2AC41ED8EF2D254E5A0 /* WhatsNewView.swift */,
 			);
 			path = WhatsNew;
+			sourceTree = "<group>";
+		};
+		C4ADFE9E0F59D6A8FAB9DBF6 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				E12CBF775B550D6BDCF6D703 /* Foundation.framework */,
+			);
+			name = tvOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4753,6 +4816,27 @@
 			productReference = 086C940A24BE93BD008AFBE5 /* ChristInSong.app */;
 			productType = "com.apple.product-type.application";
 		};
+		089E6D3630AFE4AE00E3F500 /* ChristInSongUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 089E6D3F30AFE4AF00E3F500 /* Build configuration list for PBXNativeTarget "ChristInSongUITests" */;
+			buildPhases = (
+				089E6D3330AFE4AE00E3F500 /* Sources */,
+				089E6D3430AFE4AE00E3F500 /* Frameworks */,
+				089E6D3530AFE4AE00E3F500 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				089E6D3C30AFE4AE00E3F500 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				089E6D3830AFE4AE00E3F500 /* ChristInSongUITests */,
+			);
+			name = ChristInSongUITests;
+			productName = ChristInSongUITests;
+			productReference = 089E6D3730AFE4AE00E3F500 /* ChristInSongUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		08TV00000000000000000001 /* tvOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08TV00000000000000000006 /* Build configuration list for PBXNativeTarget "tvOS" */;
@@ -4788,6 +4872,24 @@
 			productReference = 1D45301929BB790B00C95AC1 /* ChristInSongTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E8DA613605D5724ED6862E26 /* tvOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BC4C91B380785A47BC54371 /* Build configuration list for PBXNativeTarget "tvOSUITests" */;
+			buildPhases = (
+				95D64BCA1C485FDFAE709BC8 /* Sources */,
+				60CE12F7BDE1E5F4F7112429 /* Frameworks */,
+				BAE020ECAE0BFEAC9659834D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC03DD99C2A1575F5DAC8AC4 /* PBXTargetDependency */,
+			);
+			name = tvOSUITests;
+			productName = tvOSUITests;
+			productReference = 0794D9D3F709C0BBB8F2AFBD /* tvOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -4795,7 +4897,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 2720;
 				LastUpgradeCheck = 2720;
 				TargetAttributes = {
 					086C940124BE93BD008AFBE5 = {
@@ -4804,9 +4906,17 @@
 					086C940924BE93BD008AFBE5 = {
 						CreatedOnToolsVersion = 12.0;
 					};
+					089E6D3630AFE4AE00E3F500 = {
+						CreatedOnToolsVersion = 27.2;
+						TestTargetID = 086C940124BE93BD008AFBE5;
+					};
 					1D45301829BB790B00C95AC1 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 086C940124BE93BD008AFBE5;
+					};
+					E8DA613605D5724ED6862E26 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 08TV00000000000000000001;
 					};
 				};
 			};
@@ -4830,6 +4940,8 @@
 				086C940124BE93BD008AFBE5 /* iOS */,
 				086C940924BE93BD008AFBE5 /* macOS */,
 				1D45301829BB790B00C95AC1 /* ChristInSongTests */,
+				089E6D3630AFE4AE00E3F500 /* ChristInSongUITests */,
+				E8DA613605D5724ED6862E26 /* tvOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -6385,6 +6497,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		089E6D3530AFE4AE00E3F500 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08TV00000000000000000005 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -7168,6 +7287,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BAE020ECAE0BFEAC9659834D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -7358,6 +7484,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		089E6D3330AFE4AE00E3F500 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08TV00000000000000000003 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -7425,13 +7558,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95D64BCA1C485FDFAE709BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EBF479AB96D3C04BB3C3EB /* SnapshotHelper.swift in Sources */,
+				64DCB01FCE7FC8AB5E7B97B2 /* tvOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		089E6D3C30AFE4AE00E3F500 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 086C940124BE93BD008AFBE5 /* iOS */;
+			targetProxy = 089E6D3B30AFE4AE00E3F500 /* PBXContainerItemProxy */;
+		};
 		1D45301E29BB790B00C95AC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 086C940124BE93BD008AFBE5 /* iOS */;
 			targetProxy = 1D45301D29BB790B00C95AC1 /* PBXContainerItemProxy */;
+		};
+		AC03DD99C2A1575F5DAC8AC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tvOS;
+			target = 08TV00000000000000000001 /* tvOS */;
+			targetProxy = 1E095E6D942B8F24E1429747 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -7585,7 +7738,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.0;
+				MARKETING_VERSION = 3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -7614,7 +7767,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.0;
+				MARKETING_VERSION = 3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinashe.ChristInSong;
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = iphoneos;
@@ -7676,6 +7829,63 @@
 				PRODUCT_NAME = ChristInSong;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		089E6D3D30AFE4AE00E3F500 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E7Y77TZ7V4;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unfeigned.ChristInSongUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = iOS;
+				XROS_DEPLOYMENT_TARGET = 27.2;
+			};
+			name = Debug;
+		};
+		089E6D3E30AFE4AE00E3F500 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E7Y77TZ7V4;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unfeigned.ChristInSongUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = iOS;
+				XROS_DEPLOYMENT_TARGET = 27.2;
 			};
 			name = Release;
 		};
@@ -7776,6 +7986,39 @@
 			};
 			name = Release;
 		};
+		C53CB178A9684995E8477641 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E7Y77TZ7V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unfeigned.tvOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = tvOS;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4EEAE9791B7FF5011FA7635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E7Y77TZ7V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unfeigned.tvOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = tvOS;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -7806,6 +8049,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		089E6D3F30AFE4AF00E3F500 /* Build configuration list for PBXNativeTarget "ChristInSongUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089E6D3D30AFE4AE00E3F500 /* Debug */,
+				089E6D3E30AFE4AE00E3F500 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		08TV00000000000000000006 /* Build configuration list for PBXNativeTarget "tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -7820,6 +8072,15 @@
 			buildConfigurations = (
 				1D45302029BB790B00C95AC1 /* Debug */,
 				1D45302129BB790B00C95AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BC4C91B380785A47BC54371 /* Build configuration list for PBXNativeTarget "tvOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C53CB178A9684995E8477641 /* Release */,
+				E4EEAE9791B7FF5011FA7635 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

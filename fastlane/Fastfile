@@ -1,0 +1,62 @@
+default_platform(:ios)
+
+opt_out_usage
+
+desc "Capture all iOS App Store screenshots and apply frames"
+lane :screenshots do
+  snapshot(
+    workspace: "ChristInSong.xcworkspace",
+    scheme: "iOS",
+    devices: [
+      "iPhone 16 Pro"
+    ],
+    dark_mode: true,
+    launch_arguments: [
+      "-UITesting YES",
+      "-AppleInterfaceStyle Dark"
+    ],
+    output_directory: "screenshots/ios",
+    clear_previous_screenshots: true
+  )
+
+  fastlane_dir = __dir__
+  project_dir = File.expand_path("..", __dir__)
+  screenshots_ios = File.join(project_dir, "screenshots", "ios")
+
+  # Place Framefile.json in screenshots output directory (references background and fonts in fastlane/)
+  FileUtils.cp(File.join(fastlane_dir, "Framefile.json"), File.join(screenshots_ios, "Framefile.json"))
+
+  frame_screenshots(
+    path: screenshots_ios
+  )
+  # Drop raw screenshots and replace with framed screenshots so ONLY framed photos remain
+  Dir.glob(File.join(screenshots_ios, "**", "*_framed.png")).each do |framed_path|
+    raw_path = framed_path.sub("_framed.png", ".png")
+    File.delete(raw_path) if File.exist?(raw_path)
+    File.rename(framed_path, raw_path)
+  end
+  # Clean up temporary Framefile.json from screenshots/ios
+  FileUtils.rm_f(File.join(screenshots_ios, "Framefile.json"))
+end
+
+desc "Capture tvOS App Store full-screen screenshots"
+lane :tvos_screenshots do
+  snapshot(
+    workspace: "ChristInSong.xcworkspace",
+    scheme: "tvOS",
+    devices: [
+      "Apple TV 4K (4th generation)"
+    ],
+    languages: [
+      "en-US"
+    ],
+    output_directory: "screenshots/tvos",
+    clear_previous_screenshots: true
+  )
+end
+
+desc "Generate all platform screenshots"
+lane :all_screenshots do
+  screenshots
+  tvos_screenshots
+end
