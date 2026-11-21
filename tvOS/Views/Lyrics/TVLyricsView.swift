@@ -14,6 +14,7 @@ struct TVLyricsView: View {
     
     enum LyricsFocusArea: Hashable {
         case canvas
+        case back
         case addToCollection
         case playTune
     }
@@ -108,7 +109,7 @@ struct TVLyricsView: View {
         withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
             isControlsHUDVisible = true
         }
-        focusedArea = isSDAH ? .playTune : .addToCollection
+        focusedArea = .back
         startAutoDismissTimer()
     }
     
@@ -168,6 +169,13 @@ struct TVLyricsView: View {
                     // TOP RIGHT: Controls HUD (On-Demand) vs Subtle Presentation Hint
                     if isControlsHUDVisible {
                         HStack(spacing: 16) {
+                            TVHUDBackButton(
+                                isFocused: focusedArea == .back
+                            ) {
+                                dismiss()
+                            }
+                            .focused($focusedArea, equals: .back)
+                            
                             TVHUDAddToCollectionButton(
                                 isInAnyCollection: isInAnyCollection,
                                 isFocused: focusedArea == .addToCollection
@@ -313,12 +321,21 @@ struct TVLyricsView: View {
                         
                         Spacer()
                         
-                        HStack(spacing: 8) {
-                            Text(LocalizedStringKey("Common.Next"))
-                            Image(systemName: "chevron.right")
+                        if canGoForward {
+                            HStack(spacing: 8) {
+                                Text(LocalizedStringKey("Common.Next"))
+                                Image(systemName: "chevron.right")
+                            }
+                            .font(TVStyle.uiFont(size: 18, weight: .medium))
+                            .foregroundStyle(Color.white.opacity(0.55))
+                        } else {
+                            HStack(spacing: 8) {
+                                Text(LocalizedStringKey("Common.Done"))
+                                Image(systemName: "checkmark")
+                            }
+                            .font(TVStyle.uiFont(size: 18, weight: .medium))
+                            .foregroundStyle(Color.white.opacity(0.35))
                         }
-                        .font(TVStyle.uiFont(size: 18, weight: .medium))
-                        .foregroundStyle(canGoForward ? Color.white.opacity(0.55) : Color.white.opacity(0.15))
                     }
                 }
                 .padding(.horizontal, TVStyle.horizontalPadding)
@@ -330,8 +347,6 @@ struct TVLyricsView: View {
         .onExitCommand {
             if isControlsHUDVisible {
                 hideControlsHUD()
-            } else if canGoBack {
-                goToPreviousVerse()
             } else {
                 dismiss()
             }
@@ -350,6 +365,8 @@ struct TVLyricsView: View {
         .onChange(of: focusedArea) { _, newFocus in
             if newFocus == .canvas && isControlsHUDVisible {
                 hideControlsHUD()
+            } else if newFocus != .canvas && isControlsHUDVisible {
+                resetAutoDismissTimer()
             }
         }
         // Remote Direction Gestures (Zero conflicts)
@@ -406,6 +423,30 @@ struct TVLyricsView: View {
 }
 
 // MARK: - Focus-Aware HUD Subviews
+
+private struct TVHUDBackButton: View {
+    var isFocused: Bool = false
+    let action: () -> Void
+    @Environment(\.isFocused) private var envIsFocused
+    
+    private var focused: Bool {
+        isFocused || envIsFocused
+    }
+    
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 16, weight: .bold))
+                Text(LocalizedStringKey("Common.Back"))
+                    .font(TVStyle.uiFont(size: 17, weight: .semibold))
+            }
+        }
+        .buttonStyle(.borderedProminent)
+        .tint(focused ? Color.white : Color.white.opacity(0.18))
+        .foregroundStyle(focused ? Color.black : Color.white)
+    }
+}
 
 private struct TVHUDAddToCollectionButton: View {
     let isInAnyCollection: Bool
